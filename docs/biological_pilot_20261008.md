@@ -85,3 +85,20 @@ python3 scripts/summarize.py results/runs/e2-rnacentral-20261008 \
 python3 scripts/validate_outputs.py results/runs/e2-rnacentral-20261008 \
   --out results/local/e2-rnacentral-20261008-validation.json
 ```
+
+The run above stopped at 22:41:59 JST when the controlling session ended.
+Five jobs have results; the URS00019626CE LinearPKCapR job had started but left
+no result, and four jobs had not started. The interrupted directory is kept
+unchanged. Two resume configs measure the remaining jobs with the same settings:
+[URS00019626CE, LinearPKCapR and LinearPKRaccess](../configs/e2_rnacentral_resume_a_20261008.json)
+and [URS000239D8A4, all three programs](../configs/e2_rnacentral_resume_b_20261008.json).
+They run one after the other on one node.
+
+```bash
+for part in a b; do
+  python3 scripts/run_cli.py --config configs/e2_rnacentral_resume_${part}_20261008.json \
+    --software-root deps/LinearCParty-20261008 \
+    --build-dir build/linear-cparty-20261008 \
+    --out results/runs/e2-rnacentral-resume-${part}-20261008
+done
+```
