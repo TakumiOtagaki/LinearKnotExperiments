@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import platform
 import re
+import resource
 import shutil
 import signal
 import subprocess
@@ -85,7 +86,30 @@ def stop_group(process):
         process.wait()
 
 
-def run_one(command, directory, env, timeout):
+def memory_cap(mib):
+    def apply():
+        limit = mib * 1024 * 1024
+        resource.setrlimit(resource.RLIMIT_AS, (limit, limit))
+    return apply
+
+
+def verify_lock(path, software, build, programs, parameter):
+    lock = json.loads(path.read_text())
+    state = git_state(software)
+    if lock.get("schema_version") != 1 or state["dirty"] or state["commit"] != lock["source_commit"]:
+        raise ValueError("source differs from clean software lock")
+    if digest(build / "CMakeCache.txt") != lock["cmake_cache_sha256"]:
+        raise ValueError("build cache differs from software lock")
+    if digest(parameter) != lock["energy_parameter_sha256"]:
+        raise ValueError("energy parameters differ from software lock")
+    for program in programs:
+        name = program["name"]
+        if digest(build / name) != lock["binaries"].get(name) or lock["binaries"].get(name) is None:
+            raise ValueError("binary differs from software lock: " + name)
+    return lock
+
+
+def run_one(command, directory, env, timeout, memory_limit_mib=None):
     write_json(directory / "command.json", {"argv": command, "cwd": str(directory)})
     started = time.perf_counter()
     status, error = "success", None
@@ -96,6 +120,7 @@ def run_one(command, directory, env, timeout):
         try:
             process = subprocess.Popen(timed_command, cwd=directory, env=env,
                                        stdout=stdout, stderr=stderr,
+                                       preexec_fn=memory_cap(memory_limit_mib) if memory_limit_mib else None,
                                        start_new_session=True)
         except OSError as exc:
             status, error, returncode = "launch_error", str(exc), None
@@ -155,6 +180,8 @@ def validate(config):
             raise ValueError(key + " is out of range")
     if config.get("timeout_seconds", 30) <= 0:
         raise ValueError("timeout_seconds must be positive")
+    if "memory_limit_mib" in config and (type(config["memory_limit_mib"]) is not int or config["memory_limit_mib"] < 64):
+        raise ValueError("memory_limit_mib must be an integer of at least 64")
     environment = config.get("environment", {})
     if not isinstance(environment, dict) or any(
             key not in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "LC_ALL")
@@ -186,6 +213,8 @@ def main():
     parameter = software / config["energy_parameter_file"]
     if not parameter.is_file():
         parser.error("energy parameter file is missing: " + str(parameter))
+    lock_path = experiment_path(config["software_lock"]) if config.get("software_lock") else None
+    lock = verify_lock(lock_path, software, build, config["programs"], parameter) if lock_path else None
     sources = [(entry, experiment_path(entry["path"])) for entry in config["inputs"]]
     if any(not path.is_file() for _, path in sources):
         parser.error("an input file is missing")
@@ -213,6 +242,7 @@ def main():
                 "software_before": git_state(software),
                 "experiment_before": git_state(ROOT), "binaries_before": binaries,
                 "build_settings": build_settings(build), "inputs": frozen_inputs,
+                "software_lock": lock, "software_lock_sha256": digest(lock_path) if lock_path else None,
                 "energy_parameter_sha256": digest(copied_parameter),
                 "host": {"hostname": platform.node(), "platform": platform.platform(),
                          "python": platform.python_version(), "cpu_count": os.cpu_count()},
@@ -234,7 +264,7 @@ def main():
                                *mode.get("args", []), *program.get("args", [])]
                     for product in program.get("outputs", []):
                         command.extend([product["flag"], str(directory / product["name"])])
-                    result = run_one(command, directory, env, config.get("timeout_seconds", 30))
+                    result = run_one(command, directory, env, config.get("timeout_seconds", 30), config.get("memory_limit_mib"))
                     result.update({"id": job_id, "input": item["name"], "mode": mode["name"],
                                    "program": program["name"], "warmup": warmup,
                                    "repetition": repetition, "command": command,
@@ -260,6 +290,16 @@ def main():
                                         for p in config["programs"]}})
     manifest["software_changed_during_run"] = manifest["software_before"] != manifest["software_after"]
     manifest["binaries_changed_during_run"] = manifest["binaries_before"] != manifest["binaries_after"]
+    if lock_path:
+        try:
+            verify_lock(lock_path, software, build, config["programs"], parameter)
+            manifest["software_lock_valid_after_run"] = digest(lock_path) == manifest["software_lock_sha256"]
+        except ValueError as exc:
+            manifest["software_lock_valid_after_run"] = False
+            manifest["software_lock_error_after_run"] = str(exc)
+        if not manifest["software_lock_valid_after_run"]:
+            failed = True
+            manifest["status"] = "failed"
     write_json(output / "run.json", manifest)
     return 130 if interrupted else 1 if failed else 0
 

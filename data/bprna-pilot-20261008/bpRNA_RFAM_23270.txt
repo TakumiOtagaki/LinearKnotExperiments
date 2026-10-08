@@ -1,0 +1,3 @@
+>bpRNA_RFAM_23270
+GUAAUGCUCUUGUGUGUCGGUGCUAUCGUUUGAGAUAUGUUUACUCUGUCGAGAUAAUGCCGCCGAUAAAGAGCACUCUCUUCGCCCAAAUACGGCUUUUAGAACCAAGCCAACUGCGAGACGGCUACUCGGGC
+....(((((((...(((((((........................................))))))))))))))........((((......(((((........)))))...................))))

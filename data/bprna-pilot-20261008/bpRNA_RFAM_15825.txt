@@ -1,0 +1,3 @@
+>bpRNA_RFAM_15825
+GAGGUGGACACCUCUCCCCAACGAGAGGCUACUAUCUGAAAGGGUAGACAAU
+..........((((((......))))))........................

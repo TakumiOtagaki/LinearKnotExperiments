@@ -1,0 +1,3 @@
+>bpRNA_RFAM_2886
+AUUUUUGGAUAAUCGCGUGAAGAGUUCGUCUUUUCAUGAGGAAAGUCCAUGCUAGCACGGGCUGUGAUGCCCGUAGUGUUUGUGCUAGGUGAAACAAUAAGCCUAGGGACGGAAGUAUCCGUUACGGCGACUGAAAUGGCUAAGUCUUUGAUAAGUCAAAAUAGGUCUGAAAGUGCCACAGUGACGUAGUUUUUGCGGAAACGCAGGAAGUGGAACGCGGUAAACCCCUCAAGCUAGCAACCCAAACUUUGGUCGGGGCACGGAAUGCGUGGAAACGAACGCAGCAUUCUGACUGGUAACAGUAGACAGAUGAUUAUCGAAGGAAAUGAUACCUAGUUAUUUCUGGAACAAAACAUGGCUUAUAGAA
+.......(((((((.(((((((((.....))))))))).((.....)).(((((((((((((......))))))..........((((((..........))))))..(((((....)))))..........................((......))...............................((((((((....)))))))).......................))))))).(((..((....))..)))..(((((((((((........))).))))))))((((....))))........)))))))....((((((((.....))))))))........................

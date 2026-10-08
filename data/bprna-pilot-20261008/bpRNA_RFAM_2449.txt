@@ -1,0 +1,3 @@
+>bpRNA_RFAM_2449
+UAAGUAAAACAGACAAUCGCGUGAGAUAAUCACGAGGAAAGUCCGUGCACCAUAGAGUAGAAUGCUGGAUAACGUCCAGUGGGGGCGACCCUAAGGCUAGUGCAACAGAGAUAUACCGCCAUUUAUAAUGGUAAGGGUGGAAAGGUGAGGUAAGAGCUUACCAGCAUAUAGGAGACUAUAUGGCUAUGUAAACCCCAUUCGGUGCAAGAUCAAGAUUGAACUUUUGUAGUUGCUCGCUACGUUCAUAGGUAGAUUGCUUGAACAAAUUGGCAACAAUUUGUCUAGAUAGAUGAUUGUCUAAUACAGAACACGGCUUAUAGUUUUGCUUAAUAU
+((((((((((.........(((((.....))))).............................(((((((...)))))))...............................................................((((((.......))))))((.((((((....))))))..)).............................................................................(((((((....))))))).......................................))))))))))....

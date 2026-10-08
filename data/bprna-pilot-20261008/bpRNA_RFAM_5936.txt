@@ -1,0 +1,3 @@
+>bpRNA_RFAM_5936
+GCCAGCCCCUUAACGGGGCGACACUCCACCAUGAUCACUCCCCUGUGAGGAACUACUGUCUUCACGCAGAAAGCGUCUAGCCAUGGCGUUAGUAUGAGUGUCGUGCAGCCUCCAGGCCCCCCCCUCCCGGGAGAGCCAUAGUAGUCUGCGGAACCGGUGAGUACACCGGAAUUGCCAGGACGACCGGGUCCUUUCCAUUGGAUCAAACCCGCUCAAUGCCUGGAGAUUUGGGCGUGCCCCCGCAAGACUGCUAGCCGAGUAGCGUUGGGUUGCGAAAGGCCUUGUGGUACUGCCUGAUAGGGUGCUUGCGAGUGCCCCGGGAGGUCUCGUAGACCGUGCAACAUGAGCACACUUCCUAAACCUCA
+....(((((.....)))))(((((((..................((((((.........))))))..............................))))))).....................................(((((((.((((..................(((..(((((..((.(((((....(((...)))....))))).))....)))))..)))...........))))..)))))))...................................................................................((((.......))))...............

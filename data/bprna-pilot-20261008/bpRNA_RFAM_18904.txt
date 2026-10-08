@@ -1,0 +1,3 @@
+>bpRNA_RFAM_18904
+AAAGUGCUAUGCAGCCAAGGAUGACUUGCCGACUAUGUGCAAUGUGUUGGCAAGUUGUCCUUGGCUACAUGUUUCUUUAU
+((((....(((.(((((((((((((((((((((............))))))))))))))))))))).)))....))))..

@@ -7,3 +7,4 @@ results/local/
 data/downloads/
 deps/
 *.local.json
+data/*/scaffold_logs/

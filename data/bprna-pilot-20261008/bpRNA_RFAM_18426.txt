@@ -1,0 +1,3 @@
+>bpRNA_RFAM_18426
+GGUCAUGAGCGCCAGCGUCAAGCCCCGGCUUGCUGGCCGGCAACCCUCCAACCGCGGUGGGGUGCCCCGGGUGAGGACCUGGCCGGUCGCGCAGGGCGACCCGGCAAGCGCGGGCC
+...........................(((((((....(((......((......))......))).(((((....)))))...((((((.....)))))).))))))).......
