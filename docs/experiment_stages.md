@@ -8,8 +8,14 @@
 | E3 | What do the different outputs reveal on the same long RNA? | Aligned BPP, contexts, accessibility, samples and representative structures. |
 | E4 | How sensitive are results to the supplied scaffold? | Matched-sequence comparisons over predeclared scaffold choices. |
 
-Next: pin a reference version and a verified implementation build, choose the
-E0/E1 input set, and add parsers for numerical accuracy summaries. Set the E2
+Prepared: a reproducible 18-input synthetic E1 cohort, a 324-job development
+config and BPP/context/accessibility analysis. The matrix has not been executed.
+Analysis was checked on the existing 20-job smoke and on an independent
+two-structure probability distribution. Read [accuracy analysis](accuracy_analysis.md).
+
+Next: pin a reference version and a verified implementation build, fix E0
+enumeration inputs and the biological E1 cohort, add sampling-frequency and
+common-posterior decoder analysis, and add an external API stage driver. Set the E2
 length tiers and scheduler resources after small pilots. Select the E3 RNA and
 its biological question before choosing displayed regions. Record all
 scaffolds independently; sums across scaffolds are not an unconditional

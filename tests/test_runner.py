@@ -26,7 +26,7 @@ class RunnerTests(unittest.TestCase):
             record = root / "record.txt"
             record.write_text(">case\nAAAAA\n.....\n")
             success = build / "success"
-            success.write_text("#!/bin/sh\nprintf 'output\\n'\n")
+            success.write_text(f"#!{sys.executable}\nimport os\nprint(os.environ['OMP_NUM_THREADS'])\n")
             success.chmod(0o755)
             failure = build / "failure"
             failure.write_text("#!/bin/sh\nprintf 'expected failure\\n' >&2\nexit 7\n")
@@ -35,6 +35,7 @@ class RunnerTests(unittest.TestCase):
             timeout.write_text("#!/bin/sh\nsleep 2\nprintf 'late output\\n'\n")
             timeout.chmod(0o755)
             config = {"schema_version": 1, "purpose": "development",
+                      "environment": {"OMP_NUM_THREADS": "1", "LC_ALL": "C"},
                       "energy_parameter_file": "params/model.par", "timeout_seconds": 0.1,
                       "warmups": 1, "repetitions": 1,
                       "inputs": [{"name": "fixture", "path": str(record)}],
@@ -61,6 +62,8 @@ class RunnerTests(unittest.TestCase):
                 self.assertTrue((directory / "stderr.txt").is_file())
                 self.assertTrue((directory / "result.json").is_file())
             self.assertGreater(measured[2]["peak_rss_kib"], 0)
+            self.assertEqual(manifest["environment"]["OMP_NUM_THREADS"], "1")
+            self.assertEqual((output / measured[2]["directory"] / "stdout.txt").read_text(), "1\n")
             record.write_text("changed after execution\n")
             frozen = Path(manifest["inputs"][0]["copied_path"])
             self.assertEqual(frozen.read_text(), ">case\nAAAAA\n.....\n")

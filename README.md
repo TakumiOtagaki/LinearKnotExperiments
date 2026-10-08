@@ -8,6 +8,20 @@ The initial runner uses Python's standard library and GNU `/usr/bin/time` on
 Linux. It runs the existing LinearCParty CLI binaries without modifying or
 building their source tree.
 
+## Accuracy pilot preparation
+
+`configs/e1_pilot.json` defines 18 saved synthetic inputs and 324 development
+jobs at exact and finite beam settings. Inputs, seeds, hashes and scaffold
+geometry are in `data/pilot-v1/`. The matrix is prepared but has not been run.
+See [accuracy analysis](docs/accuracy_analysis.md) for commands, numerical
+definitions, cap controls and limits of the measurement.
+
+`scripts/analyze_accuracy.py` compares BPP, seven structural contexts and
+joint window accessibility. It keeps failed jobs and missing references,
+uses full-precision Raccess thermodynamic metadata, and checks consistency
+across the three programs. It does not yet score decoder structures or
+sampling frequencies.
+
 ## Development smoke
 
 Supply the implementation and build locations explicitly while LinearCParty is
@@ -51,6 +65,7 @@ initial smoke therefore records `build_revision_verified: false` and
 |---|---|
 | `configs/` | Versioned experiment settings; no personal software paths. |
 | `data/smoke/` | Small synthetic sequence/scaffold records. |
+| `data/pilot-v1/` | Frozen synthetic accuracy cohort and generation metadata. |
 | `scripts/` | CLI runner and aggregation. |
 | `docs/` | Execution protocol and experiment stages. |
 | `manifests/` | Dependency-freeze guidance; formal locks will be added later. |

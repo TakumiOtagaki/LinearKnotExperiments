@@ -155,6 +155,11 @@ def validate(config):
             raise ValueError(key + " is out of range")
     if config.get("timeout_seconds", 30) <= 0:
         raise ValueError("timeout_seconds must be positive")
+    environment = config.get("environment", {})
+    if not isinstance(environment, dict) or any(
+            key not in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "LC_ALL")
+            or not isinstance(value, str) for key, value in environment.items()):
+        raise ValueError("environment supports string thread-count and LC_ALL overrides")
 
 
 def experiment_path(value):
@@ -197,6 +202,9 @@ def main():
         frozen_inputs.append({**entry, "copied_path": str(copied), "sha256": digest(copied)})
     write_json(output / "config.json", config)
     binaries = {p["name"]: digest(build / p["name"]) for p in config["programs"]}
+    env = os.environ.copy()
+    env.update(config.get("environment", {}))
+    env["CPARTY_FIXED_ENERGY_PARAM_FILE"] = str(copied_parameter)
     manifest = {"schema_version": 1, "status": "running", "started_utc": now(),
                 "purpose": config["purpose"], "config": config,
                 "config_sha256": digest(output / "config.json"),
@@ -208,10 +216,8 @@ def main():
                 "energy_parameter_sha256": digest(copied_parameter),
                 "host": {"hostname": platform.node(), "platform": platform.platform(),
                          "python": platform.python_version(), "cpu_count": os.cpu_count()},
-                "environment": {key: os.environ[key] for key in ENV_KEYS if key in os.environ},
+                "environment": {key: env[key] for key in ENV_KEYS if key in env},
                 "jobs": []}
-    env = os.environ.copy()
-    env["CPARTY_FIXED_ENERGY_PARAM_FILE"] = str(copied_parameter)
     write_json(output / "run.json", manifest)
     failed = interrupted = False
     for item in frozen_inputs:

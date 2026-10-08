@@ -3,6 +3,10 @@
 Use the same sequence, supplied scaffold, thermodynamic parameter file,
 temperature, local limits and requested output for a matched comparison.
 Save the actual scaffold, rather than only the parameters used to create it.
+For cap/beam controls and numerical domains, read
+[accuracy analysis](accuracy_analysis.md). Comparisons against full exact
+with capped finite beams measure the complete approximation, rather than
+beam pruning alone. Keep uncapped-width observations separate.
 
 ## Development and formal measurements
 
@@ -16,6 +20,8 @@ verify that the binaries come from those sources. Write the software lock in
 `manifests/`. Source state and executable hashes are recorded before and after
 a run; a changed source or binary must be investigated before using the run.
 The runner does not certify a build merely because the source tree is clean.
+The current runner accepts development configs only; a formal mode that
+checks the source/build lock must be added before manuscript collection.
 
 Upstream CParty issues 3, 4 and 5 were reported by the author as accepted and
 incorporated on 2026-10-08. Pin and inspect the reference actually used before
@@ -43,8 +49,15 @@ Never drop failed inputs when reporting an experiment's denominator.
 
 The manifest records only selected environment variables relevant to the
 calculation and scheduler. Do not dump credentials or a complete environment.
+Configs can explicitly set OMP/BLAS thread counts and LC_ALL. The manifest
+records the effective values passed to the process, including these overrides.
 The explicit copied parameter file overrides any inherited
 `CPARTY_FIXED_ENERGY_PARAM_FILE` for executed commands.
+
+CLI time includes every requested calculation and output. LinearCParty also
+computes MFE; Raccess calculates common structural profiles. Isolated inside,
+outside and additional-consumer costs require an external API driver and must
+not be inferred by relabeling these whole-process measurements.
 
 ## Release boundary
 
