@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "dataset": "LinearCapR published RNAcentral panel",
+  "repository": "https://github.com/TakumiOtagaki/LinearCapR_ComputationalExperiments",
+  "commit": "26313637784231088fdbaecbf5dc9e67f8889711",
+  "source_url": "https://raw.githubusercontent.com/TakumiOtagaki/LinearCapR_ComputationalExperiments/26313637784231088fdbaecbf5dc9e67f8889711/data/processed/rnacentral/rnacentral_active_20.fasta",
+  "downloaded_path": "results/local/data-sources/linearcapr-2631363-rnacentral/rnacentral_active_20.fasta",
+  "verified_utc": "2026-10-08T13:08:13.671831+00:00",
+  "retrieval_completed_utc": null,
+  "file_mtime_utc": "2026-10-08T13:05:46+00:00",
+  "bytes": 3437375,
+  "sha256": "14b264bc91744d58b1262ec17e4140f8ae4cc7ecf0401092b31fe24c14535cc5",
+  "records": 20,
+  "release_from_upstream_provenance": "RNAcentral Release 25",
+  "independent_release_archive_comparison": false,
+  "acgu_only_records": 11,
+  "records_containing_N": 9,
+  "initial_eligibility": {
+    "alphabet": "ACGU",
+    "min_length_inclusive": 4000,
+    "max_length_inclusive": 30000
+  },
+  "initial_eligible_records": [
+    {
+      "id": "URS000233CDDE",
+      "length": 4793,
+      "sequence_sha256": "3d757ed7666e716acc54ee142430b5536fe1f222bd1e7a7ba97b15d1f913738a"
+    },
+    {
+      "id": "URS00019626CE",
+      "length": 5482,
+      "sequence_sha256": "fabeaedff0618b12b5c1a045bae6d6fa5719264430510ec9f2779701059b5848"
+    },
+    {
+      "id": "URS000239D8A4",
+      "length": 6990,
+      "sequence_sha256": "d4fc8ae23a15761c6f002dc199811356b74dc2f9f0174d7d7697910077b0c618"
+    },
+    {
+      "id": "URS00023C9544",
+      "length": 11832,
+      "sequence_sha256": "b8acfc8040f3c0c7703c0e7ec459ddf5d16af323395c664b1ebdbb214b956b17"
+    },
+    {
+      "id": "URS000241043C",
+      "length": 13652,
+      "sequence_sha256": "ff1758c9958a530c7b9244d52062185f425427b28da0e324e681291d358d5627"
+    },
+    {
+      "id": "URS000238C72C",
+      "length": 22543,
+      "sequence_sha256": "2237659dd3b8ffc0ecb4bad5e75ef5e9a8fce8d637069f69a8243654a9d59ad7"
+    },
+    {
+      "id": "URS00023A4DB9",
+      "length": 29106,
+      "sequence_sha256": "843bf7a3108552b5b767449d65c6b2d1e2bbbc8b77dd2935473fc9be9860f9a5"
+    }
+  ],
+  "algorithm_run_performed": false
+}

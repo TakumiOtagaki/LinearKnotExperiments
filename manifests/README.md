@@ -10,3 +10,9 @@ the pinned source. Each run additionally records the experiment commit and
 its actual input and config hashes.
 
 Development run manifests are generated inside `results/runs/RUN/run.json`.
+
+`data-sources/` records acquired dataset snapshots separately from selected
+experimental cohorts. The local bpRNA copy and the downloaded RNAcentral
+panel have recorded hashes; neither acquisition manifest represents an
+algorithm run or a completed pilot selection. Original source files are stored
+under ignored `results/local/data-sources/` paths.

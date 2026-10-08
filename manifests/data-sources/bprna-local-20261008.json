@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "dataset": "bpRNA-1m(90) local filtered collection",
+  "source_kind": "local_copy",
+  "source_location": "/gs/bs/tga-satolab-gtex/otgk/LinearRaccess-paper/benchmark/data/bpRNA_1m_90_filtered_clean.fa",
+  "copied_path": "results/local/data-sources/bprna-local-clean-20261008/bpRNA_1m_90_filtered_clean.fa",
+  "verified_utc": "2026-10-08T13:08:13.671831+00:00",
+  "bytes": 5517177,
+  "sha256": "c76025522f1f9e174c25207595bc079e454deb656acbfd3a51de71c60c167bc5",
+  "records": 26063,
+  "normalization_already_applied": [
+    "uppercase",
+    "T to U",
+    "length >= 50",
+    "ACGU only"
+  ],
+  "additional_transformations_in_this_copy": [],
+  "duplicate_sequences": 0,
+  "candidate_bin_counts": [
+    {
+      "min_inclusive": 50,
+      "max_exclusive": 100,
+      "records": 12428
+    },
+    {
+      "min_inclusive": 100,
+      "max_exclusive": 200,
+      "records": 9656
+    },
+    {
+      "min_inclusive": 200,
+      "max_exclusive": 400,
+      "records": 2541
+    }
+  ],
+  "same_collection_as_LinearCapR_paper": false,
+  "original_distribution_reconciliation": "not completed; previous source audit retained",
+  "author_source_choice": "2026-10-08: use the existing LinearRaccess-paper collection",
+  "selected_pilot_ids": null,
+  "algorithm_run_performed": false
+}
