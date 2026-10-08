@@ -204,6 +204,24 @@ def read_job(run, job, record):
     return read_accessibility(directory / "stdout.txt", record)
 
 
+def check_consistency(input_name, mode, repetition, group):
+    q = group["LinearCParty"]["unpaired"]
+    stem = group["LinearPKCapR"]["Stem"]
+    windows = group["LinearPKRaccess"]["windows"]
+    stem_error = max(abs(1 - value - stem[i]) for i, value in enumerate(q))
+    single_errors = [abs(value - windows[i + 1, 1]) for i, value in enumerate(q)
+                     if (i + 1, 1) in windows]
+    singleton_error = max(single_errors) if single_errors else None
+    bound_violation = max([0.0] + [p - min(q[s - 1:s + w - 1])
+                                   for (s, w), p in windows.items()])
+    return {"input": input_name, "mode": mode, "repetition": repetition,
+            "stem_vs_bpp_max_error": stem_error,
+            "accessibility_w1_vs_unpaired_max_error": singleton_error,
+            "accessibility_above_marginal_max_violation": bound_violation,
+            "status": "success" if max(stem_error, singleton_error or 0,
+                                         bound_violation) <= TOLERANCE else "failed"}
+
+
 def analyze(run, reference_mode):
     analysis_provenance = {"generated_utc": now(), "experiment_git_state": git_state(ROOT),
                            "analysis_script_sha256": digest(Path(__file__)),
@@ -268,21 +286,7 @@ def analyze(run, reference_mode):
     for (input_name, mode, repetition), group in by_group.items():
         if not PROGRAMS <= set(group):
             continue
-        q = group["LinearCParty"]["unpaired"]
-        stem = group["LinearPKCapR"]["Stem"]
-        windows = group["LinearPKRaccess"]["windows"]
-        stem_error = max(abs(1 - value - stem[i]) for i, value in enumerate(q))
-        single_errors = [abs(value - windows[i + 1, 1]) for i, value in enumerate(q)
-                         if (i + 1, 1) in windows]
-        singleton_error = max(single_errors) if single_errors else None
-        bound_violation = max([0.0] + [p - min(q[s - 1:s + w - 1])
-                                       for (s, w), p in windows.items()])
-        checks.append({"input": input_name, "mode": mode, "repetition": repetition,
-                       "stem_vs_bpp_max_error": stem_error,
-                       "accessibility_w1_vs_unpaired_max_error": singleton_error,
-                       "accessibility_above_marginal_max_violation": bound_violation,
-                       "status": "success" if max(stem_error, singleton_error or 0,
-                                                    bound_violation) <= TOLERANCE else "failed"})
+        checks.append(check_consistency(input_name, mode, repetition, group))
     return {"schema_version": 1, "purpose": manifest["purpose"],
             "analysis_provenance": analysis_provenance,
             "reference_mode": reference_mode, "reference_repetition": 0,

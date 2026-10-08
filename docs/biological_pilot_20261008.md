@@ -52,3 +52,36 @@ CLI times include process startup, all requested calculations and output.
 LinearCParty also computes MFE; Raccess includes profile computation.
 We do not label these measurements as isolated inside time or add their
 separate process times to estimate a reused graph's total cost.
+
+## Long-input range fixed before running LinearCParty
+
+Scaffold construction was attempted for all seven preselected RNAcentral
+records. Five succeeded; the 25,543 and 29,106 nt records reached the 120-second
+scaffold timeout. The candidate manifest retains both failures and the
+unchanged source/binary hashes. No replacement record was selected.
+
+Code inspection found that the pinned implementation's `sparse_tree` has
+14 RMQ columns and a power-of-two array of the same length. Its Euler walk
+contains `2*n+1` entries. We conservatively require `2*n+1 < 2^14` for general
+interval queries, which gives n <= 8,191. The four longer candidates are
+deferred pending the implementation team's capacity adjustment, independently
+of their scaffold status. We do not interpret their omitted CLI measurements
+as runtime failures or successful runs.
+
+[The long-input config](../configs/e2_rnacentral_pilot_20261008.json) includes
+the 4,793, 5,482 and 6,990 nt records, default beam 100 and three CLI programs:
+nine measured jobs with 300 seconds/job and a 16 GiB address-space cap.
+It retains the four deferred IDs and reasons. Thread settings, output scope
+and repetitions match the pilot above. This is a feasibility measurement;
+output consistency has no long-input exact reference.
+
+```bash
+python3 scripts/run_cli.py --config configs/e2_rnacentral_pilot_20261008.json \
+  --software-root deps/LinearCParty-20261008 \
+  --build-dir build/linear-cparty-20261008 \
+  --out results/runs/e2-rnacentral-20261008
+python3 scripts/summarize.py results/runs/e2-rnacentral-20261008 \
+  --out results/local/e2-rnacentral-20261008.tsv
+python3 scripts/validate_outputs.py results/runs/e2-rnacentral-20261008 \
+  --out results/local/e2-rnacentral-20261008-validation.json
+```

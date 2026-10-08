@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-08T13:20:54.607385+00:00",
+  "status": "failed",
+  "kind": "rnacentral",
+  "source_sha256": "14b264bc91744d58b1262ec17e4140f8ae4cc7ecf0401092b31fe24c14535cc5",
+  "acquisition_manifest_sha256": "d732318ba0df3b04425a5a2daa062eefc1bbe6001deea54bf2a494a5a9d13a09",
+  "selection_seed": null,
+  "selection_order": "ID-sorted pool; length/ID-sorted selected records",
+  "candidate_bins": null,
+  "excluded_records": [
+    {
+      "id": "URS000234B597",
+      "length": 37723,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS000234CCEC",
+      "length": 853910,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS0002383EB1",
+      "length": 84464,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS000238BD54",
+      "length": 192460,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS00023A038B",
+      "length": 60668,
+      "reason": "outside_initial_length_range"
+    },
+    {
+      "id": "URS00023B9FFB",
+      "length": 79797,
+      "reason": "outside_initial_length_range"
+    },
+    {
+      "id": "URS00023C899B",
+      "length": 630484,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS00023D6C38",
+      "length": 134714,
+      "reason": "outside_initial_length_range"
+    },
+    {
+      "id": "URS000240503C",
+      "length": 249870,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS000241010F",
+      "length": 17009,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS0002411078",
+      "length": 160505,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS00024138E3",
+      "length": 460939,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS000241DEE3",
+      "length": 337259,
+      "reason": "outside_initial_length_range"
+    }
+  ],
+  "selected_ids_before_scaffold": [
+    "URS000233CDDE",
+    "URS00019626CE",
+    "URS000239D8A4",
+    "URS00023C9544",
+    "URS000241043C",
+    "URS000238C72C",
+    "URS00023A4DB9"
+  ],
+  "scaffold_method": "LinearPartition-V posterior threshold, no MEA",
+  "scaffold_settings": {
+    "beam": 200,
+    "dangles": 2,
+    "pair_probability_threshold": 0.7,
+    "min_helix": 2
+  },
+  "linearpartition_source": {
+    "commit": "b450fb3e63189073b68d385589035f992080aa3a",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "wrapper_sha256": "850ef5f778fda1275dabc1f561be11563a2334ceff956fb538f2f24b22633e87",
+  "vienna_binary_sha256": "ba8342306098b1f93d71eeb97054db59941362fbd1071f0688bc5a4a9d51caa7",
+  "script_sha256": "43f69d6805d9b5fbc675552721d6590dea6e1e284f1e7c95c8f5501021c3ee9b",
+  "records": [
+    {
+      "id": "URS000233CDDE",
+      "input_file": "URS000233CDDE.txt",
+      "sequence_sha256": "3d757ed7666e716acc54ee142430b5536fe1f222bd1e7a7ba97b15d1f913738a",
+      "input_sha256": "233f0d6f3b98bfbd1d39d7e43e11016c2ee51ae9c74f9a318b2062cf92433145",
+      "scaffold_sha256": "e05c74231d2dcc7b977285765c2a3e23d0da253b343091631b4686b5f7546f33",
+      "length": 4793,
+      "scaffold_pairs": 901,
+      "free_bases": 2991,
+      "paired_fraction": 0.37596494888378884,
+      "maximum_pair_depth": 112,
+      "maximum_branching_ancestors_of_free_base": 8,
+      "branching_nodes_including_exterior": 27,
+      "gc_fraction": 0.40267056123513456,
+      "scaffold_status": "success",
+      "scaffold_elapsed_seconds": 25.266385236289352
+    },
+    {
+      "id": "URS00019626CE",
+      "input_file": "URS00019626CE.txt",
+      "sequence_sha256": "fabeaedff0618b12b5c1a045bae6d6fa5719264430510ec9f2779701059b5848",
+      "input_sha256": "823a0e84a855d4d780ed1071ead629b0d135755d40ea0e365ac1b06d1aaa73e4",
+      "scaffold_sha256": "1ac014ebb3178b5f6e9f475f53158ea49636c53c663d295b3a76215b41453b6a",
+      "length": 5482,
+      "scaffold_pairs": 953,
+      "free_bases": 3576,
+      "paired_fraction": 0.3476833272528274,
+      "maximum_pair_depth": 169,
+      "maximum_branching_ancestors_of_free_base": 10,
+      "branching_nodes_including_exterior": 22,
+      "gc_fraction": 0.4866836920831813,
+      "scaffold_status": "success",
+      "scaffold_elapsed_seconds": 30.12544812494889
+    },
+    {
+      "id": "URS000239D8A4",
+      "input_file": "URS000239D8A4.txt",
+      "sequence_sha256": "d4fc8ae23a15761c6f002dc199811356b74dc2f9f0174d7d7697910077b0c618",
+      "input_sha256": "ce5fa17226b8d2b9526ccdc10507a4d76b6f2305f19185db3cfab5ab98ad2869",
+      "scaffold_sha256": "d2290e8038071a125413fade40c3979ecb41b4a9168eba8c179ab25fd32c157d",
+      "length": 6990,
+      "scaffold_pairs": 1362,
+      "free_bases": 4266,
+      "paired_fraction": 0.38969957081545065,
+      "maximum_pair_depth": 133,
+      "maximum_branching_ancestors_of_free_base": 10,
+      "branching_nodes_including_exterior": 36,
+      "gc_fraction": 0.3453505007153076,
+      "scaffold_status": "success",
+      "scaffold_elapsed_seconds": 42.09772159578279
+    },
+    {
+      "id": "URS00023C9544",
+      "input_file": "URS00023C9544.txt",
+      "sequence_sha256": "b8acfc8040f3c0c7703c0e7ec459ddf5d16af323395c664b1ebdbb214b956b17",
+      "input_sha256": "debdec0bb04e1a9a1318e740ffe6da47fd977f9539235883960ffdeb529e37e4",
+      "scaffold_sha256": "24019023d81da623eb6d2352b4107dd84758de8ddc4477d4534d958b341b3178",
+      "length": 11832,
+      "scaffold_pairs": 2232,
+      "free_bases": 7368,
+      "paired_fraction": 0.3772819472616633,
+      "maximum_pair_depth": 270,
+      "maximum_branching_ancestors_of_free_base": 19,
+      "branching_nodes_including_exterior": 58,
+      "gc_fraction": 0.3560682893847194,
+      "scaffold_status": "success",
+      "scaffold_elapsed_seconds": 64.98459535185248
+    },
+    {
+      "id": "URS000241043C",
+      "input_file": "URS000241043C.txt",
+      "sequence_sha256": "ff1758c9958a530c7b9244d52062185f425427b28da0e324e681291d358d5627",
+      "input_sha256": "48cc7d0dbe2c4134306d6968e8ce110872b82ed3a42a49b6803ab6a63c4a9bf7",
+      "scaffold_sha256": "8b1d6c6d5ed3cf0e2890dd5158f5093c3a4b7e5680576ccc66e9ebc991e576a7",
+      "length": 13652,
+      "scaffold_pairs": 2238,
+      "free_bases": 9176,
+      "paired_fraction": 0.327864049223557,
+      "maximum_pair_depth": 305,
+      "maximum_branching_ancestors_of_free_base": 23,
+      "branching_nodes_including_exterior": 58,
+      "gc_fraction": 0.37042191620275416,
+      "scaffold_status": "success",
+      "scaffold_elapsed_seconds": 81.82263760408387
+    },
+    {
+      "id": "URS000238C72C",
+      "length": 22543,
+      "scaffold_status": "failed",
+      "error": "LinearPartition timeout; returncode=-15",
+      "scaffold_elapsed_seconds": 120.22533876495436
+    },
+    {
+      "id": "URS00023A4DB9",
+      "length": 29106,
+      "scaffold_status": "failed",
+      "error": "LinearPartition timeout; returncode=-15",
+      "scaffold_elapsed_seconds": 120.20043625496328
+    }
+  ],
+  "linearpartition_source_after": {
+    "commit": "b450fb3e63189073b68d385589035f992080aa3a",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "vienna_binary_sha256_after": "ba8342306098b1f93d71eeb97054db59941362fbd1071f0688bc5a4a9d51caa7",
+  "wrapper_sha256_after": "850ef5f778fda1275dabc1f561be11563a2334ceff956fb538f2f24b22633e87",
+  "software_unchanged": true,
+  "finished_utc": "2026-10-08T13:28:59.408324+00:00"
+}

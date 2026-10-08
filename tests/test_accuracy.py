@@ -14,6 +14,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import analyze_accuracy as accuracy
 from prepare_pilot import prepare
 from rna_records import read_record, scaffold_pairs
+from validate_outputs import validate_outputs
 
 
 class AccuracyTests(unittest.TestCase):
@@ -121,6 +122,29 @@ class AccuracyTests(unittest.TestCase):
         row = accuracy.analyze(self.root, "exact")["observations"][0]
         self.assertEqual(row["analysis_status"], "reference_unavailable")
         self.assertNotIn("metrics", row)
+
+    def test_consistency_validation_needs_no_exact_reference(self):
+        parsed, _ = self.artifacts("reference", self.structures, 0)
+        group = dict(zip(("LinearCParty", "LinearPKCapR", "LinearPKRaccess"), parsed))
+        self.assertEqual(accuracy.check_consistency("toy", "beam100", 0, group)["status"], "success")
+        group["LinearPKRaccess"]["windows"][2, 1] = 0.1
+        self.assertEqual(accuracy.check_consistency("toy", "beam100", 0, group)["status"], "failed")
+        record_path = self.root / "input.txt"
+        record_path.write_text(">toy\nACAAAAGU\n(......)\n")
+        job = {"id": "no_reference", "input": "toy", "mode": "beam100", "program": "LinearCParty",
+               "repetition": 0, "warmup": False, "status": "success", "directory": ".",
+               "command": ["binary", "--bpp", str(self.root / "reference.bpp")]}
+        manifest = {"status": "success", "jobs": [job],
+                    "inputs": [{"name": "toy", "copied_path": str(record_path),
+                                "sha256": hashlib.sha256(record_path.read_bytes()).hexdigest()}]}
+        (self.root / "run.json").write_text(json.dumps(manifest))
+        result = validate_outputs(self.root)
+        self.assertEqual(result["observations"][0]["validation_status"], "success")
+        self.assertEqual(result["complete_groups_checked"], 0)
+        self.assertNotIn("metrics", result["observations"][0])
+        job["status"] = "timeout"
+        (self.root / "run.json").write_text(json.dumps(manifest))
+        self.assertEqual(validate_outputs(self.root)["observations"][0]["validation_status"], "job_failed")
 
 
 class PilotTests(unittest.TestCase):
