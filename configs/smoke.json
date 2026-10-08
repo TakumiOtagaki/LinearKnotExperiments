@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "cli-smoke",
+  "purpose": "development",
+  "description": "Check CLI execution and provenance on small synthetic inputs.",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "temperature_source": "CLI thermodynamic default",
+    "build_revision_verified": false
+  },
+  "timeout_seconds": 30,
+  "warmups": 0,
+  "repetitions": 1,
+  "inputs": [
+    {"name": "empty", "path": "data/smoke/empty_scaffold.txt"},
+    {"name": "pk", "path": "data/smoke/pk_scaffold.txt"}
+  ],
+  "modes": [
+    {"name": "exact", "args": ["--exact"]},
+    {"name": "beam100", "args": ["-b", "100", "--max-hairpin", "30", "--max-case3-depth", "30"]}
+  ],
+  "programs": [
+    {"name": "LinearCParty", "args": [], "outputs": [{"name": "bpp.tsv", "flag": "--bpp"}]},
+    {"name": "LinearPKCapR", "args": []},
+    {"name": "LinearPKRaccess", "args": ["--access-len", "1,2,4,7", "--probability"]},
+    {"name": "LinearPKSampling", "args": ["-k", "20", "--seed", "20261008"]},
+    {"name": "LinearPKMEA", "args": ["--gamma", "1", "--stats"]}
+  ]
+}

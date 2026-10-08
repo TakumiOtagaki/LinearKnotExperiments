@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+build/
+results/runs/
+results/local/
+data/downloads/
+deps/
+*.local.json
