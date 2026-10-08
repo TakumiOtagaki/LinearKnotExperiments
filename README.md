@@ -22,6 +22,21 @@ uses full-precision Raccess thermodynamic metadata, and checks consistency
 across the three programs. It does not yet score decoder structures or
 sampling frequencies.
 
+## Biological input candidates
+
+The next accuracy pilot will use short bpRNA sequences. The existing local
+filtered FASTA contains 26,063 distinct ACGU sequences and enough candidates
+in each proposed length bin. Its source-file hash and filtering procedure still
+need to be reconciled with the original distribution before formal adoption.
+Read the [bpRNA data audit](docs/data_audit_bprna_20261008.md).
+
+For initial long-input timing and RSS measurements, seven ACGU-only sequences
+of 4,793–29,106 nt are available in the published LinearCapR RNAcentral panel.
+The panel has a fixed public commit and file hash; the audit records sequence
+IDs, individual hashes and exclusions. Read the
+[RNAcentral data audit](docs/data_audit_rnacentral_20261008.md).
+Neither biological cohort has been selected or run in this repository yet.
+
 ## Development smoke
 
 Supply the implementation and build locations explicitly while LinearCParty is

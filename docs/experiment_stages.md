@@ -13,8 +13,13 @@ config and BPP/context/accessibility analysis. The matrix has not been executed.
 Analysis was checked on the existing 20-job smoke and on an independent
 two-structure probability distribution. Read [accuracy analysis](accuracy_analysis.md).
 
-Next: pin a reference version and a verified implementation build, fix E0
-enumeration inputs and the biological E1 cohort, add sampling-frequency and
+Next: prioritize a short biological E1 pilot and a biological E2 panel. Read the
+[bpRNA audit](data_audit_bprna_20261008.md) and
+[RNAcentral audit](data_audit_rnacentral_20261008.md) for candidate availability,
+provenance and remaining checks. Preserve the synthetic cohort as a control
+for scaffold geometry and local caps. Pin a reference version and a verified
+implementation build, fix E0 enumeration inputs and the biological E1 cohort,
+add sampling-frequency and
 common-posterior decoder analysis, and add an external API stage driver. Set the E2
 length tiers and scheduler resources after small pilots. Select the E3 RNA and
 its biological question before choosing displayed regions. Record all
