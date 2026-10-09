@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-09T08:46:08.525198+00:00",
+  "purpose": "development",
+  "source_repository": "https://github.com/TakumiOtagaki/LinearCParty",
+  "source_commit": "df274e8717ba14160834d572a5372370f96ac489",
+  "source_git_state": {
+    "commit": "df274e8717ba14160834d572a5372370f96ac489",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_tree": "368412b65f80354c80d87c137310d1bac9c576a1",
+  "build_revision_verified": true,
+  "verification_method": "dedicated clean checkout; CMake configure/build; selected maintained checks",
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "CMAKE_GENERATOR": "Unix Makefiles"
+  },
+  "configure_arguments": [
+    "-DBUILD_TESTING=ON",
+    "-DCMAKE_BUILD_TYPE=Release"
+  ],
+  "build_targets": [
+    "LinearCParty",
+    "LinearPKCapR",
+    "LinearPKRaccess",
+    "scfg2_exact_inside_oracle_test",
+    "scfg2_rules_core_exact_weight_test",
+    "scfg2_beam_api_test"
+  ],
+  "build_parallel_jobs": 8,
+  "cmake_cache_sha256": "1ceddd75feb0b40d1b153dbe5a054f4d5864a92aafbd6b9f78571feb8ce268d9",
+  "binaries": {
+    "LinearCParty": "8f6986d1db6e2e25afd4003e59e89677d112a0adb0601fe8dfc52c7abc6b108a",
+    "LinearPKCapR": "1c7e9b1f0db892ef2fef455a23c69bf7fea201ea3687450b12d7085ea545c9be",
+    "LinearPKRaccess": "b31d12cb6734a61668554ce1d7913609c215c6ec1099b00c2070196a81ac5ce4"
+  },
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "verification_results": [
+    {
+      "name": "scfg2_rules_core_exact_weight_test",
+      "returncode": 0,
+      "stdout": "scfg2_rules_core_exact_weight=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_exact_inside_oracle_test",
+      "returncode": 0,
+      "stdout": "scfg2_exact_inside_oracle=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_beam_api_test",
+      "returncode": 0,
+      "stdout": "scfg2_beam_api=ok\n",
+      "stderr": ""
+    }
+  ],
+  "scientific_scope": "fixed implementation pilot, not independent proof of ensemble semantics",
+  "known_semantic_followup": "Includes constant-time scaffold geometry (206215e7, 6ba06877) and WMBP prefix heaps (f20f4811, 524061cc). O(nb) memory plan (e1be6721) is documented only. Completed-WMB closure follow-up unchanged; see pinned source README."
+}

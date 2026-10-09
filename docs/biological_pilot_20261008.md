@@ -102,3 +102,21 @@ for part in a b; do
     --out results/runs/e2-rnacentral-resume-${part}-20261008
 done
 ```
+
+## Rerun on LinearCParty df274e87 (2026-10-09)
+
+The implementation added constant-time scaffold geometry indexes and bounded
+WMBP prefix heaps. A dedicated clean checkout of commit `df274e87` was built
+with the same Release settings, and the same three maintained checks passed
+([software lock](../manifests/software-pilot-df274e87.json)). The planned O(nb)
+memory change is documented upstream but not implemented in this commit.
+[This config](../configs/e2_rnacentral_df274e87_20261009.json) repeats the nine
+RNAcentral jobs with unchanged inputs and limits. Its results are recorded as a
+separate software version and do not replace the `66eaa2f1` results.
+
+```bash
+python3 scripts/run_cli.py --config configs/e2_rnacentral_df274e87_20261009.json \
+  --software-root deps/LinearCParty-20261009 \
+  --build-dir build/linear-cparty-20261009 \
+  --out results/runs/e2-rnacentral-df274e87-20261009
+```
