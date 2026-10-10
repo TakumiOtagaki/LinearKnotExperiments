@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-10T02:38:15.325725+00:00",
+  "purpose": "development",
+  "source_repository": "https://github.com/TakumiOtagaki/LinearCParty",
+  "source_commit": "58a2b7967166c7ed0abfcc798071f60977266e43",
+  "source_git_state": {
+    "commit": "58a2b7967166c7ed0abfcc798071f60977266e43",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_tree": "e9dc5f38700f7cde5e4ee0f63d360cb611e2b92f",
+  "build_revision_verified": true,
+  "verification_method": "dedicated clean checkout; CMake configure/build; selected maintained checks",
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "CMAKE_GENERATOR": "Unix Makefiles"
+  },
+  "configure_arguments": [
+    "-DBUILD_TESTING=ON",
+    "-DCMAKE_BUILD_TYPE=Release"
+  ],
+  "build_targets": [
+    "LinearCParty",
+    "LinearPKCapR",
+    "LinearPKRaccess",
+    "scfg2_exact_inside_oracle_test",
+    "scfg2_rules_core_exact_weight_test",
+    "scfg2_beam_api_test"
+  ],
+  "build_parallel_jobs": 8,
+  "cmake_cache_sha256": "22e4934076429a824536b9d0725f7d4d49c0149daedbebb31195c104961da3db",
+  "binaries": {
+    "LinearCParty": "50a8725dccab8f63fc415218e660b1e7d3d276d87ae6003359cf65199ede87c0",
+    "LinearPKCapR": "2e019afdf23be3bd08eb52a9ece72767f6cf951d5f864b3a969e72edb7e5d16f",
+    "LinearPKRaccess": "3dcefb30c51a371b420f1b5c1d72bc65869a1f2be73c3081c7205e60d1098272"
+  },
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "verification_results": [
+    {
+      "name": "scfg2_rules_core_exact_weight_test",
+      "returncode": 0,
+      "stdout": "scfg2_rules_core_exact_weight=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_exact_inside_oracle_test",
+      "returncode": 0,
+      "stdout": "scfg2_exact_inside_oracle=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_beam_api_test",
+      "returncode": 0,
+      "stdout": "scfg2_beam_api=ok\n",
+      "stderr": ""
+    }
+  ],
+  "scientific_scope": "fixed implementation pilot, not independent proof of ensemble semantics",
+  "known_semantic_followup": "Unscaled log weights (89331239, 4ca2b369); completed WMB requires weak closure by default (e1bab899); long BE loop correction included. Test target scfg2_vp_wmbp_composed_beam_test does not compile.",
+  "required_suite": "test/tools/run_required_scfg2_tests.sh: 68 C++ targets and 7 Python checks passed (run from source root; Python checks with build symlink)"
+}

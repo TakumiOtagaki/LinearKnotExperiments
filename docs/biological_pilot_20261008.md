@@ -120,3 +120,21 @@ python3 scripts/run_cli.py --config configs/e2_rnacentral_df274e87_20261009.json
   --build-dir build/linear-cparty-20261009 \
   --out results/runs/e2-rnacentral-df274e87-20261009
 ```
+
+## Rerun on LinearCParty 58a2b796 (2026-10-10)
+
+This version adds the retained-state memory reduction (through `f676c5ea`),
+full VP split ranges (`509b5de6`), unscaled log weights, weak closure for
+completed WMB by default (`e1bab899`) and the long BE loop correction. The
+maintained required suite (68 C++ targets, 7 Python checks) passed on the
+dedicated build ([software lock](../manifests/software-pilot-58a2b796.json)).
+[This config](../configs/e2_rnacentral_58a2b796_20261010.json) repeats the same
+nine jobs and limits. The model change (closure) means outputs are not
+expected to equal earlier versions.
+
+```bash
+python3 scripts/run_cli.py --config configs/e2_rnacentral_58a2b796_20261010.json \
+  --software-root deps/LinearCParty-58a2b796 \
+  --build-dir build/linear-cparty-58a2b796 \
+  --out results/runs/e2-rnacentral-58a2b796-20261010
+```
