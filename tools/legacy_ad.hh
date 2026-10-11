@@ -1,3 +1,4 @@
+// Historical BPP diagnostic only; not used in E0 PF parity reports.
 // Reverse differentiation of the oracle's own PF arithmetic, in an external
 // observation build. Numeric branch decisions and local weights are unchanged.
 #pragma once

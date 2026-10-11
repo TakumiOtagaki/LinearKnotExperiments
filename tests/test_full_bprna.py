@@ -162,16 +162,17 @@ class CohortAndScaffoldTests(unittest.TestCase):
 
 
 class E0ObservationTests(unittest.TestCase):
-    def test_pair_union_and_forced_unpaired_validation(self):
+    def test_only_pf_quantities_are_compared(self):
         reference={"rt":.6,"log_z":1,"free_energy":-.6,"mfe":-.5,"pair_map":{(1,7):.3}}
         candidate={**reference,"log_z":.9,"free_energy":-.54,"pair_map":{(2,8):.2}}
         result=compare(candidate,reference)
-        self.assertAlmostEqual(result["bpp_l1_sum"],.5);self.assertAlmostEqual(result["bpp_max_absolute_difference"],.3)
+        self.assertEqual(set(result),{"delta_log_z","delta_free_energy"})
+        self.assertAlmostEqual(result["delta_log_z"],-.1)
         with tempfile.TemporaryDirectory() as tmp:
             p=Path(tmp)/"out.json"
             write_json(p,{"log_z":1,"free_energy":-.6,"rt":.6,"mfe":-.5,"pairs":[[1,8,.3]]})
-            with self.assertRaisesRegex(ValueError,"forced-unpaired"):
-                read_observation(p,("a","GAAAAAAC","X......."))
+            parsed=read_observation(p,("a","GAAAAAAC","X......."))
+            self.assertNotIn("pairs",parsed);self.assertNotIn("mfe",parsed)
 
     @unittest.skipUnless(shutil.which("c++"),"C++ compiler unavailable")
     def test_oracle_reverse_derivative_against_independent_two_structure_ensemble(self):

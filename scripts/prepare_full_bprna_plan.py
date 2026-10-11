@@ -91,7 +91,7 @@ def main():
       "long_run_sha256":digest(long_run),"long_observations_including_censored":long_rows,
       "method":"Per short tier and mode: upper envelope max((wall-0.1)/n^3), max((RSS_MiB-128)/n^3)*1.5. Pool all three CLIs; fallback to all 12 RNAs for unobserved tiers. Summed sequential work; safety factor 1.5. Long time: max successful wall/n at b100; scale by (b/100)^2. Long RSS uses the same b^2 planning envelope and 1.5 headroom. No fit to timeout durations; retain them as feasibility warnings. No speedup assumed.",
       "long_seconds_per_nt_b100":long_time,"long_mib_per_nt_b100_with_headroom":long_memory,
-      "long_nocap_time_multiplier":2,"limitations":"12 RNAs, different scaffold geometries; concurrent accuracy times. RNAcentral 58a2b796 is a cross-version prior, not a 15aa7742 measurement. O(nb^2) with fixed caps does not bound uncapped search; x2 is provisional. Heavy-tail exact and AD oracle memory need task failures retained and pilot refit."}
+      "long_nocap_time_multiplier":2,"limitations":"12 RNAs, different scaffold geometries; concurrent accuracy times. RNAcentral 58a2b796 is a cross-version prior, not a 15aa7742 measurement. O(nb^2) with fixed caps does not bound uncapped search; x2 is provisional. Heavy-tail exact and E0 inside-only oracle resource envelopes need task failures retained and pilot refit."}
     save("manifests/calibration/bprna-array-20261011.json",calibration)
     mainconfig=copy.deepcopy(base)
     mainconfig.update(name="e1-bprna-full-15aa7742-20261011",purpose="formal",inputs=[],input_cohort=full,
@@ -163,16 +163,13 @@ def main():
     e0.update(name="e0-bprna-legacy-comparison-20261011",inputs=inputs,input_cohort=e0cohort,
               software_lock="manifests/software-e0-15aa7742-20261011.json",modes=[{"name":"exact"}],
               programs=[{"name":n} for n in ("E0LegacyCompatible","E0Default","E0CPartyOracle")])
-    e0["analysis"]={"comparisons":{"compatible_vs_oracle":"Same seven-patch derivation set: logZ, BPP, MFE must agree within predeclared tolerance",
-       "default_vs_oracle":"Model difference due to completed WMB weak closure; report differences, not numerical failures"},
-       "log_z_absolute_tolerance":1e-7,"free_energy_absolute_tolerance":1e-7,"mfe_absolute_tolerance":1e-7,
-       "bpp_absolute_tolerance":1e-8,"profile_scope":"Linear profiles for both policies only; upstream has no independent analytic profile API",
-       "bpp_oracle":"Reverse derivative of upstream PF arithmetic, external observation copy, V/VP pair-emission tags; validate energy against uninstrumented oracle before arrays"}
+    from analyze_e0 import analysis_settings
+    e0["analysis"]=analysis_settings()
     save("configs/e0_bprna_legacy_20261011.json",e0)
     et=[]
     intervals=[(1,49)]+INTERVALS[:4]
     for low,high in intervals:
-        model={"basis":"E1 exact upper envelope x10 time, x6 memory for reverse-AD oracle; 14/45/41/65 nt smoke validates output only, not bpRNA resource scaling",
+        model={"basis":"Historical E0 upper envelope (E1 exact x10 time/x6 memory) retained conservatively for inside-only original-object oracle; no AD/outside/MFE/profile work; uncalibrated at bpRNA lengths, recalibrate on short tiers before full execution",
           "seconds_per_nt_condition":1,"mib_per_nt":0,"safety_factor":1.5,"per_mode":{"exact":fit(rows,"exact",max(50,low),high)}}
         f=model["per_mode"]["exact"];f["seconds_coefficient"]*=10;f["constant_seconds"]*=10;f["memory_coefficient"]*=6
         res,cap=("cpu_4",4096) if high<100 else ("cpu_8",8192) if high<200 else ("cpu_40",32768) if high<300 else ("node_q",131072)

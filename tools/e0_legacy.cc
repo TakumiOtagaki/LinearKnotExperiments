@@ -1,3 +1,4 @@
+// Historical BPP diagnostic only; not built or used in E0 PF parity reports.
 // Linked against an observation copy of the seven-patch oracle. The only
 // edits replace scalar arithmetic and mark V/VP pair emissions for reverse AD.
 #include "h_globals.hh"
