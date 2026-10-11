@@ -38,14 +38,19 @@ E0. Keep the completion-domain ambiguity follow-up in implementation notes
 until its resolution is known; do not change either implementation here.
 
 The [full bpRNA/E0 plan](full_bprna_array_plan_20261011.md) pins the
-implementation's seven-patch `59593650` oracle. That oracle omits completed-WMB
+implementation's four-patch `800e95a` oracle (ordered 0001,0002,0006,0007).
+That single oracle omits completed-WMB
 weak closure. Compare `LegacyCompatible` for numerical parity and
 `RequireWeakClosure` for model differences, preserving both results.
-The external oracle BPP observer differentiates its own PF arithmetic;
-sampling BPP is not an exact reference. The tiny BE41 MFE discrepancy remains
-a parity failure and must be resolved or explicitly characterized before
-claiming full MFE agreement. Default-versus-compatible metrics separate this
-discrepancy from the effect of closure.
+E0 compares exact inside log Z and PF free energy only, using absolute
+roundoff limits 1e-9 and 1e-10 kcal/mol respectively from the implementation's
+full-precision audit. Both limits must pass. Original oracle objects provide
+the reference; E0 performs no AD, outside, MFE or profile calculation.
+The earlier BPP observer remains a historical diagnostic and is not used in
+E0 reports. BPP/MFE equality, including the earlier BE41 MFE discrepancy,
+is outside this comparison. Default-versus-compatible metrics count closure
+effects only when compatible-versus-oracle PF parity passes; failures and
+unassessable inputs keep their original denominator.
 
 ## Stored observations
 

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "tests_command": "python3 -m unittest discover -s tests",
+  "tests": 42,
+  "tests_exit_status": 0,
+  "tests_log_sha256": "2586e6eb94d4cb3e1061dbccb18fe297af1c71ef576cabbb6fc542aadad2f6a1",
+  "scope": "Small PF-only development checks and unstarted array plan; no qsub, commit or push"
+}

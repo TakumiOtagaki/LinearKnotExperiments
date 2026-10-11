@@ -20,7 +20,7 @@
       },
       "order_kind": "blocked_random",
       "cost_model": {
-        "basis": "E1 exact upper envelope x10 time, x6 memory for reverse-AD oracle; 14/45/41/65 nt smoke validates output only, not bpRNA resource scaling",
+        "basis": "Historical E0 upper envelope (E1 exact x10 time/x6 memory) retained conservatively for inside-only original-object oracle; no AD/outside/MFE/profile work; uncalibrated at bpRNA lengths, recalibrate on short tiers before full execution",
         "seconds_per_nt_condition": 1,
         "mib_per_nt": 0,
         "safety_factor": 1.5,
@@ -53,7 +53,7 @@
       },
       "order_kind": "blocked_random",
       "cost_model": {
-        "basis": "E1 exact upper envelope x10 time, x6 memory for reverse-AD oracle; 14/45/41/65 nt smoke validates output only, not bpRNA resource scaling",
+        "basis": "Historical E0 upper envelope (E1 exact x10 time/x6 memory) retained conservatively for inside-only original-object oracle; no AD/outside/MFE/profile work; uncalibrated at bpRNA lengths, recalibrate on short tiers before full execution",
         "seconds_per_nt_condition": 1,
         "mib_per_nt": 0,
         "safety_factor": 1.5,
@@ -86,7 +86,7 @@
       },
       "order_kind": "blocked_random",
       "cost_model": {
-        "basis": "E1 exact upper envelope x10 time, x6 memory for reverse-AD oracle; 14/45/41/65 nt smoke validates output only, not bpRNA resource scaling",
+        "basis": "Historical E0 upper envelope (E1 exact x10 time/x6 memory) retained conservatively for inside-only original-object oracle; no AD/outside/MFE/profile work; uncalibrated at bpRNA lengths, recalibrate on short tiers before full execution",
         "seconds_per_nt_condition": 1,
         "mib_per_nt": 0,
         "safety_factor": 1.5,
@@ -119,7 +119,7 @@
       },
       "order_kind": "blocked_random",
       "cost_model": {
-        "basis": "E1 exact upper envelope x10 time, x6 memory for reverse-AD oracle; 14/45/41/65 nt smoke validates output only, not bpRNA resource scaling",
+        "basis": "Historical E0 upper envelope (E1 exact x10 time/x6 memory) retained conservatively for inside-only original-object oracle; no AD/outside/MFE/profile work; uncalibrated at bpRNA lengths, recalibrate on short tiers before full execution",
         "seconds_per_nt_condition": 1,
         "mib_per_nt": 0,
         "safety_factor": 1.5,
@@ -152,7 +152,7 @@
       },
       "order_kind": "blocked_random",
       "cost_model": {
-        "basis": "E1 exact upper envelope x10 time, x6 memory for reverse-AD oracle; 14/45/41/65 nt smoke validates output only, not bpRNA resource scaling",
+        "basis": "Historical E0 upper envelope (E1 exact x10 time/x6 memory) retained conservatively for inside-only original-object oracle; no AD/outside/MFE/profile work; uncalibrated at bpRNA lengths, recalibrate on short tiers before full execution",
         "seconds_per_nt_condition": 1,
         "mib_per_nt": 0,
         "safety_factor": 1.5,

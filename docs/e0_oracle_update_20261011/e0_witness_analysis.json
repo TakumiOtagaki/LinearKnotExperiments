@@ -1,0 +1,169 @@
+{
+  "schema_version": 2,
+  "created_utc": "2026-10-11T08:09:09.869072+00:00",
+  "run_manifest_sha256": "48ef39219feb99a23ba5da7db9a590f7ab1df1a04267c27f250f1cb22f39c65a",
+  "analysis_script_sha256": "75d188219aa7d6720487a01f138a5a02c897c4fb31eb0e1fe567db9662bad1fb",
+  "planned_inputs": 4,
+  "comparison_quantities": [
+    "log_z",
+    "free_energy"
+  ],
+  "excluded_quantities": [
+    "bpp",
+    "mfe",
+    "contexts"
+  ],
+  "tolerances": {
+    "log_z_absolute_tolerance": 1e-09,
+    "free_energy_absolute_tolerance": 1e-10
+  },
+  "tolerance_scope": "Absolute roundoff allowance from implementation audit_legacy_inside_parity.py; no relative tolerance",
+  "job_status_counts": {
+    "success": 12
+  },
+  "numerical_parity_counts": {
+    "success": 4
+  },
+  "closure_counts": {
+    "planned_inputs": 4,
+    "attribution_valid": 4,
+    "effect_detected": 1,
+    "within_roundoff": 3,
+    "unassessable": 0,
+    "restriction_direction_inconsistent": 0
+  },
+  "observations": [
+    {
+      "input": "closure14",
+      "comparison_kind": "numerical_parity",
+      "program": "E0LegacyCompatible",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -6.071532165918825e-16,
+        "delta_free_energy": 3.712308238590367e-16
+      },
+      "status": "success"
+    },
+    {
+      "input": "closure14",
+      "comparison_kind": "closure_model_difference",
+      "program": "E0Default",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -6.071532165918825e-16,
+        "delta_free_energy": 3.712308238590367e-16
+      },
+      "status": "success",
+      "restriction_direction_consistent": true,
+      "closure_attribution_valid": true,
+      "default_minus_compatible": {
+        "delta_log_z": 0.0,
+        "delta_free_energy": 0.0
+      },
+      "compatible_minus_oracle": {
+        "delta_log_z": -6.071532165918825e-16,
+        "delta_free_energy": 3.712308238590367e-16
+      },
+      "closure_effect_detected": false
+    },
+    {
+      "input": "nested45",
+      "comparison_kind": "numerical_parity",
+      "program": "E0LegacyCompatible",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -2.1316282072803006e-14,
+        "delta_free_energy": 1.4210854715202004e-14
+      },
+      "status": "success"
+    },
+    {
+      "input": "nested45",
+      "comparison_kind": "closure_model_difference",
+      "program": "E0Default",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -2.331979445102661e-07,
+        "delta_free_energy": 1.4372473700063892e-07
+      },
+      "status": "success",
+      "restriction_direction_consistent": true,
+      "closure_attribution_valid": true,
+      "default_minus_compatible": {
+        "delta_log_z": -2.3319792319398402e-07,
+        "delta_free_energy": 1.437247227897842e-07
+      },
+      "compatible_minus_oracle": {
+        "delta_log_z": -2.1316282072803006e-14,
+        "delta_free_energy": 1.4210854715202004e-14
+      },
+      "closure_effect_detected": true
+    },
+    {
+      "input": "BE41",
+      "comparison_kind": "numerical_parity",
+      "program": "E0LegacyCompatible",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -1.7763568394002505e-15,
+        "delta_free_energy": 0.0
+      },
+      "status": "success"
+    },
+    {
+      "input": "BE41",
+      "comparison_kind": "closure_model_difference",
+      "program": "E0Default",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -1.7763568394002505e-15,
+        "delta_free_energy": 0.0
+      },
+      "status": "success",
+      "restriction_direction_consistent": true,
+      "closure_attribution_valid": true,
+      "default_minus_compatible": {
+        "delta_log_z": 0.0,
+        "delta_free_energy": 0.0
+      },
+      "compatible_minus_oracle": {
+        "delta_log_z": -1.7763568394002505e-15,
+        "delta_free_energy": 0.0
+      },
+      "closure_effect_detected": false
+    },
+    {
+      "input": "BE65",
+      "comparison_kind": "numerical_parity",
+      "program": "E0LegacyCompatible",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -7.105427357601002e-15,
+        "delta_free_energy": 1.7763568394002505e-15
+      },
+      "status": "success"
+    },
+    {
+      "input": "BE65",
+      "comparison_kind": "closure_model_difference",
+      "program": "E0Default",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -7.105427357601002e-15,
+        "delta_free_energy": 1.7763568394002505e-15
+      },
+      "status": "success",
+      "restriction_direction_consistent": true,
+      "closure_attribution_valid": true,
+      "default_minus_compatible": {
+        "delta_log_z": 0.0,
+        "delta_free_energy": 0.0
+      },
+      "compatible_minus_oracle": {
+        "delta_log_z": -7.105427357601002e-15,
+        "delta_free_energy": 1.7763568394002505e-15
+      },
+      "closure_effect_detected": false
+    }
+  ]
+}

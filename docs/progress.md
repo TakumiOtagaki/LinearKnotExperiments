@@ -150,3 +150,15 @@ was performed.
 
 計画、再生成手順、各tierの時間とポイント、review用artifactsは
 [計画の要約](full_bprna_array_plan_20261011.md) にまとめた。
+
+## 2026-10-11 E0 を更新された単一 oracle と PF 比較へ変更
+
+- 開発 tree を file:// で clean clone し、`deps/LinearCParty-2456f9b2/` を固定した。clone の変更していない build.sh で upstream `800e95a` + 0001/0002/0006/0007 の4パッチ oracle を `build/cparty-oracle-800e95a-4patches/` に build（終了値0）。manifest の base・順序・patch/source/binary/object hash を検証し、新しい oracle lock に保存した。旧7パッチ lock は変更せず残した。Closureパッチはなく、oracleは1種類。
+- E0 の LinearCParty は `15aa7742` のまま。E1/E2の元buildとexact/RNA library hashを検証し、inside専用observerをリンクした。Oracleも元objectsへ直接リンクする。AD/outside/BPP/MFE/profileをE0実行と報告から外し、既存AD道具は歴史的診断用と明記した。
+- 科学的な小確認：版間14入力・両policyの28/28比較で log Z / PF free energy が同値（最大差0）。新oracle対LegacyCompatibleは4証人すべて一致、12/12 jobs成功、最大絶対差はlog Z 2.1316282072803006e-14、free energy 1.4210854715202004e-14 kcal/mol。既定closureの差はnested45の1/4入力で検出した。BE41の過去のMFE差は今回の比較対象外であり、MFE/BPP一致は主張しない。
+- Config・array config・生成元script・解析をPFだけへ変更。実装側の絶対丸め誤差許容（log Z 1e-9、free energy 1e-10 kcal/mol、両方必要）を採用した。Closure差はcompatible parityが通った入力で数え、失敗と帰属できない入力も元の分母へ残す。
+- 新dry-runは実依存lock検証済み、304入力・21tasks・912jobsすべて未開始、5scriptsはbash構文検査成功。Gはpendingのため実行不可。旧envelopeを保守的に残した見込みは逐次24.11275 h、保存済み課金式で6.49496ポイント、h_rt envelopeで21.152ポイント。Inside専用の短tier実測による再校正、全件G、scheduler/group/module確認は未完了。
+- 開発上の検査：`python3 -m unittest discover -s tests` は全42テスト成功。PF比較の範囲、両許容、zero/nonfinite/RT、policy誤り、closure帰属と分母、重複・改変入力・方向違反を追加検証した。元のAD診断テストも残るがE0一致の証拠には使わない。
+- すべての変更は実験repo内。開発treeの変更・checkout・build、qsub、重い計算実験、commit、push、論文repoの他のファイルの変更は行っていない。
+
+[更新版計画](full_bprna_array_plan_20261011.md) と [再現・証拠一覧](e0_oracle_update_20261011/README.md) を参照。

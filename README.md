@@ -53,10 +53,15 @@ E1/E0 plans before execution; their current dry-runs explicitly reject pending G
 
 `scripts/scaffold_array.py plan/run/aggregate` generates and collects the G
 arrays using the existing posterior/helix procedure. `scripts/build_e0_tools.py`
-builds external exact observers for both closure policies and the seven-patch
-CParty oracle. `scripts/analyze_e0.py` keeps numerical parity separate from
-closure differences. Its tiny witness check retains a 0.0001707 kcal/mol MFE
-discrepancy on BE41 for follow-up; it does not loosen the declared tolerance.
+builds inside-only exact observers for both closure policies and the single
+four-patch CParty oracle (upstream `800e95a`, without a closure patch).
+`scripts/analyze_e0.py` compares log Z / PF free energy only, with absolute
+roundoff limits of 1e-9 and 1e-10 kcal/mol from the implementation's audit.
+It counts closure differences after compatible-versus-oracle parity passes.
+BPP and MFE equality are outside E0; the historical BE41 MFE difference is
+preserved in the earlier records. All four PF witnesses pass. The adopted
+LinearCParty remains `15aa7742`; 28 small comparisons with `2456f9b2` have
+identical PF values. See [the update evidence](docs/e0_oracle_update_20261011/).
 
 Run formal experiments as tier-specific TSUBAME Grid Engine array jobs.
 Interactive-node execution is limited to small development pilots.

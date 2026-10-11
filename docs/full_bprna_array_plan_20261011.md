@@ -2,7 +2,7 @@
 
 2026-10-11。qsub、commit、push は実行していない。
 実装の作業 tree と論文 repo のファイルは変更していない。
-計画・job script・係数合わせ・テストと、52 nt の G 生成および4証人の小さな確認だけを行った。
+計画・job script・係数合わせ・テストと、52 nt の G 生成、4証人の小確認、およびE0更新時の14入力・両policyの版間確認だけを行った。
 本実験の結果ではない。
 
 ## 入力と条件
@@ -101,32 +101,61 @@ Exact誤差と呼ばず、default と nocap の参照を分け、単調な改善
 全件の解析は task ごとに行い、RNA単位の結果を結合して tier 分布を作る。
 既存の全出力をメモリへ読む解析を26,063本へ一括適用しない。
 
-## E0 の oracle・入力・比較
+## E0 の oracle・入力・比較（2026-10-11 更新）
 
-固定 clean clone `deps/LinearCParty-15aa7742` にある `test/oracle/legacy_cparty/build.sh <out_dir>` を使用し、
-`build/legacy-cparty-59593650-7patches/` に upstream `59593650` + 7 patches の oracle を build した。
-ローカルにある upstream の Git objectsを読むだけでcloneし、再利用するmirrorを `deps/CParty-upstream-59593650.git` に置いた。
-出力の `src` がそのmirrorをoriginに持つので、以後のbuildも調整中の実装treeを変更しない。
-[Oracle lock](../manifests/software-cparty-oracle-59593650-7patches-20261011.json) にsource、patches、cache、parameter、CParty・wrapperのhashとbuild結果を保存した。
-Buildは成功。完成WMBのweak closureはこのoracleへ追加していない。
+E0 の LinearCParty は E1/E2 と同じ固定版 `15aa7742` を維持する。
+Oracle の定義と build 手順だけを clean clone `deps/LinearCParty-2456f9b2/` から採用した。
+開発 tree は `git clone file:///gs/bs/tga-satolab-gtex/otgk/LinearCParty` の参照元として使い、
+clone 側を `2456f9b2` に checkout した。開発 tree の変更・checkout・build は行っていない。
 
-互換CLIフラグがないため、[外部 API observer](../tools/e0_linear.cc) を作り、固定buildのライブラリにリンクした。
-`E0LegacyCompatible` と `E0Default` がそれぞれ `LegacyCompatible` と `RequireWeakClosure` を選ぶ。
-Log Z、ensemble free energy、BPP、MFE、7 contextをfull precisionで出力する。
-上流CLIのBPPはsampling由来なので、その出力をexact BPPとみなさない。
-[Oracle observer](../tools/e0_legacy.cc) は外部の観測用sourceコピーでPFのscalarをreverse ADへ置き換え、
-V/VPのpair-emissionにlog multiplierを付け、その微分からBPPを得る。
-Oracle本体のsource・7 patches・生成する導出は変更していない。
-元のoracle objectsへリンクした [非微分 observer](../tools/e0_legacy_scalar.cc) のroot値とも照合した。
-[Build手順](../scripts/build_e0_tools.py) と [observer lock](../manifests/software-e0-15aa7742-20261011.json) は
-ライブラリ・道具・観測コピー・oracle sourceとbinaryのhashも保持する。
+その clone の `test/oracle/legacy_cparty/build.sh <out_dir>` を変更せずに実行し、
+`build/cparty-oracle-800e95a-4patches/` への Release build は終了値0で成功した。
+Upstream base は `800e95af9d1a97555233e2c7b37d73dbaa1a92b4`、パッチは
+**0001 → 0002 → 0006 → 0007** の4本。Closure のパッチはなく、公式 oracle は1種類だけ。
+ネットワークでの再取得を避けるため、開発 tree 内に既にある oracle checkout の Git objects を
+`file://` で新しい `out/src` へ clone した。以後の reset・patch 適用・build は新しい clone 内で行った。
+`manifest.json` の base commit、patch 順序・hash、patched diff・source・binary/object hash を
+固定 clone の `oracle_config.verify_checkout` で検証した。
+[新しい oracle lock](../manifests/software-cparty-oracle-800e95a-4patches-20261011.json) は
+従来と同じ lock 項目に加え、検証した manifest 全体とその hash を保存する。
+[旧7パッチ lock](../manifests/software-cparty-oracle-59593650-7patches-20261011.json) は履歴として変更せず残した。
 
-bpRNAは50–99/100–199/200–299/300–399 ntから各75本、計300本をseed20261011で抽出した。
-[選定一覧](../manifests/cohorts/bprna-e0-subset-20261011.json) に全ID・hashを保存した。
-[証人4本](../data/e0-witnesses-20261011/dataset.json) はclosure14、nested45、BE41、BE65。
-論文 repo の保存例を読むだけでコピーし、BE65のforced-unpaired `X` も両実装で保存した。
-同じparameter file、37°C、dangles2、exactで3 observersを比較する。
-独立したanalytic profileのoracle APIはないので、profileの外部exact一致は認定しない。
+[外部 API observer](../tools/e0_linear.cc) は `15aa7742` の既存 exact/RNA libraries にリンクする。
+`E0LegacyCompatible` は `LegacyCompatible`、`E0Default` は既定の `RequireWeakClosure` を選び、
+inside の log Z・PF free energy と RT のみを full precision で出力する。
+[Oracle observer](../tools/e0_legacy_scalar.cc) は元の4パッチ oracle objects へ直接リンクし、
+MFE や sampling を求めず、スケーリング seed 0 の exact inside だけを観測する。
+AD の source copy、outside、BPP、MFE、profile は E0 の実行・報告経路から外した。
+既存の [AD 道具](../tools/e0_legacy.cc) と [AD header](../tools/legacy_ad.hh) は歴史的な診断用であり、
+新しい E0 の報告には使わない。
+[Build script](../scripts/build_e0_tools.py) と [E0 lock](../manifests/software-e0-15aa7742-20261011.json) は
+元の library hash を照合し、4パッチ manifest・元 objects・道具・binary の hash を保持する。
+新しい observer build は `build/e0-observers-15aa7742-800e95a-4patches/` に保存した。
+
+比較量は **log Z と PF free energy のみ**。
+[Config](../configs/e0_bprna_legacy_20261011.json) の合格条件は
+`|Δlog Z| ≤ 1e-9` **かつ** `|ΔPF free energy| ≤ 1e-10 kcal/mol`。
+`2456f9b2/test/tools/audit_legacy_inside_parity.py` の既定値を採用した、full-precision 値の絶対丸め誤差許容であり、
+相対誤差許容や public CLI の表示桁による許容を追加しない。
+実装担当の550件一致は実装側の証拠として参照する。今回このrepoで550件を再実行したとは扱わない。
+既定モード対 oracle は参考値として記録する。
+[Analysis](../scripts/analyze_e0.py) は default−oracle、default−compatible、compatible−oracle を分け、
+compatible の両許容条件が通った入力だけで、default−compatible がどちらかの許容を超えた件数を数える。
+失敗・timeout・artifact error・帰属できない入力を分母から落とさない。
+Closure による制限方向は Δlog Z ≤ 許容、Δfree energy ≥ −許容でも点検する。
+
+`15aa7742..2456f9b2` の src 変更（parameter-file validation、suboptimal、factorized forest）を確認し、
+固定 Turner04 parameter file、37°C、dangles2、両 closure policy で小入力を比較した。
+4証人＋長さ20/30/50/80の乱数8入力（x/Xを含む）＋VP split25＋BE境界41の計14入力、
+**28/28比較が同値、最大 |Δlog Z| = 0、最大 |ΔPF free energy| = 0**。
+最新側は clone の exact library target のみを別 build で作った。
+[再現 script](../scripts/check_e0_version_parity.py) と
+[値・入力・source diff・build/hash 記録](e0_oracle_update_20261011/e0_version_parity.json) を保存した。
+有効な固定 parameter file に対する小入力確認であり、beam/suboptimal の一致や一般的な同値性は主張しない。
+
+bpRNA は50–99/100–199/200–299/300–399 ntから各75本、計300本をseed20261011で抽出した既存 cohort を維持する。
+[選定一覧](../manifests/cohorts/bprna-e0-subset-20261011.json) と [証人4本](../data/e0-witnesses-20261011/dataset.json) は変更していない。
+同じ保存済み G を用い、BE65 の forced-unpaired X も保存する。
 
 | E0 tier nt | 入力数 | tasks | CLI jobs | 時間 h | resource / h_rt |
 |---|---:|---:|---:|---:|---|
@@ -137,21 +166,36 @@ bpRNAは50–99/100–199/200–299/300–399 ntから各75本、計300本をsee
 | 300–399 | 75 | 8 | 225 | 19.99 | node_q / 8 h |
 | 合計 | **304** | **21** | **912** | **24.11** | 5 arrays |
 
-E0のAD道具は12本E1のexact費用に時間×10、RSS係数×6を仮置きした。
-小証人は数値・出力の確認に限り、300 nt級の資源モデルを認定する測定ではない。
-短いtierから時間とメモリを確かめ、必要なら新しい計画版で改定する。
+[Array config](../configs/arrays/e0_bprna_legacy_20261011.json) は inside 専用 observer の計画として更新した。
+費用式は旧E0の保守的な envelope（E1 exact時間×10・memory係数×6）を当面維持する。
+AD を計算する費用とは説明しない。今回の小確認だけで、300 nt級のscalar inside費用を校正したとは扱わない。
+短い tier の実測で時間・RSS・capを確認し、必要なら新しい計画版で下げる。
+見積りは逐次仕事量24.11275 h、通常優先度の保存済み課金式で6.49496ポイント、
+全taskがh_rtまで使う枠で21.152ポイント。Queue待ちや再実行は含まない。
 
-小さな確認は12/12 CLI jobs成功。
-互換設定対oracleの最大 |Δlog Z| は2.14×10⁻¹⁴、BPP最大差は1.25×10⁻¹⁴。
-非微分observerとAD observerのlog Z・free energy・MFE・RTは4本とも同値。
-45 ntではdefault対互換のΔlog Zは約−2.33×10⁻⁷、BPP最大差は約2.33×10⁻⁷で、closureの効果を観測した。
-**BE41のMFEは互換設定でもoracleと0.0001706856 kcal/mol異なる。**
-事前の厳しい許容差1×10⁻⁷ではparity failureとして保存し、許容差を事後的に広げていない。
-整数エネルギーとPF重み由来の長loop値の丸め差が候補だが、原因は実装担当に要確認。
-`analyze_e0.py` はdefault−oracleだけでなく、default−互換と互換−oracleを分けて保存し、
-互換一致が確認できない量の差をclosureだけへ帰属しない。
-[確認結果](full_bprna_arrays_20261011/e0_witness_analysis.json) と
-[元oracleとのroot照合](full_bprna_arrays_20261011/e0_uninstrumented_checks.json) を参照する。
+[4証人 config](../configs/e0_witnesses_800e95a_4patches_20261011.json) の小確認は **12/12 jobs成功、4/4 PF parity成功**。
+最大 |Δlog Z| は `2.1316282072803006e-14`、最大 |ΔPF free energy| は `1.4210854715202004e-14 kcal/mol`。
+
+| 証人 | compatible−oracle Δlog Z | compatible−oracle ΔPF free energy (kcal/mol) | closure差を検出 |
+|---|---:|---:|---|
+| closure14 | −6.07e-16 | 3.71e-16 | なし（許容内） |
+| nested45 | −2.13e-14 | 1.42e-14 | あり |
+| BE41 | −1.78e-15 | 0 | なし（許容内） |
+| BE65 | −7.11e-15 | 1.78e-15 | なし（許容内） |
+
+Closure差は **1/4入力**（nested45）で検出した。
+Default−compatible は Δlog Z = `−2.3319792319398402e-7`、ΔPF free energy = `1.437247227897842e-7 kcal/mol`。
+Closure差の方向も全4入力で整合する。
+以前のBE41のMFE差 `0.0001706856 kcal/mol` は履歴として残すが、今回のE0では **比較対象外**。
+MFEやBPPが一致したとの主張へ広げない。
+[解析結果](e0_oracle_update_20261011/e0_witness_analysis.json) と
+[観測値・生ログhash](e0_oracle_update_20261011/e0_witness_observations.json) を保存した。
+
+新しい dry-run は実依存 lock の検証を通り、304入力・21tasks・912jobsすべて未開始。
+`pending_scaffolds=true` なので実行は拒否される。
+[更新版の summary・task割当・5scripts](e0_oracle_update_20261011/E0/summary.json) を正本とし、
+旧 `full_bprna_arrays_20261011/E0/` の artifact は履歴として残す。
+G全件を生成・検証した後に新しい ready plan を作る。
 
 ## 係数合わせとポイント
 
@@ -196,14 +240,15 @@ E1は標準のraw配置で約373万ファイル＋約70万jobディレクトリ�
 
 ## Dry-run artifacts と実行前の再計画
 
-[機械可読 summary](full_bprna_arrays_20261011/summary.json) に全tier・task/job数・時間・ポイント・plan/script hashを保存した。
+[当初の機械可読 summary](full_bprna_arrays_20261011/summary.json) に全tier・task/job数・時間・ポイント・plan/script hashを保存した。
+E0の依存とscriptは [更新版summary](e0_oracle_update_20261011/summary.json) を使う（見積り値は同じ）。
 各サブディレクトリにtask割当TSVと29本のscriptのcopyがある。
 実際の凍結plan、入力copy、task config、seed付き全scheduleは以下のignored領域。
 
 ```text
 results/runs/g-bprna-full-plan-20261011-v3/
 results/runs/e1-bprna-full-dry-20261011-v2/
-results/runs/e0-bprna-legacy-dry-20261011-v2/
+results/runs/e0-bprna-legacy-dry-20261011-800e95a-4patches/
 results/runs/e1-long-beam300-pilot-dry-20261011/
 results/runs/e1-long-beam400-pilot-dry-20261011/
 jobs/<対応するrun名>/<tier>.sh
@@ -231,20 +276,23 @@ python3 scripts/plan_array.py \
 python3 scripts/plan_array.py \
   --config configs/e0_bprna_legacy_20261011.json \
   --array-config configs/arrays/e0_bprna_legacy_20261011.json \
-  --software-root deps/LinearCParty-15aa7742 --build-dir build/e0-observers-15aa7742-v2 \
+  --software-root deps/LinearCParty-15aa7742 --build-dir build/e0-observers-15aa7742-800e95a-4patches \
   --out results/runs/e0-bprna-legacy-ready-20261011
 ```
 
 同じ方法でb300/b400のconfigとarray configを使い、新しいready planを作る。
 G全件のstatus・ID・S・G hash・LP版・設定が一致しない場合は再計画を拒否する。
 長配列を段階的に進める際はgenerated scriptへ `--through-beam` と、再開時の `--resume` を渡す。
-E0のMFE差を確認し、上限なしの長配列の資源見積りを実測で更新してから結果を解釈する。
+E0の短いtierでinside専用の資源見積りを校正し、上限なしの長配列の資源見積りも実測で更新してから結果を解釈する。
 
 ## 検証
 
-`python3 -m unittest discover -s tests`：36テスト成功。
+`python3 -m unittest discover -s tests`：更新後42テスト成功。
 399/400のexact境界、modeごとの係数、tierのcap、分割schedule、G未生成の実行拒否、
 Gのcompletion marker回復、変更されたGの拒否、幅ごとの停止・再開・失敗保持・journal回復、
-上限条件別の参照と最大幅失敗時の欠測、ADの独立した2構造ensemble、forced-unpaired入力を確認した。
+上限条件別の参照と最大幅失敗時の欠測、歴史的AD診断の独立した2構造ensemble、forced-unpaired入力を確認した。
+PFだけの比較、両絶対許容の適用、zero/nonfinite/RT metadata、closure帰属と分母、
+policy誤り、変更input、重複観測、制限方向違反を追加確認した。
+[検証記録](e0_oracle_update_20261011/verification.json) を保存した。
 52 ntのGは既存pilotとinput/G hashが一致した
 （[小確認](full_bprna_arrays_20261011/g_one_record_smoke.json)）。
