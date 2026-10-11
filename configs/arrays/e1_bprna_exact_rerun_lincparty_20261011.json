@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "measurement": "accuracy",
+  "seed": 20261011,
+  "tiers": [
+    {
+      "name": "exact_rerun",
+      "min_length": 1,
+      "max_length": 399,
+      "resource": "node_q",
+      "h_rt": "04:00:00",
+      "target_seconds": 9000,
+      "memory_budget_mib": 40960,
+      "task_overhead_mib": 1024,
+      "workers": 1,
+      "max_inputs_per_task": 60,
+      "job_limits": {
+        "memory_limit_mib": 32768,
+        "timeout_seconds": 1800
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 4.858360511310758e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.00020390528402763612,
+            "memory_exponent": 3
+          }
+        }
+      }
+    }
+  ],
+  "compact_plan": true,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1,
+    "fallback_remaining_files": 800000,
+    "fallback_basis": "Conservative fallback below the 2026-10-11 snapshot; verify before submission"
+  },
+  "note": "Rerun of failed exact jobs (lincparty) with a 32 GiB per-job cap and one worker."
+}

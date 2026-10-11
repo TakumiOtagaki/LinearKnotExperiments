@@ -1,0 +1,38 @@
+{
+ "schema_version": 1,
+ "created_utc": "2026-10-11T07:32:03.938937+00:00",
+ "source_manifest": "manifests/data-sources/bprna-local-20261008.json",
+ "source_manifest_sha256": "50be1bd0d5ada5c34381d44a041980457e3f2d8782b6ae227ba649b178987190",
+ "scaffold_dataset": "results/local/bprna-full-scaffolds-20261011/dataset.json",
+ "selection": {
+  "subset_of": "manifests/cohorts/bprna-full-20261011.json",
+  "reason": "exact LinearCParty jobs that failed with std::bad_alloc under too-low per-job memory caps in results/runs/e1-bprna-full-packed-20261011"
+ },
+ "records": [
+  {
+   "id": "bpRNA_RFAM_9089",
+   "length": 186,
+   "sequence_sha256": "f193245b6aa433cdd4470c8ba796198b0f5c833d2af86395e14171f8ea194892"
+  },
+  {
+   "id": "bpRNA_RFAM_26237",
+   "length": 187,
+   "sequence_sha256": "231e71578622c6ae463a80a05149de0c030a6522566d8a36fd74c1d8cfc1a8a2"
+  },
+  {
+   "id": "bpRNA_RFAM_26275",
+   "length": 187,
+   "sequence_sha256": "ddae6c8280fbd79d6c00aa7fc2fde1627cb972d61194e0448172c3e9eed3be06"
+  },
+  {
+   "id": "bpRNA_RFAM_9104",
+   "length": 189,
+   "sequence_sha256": "8a0b18643e6a34fae91d9fe0e49d4eb64372a116c76842254cb38dc6bda1585a"
+  },
+  {
+   "id": "bpRNA_RFAM_43255",
+   "length": 196,
+   "sequence_sha256": "6644cdab39487421a9caf28777d96dd80f9b7c54dff3753645efbe946900d5e8"
+  }
+ ]
+}

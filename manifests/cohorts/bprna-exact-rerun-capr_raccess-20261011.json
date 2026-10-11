@@ -1,0 +1,873 @@
+{
+ "schema_version": 1,
+ "created_utc": "2026-10-11T07:32:03.938937+00:00",
+ "source_manifest": "manifests/data-sources/bprna-local-20261008.json",
+ "source_manifest_sha256": "50be1bd0d5ada5c34381d44a041980457e3f2d8782b6ae227ba649b178987190",
+ "scaffold_dataset": "results/local/bprna-full-scaffolds-20261011/dataset.json",
+ "selection": {
+  "subset_of": "manifests/cohorts/bprna-full-20261011.json",
+  "reason": "exact LinearPKCapR,LinearPKRaccess jobs that failed with std::bad_alloc under too-low per-job memory caps in results/runs/e1-bprna-full-packed-20261011"
+ },
+ "records": [
+  {
+   "id": "bpRNA_RFAM_21078",
+   "length": 145,
+   "sequence_sha256": "617de7fb6a6176f327b57415441c2ae0899770ccbe3d3504f1e989292d1ee8a9"
+  },
+  {
+   "id": "bpRNA_RFAM_41817",
+   "length": 145,
+   "sequence_sha256": "3b2d8fd072373143e723409a2d5e4033534344e7b07ec45ccd5a1848f098d967"
+  },
+  {
+   "id": "bpRNA_RFAM_3336",
+   "length": 146,
+   "sequence_sha256": "4e3f44382527f72e4c51afb96a031b494fa6630713fd8ca6d88d01b2b367d31b"
+  },
+  {
+   "id": "bpRNA_RFAM_41629",
+   "length": 146,
+   "sequence_sha256": "0ecb6097759927dc7e6feeedac6b7a44db3d0304cb8a1a277859d0a13c23257a"
+  },
+  {
+   "id": "bpRNA_RFAM_16729",
+   "length": 147,
+   "sequence_sha256": "8d4ee1850655257b8fc61bf0b46945b4e4a560513170d6dc58914ce83ac79b84"
+  },
+  {
+   "id": "bpRNA_RFAM_41607",
+   "length": 148,
+   "sequence_sha256": "f1ba95d5fa021814906cd5e7a516138426029a247b57732bce3854281203de2a"
+  },
+  {
+   "id": "bpRNA_RFAM_716",
+   "length": 148,
+   "sequence_sha256": "0bee79d8b33eeb8c30936adc23c9fb5cb0fce6026cf706ba86ccd2db243adeec"
+  },
+  {
+   "id": "bpRNA_RFAM_41644",
+   "length": 149,
+   "sequence_sha256": "2e5fea1ce859aad818a0670053fafc6a8bd3d14fd7ad23ed6c83e6e5d98df7de"
+  },
+  {
+   "id": "bpRNA_RFAM_27865",
+   "length": 150,
+   "sequence_sha256": "315d5549fe6eaa1b939159af70bf18eb40edf0f026d76808949d2efab70e0b12"
+  },
+  {
+   "id": "bpRNA_RFAM_42822",
+   "length": 150,
+   "sequence_sha256": "307ddd5f8021d4c605395c289c482137b21b6b54d5afbb8e796af6664f4abcc6"
+  },
+  {
+   "id": "bpRNA_RFAM_41590",
+   "length": 152,
+   "sequence_sha256": "ca554356d797ee9484e4e1ae56e8b8bb8c2779a3aafea5a93161ad2986710a60"
+  },
+  {
+   "id": "bpRNA_RFAM_26810",
+   "length": 153,
+   "sequence_sha256": "64075c2be729d3e5c44f736234a1fadcf62e69fa5fe0ef786e2f34a76b02a469"
+  },
+  {
+   "id": "bpRNA_RFAM_41617",
+   "length": 153,
+   "sequence_sha256": "649d0f62449e1fb185b79f0c9a6921936589d21da06d80ef5b3407adc998a9a3"
+  },
+  {
+   "id": "bpRNA_RFAM_39817",
+   "length": 158,
+   "sequence_sha256": "b2e63d5e6174f4cc87bb092cafd627229f89764e0f307a4bc0bd92837bed5d83"
+  },
+  {
+   "id": "bpRNA_RFAM_39818",
+   "length": 158,
+   "sequence_sha256": "8b967f76f0b2207ebd2352bad8ef46d32f480d81b16418aee8403df787eb8a2c"
+  },
+  {
+   "id": "bpRNA_RFAM_39822",
+   "length": 158,
+   "sequence_sha256": "27b1dc1d4b89715d9f82e063a8d85f9d848091c5b9a7fbae91a91742f6dcf9ee"
+  },
+  {
+   "id": "bpRNA_RFAM_39825",
+   "length": 158,
+   "sequence_sha256": "e5807314a19dde53e424d48ddcfc10c8331b347f8573400918640ad6646dc6dc"
+  },
+  {
+   "id": "bpRNA_RFAM_39781",
+   "length": 159,
+   "sequence_sha256": "76885d7a6847acc459322fcf11993364c79baaac209daad0de143402b761e72f"
+  },
+  {
+   "id": "bpRNA_RFAM_37923",
+   "length": 160,
+   "sequence_sha256": "3727b052d1215d73b979d2370680ef052d3cfb0ab6ac5425ba423abc5d38fca9"
+  },
+  {
+   "id": "bpRNA_RFAM_39884",
+   "length": 160,
+   "sequence_sha256": "04de80995e03f73be27221a8ad24fd87e4c9ed864629d7e522dba6342251851a"
+  },
+  {
+   "id": "bpRNA_RFAM_36533",
+   "length": 161,
+   "sequence_sha256": "cee72d09a18f31f583231911653b826b2f7c7d8035e56a30ae8c19700b47f1ab"
+  },
+  {
+   "id": "bpRNA_RFAM_12861",
+   "length": 163,
+   "sequence_sha256": "b5e26c1404426c511124c1f9ad91889828ef744cb3d1779496ed60b0b77fee7d"
+  },
+  {
+   "id": "bpRNA_RFAM_26643",
+   "length": 163,
+   "sequence_sha256": "532de620104ca4d64ad8db66cb8d7087cf5cffa23fc01c25f7e6dc1d6bff4207"
+  },
+  {
+   "id": "bpRNA_RFAM_1057",
+   "length": 165,
+   "sequence_sha256": "d6383c66cf2c7116a829512f15396d434612b938c0fd86ffa5ed92a709eb1449"
+  },
+  {
+   "id": "bpRNA_RFAM_3296",
+   "length": 165,
+   "sequence_sha256": "df5147201394952f1a6e64e82b2d9b6878195eb87c7424a325f234502564b63f"
+  },
+  {
+   "id": "bpRNA_RFAM_36527",
+   "length": 165,
+   "sequence_sha256": "96b554c489461b3ae51fa20b622dc70d0a6e11763d10ee2d1b5fc46568ccc050"
+  },
+  {
+   "id": "bpRNA_RFAM_36538",
+   "length": 165,
+   "sequence_sha256": "89643a4e2e296e4eaf90e40aaf435652212426304a33a7beb8b6c7d3b70fe20e"
+  },
+  {
+   "id": "bpRNA_RFAM_37642",
+   "length": 165,
+   "sequence_sha256": "3ba1f1f98107692d0c4d3c3380a2eb606e709264b0c978ab31eb5de0318ecd0a"
+  },
+  {
+   "id": "bpRNA_RFAM_12930",
+   "length": 166,
+   "sequence_sha256": "26be497fe9de7fbd4ed735d486685a3e9d46d47c68a4aec8a6a139a7532b8155"
+  },
+  {
+   "id": "bpRNA_RFAM_33702",
+   "length": 166,
+   "sequence_sha256": "44972d7ad7cc97d59763a271da3f334db09bff5ab00e0459c476bb53352cc068"
+  },
+  {
+   "id": "bpRNA_RFAM_37792",
+   "length": 166,
+   "sequence_sha256": "110511baf03437914f59c324cbe93db3d3a8c28ecccfd256113ad7811dcd6334"
+  },
+  {
+   "id": "bpRNA_RFAM_39773",
+   "length": 166,
+   "sequence_sha256": "9e3e6a91117f74920317aac7c5243bb1a7190dbd912e0d7c3cb21c42a4d3154d"
+  },
+  {
+   "id": "bpRNA_RFAM_35105",
+   "length": 167,
+   "sequence_sha256": "9b418ac2b0584ccfda24172899f05e733145ce5fc2ca998af848db42e140cfdb"
+  },
+  {
+   "id": "bpRNA_RFAM_37654",
+   "length": 167,
+   "sequence_sha256": "b1f844961cf471013bb92b592226db9dc85420bc4ec1381c5acc7dd1d4392341"
+  },
+  {
+   "id": "bpRNA_RFAM_4490",
+   "length": 167,
+   "sequence_sha256": "b914bfd78d49a4d45af5490fbfe65cc0abc13e552ba408f533c7a71eef743c68"
+  },
+  {
+   "id": "bpRNA_RFAM_10627",
+   "length": 168,
+   "sequence_sha256": "9cc5732364c2d707c025c344d6335d6aefbdc3cf65ec379bfb09fd7218365daa"
+  },
+  {
+   "id": "bpRNA_RFAM_26074",
+   "length": 168,
+   "sequence_sha256": "95db2609dc9ec7721cbdc79623a75535b6fff87b3baa93a2e1ba484209ae0640"
+  },
+  {
+   "id": "bpRNA_RFAM_37707",
+   "length": 168,
+   "sequence_sha256": "9e2c177960d6b35ef8fb195180062084c5de666df891e4b8899c215afdbb93d3"
+  },
+  {
+   "id": "bpRNA_RFAM_37993",
+   "length": 168,
+   "sequence_sha256": "a958c20340dd31ca9d53d9d684708ff98652b21f8c0216ebb52adfcb8a8dd32c"
+  },
+  {
+   "id": "bpRNA_RFAM_724",
+   "length": 169,
+   "sequence_sha256": "69cf45c34d21538dc70c4289bc8a8da478ef2f60a7171de5d4c83e6bfde48a9f"
+  },
+  {
+   "id": "bpRNA_RFAM_16815",
+   "length": 171,
+   "sequence_sha256": "2f92f20e1bf7c9a4c7009a33b6a2ad73f35ae84f9fb774b496e76b1123e2a7f0"
+  },
+  {
+   "id": "bpRNA_RFAM_37643",
+   "length": 171,
+   "sequence_sha256": "0fc5d413da2c24fbb299c8c025fcdfeb3a54d9a9e31b8fd4cd2405428c56661d"
+  },
+  {
+   "id": "bpRNA_RFAM_37669",
+   "length": 171,
+   "sequence_sha256": "dd3642f9c81c5360872b42a96017feba60ed0bd586bf8309bad6154ac70a782b"
+  },
+  {
+   "id": "bpRNA_RFAM_37724",
+   "length": 171,
+   "sequence_sha256": "587dbf3533a30ac286e3a6e967c2008dc83e67b6a8a342219d4c465b7c819245"
+  },
+  {
+   "id": "bpRNA_RFAM_37821",
+   "length": 171,
+   "sequence_sha256": "fdef893fc8dc8895d129d7e1bb903a9a8f03ac7a68d659882deada3f7f7d78fd"
+  },
+  {
+   "id": "bpRNA_RFAM_12957",
+   "length": 172,
+   "sequence_sha256": "ac673b8e11990846f40102fc1cfb84f0fa971f109ace71183d9cee61058dd46b"
+  },
+  {
+   "id": "bpRNA_RFAM_37685",
+   "length": 172,
+   "sequence_sha256": "cf558a6989d31ace91d7b28b3d61da9343674c71e87c26e0e51e25800d6f7c75"
+  },
+  {
+   "id": "bpRNA_RFAM_37720",
+   "length": 172,
+   "sequence_sha256": "0419b08edd31163b87b94b5b97311c31531bff51ae6733a69835dfa5216e865d"
+  },
+  {
+   "id": "bpRNA_RFAM_37742",
+   "length": 172,
+   "sequence_sha256": "09300438cd0b995a0ae3cad0df383c7c7a0f328adbf0789b9209e117f0f9d34a"
+  },
+  {
+   "id": "bpRNA_RFAM_37758",
+   "length": 172,
+   "sequence_sha256": "e6a21045df45644b7f75462dc08801f70924ea6a1154d96ca21b901a1421d50a"
+  },
+  {
+   "id": "bpRNA_RFAM_26888",
+   "length": 173,
+   "sequence_sha256": "a753964d925a87793f1b3b2b69c15d64138cfe92fe819b6c12e265231ff676e1"
+  },
+  {
+   "id": "bpRNA_RFAM_37716",
+   "length": 173,
+   "sequence_sha256": "27a700ba628e724e8b08dee40a60804be725c462930ed8919d7d938617b50552"
+  },
+  {
+   "id": "bpRNA_RFAM_37752",
+   "length": 173,
+   "sequence_sha256": "b22a7dbf9a7596585cf1227baa9579da9b22e9da0c4f7d3be427e15f276ad8c4"
+  },
+  {
+   "id": "bpRNA_RFAM_37831",
+   "length": 173,
+   "sequence_sha256": "9bd7f5d4fc0430e5a85b61caf88ef7729e58df5653d00bfb000a7f682796f638"
+  },
+  {
+   "id": "bpRNA_RFAM_37863",
+   "length": 173,
+   "sequence_sha256": "87be7810eb334f6ba134336a575d02605e47f900e94ca31647b1b4cf2bee58cc"
+  },
+  {
+   "id": "bpRNA_RFAM_26155",
+   "length": 175,
+   "sequence_sha256": "29f7e4960026521f7f510b24f500925749dc6d3921c128226d0c63334aacf7c4"
+  },
+  {
+   "id": "bpRNA_RFAM_26260",
+   "length": 175,
+   "sequence_sha256": "4f188ee2ef2eed227c00e3e9037cdcbe30991904715acc7563ebc21995cc5ddc"
+  },
+  {
+   "id": "bpRNA_RFAM_37698",
+   "length": 175,
+   "sequence_sha256": "84d9a6b6b26a79df178d35999e650568d860b87e96d0d1b740fc115da6088930"
+  },
+  {
+   "id": "bpRNA_RFAM_37900",
+   "length": 176,
+   "sequence_sha256": "f21d5684b02807f2c809373fd0539ba6ea5118fe0ff9f42d65c401cc5bcb5d70"
+  },
+  {
+   "id": "bpRNA_RFAM_8645",
+   "length": 176,
+   "sequence_sha256": "4888752a3d064dc29c7d6a9320caf25fb2a55b5d8da95aa0e763f4d258224ab7"
+  },
+  {
+   "id": "bpRNA_RFAM_9392",
+   "length": 176,
+   "sequence_sha256": "dbc162999301db2c3481eb7b41f1f5fed20a6368dfbe9b247fe65f1f0fc5295a"
+  },
+  {
+   "id": "bpRNA_RFAM_14023",
+   "length": 177,
+   "sequence_sha256": "2cc3dfb16dc56cf070f8fed1b84cb72c04d682347773ee146b8df9bca0e5cc7b"
+  },
+  {
+   "id": "bpRNA_RFAM_38114",
+   "length": 177,
+   "sequence_sha256": "a89efb7495ca1f57674b4a1b37c2ea1371b94ca06dde875fff56264cf02083ec"
+  },
+  {
+   "id": "bpRNA_RFAM_39949",
+   "length": 177,
+   "sequence_sha256": "48854eb047c44efa1ff8d3916cbef9ccebfcb0099f27e4ca582292bb0e29ec70"
+  },
+  {
+   "id": "bpRNA_RFAM_10597",
+   "length": 178,
+   "sequence_sha256": "8a21ded3f79981c32d35bedb822c8ae9ff2c28d54efbe5e671563b904c5a7211"
+  },
+  {
+   "id": "bpRNA_RFAM_26067",
+   "length": 178,
+   "sequence_sha256": "ec6e20608d51ac86f41600a6f6d308a7e18c9bd0092260ab9236100b056d450e"
+  },
+  {
+   "id": "bpRNA_RFAM_26152",
+   "length": 178,
+   "sequence_sha256": "1c426d579928cec71dfc1039262b4ae665d2f8549201f6ba34db5042deccd319"
+  },
+  {
+   "id": "bpRNA_RFAM_26244",
+   "length": 178,
+   "sequence_sha256": "619790d01b59d07a8fb96b9dd576a5d24c100695f327175864621f8aebd90a2f"
+  },
+  {
+   "id": "bpRNA_RFAM_26302",
+   "length": 178,
+   "sequence_sha256": "48085731d7be27b4e5b8ef4c52da1bb9a6d098ebb1bcb8cfab52eb664120a7d8"
+  },
+  {
+   "id": "bpRNA_RFAM_26303",
+   "length": 178,
+   "sequence_sha256": "136ee49495c9b8b0aa94825c22882f1ab7a4947f271a35cd71c94fea365491de"
+  },
+  {
+   "id": "bpRNA_RFAM_26311",
+   "length": 178,
+   "sequence_sha256": "c9846ab4ba9616fac527e7ccaef7288481c506f8783147b5b441921a06d33c28"
+  },
+  {
+   "id": "bpRNA_RFAM_37730",
+   "length": 179,
+   "sequence_sha256": "5a38f5658bbb7a61dfb49444d20a9c8d11d38407320b66d5f1c0133297b11087"
+  },
+  {
+   "id": "bpRNA_RFAM_26683",
+   "length": 181,
+   "sequence_sha256": "a72770149577b193012c65bb3d2de67f414ea5fc6b4a291c7012323efe2a1af5"
+  },
+  {
+   "id": "bpRNA_RFAM_28065",
+   "length": 181,
+   "sequence_sha256": "8df77efe77a4aea33f35f7428d16dc1edaf5cf63a312fb93b02632bfa57cd98f"
+  },
+  {
+   "id": "bpRNA_RFAM_37885",
+   "length": 181,
+   "sequence_sha256": "90c07135c0f90bef158c17a20d0f18e1043aa9d2bbb3060a139e12238d6bb8a3"
+  },
+  {
+   "id": "bpRNA_RFAM_7097",
+   "length": 181,
+   "sequence_sha256": "9e2b21b940db7dc703ebbb97973ea40e10b28949cab0a7cc618af9712a2f0912"
+  },
+  {
+   "id": "bpRNA_RFAM_38281",
+   "length": 183,
+   "sequence_sha256": "606b8884addbc16c8f05c0bf768e91780c64ae3e84713c4c412bc9409b6c72f3"
+  },
+  {
+   "id": "bpRNA_RFAM_40684",
+   "length": 183,
+   "sequence_sha256": "35a083c2fcf060f5be00302f415a551673b4b85c48cf6a67940ffc869a99b956"
+  },
+  {
+   "id": "bpRNA_RFAM_26010",
+   "length": 184,
+   "sequence_sha256": "d1f3708d2deaa8016d68b67e7960189123359750f403690a841627bcb29b0538"
+  },
+  {
+   "id": "bpRNA_RFAM_26040",
+   "length": 184,
+   "sequence_sha256": "d4a8d4f218415397cdb475a57f710793f984adbaa86fc436a69c1ffaa4a8fd89"
+  },
+  {
+   "id": "bpRNA_RFAM_3068",
+   "length": 184,
+   "sequence_sha256": "821e57c8c94045cd455b397d1905a53f379c2a4b63bbd5e0744aae1c7b040415"
+  },
+  {
+   "id": "bpRNA_RFAM_26056",
+   "length": 185,
+   "sequence_sha256": "89e84753711f88c2050ada8546638795d2671d3e9a697864b3e8430dd0056dbf"
+  },
+  {
+   "id": "bpRNA_RFAM_9081",
+   "length": 185,
+   "sequence_sha256": "2b3f6c8e4adb5d15cf3803bb99cad4f8de17ba7c8a3f351b48b5945fc116bbba"
+  },
+  {
+   "id": "bpRNA_RFAM_9089",
+   "length": 186,
+   "sequence_sha256": "f193245b6aa433cdd4470c8ba796198b0f5c833d2af86395e14171f8ea194892"
+  },
+  {
+   "id": "bpRNA_RFAM_14670",
+   "length": 187,
+   "sequence_sha256": "5a5772061581f4d60aab51b89505cf2ac15474e816b7ba2109949489f2f70507"
+  },
+  {
+   "id": "bpRNA_RFAM_26008",
+   "length": 187,
+   "sequence_sha256": "deb081a76e41b59369216301b6f416a51238c1fa5b4dac608f8819a9ce6cb558"
+  },
+  {
+   "id": "bpRNA_RFAM_26027",
+   "length": 187,
+   "sequence_sha256": "61a86b5a61813ad2f08380c843704c5da84b7524b88be9da14b1e35bd34fd9dc"
+  },
+  {
+   "id": "bpRNA_RFAM_26072",
+   "length": 187,
+   "sequence_sha256": "b3de336ab9ec12a567506731b55794490bf07318a9ccbcdd11776c6ce05cc3b1"
+  },
+  {
+   "id": "bpRNA_RFAM_26098",
+   "length": 187,
+   "sequence_sha256": "9f42edbf8ed78392af19f7a70c776a3fcbfed9448fbb9f0d9e4f811db4c631a3"
+  },
+  {
+   "id": "bpRNA_RFAM_26100",
+   "length": 187,
+   "sequence_sha256": "9f2b5053ecaae4abe7e8839a4ab0e57b7e1f9901ba5ad74174069673b6e585df"
+  },
+  {
+   "id": "bpRNA_RFAM_26103",
+   "length": 187,
+   "sequence_sha256": "78de14cd3a81530196463727a7be4916154fa4fe4418f4355a5d6f06cac70e4e"
+  },
+  {
+   "id": "bpRNA_RFAM_26104",
+   "length": 187,
+   "sequence_sha256": "a7683be8a37c04a6d4b5c3eee492b2283c9f532d37791d56a9c4de71c546d16e"
+  },
+  {
+   "id": "bpRNA_RFAM_26114",
+   "length": 187,
+   "sequence_sha256": "c2c64ac689847ae8f46c7f62c8ce19c982821c2c0760a6599ec4070f2b41b10b"
+  },
+  {
+   "id": "bpRNA_RFAM_26138",
+   "length": 187,
+   "sequence_sha256": "ec78e56bc9d839be8818c4b2eec5cb8f2d8f5963e6f9ca3454d7a8989f041250"
+  },
+  {
+   "id": "bpRNA_RFAM_26141",
+   "length": 187,
+   "sequence_sha256": "baed602b690b2a2f63dea4bd9455104b2ba57c79755ebefb15ca1cde2871d32a"
+  },
+  {
+   "id": "bpRNA_RFAM_26166",
+   "length": 187,
+   "sequence_sha256": "c8f19069f5a3190215904c8201f896fa7ba56db0094171bf9e027da34d4603a4"
+  },
+  {
+   "id": "bpRNA_RFAM_26193",
+   "length": 187,
+   "sequence_sha256": "3a7636ad08ddda52817c30d4c60ae0f7b494f6175673febc6b1de51c7e50019b"
+  },
+  {
+   "id": "bpRNA_RFAM_26198",
+   "length": 187,
+   "sequence_sha256": "377c27e69e9b4f1f0a6c0ca435451e8ca775790a4a05ac7e047898e69ae37bf8"
+  },
+  {
+   "id": "bpRNA_RFAM_26203",
+   "length": 187,
+   "sequence_sha256": "a6157b0e37587908cde715149166405ca9e89cb4bbc78f8cab914380b6fa7a45"
+  },
+  {
+   "id": "bpRNA_RFAM_26224",
+   "length": 187,
+   "sequence_sha256": "cd7621c591c18574606b1828ced0f1a845a0dcf7301be4906a3bd9b7206b7a1d"
+  },
+  {
+   "id": "bpRNA_RFAM_26229",
+   "length": 187,
+   "sequence_sha256": "29a91b154cd55f841243b45b4d966e0e55c58815c07645c8d1d1280fcd5c867f"
+  },
+  {
+   "id": "bpRNA_RFAM_26232",
+   "length": 187,
+   "sequence_sha256": "76015a3eb1bba53de9f74824bad92994b21fd15c2ff5e69fe3491f1a45f3338e"
+  },
+  {
+   "id": "bpRNA_RFAM_26237",
+   "length": 187,
+   "sequence_sha256": "231e71578622c6ae463a80a05149de0c030a6522566d8a36fd74c1d8cfc1a8a2"
+  },
+  {
+   "id": "bpRNA_RFAM_26239",
+   "length": 187,
+   "sequence_sha256": "2df3460986a02a3a2539fa9ce6323fa04e42d2a809c3493c8438ee605638daeb"
+  },
+  {
+   "id": "bpRNA_RFAM_26263",
+   "length": 187,
+   "sequence_sha256": "ebf42d0882a22a52dcf590f2596d0c8865f697875770c4f4f13804c6e7ca8b7b"
+  },
+  {
+   "id": "bpRNA_RFAM_26273",
+   "length": 187,
+   "sequence_sha256": "418ae8bd856fa0c7bd4d53f0173ead33914d52d174fde273680d06aaeedf888f"
+  },
+  {
+   "id": "bpRNA_RFAM_26274",
+   "length": 187,
+   "sequence_sha256": "b2e50c6b502f1a4088d85965fa2294f6193449071ab081a5a3accd8e602cfeb4"
+  },
+  {
+   "id": "bpRNA_RFAM_26275",
+   "length": 187,
+   "sequence_sha256": "ddae6c8280fbd79d6c00aa7fc2fde1627cb972d61194e0448172c3e9eed3be06"
+  },
+  {
+   "id": "bpRNA_RFAM_26288",
+   "length": 187,
+   "sequence_sha256": "1bd2703188cf7f279ec40835bbdc596b8db986faebde92b17b730454ea60ff89"
+  },
+  {
+   "id": "bpRNA_RFAM_26291",
+   "length": 187,
+   "sequence_sha256": "e6df1ae9dcf5ef89b52c902c32a8787de7688c2caa5a847f30e1ecf98dbce78e"
+  },
+  {
+   "id": "bpRNA_RFAM_966",
+   "length": 187,
+   "sequence_sha256": "2c2502a7be3b250e95dc23f9b662395f3a585b46bcc1e74f33a8443b8c718630"
+  },
+  {
+   "id": "bpRNA_RFAM_26503",
+   "length": 188,
+   "sequence_sha256": "0fccfb19bfe2a36f4646f50995c01babc3ca62f971e23213c1e6cfdd2f2e029e"
+  },
+  {
+   "id": "bpRNA_RFAM_26668",
+   "length": 188,
+   "sequence_sha256": "ca105294d143140d84bd1bffc199891d003600304722b80688509b2e67199650"
+  },
+  {
+   "id": "bpRNA_RFAM_34895",
+   "length": 188,
+   "sequence_sha256": "57821d2467e0994e5718acdbcbb03531da7010e385bf7641e8c3c02658ccc111"
+  },
+  {
+   "id": "bpRNA_RFAM_41442",
+   "length": 188,
+   "sequence_sha256": "02fdaba7dd6fd67aceaf4c55e44fa1ffc379a10d5bb5c26ad011fd7a4866f675"
+  },
+  {
+   "id": "bpRNA_RFAM_24629",
+   "length": 189,
+   "sequence_sha256": "2cef179627e8747c9002cb6c8da113936602920fdac5f635f80a44519ab39da1"
+  },
+  {
+   "id": "bpRNA_RFAM_37962",
+   "length": 189,
+   "sequence_sha256": "33f89b67174cf30a3c819b5a156158fefe2317509e4115cb3749d936be043b0a"
+  },
+  {
+   "id": "bpRNA_RFAM_883",
+   "length": 189,
+   "sequence_sha256": "7403687058f458f46eb1814fd05faf16cfc4ecbbba54cc9afbd31f4dbcba075b"
+  },
+  {
+   "id": "bpRNA_RFAM_9104",
+   "length": 189,
+   "sequence_sha256": "8a0b18643e6a34fae91d9fe0e49d4eb64372a116c76842254cb38dc6bda1585a"
+  },
+  {
+   "id": "bpRNA_RFAM_26715",
+   "length": 190,
+   "sequence_sha256": "8e98bd4cef73d8c626c963ae50802f715eafcf35e92ab2e3b0fe21d67b25116c"
+  },
+  {
+   "id": "bpRNA_RFAM_9287",
+   "length": 190,
+   "sequence_sha256": "e241126a71e7a6d21af3debd74d24d886107a5b29248e5b7e473b674a2fec831"
+  },
+  {
+   "id": "bpRNA_RFAM_26218",
+   "length": 191,
+   "sequence_sha256": "f5537341415493b25f09e5aa0531f151d2e7f272fd5eeb1e57e7f91037d419fa"
+  },
+  {
+   "id": "bpRNA_RFAM_39207",
+   "length": 191,
+   "sequence_sha256": "1976192a9670e41959bdd54a2ffc4454c706e7634aa17f81028801b0fd4ea4fd"
+  },
+  {
+   "id": "bpRNA_RFAM_1016",
+   "length": 192,
+   "sequence_sha256": "96e3f6e2013c3c76af0100208347efa8dcee114c09eff2694847d6b139ab2a82"
+  },
+  {
+   "id": "bpRNA_RFAM_39104",
+   "length": 192,
+   "sequence_sha256": "bb2072eb4c903a34803ee75cd24d341441a395be55409bfeaff44108039bf2f5"
+  },
+  {
+   "id": "bpRNA_RFAM_41660",
+   "length": 192,
+   "sequence_sha256": "2747bf10842a50c8143801b0367c062ede0e0b4364ff5c8dbf3b16fb4ec6740c"
+  },
+  {
+   "id": "bpRNA_RFAM_39251",
+   "length": 193,
+   "sequence_sha256": "5e9a9cd17955598d700a75a1fee803347c409f06d115143e5c54fb76f3674727"
+  },
+  {
+   "id": "bpRNA_RFAM_8630",
+   "length": 193,
+   "sequence_sha256": "417ceb57c91bd0b1216c2e60d9da3cbfd57d090bfb9e61164cd7bc1250d28761"
+  },
+  {
+   "id": "bpRNA_RFAM_921",
+   "length": 193,
+   "sequence_sha256": "9778f3f7a77016158f4bd7666ca3c25bc475226769e1e1e7ab2a8a3b85fb0611"
+  },
+  {
+   "id": "bpRNA_RFAM_9268",
+   "length": 193,
+   "sequence_sha256": "4421ae927a34ec09c6a34b22fc483ab7f83479958658001382bfaaf8bd8eb86d"
+  },
+  {
+   "id": "bpRNA_RFAM_37823",
+   "length": 194,
+   "sequence_sha256": "c4a07d56b64038cdd3efe4ac3b9a9ffbe46d151bf49b9721dd504695e86e2c6e"
+  },
+  {
+   "id": "bpRNA_RFAM_37886",
+   "length": 194,
+   "sequence_sha256": "5ea59f9c9c80496f5c7f2686ca42a99b58226b3efa6352064eb5b159dbd0f47d"
+  },
+  {
+   "id": "bpRNA_RFAM_28062",
+   "length": 195,
+   "sequence_sha256": "90a4df4d1df3a08db247fdaf74207fd261904f5f9fbdbd9c14c5fd20e540a4e0"
+  },
+  {
+   "id": "bpRNA_RFAM_35733",
+   "length": 195,
+   "sequence_sha256": "88db4d6d551bfb6991b27728f594946f0d1a3d6a349d488f428ff6c25fa317ac"
+  },
+  {
+   "id": "bpRNA_RFAM_27386",
+   "length": 196,
+   "sequence_sha256": "9411f9bf686730f81b935d34f03c2e6c20bf141c0274e0fa90ba6f2cfb12914d"
+  },
+  {
+   "id": "bpRNA_RFAM_33990",
+   "length": 196,
+   "sequence_sha256": "b07d0d474d4057ce9af35aa2377c021d61bc5d745902e8b7fb4106c42daf44e9"
+  },
+  {
+   "id": "bpRNA_RFAM_43255",
+   "length": 196,
+   "sequence_sha256": "6644cdab39487421a9caf28777d96dd80f9b7c54dff3753645efbe946900d5e8"
+  },
+  {
+   "id": "bpRNA_RFAM_18352",
+   "length": 197,
+   "sequence_sha256": "c6fbf27355c4f2be58cef43799b140fd0f1356c0652599ebc6df3ca655320796"
+  },
+  {
+   "id": "bpRNA_RFAM_18357",
+   "length": 197,
+   "sequence_sha256": "eb95146f564c3618aec7a72ecb81b311a5d10b57bc423958f6e35e15a2302b14"
+  },
+  {
+   "id": "bpRNA_RFAM_26061",
+   "length": 197,
+   "sequence_sha256": "25128763104660ddd7c4bfd8b22553f0b194d482847ace46dabb3b6b1af9c6b2"
+  },
+  {
+   "id": "bpRNA_RFAM_9168",
+   "length": 197,
+   "sequence_sha256": "cd9847791f5b41487fdc0a27a6b4813e1d248c61adbf93e7c7b363220cbd9f97"
+  },
+  {
+   "id": "bpRNA_RFAM_14329",
+   "length": 198,
+   "sequence_sha256": "6a4b0cd20ddd836a54f8b2509dd99e8a15aeb84525d4fe7643e7d6c4a6d6ee58"
+  },
+  {
+   "id": "bpRNA_RFAM_3115",
+   "length": 198,
+   "sequence_sha256": "7c46ed3c5ef9f3a864fccda3f68875e15bab3f83e4c4c4c6c27fc5c7672cf18d"
+  },
+  {
+   "id": "bpRNA_RFAM_3817",
+   "length": 198,
+   "sequence_sha256": "83ab8668c3cd90b1ac5bda27426092f60b9ca0ee12ecefec5929007e68291539"
+  },
+  {
+   "id": "bpRNA_RFAM_41900",
+   "length": 198,
+   "sequence_sha256": "4f50171f392d2be1a4a2779c91f2c4cbead5fae13876abfd7afd33b53e728549"
+  },
+  {
+   "id": "bpRNA_RFAM_43263",
+   "length": 198,
+   "sequence_sha256": "58d2bb252a7e9bd53feb571e423aebdb5c4f885bf3521b7ae270e22cbad7ba83"
+  },
+  {
+   "id": "bpRNA_RFAM_26235",
+   "length": 199,
+   "sequence_sha256": "901816c7eb21422861f9040c522826ca44bfb05ffb125ce04baa8c0c1e78f5ee"
+  },
+  {
+   "id": "bpRNA_RFAM_3823",
+   "length": 199,
+   "sequence_sha256": "b597bd2d9298354b44fc10677e94b7fbafcb23dd86a644f6f6482b194eb10584"
+  },
+  {
+   "id": "bpRNA_SRP_211",
+   "length": 238,
+   "sequence_sha256": "c7f2308c7a50cde654f9f8c8411db70c38ad798d0deca386dc3695486eb7f911"
+  },
+  {
+   "id": "bpRNA_RFAM_10410",
+   "length": 249,
+   "sequence_sha256": "6591c3ac803aa5901110a600b3630cede251b79f37d0745317e4db840ca1891e"
+  },
+  {
+   "id": "bpRNA_RFAM_10408",
+   "length": 262,
+   "sequence_sha256": "ea489e6504bffc22e1fe0f678ea3fedd19f3bf87339432cd0af5d976ae5a6e46"
+  },
+  {
+   "id": "bpRNA_RFAM_10412",
+   "length": 267,
+   "sequence_sha256": "3308416a445dd6deac04203d2124f7422c20554177e57186b637168e92b05247"
+  },
+  {
+   "id": "bpRNA_RFAM_10616",
+   "length": 277,
+   "sequence_sha256": "d306eb11917ccca645f695520976f3647f541922ab37b744dff16f15ddce64a8"
+  },
+  {
+   "id": "bpRNA_RFAM_36019",
+   "length": 290,
+   "sequence_sha256": "d2b29fed164015489fd1b24469898b2fa9d6d4a14c7353f33acfcf31b6360963"
+  },
+  {
+   "id": "bpRNA_RNP_31",
+   "length": 293,
+   "sequence_sha256": "ea4505d732d9c66040c38f4f9841ff21ab72e9c003ad5a0a5eb3b9bdfdce3ab8"
+  },
+  {
+   "id": "bpRNA_RFAM_36005",
+   "length": 296,
+   "sequence_sha256": "6ebe43944c989157762cf4e5e7f783331cafb868196d56fc9e851126228ac40d"
+  },
+  {
+   "id": "bpRNA_RFAM_12432",
+   "length": 297,
+   "sequence_sha256": "a72177bf054728753ee4bcd281e08aea57cec10f540cb124e0643ed26a7f97f0"
+  },
+  {
+   "id": "bpRNA_RFAM_12440",
+   "length": 299,
+   "sequence_sha256": "1f3c30504f83fbc237117ec72dbbb839a110c2a39d74106c2fc1aff5355c2bd7"
+  },
+  {
+   "id": "bpRNA_RFAM_41239",
+   "length": 324,
+   "sequence_sha256": "6fd7943d060b97c36c0f35835f36befacf8cbeae21709d112ac94f140937fd2c"
+  },
+  {
+   "id": "bpRNA_RFAM_16640",
+   "length": 342,
+   "sequence_sha256": "b9f769266fb756ff17bced92e37c3035cc727134c08432172fbe5d9f1362e396"
+  },
+  {
+   "id": "bpRNA_RFAM_35887",
+   "length": 350,
+   "sequence_sha256": "b36e39b8ac07e1d2569abb8ab540f0dd11dad7965beb64775d107c8bc27b44d5"
+  },
+  {
+   "id": "bpRNA_RFAM_2845",
+   "length": 352,
+   "sequence_sha256": "5ab1efa8056ac40d5a815090bf967855af40c47c7e3b6636c451f31136e16b54"
+  },
+  {
+   "id": "bpRNA_tmRNA_435",
+   "length": 353,
+   "sequence_sha256": "c8ed8ad771dc3c3e653d4d051e22c305d2ee1663f11bf3e953cca9308f66f9c9"
+  },
+  {
+   "id": "bpRNA_tmRNA_377",
+   "length": 366,
+   "sequence_sha256": "befea36c09112c04c99e427768c217a6413a814fcaf2bd25b2db096f92594db4"
+  },
+  {
+   "id": "bpRNA_RFAM_10398",
+   "length": 370,
+   "sequence_sha256": "5c5fd30ec4172679d7eefa9f7dc3c7b39d3bb5f53582d53962bd31ad388fb112"
+  },
+  {
+   "id": "bpRNA_RFAM_18470",
+   "length": 370,
+   "sequence_sha256": "4aae0efebbd2e7059af1b4c11fc5afbe9c5d6bc6ac4874fae7f85ee155dbb248"
+  },
+  {
+   "id": "bpRNA_RNP_69",
+   "length": 376,
+   "sequence_sha256": "a81baf1b0c0eb2d1c04fdb2c6461d43d03566352886c442d60ab4d411488a3e4"
+  },
+  {
+   "id": "bpRNA_RFAM_10395",
+   "length": 378,
+   "sequence_sha256": "64a07f369d368ad5a89d8945b84e5107c83fc9603bb991d6fe85940862cf6b94"
+  },
+  {
+   "id": "bpRNA_tmRNA_498",
+   "length": 389,
+   "sequence_sha256": "ed276a7a3d2e96eddae9909cb702cfdc15087c95db13e78d48ec3dd3a4d7f778"
+  },
+  {
+   "id": "bpRNA_RFAM_39973",
+   "length": 391,
+   "sequence_sha256": "da3e20bbdd8753469dfd0a3a0e79de753f6b6c8e0243ac7040a71735d113bb51"
+  },
+  {
+   "id": "bpRNA_RFAM_27417",
+   "length": 396,
+   "sequence_sha256": "4c89c6a3ee47af590400a48ea1cd3f672d8479a42f8179b32f1e03ac5da219bd"
+  },
+  {
+   "id": "bpRNA_tmRNA_708",
+   "length": 397,
+   "sequence_sha256": "94fbd3cd43beff3676129f12c1e3212346eba8d19dc18064f6ae92a28c3768bb"
+  }
+ ]
+}
