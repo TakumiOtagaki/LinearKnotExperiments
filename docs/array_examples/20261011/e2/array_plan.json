@@ -1,0 +1,734 @@
+{
+  "schema_version": 1,
+  "run_kind": "array",
+  "created_utc": "2026-10-11T06:50:48.129571+00:00",
+  "output_dir": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011",
+  "config": {
+    "schema_version": 1,
+    "name": "e2-rnacentral-15aa7742-20261011",
+    "purpose": "development",
+    "energy_parameter_file": "params/rna_Turner04.par",
+    "model_settings": {
+      "temperature_celsius": 37,
+      "temperature_source": "CLI/API default; verify RT metadata",
+      "build_revision_verified": false
+    },
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "LC_ALL": "C"
+    },
+    "timeout_seconds": 3600,
+    "warmups": 0,
+    "repetitions": 1,
+    "inputs": [
+      {
+        "name": "URS000233CDDE",
+        "path": "data/rnacentral-initial-20261008/URS000233CDDE.txt"
+      },
+      {
+        "name": "URS00019626CE",
+        "path": "data/rnacentral-initial-20261008/URS00019626CE.txt"
+      },
+      {
+        "name": "URS000239D8A4",
+        "path": "data/rnacentral-initial-20261008/URS000239D8A4.txt"
+      },
+      {
+        "name": "URS00023C9544",
+        "path": "data/rnacentral-initial-20261008/URS00023C9544.txt"
+      },
+      {
+        "name": "URS000241043C",
+        "path": "data/rnacentral-initial-20261008/URS000241043C.txt"
+      },
+      {
+        "name": "URS000238C72C",
+        "path": "data/rnacentral-retry-20261011/URS000238C72C.txt"
+      },
+      {
+        "name": "URS00023A4DB9",
+        "path": "data/rnacentral-retry-20261011/URS00023A4DB9.txt"
+      }
+    ],
+    "modes": [
+      {
+        "name": "beam100_default",
+        "args": [
+          "-b",
+          "100",
+          "--max-hairpin",
+          "30",
+          "--max-case3-depth",
+          "30"
+        ]
+      }
+    ],
+    "programs": [
+      {
+        "name": "LinearCParty",
+        "args": [
+          "--bpp-cutoff",
+          "0"
+        ],
+        "outputs": [
+          {
+            "name": "bpp.tsv",
+            "flag": "--bpp"
+          }
+        ]
+      },
+      {
+        "name": "LinearPKCapR",
+        "args": []
+      },
+      {
+        "name": "LinearPKRaccess",
+        "args": [
+          "--access-len",
+          "1,4,8,16",
+          "--probability"
+        ]
+      }
+    ],
+    "analysis": {
+      "scope": "Whole-CLI feasibility, time/RSS and output consistency for all seven saved RNAcentral inputs. One measurement per job; no timing ranking or long-input exact accuracy reference."
+    },
+    "software_lock": "manifests/software-pilot-15aa7742.json",
+    "memory_limit_mib": 65536,
+    "runtime_eligibility": {
+      "implementation_max_length": null,
+      "reason": "The former n <= 8191 tree-range exclusion is removed for the next pinned implementation. All seven preselected panel records are included; this config is a feasibility template pending the NEXT software lock.",
+      "selected_ids": [
+        "URS000233CDDE",
+        "URS00019626CE",
+        "URS000239D8A4",
+        "URS00023C9544",
+        "URS000241043C",
+        "URS000238C72C",
+        "URS00023A4DB9"
+      ],
+      "deferred_records": [],
+      "scaffold_datasets": [
+        {
+          "path": "data/rnacentral-initial-20261008/dataset.json",
+          "sha256": "e45eca921b6d4d327e91ad61406f0103273b45e01308cfbe98bced7c1f3e2487"
+        },
+        {
+          "path": "data/rnacentral-retry-20261011/dataset.json",
+          "sha256": "6ec4c85cfcd0a40996f9c14a7656aaab9db9c4f50179c8b5fdd607d0f6f89b7b"
+        }
+      ],
+      "retry_provenance": {
+        "path": "manifests/rnacentral-scaffold-retry-20261011.json",
+        "sha256": "56ea032c6a9dd99694ca09f16773e0c9a488344fd4ddd8f52b73da86e5a881de"
+      }
+    },
+    "order": {
+      "kind": "blocked_random",
+      "seed": 20261011
+    }
+  },
+  "array_config": {
+    "schema_version": 1,
+    "measurement": "timing",
+    "seed": 20261011,
+    "tiers": [
+      {
+        "name": "rna_4_8kb",
+        "min_length": 1,
+        "max_length": 8191,
+        "resource": "node_f",
+        "h_rt": "03:00:00",
+        "target_seconds": 3600,
+        "memory_budget_mib": 73728,
+        "task_overhead_mib": 1024,
+        "workers": 1,
+        "cost_model": {
+          "basis": "Uncalibrated planning example: length times CLI conditions, not a measured scaling law. Refit from the adopted fixed-build pilot before formal collection.",
+          "seconds_per_nt_condition": 0.03,
+          "safety_factor": 1.5,
+          "memory_base_mib": 4096,
+          "mib_per_nt": 1
+        }
+      },
+      {
+        "name": "rna_8_20kb",
+        "min_length": 8192,
+        "max_length": 19999,
+        "resource": "node_f",
+        "h_rt": "02:00:00",
+        "target_seconds": 3000,
+        "memory_budget_mib": 73728,
+        "task_overhead_mib": 1024,
+        "workers": 1,
+        "cost_model": {
+          "basis": "Uncalibrated planning example, with a smaller task time budget for less certain long-input behavior. Refit from a fixed-build pilot.",
+          "seconds_per_nt_condition": 0.03,
+          "safety_factor": 1.5,
+          "memory_base_mib": 8192,
+          "mib_per_nt": 1
+        }
+      },
+      {
+        "name": "rna_20_30kb",
+        "min_length": 20000,
+        "max_length": 30000,
+        "resource": "node_f",
+        "h_rt": "05:00:00",
+        "target_seconds": 10000,
+        "memory_budget_mib": 73728,
+        "task_overhead_mib": 1024,
+        "workers": 1,
+        "cost_model": {
+          "basis": "Uncalibrated conservative long-input example; the full condition matrix makes each 20-30 kb sequence a separate task. Validate time and memory from a fixed-build pilot.",
+          "seconds_per_nt_condition": 0.07,
+          "safety_factor": 1.5,
+          "memory_base_mib": 8192,
+          "mib_per_nt": 1.5
+        }
+      }
+    ]
+  },
+  "original_config_sha256": "0b259acdc0fc037a86d06314ec80ffee9e20bc9f22df7fcf02f1a8e9569d5ca8",
+  "array_config_sha256": "794f021b70d49553cc1c81d7de662d9e31b4ca9df5aaa02916007efe5f4abf72",
+  "software_lock": {
+    "schema_version": 1,
+    "created_utc": "2026-10-11T06:21:54.401629+00:00",
+    "purpose": "development",
+    "source_repository": "https://github.com/TakumiOtagaki/LinearCParty",
+    "source_commit": "15aa7742a5497164573294e37972ff7ccf9ddfe1",
+    "source_git_state": {
+      "commit": "15aa7742a5497164573294e37972ff7ccf9ddfe1",
+      "dirty": false,
+      "status": "",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source_tree": "e73e04b946cfd2f5497c66a101968ea8db0842eb",
+    "build_revision_verified": true,
+    "verification_method": "dedicated clean checkout; CMake configure/build; selected maintained checks",
+    "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+    "build_settings": {
+      "CMAKE_BUILD_TYPE": "Release",
+      "CMAKE_CXX_COMPILER": "/bin/c++",
+      "CMAKE_CXX_FLAGS": "",
+      "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+      "CMAKE_GENERATOR": "Unix Makefiles"
+    },
+    "configure_arguments": [
+      "-DBUILD_TESTING=ON",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "cmake_cache_sha256": "d42c295ebc48b26c43075d35d6f2af1ecc3563e420a027fcf79f39144330b473",
+    "binaries": {
+      "LinearCParty": "3de251427bb153c49b262088cf69312f6509e35710099f4108206dac33582374",
+      "LinearPKCapR": "560792a1745732483c8938f36f74c67232fc77970a4c5a4d0d3f49bfc8a6992d",
+      "LinearPKRaccess": "0366a5c9f8c6ab10e783daf1a0177433d727e8fe34470cbd5f773c5a0e563b18"
+    },
+    "energy_parameter_file": "params/rna_Turner04.par",
+    "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+    "verification_results": [
+      {
+        "name": "scfg2_rules_core_exact_weight_test",
+        "returncode": 0,
+        "stdout": "scfg2_rules_core_exact_weight=ok\n",
+        "stderr": ""
+      },
+      {
+        "name": "scfg2_exact_inside_oracle_test",
+        "returncode": 0,
+        "stdout": "scfg2_exact_inside_oracle=ok\n",
+        "stderr": ""
+      },
+      {
+        "name": "scfg2_beam_api_test",
+        "returncode": 0,
+        "stdout": "scfg2_beam_api=ok\n",
+        "stderr": ""
+      }
+    ],
+    "required_suite": "test/tools/run_required_scfg2_tests.sh: required set ok (73 C++ targets and Python checks; run from source root with build symlink; dependency gate printed 'rg: command not found')",
+    "scientific_scope": "fixed implementation pilot, not independent proof of ensemble semantics",
+    "known_semantic_followup": "Adds PF owner allocation release (43237cd0) and public input validation fixes (2ca2193d..1688c0d2) on top of 58a2b796 (unscaled log weights, completed-WMB weak closure by default, long BE loop correction). Test target scfg2_vp_wmbp_composed_beam_test does not compile."
+  },
+  "software_lock_sha256": "81eb28edf06fed416e4d5d5c6972e2cc3839b0457de6f600c9743c067a6870ea",
+  "software_root": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-15aa7742",
+  "build_dir": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-15aa7742",
+  "software_before": {
+    "commit": "15aa7742a5497164573294e37972ff7ccf9ddfe1",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "dependencies_verified_at_planning": true,
+  "dry_run": true,
+  "experiment_before": {
+    "commit": "191114382fab6e4e02a5cd0058049accc9dacf3c",
+    "dirty": true,
+    "status": "M .gitignore\n M README.md\n M docs/experiment_protocol.md\n M scripts/run_cli.py\n M scripts/summarize.py\n M scripts/validate_outputs.py\n?? configs/arrays/\n?? scripts/aggregate_array.py\n?? scripts/plan_array.py\n?? scripts/run_array_task.py\n?? tests/test_array.py",
+    "tracked_diff_sha256": "2da7dc91ea8a339fb992a00564d7f7aca8dcfd2e060461898366f9544ee2b234"
+  },
+  "inputs": [
+    {
+      "name": "URS000233CDDE",
+      "path": "data/rnacentral-initial-20261008/URS000233CDDE.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-initial-20261008/URS000233CDDE.txt",
+      "length": 4793,
+      "sha256": "233f0d6f3b98bfbd1d39d7e43e11016c2ee51ae9c74f9a318b2062cf92433145",
+      "sequence_sha256": "3d757ed7666e716acc54ee142430b5536fe1f222bd1e7a7ba97b15d1f913738a",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS000233CDDE.txt"
+    },
+    {
+      "name": "URS00019626CE",
+      "path": "data/rnacentral-initial-20261008/URS00019626CE.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-initial-20261008/URS00019626CE.txt",
+      "length": 5482,
+      "sha256": "823a0e84a855d4d780ed1071ead629b0d135755d40ea0e365ac1b06d1aaa73e4",
+      "sequence_sha256": "fabeaedff0618b12b5c1a045bae6d6fa5719264430510ec9f2779701059b5848",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS00019626CE.txt"
+    },
+    {
+      "name": "URS000239D8A4",
+      "path": "data/rnacentral-initial-20261008/URS000239D8A4.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-initial-20261008/URS000239D8A4.txt",
+      "length": 6990,
+      "sha256": "ce5fa17226b8d2b9526ccdc10507a4d76b6f2305f19185db3cfab5ab98ad2869",
+      "sequence_sha256": "d4fc8ae23a15761c6f002dc199811356b74dc2f9f0174d7d7697910077b0c618",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS000239D8A4.txt"
+    },
+    {
+      "name": "URS00023C9544",
+      "path": "data/rnacentral-initial-20261008/URS00023C9544.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-initial-20261008/URS00023C9544.txt",
+      "length": 11832,
+      "sha256": "debdec0bb04e1a9a1318e740ffe6da47fd977f9539235883960ffdeb529e37e4",
+      "sequence_sha256": "b8acfc8040f3c0c7703c0e7ec459ddf5d16af323395c664b1ebdbb214b956b17",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS00023C9544.txt"
+    },
+    {
+      "name": "URS000241043C",
+      "path": "data/rnacentral-initial-20261008/URS000241043C.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-initial-20261008/URS000241043C.txt",
+      "length": 13652,
+      "sha256": "48cc7d0dbe2c4134306d6968e8ce110872b82ed3a42a49b6803ab6a63c4a9bf7",
+      "sequence_sha256": "ff1758c9958a530c7b9244d52062185f425427b28da0e324e681291d358d5627",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS000241043C.txt"
+    },
+    {
+      "name": "URS000238C72C",
+      "path": "data/rnacentral-retry-20261011/URS000238C72C.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-retry-20261011/URS000238C72C.txt",
+      "length": 22543,
+      "sha256": "7a86c7ebc30f24bbe8034fdb7062c056694054ced7da7e36bd108279c63f1e52",
+      "sequence_sha256": "2237659dd3b8ffc0ecb4bad5e75ef5e9a8fce8d637069f69a8243654a9d59ad7",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS000238C72C.txt"
+    },
+    {
+      "name": "URS00023A4DB9",
+      "path": "data/rnacentral-retry-20261011/URS00023A4DB9.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-retry-20261011/URS00023A4DB9.txt",
+      "length": 29106,
+      "sha256": "3a739b331e14180973a0d016a316f1df4b2601291a4252e920a7347f3e14c152",
+      "sequence_sha256": "843bf7a3108552b5b767449d65c6b2d1e2bbbc8b77dd2935473fc9be9860f9a5",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS00023A4DB9.txt"
+    }
+  ],
+  "tasks": [
+    {
+      "tier": "rna_4_8kb",
+      "task_id": 1,
+      "global_task_number": 1,
+      "inputs": [
+        {
+          "name": "URS000233CDDE",
+          "path": "data/rnacentral-initial-20261008/URS000233CDDE.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-initial-20261008/URS000233CDDE.txt",
+          "length": 4793,
+          "sha256": "233f0d6f3b98bfbd1d39d7e43e11016c2ee51ae9c74f9a318b2062cf92433145",
+          "sequence_sha256": "3d757ed7666e716acc54ee142430b5536fe1f222bd1e7a7ba97b15d1f913738a",
+          "estimated_seconds": 647.0550000000001,
+          "estimated_job_memory_mib": 8889,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS000233CDDE.txt"
+        },
+        {
+          "name": "URS00019626CE",
+          "path": "data/rnacentral-initial-20261008/URS00019626CE.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-initial-20261008/URS00019626CE.txt",
+          "length": 5482,
+          "sha256": "823a0e84a855d4d780ed1071ead629b0d135755d40ea0e365ac1b06d1aaa73e4",
+          "sequence_sha256": "fabeaedff0618b12b5c1a045bae6d6fa5719264430510ec9f2779701059b5848",
+          "estimated_seconds": 740.0699999999999,
+          "estimated_job_memory_mib": 9578,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS00019626CE.txt"
+        },
+        {
+          "name": "URS000239D8A4",
+          "path": "data/rnacentral-initial-20261008/URS000239D8A4.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-initial-20261008/URS000239D8A4.txt",
+          "length": 6990,
+          "sha256": "ce5fa17226b8d2b9526ccdc10507a4d76b6f2305f19185db3cfab5ab98ad2869",
+          "sequence_sha256": "d4fc8ae23a15761c6f002dc199811356b74dc2f9f0174d7d7697910077b0c618",
+          "estimated_seconds": 943.6499999999999,
+          "estimated_job_memory_mib": 11086,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS000239D8A4.txt"
+        }
+      ],
+      "estimated_seconds": 2330.7749999999996,
+      "estimated_memory_mib": 12110,
+      "memory_cap_envelope_mib": 66560,
+      "requested_resource": "node_f=1",
+      "h_rt": "03:00:00",
+      "workers": 1,
+      "cost_model": {
+        "basis": "Uncalibrated planning example: length times CLI conditions, not a measured scaling law. Refit from the adopted fixed-build pilot before formal collection.",
+        "seconds_per_nt_condition": 0.03,
+        "safety_factor": 1.5,
+        "memory_base_mib": 4096,
+        "mib_per_nt": 1
+      },
+      "directory": "tasks/rna_4_8kb/000001",
+      "config_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/tasks/rna_4_8kb/000001/task_config.json",
+      "config_sha256": "268cf4eccaab4926853a6df49f1a61cf288443782d9e0811deba70918429471a",
+      "planned_jobs": [
+        {
+          "id": "URS00019626CE-beam100_default-LinearPKCapR-rep0",
+          "input": "URS00019626CE",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS000233CDDE-beam100_default-LinearPKCapR-rep0",
+          "input": "URS000233CDDE",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS000239D8A4-beam100_default-LinearCParty-rep0",
+          "input": "URS000239D8A4",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS000233CDDE-beam100_default-LinearCParty-rep0",
+          "input": "URS000233CDDE",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS000239D8A4-beam100_default-LinearPKRaccess-rep0",
+          "input": "URS000239D8A4",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS000233CDDE-beam100_default-LinearPKRaccess-rep0",
+          "input": "URS000233CDDE",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS00019626CE-beam100_default-LinearCParty-rep0",
+          "input": "URS00019626CE",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS00019626CE-beam100_default-LinearPKRaccess-rep0",
+          "input": "URS00019626CE",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS000239D8A4-beam100_default-LinearPKCapR-rep0",
+          "input": "URS000239D8A4",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        }
+      ]
+    },
+    {
+      "tier": "rna_8_20kb",
+      "task_id": 1,
+      "global_task_number": 2,
+      "inputs": [
+        {
+          "name": "URS00023C9544",
+          "path": "data/rnacentral-initial-20261008/URS00023C9544.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-initial-20261008/URS00023C9544.txt",
+          "length": 11832,
+          "sha256": "debdec0bb04e1a9a1318e740ffe6da47fd977f9539235883960ffdeb529e37e4",
+          "sequence_sha256": "b8acfc8040f3c0c7703c0e7ec459ddf5d16af323395c664b1ebdbb214b956b17",
+          "estimated_seconds": 1597.3199999999997,
+          "estimated_job_memory_mib": 20024,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS00023C9544.txt"
+        }
+      ],
+      "estimated_seconds": 1597.3199999999997,
+      "estimated_memory_mib": 21048,
+      "memory_cap_envelope_mib": 66560,
+      "requested_resource": "node_f=1",
+      "h_rt": "02:00:00",
+      "workers": 1,
+      "cost_model": {
+        "basis": "Uncalibrated planning example, with a smaller task time budget for less certain long-input behavior. Refit from a fixed-build pilot.",
+        "seconds_per_nt_condition": 0.03,
+        "safety_factor": 1.5,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 1
+      },
+      "directory": "tasks/rna_8_20kb/000001",
+      "config_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/tasks/rna_8_20kb/000001/task_config.json",
+      "config_sha256": "bc121249ae77f367d5f52637e534a0c0968b8895070f6802313c2077a2270e11",
+      "planned_jobs": [
+        {
+          "id": "URS00023C9544-beam100_default-LinearCParty-rep0",
+          "input": "URS00023C9544",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS00023C9544-beam100_default-LinearPKRaccess-rep0",
+          "input": "URS00023C9544",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS00023C9544-beam100_default-LinearPKCapR-rep0",
+          "input": "URS00023C9544",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        }
+      ]
+    },
+    {
+      "tier": "rna_8_20kb",
+      "task_id": 2,
+      "global_task_number": 3,
+      "inputs": [
+        {
+          "name": "URS000241043C",
+          "path": "data/rnacentral-initial-20261008/URS000241043C.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-initial-20261008/URS000241043C.txt",
+          "length": 13652,
+          "sha256": "48cc7d0dbe2c4134306d6968e8ce110872b82ed3a42a49b6803ab6a63c4a9bf7",
+          "sequence_sha256": "ff1758c9958a530c7b9244d52062185f425427b28da0e324e681291d358d5627",
+          "estimated_seconds": 1843.02,
+          "estimated_job_memory_mib": 21844,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS000241043C.txt"
+        }
+      ],
+      "estimated_seconds": 1843.02,
+      "estimated_memory_mib": 22868,
+      "memory_cap_envelope_mib": 66560,
+      "requested_resource": "node_f=1",
+      "h_rt": "02:00:00",
+      "workers": 1,
+      "cost_model": {
+        "basis": "Uncalibrated planning example, with a smaller task time budget for less certain long-input behavior. Refit from a fixed-build pilot.",
+        "seconds_per_nt_condition": 0.03,
+        "safety_factor": 1.5,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 1
+      },
+      "directory": "tasks/rna_8_20kb/000002",
+      "config_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/tasks/rna_8_20kb/000002/task_config.json",
+      "config_sha256": "1887fc85407b80646ea4e75929c1f5f1ea0f57faaa9544af8a940ace95c210b9",
+      "planned_jobs": [
+        {
+          "id": "URS000241043C-beam100_default-LinearCParty-rep0",
+          "input": "URS000241043C",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS000241043C-beam100_default-LinearPKRaccess-rep0",
+          "input": "URS000241043C",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS000241043C-beam100_default-LinearPKCapR-rep0",
+          "input": "URS000241043C",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        }
+      ]
+    },
+    {
+      "tier": "rna_20_30kb",
+      "task_id": 1,
+      "global_task_number": 4,
+      "inputs": [
+        {
+          "name": "URS000238C72C",
+          "path": "data/rnacentral-retry-20261011/URS000238C72C.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-retry-20261011/URS000238C72C.txt",
+          "length": 22543,
+          "sha256": "7a86c7ebc30f24bbe8034fdb7062c056694054ced7da7e36bd108279c63f1e52",
+          "sequence_sha256": "2237659dd3b8ffc0ecb4bad5e75ef5e9a8fce8d637069f69a8243654a9d59ad7",
+          "estimated_seconds": 7101.045000000001,
+          "estimated_job_memory_mib": 42006.5,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS000238C72C.txt"
+        }
+      ],
+      "estimated_seconds": 7101.045000000001,
+      "estimated_memory_mib": 43030.5,
+      "memory_cap_envelope_mib": 66560,
+      "requested_resource": "node_f=1",
+      "h_rt": "05:00:00",
+      "workers": 1,
+      "cost_model": {
+        "basis": "Uncalibrated conservative long-input example; the full condition matrix makes each 20-30 kb sequence a separate task. Validate time and memory from a fixed-build pilot.",
+        "seconds_per_nt_condition": 0.07,
+        "safety_factor": 1.5,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 1.5
+      },
+      "directory": "tasks/rna_20_30kb/000001",
+      "config_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/tasks/rna_20_30kb/000001/task_config.json",
+      "config_sha256": "7c92a4c202010a5133eafea4a272cef972bc80a1642109d50686b2786e85738e",
+      "planned_jobs": [
+        {
+          "id": "URS000238C72C-beam100_default-LinearCParty-rep0",
+          "input": "URS000238C72C",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS000238C72C-beam100_default-LinearPKRaccess-rep0",
+          "input": "URS000238C72C",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS000238C72C-beam100_default-LinearPKCapR-rep0",
+          "input": "URS000238C72C",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        }
+      ]
+    },
+    {
+      "tier": "rna_20_30kb",
+      "task_id": 2,
+      "global_task_number": 5,
+      "inputs": [
+        {
+          "name": "URS00023A4DB9",
+          "path": "data/rnacentral-retry-20261011/URS00023A4DB9.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-retry-20261011/URS00023A4DB9.txt",
+          "length": 29106,
+          "sha256": "3a739b331e14180973a0d016a316f1df4b2601291a4252e920a7347f3e14c152",
+          "sequence_sha256": "843bf7a3108552b5b767449d65c6b2d1e2bbbc8b77dd2935473fc9be9860f9a5",
+          "estimated_seconds": 9168.390000000001,
+          "estimated_job_memory_mib": 51851.0,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/inputs/URS00023A4DB9.txt"
+        }
+      ],
+      "estimated_seconds": 9168.390000000001,
+      "estimated_memory_mib": 52875.0,
+      "memory_cap_envelope_mib": 66560,
+      "requested_resource": "node_f=1",
+      "h_rt": "05:00:00",
+      "workers": 1,
+      "cost_model": {
+        "basis": "Uncalibrated conservative long-input example; the full condition matrix makes each 20-30 kb sequence a separate task. Validate time and memory from a fixed-build pilot.",
+        "seconds_per_nt_condition": 0.07,
+        "safety_factor": 1.5,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 1.5
+      },
+      "directory": "tasks/rna_20_30kb/000002",
+      "config_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e2-20261011/tasks/rna_20_30kb/000002/task_config.json",
+      "config_sha256": "fedaf2fb729a2279acee7e900e0a6e16c8c3754a07a63e319da4bde95874489c",
+      "planned_jobs": [
+        {
+          "id": "URS00023A4DB9-beam100_default-LinearCParty-rep0",
+          "input": "URS00023A4DB9",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS00023A4DB9-beam100_default-LinearPKRaccess-rep0",
+          "input": "URS00023A4DB9",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "URS00023A4DB9-beam100_default-LinearPKCapR-rep0",
+          "input": "URS00023A4DB9",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        }
+      ]
+    }
+  ],
+  "resource_reference": {
+    "url": "https://helpdesk.t3.gsic.titech.ac.jp/t4docs_preview/master/handbook.ja/jobs/",
+    "checked_date": "2026-10-11",
+    "memory_unit": "decimal GB; conservative conversion to MiB"
+  },
+  "job_scripts": [
+    {
+      "tier": "rna_4_8kb",
+      "tasks": 1,
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/array-example-e2-20261011/rna_4_8kb.sh",
+      "sha256": "7075866e3724cba86e23e684c52ae6e6afd503afdc284a0c08ba6bf03c271062"
+    },
+    {
+      "tier": "rna_8_20kb",
+      "tasks": 2,
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/array-example-e2-20261011/rna_8_20kb.sh",
+      "sha256": "532c1f15dbf1c8e5c923a94c2143c1090eb25dfa22f338985045b910db796d15"
+    },
+    {
+      "tier": "rna_20_30kb",
+      "tasks": 2,
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/array-example-e2-20261011/rna_20_30kb.sh",
+      "sha256": "033bc00841fbc8e6f4d3932f0008c73e4005145461aed2af89d7864835a28083"
+    }
+  ]
+}

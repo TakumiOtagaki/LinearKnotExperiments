@@ -63,3 +63,77 @@ before running the matrix. The selected software must support all seven lengths.
 
 All edits are inside the experiment repository. The external LinearCParty
 working tree was not changed or built. No git commit or push was performed.
+
+## 2026-10-11 TSUBAME array-job preparation
+
+### Changed files and behavior
+
+- Added `scripts/plan_array.py`, `scripts/run_array_task.py` and
+  `scripts/aggregate_array.py`. Plans freeze input/config/lock copies, assign
+  inclusive length tiers, pack complete sequence matrices by time/memory
+  estimates, and generate one Grid Engine array script per populated tier.
+  Scaffold variants of a shared sequence remain together. Planning never
+  submits jobs and refuses existing output/script directories.
+- Refactored `scripts/run_cli.py` to expose its existing provenance/resume path
+  to array tasks and support bounded process concurrency for accuracy arrays.
+  Seeded dispatch order, warm-up dependencies and repetition barriers are
+  retained. Timing arrays require `node_f=1`, one worker and single-thread CLIs.
+  Formal configs require verified build flags in both config and software lock;
+  direct CLI execution remains development-only. SIGTERM is handled by the task
+  wrapper so available interruption records are finalized.
+- Updated `scripts/summarize.py` and `scripts/validate_outputs.py` for the merged
+  run, including task counts and planned/completed/missing measurement counts.
+  Aggregation reads result markers, recovers missed manifest updates, preserves
+  failures and emits explicit rows for missing jobs. Task manifests retain
+  scheduler IDs, host, resources, timestamps and attempts. Kernel-released task
+  locks reject duplicate controllers. Shared manifests are updated only by
+  explicit aggregation.
+- Added `tests/test_array.py`, `configs/arrays/e2_rnacentral_20261011.json` and
+  `configs/arrays/e1_bprna_20261011.json`. Updated `.gitignore` for generated job
+  scripts. Updated README and `docs/experiment_protocol.md`; added
+  `docs/array_dry_run_20261011.md` and exact plans/scripts/summaries under
+  `docs/array_examples/20261011/{e1,e2}/`. Original experiment configs are unchanged.
+
+### Verification and dry-run artifacts
+
+- `python3 -m unittest discover -s tests`: 27 tests passed, including all 18
+  existing tests. The new tests use small dummy CLIs and cover packing and
+  estimates, scaffold grouping, resource/wall/memory guards, SGE environment
+  selection, immutable preparation, matching and rejected resumes, task locks,
+  worker bounds, warm-up/block barriers, SIGTERM, startup failure and partial
+  aggregation/summary/output validation. No biological CLI matrix was run.
+- Python compilation and `git diff --check` passed. Both saved plan checksums,
+  all five saved script checksums and `bash -n` for those scripts passed.
+- Prepared `results/runs/array-example-e2-20261011` from the existing seven-input
+  `e2_rnacentral_15aa7742_20261011.json`, using the read-only dedicated
+  `deps/LinearCParty-15aa7742` and `build/linear-cparty-15aa7742`. The software lock
+  verified. There are three arrays and five tasks: three 4.8–7.0 kb inputs share
+  a task; 11.8 kb and 13.7 kb inputs each have a task; 22.5 kb and 29.1 kb inputs
+  each have a task. There are 21 planned CLI jobs, all not started.
+- Prepared `results/runs/array-example-e1-20261011` from the existing 12-input
+  `e1_bprna_pilot_20261008.json`, using read-only `deps/LinearCParty-20261008`
+  and `build/linear-cparty-20261008`. The software lock verified. Two arrays
+  contain one task each (8 inputs below 200 nt and 4 inputs at 200–800 nt), with
+  two accuracy workers and 72 planned CLI jobs, all not started.
+- Aggregated and summarized both unstarted matrices: 5/2 not-started tasks,
+  21/72 missing measured jobs and zero completed measurements. Generated scripts
+  live under `jobs/array-example-e{1,2}-20261011/`; review copies are in docs.
+
+### Scientific scope and remaining checks
+
+The example cost coefficients are explicitly uncalibrated scheduling assumptions.
+Before formal collection, calibrate them on the adopted fixed-build pilot and
+confirm longest-input CLI feasibility, memory and an appropriate failure budget.
+Historical input/config purposes remain development; these dry-runs establish
+preparation and aggregation behavior, not biological accuracy or runtime scaling.
+If an interrupted timing task resumes on another node, examine its attempt hosts
+and CLI resume history before using paired comparisons.
+
+The resource table was checked against the official TSUBAME4 handbook, section
+5.1.1, linked in README. Live `qconf -sc`, `-spl` and `-sql` checks failed with
+`getgrgid(3215) failed: gid resolve error`. Current accounting group, scheduler
+limits, concurrency and runtime modules are marked **要確認** in README.
+
+All changes remain inside `experiments/`. No qsub, biological measurement,
+external source modification/build, manuscript/textbook edit, git commit or push
+was performed.

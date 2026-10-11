@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "measurement": "timing",
+  "seed": 20261011,
+  "tiers": [
+    {
+      "name": "rna_4_8kb",
+      "min_length": 1,
+      "max_length": 8191,
+      "resource": "node_f",
+      "h_rt": "03:00:00",
+      "target_seconds": 3600,
+      "memory_budget_mib": 73728,
+      "task_overhead_mib": 1024,
+      "workers": 1,
+      "cost_model": {
+        "basis": "Uncalibrated planning example: length times CLI conditions, not a measured scaling law. Refit from the adopted fixed-build pilot before formal collection.",
+        "seconds_per_nt_condition": 0.03,
+        "safety_factor": 1.5,
+        "memory_base_mib": 4096,
+        "mib_per_nt": 1
+      }
+    },
+    {
+      "name": "rna_8_20kb",
+      "min_length": 8192,
+      "max_length": 19999,
+      "resource": "node_f",
+      "h_rt": "02:00:00",
+      "target_seconds": 3000,
+      "memory_budget_mib": 73728,
+      "task_overhead_mib": 1024,
+      "workers": 1,
+      "cost_model": {
+        "basis": "Uncalibrated planning example, with a smaller task time budget for less certain long-input behavior. Refit from a fixed-build pilot.",
+        "seconds_per_nt_condition": 0.03,
+        "safety_factor": 1.5,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 1
+      }
+    },
+    {
+      "name": "rna_20_30kb",
+      "min_length": 20000,
+      "max_length": 30000,
+      "resource": "node_f",
+      "h_rt": "05:00:00",
+      "target_seconds": 10000,
+      "memory_budget_mib": 73728,
+      "task_overhead_mib": 1024,
+      "workers": 1,
+      "cost_model": {
+        "basis": "Uncalibrated conservative long-input example; the full condition matrix makes each 20-30 kb sequence a separate task. Validate time and memory from a fixed-build pilot.",
+        "seconds_per_nt_condition": 0.07,
+        "safety_factor": 1.5,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 1.5
+      }
+    }
+  ]
+}

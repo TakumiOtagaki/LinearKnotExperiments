@@ -1,0 +1,20 @@
+{
+  "run_status": "interrupted",
+  "measured_jobs": 21,
+  "status_counts": {
+    "not_started": 21
+  },
+  "purpose": "development",
+  "software_commit": "15aa7742a5497164573294e37972ff7ccf9ddfe1",
+  "experiment_commit": "191114382fab6e4e02a5cd0058049accc9dacf3c",
+  "software_changed_during_run": null,
+  "binaries_changed_during_run": null,
+  "planned_tasks": 5,
+  "task_status_counts": {
+    "not_started": 5
+  },
+  "planned_measured_jobs": 21,
+  "completed_measured_jobs": 0,
+  "missing_measured_jobs": 21,
+  "software_lock_valid_after_run": null
+}

@@ -1,0 +1,1163 @@
+{
+  "schema_version": 1,
+  "run_kind": "array",
+  "created_utc": "2026-10-11T06:50:48.681920+00:00",
+  "output_dir": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011",
+  "config": {
+    "schema_version": 1,
+    "name": "e1-bprna-pilot-20261008",
+    "purpose": "development",
+    "energy_parameter_file": "params/rna_Turner04.par",
+    "model_settings": {
+      "temperature_celsius": 37,
+      "temperature_source": "CLI/API default; verify RT metadata",
+      "build_revision_verified": true
+    },
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "LC_ALL": "C"
+    },
+    "timeout_seconds": 180,
+    "warmups": 0,
+    "repetitions": 1,
+    "inputs": [
+      {
+        "name": "bpRNA_RFAM_15825",
+        "path": "data/bprna-pilot-20261008/bpRNA_RFAM_15825.txt"
+      },
+      {
+        "name": "bpRNA_RFAM_25128",
+        "path": "data/bprna-pilot-20261008/bpRNA_RFAM_25128.txt"
+      },
+      {
+        "name": "bpRNA_CRW_30304",
+        "path": "data/bprna-pilot-20261008/bpRNA_CRW_30304.txt"
+      },
+      {
+        "name": "bpRNA_RFAM_18904",
+        "path": "data/bprna-pilot-20261008/bpRNA_RFAM_18904.txt"
+      },
+      {
+        "name": "bpRNA_RFAM_18426",
+        "path": "data/bprna-pilot-20261008/bpRNA_RFAM_18426.txt"
+      },
+      {
+        "name": "bpRNA_RFAM_27342",
+        "path": "data/bprna-pilot-20261008/bpRNA_RFAM_27342.txt"
+      },
+      {
+        "name": "bpRNA_RFAM_23270",
+        "path": "data/bprna-pilot-20261008/bpRNA_RFAM_23270.txt"
+      },
+      {
+        "name": "bpRNA_RFAM_14153",
+        "path": "data/bprna-pilot-20261008/bpRNA_RFAM_14153.txt"
+      },
+      {
+        "name": "bpRNA_RFAM_38188",
+        "path": "data/bprna-pilot-20261008/bpRNA_RFAM_38188.txt"
+      },
+      {
+        "name": "bpRNA_RFAM_2449",
+        "path": "data/bprna-pilot-20261008/bpRNA_RFAM_2449.txt"
+      },
+      {
+        "name": "bpRNA_RFAM_5936",
+        "path": "data/bprna-pilot-20261008/bpRNA_RFAM_5936.txt"
+      },
+      {
+        "name": "bpRNA_RFAM_2886",
+        "path": "data/bprna-pilot-20261008/bpRNA_RFAM_2886.txt"
+      }
+    ],
+    "modes": [
+      {
+        "name": "exact",
+        "args": [
+          "--exact"
+        ]
+      },
+      {
+        "name": "beam100_default",
+        "args": [
+          "-b",
+          "100",
+          "--max-hairpin",
+          "30",
+          "--max-case3-depth",
+          "30"
+        ]
+      }
+    ],
+    "programs": [
+      {
+        "name": "LinearCParty",
+        "args": [
+          "--bpp-cutoff",
+          "0"
+        ],
+        "outputs": [
+          {
+            "name": "bpp.tsv",
+            "flag": "--bpp"
+          }
+        ]
+      },
+      {
+        "name": "LinearPKCapR",
+        "args": []
+      },
+      {
+        "name": "LinearPKRaccess",
+        "args": [
+          "--access-len",
+          "1,4,8,16",
+          "--probability"
+        ]
+      }
+    ],
+    "analysis": {
+      "reference_mode": "exact",
+      "default_cap_comparison": "Finite-beam setting sensitivity; not an isolated cap-only error decomposition.",
+      "comparison_scope": "Development pilot: default beam and local caps versus full exact on the same pinned implementation."
+    },
+    "software_lock": "manifests/software-pilot-66eaa2f1.json",
+    "memory_limit_mib": 8192
+  },
+  "array_config": {
+    "schema_version": 1,
+    "measurement": "accuracy",
+    "seed": 20261011,
+    "tiers": [
+      {
+        "name": "bprna_under200",
+        "min_length": 1,
+        "max_length": 199,
+        "resource": "cpu_16",
+        "h_rt": "01:00:00",
+        "target_seconds": 300,
+        "memory_budget_mib": 24576,
+        "task_overhead_mib": 512,
+        "workers": 2,
+        "cost_model": {
+          "basis": "Uncalibrated accuracy packing example. Estimates sum all exact/beam CLI jobs without assuming parallel speedup; replace coefficients using the adopted pilot.",
+          "seconds_per_nt_condition": 0.001,
+          "safety_factor": 2,
+          "mode_factors": {
+            "exact": 2,
+            "beam100_default": 1
+          },
+          "memory_base_mib": 512,
+          "mib_per_nt": 4
+        }
+      },
+      {
+        "name": "bprna_200_800",
+        "min_length": 200,
+        "max_length": 800,
+        "resource": "cpu_16",
+        "h_rt": "02:00:00",
+        "target_seconds": 600,
+        "memory_budget_mib": 24576,
+        "task_overhead_mib": 512,
+        "workers": 2,
+        "cost_model": {
+          "basis": "Uncalibrated accuracy example for the longer exact comparisons. No ideal parallel speedup is assumed. These are scheduling estimates, not scientific complexity claims.",
+          "seconds_per_nt_condition": 0.004,
+          "safety_factor": 2,
+          "mode_factors": {
+            "exact": 2,
+            "beam100_default": 1
+          },
+          "memory_base_mib": 1024,
+          "mib_per_nt": 8
+        }
+      }
+    ]
+  },
+  "original_config_sha256": "4485519a0b27430c928a7d739816abf993a2c75622f017cb67fd09e0e9a8028e",
+  "array_config_sha256": "ff92b70d64d70cc2b4f089fc389ca3f62389d6cb23b96107a0451aacf7de669c",
+  "software_lock": {
+    "schema_version": 1,
+    "created_utc": "2026-10-08T13:17:08.236461+00:00",
+    "purpose": "development",
+    "source_repository": "https://github.com/TakumiOtagaki/LinearCParty",
+    "source_commit": "66eaa2f14d926e4d7f0a0596f4aed8a53b6af8b0",
+    "source_git_state": {
+      "commit": "66eaa2f14d926e4d7f0a0596f4aed8a53b6af8b0",
+      "dirty": false,
+      "status": "",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source_tree": "866c1826e58699bdee221889c73dda01d311b2ae",
+    "build_revision_verified": true,
+    "verification_method": "dedicated clean checkout; CMake configure/build; selected maintained checks",
+    "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+    "build_settings": {
+      "CMAKE_BUILD_TYPE": "Release",
+      "CMAKE_CXX_COMPILER": "/bin/c++",
+      "CMAKE_CXX_FLAGS": "",
+      "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+      "CMAKE_GENERATOR": "Unix Makefiles"
+    },
+    "configure_arguments": [
+      "-DBUILD_TESTING=ON",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "build_targets": [
+      "LinearCParty",
+      "LinearPKCapR",
+      "LinearPKRaccess",
+      "scfg2_exact_inside_oracle_test",
+      "scfg2_rules_core_exact_weight_test",
+      "scfg2_beam_api_test"
+    ],
+    "build_parallel_jobs": 8,
+    "cmake_cache_sha256": "6a96e66ba490d4100df6dcc1bb6cdda7eb9b30f81a28d19e3d44e1078d3ba9f7",
+    "binaries": {
+      "LinearCParty": "ccfce12533222af43f228b0bd76f7b576d76d136ab45e6119187ca4b2518f2c7",
+      "LinearPKCapR": "bc4a0d84b803a24fee00e16e6a1556f718ecf369afe185395cc50a74cd5160ce",
+      "LinearPKRaccess": "916111be0a2c68cb1a364b895720d51ac848841ce7d9fb2c0504cce43864bc8b"
+    },
+    "energy_parameter_file": "params/rna_Turner04.par",
+    "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+    "verification_results": [
+      {
+        "name": "scfg2_rules_core_exact_weight_test",
+        "returncode": 0,
+        "stdout": "scfg2_rules_core_exact_weight=ok\n",
+        "stderr": ""
+      },
+      {
+        "name": "scfg2_exact_inside_oracle_test",
+        "returncode": 0,
+        "stdout": "scfg2_exact_inside_oracle=ok\n",
+        "stderr": ""
+      },
+      {
+        "name": "scfg2_beam_api_test",
+        "returncode": 0,
+        "stdout": "scfg2_beam_api=ok\n",
+        "stderr": ""
+      }
+    ],
+    "scientific_scope": "fixed implementation pilot, not independent proof of ensemble semantics",
+    "known_semantic_followup": "completed-WMB closure remains legacy-compatible; see pinned source README"
+  },
+  "software_lock_sha256": "7af4d96a7e2bb4bcf998fb02e2795c44694f88b09a83642cbf711795ed47f6b3",
+  "software_root": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-20261008",
+  "build_dir": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-20261008",
+  "software_before": {
+    "commit": "66eaa2f14d926e4d7f0a0596f4aed8a53b6af8b0",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "dependencies_verified_at_planning": true,
+  "dry_run": true,
+  "experiment_before": {
+    "commit": "191114382fab6e4e02a5cd0058049accc9dacf3c",
+    "dirty": true,
+    "status": "M .gitignore\n M README.md\n M docs/experiment_protocol.md\n M scripts/run_cli.py\n M scripts/summarize.py\n M scripts/validate_outputs.py\n?? configs/arrays/\n?? scripts/aggregate_array.py\n?? scripts/plan_array.py\n?? scripts/run_array_task.py\n?? tests/test_array.py",
+    "tracked_diff_sha256": "2da7dc91ea8a339fb992a00564d7f7aca8dcfd2e060461898366f9544ee2b234"
+  },
+  "inputs": [
+    {
+      "name": "bpRNA_RFAM_15825",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_15825.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_15825.txt",
+      "length": 52,
+      "sha256": "dcffb1aeaba3dde093acf6adbaf15e1b7f5dfcc3d62fbd513e82e5d6ca77b15c",
+      "sequence_sha256": "80d4460c64d1a6b56b6380e76b65c99692e57113e831f1e9c114e9e92e1a60c0",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_15825.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_25128",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_25128.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_25128.txt",
+      "length": 55,
+      "sha256": "141c1c539c1689b9a2ba9d8cd3b4fd5c59de76c23a1041ba1dcc1eb38cd18a59",
+      "sequence_sha256": "416213ee550d3a9234b378b42d40f9924bf4fe74ec59075aeb1cc8c229a7d554",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_25128.txt"
+    },
+    {
+      "name": "bpRNA_CRW_30304",
+      "path": "data/bprna-pilot-20261008/bpRNA_CRW_30304.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_CRW_30304.txt",
+      "length": 75,
+      "sha256": "f39afea24d21ea9d8d0cbb288814a58fad8bcf15ee0efb613b9fab48444cd1ac",
+      "sequence_sha256": "6822711934114028b88d3d4b9bd6f63e4c70dd4138c6169456ead0a5e2f7c0a2",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_CRW_30304.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_18904",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_18904.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_18904.txt",
+      "length": 80,
+      "sha256": "de23fd5615e67b7b31417bf23a11fc96080201c35d927b83c4064b68ed538664",
+      "sequence_sha256": "13be7e84aedd4b329d9c618bcbc7c83cfa63d110d5f4cb4ae42736ab739eab00",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_18904.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_18426",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_18426.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_18426.txt",
+      "length": 116,
+      "sha256": "3dd4c3d10d31a9a9741d2df884b09f596d83fdf8f89772fe1e9b387e382f8444",
+      "sequence_sha256": "a48d740f9ca437f41a0497b5aec8aa6aa06885c5ad4f27250ccb3285355b55ee",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_18426.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_27342",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_27342.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_27342.txt",
+      "length": 132,
+      "sha256": "f116f8aef9864f3feebb192023246c7304eb155105defda463b9a5e15c98b5b7",
+      "sequence_sha256": "55327e6d5cc255f790013acb1bcc65f50ca2d7d1fc58426c6dcef6feef3e18b9",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_27342.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_23270",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_23270.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_23270.txt",
+      "length": 134,
+      "sha256": "d487a962e02154d37860cbd96e1b63b56a0c7150f2ade254375bcc89d249d725",
+      "sequence_sha256": "857f72cb5ead3f3d3b6ce70c003876311e21e9651d18e53dcfedec0a97cf5830",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_23270.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_14153",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_14153.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_14153.txt",
+      "length": 139,
+      "sha256": "247c4dd6643b8e589dcdfdbc3a5fcaf2aad03a8c962ef9649e5ce4784e252253",
+      "sequence_sha256": "63f57b80d233f78cac3d7d94b28f1fedff5d2701749502f98b3ec9aea19f018c",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_14153.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_38188",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_38188.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_38188.txt",
+      "length": 201,
+      "sha256": "6f8139688eb4c5c8e46dd5e0ef3e7b19bb5dbd1c5c822b93dfb9407b40528306",
+      "sequence_sha256": "367b8f93082a4b9ef84c63d72c87f0a8c4b8e968297f95bfbb228ca5c3dff594",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_38188.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_2449",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_2449.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_2449.txt",
+      "length": 333,
+      "sha256": "4379e5a15ff8ba5dd9ae34de10e8c596ef242272741daf3e22ebef31930ae710",
+      "sequence_sha256": "6536b6373758a0210afc51c0cd981307f1e5b8a445650a803562ccd23d8be319",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_2449.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_5936",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_5936.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_5936.txt",
+      "length": 365,
+      "sha256": "cc39c13ff85d1ed5a20acee0ca9f3bcf16332baf5f7aebe238927be55461bf1d",
+      "sequence_sha256": "99a52dcd35ba897d689efd8db8b40a21bbec46157a4e88a75263edb6527a372b",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_5936.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_2886",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_2886.txt",
+      "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_2886.txt",
+      "length": 367,
+      "sha256": "9c8c304b3cd59e8b12b55e758448021e085abca1f7fb5dbf687fa2edd96238b1",
+      "sequence_sha256": "7d26cbba1684ac6f6e3941476a287a5ae01690cec5e070df36b11080d7d89705",
+      "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_2886.txt"
+    }
+  ],
+  "tasks": [
+    {
+      "tier": "bprna_under200",
+      "task_id": 1,
+      "global_task_number": 1,
+      "inputs": [
+        {
+          "name": "bpRNA_RFAM_15825",
+          "path": "data/bprna-pilot-20261008/bpRNA_RFAM_15825.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_15825.txt",
+          "length": 52,
+          "sha256": "dcffb1aeaba3dde093acf6adbaf15e1b7f5dfcc3d62fbd513e82e5d6ca77b15c",
+          "sequence_sha256": "80d4460c64d1a6b56b6380e76b65c99692e57113e831f1e9c114e9e92e1a60c0",
+          "estimated_seconds": 0.9360000000000002,
+          "estimated_job_memory_mib": 720,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_15825.txt"
+        },
+        {
+          "name": "bpRNA_RFAM_25128",
+          "path": "data/bprna-pilot-20261008/bpRNA_RFAM_25128.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_25128.txt",
+          "length": 55,
+          "sha256": "141c1c539c1689b9a2ba9d8cd3b4fd5c59de76c23a1041ba1dcc1eb38cd18a59",
+          "sequence_sha256": "416213ee550d3a9234b378b42d40f9924bf4fe74ec59075aeb1cc8c229a7d554",
+          "estimated_seconds": 0.99,
+          "estimated_job_memory_mib": 732,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_25128.txt"
+        },
+        {
+          "name": "bpRNA_CRW_30304",
+          "path": "data/bprna-pilot-20261008/bpRNA_CRW_30304.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_CRW_30304.txt",
+          "length": 75,
+          "sha256": "f39afea24d21ea9d8d0cbb288814a58fad8bcf15ee0efb613b9fab48444cd1ac",
+          "sequence_sha256": "6822711934114028b88d3d4b9bd6f63e4c70dd4138c6169456ead0a5e2f7c0a2",
+          "estimated_seconds": 1.3499999999999999,
+          "estimated_job_memory_mib": 812,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_CRW_30304.txt"
+        },
+        {
+          "name": "bpRNA_RFAM_18904",
+          "path": "data/bprna-pilot-20261008/bpRNA_RFAM_18904.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_18904.txt",
+          "length": 80,
+          "sha256": "de23fd5615e67b7b31417bf23a11fc96080201c35d927b83c4064b68ed538664",
+          "sequence_sha256": "13be7e84aedd4b329d9c618bcbc7c83cfa63d110d5f4cb4ae42736ab739eab00",
+          "estimated_seconds": 1.44,
+          "estimated_job_memory_mib": 832,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_18904.txt"
+        },
+        {
+          "name": "bpRNA_RFAM_18426",
+          "path": "data/bprna-pilot-20261008/bpRNA_RFAM_18426.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_18426.txt",
+          "length": 116,
+          "sha256": "3dd4c3d10d31a9a9741d2df884b09f596d83fdf8f89772fe1e9b387e382f8444",
+          "sequence_sha256": "a48d740f9ca437f41a0497b5aec8aa6aa06885c5ad4f27250ccb3285355b55ee",
+          "estimated_seconds": 2.088,
+          "estimated_job_memory_mib": 976,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_18426.txt"
+        },
+        {
+          "name": "bpRNA_RFAM_27342",
+          "path": "data/bprna-pilot-20261008/bpRNA_RFAM_27342.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_27342.txt",
+          "length": 132,
+          "sha256": "f116f8aef9864f3feebb192023246c7304eb155105defda463b9a5e15c98b5b7",
+          "sequence_sha256": "55327e6d5cc255f790013acb1bcc65f50ca2d7d1fc58426c6dcef6feef3e18b9",
+          "estimated_seconds": 2.3760000000000003,
+          "estimated_job_memory_mib": 1040,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_27342.txt"
+        },
+        {
+          "name": "bpRNA_RFAM_23270",
+          "path": "data/bprna-pilot-20261008/bpRNA_RFAM_23270.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_23270.txt",
+          "length": 134,
+          "sha256": "d487a962e02154d37860cbd96e1b63b56a0c7150f2ade254375bcc89d249d725",
+          "sequence_sha256": "857f72cb5ead3f3d3b6ce70c003876311e21e9651d18e53dcfedec0a97cf5830",
+          "estimated_seconds": 2.412,
+          "estimated_job_memory_mib": 1048,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_23270.txt"
+        },
+        {
+          "name": "bpRNA_RFAM_14153",
+          "path": "data/bprna-pilot-20261008/bpRNA_RFAM_14153.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_14153.txt",
+          "length": 139,
+          "sha256": "247c4dd6643b8e589dcdfdbc3a5fcaf2aad03a8c962ef9649e5ce4784e252253",
+          "sequence_sha256": "63f57b80d233f78cac3d7d94b28f1fedff5d2701749502f98b3ec9aea19f018c",
+          "estimated_seconds": 2.5020000000000002,
+          "estimated_job_memory_mib": 1068,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_14153.txt"
+        }
+      ],
+      "estimated_seconds": 14.094,
+      "estimated_memory_mib": 2648,
+      "memory_cap_envelope_mib": 16896,
+      "requested_resource": "cpu_16=1",
+      "h_rt": "01:00:00",
+      "workers": 2,
+      "cost_model": {
+        "basis": "Uncalibrated accuracy packing example. Estimates sum all exact/beam CLI jobs without assuming parallel speedup; replace coefficients using the adopted pilot.",
+        "seconds_per_nt_condition": 0.001,
+        "safety_factor": 2,
+        "mode_factors": {
+          "exact": 2,
+          "beam100_default": 1
+        },
+        "memory_base_mib": 512,
+        "mib_per_nt": 4
+      },
+      "directory": "tasks/bprna_under200/000001",
+      "config_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/tasks/bprna_under200/000001/task_config.json",
+      "config_sha256": "85de291392e27cbf445bbdde1dd3a4bac93685f6fe664fdb90ac24accf925b5b",
+      "planned_jobs": [
+        {
+          "id": "bpRNA_CRW_30304-beam100_default-LinearPKCapR-rep0",
+          "input": "bpRNA_CRW_30304",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_23270-exact-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_23270",
+          "mode": "exact",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_18426-exact-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_18426",
+          "mode": "exact",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_14153-exact-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_14153",
+          "mode": "exact",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_25128-beam100_default-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_25128",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_18426-beam100_default-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_18426",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_18904-exact-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_18904",
+          "mode": "exact",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_14153-beam100_default-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_14153",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_14153-exact-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_14153",
+          "mode": "exact",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_15825-beam100_default-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_15825",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_18904-beam100_default-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_18904",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_18904-exact-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_18904",
+          "mode": "exact",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_14153-exact-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_14153",
+          "mode": "exact",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_CRW_30304-beam100_default-LinearCParty-rep0",
+          "input": "bpRNA_CRW_30304",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_CRW_30304-exact-LinearCParty-rep0",
+          "input": "bpRNA_CRW_30304",
+          "mode": "exact",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_18426-exact-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_18426",
+          "mode": "exact",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_27342-beam100_default-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_27342",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_27342-beam100_default-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_27342",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_18426-exact-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_18426",
+          "mode": "exact",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_27342-exact-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_27342",
+          "mode": "exact",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_25128-beam100_default-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_25128",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_18904-exact-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_18904",
+          "mode": "exact",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_CRW_30304-exact-LinearPKRaccess-rep0",
+          "input": "bpRNA_CRW_30304",
+          "mode": "exact",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_23270-exact-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_23270",
+          "mode": "exact",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_25128-beam100_default-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_25128",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_25128-exact-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_25128",
+          "mode": "exact",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_15825-beam100_default-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_15825",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_18426-beam100_default-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_18426",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_18426-beam100_default-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_18426",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_25128-exact-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_25128",
+          "mode": "exact",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_23270-exact-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_23270",
+          "mode": "exact",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_15825-exact-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_15825",
+          "mode": "exact",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_23270-beam100_default-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_23270",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_25128-exact-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_25128",
+          "mode": "exact",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_27342-beam100_default-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_27342",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_CRW_30304-exact-LinearPKCapR-rep0",
+          "input": "bpRNA_CRW_30304",
+          "mode": "exact",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_23270-beam100_default-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_23270",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_15825-exact-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_15825",
+          "mode": "exact",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_23270-beam100_default-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_23270",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_27342-exact-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_27342",
+          "mode": "exact",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_14153-beam100_default-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_14153",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_15825-exact-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_15825",
+          "mode": "exact",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_15825-beam100_default-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_15825",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_CRW_30304-beam100_default-LinearPKRaccess-rep0",
+          "input": "bpRNA_CRW_30304",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_18904-beam100_default-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_18904",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_14153-beam100_default-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_14153",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_18904-beam100_default-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_18904",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_27342-exact-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_27342",
+          "mode": "exact",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        }
+      ]
+    },
+    {
+      "tier": "bprna_200_800",
+      "task_id": 1,
+      "global_task_number": 2,
+      "inputs": [
+        {
+          "name": "bpRNA_RFAM_38188",
+          "path": "data/bprna-pilot-20261008/bpRNA_RFAM_38188.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_38188.txt",
+          "length": 201,
+          "sha256": "6f8139688eb4c5c8e46dd5e0ef3e7b19bb5dbd1c5c822b93dfb9407b40528306",
+          "sequence_sha256": "367b8f93082a4b9ef84c63d72c87f0a8c4b8e968297f95bfbb228ca5c3dff594",
+          "estimated_seconds": 14.472,
+          "estimated_job_memory_mib": 2632,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_38188.txt"
+        },
+        {
+          "name": "bpRNA_RFAM_2449",
+          "path": "data/bprna-pilot-20261008/bpRNA_RFAM_2449.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_2449.txt",
+          "length": 333,
+          "sha256": "4379e5a15ff8ba5dd9ae34de10e8c596ef242272741daf3e22ebef31930ae710",
+          "sequence_sha256": "6536b6373758a0210afc51c0cd981307f1e5b8a445650a803562ccd23d8be319",
+          "estimated_seconds": 23.976000000000003,
+          "estimated_job_memory_mib": 3688,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_2449.txt"
+        },
+        {
+          "name": "bpRNA_RFAM_5936",
+          "path": "data/bprna-pilot-20261008/bpRNA_RFAM_5936.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_5936.txt",
+          "length": 365,
+          "sha256": "cc39c13ff85d1ed5a20acee0ca9f3bcf16332baf5f7aebe238927be55461bf1d",
+          "sequence_sha256": "99a52dcd35ba897d689efd8db8b40a21bbec46157a4e88a75263edb6527a372b",
+          "estimated_seconds": 26.28,
+          "estimated_job_memory_mib": 3944,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_5936.txt"
+        },
+        {
+          "name": "bpRNA_RFAM_2886",
+          "path": "data/bprna-pilot-20261008/bpRNA_RFAM_2886.txt",
+          "source_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/bprna-pilot-20261008/bpRNA_RFAM_2886.txt",
+          "length": 367,
+          "sha256": "9c8c304b3cd59e8b12b55e758448021e085abca1f7fb5dbf687fa2edd96238b1",
+          "sequence_sha256": "7d26cbba1684ac6f6e3941476a287a5ae01690cec5e070df36b11080d7d89705",
+          "estimated_seconds": 26.424,
+          "estimated_job_memory_mib": 3960,
+          "copied_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/inputs/bpRNA_RFAM_2886.txt"
+        }
+      ],
+      "estimated_seconds": 91.15200000000002,
+      "estimated_memory_mib": 8432,
+      "memory_cap_envelope_mib": 16896,
+      "requested_resource": "cpu_16=1",
+      "h_rt": "02:00:00",
+      "workers": 2,
+      "cost_model": {
+        "basis": "Uncalibrated accuracy example for the longer exact comparisons. No ideal parallel speedup is assumed. These are scheduling estimates, not scientific complexity claims.",
+        "seconds_per_nt_condition": 0.004,
+        "safety_factor": 2,
+        "mode_factors": {
+          "exact": 2,
+          "beam100_default": 1
+        },
+        "memory_base_mib": 1024,
+        "mib_per_nt": 8
+      },
+      "directory": "tasks/bprna_200_800/000001",
+      "config_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/array-example-e1-20261011/tasks/bprna_200_800/000001/task_config.json",
+      "config_sha256": "9d5284575a6d668689e4a68a6fc48f69741bf95e04c0e1c5d92a0fb9c2cd3859",
+      "planned_jobs": [
+        {
+          "id": "bpRNA_RFAM_2449-exact-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_2449",
+          "mode": "exact",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_2449-exact-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_2449",
+          "mode": "exact",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_38188-beam100_default-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_38188",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_5936-beam100_default-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_5936",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_2449-beam100_default-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_2449",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_5936-exact-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_5936",
+          "mode": "exact",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_2886-exact-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_2886",
+          "mode": "exact",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_38188-exact-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_38188",
+          "mode": "exact",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_38188-beam100_default-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_38188",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_38188-beam100_default-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_38188",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_2886-exact-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_2886",
+          "mode": "exact",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_5936-exact-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_5936",
+          "mode": "exact",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_5936-exact-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_5936",
+          "mode": "exact",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_5936-beam100_default-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_5936",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_38188-exact-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_38188",
+          "mode": "exact",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_2886-beam100_default-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_2886",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_2886-beam100_default-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_2886",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_2886-exact-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_2886",
+          "mode": "exact",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_38188-exact-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_38188",
+          "mode": "exact",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_2449-exact-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_2449",
+          "mode": "exact",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_2449-beam100_default-LinearPKCapR-rep0",
+          "input": "bpRNA_RFAM_2449",
+          "mode": "beam100_default",
+          "program": "LinearPKCapR",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_2886-beam100_default-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_2886",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_2449-beam100_default-LinearPKRaccess-rep0",
+          "input": "bpRNA_RFAM_2449",
+          "mode": "beam100_default",
+          "program": "LinearPKRaccess",
+          "warmup": false,
+          "repetition": 0
+        },
+        {
+          "id": "bpRNA_RFAM_5936-beam100_default-LinearCParty-rep0",
+          "input": "bpRNA_RFAM_5936",
+          "mode": "beam100_default",
+          "program": "LinearCParty",
+          "warmup": false,
+          "repetition": 0
+        }
+      ]
+    }
+  ],
+  "resource_reference": {
+    "url": "https://helpdesk.t3.gsic.titech.ac.jp/t4docs_preview/master/handbook.ja/jobs/",
+    "checked_date": "2026-10-11",
+    "memory_unit": "decimal GB; conservative conversion to MiB"
+  },
+  "job_scripts": [
+    {
+      "tier": "bprna_under200",
+      "tasks": 1,
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/array-example-e1-20261011/bprna_under200.sh",
+      "sha256": "37aeaeb3df48db7a5f8133b418ddc42a3f07d5f8e0d08fdc67053d69b70648db"
+    },
+    {
+      "tier": "bprna_200_800",
+      "tasks": 1,
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/array-example-e1-20261011/bprna_200_800.sh",
+      "sha256": "2a2918d78fe2af385d837b256d05f69c13ba018c728562a995ee339e81f879ab"
+    }
+  ]
+}

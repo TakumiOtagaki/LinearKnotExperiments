@@ -42,6 +42,138 @@ The bpRNA pilot and three shorter RNAcentral records have been measured on
 separate pinned development versions. See [the biological pilot](docs/biological_pilot_20261008.md)
 for their scope and the next seven-record feasibility matrix.
 
+## Formal experiments on TSUBAME arrays
+
+Run formal experiments as tier-specific TSUBAME Grid Engine array jobs.
+Interactive-node execution is limited to small development pilots.
+`scripts/plan_array.py` freezes inputs, checks a software lock, saves a plan
+and generates `jobs/<run>/<tier>.sh`. It never calls `qsub`.
+`scripts/run_array_task.py` selects a tier's task using `SGE_TASK_ID`.
+`scripts/aggregate_array.py` merges all tasks into the run's `run.json`.
+
+One task contains a batch of sequences and **all** their programs, exact/beam
+settings, beam widths, warm-ups and repetitions. Supplied scaffold variants
+with the same sequence also stay together. Task execution uses the existing
+`blocked_random` repetition order with the array config's seed. Comparisons for
+a sequence therefore share the allocated node within that attempt.
+Timing arrays require `node_f=1`, one CLI process at a time and single-thread
+settings. Accuracy arrays may choose `workers` per tier; their concurrent
+elapsed times must not be used as isolated runtime measurements.
+
+Keep the original matrix config and put scheduler settings in its `array`
+object or a separate `--array-config`. Examples are
+[`configs/arrays/e2_rnacentral_20261011.json`](configs/arrays/e2_rnacentral_20261011.json)
+and [`configs/arrays/e1_bprna_20261011.json`](configs/arrays/e1_bprna_20261011.json).
+Each tier has inclusive `min_length`/`max_length`, `resource`, `h_rt`,
+`target_seconds`, `memory_budget_mib`, `task_overhead_mib`, `workers` and
+`cost_model`. Intervals must be sorted and nonoverlapping; every input must fit.
+Packing uses estimated work rather than a fixed sequence count. A complete
+sequence matrix that cannot fit is refused rather than split across nodes.
+
+For length `n`, per-condition time is
+`seconds_constant_per_condition + seconds_per_nt_condition * n**length_exponent`.
+Multiply by programs, warm-ups plus repetitions, the sum of `mode_factors`
+(default 1 per mode), and `safety_factor` (at least 1). Sum all records' work
+in a task; accuracy planning does not assume ideal parallel speedup.
+Estimated memory is `task_overhead_mib + workers * max(memory_base_mib +
+mib_per_nt * n)`. Both this estimate and the stricter envelope
+`task_overhead_mib + workers * memory_limit_mib` must fit the tier's memory
+budget. The original job timeout and address-space cap stay unchanged.
+`target_seconds` must fit `max_wall_fraction` of `h_rt` (default 0.7, maximum 0.8).
+Tasks save their estimates, coefficients and the stated `basis` of the model.
+The example coefficients are uncalibrated scheduling estimates, not scientific
+complexity claims. Refit them with the adopted build's pilot, including failures.
+Many individual timeouts can exceed an estimated task wall budget.
+
+Formal configs require `purpose: formal`, a real `software_lock`, and
+`model_settings.build_revision_verified: true`. The lock must also record a
+verified build revision. Supply the clean pinned source and dedicated build:
+
+```bash
+python3 scripts/plan_array.py --config configs/formal.json \
+  --array-config configs/arrays/formal.json \
+  --software-root /path/to/pinned/LinearCParty \
+  --build-dir /path/to/dedicated/build --out results/runs/formal-001
+```
+
+The planner saves byte copies of the original config and lock, input copies
+and hashes, task configs, full seeded schedules, and `array_plan.json` with a
+checksum. Existing output or script directories are refused. Task execution
+checks frozen files and the live lock again. An offline `--dry-run` may omit
+software/build paths: it checks lock structure without claiming to verify live
+dependencies. At execution, supply `LCP_SOFTWARE_ROOT` and `LCP_BUILD_DIR`, or
+the wrapper's path options. A dry-run with both paths supplied also checks
+the actual dependencies.
+
+Submit each tier separately from this repository with the authorized accounting
+group and concurrency limit. The script already contains its range, resource
+and wall time. These commands are examples for later submission; they were
+**not executed** during preparation:
+
+```bash
+qsub -g YOUR_TSUBAME_GROUP -tc 2 jobs/formal-001/short.sh
+# Resume only task 3 after its earlier processes have stopped:
+qsub -g YOUR_TSUBAME_GROUP -t 3-3 jobs/formal-001/short.sh --resume
+```
+
+Do not override the saved resource or `h_rt`. Outputs live under
+`tasks/<tier>/<six-digit-task-id>/run/`. The adjacent `task.json` records task
+and global numbers, `JOB_ID`, `SGE_TASK_ID`, hostname, requested resource,
+wall time, workers, start/end times and all attempts. A per-task `flock` rejects
+concurrent execution; the kernel releases it even if the controller is killed.
+Resume keeps every `result.json`, including failures/timeouts, and runs only
+missing results. Partial jobs are archived by the existing runner.
+A killed controller retains a null end time and is counted as interrupted.
+Stop surviving processes before resuming. If a resume changes nodes, inspect
+task attempts and CLI `resume_history` before pooling timing segments.
+
+Refresh the aggregate after execution or resume, including interrupted runs:
+
+```bash
+python3 scripts/aggregate_array.py --plan results/runs/formal-001/array_plan.json
+python3 scripts/summarize.py results/runs/formal-001 --out results/local/formal-001.tsv
+python3 scripts/validate_outputs.py results/runs/formal-001 \
+  --out results/local/formal-001-validation.json
+```
+
+The aggregate recovers result markers even after a missed manifest update,
+keeps missing jobs with null measurements, and counts not-started, running,
+interrupted and failed tasks. Summary JSON separates planned, completed and
+missing measured jobs. Validation reports missing observations separately and
+refuses an actively running aggregate. Tasks do not update the shared manifest;
+re-run aggregation when their state changes.
+See [the two dry-run plans and scripts](docs/array_dry_run_20261011.md).
+
+### TSUBAME4 resources and remaining checks
+
+The [official handbook, section 5.1.1](https://helpdesk.t3.gsic.titech.ac.jp/t4docs_preview/master/handbook.ja/jobs/)
+lists these resources per allocation (checked 2026-10-11). The planner
+conservatively converts the documented GB as decimal bytes to MiB.
+
+| Resource | Physical CPU cores | Memory (GB, as documented) |
+|---|---:|---:|
+| `node_f` | 192 | 768 |
+| `node_h` | 96 | 384 |
+| `node_q` | 48 | 192 |
+| `node_o` | 24 | 96 |
+| `gpu_1` | 8 | 96 |
+| `gpu_h` | 4 | 48 |
+| `cpu_160` | 160 | 368 |
+| `cpu_80` | 80 | 184 |
+| `cpu_40` | 40 | 92 |
+| `cpu_16` | 16 | 36.8 |
+| `cpu_8` | 8 | 18.4 |
+| `cpu_4` | 4 | 9.2 |
+
+Fractional node and CPU allocations share a physical node, so timing uses
+`node_f=1`. `NSLOTS` is recorded, not used to choose workers.
+Live `qconf -sc`, `-spl` and `-sql` failed here with
+`getgrgid(3215) failed: gid resolve error`.
+Current scheduler/group limits, the authorized accounting group, concurrency
+and required runtime modules remain **要確認** before submission.
+Example cost coefficients and longest-input feasibility are also **要確認**;
+the dry-runs perform no CLI measurements.
+
 ## Development smoke
 
 Supply the implementation and build locations explicitly while LinearCParty is
@@ -131,4 +263,5 @@ python3 -m unittest discover -s tests -v
 
 They exercise failures, process-group timeouts, warm-up exclusion, copied
 inputs, fixed/seeded measurement order, matching and rejected resumes,
-legacy manifests, interrupted summaries and scaffold subset preparation.
+legacy manifests, interrupted summaries, scaffold subset preparation, array
+packing, SGE task selection, task locks, parallel accuracy bounds and aggregation.
