@@ -189,6 +189,7 @@ def compare_accessibility(candidate, reference, record):
     return {"delta_free_energy_kcal_mol": delta,
             "delta_free_energy_per_nt": delta / len(record[1]),
             "delta_log_z": -delta / rt, "rt_kcal_mol": rt,
+            "partition_function_retention": math.exp(-delta / rt),
             "free_energy_source": "Raccess full-precision metadata", "accessibility": per_width}
 
 
@@ -224,7 +225,73 @@ def check_consistency(input_name, mode, repetition, group):
                                          bound_violation) <= TOLERANCE else "failed"}
 
 
-def analyze(run, reference_mode, extra_runs=()):
+def model_signature(manifest):
+    """Require the same pinned source, model, parameters and CLI binaries."""
+    lock = manifest["software_lock"]
+    return (manifest["software_before"]["commit"], manifest["config"]["model_settings"],
+            lock["energy_parameter_sha256"], lock["binaries"])
+
+
+def algorithm_arguments(command):
+    args, i = [], 1
+    while i < len(command):
+        if command[i] in ("-i", "--bpp"):
+            i += 2  # Input/output paths differ between allocations.
+        else:
+            args.append(command[i])
+            i += 1
+    return args
+
+
+class ExactReruns:
+    """Replace only failed repetition-zero exact jobs; retain the original attempt."""
+
+    def __init__(self, readers, baseline):
+        self.jobs, self.used, self.replacements = {}, set(), []
+        self.provenance = []
+        for reader in readers:
+            saved = reader.manifest
+            if saved["status"] != "success" or saved.get("summary_only"):
+                raise ValueError("exact rerun must be successfully completed and aggregated")
+            if model_signature(saved) != model_signature(baseline):
+                raise ValueError("exact rerun models or binaries differ")
+            if saved.get("software_changed_during_run") or saved.get("binaries_changed_during_run"):
+                raise ValueError("exact rerun dependencies changed during execution")
+            records = input_records(reader)
+            hashes = {entry["name"]: entry["sha256"] for entry in saved["inputs"]}
+            self.provenance.append({"path": str(reader.path),
+                                    "run_manifest_sha256": reader.manifest_sha256})
+            for job in saved["jobs"]:
+                if (job["mode"] != "exact" or job["warmup"] or job["repetition"] != 0 or
+                        job["status"] != "success" or "--exact" not in job["command"]):
+                    raise ValueError("only successful repetition-zero exact reruns are supported")
+                if job["id"] in self.jobs:
+                    raise ValueError("duplicate exact rerun")
+                self.jobs[job["id"]] = (reader, job, hashes[job["input"]], records[job["input"]])
+
+    def replace(self, reader, job, record, input_hash):
+        if job["id"] not in self.jobs:
+            return reader, job
+        extra, rerun, expected_hash, expected_record = self.jobs[job["id"]]
+        if job["status"] == "success":
+            raise ValueError("exact rerun would overwrite a successful original job")
+        if any(job[k] != rerun[k] for k in ("input", "mode", "program", "repetition", "warmup")):
+            raise ValueError("exact rerun job identity differs")
+        if expected_hash != input_hash or expected_record != record:
+            raise ValueError("exact reruns require identical S and G")
+        if algorithm_arguments(job["command"]) != algorithm_arguments(rerun["command"]):
+            raise ValueError("exact rerun algorithm arguments differ")
+        if model_signature(reader.manifest) != model_signature(extra.manifest):
+            raise ValueError("exact rerun task model differs")
+        self.used.add(job["id"])
+        self.replacements.append({"id": job["id"], "input": job["input"], "program": job["program"],
+                                  "original_status": job["status"], "original_error": job.get("error"),
+                                  "original_stderr": job.get("stderr_summary"),
+                                  "rerun_path": str(extra.path), "rerun_status": rerun["status"]})
+        return extra, rerun
+
+
+def analyze(run, reference_mode, extra_runs=(), exact_reruns=()):
     reader = RunReader(run)
     analysis_provenance = {"generated_utc": now(), "experiment_git_state": git_state(ROOT),
                            "analysis_script_sha256": digest(Path(__file__)),
@@ -237,6 +304,19 @@ def analyze(run, reference_mode, extra_runs=()):
     analysis_provenance["additional_runs"] = []
     records = input_records(reader)
     input_hashes = {i["name"]: i["sha256"] for i in manifest["inputs"]}
+    reruns = ExactReruns([RunReader(p) for p in exact_reruns], manifest) if exact_reruns else None
+    original_status_counts = dict(Counter(j["status"] for j in manifest["jobs"] if not j["warmup"]))
+    if reruns:
+        replaced = []
+        for job in manifest["jobs"]:
+            source, selected = reruns.replace(reader, job, records[job["input"]], input_hashes[job["input"]])
+            replaced.append({**selected, "artifact_run": str(source.path)} if source is not reader else job)
+        if reruns.used != set(reruns.jobs):
+            raise ValueError("exact rerun contains jobs absent from the original run")
+        manifest["jobs"] = replaced
+        analysis_provenance.update(exact_rerun_runs=reruns.provenance,
+                                   exact_replacements=reruns.replacements,
+                                   original_job_status_counts=original_status_counts)
     job_ids = {j["id"] for j in manifest["jobs"]}
     for extra in extra_runs:
         extra_reader = RunReader(extra)
@@ -351,13 +431,23 @@ def main():
     parser.add_argument("--compare-runs", nargs="*", type=Path, default=[],
                         help="merge staged long-width runs; use each RNA's largest planned width per cap regime")
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--exact-reruns", nargs="*", type=Path, default=[],
+                        help="replace failed exact jobs with successful matching reruns")
+    parser.add_argument("--packed-array", action="store_true",
+                        help="stream n<400 bpRNA tasks into one TSV and aggregate JSON; --out is a directory")
     args = parser.parse_args()
     run = args.run if args.run.is_absolute() else ROOT / args.run
     output = args.out if args.out.is_absolute() else ROOT / args.out
     if output.exists():
         parser.error("use a new analysis output path")
     extra = [p if p.is_absolute() else ROOT / p for p in args.compare_runs]
-    result = analyze(run, args.reference_mode, extra)
+    reruns = [p if p.is_absolute() else ROOT / p for p in args.exact_reruns]
+    if args.packed_array:
+        if extra or args.reference_mode != "exact":
+            parser.error("packed short-array analysis requires exact and no sensitivity runs")
+        from analyze_bprna_short import analyze_packed_array
+        return analyze_packed_array(run, reruns, output)
+    result = analyze(run, args.reference_mode, extra, reruns)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n")
     failures = sum(row["analysis_status"] != "success" for row in result["observations"])

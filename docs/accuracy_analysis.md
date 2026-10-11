@@ -86,6 +86,7 @@ Thermodynamic errors use the full-precision Raccess metadata:
 ```text
 delta_F = F_candidate - F_reference
 delta_log_Z = -delta_F / RT
+partition_function_retention = exp(-delta_F / RT)
 ```
 
 Both RT values must match. LinearCParty's printed free energy has only four
@@ -120,3 +121,49 @@ Do not add repeated CLI wall times and describe the sum as a shared-graph run.
 The next analysis additions are independent sampling-frequency checks,
 decoder structures rescored on the same reference posterior, an external API
 driver for stage timings/work counters, and a locked biological input cohort.
+
+## Packed short-bpRNA arrays and exact reruns
+
+`analyze_accuracy.py --packed-array` reads the saved array plan and the completed
+50–99, 100–199, 200–299 and 300–399 nt tasks, without loading the whole-array
+multi-GB `run.json`. It retains parsed outputs for one RNA at a time and reads
+tar members without extraction. The mode requires one measured repetition,
+exact and b=20/50/100/200 in both cap regimes, and unchanged pinned dependencies.
+It writes one RNA-by-condition TSV, summary and provenance JSON, and two PNGs.
+Run with OMP/BLAS thread counts set to one and a node-local `MPLCONFIGDIR`.
+
+```bash
+python scripts/analyze_accuracy.py results/runs/e1-bprna-full-packed-20261011 \
+  --packed-array \
+  --exact-reruns results/runs/e1-bprna-exact-rerun-capr_raccess-20261011 \
+    results/runs/e1-bprna-exact-rerun-lincparty-20261011 \
+  --out results/local/e1-bprna-short-20261011-new
+```
+
+`--exact-reruns` also works for ordinary runs. A successful repetition-zero
+exact rerun replaces only a failed matching original job, after checking
+input hash, S/G, source commit, model settings, parameters, CLI binary hashes
+and algorithm arguments. Successful original exact jobs cannot be overwritten.
+Duplicate, mismatched and unused reruns are rejected. The original status,
+error, stderr summary and rerun source remain in analysis provenance.
+
+`analyze_bprna_short.py` implements the bounded task path using the existing
+validated metric functions. It aggregates RNA-level median/mean/p90/p99/max/min
+for the four tiers, 25 nt bins and the full short cohort. It records threshold
+fractions, paired default-minus-nocap differences, nonincreasing ΔF/TV and
+nondecreasing partition-function ratio, plus the largest violations and errors.
+NA values retain their denominators and never become zero. Monotonicity uses
+absolute tolerances 1e-8 kcal/mol for ΔF, 1e-8 for the ratio and 1e-9 for TV.
+The JSON and TSV retain unmodified signed roundoff values; only the ΔF plot
+clips negative roundoff to zero for display.
+
+Saved G descriptors include pair count/depth and branching ancestors. Exact
+generated pairs whose endpoints have different enclosing-G masks cross G;
+the count with probability >1e-12 records positive pseudoknot possibilities.
+Their probability sum is an expected crossing-pair count, not the probability
+of a pseudoknot-containing structure. Scaffold G itself is pseudoknot-free.
+
+To regenerate only aggregates and plots, pass the output directory to
+`python scripts/analyze_bprna_short.py`. The report script
+`report_bprna_short.py <output-directory> --out <note.md>` writes the requested
+note from the preserved JSON; it does not run measurements.
