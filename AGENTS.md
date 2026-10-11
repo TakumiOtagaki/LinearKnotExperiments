@@ -12,3 +12,4 @@ working trees unchanged.
 - Keep large raw runs out of ordinary Git history. Commit small configurations,
   inputs, scripts and reviewed summaries.
 - Do not replace maintained implementation tests with paper-level smoke checks.
+- The shared /gs/bs project has a file (inode) limit used by the whole lab (`lfs quota -p 102571 /gs/bs`). Check it before large submissions and keep the planner's inode check enabled. Never write per-job files to shared storage; run jobs in node-local scratch and store one JSONL and one tar per task. Delete regenerable intermediates and pack retained raw outputs.
