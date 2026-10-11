@@ -55,16 +55,16 @@ separate process times to estimate a reused graph's total cost.
 
 ## Long-input range fixed before running LinearCParty
 
-Scaffold construction was attempted for all seven preselected RNAcentral
-records. Five succeeded; the 25,543 and 29,106 nt records reached the 120-second
+Scaffold construction was initially attempted for all seven preselected RNAcentral
+records. Five succeeded; the 22,543 and 29,106 nt records reached the 120-second
 scaffold timeout. The candidate manifest retains both failures and the
 unchanged source/binary hashes. No replacement record was selected.
 
-Code inspection found that the pinned implementation's `sparse_tree` has
+Code inspection found that the 2026-10-08 pinned implementation's `sparse_tree` has
 14 RMQ columns and a power-of-two array of the same length. Its Euler walk
-contains `2*n+1` entries. We conservatively require `2*n+1 < 2^14` for general
-interval queries, which gives n <= 8,191. The four longer candidates are
-deferred pending the implementation team's capacity adjustment, independently
+contains `2*n+1` entries. That pilot conservatively required `2*n+1 < 2^14` for general
+interval queries, which gives n <= 8,191. The four longer candidates
+were deferred pending the implementation team's capacity adjustment, independently
 of their scaffold status. We do not interpret their omitted CLI measurements
 as runtime failures or successful runs.
 
@@ -87,12 +87,14 @@ python3 scripts/validate_outputs.py results/runs/e2-rnacentral-20261008 \
 ```
 
 The run above stopped at 22:41:59 JST when the controlling session ended.
-Five jobs have results; the URS00019626CE LinearPKCapR job had started but left
+Four jobs have results; the URS00019626CE LinearPKCapR job had started but left
 no result, and four jobs had not started. The interrupted directory is kept
 unchanged. Two resume configs measure the remaining jobs with the same settings:
 [URS00019626CE, LinearPKCapR and LinearPKRaccess](../configs/e2_rnacentral_resume_a_20261008.json)
 and [URS000239D8A4, all three programs](../configs/e2_rnacentral_resume_b_20261008.json).
 They run one after the other on one node.
+The runner now also supports `--resume` for matching interrupted runs; the
+historical directory and separate resume runs above remain unchanged.
 
 ```bash
 for part in a b; do
@@ -138,3 +140,59 @@ python3 scripts/run_cli.py --config configs/e2_rnacentral_58a2b796_20261010.json
   --build-dir build/linear-cparty-58a2b796 \
   --out results/runs/e2-rnacentral-58a2b796-20261010
 ```
+
+## Seven-record feasibility preparation (2026-10-11)
+
+The next feasibility matrix includes all seven original RNAcentral candidates.
+It removes the previous n <= 8,191 exclusion from `runtime_eligibility` and
+retains the initial three-record measurements as separate historical runs.
+The 11,832 nt `URS00023C9544` and 13,652 nt `URS000241043C` inputs reuse their
+saved G, whose original generation times were 64.98 and 81.82 seconds.
+Their input and scaffold hashes remain unchanged.
+
+The two longer records were prepared again using the same LinearPartition-V
+commit, wrapper/binary hashes, beam 200, dangles 2, probability threshold 0.7,
+minimum stacked helix length 2 and 8 GiB address-space budget.
+Only the time budget changed from 120 to 3,600 seconds per sequence.
+They ran one at a time, with OMP/BLAS thread settings at 1, on node `r8n10`
+(scheduler job `8970385`).
+
+| Record | Length | New G generation | Retained pairs |
+|---|---:|---:|---:|
+| URS000238C72C | 22,543 nt | success, 137.59 s | 4,465 |
+| URS00023A4DB9 | 29,106 nt | success, 182.18 s | 6,539 |
+
+The [retry dataset](../data/rnacentral-retry-20261011/dataset.json) contains
+the new inputs, sequence/G/input hashes, descriptors and generation times.
+The [retry provenance manifest](../manifests/rnacentral-scaffold-retry-20261011.json)
+also preserves the exact preparation/per-record commands, result records and
+raw-log hashes. Source, wrapper and binary were unchanged before and after.
+The earlier 120-second failures remain in the initial dataset; neither record
+was replaced. G generation times are separate from conditional CLI measurements.
+
+```bash
+python3 scripts/prepare_biological_inputs.py --kind rnacentral \
+  --source-manifest manifests/data-sources/rnacentral-panel-20261008.json \
+  --linearpartition deps/LinearPartition-20261008/linearpartition \
+  --out data/rnacentral-retry-20261011 \
+  --timeout-seconds 3600 --ids URS000238C72C URS00023A4DB9
+```
+
+The [NEXT config](../configs/e2_rnacentral_long_NEXT_20261011.json) is a template
+for seven inputs × default beam 100 × LinearCParty, LinearPKCapR and
+LinearPKRaccess: 21 measured jobs. Hairpin and case-3 depth limits remain 30/30.
+Requested outputs match the `58a2b796` config: complete sparse BPP, seven
+contexts and accessibility for window lengths 1, 4, 8 and 16.
+The budget is 3,600 seconds/job and 64 GiB address space, with zero warm-ups,
+one measurement and `blocked_random` order with seed 20261011.
+This is a feasibility measurement, with no long-input exact reference or
+timing ranking from a single repetition.
+
+`software_lock: manifests/software-pilot-NEXT.json` is deliberately unresolved.
+Replace this value once the author fixes the next implementation commit and
+verifies its dedicated build, including support for the full selected range;
+then set `model_settings.build_revision_verified` to true.
+No conditional CLI measurement from this template has been launched.
+Finish all scaffold generation and implementation checks first, and run the
+matrix without other calculations on the same node, as required by
+[the protocol](experiment_protocol.md).

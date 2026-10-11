@@ -7,6 +7,7 @@ import json
 import os
 from pathlib import Path
 import platform
+import random
 import re
 import resource
 import shutil
@@ -178,6 +179,11 @@ def validate(config):
         value = config.get(key, minimum)
         if type(value) is not int or value < minimum:
             raise ValueError(key + " is out of range")
+    order = config.get("order", {"kind": "fixed"})
+    if not isinstance(order, dict) or order.get("kind") not in ("fixed", "blocked_random"):
+        raise ValueError("order.kind must be fixed or blocked_random")
+    if order["kind"] == "blocked_random" and type(order.get("seed")) is not int:
+        raise ValueError("blocked_random order needs an integer seed")
     if config.get("timeout_seconds", 30) <= 0:
         raise ValueError("timeout_seconds must be positive")
     if "memory_limit_mib" in config and (type(config["memory_limit_mib"]) is not int or config["memory_limit_mib"] < 64):
@@ -194,12 +200,94 @@ def experiment_path(value):
     return path.resolve() if path.is_absolute() else (ROOT / path).resolve()
 
 
+def plan_jobs(config):
+    """Keep the old nested order by default; shuffle each repetition otherwise."""
+    combinations = [(item["name"], mode["name"], program["name"])
+                    for item in config["inputs"] for mode in config["modes"]
+                    for program in config["programs"]]
+    jobs = []
+
+    def add(combination, warmup, repetition):
+        item, mode, program = combination
+        jobs.append({"id": "{}-{}-{}-{}{}".format(
+            item, mode, program, "warmup" if warmup else "rep", repetition),
+            "input": item, "mode": mode, "program": program,
+            "warmup": warmup, "repetition": repetition})
+
+    warmups, repetitions = config.get("warmups", 0), config.get("repetitions", 1)
+    if config.get("order", {}).get("kind", "fixed") == "fixed":
+        for combination in combinations:
+            for repetition in range(warmups):
+                add(combination, True, repetition)
+            for repetition in range(repetitions):
+                add(combination, False, repetition)
+    else:
+        rng = random.Random(config["order"]["seed"])
+        for repetition in range(repetitions):
+            block = combinations.copy()
+            rng.shuffle(block)
+            for combination in block:
+                if repetition == 0:
+                    for index in range(warmups):
+                        add(combination, True, index)
+                add(combination, False, repetition)
+    return jobs
+
+
+def resume_manifest(output, config_path, config, software, build, parameter, sources,
+                    lock_path, lock, state, binaries, plan):
+    """Validate all dependencies before changing any existing run files."""
+    manifest = json.loads((output / "run.json").read_text())
+
+    def require(condition, label):
+        if not condition:
+            raise ValueError("cannot resume: " + label + " differs from run.json")
+
+    require(manifest.get("schema_version") == 1, "schema")
+    require(manifest["config"] == config
+            and manifest["original_config_sha256"] == digest(config_path)
+            and manifest["config_sha256"] == digest(output / "config.json")
+            and json.loads((output / "config.json").read_text()) == config, "config")
+    require(manifest["software_root"] == str(software)
+            and manifest["build_dir"] == str(build), "software/build paths")
+    require(manifest["software_lock"] == lock
+            and manifest["software_lock_sha256"] == (digest(lock_path) if lock_path else None),
+            "software lock")
+    require(manifest["software_before"] == state, "software state")
+    require(manifest["binaries_before"] == binaries, "binary hashes")
+    require(manifest["build_settings"] == build_settings(build), "build settings")
+    if "cmake_cache_sha256" in manifest:
+        require(manifest["cmake_cache_sha256"] == digest(build / "CMakeCache.txt"), "build cache")
+    require(manifest["energy_parameter_sha256"] == digest(parameter)
+            == digest(output / "inputs/energy.par"), "energy parameter hash")
+    require(len(manifest["inputs"]) == len(sources), "input count")
+    for saved, (entry, source) in zip(manifest["inputs"], sources):
+        copied = output / "inputs" / (entry["name"] + ".txt")
+        require(all(saved.get(key) == value for key, value in entry.items())
+                and saved["copied_path"] == str(copied)
+                and saved["sha256"] == digest(source) == digest(copied), "input " + entry["name"])
+    require(manifest.get("planned_jobs", plan) == plan, "job order")
+    completed = []
+    for job in plan:
+        directory = Path("jobs") / job["id"]
+        result_path = output / directory / "result.json"
+        if result_path.is_file():
+            result = json.loads(result_path.read_text())
+            require(all(result.get(key) == value for key, value in job.items())
+                    and result.get("directory") == str(directory), "job result " + job["id"])
+            completed.append(result)
+    manifest["jobs"] = completed
+    return manifest
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", default="configs/smoke.json")
     parser.add_argument("--software-root", type=Path, default=ROOT / "deps/LinearCParty")
     parser.add_argument("--build-dir", type=Path)
     parser.add_argument("--out", required=True)
+    parser.add_argument("--resume", action="store_true",
+                        help="continue an existing matching run; keep all jobs with result.json")
     args = parser.parse_args()
     config_path = experiment_path(args.config)
     config = json.loads(config_path.read_text())
@@ -219,68 +307,105 @@ def main():
     if any(not path.is_file() for _, path in sources):
         parser.error("an input file is missing")
     output = experiment_path(args.out)
-    output.mkdir(parents=True, exist_ok=False)
-    inputs_dir = output / "inputs"
-    inputs_dir.mkdir()
-    copied_parameter = inputs_dir / "energy.par"
-    shutil.copyfile(parameter, copied_parameter)
-    frozen_inputs = []
-    for entry, source in sources:
-        copied = inputs_dir / (entry["name"] + ".txt")
-        shutil.copyfile(source, copied)
-        frozen_inputs.append({**entry, "copied_path": str(copied), "sha256": digest(copied)})
-    write_json(output / "config.json", config)
+    plan = plan_jobs(config)
+    state = git_state(software)
     binaries = {p["name"]: digest(build / p["name"]) for p in config["programs"]}
+    copied_parameter = output / "inputs/energy.par"
     env = os.environ.copy()
     env.update(config.get("environment", {}))
     env["CPARTY_FIXED_ENERGY_PARAM_FILE"] = str(copied_parameter)
-    manifest = {"schema_version": 1, "status": "running", "started_utc": now(),
+    host = {"hostname": platform.node(), "platform": platform.platform(),
+            "python": platform.python_version(), "cpu_count": os.cpu_count()}
+    environment = {key: env[key] for key in ENV_KEYS if key in env}
+    if args.resume:
+        manifest = resume_manifest(output, config_path, config, software, build, parameter,
+                                   sources, lock_path, lock, state, binaries, plan)
+        resumed = now()
+        manifest.setdefault("resume_history", []).append({
+            "resumed_utc": resumed, "previous_status": manifest.get("status"),
+            "previous_finished_utc": manifest.get("finished_utc"),
+            "previous_checks": {key: manifest[key] for key in (
+                "software_after", "binaries_after", "experiment_after",
+                "software_changed_during_run", "binaries_changed_during_run",
+                "software_lock_valid_after_run", "software_lock_error_after_run")
+                if key in manifest},
+            "completed_jobs": len(manifest["jobs"]),
+            "pending_jobs": len(plan) - len(manifest["jobs"]),
+            "host": host, "environment": environment, "experiment": git_state(ROOT),
+            "runner_sha256": digest(Path(__file__))})
+        manifest["resumed_utc"] = resumed
+        # Earlier runners recorded results only, so recover the known legacy order.
+        if "execution_order" not in manifest:
+            manifest["execution_order"] = [
+                {"id": job["id"], "started_utc": None, "recovered_legacy": True}
+                for job in plan if (output / "jobs" / job["id"] / "command.json").is_file()]
+        for key in ("finished_utc", "software_after", "experiment_after", "binaries_after",
+                    "software_changed_during_run", "binaries_changed_during_run",
+                    "software_lock_valid_after_run", "software_lock_error_after_run"):
+            manifest.pop(key, None)
+        manifest["status"] = "running"
+    else:
+        output.mkdir(parents=True, exist_ok=False)
+        copied_parameter.parent.mkdir()
+        shutil.copyfile(parameter, copied_parameter)
+        frozen_inputs = []
+        for entry, source in sources:
+            copied = copied_parameter.parent / (entry["name"] + ".txt")
+            shutil.copyfile(source, copied)
+            frozen_inputs.append({**entry, "copied_path": str(copied), "sha256": digest(copied)})
+        write_json(output / "config.json", config)
+        manifest = {"schema_version": 1, "status": "running", "started_utc": now(),
                 "purpose": config["purpose"], "config": config,
                 "config_sha256": digest(output / "config.json"),
                 "original_config_sha256": digest(config_path),
                 "software_root": str(software), "build_dir": str(build),
-                "software_before": git_state(software),
+                "software_before": state,
                 "experiment_before": git_state(ROOT), "binaries_before": binaries,
                 "build_settings": build_settings(build), "inputs": frozen_inputs,
+                "cmake_cache_sha256": digest(build / "CMakeCache.txt"),
                 "software_lock": lock, "software_lock_sha256": digest(lock_path) if lock_path else None,
                 "energy_parameter_sha256": digest(copied_parameter),
-                "host": {"hostname": platform.node(), "platform": platform.platform(),
-                         "python": platform.python_version(), "cpu_count": os.cpu_count()},
-                "environment": {key: env[key] for key in ENV_KEYS if key in env},
-                "jobs": []}
+                "host": host, "environment": environment,
+                "execution_order": [], "jobs": []}
+    manifest["planned_jobs"] = plan
     write_json(output / "run.json", manifest)
-    failed = interrupted = False
-    for item in frozen_inputs:
-        for mode in config["modes"]:
-            for program in config["programs"]:
-                for index in range(config.get("warmups", 0) + config.get("repetitions", 1)):
-                    warmup = index < config.get("warmups", 0)
-                    repetition = index if warmup else index - config.get("warmups", 0)
-                    job_id = "{}-{}-{}-{}{}".format(item["name"], mode["name"],
-                               program["name"], "warmup" if warmup else "rep", repetition)
-                    directory = output / "jobs" / job_id
-                    directory.mkdir(parents=True)
-                    command = [str(build / program["name"]), "-i", item["copied_path"],
-                               *mode.get("args", []), *program.get("args", [])]
-                    for product in program.get("outputs", []):
-                        command.extend([product["flag"], str(directory / product["name"])])
-                    result = run_one(command, directory, env, config.get("timeout_seconds", 30), config.get("memory_limit_mib"))
-                    result.update({"id": job_id, "input": item["name"], "mode": mode["name"],
-                                   "program": program["name"], "warmup": warmup,
-                                   "repetition": repetition, "command": command,
-                                   "directory": str(directory.relative_to(output))})
-                    write_json(directory / "result.json", result)
-                    manifest["jobs"].append(result)
-                    write_json(output / "run.json", manifest)
-                    print(job_id + ": " + result["status"], flush=True)
-                    failed |= result["status"] != "success"
-                    interrupted |= result["status"] == "interrupted"
-                    if interrupted:
-                        break
-                if interrupted:
-                    break
-            if interrupted:
-                break
+    completed = {job["id"] for job in manifest["jobs"]}
+    failed = any(job["status"] != "success" for job in manifest["jobs"])
+    interrupted = False
+    items = {item["name"]: item for item in manifest["inputs"]}
+    modes = {mode["name"]: mode for mode in config["modes"]}
+    programs = {program["name"]: program for program in config["programs"]}
+    for job in plan:
+        if job["id"] in completed:
+            continue
+        directory = output / "jobs" / job["id"]
+        if directory.exists():
+            archive = output / "incomplete_attempts" / job["id"]
+            archive.mkdir(parents=True, exist_ok=True)
+            index = 0
+            while (archive / str(index)).exists():
+                index += 1
+            attempt = archive / str(index)
+            shutil.move(str(directory), str(attempt))
+        directory.mkdir(parents=True)
+        item, mode, program = items[job["input"]], modes[job["mode"]], programs[job["program"]]
+        command = [str(build / program["name"]), "-i", item["copied_path"],
+                   *mode.get("args", []), *program.get("args", [])]
+        for product in program.get("outputs", []):
+            command.extend([product["flag"], str(directory / product["name"])])
+        attempt = {"id": job["id"], "started_utc": now()}
+        manifest["execution_order"].append(attempt)
+        write_json(output / "run.json", manifest)
+        result = run_one(command, directory, env, config.get("timeout_seconds", 30),
+                         config.get("memory_limit_mib"))
+        result.update({**job, "command": command, "directory": str(directory.relative_to(output))})
+        write_json(directory / "result.json", result)
+        manifest["jobs"].append(result)
+        attempt.update({"finished_utc": now(), "status": result["status"]})
+        write_json(output / "run.json", manifest)
+        print(job["id"] + ": " + result["status"], flush=True)
+        failed |= result["status"] != "success"
+        interrupted = result["status"] == "interrupted"
         if interrupted:
             break
     manifest.update({"finished_utc": now(), "status": "interrupted" if interrupted else

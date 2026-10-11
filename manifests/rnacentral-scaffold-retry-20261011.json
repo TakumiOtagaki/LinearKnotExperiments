@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-10-11T06:07:07.267426+00:00",
+  "purpose": "Retry the two 120-second scaffold timeouts without replacing records or changing scaffold settings.",
+  "original_dataset": {
+    "path": "data/rnacentral-initial-20261008/dataset.json",
+    "sha256": "e45eca921b6d4d327e91ad61406f0103273b45e01308cfbe98bced7c1f3e2487"
+  },
+  "retry_dataset": {
+    "path": "data/rnacentral-retry-20261011/dataset.json",
+    "sha256": "6ec4c85cfcd0a40996f9c14a7656aaab9db9c4f50179c8b5fdd607d0f6f89b7b"
+  },
+  "preparation_command": {
+    "argv": [
+      "python3",
+      "scripts/prepare_biological_inputs.py",
+      "--kind",
+      "rnacentral",
+      "--source-manifest",
+      "manifests/data-sources/rnacentral-panel-20261008.json",
+      "--linearpartition",
+      "deps/LinearPartition-20261008/linearpartition",
+      "--out",
+      "data/rnacentral-retry-20261011",
+      "--timeout-seconds",
+      "3600",
+      "--ids",
+      "URS000238C72C",
+      "URS00023A4DB9"
+    ],
+    "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments"
+  },
+  "host": {
+    "hostname": "r8n10",
+    "scheduler_job_id": "8970385"
+  },
+  "timeout_seconds": 3600.0,
+  "memory_limit_mib": 8192,
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "scaffold_settings": {
+    "beam": 200,
+    "dangles": 2,
+    "pair_probability_threshold": 0.7,
+    "min_helix": 2
+  },
+  "linearpartition_source": {
+    "commit": "b450fb3e63189073b68d385589035f992080aa3a",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "wrapper_sha256": "850ef5f778fda1275dabc1f561be11563a2334ceff956fb538f2f24b22633e87",
+  "vienna_binary_sha256": "ba8342306098b1f93d71eeb97054db59941362fbd1071f0688bc5a4a9d51caa7",
+  "script_sha256": "cbc739c53bf25645a64026d2e35efeadfadce400bca85427f73a50d5f0d98bce",
+  "software_unchanged": true,
+  "records": [
+    {
+      "id": "URS000238C72C",
+      "input_file": "URS000238C72C.txt",
+      "sequence_sha256": "2237659dd3b8ffc0ecb4bad5e75ef5e9a8fce8d637069f69a8243654a9d59ad7",
+      "input_sha256": "7a86c7ebc30f24bbe8034fdb7062c056694054ced7da7e36bd108279c63f1e52",
+      "scaffold_sha256": "3c6e2c65ff35599038d75a74a39c0942ec30752c7745d03c9b25706e4f848083",
+      "length": 22543,
+      "scaffold_pairs": 4465,
+      "free_bases": 13613,
+      "paired_fraction": 0.3961318369338597,
+      "maximum_pair_depth": 1030,
+      "maximum_branching_ancestors_of_free_base": 12,
+      "branching_nodes_including_exterior": 78,
+      "gc_fraction": 0.3374439959189105,
+      "scaffold_status": "success",
+      "scaffold_elapsed_seconds": 137.59235738124698,
+      "command": {
+        "argv": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearPartition-20261008/linearpartition",
+          "-V",
+          "-b",
+          "200",
+          "--dangles",
+          "2",
+          "-c",
+          "0.7",
+          "-r",
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-retry-20261011/scaffold_logs/URS000238C72C/pairs.tsv"
+        ],
+        "started_utc": "2026-10-11T06:00:44.331867+00:00",
+        "timeout_seconds": 3600.0,
+        "memory_limit_mib": 8192
+      },
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 137.59235738124698
+      },
+      "log_hashes": {
+        "command.json": "7b8ec049eeeeec216b2730cbea67a617f88f7eb1ea3aa413e66aad5cddea2b54",
+        "result.json": "45512b15a908563a6686a4888f1a641acd6c4b0abf497f1d39f09278f4e47c81",
+        "pairs.tsv": "e8956d871d5d5be0c3ef793e16057d5da8056e8f49da4da575fc08d5f128cb53",
+        "stdout.txt": "fc4f1825dd757f388e2d2a22c3099ad5f1ce73d1e803c3754c0d77038b1d5ea6",
+        "stderr.txt": "87b6baef9a419b4b61f540bf74557f8512533dcc57aa7df1c70f6aaeebbc9102"
+      }
+    },
+    {
+      "id": "URS00023A4DB9",
+      "input_file": "URS00023A4DB9.txt",
+      "sequence_sha256": "843bf7a3108552b5b767449d65c6b2d1e2bbbc8b77dd2935473fc9be9860f9a5",
+      "input_sha256": "3a739b331e14180973a0d016a316f1df4b2601291a4252e920a7347f3e14c152",
+      "scaffold_sha256": "9d38d159d5dbfe9b8a931ef80e1600ef48819068a0fcd63000938e7a74f58f81",
+      "length": 29106,
+      "scaffold_pairs": 6539,
+      "free_bases": 16028,
+      "paired_fraction": 0.4493231636088779,
+      "maximum_pair_depth": 386,
+      "maximum_branching_ancestors_of_free_base": 28,
+      "branching_nodes_including_exterior": 148,
+      "gc_fraction": 0.5174878032020889,
+      "scaffold_status": "success",
+      "scaffold_elapsed_seconds": 182.17633755877614,
+      "command": {
+        "argv": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearPartition-20261008/linearpartition",
+          "-V",
+          "-b",
+          "200",
+          "--dangles",
+          "2",
+          "-c",
+          "0.7",
+          "-r",
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/rnacentral-retry-20261011/scaffold_logs/URS00023A4DB9/pairs.tsv"
+        ],
+        "started_utc": "2026-10-11T06:03:01.929888+00:00",
+        "timeout_seconds": 3600.0,
+        "memory_limit_mib": 8192
+      },
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 182.17633755877614
+      },
+      "log_hashes": {
+        "command.json": "42217d0fcca76d5a7a59895b8b2b23f5b8d2cfe0120ef681c7fccdec9649ed73",
+        "result.json": "87165517c52a3aef3a2b12e92cce2e2afc6133b302c60b744e90ff83883f5881",
+        "pairs.tsv": "679772ea5a2eb747a94cee4033d78914ec251992f5fcb3b03f78b1f30a2aa362",
+        "stdout.txt": "be95ce6729cf72d0f68ceedc4676da8ca36db21096d6036fb20a31e5dab0d12c",
+        "stderr.txt": "c989c2ea7d1edb0d4e06a2246e548c62b8b897aaf4f78a05e7e50282d7ca6267"
+      }
+    }
+  ]
+}

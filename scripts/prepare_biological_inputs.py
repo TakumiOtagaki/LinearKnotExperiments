@@ -119,7 +119,7 @@ def memory_cap(mib):
     return apply
 
 
-def prepare(source_manifest, output, lp, kind, seed):
+def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record_ids=None):
     source_manifest, output, lp = map(Path, (source_manifest, output, lp))
     source_info = json.loads(source_manifest.read_text())
     source = ROOT / source_info.get("copied_path", source_info.get("downloaded_path"))
@@ -129,6 +129,13 @@ def prepare(source_manifest, output, lp, kind, seed):
     if not state["commit"] or state["dirty"]:
         raise ValueError("LinearPartition needs a clean pinned checkout")
     selected, excluded, bins = select_records(read_fasta(source), kind, seed)
+    cohort_ids = [r[0] for r in selected]
+    if timeout_seconds <= 0 or not math.isfinite(timeout_seconds):
+        raise ValueError("timeout_seconds must be finite and positive")
+    if record_ids is not None:
+        if len(set(record_ids)) != len(record_ids) or set(record_ids) - set(cohort_ids):
+            raise ValueError("record IDs must be unique members of the selected cohort")
+        selected = [r for r in selected if r[0] in record_ids]
     if not selected:
         raise ValueError("empty cohort")
     output.mkdir(parents=True, exist_ok=False)
@@ -143,6 +150,11 @@ def prepare(source_manifest, output, lp, kind, seed):
                 "selection_order": "ID-sorted pool; length/ID-sorted selected records",
                 "candidate_bins": bins, "excluded_records": excluded,
                 "selected_ids_before_scaffold": [r[0] for r in selected],
+                "cohort_ids_before_subset": cohort_ids,
+                "requested_record_ids": record_ids,
+                "timeout_seconds": timeout_seconds, "memory_limit_mib": 8192,
+                "environment": {key: env[key] for key in
+                                ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS", "LC_ALL")},
                 "scaffold_method": "LinearPartition-V posterior threshold, no MEA",
                 "scaffold_settings": {"beam": 200, "dangles": 2,
                                       "pair_probability_threshold": 0.7, "min_helix": 2},
@@ -157,7 +169,7 @@ def prepare(source_manifest, output, lp, kind, seed):
         command = [str(lp.resolve()), "-V", "-b", "200", "--dangles", "2",
                    "-c", "0.7", "-r", str(bpp.resolve())]
         write_json(job / "command.json", {"argv": command, "started_utc": now(),
-                                         "timeout_seconds": 120, "memory_limit_mib": 8192})
+                                         "timeout_seconds": timeout_seconds, "memory_limit_mib": 8192})
         started = time.perf_counter()
         status, returncode, error = "success", None, None
         try:
@@ -165,7 +177,7 @@ def prepare(source_manifest, output, lp, kind, seed):
                                        stderr=subprocess.PIPE, text=True, env=env,
                                        preexec_fn=memory_cap(8192), start_new_session=True)
             try:
-                stdout, stderr = process.communicate(sequence+"\n", timeout=120)
+                stdout, stderr = process.communicate(sequence+"\n", timeout=timeout_seconds)
             except subprocess.TimeoutExpired:
                 stop_group(process)
                 stdout, stderr = process.communicate()
@@ -214,8 +226,11 @@ def main():
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--linearpartition", type=Path, required=True)
     parser.add_argument("--seed", type=int, default=20261008)
+    parser.add_argument("--timeout-seconds", type=float, default=120)
+    parser.add_argument("--ids", nargs="+", help="prepare only these IDs from the unchanged cohort")
     args = parser.parse_args()
-    result = prepare(args.source_manifest, args.out, args.linearpartition, args.kind, args.seed)
+    result = prepare(args.source_manifest, args.out, args.linearpartition, args.kind, args.seed,
+                     args.timeout_seconds, args.ids)
     return int(result["status"] != "success")
 
 

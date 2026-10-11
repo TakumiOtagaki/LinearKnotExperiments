@@ -33,12 +33,15 @@ def main():
         writer.writeheader()
         writer.writerows(jobs)
     counts = dict(Counter(job["status"] for job in jobs))
-    summary = {"run_status": manifest["status"], "measured_jobs": len(jobs),
+    finalized = all(key in manifest for key in (
+        "finished_utc", "software_changed_during_run", "binaries_changed_during_run"))
+    summary = {"run_status": manifest["status"] if finalized else "interrupted",
+               "measured_jobs": len(jobs),
                "status_counts": counts, "purpose": manifest["purpose"],
                "software_commit": manifest["software_before"]["commit"],
                "experiment_commit": manifest["experiment_before"]["commit"],
-               "software_changed_during_run": manifest["software_changed_during_run"],
-               "binaries_changed_during_run": manifest["binaries_changed_during_run"]}
+               "software_changed_during_run": manifest.get("software_changed_during_run"),
+               "binaries_changed_during_run": manifest.get("binaries_changed_during_run")}
     output.with_suffix(".json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary, indent=2))
 

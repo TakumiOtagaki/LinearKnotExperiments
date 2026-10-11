@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-11T06:00:44.324534+00:00",
+  "status": "success",
+  "kind": "rnacentral",
+  "source_sha256": "14b264bc91744d58b1262ec17e4140f8ae4cc7ecf0401092b31fe24c14535cc5",
+  "acquisition_manifest_sha256": "d732318ba0df3b04425a5a2daa062eefc1bbe6001deea54bf2a494a5a9d13a09",
+  "selection_seed": null,
+  "selection_order": "ID-sorted pool; length/ID-sorted selected records",
+  "candidate_bins": null,
+  "excluded_records": [
+    {
+      "id": "URS000234B597",
+      "length": 37723,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS000234CCEC",
+      "length": 853910,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS0002383EB1",
+      "length": 84464,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS000238BD54",
+      "length": 192460,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS00023A038B",
+      "length": 60668,
+      "reason": "outside_initial_length_range"
+    },
+    {
+      "id": "URS00023B9FFB",
+      "length": 79797,
+      "reason": "outside_initial_length_range"
+    },
+    {
+      "id": "URS00023C899B",
+      "length": 630484,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS00023D6C38",
+      "length": 134714,
+      "reason": "outside_initial_length_range"
+    },
+    {
+      "id": "URS000240503C",
+      "length": 249870,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS000241010F",
+      "length": 17009,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS0002411078",
+      "length": 160505,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS00024138E3",
+      "length": 460939,
+      "reason": "non_ACGU"
+    },
+    {
+      "id": "URS000241DEE3",
+      "length": 337259,
+      "reason": "outside_initial_length_range"
+    }
+  ],
+  "selected_ids_before_scaffold": [
+    "URS000238C72C",
+    "URS00023A4DB9"
+  ],
+  "cohort_ids_before_subset": [
+    "URS000233CDDE",
+    "URS00019626CE",
+    "URS000239D8A4",
+    "URS00023C9544",
+    "URS000241043C",
+    "URS000238C72C",
+    "URS00023A4DB9"
+  ],
+  "requested_record_ids": [
+    "URS000238C72C",
+    "URS00023A4DB9"
+  ],
+  "timeout_seconds": 3600.0,
+  "memory_limit_mib": 8192,
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "scaffold_method": "LinearPartition-V posterior threshold, no MEA",
+  "scaffold_settings": {
+    "beam": 200,
+    "dangles": 2,
+    "pair_probability_threshold": 0.7,
+    "min_helix": 2
+  },
+  "linearpartition_source": {
+    "commit": "b450fb3e63189073b68d385589035f992080aa3a",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "wrapper_sha256": "850ef5f778fda1275dabc1f561be11563a2334ceff956fb538f2f24b22633e87",
+  "vienna_binary_sha256": "ba8342306098b1f93d71eeb97054db59941362fbd1071f0688bc5a4a9d51caa7",
+  "script_sha256": "cbc739c53bf25645a64026d2e35efeadfadce400bca85427f73a50d5f0d98bce",
+  "records": [
+    {
+      "id": "URS000238C72C",
+      "input_file": "URS000238C72C.txt",
+      "sequence_sha256": "2237659dd3b8ffc0ecb4bad5e75ef5e9a8fce8d637069f69a8243654a9d59ad7",
+      "input_sha256": "7a86c7ebc30f24bbe8034fdb7062c056694054ced7da7e36bd108279c63f1e52",
+      "scaffold_sha256": "3c6e2c65ff35599038d75a74a39c0942ec30752c7745d03c9b25706e4f848083",
+      "length": 22543,
+      "scaffold_pairs": 4465,
+      "free_bases": 13613,
+      "paired_fraction": 0.3961318369338597,
+      "maximum_pair_depth": 1030,
+      "maximum_branching_ancestors_of_free_base": 12,
+      "branching_nodes_including_exterior": 78,
+      "gc_fraction": 0.3374439959189105,
+      "scaffold_status": "success",
+      "scaffold_elapsed_seconds": 137.59235738124698
+    },
+    {
+      "id": "URS00023A4DB9",
+      "input_file": "URS00023A4DB9.txt",
+      "sequence_sha256": "843bf7a3108552b5b767449d65c6b2d1e2bbbc8b77dd2935473fc9be9860f9a5",
+      "input_sha256": "3a739b331e14180973a0d016a316f1df4b2601291a4252e920a7347f3e14c152",
+      "scaffold_sha256": "9d38d159d5dbfe9b8a931ef80e1600ef48819068a0fcd63000938e7a74f58f81",
+      "length": 29106,
+      "scaffold_pairs": 6539,
+      "free_bases": 16028,
+      "paired_fraction": 0.4493231636088779,
+      "maximum_pair_depth": 386,
+      "maximum_branching_ancestors_of_free_base": 28,
+      "branching_nodes_including_exterior": 148,
+      "gc_fraction": 0.5174878032020889,
+      "scaffold_status": "success",
+      "scaffold_elapsed_seconds": 182.17633755877614
+    }
+  ],
+  "linearpartition_source_after": {
+    "commit": "b450fb3e63189073b68d385589035f992080aa3a",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "vienna_binary_sha256_after": "ba8342306098b1f93d71eeb97054db59941362fbd1071f0688bc5a4a9d51caa7",
+  "wrapper_sha256_after": "850ef5f778fda1275dabc1f561be11563a2334ceff956fb538f2f24b22633e87",
+  "software_unchanged": true,
+  "finished_utc": "2026-10-11T06:06:04.142556+00:00"
+}
