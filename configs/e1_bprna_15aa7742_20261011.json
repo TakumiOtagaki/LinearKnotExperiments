@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "name": "e1-bprna-15aa7742-20261011",
+  "purpose": "development",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "temperature_source": "CLI/API default; verify RT metadata",
+    "build_revision_verified": true
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 600,
+  "warmups": 0,
+  "repetitions": 1,
+  "inputs": [
+    {
+      "name": "bpRNA_RFAM_15825",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_15825.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_25128",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_25128.txt"
+    },
+    {
+      "name": "bpRNA_CRW_30304",
+      "path": "data/bprna-pilot-20261008/bpRNA_CRW_30304.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_18904",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_18904.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_18426",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_18426.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_27342",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_27342.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_23270",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_23270.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_14153",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_14153.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_38188",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_38188.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_2449",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_2449.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_5936",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_5936.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_2886",
+      "path": "data/bprna-pilot-20261008/bpRNA_RFAM_2886.txt"
+    }
+  ],
+  "modes": [
+    {
+      "name": "exact",
+      "args": [
+        "--exact"
+      ]
+    },
+    {
+      "name": "beam20_default",
+      "args": [
+        "-b",
+        "20",
+        "--max-hairpin",
+        "30",
+        "--max-case3-depth",
+        "30"
+      ]
+    },
+    {
+      "name": "beam50_default",
+      "args": [
+        "-b",
+        "50",
+        "--max-hairpin",
+        "30",
+        "--max-case3-depth",
+        "30"
+      ]
+    },
+    {
+      "name": "beam100_default",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "30",
+        "--max-case3-depth",
+        "30"
+      ]
+    },
+    {
+      "name": "beam200_default",
+      "args": [
+        "-b",
+        "200",
+        "--max-hairpin",
+        "30",
+        "--max-case3-depth",
+        "30"
+      ]
+    },
+    {
+      "name": "beam20_nocap",
+      "args": [
+        "-b",
+        "20",
+        "--max-hairpin",
+        "100000",
+        "--max-case3-depth",
+        "100000"
+      ]
+    },
+    {
+      "name": "beam50_nocap",
+      "args": [
+        "-b",
+        "50",
+        "--max-hairpin",
+        "100000",
+        "--max-case3-depth",
+        "100000"
+      ]
+    },
+    {
+      "name": "beam100_nocap",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100000",
+        "--max-case3-depth",
+        "100000"
+      ]
+    },
+    {
+      "name": "beam200_nocap",
+      "args": [
+        "-b",
+        "200",
+        "--max-hairpin",
+        "100000",
+        "--max-case3-depth",
+        "100000"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "name": "LinearCParty",
+      "args": [
+        "--bpp-cutoff",
+        "0"
+      ],
+      "outputs": [
+        {
+          "name": "bpp.tsv",
+          "flag": "--bpp"
+        }
+      ]
+    },
+    {
+      "name": "LinearPKCapR",
+      "args": []
+    },
+    {
+      "name": "LinearPKRaccess",
+      "args": [
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ]
+    }
+  ],
+  "analysis": {
+    "reference_mode": "exact",
+    "comparison_scope": "E1 on the same 12 bpRNA inputs: exact versus b=20/50/100/200 with the default local caps (30/30), and the same widths with caps that never bind (100000), as in docs/experiment_design.md.",
+    "default_cap_comparison": "beam*_default measures the whole method error; beam*_nocap isolates the beam-width effect."
+  },
+  "software_lock": "manifests/software-pilot-15aa7742.json",
+  "memory_limit_mib": 8192,
+  "order": {
+    "kind": "blocked_random",
+    "seed": 20261011
+  }
+}

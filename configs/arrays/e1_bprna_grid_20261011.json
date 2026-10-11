@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "measurement": "accuracy",
+  "seed": 20261011,
+  "tiers": [
+    {
+      "name": "bprna_under200",
+      "min_length": 1,
+      "max_length": 199,
+      "resource": "cpu_16",
+      "h_rt": "01:00:00",
+      "target_seconds": 300,
+      "memory_budget_mib": 24576,
+      "task_overhead_mib": 512,
+      "workers": 2,
+      "cost_model": {
+        "basis": "Uncalibrated accuracy packing example. Estimates sum all exact/beam CLI jobs without assuming parallel speedup; replace coefficients using the adopted pilot.",
+        "seconds_per_nt_condition": 0.001,
+        "safety_factor": 2,
+        "mode_factors": {
+          "exact": 2,
+          "beam20_default": 1,
+          "beam50_default": 1,
+          "beam100_default": 1,
+          "beam200_default": 1,
+          "beam20_nocap": 1,
+          "beam50_nocap": 1,
+          "beam100_nocap": 1,
+          "beam200_nocap": 1
+        },
+        "memory_base_mib": 512,
+        "mib_per_nt": 4
+      }
+    },
+    {
+      "name": "bprna_200_800",
+      "min_length": 200,
+      "max_length": 800,
+      "resource": "cpu_16",
+      "h_rt": "02:00:00",
+      "target_seconds": 600,
+      "memory_budget_mib": 24576,
+      "task_overhead_mib": 512,
+      "workers": 2,
+      "cost_model": {
+        "basis": "Uncalibrated accuracy example for the longer exact comparisons. No ideal parallel speedup is assumed. These are scheduling estimates, not scientific complexity claims.",
+        "seconds_per_nt_condition": 0.004,
+        "safety_factor": 2,
+        "mode_factors": {
+          "exact": 2,
+          "beam20_default": 1,
+          "beam50_default": 1,
+          "beam100_default": 1,
+          "beam200_default": 1,
+          "beam20_nocap": 1,
+          "beam50_nocap": 1,
+          "beam100_nocap": 1,
+          "beam200_nocap": 1
+        },
+        "memory_base_mib": 1024,
+        "mib_per_nt": 8
+      }
+    }
+  ],
+  "note": "E1 accuracy grid on 15aa7742 (9 modes x 3 CLIs). Submit with qsub -g tga-otgk-long-rna."
+}
