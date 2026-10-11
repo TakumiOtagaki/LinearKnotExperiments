@@ -149,7 +149,7 @@ class AccuracyTests(unittest.TestCase):
 
 class PilotTests(unittest.TestCase):
     def test_reproducible_matched_sequences_and_immutable_outputs(self):
-        with tempfile.TemporaryDirectory(dir=ROOT / "data") as temporary:
+        with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
             count, jobs = prepare(directory / "first", directory / "first.json", 20261008)
             prepare(directory / "second", directory / "second.json", 20261008)

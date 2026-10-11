@@ -9,6 +9,7 @@ from pathlib import Path
 
 from rna_records import read_record
 from run_cli import digest, experiment_path, now, write_json
+from task_storage import RunReader, MemoryFile, input_records
 
 QUANTITIES = ("log_z", "free_energy")
 POLICIES = {"E0LegacyCompatible": "legacy-compatible-wmb", "E0Default": "weakly-closed-wmb",
@@ -51,17 +52,16 @@ def within_tolerance(metrics, config):
 
 
 def analyze(run):
-    manifest = json.loads((run / "run.json").read_text())
+    reader = RunReader(run)
+    manifest = reader.manifest
     if manifest["status"] == "running" or manifest.get("summary_only"):
         raise ValueError("finish and aggregate observations before E0 analysis")
-    records = {}
+    records = input_records(reader)
+    seen_inputs = set()
     for entry in manifest["inputs"]:
-        path = Path(entry["copied_path"])
-        if digest(path) != entry["sha256"]:
-            raise ValueError("input changed")
-        if entry["name"] in records:
+        if entry["name"] in seen_inputs:
             raise ValueError("duplicate E0 input")
-        records[entry["name"]] = read_record(path)
+        seen_inputs.add(entry["name"])
     config = manifest["config"]["analysis"]
     for key in ("log_z_absolute_tolerance", "free_energy_absolute_tolerance"):
         if not math.isfinite(config[key]) or config[key] < 0:
@@ -76,7 +76,7 @@ def analyze(run):
         if job["status"] != "success":
             continue
         try:
-            value = read_observation(run / job["directory"] / "stdout.txt", records[job["input"]])
+            value = read_observation(MemoryFile(reader.artifact(job, "stdout.txt")), records[job["input"]])
             if value.get("policy") != POLICIES[job["program"]]:
                 raise ValueError("E0 closure policy differs")
             parsed[key] = value
@@ -113,7 +113,7 @@ def analyze(run):
     parity = [r for r in rows if r["comparison_kind"] == "numerical_parity"]
     closure = [r for r in rows if r["comparison_kind"] == "closure_model_difference"]
     eligible = [r for r in closure if r["status"] == "success" and r.get("closure_attribution_valid")]
-    return {"schema_version": 2, "created_utc": now(), "run_manifest_sha256": digest(run / "run.json"),
+    return {"schema_version": 2, "created_utc": now(), "run_manifest_sha256": reader.manifest_sha256,
         "analysis_script_sha256": digest(Path(__file__)), "planned_inputs": len(records),
         "comparison_quantities": list(QUANTITIES), "excluded_quantities": ["bpp", "mfe", "contexts"],
         "tolerances": {k: config[k] for k in ("log_z_absolute_tolerance", "free_energy_absolute_tolerance")},

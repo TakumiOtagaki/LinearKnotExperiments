@@ -24,7 +24,7 @@ def paired_positions(pairs):
 
 
 def read_record(path):
-    lines = [line.strip() for line in Path(path).read_text().splitlines()
+    lines = [line.strip() for line in (path.read_text() if hasattr(path, "read_text") else Path(path).read_text()).splitlines()
              if line.strip() and not line.lstrip().startswith("#")]
     if len(lines) != 3 or not lines[0].startswith(">"):
         raise ValueError("accuracy inputs require exactly one named record")

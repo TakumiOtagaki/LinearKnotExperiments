@@ -8,6 +8,7 @@ from pathlib import Path
 from prepare_biological_inputs import read_fasta
 from rna_records import read_record
 from run_cli import digest, experiment_path
+from task_storage import ArchiveReader, MemoryFile
 
 SETTINGS = {"beam": 200, "dangles": 2, "pair_probability_threshold": 0.7, "min_helix": 2}
 LP_COMMIT = "b450fb3e63189073b68d385589035f992080aa3a"
@@ -52,6 +53,7 @@ def expand_cohort(config, dry_run=False):
     elif not dry_run:
         raise ValueError("pending scaffolds: finish and aggregate G before verified planning")
     config.setdefault("inputs", [])
+    archives = {}
     for entry in cohort["records"]:
         name = entry["id"]
         sequence = sequences[name]
@@ -64,8 +66,18 @@ def expand_cohort(config, dry_run=False):
             item.update(scaffold_pending=True, planning_sequence=sequence)
         else:
             saved = generated[name]
-            record = read_record(path)
-            if (saved["scaffold_status"] != "success" or digest(path) != saved["input_sha256"] or
+            if "input_archive" in saved:
+                archive_path = experiment_path(saved["input_archive"])
+                if archive_path not in archives:
+                    archives[archive_path] = ArchiveReader(archive_path)
+                data = archives[archive_path].read(saved["input_member"])
+                record = read_record(MemoryFile(data))
+                input_sha = hashlib.sha256(data).hexdigest()
+                item.update(input_archive=str(archive_path), input_member=saved["input_member"], sha256=input_sha)
+            else:
+                record = read_record(path)
+                input_sha = digest(path)
+            if (saved["scaffold_status"] != "success" or input_sha != saved["input_sha256"] or
                     record[:2] != (name, sequence) or saved["sequence_sha256"] != sha or
                     hashlib.sha256(record[2].encode()).hexdigest() != saved["scaffold_sha256"]):
                 raise ValueError("generated scaffold input changed: " + name)

@@ -16,9 +16,13 @@ import re
 import shlex
 import shutil
 import sys
+import io
+import tarfile
 from pathlib import Path
 
 from rna_records import read_record
+from task_storage import FORMAT, ArchiveReader, MemoryFile
+from file_budget import check_budget, estimate_files
 from run_cli import (ROOT, digest, experiment_path, git_state, now,
                      mode_applies, plan_jobs, validate, verify_lock, write_json)
 
@@ -240,7 +244,7 @@ def script_text(plan, tier, count):
     return "\n".join(script)
 
 
-def prepare(config_path, settings_path, output, jobs_dir, software=None, build=None, dry_run=False):
+def prepare(config_path, settings_path, output, jobs_dir, software=None, build=None, dry_run=False, estimate_only=False):
     config = json.loads(config_path.read_text())
     from biological_cohort import expand_cohort
     config, cohort_provenance, pending = expand_cohort(config, dry_run)
@@ -258,7 +262,7 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
     if software is not None:
         verify_lock(lock_path, software, build, config["programs"], software / config["energy_parameter_file"])
         state, verified = git_state(software), True
-    inputs = []
+    inputs, existing_archives = [], {}
     for entry in config["inputs"]:
         source = experiment_path(entry["path"])
         if entry.get("scaffold_pending"):
@@ -266,11 +270,42 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
             payload = ">" + entry["name"] + "\n" + sequence + "\n" + "." * len(sequence) + "\n"
             sha = hashlib.sha256(payload.encode()).hexdigest()
         else:
-            _, sequence, _ = read_record(source)
-            sha = digest(source)
+            if "input_archive" in entry:
+                archive_path = experiment_path(entry["input_archive"])
+                if archive_path not in existing_archives:
+                    existing_archives[archive_path] = ArchiveReader(archive_path)
+                data = existing_archives[archive_path].read(entry["input_member"])
+                _, sequence, _ = read_record(MemoryFile(data))
+                sha = hashlib.sha256(data).hexdigest()
+            else:
+                _, sequence, _ = read_record(source)
+                sha = digest(source)
         inputs.append({**entry, "source_path": str(source), "length": len(sequence), "sha256": sha,
                        "sequence_sha256": hashlib.sha256(sequence.encode()).hexdigest()})
     tasks = make_tasks(config, settings, inputs)
+    nonempty = len({t["tier"] for t in tasks})
+    budget = check_budget(estimate_files(len(tasks), nonempty, settings.get("compact_plan", False)), settings)
+    if estimate_only:
+        if not dry_run:
+            raise ValueError("--estimate-only requires --dry-run")
+        if output.exists():
+            raise ValueError("use new immutable estimate output directory")
+        planned_jobs = sum(len(config["programs"]) * (config.get("warmups", 0) + config.get("repetitions", 1)) *
+                           sum(mode_applies(m, i) for m in config["modes"]) for i in inputs)
+        report = {"schema_version": 1, "run_kind": "array_estimate", "output_format": FORMAT,
+                  "dry_run": True, "executable": False, "created_utc": now(),
+                  "config_sha256": digest(config_path), "array_config_sha256": digest(settings_path) if settings_path else None,
+                  "dependencies_verified_at_planning": verified, "pending_scaffolds": pending,
+                  "inputs": len(inputs), "tasks": len(tasks), "planned_jobs": planned_jobs,
+                  "file_budget": budget, "estimate_artifact_entries": 2,
+                  "tiers": [{"tier": name, "tasks": sum(t["tier"] == name for t in tasks),
+                             "inputs": sum(len(t["inputs"]) for t in tasks if t["tier"] == name)}
+                            for name in sorted({t["tier"] for t in tasks})],
+                  "task_assignments": [{"tier": t["tier"], "task_id": t["task_id"],
+                                        "inputs": [i["name"] for i in t["inputs"]]} for t in tasks]}
+        output.mkdir(parents=True)
+        write_json(output / "array_estimate.json", report)
+        return report
     if output.exists() or jobs_dir.exists():
         raise ValueError("use new immutable output and jobs directories")
     if any(c.isspace() for c in str(output)):
@@ -278,20 +313,31 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
     output.mkdir(parents=True)
     jobs_dir.mkdir(parents=True)
     (output / "scheduler_logs").mkdir()
-    (output / "inputs").mkdir()
     shutil.copyfile(config_path, output / "original_config.json")
     shutil.copyfile(lock_path, output / "software_lock.json")
     write_json(output / "array_config.json", settings)
-    for entry in inputs:
-        copied = output / "inputs" / (entry["name"] + ".txt")
-        if entry.get("scaffold_pending"):
-            sequence = entry.pop("planning_sequence")
-            copied.write_text(">" + entry["name"] + "\n" + sequence + "\n" + "." * len(sequence) + "\n")
-        else:
-            shutil.copyfile(entry["source_path"], copied)
-        if digest(copied) != entry["sha256"]:
-            raise ValueError("input changed during planning")
-        entry["copied_path"] = str(copied)
+    source_archives = {}
+    input_tar = output / "inputs.tar"
+    with tarfile.open(input_tar, "w") as archive:
+        for entry in inputs:
+            if entry.get("scaffold_pending"):
+                sequence = entry.pop("planning_sequence")
+                data = (">" + entry["name"] + "\n" + sequence + "\n" + "." * len(sequence) + "\n").encode()
+            elif "input_archive" in entry:
+                path = experiment_path(entry["input_archive"])
+                if path not in source_archives:
+                    source_archives[path] = ArchiveReader(path)
+                data = source_archives[path].read(entry["input_member"])
+            else:
+                data = Path(entry["source_path"]).read_bytes()
+            if hashlib.sha256(data).hexdigest() != entry["sha256"]:
+                raise ValueError("input changed during planning")
+            member = "inputs/" + entry["name"] + ".txt"
+            info = tarfile.TarInfo(member)
+            info.size = len(data)
+            archive.addfile(info, io.BytesIO(data))
+            entry.update(input_archive=str(input_tar), input_member=member,
+                         copied_path=str(output / member))
     for entry in config["inputs"]:
         entry.pop("planning_sequence", None)
     frozen = {i["name"]: i for i in inputs}
@@ -307,7 +353,9 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
         task_config.pop("array", None)
         task_config.pop("input_cohort", None)
         task_config["inputs"] = [{**config_entries[i["name"]], "length": i["length"],
-                                  "path": frozen[i["name"]]["copied_path"]} for i in task["inputs"]]
+                                  "path": frozen[i["name"]]["copied_path"],
+                                  **{k: frozen[i["name"]][k] for k in ("input_archive", "input_member", "sha256")}}
+                                 for i in task["inputs"]]
         task_config["software_lock"] = str(output / "software_lock.json")
         tier = next(t for t in settings["tiers"] if t["name"] == task["tier"])
         task_config["order"] = {"kind": tier.get("order_kind", "blocked_random"), "seed": settings["seed"]}
@@ -324,6 +372,7 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
         write_json(output / directory / "task.json", {"schema_version": 1, "status": "not_started",
                    "tier": task["tier"], "task_id": task["task_id"], "attempts": []})
     plan = {"schema_version": 1, "run_kind": "array", "created_utc": now(),
+            "output_format": FORMAT, "file_budget": budget, "inputs_archive_sha256": digest(input_tar),
             "output_dir": str(output), "config": config, "array_config": settings,
             "original_config_sha256": digest(output / "original_config.json"),
             "array_config_sha256": digest(output / "array_config.json"),
@@ -366,7 +415,10 @@ def load_plan(path, task_selector=None, verify_frozen_inputs=True):
         raise ValueError("task is outside the saved tier array")
     inputs = plan["inputs"] if task_selector is None else selected[0]["inputs"]
     if verify_frozen_inputs:
-        checks += [(Path(i["copied_path"]), i["sha256"]) for i in inputs]
+        if "inputs_archive_sha256" in plan:
+            checks += [(output / "inputs.tar", plan["inputs_archive_sha256"])]
+        else:
+            checks += [(Path(i["copied_path"]), i["sha256"]) for i in inputs]
     checks += [(Path(t["config_path"]), t["config_sha256"]) for t in selected]
     checks += [(Path(t["planned_jobs_path"]), t["planned_jobs_sha256"]) for t in selected if "planned_jobs_path" in t]
     for file, expected in checks:
@@ -393,16 +445,20 @@ def main():
     parser.add_argument("--software-root", type=Path)
     parser.add_argument("--build-dir", type=Path)
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--estimate-only", action="store_true", help="dry-run counts and assignments in one JSON; no task files or input copies")
     args = parser.parse_args()
     output = experiment_path(args.out)
     plan = prepare(experiment_path(args.config), experiment_path(args.array_config) if args.array_config else None,
                    output, experiment_path(args.jobs_dir) if args.jobs_dir else ROOT / "jobs" / output.name,
                    args.software_root.resolve() if args.software_root else None,
-                   args.build_dir.resolve() if args.build_dir else None, args.dry_run)
+                   args.build_dir.resolve() if args.build_dir else None, args.dry_run, args.estimate_only)
+    if args.estimate_only:
+        print(json.dumps({k: plan[k] for k in ("inputs", "tasks", "planned_jobs", "file_budget", "pending_scaffolds")}, indent=2))
+        return
     print(json.dumps({"plan": str(output / "array_plan.json"), "dry_run": plan["dry_run"],
                       "dependencies_verified": plan["dependencies_verified_at_planning"],
                       "inputs": len(plan["inputs"]), "tasks": len(plan["tasks"]),
-                      "job_scripts": plan["job_scripts"]}, indent=2))
+                      "job_scripts": plan["job_scripts"], "file_budget": plan["file_budget"]}, indent=2))
 
 
 if __name__ == "__main__":

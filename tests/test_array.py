@@ -20,6 +20,7 @@ from plan_array import exclusive, load_plan, make_tasks, prepare, validate_array
 from run_array_task import run_task
 from run_cli import digest, validate, write_json
 from validate_outputs import validate_outputs
+from task_storage import ArchiveReader, jsonl_rows
 
 
 class ArrayTests(unittest.TestCase):
@@ -27,6 +28,9 @@ class ArrayTests(unittest.TestCase):
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
+        quota = patch("file_budget.query_quota", return_value={"used_files": 23000000, "limit_files": 24000000})
+        quota.start()
+        self.addCleanup(quota.stop)
         self.software = self.root / "software"
         self.build = self.software / "build"
         self.build.mkdir(parents=True)
@@ -89,7 +93,7 @@ sys.exit(7 if pathlib.Path(sys.argv[0]).name == 'failure' else 0)
                             "if 'rev-parse' in sys.argv: print('1'*40)\n")
         fake_git.chmod(0o755)
         self.env = {**os.environ, "PATH": str(fake_bin) + os.pathsep + os.environ["PATH"],
-                    "JOB_ID": "fixture-job", "SGE_TASK_ID": "1"}
+                    "JOB_ID": "fixture-job", "SGE_TASK_ID": "1", "TMPDIR": str(self.root)}
 
     def prepare(self, dry_run=False):
         write_json(self.config_path, self.config)
@@ -160,7 +164,7 @@ sys.exit(7 if pathlib.Path(sys.argv[0]).name == 'failure' else 0)
         self.assertIn("#$ -l cpu_4=1", script.read_text())
         with self.assertRaisesRegex(ValueError, "immutable"):
             self.prepare(dry_run=True)
-        copied = Path(plan["inputs"][0]["copied_path"])
+        copied = self.output / "inputs.tar"
         copied.write_text("changed\n")
         with self.assertRaisesRegex(ValueError, "frozen dependency"):
             load_plan(self.plan_path)
@@ -188,18 +192,22 @@ sys.exit(7 if pathlib.Path(sys.argv[0]).name == 'failure' else 0)
         manifest = json.loads((run / "run.json").read_text())
         self.assertEqual([a["id"] for a in manifest["execution_order"]],
                          [j["id"] for j in plan["tasks"][0]["planned_jobs"]])
-        kept = {j["id"]: (run / j["directory"] / "result.json").read_bytes() for j in manifest["jobs"][:-1]}
+        checkpoint = run / "task_results.jsonl"
+        kept = {j["id"]: j for j in jsonl_rows(checkpoint)[:-1]}
         pending = manifest["jobs"][-1]
-        (run / pending["directory"] / "result.json").unlink()
-        (run / pending["directory"] / "partial.txt").write_text("preserve interrupted artifacts\n")
+        lines = checkpoint.read_bytes().splitlines(keepends=True)
+        checkpoint.write_bytes(b"".join(lines[:-1]) + b'{"torn":')
+        with (run / "task_outputs.tar").open("ab") as stream:
+            stream.write(b"uncommitted archive tail")
         with self.assertRaisesRegex(ValueError, "use --resume"):
             self.run_task()
         self.assertEqual(self.run_task(resume=True), 1)
         resumed = json.loads((run / "run.json").read_text())
         self.assertEqual(len(resumed["execution_order"]), 25)
         for identifier, data in kept.items():
-            self.assertEqual((run / "jobs" / identifier / "result.json").read_bytes(), data)
-        self.assertTrue((run / "incomplete_attempts" / pending["id"] / "0/partial.txt").is_file())
+            self.assertEqual(next(j for j in jsonl_rows(checkpoint) if j["id"] == identifier), data)
+        self.assertFalse((run / "jobs").exists())
+        self.assertLessEqual(len(list(run.iterdir())), 5)
         merged = aggregate(self.plan_path)
         self.assertEqual(merged["task_status_counts"], {"failed": 1, "not_started": 1})
         self.assertEqual((merged["planned_measured_jobs"], merged["completed_measured_jobs"],
@@ -260,8 +268,8 @@ sys.exit(7 if pathlib.Path(sys.argv[0]).name == 'failure' else 0)
         self.assertEqual(self.run_task(), 1)
         run_file = task_dir / "run/run.json"
         before = run_file.read_bytes()
-        copied = task_dir / "run/inputs/a.txt"
-        copied.write_text("altered\n")
+        copied = task_dir / "run/config.json"
+        copied.write_text(copied.read_text() + "\n")
         self.assertEqual(self.run_task(resume=True), 2)
         self.assertEqual(run_file.read_bytes(), before)
 

@@ -23,8 +23,6 @@ def dot_bracket(length, pairs):
 def prepare(destination, config_path, seed):
     if destination.exists() or config_path.exists():
         raise ValueError("use new dataset and config paths; outputs are immutable")
-    destination.relative_to(ROOT)
-    config_path.relative_to(ROOT)
     destination.mkdir(parents=True)
     config_path.parent.mkdir(parents=True, exist_ok=True)
     records = []
@@ -47,7 +45,7 @@ def prepare(destination, config_path, seed):
                 path = destination / (name + ".txt")
                 path.write_text(f">{name}\n{sequence}\n{scaffold}\n")
                 read_record(path)
-                records.append({"name": name, "path": str(path.relative_to(ROOT)),
+                records.append({"name": name, "path": str(path.relative_to(ROOT)) if ROOT in path.parents else str(path),
                                 "sequence_group": f"n{length}_r{replicate}",
                                 "sequence_seed": sequence_seed, "scaffold_kind": kind,
                                 "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),

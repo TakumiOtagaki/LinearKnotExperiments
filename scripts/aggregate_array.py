@@ -10,6 +10,7 @@ import sys
 
 from plan_array import exclusive, load_plan, task_jobs
 from run_cli import digest, experiment_path, now, write_json
+from task_storage import FORMAT, RunReader, jsonl_rows
 
 
 def active_task(directory):
@@ -26,6 +27,8 @@ def active_task(directory):
 
 
 def aggregate(plan_path, summary_only=False):
+    if str(plan_path).split("::", 1)[0].endswith((".tar", ".tar.gz", ".tgz")):
+        return RunReader(plan_path).manifest
     plan = load_plan(plan_path, verify_frozen_inputs=not summary_only)
     output = Path(plan["output_dir"])
     with exclusive(output / ".aggregate.lock"):
@@ -36,6 +39,15 @@ def aggregate(plan_path, summary_only=False):
             metadata = json.loads((directory / "task.json").read_text())
             run_file = directory / "run/run.json"
             manifest = json.loads(run_file.read_text()) if run_file.is_file() else {}
+            packed = manifest.get("output_format") == FORMAT
+            checkpoint_rows = jsonl_rows(directory / "run/task_results.jsonl") if packed else []
+            saved_results = {r["id"]: r for r in checkpoint_rows}
+            if len(saved_results) != len(checkpoint_rows):
+                raise ValueError("duplicate checkpoint job")
+            if checkpoint_rows:
+                archive = directory / "run/task_outputs.tar"
+                if not archive.exists() or archive.stat().st_size < checkpoint_rows[-1]["archive_end"]:
+                    raise ValueError("checkpoint raw archive is missing or truncated")
             active = active_task(directory)
             status = "running" if active else metadata["status"]
             if status == "running":
@@ -43,15 +55,21 @@ def aggregate(plan_path, summary_only=False):
             missing = 0
             task_rows = []
             schedule = task_jobs(plan, task)
-            markers = set((directory / "run/jobs").glob("*/result.json"))
+            markers = set((directory / "run/jobs").glob("*/result.json")) if not packed else set()
+            if set(saved_results) - {j["id"] for j in schedule}:
+                raise ValueError("checkpoint contains unplanned jobs")
             for planned in schedule:
                 relative = Path(task["directory"]) / "run/jobs" / planned["id"]
                 result_file = output / relative / "result.json"
-                if result_file in markers:
-                    result = json.loads(result_file.read_text())
+                if planned["id"] in saved_results or result_file in markers:
+                    result = saved_results.get(planned["id"]) if packed else json.loads(result_file.read_text())
                     if any(result.get(k) != v for k, v in planned.items()):
                         raise ValueError("result identity differs from plan: " + str(result_file))
                     row = {**result, "directory": str(relative), "result_present": True}
+                    if packed:
+                        row["output_archive"] = str(Path(task["directory"]) / "run/task_outputs.tar")
+                        row["archive_member_directory"] = result["directory"]
+                        row["artifact_hashes"] = {Path(k).name: v["sha256"] for k, v in result["artifacts"].items()}
                 else:
                     missing += 1
                     row = {**planned, "directory": str(relative), "result_present": False,
@@ -90,6 +108,7 @@ def aggregate(plan_path, summary_only=False):
             return True if True in values else False if all(v is False for v in values) else None
 
         manifest = {"schema_version": 1, "run_kind": "array", "status": status,
+                    "output_format": plan.get("output_format"), "file_budget": plan.get("file_budget"),
                     "purpose": plan["config"]["purpose"], "config": plan["config"],
                     "array_config": plan["array_config"], "created_utc": plan["created_utc"],
                     "started_utc": min((a["started_utc"] for t in tasks for a in t["attempts"]), default=None),
@@ -112,8 +131,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--plan", required=True)
     parser.add_argument("--summary-only", action="store_true", help="counts only; observations remain in task runs")
+    parser.add_argument("--out", help="optional JSON destination, also for reading results/archives/*.tar")
     args = parser.parse_args()
     manifest = aggregate(experiment_path(args.plan), args.summary_only)
+    if args.out:
+        write_json(experiment_path(args.out), manifest)
     print(json.dumps({k: manifest[k] for k in ("status", "planned_tasks", "task_status_counts",
                       "planned_measured_jobs", "completed_measured_jobs", "missing_measured_jobs")}, indent=2))
 

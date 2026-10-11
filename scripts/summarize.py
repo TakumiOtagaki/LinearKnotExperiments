@@ -6,12 +6,14 @@ from collections import Counter
 import csv
 import json
 from pathlib import Path
+from task_storage import RunReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
 FIELDS = ("id", "input", "mode", "program", "repetition", "status", "returncode",
           "elapsed_seconds", "time_wall_seconds", "peak_rss_kib", "directory",
-          "tier", "task_id", "global_task_number", "result_present")
+          "tier", "task_id", "global_task_number", "result_present", "output_archive",
+          "archive_member_directory")
 
 
 def resolve(value):
@@ -25,7 +27,9 @@ def main():
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
     run = resolve(args.run)
-    manifest = json.loads((run / "run.json").read_text())
+    manifest = RunReader(run).manifest
+    if manifest.get("summary_only"):
+        raise ValueError("aggregate without --summary-only before exporting observations")
     jobs = [job for job in manifest["jobs"] if not job["warmup"]]
     output = resolve(args.out)
     output.parent.mkdir(parents=True, exist_ok=True)

@@ -18,6 +18,7 @@ import subprocess
 import sys
 import time
 from datetime import datetime, timezone
+from task_storage import FORMAT, ArchiveReader, TaskStore, local_workspace, jsonl_rows
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -271,7 +272,7 @@ def mode_applies(mode, item):
 
 
 def resume_manifest(output, config_path, config, software, build, parameter, sources,
-                    lock_path, lock, state, binaries, plan):
+                    lock_path, lock, state, binaries, plan, store=None):
     """Validate all dependencies before changing any existing run files."""
     manifest = json.loads((output / "run.json").read_text())
 
@@ -294,17 +295,28 @@ def resume_manifest(output, config_path, config, software, build, parameter, sou
     require(manifest["build_settings"] == build_settings(build), "build settings")
     if "cmake_cache_sha256" in manifest:
         require(manifest["cmake_cache_sha256"] == digest(build / "CMakeCache.txt"), "build cache")
-    require(manifest["energy_parameter_sha256"] == digest(parameter)
-            == digest(output / "inputs/energy.par"), "energy parameter hash")
+    require(manifest["energy_parameter_sha256"] == digest(parameter), "energy parameter hash")
+    if store is None:
+        require(manifest["energy_parameter_sha256"] == digest(output / "inputs/energy.par"), "copied energy parameter hash")
     require(len(manifest["inputs"]) == len(sources), "input count")
     for saved, (entry, source) in zip(manifest["inputs"], sources):
         copied = output / "inputs" / (entry["name"] + ".txt")
         require(all(saved.get(key) == value for key, value in entry.items())
-                and saved["copied_path"] == str(copied)
-                and saved["sha256"] == digest(source) == digest(copied), "input " + entry["name"])
+                and (store is not None or saved["copied_path"] == str(copied))
+                and saved["sha256"] == digest(source)
+                and (store is not None or saved["sha256"] == digest(copied)), "input " + entry["name"])
     require(manifest.get("planned_jobs", plan) == plan, "job order")
     completed = []
+    if store is not None:
+        require(manifest.get("output_format") == FORMAT, "output format (old arrays must be replanned)")
+        planned = {j["id"]: j for j in plan}
+        for result in store.rows:
+            require(result["id"] in planned and all(result.get(k) == v for k, v in planned[result["id"]].items()),
+                    "checkpoint job " + result["id"])
+        completed = store.rows.copy()
     for job in plan:
+        if store is not None:
+            break
         directory = Path("jobs") / job["id"]
         result_path = output / directory / "result.json"
         if result_path.is_file():
@@ -316,14 +328,7 @@ def resume_manifest(output, config_path, config, software, build, parameter, sou
     journal = output / "execution_events.jsonl"
     if journal.exists():
         attempts = []
-        lines = journal.read_text().splitlines()
-        for index, line in enumerate(lines):
-            try:
-                event = json.loads(line)
-            except json.JSONDecodeError:
-                if index == len(lines)-1:
-                    break
-                raise ValueError("cannot resume: execution journal is malformed") from None
+        for event in jsonl_rows(journal):
             kind = event.pop("event")
             if kind == "started":
                 attempts.append(event)
@@ -347,7 +352,7 @@ def job_process(connection, command, directory, env, timeout, memory):
         connection.close()
 
 
-def execute_jobs(manifest, output, build, env, workers, through_beam=None):
+def execute_jobs(manifest, output, build, env, workers, through_beam=None, workspace=None, store=None):
     """Launch in saved order; serialize each combination and repetition block."""
     config = manifest["config"]
     completed = {job["id"] for job in manifest["jobs"]}
@@ -362,23 +367,31 @@ def execute_jobs(manifest, output, build, env, workers, through_beam=None):
     checkpoint = config.get("manifest_checkpoint_jobs", 1)
 
     def save_progress(event):
-        if checkpoint > 1:
+        if checkpoint > 1 or store is not None:
             with (output / "execution_events.jsonl").open("a") as stream:
                 stream.write(json.dumps(event) + "\n")
                 stream.flush()
+                if store is not None:
+                    os.fsync(stream.fileno())
         if checkpoint == 1 or len(manifest["jobs"]) % checkpoint == 0:
             write_json(output / "run.json", manifest)
 
     def finish(job, directory, attempt, result):
         nonlocal interrupted
         result.update({**job, "command": attempt.pop("command"),
-                       "directory": str(directory.relative_to(output))})
+                       "started_utc": attempt["started_utc"], "finished_utc": now(),
+                       "directory": str(directory.relative_to(workspace or output))})
         write_json(directory / "result.json", result)
+        if store is not None:
+            result = store.commit(result, {str(p.relative_to(workspace)): p
+                                          for p in directory.rglob("*") if p.is_file()})
         manifest["jobs"].append(result)
         attempt.update({"finished_utc": now(), "status": result["status"]})
         save_progress({"event": "finished", **attempt})
         print(job["id"] + ": " + result["status"], flush=True)
         interrupted |= result["status"] == "interrupted"
+        if store is not None:
+            shutil.rmtree(directory)
 
     def collect():
         for connection in wait(list(active), timeout=0.2):
@@ -407,9 +420,9 @@ def execute_jobs(manifest, output, build, env, workers, through_beam=None):
                               for a in active.values())
                 if not blocked:
                     pending.pop(0)
-                    directory = output / "jobs" / job["id"]
+                    directory = (workspace or output) / "jobs" / job["id"]
                     if directory.exists():
-                        archive = output / "incomplete_attempts" / job["id"]
+                        archive = (workspace or output) / "incomplete_attempts" / job["id"]
                         archive.mkdir(parents=True, exist_ok=True)
                         index = 0
                         while (archive / str(index)).exists():
@@ -451,10 +464,29 @@ def execute_jobs(manifest, output, build, env, workers, through_beam=None):
                 os.kill(process.pid, signal.SIGINT)
         while active:
             collect()
+    except BaseException:
+        # If durable shared storage fails, stop outstanding local controllers.
+        # Their uncommitted jobs remain pending for the next allocation.
+        for process, *_ in active.values():
+            if process.is_alive():
+                os.kill(process.pid, signal.SIGINT)
+        for connection, (process, *_) in active.items():
+            process.join(timeout=5)
+            if process.is_alive():
+                process.terminate()
+                process.join()
+            connection.close()
+        raise
     return interrupted
 
 
-def execute(config_path, software, build, output, resume=False, array_context=None, workers=1, through_beam=None):
+def execute(config_path, software, build, output, resume=False, array_context=None, workers=1,
+            through_beam=None, scratch_dir=None, _workspace=None):
+    if array_context is not None and _workspace is None:
+        with local_workspace(scratch_dir) as workspace:
+            return execute(config_path, software, build, output, resume, array_context,
+                           workers, through_beam, scratch_dir, workspace)
+    packed = _workspace is not None
     config = json.loads(config_path.read_text())
     if any(i.get("scaffold_pending") for i in config.get("inputs", [])):
         raise ValueError("pending scaffolds cannot be executed")
@@ -472,26 +504,46 @@ def execute(config_path, software, build, output, resume=False, array_context=No
     lock = verify_lock(lock_path, software, build, config["programs"], parameter) if lock_path else None
     if config["purpose"] == "formal" and lock.get("build_revision_verified") is not True:
         raise ValueError("formal software lock must verify the build revision")
-    sources = [(entry, experiment_path(entry["path"])) for entry in config["inputs"]]
+    sources = []
+    archives = {}
+    for entry in config["inputs"]:
+        if "input_archive" in entry:
+            archive_path = experiment_path(entry["input_archive"])
+            if archive_path not in archives:
+                archives[archive_path] = ArchiveReader(archive_path)
+            source = _workspace / (entry["name"] + "-source.txt")
+            data = archives[archive_path].read(entry["input_member"])
+            if hashlib.sha256(data).hexdigest() != entry["sha256"]:
+                raise ValueError("frozen archive input changed")
+            source.write_bytes(data)
+        else:
+            source = experiment_path(entry["path"])
+        sources.append((entry, source))
     if any(not path.is_file() for _, path in sources):
         raise ValueError("an input file is missing")
     plan = plan_jobs(config)
     state = git_state(software)
     binaries = {p["name"]: digest(build / p["name"]) for p in config["programs"]}
-    copied_parameter = output / "inputs/energy.par"
+    copied_parameter = (_workspace or output) / "inputs/energy.par"
     env = os.environ.copy()
     env.update(config.get("environment", {}))
     env["CPARTY_FIXED_ENERGY_PARAM_FILE"] = str(copied_parameter)
     host = {"hostname": platform.node(), "platform": platform.platform(),
             "python": platform.python_version(), "cpu_count": os.cpu_count()}
     environment = {key: env[key] for key in ENV_KEYS if key in env}
+    if packed:
+        output.mkdir(parents=True, exist_ok=resume)
+    store = TaskStore(output) if packed else None
     if resume:
         manifest = resume_manifest(output, config_path, config, software, build, parameter,
-                                   sources, lock_path, lock, state, binaries, plan)
+                                   sources, lock_path, lock, state, binaries, plan, store)
         if array_context is not None and manifest.get("array_task") != array_context:
             raise ValueError("cannot resume: array task differs from run.json")
         if manifest.get("workers", 1) != workers:
             raise ValueError("cannot resume: workers differ from run.json")
+        if store is not None:
+            store = TaskStore(output, resume=True)
+            jsonl_rows(output / "execution_events.jsonl", repair=True)
         resumed = now()
         manifest.setdefault("resume_history", []).append({
             "resumed_utc": resumed, "previous_status": manifest.get("status"),
@@ -516,14 +568,16 @@ def execute(config_path, software, build, output, resume=False, array_context=No
             manifest.pop(key, None)
         manifest["status"] = "running"
     else:
-        output.mkdir(parents=True, exist_ok=False)
+        if not packed:
+            output.mkdir(parents=True, exist_ok=False)
         copied_parameter.parent.mkdir()
         shutil.copyfile(parameter, copied_parameter)
         frozen_inputs = []
         for entry, source in sources:
             copied = copied_parameter.parent / (entry["name"] + ".txt")
             shutil.copyfile(source, copied)
-            frozen_inputs.append({**entry, "copied_path": str(copied), "sha256": digest(copied)})
+            frozen_inputs.append({**entry, "copied_path": str(copied), "sha256": digest(copied),
+                                  **({"source_input_path": str(source)} if packed and "input_archive" not in entry else {})})
         write_json(output / "config.json", config)
         manifest = {"schema_version": 1, "status": "running", "started_utc": now(),
                 "purpose": config["purpose"], "config": config,
@@ -539,10 +593,17 @@ def execute(config_path, software, build, output, resume=False, array_context=No
                 "host": host, "environment": environment,
                 "execution_order": [], "jobs": []}
         if array_context is not None:
-            manifest.update(array_task=array_context, workers=workers)
+            manifest.update(array_task=array_context, workers=workers, output_format=FORMAT)
+    if packed and resume:
+        copied_parameter.parent.mkdir()
+        shutil.copyfile(parameter, copied_parameter)
+        for saved, (entry, source) in zip(manifest["inputs"], sources):
+            copied = copied_parameter.parent / (entry["name"] + ".txt")
+            shutil.copyfile(source, copied)
+            saved["copied_path"] = str(copied)
     manifest["planned_jobs"] = plan
     write_json(output / "run.json", manifest)
-    interrupted = execute_jobs(manifest, output, build, env, workers, through_beam)
+    interrupted = execute_jobs(manifest, output, build, env, workers, through_beam, _workspace, store)
     interrupted |= len(manifest["jobs"]) < len(plan)
     failed = any(job["status"] != "success" for job in manifest["jobs"])
     manifest.update({"finished_utc": now(), "status": "interrupted" if interrupted else

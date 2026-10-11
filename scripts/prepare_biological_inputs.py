@@ -121,7 +121,8 @@ def memory_cap(mib):
     return apply
 
 
-def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record_ids=None, resume=False):
+def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record_ids=None, resume=False,
+            completed_records=None, on_complete=None, on_manifest=None):
     source_manifest, output, lp = map(Path, (source_manifest, output, lp))
     source_info = json.loads(source_manifest.read_text())
     source = ROOT / source_info.get("copied_path", source_info.get("downloaded_path"))
@@ -178,7 +179,10 @@ def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record
                 "vienna_binary_sha256": digest(lp.parent / "bin/linearpartition_v"),
                 "script_sha256": digest(Path(__file__)), "records": []}
     write_json(output / "dataset.json", manifest)
-    completed = {r["id"]: r for r in previous["records"]} if previous else {}
+    completed = {r["id"]: r for r in (completed_records or [])} if completed_records is not None else \
+                {r["id"]: r for r in previous["records"]} if previous else {}
+    if on_manifest:
+        on_manifest(manifest)
     if previous:
         for name, sequence in selected:
             marker = logs / name / "result.json"
@@ -256,7 +260,11 @@ def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record
                                          "error": error, "elapsed_seconds": elapsed,
                                          "time_wall_seconds": wall, "peak_rss_kib": rss,
                                          "record": manifest["records"][-1]})
+        if on_complete:
+            on_complete(name, job, manifest["records"][-1])
         write_json(output / "dataset.json", manifest)
+        if on_manifest:
+            on_manifest(manifest)
         print(name + ": " + manifest["records"][-1]["scaffold_status"], flush=True)
     manifest["linearpartition_source_after"] = git_state(lp.parent)
     manifest["vienna_binary_sha256_after"] = digest(lp.parent / "bin/linearpartition_v")
@@ -269,6 +277,8 @@ def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record
         r["scaffold_status"] == "success" for r in manifest["records"]) else "failed"
     manifest["finished_utc"] = now()
     write_json(output / "dataset.json", manifest)
+    if on_manifest:
+        on_manifest(manifest)
     return manifest
 
 

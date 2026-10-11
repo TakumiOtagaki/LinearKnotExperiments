@@ -11,6 +11,7 @@ import re
 
 from rna_records import paired_positions, read_record, scaffold_pairs
 from run_cli import digest, git_state, now
+from task_storage import RunReader, MemoryFile, input_records, artifact_digest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,7 +28,7 @@ def probability(raw):
 
 
 def output_lines(path, name):
-    lines = Path(path).read_text().splitlines()
+    lines = (path.read_text() if hasattr(path, "read_text") else Path(path).read_text()).splitlines()
     headers = [line.strip()[1:] for line in lines if line.strip().startswith(">")]
     if headers != [name]:
         raise ValueError("output must contain exactly the matching named record")
@@ -192,17 +193,17 @@ def compare_accessibility(candidate, reference, record):
 
 
 def read_job(run, job, record):
-    directory = run / job["directory"]
+    reader = run if isinstance(run, RunReader) else RunReader(run)
     if job["program"] == "LinearCParty":
         command = job["command"]
         if "--bpp-cutoff" in command and float(command[command.index("--bpp-cutoff") + 1]) != 0:
             raise ValueError("accuracy requires unthresholded BPP output")
         if "--bpp" not in command:
             raise ValueError("BPP export is required")
-        return read_bpp(Path(command[command.index("--bpp") + 1]), record)
+        return read_bpp(MemoryFile(reader.artifact(job, "bpp.tsv")), record)
     if job["program"] == "LinearPKCapR":
-        return read_contexts(directory / "stdout.txt", record)
-    return read_accessibility(directory / "stdout.txt", record)
+        return read_contexts(MemoryFile(reader.artifact(job, "stdout.txt")), record)
+    return read_accessibility(MemoryFile(reader.artifact(job, "stdout.txt")), record)
 
 
 def check_consistency(input_name, mode, repetition, group):
@@ -224,25 +225,29 @@ def check_consistency(input_name, mode, repetition, group):
 
 
 def analyze(run, reference_mode, extra_runs=()):
+    reader = RunReader(run)
     analysis_provenance = {"generated_utc": now(), "experiment_git_state": git_state(ROOT),
                            "analysis_script_sha256": digest(Path(__file__)),
                            "record_helpers_sha256": digest(Path(__file__).with_name("rna_records.py")),
-                           "run_manifest_sha256": digest(run / "run.json")}
-    manifest = json.loads((run / "run.json").read_text())
+                           "run_manifest_sha256": reader.manifest_sha256}
+    manifest = reader.manifest
     if manifest["status"] == "running" or manifest.get("summary_only"):
         raise ValueError("wait for the run to finish")
     manifest = {**manifest, "inputs": manifest["inputs"].copy(), "jobs": manifest["jobs"].copy()}
     analysis_provenance["additional_runs"] = []
+    records = input_records(reader)
     input_hashes = {i["name"]: i["sha256"] for i in manifest["inputs"]}
     job_ids = {j["id"] for j in manifest["jobs"]}
     for extra in extra_runs:
-        saved = json.loads((extra / "run.json").read_text())
+        extra_reader = RunReader(extra)
+        saved = extra_reader.manifest
         if saved["status"] == "running" or saved.get("summary_only"):
             raise ValueError("finish and aggregate every sensitivity run")
         if (saved["software_before"]["commit"] != manifest["software_before"]["commit"] or
                 saved["config"]["model_settings"] != manifest["config"]["model_settings"] or
                 saved["software_lock"]["energy_parameter_sha256"] != manifest["software_lock"]["energy_parameter_sha256"]):
             raise ValueError("sensitivity run models differ")
+        extra_records = input_records(extra_reader)
         for item in saved["inputs"]:
             if item["name"] in input_hashes:
                 if item["sha256"] != input_hashes[item["name"]]:
@@ -250,18 +255,13 @@ def analyze(run, reference_mode, extra_runs=()):
             else:
                 input_hashes[item["name"]] = item["sha256"]
                 manifest["inputs"].append(item)
+                records[item["name"]] = extra_records[item["name"]]
         for job in saved["jobs"]:
             if job["id"] in job_ids:
                 raise ValueError("duplicate observations in sensitivity runs")
             job_ids.add(job["id"])
-            manifest["jobs"].append({**job, "directory": str(extra / job["directory"])})
-        analysis_provenance["additional_runs"].append({"path": str(extra), "run_manifest_sha256": digest(extra / "run.json")})
-    records = {}
-    for entry in manifest["inputs"]:
-        path = Path(entry["copied_path"])
-        if hashlib.sha256(path.read_bytes()).hexdigest() != entry["sha256"]:
-            raise ValueError("copied input hash changed")
-        records[entry["name"]] = read_record(path)
+            manifest["jobs"].append({**job, "artifact_run": str(extra)})
+        analysis_provenance["additional_runs"].append({"path": str(extra), "run_manifest_sha256": extra_reader.manifest_sha256})
     all_jobs = [job for job in manifest["jobs"] if not job["warmup"]]
     jobs = [job for job in all_jobs if job["program"] in PROGRAMS]
     parsed, errors = {}, {}
@@ -269,7 +269,7 @@ def analyze(run, reference_mode, extra_runs=()):
         if job["status"] != "success":
             continue
         try:
-            parsed[job["id"]] = read_job(run, job, records[job["input"]])
+            parsed[job["id"]] = read_job(reader, job, records[job["input"]])
         except (ValueError, KeyError, OSError) as exc:
             errors[job["id"]] = str(exc)
     references = {(job["input"], job["program"], job["mode"]): job["id"] for job in jobs
@@ -289,11 +289,10 @@ def analyze(run, reference_mode, extra_runs=()):
     for job in jobs:
         row = {key: job[key] for key in ("id", "input", "mode", "program", "repetition", "status")}
         row["measurement_scope"] = "whole CLI process, including requested output"
-        directory = run / job.get("directory", "jobs_missing")
-        artifacts = {"stdout.txt": digest(directory / "stdout.txt")}
+        artifacts = {"stdout.txt": artifact_digest(reader, job, "stdout.txt") if "directory" in job else None}
         command = job.get("command", [])
         if "--bpp" in command:
-            artifacts["bpp_export"] = digest(Path(command[command.index("--bpp") + 1]))
+            artifacts["bpp_export"] = artifact_digest(reader, job, "bpp.tsv")
         row["observed_artifact_sha256"] = artifacts
         row.update({key: job.get(key) for key in ("time_wall_seconds", "peak_rss_kib")})
         selected_mode, kind = reference_mode, "exact_error"

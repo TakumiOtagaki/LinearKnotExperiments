@@ -9,34 +9,31 @@ from pathlib import Path
 from analyze_accuracy import PROGRAMS, check_consistency, read_job
 from rna_records import read_record
 from run_cli import ROOT, digest, experiment_path, git_state, now, write_json
+from task_storage import RunReader, input_records, artifact_digest
 
 
 def validate_outputs(run):
-    manifest = json.loads((run / "run.json").read_text())
+    reader = RunReader(run)
+    manifest = reader.manifest
     if manifest["status"] == "running":
         raise ValueError("wait for the run to finish")
-    records = {}
-    for entry in manifest["inputs"]:
-        path = Path(entry["copied_path"])
-        if digest(path) != entry["sha256"]:
-            raise ValueError("copied input hash changed")
-        records[entry["name"]] = read_record(path)
+    records = input_records(reader)
     groups, observations = {}, []
     jobs = [job for job in manifest["jobs"] if not job["warmup"]]
     for job in jobs:
         row = {key: job[key] for key in ("id", "input", "mode", "program", "status", "repetition")}
-        row["stdout_sha256"] = digest(run / job["directory"] / "stdout.txt")
+        row["stdout_sha256"] = artifact_digest(reader, job, "stdout.txt")
         if job["status"] != "success":
             row["validation_status"] = "job_missing" if job.get("result_present") is False else "job_failed"
         elif job["program"] not in PROGRAMS:
             row["validation_status"] = "unsupported_program"
         else:
             try:
-                parsed = read_job(run, job, records[job["input"]])
+                parsed = read_job(reader, job, records[job["input"]])
                 groups.setdefault((job["input"], job["mode"], job["repetition"]), {})[job["program"]] = parsed
                 row["validation_status"] = "success"
                 if job["program"] == "LinearCParty":
-                    row["bpp_sha256"] = digest(Path(job["command"][job["command"].index("--bpp") + 1]))
+                    row["bpp_sha256"] = artifact_digest(reader, job, "bpp.tsv")
                 if job["program"] == "LinearPKRaccess":
                     row.update(ensemble_free_energy_kcal_mol=parsed["free_energy"], rt_kcal_mol=parsed["rt"])
             except (ValueError, KeyError, OSError) as exc:
@@ -45,7 +42,7 @@ def validate_outputs(run):
     checks = [check_consistency(*key, group) for key, group in groups.items() if PROGRAMS <= set(group)]
     result = {"schema_version": 1, "generated_utc": now(),
             "scope": "output domains and cross-program consistency; no exact accuracy reference",
-            "experiment_git_state": git_state(ROOT), "run_manifest_sha256": digest(run / "run.json"),
+            "experiment_git_state": git_state(ROOT), "run_manifest_sha256": reader.manifest_sha256,
             "validator_sha256": digest(Path(__file__)),
             "analysis_helpers_sha256": digest(Path(__file__).with_name("analyze_accuracy.py")),
             "record_helpers_sha256": digest(Path(__file__).with_name("rna_records.py")),

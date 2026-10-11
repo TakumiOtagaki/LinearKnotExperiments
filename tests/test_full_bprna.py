@@ -11,6 +11,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import tarfile
 import unittest
 from unittest.mock import patch
 
@@ -24,6 +25,7 @@ from run_cli import digest, plan_jobs, write_json
 import scaffold_array
 from analyze_accuracy import analyze as analyze_accuracy
 import test_array
+from task_storage import ArchiveReader, jsonl_rows
 
 
 class FullPlanTests(unittest.TestCase):
@@ -71,7 +73,7 @@ class FullPlanTests(unittest.TestCase):
         directory=self.f.output/self.f.plan["tasks"][0]["directory"]/"run"
         manifest=json.loads((directory/"run.json").read_text())
         self.assertEqual({j["mode"] for j in manifest["jobs"]},{"beam20"})
-        kept={j["id"]:(directory/j["directory"]/"result.json").read_bytes() for j in manifest["jobs"]}
+        kept={j["id"]:j for j in jsonl_rows(directory/"task_results.jsonl")}
         # Simulate a controller killed before its final checkpoint; result markers
         # and the append journal are enough to recover starts and failures.
         manifest["jobs"]=[];manifest["execution_order"]=[]
@@ -81,7 +83,8 @@ class FullPlanTests(unittest.TestCase):
         resumed=json.loads((directory/"run.json").read_text())
         self.assertEqual(len(resumed["execution_order"]),8)
         self.assertEqual([j["mode"] for j in resumed["jobs"]].count("beam20"),4)
-        for name,payload in kept.items():self.assertEqual((directory/"jobs"/name/"result.json").read_bytes(),payload)
+        for name,payload in kept.items():
+            self.assertEqual(next(j for j in jsonl_rows(directory/"task_results.jsonl") if j["id"]==name),payload)
 
     def test_deferred_scaffold_plan_never_runs_dummy_dots(self):
         self.f.config["inputs"][0]["scaffold_pending"]=True
@@ -98,6 +101,10 @@ class CohortAndScaffoldTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup)
         self.root=Path(self.temp.name)
+        quota=patch("file_budget.query_quota",return_value={"used_files":23000000,"limit_files":24000000})
+        quota.start();self.addCleanup(quota.stop)
+        scratch=patch.dict(os.environ,{"TMPDIR":str(self.root)})
+        scratch.start();self.addCleanup(scratch.stop)
         self.fasta=self.root/"clean.fa"
         self.records=[("a","GGAAAACC"),("b","GGAAAAACC"),("c","GGAAAAAACC")]
         self.fasta.write_text("".join(">"+n+"\n"+s+"\n" for n,s in reversed(self.records)))
@@ -140,18 +147,22 @@ class CohortAndScaffoldTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"pending"):expand_cohort(config,False)
         with redirect_stdout(io.StringIO()):
             self.assertEqual(scaffold_array.run(path,"short",1),0)
-            before=(self.output/plan["tasks"][0]["directory"]/"run/scaffold_logs/a/result.json").read_bytes()
+            checkpoint=self.output/plan["tasks"][0]["directory"]/"run/task_results.jsonl"
+            before=checkpoint.read_bytes()
             saved=self.output/plan["tasks"][0]["directory"]/"run/dataset.json"
             interrupted=json.loads(saved.read_text());interrupted["records"]=[];write_json(saved,interrupted)
             self.assertEqual(scaffold_array.run(path,"short",1,resume=True),0)
             self.assertEqual(scaffold_array.run(path,"short",2),0)
-        self.assertEqual((self.output/plan["tasks"][0]["directory"]/"run/scaffold_logs/a/result.json").read_bytes(),before)
+        self.assertEqual(checkpoint.read_bytes(),before)
         summary=scaffold_array.aggregate(path,dataset.parent)
         self.assertEqual((summary["status"],summary["completed_jobs"]),("success",3))
         expanded,provenance,pending=expand_cohort(config,False)
         self.assertFalse(pending);self.assertIsNotNone(provenance["scaffold_dataset_sha256"])
-        self.assertEqual(Path(expanded["inputs"][0]["path"]).read_text().splitlines()[2],"((....))")
-        Path(expanded["inputs"][0]["path"]).write_text("changed\n")
+        item=expanded["inputs"][0]
+        archive=ArchiveReader(item["input_archive"])
+        self.assertEqual(archive.read(item["input_member"]).decode().splitlines()[2],"((....))")
+        with Path(item["input_archive"]).open("r+b") as stream:
+            stream.seek(archive.members[item["input_member"]][0]);stream.write(b"!")
         with self.assertRaises(ValueError):expand_cohort(config,False)
 
     def test_incomplete_g_never_publishes_a_reduced_dataset(self):
@@ -159,6 +170,31 @@ class CohortAndScaffoldTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"incomplete"):
             scaffold_array.aggregate(self.output/"array_plan.json",self.root/"generated")
         self.assertFalse((self.root/"generated").exists())
+
+    def test_scaffold_quota_refusal_creates_no_plan_files(self):
+        with patch("file_budget.query_quota",return_value={"used_files":23999999,"limit_files":24000000}):
+            with self.assertRaisesRegex(ValueError,"budget refused"):
+                scaffold_array.plan_array(self.config_path,self.output,self.jobs)
+        self.assertFalse(self.output.exists());self.assertFalse(self.jobs.exists())
+
+    def test_legacy_scaffold_archive_streams_into_one_dataset_tar(self):
+        from prepare_biological_inputs import prepare as prepare_inputs
+        plan=scaffold_array.plan_array(self.config_path,self.output,self.jobs)
+        with redirect_stdout(io.StringIO()):
+            for task in plan["tasks"]:
+                directory=self.output/task["directory"]
+                prepare_inputs(self.acquisition,directory/"run",self.lp,"bprna_full",20261011,2,
+                               [i["name"] for i in task["inputs"]])
+                write_json(directory/"task.json",{"status":"success","attempts":[]})
+        archive=self.root/"legacy-g.tar"
+        with tarfile.open(archive,"w") as stream:stream.add(self.output,arcname="legacy-g")
+        shutil.rmtree(self.output)
+        summary=scaffold_array.aggregate(archive,self.root/"published")
+        self.assertEqual((summary["status"],summary["completed_jobs"]),("success",3))
+        self.assertEqual({p.name for p in (self.root/"published").iterdir()},{"inputs.tar","dataset.json"})
+        reader=ArchiveReader(self.root/"published/inputs.tar")
+        self.assertEqual(reader.read("a.txt").decode().splitlines()[2],"((....))")
+        self.assertFalse(self.output.exists())
 
 
 class E0ObservationTests(unittest.TestCase):

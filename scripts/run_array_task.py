@@ -7,7 +7,6 @@ import os
 from pathlib import Path
 import platform
 import re
-import shutil
 import signal
 import sys
 
@@ -15,7 +14,7 @@ from plan_array import exclusive, load_plan
 from run_cli import digest, execute, experiment_path, now, verify_lock, write_json
 
 
-def run_task(plan_path, tier, task_id=None, software=None, build=None, resume=False, through_beam=None):
+def run_task(plan_path, tier, task_id=None, software=None, build=None, resume=False, through_beam=None, scratch_dir=None):
     identifier = os.environ.get("SGE_TASK_ID")
     if identifier is None and task_id is not None:
         identifier = str(task_id)
@@ -68,12 +67,18 @@ def run_task(plan_path, tier, task_id=None, software=None, build=None, resume=Fa
             verify_lock(Path(plan["output_dir"]) / "software_lock.json", software, build,
                         config["programs"], software / config["energy_parameter_file"])
             if output.exists() and not (output / "run.json").exists():
-                archive = directory / "incomplete_runs"
-                archive.mkdir(exist_ok=True)
-                shutil.move(str(output), str(archive / str(len(list(archive.iterdir())))))
+                files = list(output.iterdir())
+                if not resume or any(not p.is_file() or p.name not in
+                                     {"config.json", "config.json.tmp", "run.json.tmp"} for p in files):
+                    raise ValueError("incomplete task startup has no run manifest; inspect before restarting")
+                # No CLI can start before the initial manifest is published.
+                for file in files:
+                    file.unlink()
+                output.rmdir()
             code = execute(Path(task["config_path"]), software, build, output,
                            resume=resume and (output / "run.json").is_file(),
-                           array_context=context, workers=task["workers"], through_beam=through_beam)
+                           array_context=context, workers=task["workers"], through_beam=through_beam,
+                           scratch_dir=scratch_dir)
             status = json.loads((output / "run.json").read_text())["status"]
         except KeyboardInterrupt:
             code, status = 130, "interrupted"
@@ -95,6 +100,7 @@ def main():
     parser.add_argument("--software-root", type=Path)
     parser.add_argument("--build-dir", type=Path)
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--scratch-dir", type=Path, help="explicit node-local directory if TMPDIR is unavailable")
     parser.add_argument("--through-beam", type=int, choices=(20,50,100,200,300,400),
                         help="complete only widths up to this stage; review, then --resume the next stage")
     args = parser.parse_args()
@@ -104,7 +110,7 @@ def main():
 
     signal.signal(signal.SIGTERM, terminate)
     return run_task(experiment_path(args.plan), args.tier, args.task_id,
-                    args.software_root, args.build_dir, args.resume, args.through_beam)
+                    args.software_root, args.build_dir, args.resume, args.through_beam, args.scratch_dir)
 
 
 if __name__ == "__main__":
