@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "name": "e0-bprna-legacy-comparison-20261011",
+  "purpose": "formal",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "temperature_source": "CLI/API default; verify RT metadata",
+    "build_revision_verified": true
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 600,
+  "warmups": 0,
+  "repetitions": 1,
+  "inputs": [
+    {
+      "name": "closure14",
+      "path": "data/e0-witnesses-20261011/closure14.txt"
+    },
+    {
+      "name": "nested45",
+      "path": "data/e0-witnesses-20261011/nested45.txt"
+    },
+    {
+      "name": "BE41",
+      "path": "data/e0-witnesses-20261011/BE41.txt"
+    },
+    {
+      "name": "BE65",
+      "path": "data/e0-witnesses-20261011/BE65.txt"
+    }
+  ],
+  "modes": [
+    {
+      "name": "exact"
+    }
+  ],
+  "programs": [
+    {
+      "name": "E0LegacyCompatible"
+    },
+    {
+      "name": "E0Default"
+    },
+    {
+      "name": "E0CPartyOracle"
+    }
+  ],
+  "analysis": {
+    "comparisons": {
+      "compatible_vs_oracle": "Same seven-patch derivation set: logZ, BPP, MFE must agree within predeclared tolerance",
+      "default_vs_oracle": "Model difference due to completed WMB weak closure; report differences, not numerical failures"
+    },
+    "log_z_absolute_tolerance": 1e-07,
+    "free_energy_absolute_tolerance": 1e-07,
+    "mfe_absolute_tolerance": 1e-07,
+    "bpp_absolute_tolerance": 1e-08,
+    "profile_scope": "Linear profiles for both policies only; upstream has no independent analytic profile API",
+    "bpp_oracle": "Reverse derivative of upstream PF arithmetic, external observation copy, V/VP pair-emission tags; validate energy against uninstrumented oracle before arrays"
+  },
+  "software_lock": "manifests/software-e0-15aa7742-20261011.json",
+  "memory_limit_mib": 65536,
+  "order": {
+    "kind": "blocked_random",
+    "seed": 20261011
+  },
+  "input_cohort": "manifests/cohorts/bprna-e0-subset-20261011.json"
+}

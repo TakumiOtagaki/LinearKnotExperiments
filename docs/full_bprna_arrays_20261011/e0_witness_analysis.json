@@ -1,0 +1,220 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-11T07:46:39.776400+00:00",
+  "run_manifest_sha256": "d922964b1c0beb7e4ed0212125dae820baa4ab68295ca2086a13fff22dea6178",
+  "analysis_script_sha256": "38fd4b11cb6ee5ae2c9b31b90aaf68fb60a814fd26b035e34a94b4e92f3a0836",
+  "planned_inputs": 4,
+  "job_status_counts": {
+    "success": 12
+  },
+  "observations": [
+    {
+      "input": "closure14",
+      "comparison_kind": "numerical_parity",
+      "program": "E0LegacyCompatible",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -6.071532165918825e-16,
+        "delta_free_energy": 3.712308238590367e-16,
+        "delta_mfe": -3.469446951953614e-16,
+        "bpp_max_absolute_difference": 1.1102230246251565e-16,
+        "bpp_l1_sum": 2.2204460497066597e-16,
+        "coordinate_union_count": 24
+      },
+      "status": "success",
+      "profile_sum_max_deviation": 0,
+      "profile_independent_reference_available": false
+    },
+    {
+      "input": "closure14",
+      "comparison_kind": "closure_model_difference",
+      "program": "E0Default",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -6.071532165918825e-16,
+        "delta_free_energy": 3.712308238590367e-16,
+        "delta_mfe": -3.469446951953614e-16,
+        "bpp_max_absolute_difference": 1.1102230246251565e-16,
+        "bpp_l1_sum": 2.2204460757060716e-16,
+        "coordinate_union_count": 24
+      },
+      "status": "success",
+      "restriction_direction_consistent": true,
+      "default_minus_compatible": {
+        "delta_log_z": 0.0,
+        "delta_free_energy": 0.0,
+        "delta_mfe": 0.0,
+        "bpp_max_absolute_difference": 1.2999705971943756e-24,
+        "bpp_l1_sum": 2.599941194388751e-24,
+        "coordinate_union_count": 24
+      },
+      "compatible_minus_oracle": {
+        "delta_log_z": -6.071532165918825e-16,
+        "delta_free_energy": 3.712308238590367e-16,
+        "delta_mfe": -3.469446951953614e-16,
+        "bpp_max_absolute_difference": 1.1102230246251565e-16,
+        "bpp_l1_sum": 2.2204460497066597e-16,
+        "coordinate_union_count": 24
+      },
+      "closure_attribution_valid": true,
+      "profile_sum_max_deviation": 0,
+      "profile_independent_reference_available": false
+    },
+    {
+      "input": "nested45",
+      "comparison_kind": "numerical_parity",
+      "program": "E0LegacyCompatible",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -2.1316282072803006e-14,
+        "delta_free_energy": 1.4210854715202004e-14,
+        "delta_mfe": 0.0,
+        "bpp_max_absolute_difference": 1.2434497875801753e-14,
+        "bpp_l1_sum": 2.2981955782200608e-14,
+        "coordinate_union_count": 126
+      },
+      "status": "success",
+      "profile_sum_max_deviation": 0,
+      "profile_independent_reference_available": false
+    },
+    {
+      "input": "nested45",
+      "comparison_kind": "closure_model_difference",
+      "program": "E0Default",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -2.331979445102661e-07,
+        "delta_free_energy": 1.4372473700063892e-07,
+        "delta_mfe": 0.0,
+        "bpp_max_absolute_difference": 2.3267779092733495e-07,
+        "bpp_l1_sum": 8.83259880727448e-07,
+        "coordinate_union_count": 126
+      },
+      "status": "success",
+      "restriction_direction_consistent": true,
+      "default_minus_compatible": {
+        "delta_log_z": -2.3319792319398402e-07,
+        "delta_free_energy": 1.437247227897842e-07,
+        "delta_mfe": 0.0,
+        "bpp_max_absolute_difference": 2.3267779092734167e-07,
+        "bpp_l1_sum": 8.832598577460527e-07,
+        "coordinate_union_count": 126
+      },
+      "compatible_minus_oracle": {
+        "delta_log_z": -2.1316282072803006e-14,
+        "delta_free_energy": 1.4210854715202004e-14,
+        "delta_mfe": 0.0,
+        "bpp_max_absolute_difference": 1.2434497875801753e-14,
+        "bpp_l1_sum": 2.2981955782200608e-14,
+        "coordinate_union_count": 126
+      },
+      "closure_attribution_valid": true,
+      "profile_sum_max_deviation": 2.220446049250313e-16,
+      "profile_independent_reference_available": false
+    },
+    {
+      "input": "BE41",
+      "comparison_kind": "numerical_parity",
+      "program": "E0LegacyCompatible",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -1.7763568394002505e-15,
+        "delta_free_energy": 0.0,
+        "delta_mfe": 0.00017068556493349263,
+        "bpp_max_absolute_difference": 0,
+        "bpp_l1_sum": 0,
+        "coordinate_union_count": 3
+      },
+      "status": "parity_failed",
+      "profile_sum_max_deviation": 0,
+      "profile_independent_reference_available": false
+    },
+    {
+      "input": "BE41",
+      "comparison_kind": "closure_model_difference",
+      "program": "E0Default",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -1.7763568394002505e-15,
+        "delta_free_energy": 0.0,
+        "delta_mfe": 0.00017068556493349263,
+        "bpp_max_absolute_difference": 0,
+        "bpp_l1_sum": 0,
+        "coordinate_union_count": 3
+      },
+      "status": "success",
+      "restriction_direction_consistent": true,
+      "default_minus_compatible": {
+        "delta_log_z": 0.0,
+        "delta_free_energy": 0.0,
+        "delta_mfe": 0.0,
+        "bpp_max_absolute_difference": 0,
+        "bpp_l1_sum": 0,
+        "coordinate_union_count": 3
+      },
+      "compatible_minus_oracle": {
+        "delta_log_z": -1.7763568394002505e-15,
+        "delta_free_energy": 0.0,
+        "delta_mfe": 0.00017068556493349263,
+        "bpp_max_absolute_difference": 0,
+        "bpp_l1_sum": 0,
+        "coordinate_union_count": 3
+      },
+      "closure_attribution_valid": false,
+      "profile_sum_max_deviation": 0,
+      "profile_independent_reference_available": false
+    },
+    {
+      "input": "BE65",
+      "comparison_kind": "numerical_parity",
+      "program": "E0LegacyCompatible",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -7.105427357601002e-15,
+        "delta_free_energy": 1.7763568394002505e-15,
+        "delta_mfe": 1.7763568394002505e-15,
+        "bpp_max_absolute_difference": 7.216449660063518e-16,
+        "bpp_l1_sum": 3.40454697081963e-15,
+        "coordinate_union_count": 548
+      },
+      "status": "success",
+      "profile_sum_max_deviation": 1.1102230246251565e-16,
+      "profile_independent_reference_available": false
+    },
+    {
+      "input": "BE65",
+      "comparison_kind": "closure_model_difference",
+      "program": "E0Default",
+      "reference_program": "E0CPartyOracle",
+      "metrics": {
+        "delta_log_z": -7.105427357601002e-15,
+        "delta_free_energy": 1.7763568394002505e-15,
+        "delta_mfe": 1.7763568394002505e-15,
+        "bpp_max_absolute_difference": 7.216449660063518e-16,
+        "bpp_l1_sum": 4.607865553327071e-15,
+        "coordinate_union_count": 548
+      },
+      "status": "success",
+      "restriction_direction_consistent": true,
+      "default_minus_compatible": {
+        "delta_log_z": 0.0,
+        "delta_free_energy": 0.0,
+        "delta_mfe": 0.0,
+        "bpp_max_absolute_difference": 4.570715793623029e-16,
+        "bpp_l1_sum": 1.4959079037199133e-15,
+        "coordinate_union_count": 548
+      },
+      "compatible_minus_oracle": {
+        "delta_log_z": -7.105427357601002e-15,
+        "delta_free_energy": 1.7763568394002505e-15,
+        "delta_mfe": 1.7763568394002505e-15,
+        "bpp_max_absolute_difference": 7.216449660063518e-16,
+        "bpp_l1_sum": 3.40454697081963e-15,
+        "coordinate_union_count": 548
+      },
+      "closure_attribution_valid": true,
+      "profile_sum_max_deviation": 1.1102230246251565e-16,
+      "profile_independent_reference_available": false
+    }
+  ]
+}

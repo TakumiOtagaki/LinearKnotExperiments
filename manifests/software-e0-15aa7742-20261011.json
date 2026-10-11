@@ -1,0 +1,400 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-11T07:30:45.228129+00:00",
+  "purpose": "formal",
+  "source_commit": "15aa7742a5497164573294e37972ff7ccf9ddfe1",
+  "source_git_state": {
+    "commit": "15aa7742a5497164573294e37972ff7ccf9ddfe1",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "build_revision_verified": true,
+  "verification_method": "external observer linked to locked libraries; seven-patch oracle observation build",
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "-O2 -std=c++17 (linear); -O1 -std=gnu++17 (AD oracle)"
+  },
+  "cmake_cache_sha256": "27a7c8c4291ce7411c67abbcc47b222b3899fe67c474860dc39c2dc6b102f2d0",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "binaries": {
+    "E0LegacyCompatible": "1e8f1ddcc59585917fabb51b25f4854f5fdf23f721a42a292755f77030d07e11",
+    "E0Default": "7aaeef82f0f3427087e939b757b7801aea382b20fc35d0bb5883a613cb4990fa",
+    "E0CPartyOracle": "e9de62ccaa8a4a71ff5ef1639da7611c0f72d8327b6c589c97b954bef2efa65d"
+  },
+  "extra_files": [
+    {
+      "path": "tools/e0_linear.cc",
+      "sha256": "1bd03c621a8230a6b5a2bbf768e9364d86e5f7a4c6d3b85110796e9454261da8"
+    },
+    {
+      "path": "tools/e0_legacy.cc",
+      "sha256": "c34a5496fc360c33f0d9973c9513bddb2a9acf8a072672c2aec364fae6c5c4b8"
+    },
+    {
+      "path": "tools/legacy_ad.hh",
+      "sha256": "95a6ec38779279e7a920d1e7ae19291fc9e88d56d6de2b1f99abf1fe54dcfe77"
+    },
+    {
+      "path": "scripts/build_e0_tools.py",
+      "sha256": "8e6e955a3d1301d9c21de4f52a9c5bbc6e2b9ca6f9ddfee89d5ac6ee9733e5bb"
+    },
+    {
+      "path": "build/linear-cparty-15aa7742/CMakeCache.txt",
+      "sha256": "d42c295ebc48b26c43075d35d6f2af1ecc3563e420a027fcf79f39144330b473"
+    },
+    {
+      "path": "build/linear-cparty-15aa7742/libcparty_scfg2_beam.a",
+      "sha256": "d8dd120b993d8abdaa827421393f3272deeb2056926f68f256c09495fb6f51bf"
+    },
+    {
+      "path": "build/linear-cparty-15aa7742/libcparty_scfg2_exact.a",
+      "sha256": "f6b2152dfd9b047c5bdf2e490496df32e8cbcedff36c7edd2615aa665ce586ab"
+    },
+    {
+      "path": "build/linear-cparty-15aa7742/libRNA.a",
+      "sha256": "6d1ad72cdb7598b1361a4e9c184cd53f61b24f4e11ccc6d90e24219ee13b7756"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/e0-linear",
+      "sha256": "008fbf831fed534750bf848894f78a8c67436929e0e812e6215f6cc628835008"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/cparty-oracle",
+      "sha256": "f87373401df5b4f2c743b6cf0181c74c3dc56e4b650c660e866ca9f546ddf03b"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/build/CParty",
+      "sha256": "89109a7dd98276f768203c35cc3eed19e437f3ebfffd2550741a17e9c82ee594"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/build/CMakeCache.txt",
+      "sha256": "720c4122b3cc3d955aa9e160a82c8d90025d5be3fd4eebaf24ed2c25f74562fb"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/build/libRNA.a",
+      "sha256": "252cca19118bdad3946ad97f12ef6142fb92b3417aa6ea078b7fceb15b4c113c"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/build_provenance.json",
+      "sha256": "037c7ab4c13423083e4b57dbda08274ec64d5307b31236388c7d92bebe5479ad"
+    },
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0004-Admit-the-VP-internal-loop-border-l-max-bp-B-1-CPart.patch",
+      "sha256": "b3d384e1521742e0e226ac2eac996f6b9e106016d713ec25750a56b667ef4713"
+    },
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0007-Extrapolate-PF-weights-for-long-scaffold-loops.patch",
+      "sha256": "84ca746a40595d195f1a0a10895686bcd8add49db5a8d7eabe8e38260cf62210"
+    },
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0006-VPR-right-run-guard-covers-j-CParty-5-follow-up.patch",
+      "sha256": "f14610e62404e904b9345ffdaee83cd338f3bc69dd034e1b2667c3a159e25939"
+    },
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0002-cli-read-input_structure_given-before-cmdline_parser.patch",
+      "sha256": "e4aa002d5e8093c3abd802fb965986f69a53d60e1e4f278f70e9a4e27875bc82"
+    },
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0003-Admit-the-WMB-endpoint-Bp-l-j-n-CParty-3.patch",
+      "sha256": "ddc2269cbcdf522ce894742b14bb3eedde6f60337f7763cfb80c48979c68990c"
+    },
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0001-build-include-algorithm-in-centroid.cc-for-std-sort.patch",
+      "sha256": "5fa0acde00ae3e09c4574c483af5a4c7c0716a66568014a17d7b920abb77fca2"
+    },
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0005-Charge-the-VPR-right-unpaired-run-as-cp-j-k-CParty-5.patch",
+      "sha256": "c30cbb9127f17a09516e1a7c116682d4d92ace4f923f49ed7601786bbf19e309"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/CParty.cc",
+      "sha256": "332d78ee4d8ca4caa4d7cc2934d7de772cbff1d043d59d5fc9ba8911cab6750b"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/Hotspot.cc",
+      "sha256": "b94b8e5c00eb993f110511735c0bed2dda7553806bf2fa2d76e119a7d0d8eed5"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/Result.cc",
+      "sha256": "4b835bebffb77e3f257eee993fc3efa74507685dc6edf55f82241abc5d5c7c17"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/Result.hh",
+      "sha256": "63d7e234055e15815b91e92bd365015220d178711847fc62d045c31f63fcc829"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/SHAPE.cc",
+      "sha256": "d22802800a6ff1a032a7a23637d58fe646b325e4b84345f4475aec7a99288259"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/SHAPE.hh",
+      "sha256": "ec128b1ef87586926ed4f6b9b3dca7c229331dab2aa946c00bb409dfa2cd4a89"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/W_final.cc",
+      "sha256": "b02c284835bbc1a76df06696d6c70affc6fee00cb3d47193ab09fca98cf76731"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/W_final.hh",
+      "sha256": "f463200ae4bbca858592a3d6475a9f9c7dde0ad0823a86ea3da353bf81a3ff09"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/base_types.hh",
+      "sha256": "dfe2aeb90e2061701b5080cbb474663d34eaf981dae96561bc041797f20a8000"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/centroid.cc",
+      "sha256": "fa38a6931f83283fb45655522babf27bf3a54b78a1045ce1a05a3701f6e494cd"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/cmdline.cc",
+      "sha256": "2dd9aea1946409dab5c3b6ab5049af329b27505eaef6547f89a3a4f3394db669"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/cmdline.hh",
+      "sha256": "56d48966dcdf2899fd6cfc01998e4e2a4fceddf3011d481dbea77128d6c5ebe2"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/config.h",
+      "sha256": "f2e413ccde1fb4655833bdc33426fa5f68173e00ec8e9e6828befb00ad722523"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/constants.hh",
+      "sha256": "e0b4a2cf52e1b2c7c07147193db4663ffc2990f990d2ecf9786fade683b23c4b"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/cparty.ggo",
+      "sha256": "ca7b9fa6fed6e69ad1d7f499971e0d5e5aa793a666779428bad3072e8ece3066"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/dot_plot.cc",
+      "sha256": "ceffc00f41179345e20dfb1651ce9f6755ffb9f3eb45dc717ff40e6261625a6b"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/dot_plot.hh",
+      "sha256": "9bfaaac247ce4f966de7db57c4e52f615decac21c4984cc68214077e21a3bd30"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/h_externs.hh",
+      "sha256": "ee3cdd8963bd5af4d89c0e5f648b9c08f82b7e54a3dfe1d463cf558787555054"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/h_globals.hh",
+      "sha256": "4a9719d0a3db1a1e5e9ce3cc9428157281bd6a1ea8cf6bd3723909f0c0b895f2"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/h_struct.hh",
+      "sha256": "4ec90b2d2f0878c00272d552cdff71e177ac3ac65349c379d0f3eece95438fa6"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/hotspot.hh",
+      "sha256": "3404fda1218893bcc0ef7e8f2bf7c8e704a63ccb2cde746a0bd4c51d5700bc67"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/mea.cc",
+      "sha256": "dc283206c72670183592633c995a90a98f9ee03a6447790e0b35158b24a73cfe"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/mea.hh",
+      "sha256": "80d6fc52e504d7d385d9a7d2fa0a7b3be578ae0eeb5dd124e24ef451292dc9a0"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/mwm.cc",
+      "sha256": "697dad6632821e4c52fbc30b44d48ceb48b7d8924960c3938226073f3293bec9"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/mwm.hh",
+      "sha256": "844f943b402ad013fc0b70776026d5fe15d7ea69b5ee51a4fc3306daf7412bb2"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/part_func.cc",
+      "sha256": "76bed2c4fc36c81101f2d3ef6ba723c443571eb4b8c2234211a6cc6218075b9e"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/part_func.hh",
+      "sha256": "9a74faed97c51362b208f2140b6949afab7a0a609456ce767b7f90cb39b3faf4"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/pf_globals.hh",
+      "sha256": "d217a46ae79b876a4bc2714874e96d2bcf196843603fafaae9663db8fdeeedb4"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/pseudo_loop.cc",
+      "sha256": "6db66887306b6aeb60e1950f0034e12d3216d4a2e4005f6e560ac3bc4e97d27d"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/pseudo_loop.hh",
+      "sha256": "c7b752baf3b7e1afad72ec3ac1bc61145c0d7559cef5a8cd3139a51d9c3cf0a4"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/s_energy_matrix.cc",
+      "sha256": "6e8222a49ff877a11801c8751bf7a1f59d726001181a1b719ae77aec79c6a01d"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/s_energy_matrix.hh",
+      "sha256": "03dc81a7fe65a3d808617183003825de4c6429b100aea04e786372ad4c35e95c"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/sparse_tree.cc",
+      "sha256": "99263c867a061a55a96d808be6677ba3d21ccacd63534eb6f787bd1d0e2456bd"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/legacy-observation/sparse_tree.hh",
+      "sha256": "24a055b60c78554c8fa71c248e76a69413a3671ea68ce2564afad1ce9468f964"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/CParty.cc",
+      "sha256": "332d78ee4d8ca4caa4d7cc2934d7de772cbff1d043d59d5fc9ba8911cab6750b"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/Hotspot.cc",
+      "sha256": "b94b8e5c00eb993f110511735c0bed2dda7553806bf2fa2d76e119a7d0d8eed5"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/Result.cc",
+      "sha256": "4b835bebffb77e3f257eee993fc3efa74507685dc6edf55f82241abc5d5c7c17"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/Result.hh",
+      "sha256": "63d7e234055e15815b91e92bd365015220d178711847fc62d045c31f63fcc829"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/SHAPE.cc",
+      "sha256": "d22802800a6ff1a032a7a23637d58fe646b325e4b84345f4475aec7a99288259"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/SHAPE.hh",
+      "sha256": "ec128b1ef87586926ed4f6b9b3dca7c229331dab2aa946c00bb409dfa2cd4a89"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/W_final.cc",
+      "sha256": "b02c284835bbc1a76df06696d6c70affc6fee00cb3d47193ab09fca98cf76731"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/W_final.hh",
+      "sha256": "f463200ae4bbca858592a3d6475a9f9c7dde0ad0823a86ea3da353bf81a3ff09"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/base_types.hh",
+      "sha256": "efff86365ef4e24221f4c454c0aaa7fc9f55b68805eca72d9ef55de145fe4a54"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/centroid.cc",
+      "sha256": "fa38a6931f83283fb45655522babf27bf3a54b78a1045ce1a05a3701f6e494cd"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/cmdline.cc",
+      "sha256": "2dd9aea1946409dab5c3b6ab5049af329b27505eaef6547f89a3a4f3394db669"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/cmdline.hh",
+      "sha256": "56d48966dcdf2899fd6cfc01998e4e2a4fceddf3011d481dbea77128d6c5ebe2"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/config.h",
+      "sha256": "f2e413ccde1fb4655833bdc33426fa5f68173e00ec8e9e6828befb00ad722523"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/constants.hh",
+      "sha256": "e0b4a2cf52e1b2c7c07147193db4663ffc2990f990d2ecf9786fade683b23c4b"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/cparty.ggo",
+      "sha256": "ca7b9fa6fed6e69ad1d7f499971e0d5e5aa793a666779428bad3072e8ece3066"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/dot_plot.cc",
+      "sha256": "ceffc00f41179345e20dfb1651ce9f6755ffb9f3eb45dc717ff40e6261625a6b"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/dot_plot.hh",
+      "sha256": "9bfaaac247ce4f966de7db57c4e52f615decac21c4984cc68214077e21a3bd30"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/h_externs.hh",
+      "sha256": "ee3cdd8963bd5af4d89c0e5f648b9c08f82b7e54a3dfe1d463cf558787555054"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/h_globals.hh",
+      "sha256": "4a9719d0a3db1a1e5e9ce3cc9428157281bd6a1ea8cf6bd3723909f0c0b895f2"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/h_struct.hh",
+      "sha256": "4ec90b2d2f0878c00272d552cdff71e177ac3ac65349c379d0f3eece95438fa6"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/hotspot.hh",
+      "sha256": "3404fda1218893bcc0ef7e8f2bf7c8e704a63ccb2cde746a0bd4c51d5700bc67"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/mea.cc",
+      "sha256": "dc283206c72670183592633c995a90a98f9ee03a6447790e0b35158b24a73cfe"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/mea.hh",
+      "sha256": "80d6fc52e504d7d385d9a7d2fa0a7b3be578ae0eeb5dd124e24ef451292dc9a0"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/mwm.cc",
+      "sha256": "697dad6632821e4c52fbc30b44d48ceb48b7d8924960c3938226073f3293bec9"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/mwm.hh",
+      "sha256": "844f943b402ad013fc0b70776026d5fe15d7ea69b5ee51a4fc3306daf7412bb2"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/part_func.cc",
+      "sha256": "c7092d88fefa5b7d3a1994a274932e7ff7eb14eb3e9e7644c3ac78c42fbd2727"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/part_func.hh",
+      "sha256": "9a74faed97c51362b208f2140b6949afab7a0a609456ce767b7f90cb39b3faf4"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/pf_globals.hh",
+      "sha256": "d217a46ae79b876a4bc2714874e96d2bcf196843603fafaae9663db8fdeeedb4"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/pseudo_loop.cc",
+      "sha256": "6db66887306b6aeb60e1950f0034e12d3216d4a2e4005f6e560ac3bc4e97d27d"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/pseudo_loop.hh",
+      "sha256": "c7b752baf3b7e1afad72ec3ac1bc61145c0d7559cef5a8cd3139a51d9c3cf0a4"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/s_energy_matrix.cc",
+      "sha256": "6e8222a49ff877a11801c8751bf7a1f59d726001181a1b719ae77aec79c6a01d"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/s_energy_matrix.hh",
+      "sha256": "03dc81a7fe65a3d808617183003825de4c6429b100aea04e786372ad4c35e95c"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/sparse_tree.cc",
+      "sha256": "99263c867a061a55a96d808be6677ba3d21ccacd63534eb6f787bd1d0e2456bd"
+    },
+    {
+      "path": "build/legacy-cparty-59593650-7patches/src/src/sparse_tree.hh",
+      "sha256": "24a055b60c78554c8fa71c248e76a69413a3671ea68ce2564afad1ce9468f964"
+    },
+    {
+      "path": "tools/e0_legacy_scalar.cc",
+      "sha256": "776d58dbe037ebd1b1684c5baa0a3099d699b01859e5abba62c7bb768777b5b9"
+    },
+    {
+      "path": "build/e0-observers-15aa7742-v2/e0-legacy-uninstrumented",
+      "sha256": "c6acfab4ed276dac11b890c6a835e03a850ff6e9a0af164dfe4e68a2130c0801"
+    }
+  ],
+  "oracle": {
+    "source_commit": "59593650ad5c5b2ba54bf92ee843c6b28403181e",
+    "patches": 7,
+    "completed_wmb_weak_closure": false
+  },
+  "profile_scope": "Linear exact profiles in both policies; upstream has sampling profiles only, no independent analytic profile oracle"
+}

@@ -1,0 +1,52 @@
+{
+  "source_sha256": "c76025522f1f9e174c25207595bc079e454deb656acbfd3a51de71c60c167bc5",
+  "acquisition_manifest_sha256": "50be1bd0d5ada5c34381d44a041980457e3f2d8782b6ae227ba649b178987190",
+  "scaffold_settings": {
+    "beam": 200,
+    "dangles": 2,
+    "pair_probability_threshold": 0.7,
+    "min_helix": 2
+  },
+  "linearpartition_source": {
+    "commit": "b450fb3e63189073b68d385589035f992080aa3a",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "wrapper_sha256": "850ef5f778fda1275dabc1f561be11563a2334ceff956fb538f2f24b22633e87",
+  "vienna_binary_sha256": "ba8342306098b1f93d71eeb97054db59941362fbd1071f0688bc5a4a9d51caa7",
+  "records": [
+    {
+      "id": "bpRNA_RFAM_15825",
+      "input_file": "bpRNA_RFAM_15825.txt",
+      "sequence_sha256": "80d4460c64d1a6b56b6380e76b65c99692e57113e831f1e9c114e9e92e1a60c0",
+      "input_sha256": "dcffb1aeaba3dde093acf6adbaf15e1b7f5dfcc3d62fbd513e82e5d6ca77b15c",
+      "scaffold_sha256": "dd73d01f9bebd849b0cf72bad16243ab7df4f69bd6b8b36b3452b18f24392bc9",
+      "length": 52,
+      "scaffold_pairs": 6,
+      "free_bases": 40,
+      "paired_fraction": 0.23076923076923078,
+      "maximum_pair_depth": 6,
+      "maximum_branching_ancestors_of_free_base": 0,
+      "branching_nodes_including_exterior": 0,
+      "gc_fraction": 0.5192307692307693,
+      "scaffold_status": "success",
+      "scaffold_elapsed_seconds": 0.07842576503753662,
+      "scaffold_command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearPartition-20261008/linearpartition",
+        "-V",
+        "-b",
+        "200",
+        "--dangles",
+        "2",
+        "-c",
+        "0.7",
+        "-r",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/local/g-full-one-record-smoke-20261011/scaffold_logs/bpRNA_RFAM_15825/pairs.tsv"
+      ],
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 11168
+    }
+  ],
+  "software_unchanged": true
+}

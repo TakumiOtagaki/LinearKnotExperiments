@@ -1,0 +1,3 @@
+>closure14
+GCGCGCGCGCGCGC
+(.(......)...)

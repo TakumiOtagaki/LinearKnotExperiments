@@ -1,0 +1,178 @@
+{
+  "label": "G",
+  "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/g-bprna-full-plan-20261011-v3/array_plan.json",
+  "array_plan_sha256": "438f453da3b2204915e25679c7329a696606d9755a81ffd46fc59be5fb5d3fae",
+  "pending_scaffolds": false,
+  "tiers": [
+    {
+      "tier": "nt50_99",
+      "inputs": 12428,
+      "tasks": 25,
+      "jobs": 12428,
+      "estimated_hours": 0.7432411666666662,
+      "estimated_points": 0.05937500000000001,
+      "h_rt_envelope_points": 0.3000000000000001,
+      "resource": "cpu_4=1",
+      "h_rt": "01:00:00",
+      "workers": 1,
+      "inputs_per_task_min": 428,
+      "inputs_per_task_max": 500,
+      "task_max_estimated_memory_mib": 739
+    },
+    {
+      "tier": "nt100_199",
+      "inputs": 9656,
+      "tasks": 20,
+      "jobs": 9656,
+      "estimated_hours": 0.8515051666666669,
+      "estimated_points": 0.0475,
+      "h_rt_envelope_points": 0.24000000000000007,
+      "resource": "cpu_4=1",
+      "h_rt": "01:00:00",
+      "workers": 1,
+      "inputs_per_task_min": 156,
+      "inputs_per_task_max": 500,
+      "task_max_estimated_memory_mib": 839
+    },
+    {
+      "tier": "nt200_299",
+      "inputs": 1446,
+      "tasks": 3,
+      "jobs": 1446,
+      "estimated_hours": 0.200626,
+      "estimated_points": 0.0071249999999999985,
+      "h_rt_envelope_points": 0.036000000000000004,
+      "resource": "cpu_4=1",
+      "h_rt": "01:00:00",
+      "workers": 1,
+      "inputs_per_task_min": 446,
+      "inputs_per_task_max": 500,
+      "task_max_estimated_memory_mib": 939
+    },
+    {
+      "tier": "nt300_399",
+      "inputs": 1095,
+      "tasks": 3,
+      "jobs": 1095,
+      "estimated_hours": 0.21429149999999986,
+      "estimated_points": 0.007407897999999998,
+      "h_rt_envelope_points": 0.036000000000000004,
+      "resource": "cpu_4=1",
+      "h_rt": "01:00:00",
+      "workers": 1,
+      "inputs_per_task_min": 95,
+      "inputs_per_task_max": 500,
+      "task_max_estimated_memory_mib": 1039
+    },
+    {
+      "tier": "nt400_799",
+      "inputs": 584,
+      "tasks": 6,
+      "jobs": 584,
+      "estimated_hours": 0.8732949999999999,
+      "estimated_points": 0.018169597499999995,
+      "h_rt_envelope_points": 0.072,
+      "resource": "cpu_4=1",
+      "h_rt": "01:00:00",
+      "workers": 1,
+      "inputs_per_task_min": 84,
+      "inputs_per_task_max": 100,
+      "task_max_estimated_memory_mib": 1438
+    },
+    {
+      "tier": "nt800_1599",
+      "inputs": 423,
+      "tasks": 7,
+      "jobs": 423,
+      "estimated_hours": 1.6410900000000002,
+      "estimated_points": 0.027731445000000004,
+      "h_rt_envelope_points": 0.08399999999999999,
+      "resource": "cpu_4=1",
+      "h_rt": "01:00:00",
+      "workers": 1,
+      "inputs_per_task_min": 33,
+      "inputs_per_task_max": 91,
+      "task_max_estimated_memory_mib": 2239
+    },
+    {
+      "tier": "nt1600_3199",
+      "inputs": 340,
+      "tasks": 11,
+      "jobs": 340,
+      "estimated_hours": 2.50743375,
+      "estimated_points": 0.043120234375000004,
+      "h_rt_envelope_points": 0.13199999999999998,
+      "resource": "cpu_4=1",
+      "h_rt": "01:00:00",
+      "workers": 1,
+      "inputs_per_task_min": 6,
+      "inputs_per_task_max": 49,
+      "task_max_estimated_memory_mib": 3839
+    },
+    {
+      "tier": "nt3200_4381",
+      "inputs": 91,
+      "tasks": 4,
+      "jobs": 91,
+      "estimated_hours": 0.9593879166666667,
+      "estimated_points": 0.016073573124999997,
+      "h_rt_envelope_points": 0.048,
+      "resource": "cpu_4=1",
+      "h_rt": "01:00:00",
+      "workers": 1,
+      "inputs_per_task_min": 20,
+      "inputs_per_task_max": 25,
+      "task_max_estimated_memory_mib": 5021
+    }
+  ],
+  "totals": {
+    "inputs": 26063,
+    "tasks": 79,
+    "jobs": 26063,
+    "estimated_hours": 7.990870499999999,
+    "estimated_points": 0.22650274799999998,
+    "h_rt_envelope_points": 0.9480000000000002
+  },
+  "scripts": [
+    {
+      "tier": "nt50_99",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/g-bprna-full-plan-20261011-v3/nt50_99.sh",
+      "sha256": "d0cdacb02bcd09280a7cd0e6c3440de641c8921a3c631021c5e8823d9108dd24"
+    },
+    {
+      "tier": "nt100_199",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/g-bprna-full-plan-20261011-v3/nt100_199.sh",
+      "sha256": "5f45ad68ca2e62f90f97544d870ef5810f6fba44ae34cc3c9fe5559a6cdfb71a"
+    },
+    {
+      "tier": "nt200_299",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/g-bprna-full-plan-20261011-v3/nt200_299.sh",
+      "sha256": "04a5fb83e19f74ccaa6fa1b67ba41f1fc11d4926dede2c61fa4d3f1136b0c7e3"
+    },
+    {
+      "tier": "nt300_399",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/g-bprna-full-plan-20261011-v3/nt300_399.sh",
+      "sha256": "5078210304f13d5d7d8e1af4c227537802638da089f1a5bfdbab26aac83c4cf8"
+    },
+    {
+      "tier": "nt400_799",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/g-bprna-full-plan-20261011-v3/nt400_799.sh",
+      "sha256": "f3c2bc95e48028f08d18c14feac215c34eb9500b7b907f42774206180be5a4c5"
+    },
+    {
+      "tier": "nt800_1599",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/g-bprna-full-plan-20261011-v3/nt800_1599.sh",
+      "sha256": "5250ec9820c174c6400397db62b063e357fedf9cb4bbfd1751b11f0d0db839af"
+    },
+    {
+      "tier": "nt1600_3199",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/g-bprna-full-plan-20261011-v3/nt1600_3199.sh",
+      "sha256": "8136ddde87d9971c9502a6e5362fddad913d2a5caa79fbf8d60a3be0c7812d64"
+    },
+    {
+      "tier": "nt3200_4381",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/g-bprna-full-plan-20261011-v3/nt3200_4381.sh",
+      "sha256": "c4afbb01024a52c959689f684ca4d0795147cbfd9ad59f98423e4756fdbc140c"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-11T07:42:20.062799+00:00",
+  "purpose": "oracle",
+  "source_repository": "https://github.com/TheCOBRALab/CParty.git",
+  "source_commit": "59593650ad5c5b2ba54bf92ee843c6b28403181e",
+  "source_git_state": {
+    "commit": "59593650ad5c5b2ba54bf92ee843c6b28403181e",
+    "dirty": true,
+    "status": "M  src/CParty.cc\nM  src/centroid.cc\nM  src/part_func.cc\nM  src/pseudo_loop.cc",
+    "tracked_diff_sha256": "f63b0dbdccd67d67bdcf76078fbceb842777262e3e2a5c28e35af5699af71b7e"
+  },
+  "source_modifications": "Exactly the seven versioned oracle patches; completed WMB weak closure absent",
+  "build_revision_verified": true,
+  "verification_method": "Clean local clone, fixed build.sh <out_dir>, seven patches, Release build; external observer roots verified against original objects",
+  "build_command": [
+    "bash",
+    "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/build.sh",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/legacy-cparty-59593650-7patches"
+  ],
+  "build_script_sha256": "d4347a1564529cf1195d559b988d2b85a8c5007418b95169667d27eccbb02207",
+  "build_log_sha256": "1ad15fdbdd1c053e22402ddd41eefd36454fde132f67c5c957b3e404641e263f",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "CMAKE_GENERATOR": "Unix Makefiles"
+  },
+  "cmake_cache_sha256": "720c4122b3cc3d955aa9e160a82c8d90025d5be3fd4eebaf24ed2c25f74562fb",
+  "binaries": {
+    "CParty": "89109a7dd98276f768203c35cc3eed19e437f3ebfffd2550741a17e9c82ee594",
+    "cparty-oracle": "f87373401df5b4f2c743b6cf0181c74c3dc56e4b650c660e866ca9f546ddf03b"
+  },
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "patches": [
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0001-build-include-algorithm-in-centroid.cc-for-std-sort.patch",
+      "sha256": "5fa0acde00ae3e09c4574c483af5a4c7c0716a66568014a17d7b920abb77fca2"
+    },
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0002-cli-read-input_structure_given-before-cmdline_parser.patch",
+      "sha256": "e4aa002d5e8093c3abd802fb965986f69a53d60e1e4f278f70e9a4e27875bc82"
+    },
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0003-Admit-the-WMB-endpoint-Bp-l-j-n-CParty-3.patch",
+      "sha256": "ddc2269cbcdf522ce894742b14bb3eedde6f60337f7763cfb80c48979c68990c"
+    },
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0004-Admit-the-VP-internal-loop-border-l-max-bp-B-1-CPart.patch",
+      "sha256": "b3d384e1521742e0e226ac2eac996f6b9e106016d713ec25750a56b667ef4713"
+    },
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0005-Charge-the-VPR-right-unpaired-run-as-cp-j-k-CParty-5.patch",
+      "sha256": "c30cbb9127f17a09516e1a7c116682d4d92ace4f923f49ed7601786bbf19e309"
+    },
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0006-VPR-right-run-guard-covers-j-CParty-5-follow-up.patch",
+      "sha256": "f14610e62404e904b9345ffdaee83cd338f3bc69dd034e1b2667c3a159e25939"
+    },
+    {
+      "path": "deps/LinearCParty-15aa7742/test/oracle/legacy_cparty/patches/0007-Extrapolate-PF-weights-for-long-scaffold-loops.patch",
+      "sha256": "84ca746a40595d195f1a0a10895686bcd8add49db5a8d7eabe8e38260cf62210"
+    }
+  ],
+  "source_files_sha256": {
+    "CParty.cc": "332d78ee4d8ca4caa4d7cc2934d7de772cbff1d043d59d5fc9ba8911cab6750b",
+    "Hotspot.cc": "b94b8e5c00eb993f110511735c0bed2dda7553806bf2fa2d76e119a7d0d8eed5",
+    "Result.cc": "4b835bebffb77e3f257eee993fc3efa74507685dc6edf55f82241abc5d5c7c17",
+    "Result.hh": "63d7e234055e15815b91e92bd365015220d178711847fc62d045c31f63fcc829",
+    "SHAPE.cc": "d22802800a6ff1a032a7a23637d58fe646b325e4b84345f4475aec7a99288259",
+    "SHAPE.hh": "ec128b1ef87586926ed4f6b9b3dca7c229331dab2aa946c00bb409dfa2cd4a89",
+    "W_final.cc": "b02c284835bbc1a76df06696d6c70affc6fee00cb3d47193ab09fca98cf76731",
+    "W_final.hh": "f463200ae4bbca858592a3d6475a9f9c7dde0ad0823a86ea3da353bf81a3ff09",
+    "base_types.hh": "efff86365ef4e24221f4c454c0aaa7fc9f55b68805eca72d9ef55de145fe4a54",
+    "centroid.cc": "fa38a6931f83283fb45655522babf27bf3a54b78a1045ce1a05a3701f6e494cd",
+    "cmdline.cc": "2dd9aea1946409dab5c3b6ab5049af329b27505eaef6547f89a3a4f3394db669",
+    "cmdline.hh": "56d48966dcdf2899fd6cfc01998e4e2a4fceddf3011d481dbea77128d6c5ebe2",
+    "config.h": "f2e413ccde1fb4655833bdc33426fa5f68173e00ec8e9e6828befb00ad722523",
+    "constants.hh": "e0b4a2cf52e1b2c7c07147193db4663ffc2990f990d2ecf9786fade683b23c4b",
+    "cparty.ggo": "ca7b9fa6fed6e69ad1d7f499971e0d5e5aa793a666779428bad3072e8ece3066",
+    "dot_plot.cc": "ceffc00f41179345e20dfb1651ce9f6755ffb9f3eb45dc717ff40e6261625a6b",
+    "dot_plot.hh": "9bfaaac247ce4f966de7db57c4e52f615decac21c4984cc68214077e21a3bd30",
+    "h_externs.hh": "ee3cdd8963bd5af4d89c0e5f648b9c08f82b7e54a3dfe1d463cf558787555054",
+    "h_globals.hh": "4a9719d0a3db1a1e5e9ce3cc9428157281bd6a1ea8cf6bd3723909f0c0b895f2",
+    "h_struct.hh": "4ec90b2d2f0878c00272d552cdff71e177ac3ac65349c379d0f3eece95438fa6",
+    "hotspot.hh": "3404fda1218893bcc0ef7e8f2bf7c8e704a63ccb2cde746a0bd4c51d5700bc67",
+    "mea.cc": "dc283206c72670183592633c995a90a98f9ee03a6447790e0b35158b24a73cfe",
+    "mea.hh": "80d6fc52e504d7d385d9a7d2fa0a7b3be578ae0eeb5dd124e24ef451292dc9a0",
+    "mwm.cc": "697dad6632821e4c52fbc30b44d48ceb48b7d8924960c3938226073f3293bec9",
+    "mwm.hh": "844f943b402ad013fc0b70776026d5fe15d7ea69b5ee51a4fc3306daf7412bb2",
+    "part_func.cc": "c7092d88fefa5b7d3a1994a274932e7ff7eb14eb3e9e7644c3ac78c42fbd2727",
+    "part_func.hh": "9a74faed97c51362b208f2140b6949afab7a0a609456ce767b7f90cb39b3faf4",
+    "pf_globals.hh": "d217a46ae79b876a4bc2714874e96d2bcf196843603fafaae9663db8fdeeedb4",
+    "pseudo_loop.cc": "6db66887306b6aeb60e1950f0034e12d3216d4a2e4005f6e560ac3bc4e97d27d",
+    "pseudo_loop.hh": "c7b752baf3b7e1afad72ec3ac1bc61145c0d7559cef5a8cd3139a51d9c3cf0a4",
+    "s_energy_matrix.cc": "6e8222a49ff877a11801c8751bf7a1f59d726001181a1b719ae77aec79c6a01d",
+    "s_energy_matrix.hh": "03dc81a7fe65a3d808617183003825de4c6429b100aea04e786372ad4c35e95c",
+    "sparse_tree.cc": "99263c867a061a55a96d808be6677ba3d21ccacd63534eb6f787bd1d0e2456bd",
+    "sparse_tree.hh": "24a055b60c78554c8fa71c248e76a69413a3671ea68ce2564afad1ce9468f964"
+  },
+  "root_verification": [
+    {
+      "input": "closure14",
+      "uninstrumented": {
+        "free_energy": -0.01745811630756536,
+        "rt": 0.6163207755,
+        "log_z": 0.02832634725545669,
+        "mfe": 0.1
+      },
+      "max_root_difference": 0.0,
+      "status": "success"
+    },
+    {
+      "input": "nested45",
+      "uninstrumented": {
+        "free_energy": 20.302848553469445,
+        "rt": 0.6163207755,
+        "log_z": -32.942015522677195,
+        "mfe": 20.6
+      },
+      "max_root_difference": 0.0,
+      "status": "success"
+    },
+    {
+      "input": "BE41",
+      "uninstrumented": {
+        "free_energy": 8.320170685564934,
+        "rt": 0.6163207755,
+        "log_z": -13.4997407459047,
+        "mfe": 8.32
+      },
+      "max_root_difference": 0.0,
+      "status": "success"
+    },
+    {
+      "input": "BE65",
+      "uninstrumented": {
+        "free_energy": 14.344260557190518,
+        "rt": 0.6163207755,
+        "log_z": -23.27401756910354,
+        "mfe": 15.96
+      },
+      "max_root_difference": 0.0,
+      "status": "success"
+    }
+  ]
+}

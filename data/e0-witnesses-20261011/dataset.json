@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "id": "closure14",
+      "source": "textbook/examples/verify_15aa7742/inputs/closure14.txt",
+      "source_sha256": "9d23e1d0b9c98ada34888029d070c3d1eb30fa1b933b7083a590ef9ff3103f5e",
+      "input_sha256": "f52268297f4ddaacf90e2850840318299c58fcded151928598cf9c383bd058ad"
+    },
+    {
+      "id": "nested45",
+      "source": "textbook/examples/verify_15aa7742/inputs/nested45.txt",
+      "source_sha256": "4f2bd381f9c2d347b404b7bdab1bb7649244e29b3f0f6af9b45ed4f3babf1ad8",
+      "input_sha256": "640bcb54d3daa58ed9b5f6f51ebc5057a74e1e354588adb48067030c09b92c80"
+    },
+    {
+      "id": "BE41",
+      "source": "textbook/examples/verify_15aa7742/inputs/long_cases.json",
+      "source_sha256": "774e7869e8c2682e07aa8eb73b60814abf27fea0da7627f1eeaa5553779ba3fc",
+      "input_sha256": "7990afc3f409d4b79c51df52d26639965d0e36784a880756c8f08eced1f04c38",
+      "transformation": "none; preserve X forced-unpaired positions in both methods"
+    },
+    {
+      "id": "BE65",
+      "source": "textbook/examples/verify_15aa7742/inputs/long_cases.json",
+      "source_sha256": "774e7869e8c2682e07aa8eb73b60814abf27fea0da7627f1eeaa5553779ba3fc",
+      "input_sha256": "049d596ac92d77d45be0592bc1f160f263e9eb44ab03735e6c72aa168dd917b2",
+      "transformation": "none; preserve X forced-unpaired positions in both methods"
+    }
+  ]
+}

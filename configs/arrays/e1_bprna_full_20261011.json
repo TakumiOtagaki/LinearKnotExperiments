@@ -1,0 +1,752 @@
+{
+  "schema_version": 1,
+  "measurement": "accuracy",
+  "seed": 20261011,
+  "tiers": [
+    {
+      "name": "nt50_99",
+      "min_length": 50,
+      "max_length": 99,
+      "resource": "cpu_4",
+      "h_rt": "02:00:00",
+      "target_seconds": 3600,
+      "memory_budget_mib": 8192,
+      "task_overhead_mib": 512,
+      "workers": 4,
+      "max_inputs_per_task": 500,
+      "job_limits": {
+        "memory_limit_mib": 1024,
+        "timeout_seconds": 600
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 6.010518407212619e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam20_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam50_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam100_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam200_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam20_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam50_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam100_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam200_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "nt100_199",
+      "min_length": 100,
+      "max_length": 199,
+      "resource": "cpu_8",
+      "h_rt": "03:00:00",
+      "target_seconds": 7200,
+      "memory_budget_mib": 16384,
+      "task_overhead_mib": 512,
+      "workers": 4,
+      "max_inputs_per_task": 300,
+      "job_limits": {
+        "memory_limit_mib": 2048,
+        "timeout_seconds": 600
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.7826474107465843e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.0001647093228579702,
+            "memory_exponent": 3
+          },
+          "beam20_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 6.521829868937307e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam50_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.1304505106157999e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam100_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.1304505106157999e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam200_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.1304505106157999e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam20_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 6.521829868937307e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam50_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.1304505106157999e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam100_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.1304505106157999e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam200_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.1304505106157999e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "nt200_299",
+      "min_length": 200,
+      "max_length": 299,
+      "resource": "cpu_16",
+      "h_rt": "03:00:00",
+      "target_seconds": 7200,
+      "memory_budget_mib": 32768,
+      "task_overhead_mib": 512,
+      "workers": 2,
+      "max_inputs_per_task": 150,
+      "job_limits": {
+        "memory_limit_mib": 8192,
+        "timeout_seconds": 600
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.4875006172572693e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 9.081792021920545e-05,
+            "memory_exponent": 3
+          },
+          "beam20_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.462871898274523e-09,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam50_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.8471539237058932e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam100_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.0934411135333458e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam200_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.216584708447072e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam20_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.462871898274523e-09,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam50_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.8471539237058932e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam100_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.216584708447072e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam200_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.216584708447072e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "nt300_399",
+      "min_length": 300,
+      "max_length": 399,
+      "resource": "cpu_40",
+      "h_rt": "05:00:00",
+      "target_seconds": 10800,
+      "memory_budget_mib": 81920,
+      "task_overhead_mib": 512,
+      "workers": 2,
+      "max_inputs_per_task": 30,
+      "job_limits": {
+        "memory_limit_mib": 16384,
+        "timeout_seconds": 600
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 4.858360511310758e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.00020390528402763612,
+            "memory_exponent": 3
+          },
+          "beam20_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.4471938244344076e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam50_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 8.554896058527006e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 3.639943755671346e-06,
+            "memory_exponent": 3
+          },
+          "beam100_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.3572671631316884e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 5.15896141251226e-06,
+            "memory_exponent": 3
+          },
+          "beam200_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.643121437591583e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 8.693053088800188e-06,
+            "memory_exponent": 3
+          },
+          "beam20_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.4677584784212515e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam50_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 8.493202096566476e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 3.5065546621355876e-06,
+            "memory_exponent": 3
+          },
+          "beam100_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.3510977669356353e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 5.15896141251226e-06,
+            "memory_exponent": 3
+          },
+          "beam200_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.645829553818624e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 8.693053088800188e-06,
+            "memory_exponent": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "nt400_799",
+      "min_length": 400,
+      "max_length": 799,
+      "resource": "cpu_16",
+      "h_rt": "03:00:00",
+      "target_seconds": 7200,
+      "memory_budget_mib": 32768,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "max_inputs_per_task": 8,
+      "job_limits": {
+        "memory_limit_mib": 16384,
+        "timeout_seconds": 7200
+      },
+      "order_kind": "beam_ascending",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam20_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.002127763589930683,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.10925149922473554,
+            "memory_exponent": 1
+          },
+          "beam50_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.013298522437066765,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.6828218701545969,
+            "memory_exponent": 1
+          },
+          "beam100_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.05319408974826706,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 2.7312874806183878,
+            "memory_exponent": 1
+          },
+          "beam200_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.21277635899306824,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          },
+          "beam20_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.004255527179861366,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.10925149922473554,
+            "memory_exponent": 1
+          },
+          "beam50_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.02659704487413353,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.6828218701545969,
+            "memory_exponent": 1
+          },
+          "beam100_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.10638817949653412,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 2.7312874806183878,
+            "memory_exponent": 1
+          },
+          "beam200_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.4255527179861365,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "nt800_1599",
+      "min_length": 800,
+      "max_length": 1599,
+      "resource": "cpu_40",
+      "h_rt": "06:00:00",
+      "target_seconds": 14400,
+      "memory_budget_mib": 81920,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "max_inputs_per_task": 4,
+      "job_limits": {
+        "memory_limit_mib": 32768,
+        "timeout_seconds": 7200
+      },
+      "order_kind": "beam_ascending",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam20_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.002127763589930683,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.10925149922473554,
+            "memory_exponent": 1
+          },
+          "beam50_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.013298522437066765,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.6828218701545969,
+            "memory_exponent": 1
+          },
+          "beam100_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.05319408974826706,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 2.7312874806183878,
+            "memory_exponent": 1
+          },
+          "beam200_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.21277635899306824,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          },
+          "beam20_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.004255527179861366,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.10925149922473554,
+            "memory_exponent": 1
+          },
+          "beam50_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.02659704487413353,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.6828218701545969,
+            "memory_exponent": 1
+          },
+          "beam100_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.10638817949653412,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 2.7312874806183878,
+            "memory_exponent": 1
+          },
+          "beam200_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.4255527179861365,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "nt1600_3199",
+      "min_length": 1600,
+      "max_length": 3199,
+      "resource": "cpu_40",
+      "h_rt": "08:00:00",
+      "target_seconds": 18000,
+      "memory_budget_mib": 81920,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "max_inputs_per_task": 2,
+      "job_limits": {
+        "memory_limit_mib": 65536,
+        "timeout_seconds": 7200
+      },
+      "order_kind": "beam_ascending",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam20_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.002127763589930683,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.10925149922473554,
+            "memory_exponent": 1
+          },
+          "beam50_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.013298522437066765,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.6828218701545969,
+            "memory_exponent": 1
+          },
+          "beam100_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.05319408974826706,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 2.7312874806183878,
+            "memory_exponent": 1
+          },
+          "beam200_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.21277635899306824,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          },
+          "beam20_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.004255527179861366,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.10925149922473554,
+            "memory_exponent": 1
+          },
+          "beam50_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.02659704487413353,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.6828218701545969,
+            "memory_exponent": 1
+          },
+          "beam100_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.10638817949653412,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 2.7312874806183878,
+            "memory_exponent": 1
+          },
+          "beam200_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.4255527179861365,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "nt3200_4381",
+      "min_length": 3200,
+      "max_length": 4381,
+      "resource": "cpu_40",
+      "h_rt": "10:00:00",
+      "target_seconds": 24000,
+      "memory_budget_mib": 81920,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "max_inputs_per_task": 1,
+      "job_limits": {
+        "memory_limit_mib": 65536,
+        "timeout_seconds": 7200
+      },
+      "order_kind": "beam_ascending",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam20_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.002127763589930683,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.10925149922473554,
+            "memory_exponent": 1
+          },
+          "beam50_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.013298522437066765,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.6828218701545969,
+            "memory_exponent": 1
+          },
+          "beam100_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.05319408974826706,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 2.7312874806183878,
+            "memory_exponent": 1
+          },
+          "beam200_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.21277635899306824,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          },
+          "beam20_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.004255527179861366,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.10925149922473554,
+            "memory_exponent": 1
+          },
+          "beam50_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.02659704487413353,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.6828218701545969,
+            "memory_exponent": 1
+          },
+          "beam100_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.10638817949653412,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 2.7312874806183878,
+            "memory_exponent": 1
+          },
+          "beam200_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.4255527179861365,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          }
+        }
+      }
+    }
+  ],
+  "compact_plan": true
+}

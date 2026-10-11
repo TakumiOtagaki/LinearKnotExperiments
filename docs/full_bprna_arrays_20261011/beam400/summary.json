@@ -1,0 +1,98 @@
+{
+  "label": "beam400",
+  "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/e1-long-beam400-pilot-dry-20261011/array_plan.json",
+  "array_plan_sha256": "5ee3d3d1d6f8ab3ecfd3565cc57ad2a85ecd4b776b96f906e5682257718191d4",
+  "pending_scaffolds": true,
+  "tiers": [
+    {
+      "tier": "nt400_799",
+      "inputs": 3,
+      "tasks": 3,
+      "jobs": 18,
+      "estimated_hours": 4.3828791134622405,
+      "estimated_points": 5.134007689711783,
+      "h_rt_envelope_points": 28.799999999999997,
+      "resource": "node_h=1",
+      "h_rt": "24:00:00",
+      "workers": 1,
+      "inputs_per_task_min": 1,
+      "inputs_per_task_max": 1,
+      "task_max_estimated_memory_mib": 23189.50943998541
+    },
+    {
+      "tier": "nt800_1599",
+      "inputs": 3,
+      "tasks": 3,
+      "jobs": 18,
+      "estimated_hours": 14.414220558190442,
+      "estimated_points": 8.644977195366653,
+      "h_rt_envelope_points": 28.799999999999997,
+      "resource": "node_h=1",
+      "h_rt": "24:00:00",
+      "workers": 1,
+      "inputs_per_task_min": 1,
+      "inputs_per_task_max": 1,
+      "task_max_estimated_memory_mib": 67239.71392739877
+    },
+    {
+      "tier": "nt1600_3199",
+      "inputs": 3,
+      "tasks": 3,
+      "jobs": 18,
+      "estimated_hours": 20.031516435607443,
+      "estimated_points": 10.611030752462604,
+      "h_rt_envelope_points": 28.799999999999997,
+      "resource": "node_h=1",
+      "h_rt": "24:00:00",
+      "workers": 1,
+      "inputs_per_task_min": 1,
+      "inputs_per_task_max": 1,
+      "task_max_estimated_memory_mib": 128639.05649170012
+    },
+    {
+      "tier": "nt3200_4381",
+      "inputs": 3,
+      "tasks": 3,
+      "jobs": 18,
+      "estimated_hours": 32.98002176213061,
+      "estimated_points": 15.143007616745713,
+      "h_rt_envelope_points": 28.799999999999997,
+      "resource": "node_h=1",
+      "h_rt": "24:00:00",
+      "workers": 1,
+      "inputs_per_task_min": 1,
+      "inputs_per_task_max": 1,
+      "task_max_estimated_memory_mib": 164342.4464383437
+    }
+  ],
+  "totals": {
+    "inputs": 12,
+    "tasks": 12,
+    "jobs": 72,
+    "estimated_hours": 71.80863786939074,
+    "estimated_points": 39.53302325428675,
+    "h_rt_envelope_points": 115.19999999999999
+  },
+  "scripts": [
+    {
+      "tier": "nt400_799",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/e1-long-beam400-pilot-dry-20261011/nt400_799.sh",
+      "sha256": "cf97701d0882f69aaa9aaaeb1381c9d110832129d01c9de9186d4985630916dd"
+    },
+    {
+      "tier": "nt800_1599",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/e1-long-beam400-pilot-dry-20261011/nt800_1599.sh",
+      "sha256": "22606726406cc10aeea60c734f919ec1ffd503b4a7b6976a1df5bb0ccd6cfde1"
+    },
+    {
+      "tier": "nt1600_3199",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/e1-long-beam400-pilot-dry-20261011/nt1600_3199.sh",
+      "sha256": "6137c4a0dda62660ab0d1442f70a68aca6dd8e54ca8664a5a00cfd8497509db7"
+    },
+    {
+      "tier": "nt3200_4381",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/e1-long-beam400-pilot-dry-20261011/nt3200_4381.sh",
+      "sha256": "72b321a51791d8af0b2261d7c0fa56926d73d9a6d5995028b8d96a9d2887e587"
+    }
+  ]
+}

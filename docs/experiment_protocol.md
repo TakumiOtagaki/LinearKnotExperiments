@@ -37,6 +37,16 @@ incorporated on 2026-10-08. Pin and inspect the reference actually used before
 E0. Keep the completion-domain ambiguity follow-up in implementation notes
 until its resolution is known; do not change either implementation here.
 
+The [full bpRNA/E0 plan](full_bprna_array_plan_20261011.md) pins the
+implementation's seven-patch `59593650` oracle. That oracle omits completed-WMB
+weak closure. Compare `LegacyCompatible` for numerical parity and
+`RequireWeakClosure` for model differences, preserving both results.
+The external oracle BPP observer differentiates its own PF arithmetic;
+sampling BPP is not an exact reference. The tiny BE41 MFE discrepancy remains
+a parity failure and must be resolved or explicitly characterized before
+claiming full MFE agreement. Default-versus-compatible metrics separate this
+discrepancy from the effect of closure.
+
 ## Stored observations
 
 `run.json` contains the config and environment metadata, Git provenance,
@@ -116,8 +126,11 @@ also stay together. Separate inclusive length tiers into distinct arrays with
 their own resources and `h_rt`. Pack by the cost model's estimated work and
 memory, leaving headroom below `h_rt`; do not pack by a fixed number of inputs.
 Save model coefficients, their basis, input assignments, estimates and full
-seeded schedules in `array_plan.json`. The per-job timeout and memory cap remain
-unchanged. A sequence matrix exceeding its tier budget is rejected.
+seeded schedules in `array_plan.json` or checksummed per-task schedules.
+The per-job timeout and memory cap remain unchanged unless an explicit tier
+`job_limits` overlay is saved. That overlay is validated and copied into the
+task config. Length-restricted modes are applied identically in packing and
+the schedule. A sequence matrix exceeding its tier budget is rejected.
 Cost coefficients are planning assumptions until calibrated with the adopted
 build's pilot; they are not empirical or theoretical complexity results.
 

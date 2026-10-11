@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "source_commit": "b450fb3e63189073b68d385589035f992080aa3a",
+  "source_git_state": {
+    "commit": "b450fb3e63189073b68d385589035f992080aa3a",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "wrapper_sha256": "850ef5f778fda1275dabc1f561be11563a2334ceff956fb538f2f24b22633e87",
+  "vienna_binary_sha256": "ba8342306098b1f93d71eeb97054db59941362fbd1071f0688bc5a4a9d51caa7",
+  "extra_files": [
+    {
+      "path": "scripts/prepare_biological_inputs.py",
+      "sha256": "839a5bcdadffa58f231fe261b57fadc6557ae63a53824b12a9d71c3e13210e35"
+    },
+    {
+      "path": "scripts/rna_records.py",
+      "sha256": "4ea8f319b709263217c73f0c9254054fd613b90a72d0bd389df588ecd87584ce"
+    },
+    {
+      "path": "scripts/scaffold_array.py",
+      "sha256": "581f9a43cecd8739f1246c0f1ed4cdede816f41dec5a802e1acbd1e711e671ca"
+    },
+    {
+      "path": "scripts/biological_cohort.py",
+      "sha256": "2249555e64158e2054966e0c6b9fd7148fa1fabcb06e84ad738bf05362518858"
+    }
+  ]
+}

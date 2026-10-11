@@ -44,6 +44,20 @@ for their scope and the next seven-record feasibility matrix.
 
 ## Formal experiments on TSUBAME arrays
 
+The [full bpRNA preparation](docs/full_bprna_array_plan_20261011.md) covers
+26,063 scaffold-generation jobs, the 699,387-job E1 matrix, staged b300/b400
+pilots, and a 304-input CParty comparison. Configs, measured calibration,
+software locks, tier assignments and script copies are saved there.
+No scheduler submission was made. Finish the G arrays and regenerate verified
+E1/E0 plans before execution; their current dry-runs explicitly reject pending G.
+
+`scripts/scaffold_array.py plan/run/aggregate` generates and collects the G
+arrays using the existing posterior/helix procedure. `scripts/build_e0_tools.py`
+builds external exact observers for both closure policies and the seven-patch
+CParty oracle. `scripts/analyze_e0.py` keeps numerical parity separate from
+closure differences. Its tiny witness check retains a 0.0001707 kcal/mol MFE
+discrepancy on BE41 for follow-up; it does not loosen the declared tolerance.
+
 Run formal experiments as tier-specific TSUBAME Grid Engine array jobs.
 Interactive-node execution is limited to small development pilots.
 `scripts/plan_array.py` freezes inputs, checks a software lock, saves a plan
@@ -78,12 +92,30 @@ in a task; accuracy planning does not assume ideal parallel speedup.
 Estimated memory is `task_overhead_mib + workers * max(memory_base_mib +
 mib_per_nt * n)`. Both this estimate and the stricter envelope
 `task_overhead_mib + workers * memory_limit_mib` must fit the tier's memory
-budget. The original job timeout and address-space cap stay unchanged.
+budget. The original job timeout and address-space cap stay unchanged by default.
+An explicit tier `job_limits` overlay may set `timeout_seconds` and
+`memory_limit_mib`; these values are validated and saved in each task config.
+Modes may have an inclusive `length_range`, used in packing and execution
+so exact is absent at n≥400 in full bpRNA E1. A `cost_model.per_mode` map can
+give distinct constant/coefficient/exponent time and memory envelopes per mode.
+See the full bpRNA configs and calibration manifest for the adopted formulas.
 `target_seconds` must fit `max_wall_fraction` of `h_rt` (default 0.7, maximum 0.8).
 Tasks save their estimates, coefficients and the stated `basis` of the model.
 The example coefficients are uncalibrated scheduling estimates, not scientific
 complexity claims. Refit them with the adopted build's pilot, including failures.
 Many individual timeouts can exceed an estimated task wall budget.
+
+Full bpRNA uses `compact_plan: true`: each task's complete schedule is a
+checksummed `planned_jobs.json`, and the initial aggregate stores counts only.
+Use `aggregate_array.py --summary-only` for status summaries; omit the flag
+when observations are required. Accuracy analysis rejects a counts-only
+aggregate. Analyze large matrices per task and combine RNA-level observations.
+A `manifest_checkpoint_jobs` setting reduces repeated full manifest writes;
+an append journal records every start/finish and recovers execution order on
+resume, while each job's `result.json` remains the marker.
+Long tiers support `--through-beam 20`, then `--resume --through-beam 50`,
+100 and 200 as separate invocations after reviewing each stage.
+Larger widths remain missing until explicitly resumed.
 
 Formal configs require `purpose: formal`, a real `software_lock`, and
 `model_settings.build_revision_verified: true`. The lock must also record a

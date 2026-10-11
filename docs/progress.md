@@ -137,3 +137,16 @@ limits, concurrency and runtime modules are marked **要確認** in README.
 All changes remain inside `experiments/`. No qsub, biological measurement,
 external source modification/build, manuscript/textbook edit, git commit or push
 was performed.
+
+## 2026-10-11 bpRNA 全体と CParty 比較の array 準備
+
+- 全clean集合26,063本のcohort、G生成array、E1全体、長配列b300/b400の段階的な予備計画、E0の300本subset＋4証人を保存した。G79 tasks / 26,063 jobs、E1 841 tasks / 699,387 jobs、E0 21 tasks / 912 jobs。予備幅は各12 tasks / 72 jobs。全29 scriptsはbash構文検査を通った。
+- 12本E1の全324 jobsのwall/RSS、RNAcentralの成功とtimeout、元run hashをcalibration manifestに保存し、tierとmodeごとの費用式を設定した。長配列・上限なし・AD oracleの係数は暫定で、実測による見直しを計画に残した。通常優先度の概算は全計画345.81ポイント、全taskがh_rtまで使う枠は735.43ポイント。公式規則を確認し、group・同時実行数・queue・残額・storage/i-nodeを要確認とした。
+- 固定clean cloneのbuild.shを使用し、このrepoのbuild下にupstream59593650＋7patchesのoracleを作った。Depsのローカルmirrorとsource/binary/parameter/cache/patch hashを保存した。調整中の実装repoは読むだけで、変更していない。
+- 固定ライブラリにリンクする互換/default API observerと、oracle PFの外部コピーを微分するBPP observerを追加した。独立した2構造ensembleで微分を検査し、元oracle objectsのfull-precision probeともroot値を照合した。Profileは両Linear設定で保存するが、独立したanalytic oracleの一致とは扱わない。
+- 開発上の検査：Python全36 tests成功。exactの399/400境界、per-mode費用、tier cap、分割schedule、G未生成の拒否、G completion markerとCLI journalからの回復、幅stageの停止/再開、失敗保持、上限条件別の最大幅参照と欠測を確認した。52 ntだけのG生成で既存pilotとinput/G hashが一致した。
+- 科学的な小確認：4証人の12 CLI jobsは成功し、互換対oracleのlogZ/BPPは最大約2.14e-14/1.25e-14。45 ntではclosureによる差を観測した。BE41のMFEには互換でも0.0001706856 kcal/molの差があり、事前toleranceを変えずparity failureとして保存した。丸め・エネルギー規約が候補だが原因は実装担当に要確認。全bpRNAについて一致したとの主張はしていない。
+- G全体は未実行。G未生成のE1/E0 dry-runは実行できず、全件Gを検証して新しいready planを作る。qsub、commit、pushは実行していない。論文repoの他のファイルは変更していない。
+
+計画、再生成手順、各tierの時間とポイント、review用artifactsは
+[計画の要約](full_bprna_array_plan_20261011.md) にまとめた。

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-11T07:32:04.143279+00:00",
+  "source_manifest": "manifests/data-sources/bprna-local-20261008.json",
+  "source_manifest_sha256": "50be1bd0d5ada5c34381d44a041980457e3f2d8782b6ae227ba649b178987190",
+  "scaffold_dataset": "results/local/bprna-full-scaffolds-20261011/dataset.json",
+  "selection": {
+    "kind": "3_per_long_tier",
+    "seed": 20261011,
+    "pool_order": "same seeded generator after short E0 selection; ID sorted pools"
+  },
+  "records": [
+    {
+      "id": "bpRNA_tmRNA_596",
+      "length": 400,
+      "sequence_sha256": "3a876ead7f18bae369a96e313cbe6074ed14dfc8f182a4f6eb225200b4dc1099"
+    },
+    {
+      "id": "bpRNA_RFAM_22778",
+      "length": 457,
+      "sequence_sha256": "553ae8640a6fa068a0f9fec98e0c4287f2e5b96fb0c513334dd5e75bf48eb9b0"
+    },
+    {
+      "id": "bpRNA_CRW_16891",
+      "length": 516,
+      "sequence_sha256": "2b106bd14a637e739020afc565d41d728e8b755f227b353f08c7386156693b89"
+    },
+    {
+      "id": "bpRNA_CRW_54989",
+      "length": 1491,
+      "sequence_sha256": "cb5d56b798df3cd15d97afc8ad870de179983677c31759e133928ee573183939"
+    },
+    {
+      "id": "bpRNA_RFAM_36990",
+      "length": 1501,
+      "sequence_sha256": "8fe537996c6e2534c4ba014154892cb944f9ce425a1b2165bdb423944dfab073"
+    },
+    {
+      "id": "bpRNA_RFAM_9535",
+      "length": 1524,
+      "sequence_sha256": "0e67b40c565f80811f0065a5f9960c330af50ee9b984210a670cb4bbf34a6508"
+    },
+    {
+      "id": "bpRNA_CRW_1748",
+      "length": 1672,
+      "sequence_sha256": "65bdae706ce4a97f58e24cb75ef1d361fdca19098ba9ead41a41139c55e43758"
+    },
+    {
+      "id": "bpRNA_CRW_54729",
+      "length": 1675,
+      "sequence_sha256": "e2af379fde9650ff3fa095fb910473edeaf8100e858c499cea99e0596cd9d23c"
+    },
+    {
+      "id": "bpRNA_RFAM_42977",
+      "length": 2929,
+      "sequence_sha256": "e0b2b3e4f9b5e92134db9c022040a33c6e4cda3f280013220f136958ea21dc5f"
+    },
+    {
+      "id": "bpRNA_RFAM_43114",
+      "length": 3247,
+      "sequence_sha256": "93c7bece68e15c353ac017218d352e76d5ae228b088007b569413c129f44e834"
+    },
+    {
+      "id": "bpRNA_RFAM_43166",
+      "length": 3340,
+      "sequence_sha256": "f9fe8425e53b993437254ade6fca30491df287161f67da8edcc70a4a0b62f674"
+    },
+    {
+      "id": "bpRNA_RFAM_43150",
+      "length": 3746,
+      "sequence_sha256": "6864bca80af671ce200546805414356e723b430c81dbded6693cb1f83c2290b9"
+    }
+  ]
+}

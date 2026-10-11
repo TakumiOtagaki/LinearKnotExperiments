@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "measurement": "accuracy",
+  "seed": 20261011,
+  "tiers": [
+    {
+      "name": "nt400_799",
+      "min_length": 400,
+      "max_length": 799,
+      "resource": "node_h",
+      "h_rt": "24:00:00",
+      "target_seconds": 60000,
+      "memory_budget_mib": 327680,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "max_inputs_per_task": 1,
+      "job_limits": {
+        "memory_limit_mib": 196608,
+        "timeout_seconds": 18000
+      },
+      "order_kind": "beam_ascending",
+      "cost_model": {
+        "basis": "cross-version RNAcentral b100 prior scaled by b^2; provisional uncapped multiplier2",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam400_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.851105435972273,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 43.700599689894204,
+            "memory_exponent": 1
+          },
+          "beam400_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.702210871944546,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 43.700599689894204,
+            "memory_exponent": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "nt800_1599",
+      "min_length": 800,
+      "max_length": 1599,
+      "resource": "node_h",
+      "h_rt": "24:00:00",
+      "target_seconds": 60000,
+      "memory_budget_mib": 327680,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "max_inputs_per_task": 1,
+      "job_limits": {
+        "memory_limit_mib": 196608,
+        "timeout_seconds": 18000
+      },
+      "order_kind": "beam_ascending",
+      "cost_model": {
+        "basis": "cross-version RNAcentral b100 prior scaled by b^2; provisional uncapped multiplier2",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam400_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.851105435972273,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 43.700599689894204,
+            "memory_exponent": 1
+          },
+          "beam400_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.702210871944546,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 43.700599689894204,
+            "memory_exponent": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "nt1600_3199",
+      "min_length": 1600,
+      "max_length": 3199,
+      "resource": "node_h",
+      "h_rt": "24:00:00",
+      "target_seconds": 60000,
+      "memory_budget_mib": 327680,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "max_inputs_per_task": 1,
+      "job_limits": {
+        "memory_limit_mib": 196608,
+        "timeout_seconds": 18000
+      },
+      "order_kind": "beam_ascending",
+      "cost_model": {
+        "basis": "cross-version RNAcentral b100 prior scaled by b^2; provisional uncapped multiplier2",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam400_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.851105435972273,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 43.700599689894204,
+            "memory_exponent": 1
+          },
+          "beam400_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.702210871944546,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 43.700599689894204,
+            "memory_exponent": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "nt3200_4381",
+      "min_length": 3200,
+      "max_length": 4381,
+      "resource": "node_h",
+      "h_rt": "24:00:00",
+      "target_seconds": 60000,
+      "memory_budget_mib": 327680,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "max_inputs_per_task": 1,
+      "job_limits": {
+        "memory_limit_mib": 196608,
+        "timeout_seconds": 18000
+      },
+      "order_kind": "beam_ascending",
+      "cost_model": {
+        "basis": "cross-version RNAcentral b100 prior scaled by b^2; provisional uncapped multiplier2",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam400_default": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 0.851105435972273,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 43.700599689894204,
+            "memory_exponent": 1
+          },
+          "beam400_nocap": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.702210871944546,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 43.700599689894204,
+            "memory_exponent": 1
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,3338 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-11T07:32:04.217534+00:00",
+  "short_run": "results/runs/e1-bprna-15aa7742-20261011/run.json",
+  "short_run_sha256": "b82f1dc3172291f94a1f41705680dd72d87385e9eee49cd76b68ba6533269002",
+  "short_observations": [
+    {
+      "id": "bpRNA_RFAM_18426-beam20_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam20_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam20_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam20_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.09,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam100_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam100_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_CRW_30304-exact-LinearCParty-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "exact",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.11,
+      "peak_rss_kib": 26912,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam20_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam20_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam20_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam20_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.19,
+      "peak_rss_kib": 18432,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_23270-exact-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "exact",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.42,
+      "peak_rss_kib": 243788,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_25128-exact-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "exact",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.09,
+      "peak_rss_kib": 77496,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam100_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam100_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.22,
+      "peak_rss_kib": 33792,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam50_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam50_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.1,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam20_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam20_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 12288,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam200_default-LinearCParty-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam200_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam20_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam20_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 12288,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam20_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam20_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.09,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam100_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam100_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam100_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam100_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.1,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam50_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam50_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam20_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam20_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_27342-exact-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "exact",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.49,
+      "peak_rss_kib": 389412,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam100_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam100_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.1,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam200_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam200_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.22,
+      "peak_rss_kib": 33792,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam200_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam200_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.11,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_23270-exact-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "exact",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.66,
+      "peak_rss_kib": 162032,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_15825-exact-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "exact",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.04,
+      "peak_rss_kib": 26572,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam20_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam20_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 3072,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam100_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam100_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam50_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam50_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam100_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam100_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.09,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam20_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam20_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam20_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam20_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_14153-exact-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "exact",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.36,
+      "peak_rss_kib": 164552,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam20_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam20_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.04,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam100_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam100_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam100_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam100_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 21504,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam50_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam50_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam20_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam20_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.11,
+      "peak_rss_kib": 15360,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam20_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam20_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam20_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam20_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 3072,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_27342-exact-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "exact",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.49,
+      "peak_rss_kib": 389684,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam100_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam100_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam100_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam100_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.22,
+      "peak_rss_kib": 33792,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_25128-exact-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "exact",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.09,
+      "peak_rss_kib": 78360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam20_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam20_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.04,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam100_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam100_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam100_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam100_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam50_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam50_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.22,
+      "peak_rss_kib": 33792,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam200_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam200_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam50_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam50_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam50_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam50_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 21504,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam100_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam100_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.36,
+      "peak_rss_kib": 36864,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam200_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam200_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam100_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam100_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.22,
+      "peak_rss_kib": 33792,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam100_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam100_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.1,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam100_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam100_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam100_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam100_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam50_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam50_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.16,
+      "peak_rss_kib": 21504,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam200_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam200_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.22,
+      "peak_rss_kib": 33792,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam100_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam100_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam50_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam50_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam50_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam50_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam200_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam200_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam100_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam100_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.11,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_18426-exact-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "exact",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.41,
+      "peak_rss_kib": 96556,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam50_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam50_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.16,
+      "peak_rss_kib": 21504,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam50_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam50_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam20_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam20_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam100_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam100_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam200_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam200_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.36,
+      "peak_rss_kib": 36864,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam20_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam20_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.08,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam200_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam200_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam200_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam200_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.1,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam200_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam200_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam200_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam200_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam20_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam20_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.04,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam50_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam50_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam100_nocap-LinearCParty-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam100_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam200_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam200_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam20_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam20_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam50_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam50_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.36,
+      "peak_rss_kib": 36864,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam20_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam20_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.15,
+      "peak_rss_kib": 27648,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam200_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam200_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam200_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam200_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.1,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam20_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam20_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.25,
+      "peak_rss_kib": 27648,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam100_default-LinearPKCapR-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam100_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam100_default-LinearCParty-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam100_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam100_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam100_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.27,
+      "peak_rss_kib": 24576,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam20_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam20_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.15,
+      "peak_rss_kib": 27648,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam50_default-LinearCParty-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam50_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam50_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam50_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.22,
+      "peak_rss_kib": 33792,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam200_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam200_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.27,
+      "peak_rss_kib": 24576,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam100_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam100_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam100_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam100_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 21504,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam50_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam50_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam200_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam200_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam200_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam200_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.1,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_14153-exact-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "exact",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.62,
+      "peak_rss_kib": 153228,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam200_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam200_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.36,
+      "peak_rss_kib": 36864,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam50_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam50_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam200_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam200_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam20_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam20_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.04,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_15825-exact-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "exact",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.04,
+      "peak_rss_kib": 30276,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam50_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam50_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam20_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam20_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam20_default-LinearCParty-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam20_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam20_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam20_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.11,
+      "peak_rss_kib": 15360,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam200_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam200_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam20_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam20_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.08,
+      "peak_rss_kib": 12288,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam20_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam20_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam20_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam20_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.15,
+      "peak_rss_kib": 27648,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_18426-exact-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "exact",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.25,
+      "peak_rss_kib": 128380,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam200_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam200_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 21504,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam20_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam20_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.08,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam50_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam50_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.11,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_18904-exact-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "exact",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.07,
+      "peak_rss_kib": 32696,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_18426-exact-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "exact",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.25,
+      "peak_rss_kib": 129240,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam200_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam200_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam100_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam100_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 21504,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam20_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam20_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam20_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam20_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.11,
+      "peak_rss_kib": 15360,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam50_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam50_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.36,
+      "peak_rss_kib": 36864,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam20_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam20_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 12288,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam200_nocap-LinearCParty-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam200_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam200_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam200_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam200_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam200_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.22,
+      "peak_rss_kib": 33792,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam20_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam20_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.15,
+      "peak_rss_kib": 27648,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam200_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam200_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 21504,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam100_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam100_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.11,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam200_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam200_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam100_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam100_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 21504,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam50_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam50_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam20_nocap-LinearCParty-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam20_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam100_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam100_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam200_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam200_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam200_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam200_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam50_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam50_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam50_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam50_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.1,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam100_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam100_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam50_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam50_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam200_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam200_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam100_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam100_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.22,
+      "peak_rss_kib": 33792,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam200_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam200_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_23270-exact-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "exact",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.41,
+      "peak_rss_kib": 244740,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam100_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam100_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam100_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam100_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_18904-exact-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "exact",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.07,
+      "peak_rss_kib": 32340,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam50_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam50_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.22,
+      "peak_rss_kib": 33792,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam200_default-LinearPKCapR-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam200_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam50_nocap-LinearCParty-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam50_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam200_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam200_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 21504,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam100_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam100_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam50_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam50_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.1,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam100_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam100_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam50_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam50_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam50_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam50_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam50_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam50_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_14153-exact-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "exact",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.36,
+      "peak_rss_kib": 162632,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam20_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam20_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.25,
+      "peak_rss_kib": 27648,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam20_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam20_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.08,
+      "peak_rss_kib": 12288,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam200_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam200_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam200_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam200_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.22,
+      "peak_rss_kib": 33792,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam200_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam200_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.27,
+      "peak_rss_kib": 24576,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam100_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam100_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_18904-exact-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "exact",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.13,
+      "peak_rss_kib": 27540,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam50_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam50_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam200_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam200_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam20_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam20_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.11,
+      "peak_rss_kib": 15360,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam50_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam50_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam200_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam200_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam20_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam20_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 3072,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam50_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam50_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam200_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam200_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_25128-exact-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "exact",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.11,
+      "peak_rss_kib": 41164,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam100_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam100_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam50_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam50_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_CRW_30304-exact-LinearPKRaccess-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "exact",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 29540,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam100_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam100_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam200_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam200_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.1,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam50_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam50_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam20_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam20_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.18,
+      "peak_rss_kib": 18432,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam200_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam200_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam100_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam100_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam50_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam50_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam20_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam20_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 3072,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam50_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam50_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam100_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam100_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.36,
+      "peak_rss_kib": 36864,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam50_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam50_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam50_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam50_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.16,
+      "peak_rss_kib": 21504,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam200_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam200_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam100_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam100_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam100_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam100_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 15360,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam50_default-LinearPKCapR-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam50_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam20_default-LinearPKCapR-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam20_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_15825-exact-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "exact",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.07,
+      "peak_rss_kib": 24800,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam50_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam50_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam200_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam200_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.11,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_25128-beam20_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_25128",
+      "mode": "beam20_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 12288,
+      "length": 55
+    },
+    {
+      "id": "bpRNA_RFAM_27342-exact-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "exact",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.74,
+      "peak_rss_kib": 284352,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_27342-beam50_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_27342",
+      "mode": "beam50_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.22,
+      "peak_rss_kib": 33792,
+      "length": 132
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam50_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam50_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.27,
+      "peak_rss_kib": 24576,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_CRW_30304-exact-LinearPKCapR-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "exact",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 31360,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam200_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam200_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam100_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam100_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.27,
+      "peak_rss_kib": 24576,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_14153-beam50_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_14153",
+      "mode": "beam50_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.09,
+      "peak_rss_kib": 6144,
+      "length": 139
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam50_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam50_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.27,
+      "peak_rss_kib": 24576,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam20_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam20_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_23270-beam200_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_23270",
+      "mode": "beam200_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 21504,
+      "length": 134
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam100_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam100_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.03,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam200_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam200_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.06,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam100_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam100_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam100_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam100_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_RFAM_15825-beam200_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_15825",
+      "mode": "beam200_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.02,
+      "peak_rss_kib": 6144,
+      "length": 52
+    },
+    {
+      "id": "bpRNA_CRW_30304-beam20_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_CRW_30304",
+      "mode": "beam20_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 75
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam20_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam20_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam50_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam50_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.11,
+      "peak_rss_kib": 9216,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_18904-beam50_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_18904",
+      "mode": "beam50_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.01,
+      "peak_rss_kib": 3072,
+      "length": 80
+    },
+    {
+      "id": "bpRNA_RFAM_18426-beam20_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_18426",
+      "mode": "beam20_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 6144,
+      "length": 116
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam20_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam20_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.47,
+      "peak_rss_kib": 70656,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam100_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam100_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 4.86,
+      "peak_rss_kib": 261120,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam200_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam200_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 4.79,
+      "peak_rss_kib": 277192,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam200_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam200_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 1.44,
+      "peak_rss_kib": 79872,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam200_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam200_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 6.48,
+      "peak_rss_kib": 328704,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam50_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam50_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 1.28,
+      "peak_rss_kib": 64512,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam20_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam20_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.36,
+      "peak_rss_kib": 33792,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam50_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam50_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.76,
+      "peak_rss_kib": 52224,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam100_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam100_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 4.93,
+      "peak_rss_kib": 261120,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam200_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam200_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.28,
+      "peak_rss_kib": 18432,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam200_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam200_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 6.54,
+      "peak_rss_kib": 328704,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam100_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam100_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 3.05,
+      "peak_rss_kib": 248832,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam100_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam100_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.27,
+      "peak_rss_kib": 18432,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam20_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam20_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.75,
+      "peak_rss_kib": 98304,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam200_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam200_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 1.44,
+      "peak_rss_kib": 79872,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam100_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam100_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 1.33,
+      "peak_rss_kib": 76800,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam100_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam100_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 6.67,
+      "peak_rss_kib": 287804,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam200_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam200_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 1.44,
+      "peak_rss_kib": 79872,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam100_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam100_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 15360,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_2886-exact-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "exact",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 17.18,
+      "peak_rss_kib": 2386892,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam50_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam50_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.25,
+      "peak_rss_kib": 15360,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam50_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam50_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 1.98,
+      "peak_rss_kib": 153600,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam100_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam100_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 1.32,
+      "peak_rss_kib": 76800,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam200_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam200_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 6.45,
+      "peak_rss_kib": 329640,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam200_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam200_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 4.82,
+      "peak_rss_kib": 276480,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam100_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam100_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 4.06,
+      "peak_rss_kib": 264256,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam100_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam100_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 3.14,
+      "peak_rss_kib": 248832,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam200_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam200_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 2.34,
+      "peak_rss_kib": 95232,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam20_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam20_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 1.3,
+      "peak_rss_kib": 107520,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam50_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam50_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 4.23,
+      "peak_rss_kib": 247476,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam20_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam20_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.76,
+      "peak_rss_kib": 98304,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam200_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam200_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 15360,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam200_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam200_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 4.76,
+      "peak_rss_kib": 275300,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam20_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam20_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.77,
+      "peak_rss_kib": 73728,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam200_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam200_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 7.79,
+      "peak_rss_kib": 304040,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_5936-exact-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "exact",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 14.13,
+      "peak_rss_kib": 5125420,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam100_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam100_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 1.34,
+      "peak_rss_kib": 76800,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam20_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam20_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.36,
+      "peak_rss_kib": 33792,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam100_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam100_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 4.02,
+      "peak_rss_kib": 261120,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2886-exact-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "exact",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 10.39,
+      "peak_rss_kib": 2724172,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam100_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam100_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 12288,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam100_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam100_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 15360,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam20_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam20_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.76,
+      "peak_rss_kib": 98304,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam20_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam20_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.12,
+      "peak_rss_kib": 12288,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam50_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam50_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 2.56,
+      "peak_rss_kib": 227328,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam200_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam200_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 9.86,
+      "peak_rss_kib": 350208,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam20_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam20_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.62,
+      "peak_rss_kib": 36864,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam50_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam50_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 2.55,
+      "peak_rss_kib": 227328,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam50_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam50_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 1.28,
+      "peak_rss_kib": 147456,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam100_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam100_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 2.14,
+      "peak_rss_kib": 89088,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam20_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam20_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.36,
+      "peak_rss_kib": 33792,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_5936-exact-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "exact",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 22.2,
+      "peak_rss_kib": 4322276,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam50_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam50_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 1.28,
+      "peak_rss_kib": 144384,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam200_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam200_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 9.87,
+      "peak_rss_kib": 350208,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam200_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam200_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.18,
+      "peak_rss_kib": 15360,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam100_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam100_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 1.34,
+      "peak_rss_kib": 76800,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam50_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam50_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.76,
+      "peak_rss_kib": 52224,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam50_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam50_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.25,
+      "peak_rss_kib": 15360,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam100_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam100_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 15360,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam50_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam50_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 1.3,
+      "peak_rss_kib": 64512,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam100_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam100_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.28,
+      "peak_rss_kib": 18432,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_2886-exact-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "exact",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 10.51,
+      "peak_rss_kib": 2725352,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_5936-exact-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "exact",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 14.7,
+      "peak_rss_kib": 5125480,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam50_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam50_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.16,
+      "peak_rss_kib": 12288,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam20_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam20_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 1.29,
+      "peak_rss_kib": 107520,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam50_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam50_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.16,
+      "peak_rss_kib": 12288,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam200_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam200_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.18,
+      "peak_rss_kib": 15360,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam100_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam100_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 4.11,
+      "peak_rss_kib": 264816,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam50_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam50_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.76,
+      "peak_rss_kib": 52224,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2449-exact-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "exact",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 11.4,
+      "peak_rss_kib": 5271152,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam100_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam100_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 3.1,
+      "peak_rss_kib": 248832,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam200_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam200_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.17,
+      "peak_rss_kib": 15360,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam200_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam200_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 2.32,
+      "peak_rss_kib": 95232,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam200_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam200_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 6.44,
+      "peak_rss_kib": 328704,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam20_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam20_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.48,
+      "peak_rss_kib": 70656,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam20_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam20_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.07,
+      "peak_rss_kib": 9216,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_38188-exact-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "exact",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 1.23,
+      "peak_rss_kib": 633236,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam100_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam100_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 3.13,
+      "peak_rss_kib": 248832,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam200_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam200_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 7.8,
+      "peak_rss_kib": 304084,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam20_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam20_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.77,
+      "peak_rss_kib": 95232,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam50_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam50_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 1.29,
+      "peak_rss_kib": 147456,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam200_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam200_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.28,
+      "peak_rss_kib": 18432,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam50_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam50_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.16,
+      "peak_rss_kib": 12288,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam20_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam20_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.77,
+      "peak_rss_kib": 73728,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_2449-exact-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "exact",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 11.6,
+      "peak_rss_kib": 5270400,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_38188-exact-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "exact",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 2.12,
+      "peak_rss_kib": 569752,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam20_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam20_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.12,
+      "peak_rss_kib": 12288,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam50_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam50_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 4.26,
+      "peak_rss_kib": 251904,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam20_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam20_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.07,
+      "peak_rss_kib": 9216,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam200_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam200_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 4.8,
+      "peak_rss_kib": 274888,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam100_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam100_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 4.1,
+      "peak_rss_kib": 264192,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam20_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam20_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 0.62,
+      "peak_rss_kib": 36864,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2449-exact-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "exact",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 18.04,
+      "peak_rss_kib": 4297920,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam200_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam200_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 1.45,
+      "peak_rss_kib": 79872,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam20_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam20_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.36,
+      "peak_rss_kib": 33792,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam100_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam100_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 2.14,
+      "peak_rss_kib": 89088,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_38188-exact-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "exact",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 1.26,
+      "peak_rss_kib": 634536,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_2886-beam50_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2886",
+      "mode": "beam50_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.77,
+      "peak_rss_kib": 52224,
+      "length": 367
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam20_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam20_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.07,
+      "peak_rss_kib": 9216,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam50_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam50_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 2.58,
+      "peak_rss_kib": 227328,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam50_nocap-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam50_nocap",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 2.02,
+      "peak_rss_kib": 154348,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam20_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam20_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.07,
+      "peak_rss_kib": 9216,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_38188-beam50_default-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_38188",
+      "mode": "beam50_default",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.16,
+      "peak_rss_kib": 12288,
+      "length": 201
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam50_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam50_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 1.28,
+      "peak_rss_kib": 144384,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam20_nocap-LinearPKCapR-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam20_nocap",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 0.47,
+      "peak_rss_kib": 70656,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam100_default-LinearCParty-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam100_default",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 6.7,
+      "peak_rss_kib": 282624,
+      "length": 365
+    },
+    {
+      "id": "bpRNA_RFAM_2449-beam20_nocap-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_2449",
+      "mode": "beam20_nocap",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 0.48,
+      "peak_rss_kib": 70656,
+      "length": 333
+    },
+    {
+      "id": "bpRNA_RFAM_5936-beam50_default-LinearPKRaccess-rep0",
+      "input": "bpRNA_RFAM_5936",
+      "mode": "beam50_default",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 2.53,
+      "peak_rss_kib": 227328,
+      "length": 365
+    }
+  ],
+  "long_run": "results/runs/e2-rnacentral-58a2b796-20261010/run.json",
+  "long_run_sha256": "81ff190c2acf3de815c083a94a34195694fc6f326650e81c63292d9598670ed0",
+  "long_observations_including_censored": [
+    {
+      "id": "URS000233CDDE-beam100_default-LinearCParty-rep0",
+      "input": "URS000233CDDE",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 138.67,
+      "peak_rss_kib": 4967432,
+      "length": 4793
+    },
+    {
+      "id": "URS000233CDDE-beam100_default-LinearPKCapR-rep0",
+      "input": "URS000233CDDE",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 80.09,
+      "peak_rss_kib": 4544668,
+      "length": 4793
+    },
+    {
+      "id": "URS000233CDDE-beam100_default-LinearPKRaccess-rep0",
+      "input": "URS000233CDDE",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 80.72,
+      "peak_rss_kib": 4542772,
+      "length": 4793
+    },
+    {
+      "id": "URS00019626CE-beam100_default-LinearCParty-rep0",
+      "input": "URS00019626CE",
+      "program": "LinearCParty",
+      "status": "success",
+      "time_wall_seconds": 291.61,
+      "peak_rss_kib": 10221512,
+      "length": 5482
+    },
+    {
+      "id": "URS00019626CE-beam100_default-LinearPKCapR-rep0",
+      "input": "URS00019626CE",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 166.76,
+      "peak_rss_kib": 9409044,
+      "length": 5482
+    },
+    {
+      "id": "URS00019626CE-beam100_default-LinearPKRaccess-rep0",
+      "input": "URS00019626CE",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 168.44,
+      "peak_rss_kib": 9413720,
+      "length": 5482
+    },
+    {
+      "id": "URS000239D8A4-beam100_default-LinearCParty-rep0",
+      "input": "URS000239D8A4",
+      "program": "LinearCParty",
+      "status": "timeout",
+      "time_wall_seconds": null,
+      "peak_rss_kib": null,
+      "length": 6990
+    },
+    {
+      "id": "URS000239D8A4-beam100_default-LinearPKCapR-rep0",
+      "input": "URS000239D8A4",
+      "program": "LinearPKCapR",
+      "status": "success",
+      "time_wall_seconds": 186.07,
+      "peak_rss_kib": 9798512,
+      "length": 6990
+    },
+    {
+      "id": "URS000239D8A4-beam100_default-LinearPKRaccess-rep0",
+      "input": "URS000239D8A4",
+      "program": "LinearPKRaccess",
+      "status": "success",
+      "time_wall_seconds": 186.74,
+      "peak_rss_kib": 9801716,
+      "length": 6990
+    }
+  ],
+  "method": "Per short tier and mode: upper envelope max((wall-0.1)/n^3), max((RSS_MiB-128)/n^3)*1.5. Pool all three CLIs; fallback to all 12 RNAs for unobserved tiers. Summed sequential work; safety factor 1.5. Long time: max successful wall/n at b100; scale by (b/100)^2. Long RSS uses the same b^2 planning envelope and 1.5 headroom. No fit to timeout durations; retain them as feasibility warnings. No speedup assumed.",
+  "long_seconds_per_nt_b100": 0.05319408974826706,
+  "long_mib_per_nt_b100_with_headroom": 2.7312874806183878,
+  "long_nocap_time_multiplier": 2,
+  "limitations": "12 RNAs, different scaffold geometries; concurrent accuracy times. RNAcentral 58a2b796 is a cross-version prior, not a 15aa7742 measurement. O(nb^2) with fixed caps does not bound uncapped search; x2 is provisional. Heavy-tail exact and AD oracle memory need task failures retained and pilot refit."
+}
