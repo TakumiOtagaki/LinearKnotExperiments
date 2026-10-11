@@ -10,7 +10,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FIELDS = ("id", "input", "mode", "program", "repetition", "status", "returncode",
-          "elapsed_seconds", "time_wall_seconds", "peak_rss_kib", "directory")
+          "elapsed_seconds", "time_wall_seconds", "peak_rss_kib", "directory",
+          "tier", "task_id", "global_task_number", "result_present")
 
 
 def resolve(value):
@@ -35,13 +36,17 @@ def main():
     counts = dict(Counter(job["status"] for job in jobs))
     finalized = all(key in manifest for key in (
         "finished_utc", "software_changed_during_run", "binaries_changed_during_run"))
-    summary = {"run_status": manifest["status"] if finalized else "interrupted",
+    summary = {"run_status": manifest["status"] if finalized or manifest.get("run_kind") == "array" else "interrupted",
                "measured_jobs": len(jobs),
                "status_counts": counts, "purpose": manifest["purpose"],
                "software_commit": manifest["software_before"]["commit"],
                "experiment_commit": manifest["experiment_before"]["commit"],
                "software_changed_during_run": manifest.get("software_changed_during_run"),
                "binaries_changed_during_run": manifest.get("binaries_changed_during_run")}
+    if manifest.get("run_kind") == "array":
+        summary.update({key: manifest[key] for key in ("planned_tasks", "task_status_counts",
+                       "planned_measured_jobs", "completed_measured_jobs", "missing_measured_jobs")})
+        summary["software_lock_valid_after_run"] = manifest["software_lock_valid_after_run"]
     output.with_suffix(".json").write_text(json.dumps(summary, indent=2) + "\n")
     print(json.dumps(summary, indent=2))
 

@@ -27,7 +27,7 @@ def validate_outputs(run):
         row = {key: job[key] for key in ("id", "input", "mode", "program", "status", "repetition")}
         row["stdout_sha256"] = digest(run / job["directory"] / "stdout.txt")
         if job["status"] != "success":
-            row["validation_status"] = "job_failed"
+            row["validation_status"] = "job_missing" if job.get("result_present") is False else "job_failed"
         elif job["program"] not in PROGRAMS:
             row["validation_status"] = "unsupported_program"
         else:
@@ -43,7 +43,7 @@ def validate_outputs(run):
                 row.update(validation_status="artifact_error", error=str(exc))
         observations.append(row)
     checks = [check_consistency(*key, group) for key, group in groups.items() if PROGRAMS <= set(group)]
-    return {"schema_version": 1, "generated_utc": now(),
+    result = {"schema_version": 1, "generated_utc": now(),
             "scope": "output domains and cross-program consistency; no exact accuracy reference",
             "experiment_git_state": git_state(ROOT), "run_manifest_sha256": digest(run / "run.json"),
             "validator_sha256": digest(Path(__file__)),
@@ -53,6 +53,10 @@ def validate_outputs(run):
             "job_status_counts": dict(Counter(job["status"] for job in jobs)),
             "observations": observations, "consistency_checks": checks,
             "complete_groups_checked": len(checks)}
+    if manifest.get("run_kind") == "array":
+        result.update({key: manifest[key] for key in ("planned_tasks", "task_status_counts",
+                       "planned_measured_jobs", "completed_measured_jobs", "missing_measured_jobs")})
+    return result
 
 
 def main():

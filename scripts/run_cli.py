@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Run a sequential CLI matrix and retain provenance and failed jobs."""
+"""Run a CLI matrix and retain provenance and failed jobs."""
 
 import argparse
 import hashlib
 import json
+import multiprocessing
+from multiprocessing.connection import wait
 import os
 from pathlib import Path
 import platform
@@ -153,11 +155,16 @@ def run_one(command, directory, env, timeout, memory_limit_mib=None):
             "peak_rss_kib": rss}
 
 
-def validate(config):
+def validate(config, array=False):
     if config.get("schema_version") != 1:
         raise ValueError("config schema_version must be 1")
-    if config.get("purpose") != "development":
-        raise ValueError("initial runner supports development runs; freeze protocol first")
+    if config.get("purpose") not in ("development", "formal"):
+        raise ValueError("purpose must be development or formal")
+    if config["purpose"] == "formal":
+        if not array:
+            raise ValueError("formal measurements require the array runner")
+        if not config.get("software_lock") or config.get("model_settings", {}).get("build_revision_verified") is not True:
+            raise ValueError("formal measurements require a software lock and verified build revision")
     for group in ("inputs", "modes", "programs"):
         entries = config.get(group, [])
         if not entries:
@@ -280,33 +287,130 @@ def resume_manifest(output, config_path, config, software, build, parameter, sou
     return manifest
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", default="configs/smoke.json")
-    parser.add_argument("--software-root", type=Path, default=ROOT / "deps/LinearCParty")
-    parser.add_argument("--build-dir", type=Path)
-    parser.add_argument("--out", required=True)
-    parser.add_argument("--resume", action="store_true",
-                        help="continue an existing matching run; keep all jobs with result.json")
-    args = parser.parse_args()
-    config_path = experiment_path(args.config)
+def job_process(connection, command, directory, env, timeout, memory):
+    """A separate controller keeps RLIMIT_AS setup out of threaded Python."""
+    try:
+        connection.send(run_one(command, directory, env, timeout, memory))
+    except BaseException as exc:
+        connection.send({"status": "launch_error", "returncode": None, "error": str(exc),
+                         "elapsed_seconds": None, "time_wall_seconds": None, "peak_rss_kib": None})
+    finally:
+        connection.close()
+
+
+def execute_jobs(manifest, output, build, env, workers):
+    """Launch in saved order; serialize each combination and repetition block."""
+    config = manifest["config"]
+    completed = {job["id"] for job in manifest["jobs"]}
+    pending = [job for job in manifest["planned_jobs"] if job["id"] not in completed]
+    items = {item["name"]: item for item in manifest["inputs"]}
+    modes = {mode["name"]: mode for mode in config["modes"]}
+    programs = {program["name"]: program for program in config["programs"]}
+    active = {}
+    interrupted = False
+
+    def finish(job, directory, attempt, result):
+        nonlocal interrupted
+        result.update({**job, "command": attempt.pop("command"),
+                       "directory": str(directory.relative_to(output))})
+        write_json(directory / "result.json", result)
+        manifest["jobs"].append(result)
+        attempt.update({"finished_utc": now(), "status": result["status"]})
+        write_json(output / "run.json", manifest)
+        print(job["id"] + ": " + result["status"], flush=True)
+        interrupted |= result["status"] == "interrupted"
+
+    def collect():
+        for connection in wait(list(active), timeout=0.2):
+            process, job, directory, attempt = active.pop(connection)
+            try:
+                result = connection.recv()
+            except EOFError:
+                result = {"status": "launch_error", "returncode": process.exitcode,
+                          "error": "job controller exited without a result",
+                          "elapsed_seconds": None, "time_wall_seconds": None, "peak_rss_kib": None}
+            process.join()
+            connection.close()
+            finish(job, directory, attempt, result)
+
+    try:
+        while pending or active:
+            if pending and not interrupted and len(active) < workers:
+                job = pending[0]
+                combination = tuple(job[k] for k in ("input", "mode", "program"))
+                block = 0 if job["warmup"] else job["repetition"]
+                blocked = any(tuple(a[1][k] for k in ("input", "mode", "program")) == combination
+                              or (config.get("order", {}).get("kind") == "blocked_random"
+                                  and (0 if a[1]["warmup"] else a[1]["repetition"]) != block)
+                              for a in active.values())
+                if not blocked:
+                    pending.pop(0)
+                    directory = output / "jobs" / job["id"]
+                    if directory.exists():
+                        archive = output / "incomplete_attempts" / job["id"]
+                        archive.mkdir(parents=True, exist_ok=True)
+                        index = 0
+                        while (archive / str(index)).exists():
+                            index += 1
+                        shutil.move(str(directory), str(archive / str(index)))
+                    directory.mkdir(parents=True)
+                    item, mode, program = items[job["input"]], modes[job["mode"]], programs[job["program"]]
+                    command = [str(build / program["name"]), "-i", item["copied_path"],
+                               *mode.get("args", []), *program.get("args", [])]
+                    for product in program.get("outputs", []):
+                        command.extend([product["flag"], str(directory / product["name"])])
+                    attempt = {"id": job["id"], "started_utc": now()}
+                    manifest["execution_order"].append(attempt)
+                    write_json(output / "run.json", manifest)
+                    attempt["command"] = command
+                    if workers == 1:
+                        finish(job, directory, attempt,
+                               run_one(command, directory, env, config.get("timeout_seconds", 30),
+                                       config.get("memory_limit_mib")))
+                    else:
+                        context = multiprocessing.get_context("fork")
+                        receive, send = context.Pipe(duplex=False)
+                        process = context.Process(target=job_process, args=(
+                            send, command, directory, env, config.get("timeout_seconds", 30),
+                            config.get("memory_limit_mib")))
+                        process.start()
+                        send.close()
+                        active[receive] = (process, job, directory, attempt)
+                    continue
+            if active:
+                collect()
+            elif interrupted:
+                break
+    except KeyboardInterrupt:
+        interrupted = True
+        # Controllers catch SIGINT inside run_one and stop each CLI process group.
+        for process, *_ in active.values():
+            if process.is_alive():
+                os.kill(process.pid, signal.SIGINT)
+        while active:
+            collect()
+    return interrupted
+
+
+def execute(config_path, software, build, output, resume=False, array_context=None, workers=1):
     config = json.loads(config_path.read_text())
-    validate(config)
-    software = args.software_root.resolve()
-    build = (args.build_dir or software / "build").resolve()
+    validate(config, array=array_context is not None)
+    if type(workers) is not int or workers < 1 or (workers != 1 and array_context is None):
+        raise ValueError("parallel workers are available only through an accuracy array plan")
     if not software.is_dir() or not build.is_dir():
-        parser.error("supply existing --software-root and --build-dir paths")
+        raise ValueError("supply existing --software-root and --build-dir paths")
     if not TIME.is_file():
-        parser.error("GNU /usr/bin/time is required")
+        raise ValueError("GNU /usr/bin/time is required")
     parameter = software / config["energy_parameter_file"]
     if not parameter.is_file():
-        parser.error("energy parameter file is missing: " + str(parameter))
+        raise ValueError("energy parameter file is missing: " + str(parameter))
     lock_path = experiment_path(config["software_lock"]) if config.get("software_lock") else None
     lock = verify_lock(lock_path, software, build, config["programs"], parameter) if lock_path else None
+    if config["purpose"] == "formal" and lock.get("build_revision_verified") is not True:
+        raise ValueError("formal software lock must verify the build revision")
     sources = [(entry, experiment_path(entry["path"])) for entry in config["inputs"]]
     if any(not path.is_file() for _, path in sources):
-        parser.error("an input file is missing")
-    output = experiment_path(args.out)
+        raise ValueError("an input file is missing")
     plan = plan_jobs(config)
     state = git_state(software)
     binaries = {p["name"]: digest(build / p["name"]) for p in config["programs"]}
@@ -317,9 +421,13 @@ def main():
     host = {"hostname": platform.node(), "platform": platform.platform(),
             "python": platform.python_version(), "cpu_count": os.cpu_count()}
     environment = {key: env[key] for key in ENV_KEYS if key in env}
-    if args.resume:
+    if resume:
         manifest = resume_manifest(output, config_path, config, software, build, parameter,
                                    sources, lock_path, lock, state, binaries, plan)
+        if array_context is not None and manifest.get("array_task") != array_context:
+            raise ValueError("cannot resume: array task differs from run.json")
+        if manifest.get("workers", 1) != workers:
+            raise ValueError("cannot resume: workers differ from run.json")
         resumed = now()
         manifest.setdefault("resume_history", []).append({
             "resumed_utc": resumed, "previous_status": manifest.get("status"),
@@ -334,7 +442,6 @@ def main():
             "host": host, "environment": environment, "experiment": git_state(ROOT),
             "runner_sha256": digest(Path(__file__))})
         manifest["resumed_utc"] = resumed
-        # Earlier runners recorded results only, so recover the known legacy order.
         if "execution_order" not in manifest:
             manifest["execution_order"] = [
                 {"id": job["id"], "started_utc": None, "recovered_legacy": True}
@@ -367,47 +474,12 @@ def main():
                 "energy_parameter_sha256": digest(copied_parameter),
                 "host": host, "environment": environment,
                 "execution_order": [], "jobs": []}
+        if array_context is not None:
+            manifest.update(array_task=array_context, workers=workers)
     manifest["planned_jobs"] = plan
     write_json(output / "run.json", manifest)
-    completed = {job["id"] for job in manifest["jobs"]}
+    interrupted = execute_jobs(manifest, output, build, env, workers)
     failed = any(job["status"] != "success" for job in manifest["jobs"])
-    interrupted = False
-    items = {item["name"]: item for item in manifest["inputs"]}
-    modes = {mode["name"]: mode for mode in config["modes"]}
-    programs = {program["name"]: program for program in config["programs"]}
-    for job in plan:
-        if job["id"] in completed:
-            continue
-        directory = output / "jobs" / job["id"]
-        if directory.exists():
-            archive = output / "incomplete_attempts" / job["id"]
-            archive.mkdir(parents=True, exist_ok=True)
-            index = 0
-            while (archive / str(index)).exists():
-                index += 1
-            attempt = archive / str(index)
-            shutil.move(str(directory), str(attempt))
-        directory.mkdir(parents=True)
-        item, mode, program = items[job["input"]], modes[job["mode"]], programs[job["program"]]
-        command = [str(build / program["name"]), "-i", item["copied_path"],
-                   *mode.get("args", []), *program.get("args", [])]
-        for product in program.get("outputs", []):
-            command.extend([product["flag"], str(directory / product["name"])])
-        attempt = {"id": job["id"], "started_utc": now()}
-        manifest["execution_order"].append(attempt)
-        write_json(output / "run.json", manifest)
-        result = run_one(command, directory, env, config.get("timeout_seconds", 30),
-                         config.get("memory_limit_mib"))
-        result.update({**job, "command": command, "directory": str(directory.relative_to(output))})
-        write_json(directory / "result.json", result)
-        manifest["jobs"].append(result)
-        attempt.update({"finished_utc": now(), "status": result["status"]})
-        write_json(output / "run.json", manifest)
-        print(job["id"] + ": " + result["status"], flush=True)
-        failed |= result["status"] != "success"
-        interrupted = result["status"] == "interrupted"
-        if interrupted:
-            break
     manifest.update({"finished_utc": now(), "status": "interrupted" if interrupted else
                      "failed" if failed else "success", "software_after": git_state(software),
                      "experiment_after": git_state(ROOT),
@@ -427,6 +499,21 @@ def main():
             manifest["status"] = "failed"
     write_json(output / "run.json", manifest)
     return 130 if interrupted else 1 if failed else 0
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--config", default="configs/smoke.json")
+    parser.add_argument("--software-root", type=Path, default=ROOT / "deps/LinearCParty")
+    parser.add_argument("--build-dir", type=Path)
+    parser.add_argument("--out", required=True)
+    parser.add_argument("--resume", action="store_true",
+                        help="continue an existing matching run; keep all jobs with result.json")
+    args = parser.parse_args()
+    software = args.software_root.resolve()
+    build = (args.build_dir or software / "build").resolve()
+    return execute(experiment_path(args.config), software, build,
+                   experiment_path(args.out), resume=args.resume)
 
 
 if __name__ == "__main__":
