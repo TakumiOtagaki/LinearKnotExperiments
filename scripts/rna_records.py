@@ -12,7 +12,7 @@ def scaffold_pairs(scaffold):
             if not stack:
                 raise ValueError("unbalanced scaffold")
             pairs.add((stack.pop(), position))
-        elif symbol != ".":
+        elif symbol not in ".xX_":
             raise ValueError("scaffold must be pseudoknot-free dot-bracket")
     if stack:
         raise ValueError("unbalanced scaffold")

@@ -20,7 +20,7 @@ from pathlib import Path
 
 from rna_records import read_record
 from run_cli import (ROOT, digest, experiment_path, git_state, now,
-                     plan_jobs, validate, verify_lock, write_json)
+                     mode_applies, plan_jobs, validate, verify_lock, write_json)
 
 
 # Official handbook, section 5.1.1; checked 2026-10-11. GB is decimal here,
@@ -82,6 +82,10 @@ def validate_array(config, settings):
     if not tiers:
         raise ValueError("array needs tiers")
     for tier in tiers:
+        effective_config = {**config, **tier.get("job_limits", {})}
+        if set(tier.get("job_limits", {})) - {"timeout_seconds", "memory_limit_mib"}:
+            raise ValueError("job_limits supports timeout_seconds and memory_limit_mib only")
+        validate(effective_config, array=True)
         name = tier.get("name", "")
         if not re.fullmatch(r"[A-Za-z0-9_-]+", name) or name in names:
             raise ValueError("tiers need unique simple names")
@@ -105,7 +109,7 @@ def validate_array(config, settings):
         if memory > RESOURCES[resource][1] * 1e9 / 2**20:
             raise ValueError("memory_budget_mib exceeds the documented resource memory")
         overhead = positive(tier.get("task_overhead_mib", 256), "task_overhead_mib", zero=True)
-        if workers * config["memory_limit_mib"] + overhead > memory:
+        if workers * effective_config["memory_limit_mib"] + overhead > memory:
             raise ValueError("workers times per-job memory cap plus overhead exceeds memory budget")
         model = tier.get("cost_model", {})
         if not model.get("basis") or not isinstance(model["basis"], str):
@@ -121,16 +125,33 @@ def validate_array(config, settings):
             if mode not in {m["name"] for m in config["modes"]}:
                 raise ValueError("unknown mode in cost model")
             positive(factor, "mode factor")
+        for mode, fit in model.get("per_mode", {}).items():
+            if mode not in {m["name"] for m in config["modes"]}:
+                raise ValueError("unknown per_mode cost")
+            for key in ("constant_seconds", "seconds_coefficient", "memory_base_mib", "memory_coefficient"):
+                positive(fit.get(key, 0), key, zero=True)
+            positive(fit.get("length_exponent", 1), "length_exponent")
+            positive(fit.get("memory_exponent", 1), "memory_exponent")
 
 
 def estimate(length, config, tier):
     model = tier["cost_model"]
     conditions = len(config["programs"]) * (config.get("warmups", 0) + config.get("repetitions", 1))
-    weighted = sum(model.get("mode_factors", {}).get(mode["name"], 1) for mode in config["modes"])
+    modes = [m for m in config["modes"] if mode_applies(m, {"length": length})]
+    weighted = sum(model.get("mode_factors", {}).get(mode["name"], 1) for mode in modes)
     single = (model.get("seconds_constant_per_condition", 0)
               + model["seconds_per_nt_condition"] * length**model.get("length_exponent", 1))
     seconds = model.get("safety_factor", 1) * single * conditions * weighted
     memory = model.get("memory_base_mib", 0) + model["mib_per_nt"] * length
+    if "per_mode" in model:
+        seconds, memory = 0, 0
+        for mode in modes:
+            fit = model["per_mode"][mode["name"]]
+            seconds += (fit.get("constant_seconds", 0) + fit["seconds_coefficient"] *
+                        length ** fit.get("length_exponent", 1)) * conditions
+            memory = max(memory, fit.get("memory_base_mib", 0) + fit["memory_coefficient"] *
+                         length ** fit.get("memory_exponent", 1))
+        seconds *= model.get("safety_factor", 1)
     if memory > config["memory_limit_mib"]:
         raise ValueError("estimated job memory exceeds its unchanged per-job cap")
     return {"estimated_seconds": seconds, "estimated_job_memory_mib": memory}
@@ -149,6 +170,7 @@ def make_tasks(config, settings, inputs):
         if len(matches) != 1:
             raise ValueError("no unique tier for input " + item["name"])
     for tier in settings["tiers"]:
+        effective_config = {**config, **tier.get("job_limits", {})}
         batches, batch = [], []
 
         def cost(items):
@@ -162,13 +184,14 @@ def make_tasks(config, settings, inputs):
                 continue
             # Multiple supplied scaffolds for the same RNA must stay together.
             groups.setdefault(item.get("sequence_sha256", item["name"]), []).append(
-                {**item, **estimate(item["length"], config, tier)})
+                {**item, **estimate(item["length"], effective_config, tier)})
         for group in groups.values():
             seconds, memory = cost(group)
             if seconds > tier["target_seconds"] or memory > tier["memory_budget_mib"]:
                 raise ValueError("one complete input matrix exceeds tier budget: " + group[0]["name"])
             seconds, memory = cost(batch + group)
-            if batch and (seconds > tier["target_seconds"] or memory > tier["memory_budget_mib"]):
+            if batch and (seconds > tier["target_seconds"] or memory > tier["memory_budget_mib"] or
+                          len(batch + group) > tier.get("max_inputs_per_task", float("inf"))):
                 batches.append(batch)
                 batch = []
             batch.extend(group)
@@ -179,8 +202,9 @@ def make_tasks(config, settings, inputs):
             tasks.append({"tier": tier["name"], "task_id": index,
                           "global_task_number": len(tasks) + 1, "inputs": batch,
                           "estimated_seconds": seconds, "estimated_memory_mib": memory,
-                          "memory_cap_envelope_mib": tier.get("workers", 1) * config["memory_limit_mib"]
+                          "memory_cap_envelope_mib": tier.get("workers", 1) * effective_config["memory_limit_mib"]
                                                      + tier.get("task_overhead_mib", 256),
+                          "job_limits": tier.get("job_limits", {}),
                           "requested_resource": tier["resource"] + "=1", "h_rt": tier["h_rt"],
                           "workers": tier.get("workers", 1), "cost_model": tier["cost_model"]})
     return tasks
@@ -218,6 +242,11 @@ def script_text(plan, tier, count):
 
 def prepare(config_path, settings_path, output, jobs_dir, software=None, build=None, dry_run=False):
     config = json.loads(config_path.read_text())
+    from biological_cohort import expand_cohort
+    config, cohort_provenance, pending = expand_cohort(config, dry_run)
+    pending |= any(i.get("scaffold_pending", False) for i in config["inputs"])
+    if pending and not dry_run:
+        raise ValueError("pending scaffolds permit only a dry-run")
     settings = json.loads(settings_path.read_text()) if settings_path else config.get("array", {})
     validate_array(config, settings)
     lock_path, lock = check_lock(config)
@@ -232,8 +261,14 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
     inputs = []
     for entry in config["inputs"]:
         source = experiment_path(entry["path"])
-        _, sequence, _ = read_record(source)
-        inputs.append({**entry, "source_path": str(source), "length": len(sequence), "sha256": digest(source),
+        if entry.get("scaffold_pending"):
+            sequence = entry["planning_sequence"]
+            payload = ">" + entry["name"] + "\n" + sequence + "\n" + "." * len(sequence) + "\n"
+            sha = hashlib.sha256(payload.encode()).hexdigest()
+        else:
+            _, sequence, _ = read_record(source)
+            sha = digest(source)
+        inputs.append({**entry, "source_path": str(source), "length": len(sequence), "sha256": sha,
                        "sequence_sha256": hashlib.sha256(sequence.encode()).hexdigest()})
     tasks = make_tasks(config, settings, inputs)
     if output.exists() or jobs_dir.exists():
@@ -249,27 +284,43 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
     write_json(output / "array_config.json", settings)
     for entry in inputs:
         copied = output / "inputs" / (entry["name"] + ".txt")
-        shutil.copyfile(entry["source_path"], copied)
+        if entry.get("scaffold_pending"):
+            sequence = entry.pop("planning_sequence")
+            copied.write_text(">" + entry["name"] + "\n" + sequence + "\n" + "." * len(sequence) + "\n")
+        else:
+            shutil.copyfile(entry["source_path"], copied)
         if digest(copied) != entry["sha256"]:
             raise ValueError("input changed during planning")
         entry["copied_path"] = str(copied)
+    for entry in config["inputs"]:
+        entry.pop("planning_sequence", None)
     frozen = {i["name"]: i for i in inputs}
+    config_entries = {i["name"]: i for i in config["inputs"]}
     for task in tasks:
+        for item in task["inputs"]:
+            item.pop("planning_sequence", None)
         task["inputs"] = [{**i, "copied_path": frozen[i["name"]]["copied_path"]} for i in task["inputs"]]
         directory = Path("tasks") / task["tier"] / f'{task["task_id"]:06d}'
         (output / directory).mkdir(parents=True)
         task_config = copy.deepcopy(config)
+        task_config.update(task["job_limits"])
         task_config.pop("array", None)
-        task_config["inputs"] = [{**entry, "path": frozen[entry["name"]]["copied_path"]}
-                                 for entry in config["inputs"] if entry["name"] in {i["name"] for i in task["inputs"]}]
+        task_config.pop("input_cohort", None)
+        task_config["inputs"] = [{**config_entries[i["name"]], "length": i["length"],
+                                  "path": frozen[i["name"]]["copied_path"]} for i in task["inputs"]]
         task_config["software_lock"] = str(output / "software_lock.json")
-        task_config["order"] = {"kind": "blocked_random", "seed": settings["seed"]}
+        tier = next(t for t in settings["tiers"] if t["name"] == task["tier"])
+        task_config["order"] = {"kind": tier.get("order_kind", "blocked_random"), "seed": settings["seed"]}
         task_config.setdefault("environment", {}).update(
             OMP_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1", MKL_NUM_THREADS="1")
         config_file = output / directory / "task_config.json"
         write_json(config_file, task_config)
         task.update(directory=str(directory), config_path=str(config_file),
                     config_sha256=digest(config_file), planned_jobs=plan_jobs(task_config))
+        if settings.get("compact_plan"):
+            schedule = output / directory / "planned_jobs.json"
+            write_json(schedule, task.pop("planned_jobs"))
+            task.update(planned_jobs_path=str(schedule), planned_jobs_sha256=digest(schedule))
         write_json(output / directory / "task.json", {"schema_version": 1, "status": "not_started",
                    "tier": task["tier"], "task_id": task["task_id"], "attempts": []})
     plan = {"schema_version": 1, "run_kind": "array", "created_utc": now(),
@@ -280,6 +331,7 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
             "software_root": str(software) if software else None, "build_dir": str(build) if build else None,
             "software_before": state, "dependencies_verified_at_planning": verified,
             "dry_run": dry_run, "experiment_before": git_state(ROOT), "inputs": inputs, "tasks": tasks,
+            "pending_scaffolds": pending, "cohort_provenance": cohort_provenance,
             "resource_reference": {"url": RESOURCE_SOURCE, "checked_date": "2026-10-11",
                                    "memory_unit": "decimal GB; conservative conversion to MiB"}}
     scripts = []
@@ -295,11 +347,11 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
     write_json(output / "array_plan.json", plan)
     (output / "array_plan.sha256").write_text(digest(output / "array_plan.json") + "\n")
     from aggregate_array import aggregate
-    aggregate(output / "array_plan.json")
+    aggregate(output / "array_plan.json", summary_only=settings.get("compact_plan", False))
     return plan
 
 
-def load_plan(path):
+def load_plan(path, task_selector=None, verify_frozen_inputs=True):
     plan = json.loads(path.read_text())
     output = Path(plan["output_dir"])
     if path.resolve() != output / "array_plan.json" or plan.get("schema_version") != 1:
@@ -309,12 +361,27 @@ def load_plan(path):
     checks = [(output / "original_config.json", plan["original_config_sha256"]),
               (output / "array_config.json", plan["array_config_sha256"]),
               (output / "software_lock.json", plan["software_lock_sha256"])]
-    checks += [(Path(i["copied_path"]), i["sha256"]) for i in plan["inputs"]]
-    checks += [(Path(t["config_path"]), t["config_sha256"]) for t in plan["tasks"]]
+    selected = [t for t in plan["tasks"] if task_selector is None or (t["tier"],t["task_id"]) == task_selector]
+    if task_selector is not None and len(selected) != 1:
+        raise ValueError("task is outside the saved tier array")
+    inputs = plan["inputs"] if task_selector is None else selected[0]["inputs"]
+    if verify_frozen_inputs:
+        checks += [(Path(i["copied_path"]), i["sha256"]) for i in inputs]
+    checks += [(Path(t["config_path"]), t["config_sha256"]) for t in selected]
+    checks += [(Path(t["planned_jobs_path"]), t["planned_jobs_sha256"]) for t in selected if "planned_jobs_path" in t]
     for file, expected in checks:
         if digest(file) != expected:
             raise ValueError("frozen dependency changed: " + str(file))
     return plan
+
+
+def task_jobs(plan, task):
+    if "planned_jobs" in task:
+        return task["planned_jobs"]
+    path = Path(task["planned_jobs_path"])
+    if digest(path) != task["planned_jobs_sha256"]:
+        raise ValueError("task schedule changed")
+    return json.loads(path.read_text())
 
 
 def main():

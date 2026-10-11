@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 import sys
 
-from plan_array import exclusive, load_plan
+from plan_array import exclusive, load_plan, task_jobs
 from run_cli import digest, experiment_path, now, write_json
 
 
@@ -25,11 +25,12 @@ def active_task(directory):
     return False
 
 
-def aggregate(plan_path):
-    plan = load_plan(plan_path)
+def aggregate(plan_path, summary_only=False):
+    plan = load_plan(plan_path, verify_frozen_inputs=not summary_only)
     output = Path(plan["output_dir"])
     with exclusive(output / ".aggregate.lock"):
         jobs, tasks, checks = [], [], []
+        planned_total = completed_total = missing_total = 0
         for task in plan["tasks"]:
             directory = output / task["directory"]
             metadata = json.loads((directory / "task.json").read_text())
@@ -40,10 +41,13 @@ def aggregate(plan_path):
             if status == "running":
                 status = "running" if active else "interrupted"
             missing = 0
-            for planned in task["planned_jobs"]:
+            task_rows = []
+            schedule = task_jobs(plan, task)
+            markers = set((directory / "run/jobs").glob("*/result.json"))
+            for planned in schedule:
                 relative = Path(task["directory"]) / "run/jobs" / planned["id"]
                 result_file = output / relative / "result.json"
-                if result_file.is_file():
+                if result_file in markers:
                     result = json.loads(result_file.read_text())
                     if any(result.get(k) != v for k, v in planned.items()):
                         raise ValueError("result identity differs from plan: " + str(result_file))
@@ -57,14 +61,18 @@ def aggregate(plan_path):
                            "time_wall_seconds": None, "peak_rss_kib": None}
                 row.update(tier=task["tier"], task_id=task["task_id"],
                            global_task_number=task["global_task_number"])
-                jobs.append(row)
+                task_rows.append(row)
+                planned_total += not row["warmup"]
+                completed_total += not row["warmup"] and row["result_present"]
+                missing_total += not row["warmup"] and not row["result_present"]
+            if not summary_only:
+                jobs.extend(task_rows)
             if not active and missing and status == "success":
                 status = "interrupted"
-            if not active and status == "success" and any(j["status"] != "success"
-                    for j in jobs if j["global_task_number"] == task["global_task_number"]):
+            if not active and status == "success" and any(j["status"] != "success" for j in task_rows):
                 status = "failed"
             tasks.append({**metadata, "status": status, "directory": task["directory"],
-                          "missing_jobs": missing, "planned_jobs": len(task["planned_jobs"]),
+                          "missing_jobs": missing, "planned_jobs": len(schedule),
                           "estimated_seconds": task["estimated_seconds"],
                           "estimated_memory_mib": task["estimated_memory_mib"],
                           "run_manifest_sha256": digest(run_file)})
@@ -91,9 +99,8 @@ def aggregate(plan_path):
                     "software_lock": plan["software_lock"], "array_plan_sha256": digest(plan_path),
                     "aggregated_utc": now(), "tasks": tasks, "task_status_counts": counts,
                     "planned_tasks": len(tasks), "jobs": jobs,
-                    "planned_measured_jobs": sum(not j["warmup"] for j in jobs),
-                    "completed_measured_jobs": sum(not j["warmup"] and j["result_present"] for j in jobs),
-                    "missing_measured_jobs": sum(not j["warmup"] and not j["result_present"] for j in jobs),
+                    "planned_measured_jobs": planned_total, "completed_measured_jobs": completed_total,
+                    "missing_measured_jobs": missing_total, "summary_only": summary_only,
                     **{k: combined(k) for k in checks[0]}}
         if finished:
             manifest["finished_utc"] = max(t.get("finished_utc") or "" for t in tasks)
@@ -104,8 +111,9 @@ def aggregate(plan_path):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--plan", required=True)
+    parser.add_argument("--summary-only", action="store_true", help="counts only; observations remain in task runs")
     args = parser.parse_args()
-    manifest = aggregate(experiment_path(args.plan))
+    manifest = aggregate(experiment_path(args.plan), args.summary_only)
     print(json.dumps({k: manifest[k] for k in ("status", "planned_tasks", "task_status_counts",
                       "planned_measured_jobs", "completed_measured_jobs", "missing_measured_jobs")}, indent=2))
 

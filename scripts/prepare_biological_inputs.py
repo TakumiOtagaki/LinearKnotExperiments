@@ -60,6 +60,8 @@ def select_records(records, kind, seed):
             eligible.append((name, sequence))
     if kind == "rnacentral":
         return sorted(eligible, key=lambda r: (len(r[1]), r[0])), excluded, None
+    if kind == "bprna_full":
+        return sorted(eligible, key=lambda r: (len(r[1]), r[0])), excluded, None
     rng, selected, bins = random.Random(seed), [], []
     for lo, hi in ((50, 100), (100, 200), (200, 400)):
         pool = [r for r in eligible if lo <= len(r[1]) < hi]
@@ -119,7 +121,7 @@ def memory_cap(mib):
     return apply
 
 
-def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record_ids=None):
+def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record_ids=None, resume=False):
     source_manifest, output, lp = map(Path, (source_manifest, output, lp))
     source_info = json.loads(source_manifest.read_text())
     source = ROOT / source_info.get("copied_path", source_info.get("downloaded_path"))
@@ -138,9 +140,23 @@ def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record
         selected = [r for r in selected if r[0] in record_ids]
     if not selected:
         raise ValueError("empty cohort")
-    output.mkdir(parents=True, exist_ok=False)
+    previous = json.loads((output / "dataset.json").read_text()) if resume else None
+    if previous is not None:
+        checks = {"source_sha256": digest(source), "acquisition_manifest_sha256": digest(source_manifest),
+                  "linearpartition_source": state, "wrapper_sha256": digest(lp),
+                  "vienna_binary_sha256": digest(lp.parent / "bin/linearpartition_v"),
+                  "script_sha256": digest(Path(__file__)),
+                  "scaffold_settings": {"beam":200,"dangles":2,"pair_probability_threshold":0.7,"min_helix":2},
+                  "selected_ids_before_scaffold": [r[0] for r in selected], "timeout_seconds": timeout_seconds}
+        if any(previous.get(k) != v for k, v in checks.items()):
+            raise ValueError("scaffold resume dependencies changed")
+        for saved in previous["records"]:
+            if saved["scaffold_status"] == "success" and digest(output / saved["input_file"]) != saved["input_sha256"]:
+                raise ValueError("scaffold resume input changed")
+    else:
+        output.mkdir(parents=True, exist_ok=False)
     logs = output / "scaffold_logs"
-    logs.mkdir()
+    logs.mkdir(exist_ok=resume)
     env = os.environ.copy()
     env.update(OMP_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1", MKL_NUM_THREADS="1", LC_ALL="C")
     manifest = {"schema_version": 1, "created_utc": now(), "status": "running",
@@ -162,8 +178,27 @@ def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record
                 "vienna_binary_sha256": digest(lp.parent / "bin/linearpartition_v"),
                 "script_sha256": digest(Path(__file__)), "records": []}
     write_json(output / "dataset.json", manifest)
+    completed = {r["id"]: r for r in previous["records"]} if previous else {}
+    if previous:
+        for name, sequence in selected:
+            marker = logs / name / "result.json"
+            if name not in completed and marker.exists():
+                recovered = json.loads(marker.read_text()).get("record")
+                if recovered is None or recovered.get("id") != name:
+                    raise ValueError("cannot recover scaffold completion marker: " + name)
+                if recovered["scaffold_status"] == "success" and digest(output / recovered["input_file"]) != recovered["input_sha256"]:
+                    raise ValueError("recovered scaffold input changed")
+                completed[name] = recovered
     for name, sequence in selected:
+        if name in completed:
+            manifest["records"].append(completed[name])
+            continue
         job = logs / name
+        if job.exists():
+            import shutil
+            archive = output / "incomplete_attempts" / name
+            archive.mkdir(parents=True, exist_ok=True)
+            shutil.move(str(job), str(archive / str(len(list(archive.iterdir())))))
         job.mkdir()
         bpp = job / "pairs.tsv"
         command = [str(lp.resolve()), "-V", "-b", "200", "--dangles", "2",
@@ -173,7 +208,8 @@ def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record
         started = time.perf_counter()
         status, returncode, error = "success", None, None
         try:
-            process = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+            timed = ["/usr/bin/time", "-f", "%e\t%M", "-o", str(job / "time.tsv"), "--", *command]
+            process = subprocess.Popen(timed, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                                        stderr=subprocess.PIPE, text=True, env=env,
                                        preexec_fn=memory_cap(8192), start_new_session=True)
             try:
@@ -182,6 +218,12 @@ def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record
                 stop_group(process)
                 stdout, stderr = process.communicate()
                 status = "timeout"
+            except KeyboardInterrupt:
+                stop_group(process)
+                stdout, stderr = process.communicate()
+                (job / "stdout.txt").write_text(stdout)
+                (job / "stderr.txt").write_text(stderr)
+                raise
             (job / "stdout.txt").write_text(stdout)
             (job / "stderr.txt").write_text(stderr)
             returncode = process.returncode
@@ -201,8 +243,19 @@ def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record
                                         "scaffold_status": "failed", "error": str(exc)})
         elapsed = time.perf_counter() - started
         manifest["records"][-1]["scaffold_elapsed_seconds"] = elapsed
+        wall = rss = None
+        if (job / "time.tsv").exists():
+            for line in (job / "time.tsv").read_text().splitlines():
+                try:
+                    w, r = line.split("\t")
+                    wall, rss = float(w), int(r)
+                except ValueError:
+                    pass
+        manifest["records"][-1].update(scaffold_command=command, time_wall_seconds=wall, peak_rss_kib=rss)
         write_json(job / "result.json", {"status": status, "returncode": returncode,
-                                         "error": error, "elapsed_seconds": elapsed})
+                                         "error": error, "elapsed_seconds": elapsed,
+                                         "time_wall_seconds": wall, "peak_rss_kib": rss,
+                                         "record": manifest["records"][-1]})
         write_json(output / "dataset.json", manifest)
         print(name + ": " + manifest["records"][-1]["scaffold_status"], flush=True)
     manifest["linearpartition_source_after"] = git_state(lp.parent)
@@ -221,16 +274,17 @@ def prepare(source_manifest, output, lp, kind, seed, timeout_seconds=120, record
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--kind", choices=("bprna", "rnacentral"), required=True)
+    parser.add_argument("--kind", choices=("bprna", "bprna_full", "rnacentral"), required=True)
     parser.add_argument("--source-manifest", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--linearpartition", type=Path, required=True)
     parser.add_argument("--seed", type=int, default=20261008)
     parser.add_argument("--timeout-seconds", type=float, default=120)
     parser.add_argument("--ids", nargs="+", help="prepare only these IDs from the unchanged cohort")
+    parser.add_argument("--resume", action="store_true")
     args = parser.parse_args()
     result = prepare(args.source_manifest, args.out, args.linearpartition, args.kind, args.seed,
-                     args.timeout_seconds, args.ids)
+                     args.timeout_seconds, args.ids, args.resume)
     return int(result["status"] != "success")
 
 

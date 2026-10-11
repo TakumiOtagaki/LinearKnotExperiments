@@ -109,6 +109,9 @@ def verify_lock(path, software, build, programs, parameter):
         name = program["name"]
         if digest(build / name) != lock["binaries"].get(name) or lock["binaries"].get(name) is None:
             raise ValueError("binary differs from software lock: " + name)
+    for entry in lock.get("extra_files", []):
+        if digest(experiment_path(entry["path"])) != entry["sha256"]:
+            raise ValueError("extra dependency differs from software lock: " + entry["path"])
     return lock
 
 
@@ -177,19 +180,25 @@ def validate(config, array=False):
             args = entry.get("args", [])
             if not isinstance(args, list) or any(not isinstance(x, str) for x in args):
                 raise ValueError("args must be a list of strings")
+            if group == "modes" and "length_range" in entry:
+                bounds = entry["length_range"]
+                if (not isinstance(bounds, dict) or
+                        any(type(bounds.get(k)) is not int for k in ("min_length", "max_length")) or
+                        not 1 <= bounds["min_length"] <= bounds["max_length"]):
+                    raise ValueError("mode length_range needs positive inclusive bounds")
     for program in config["programs"]:
         for product in program.get("outputs", []):
             name = product["name"]
             if Path(name).name != name or name in (".", ".."):
                 raise ValueError("output must be a file name")
-    for key, minimum in (("warmups", 0), ("repetitions", 1)):
+    for key, minimum in (("warmups", 0), ("repetitions", 1), ("manifest_checkpoint_jobs", 1)):
         value = config.get(key, minimum)
         if type(value) is not int or value < minimum:
             raise ValueError(key + " is out of range")
     order = config.get("order", {"kind": "fixed"})
-    if not isinstance(order, dict) or order.get("kind") not in ("fixed", "blocked_random"):
-        raise ValueError("order.kind must be fixed or blocked_random")
-    if order["kind"] == "blocked_random" and type(order.get("seed")) is not int:
+    if not isinstance(order, dict) or order.get("kind") not in ("fixed", "blocked_random", "beam_ascending"):
+        raise ValueError("order.kind must be fixed, blocked_random or beam_ascending")
+    if order["kind"] in ("blocked_random", "beam_ascending") and type(order.get("seed")) is not int:
         raise ValueError("blocked_random order needs an integer seed")
     if config.get("timeout_seconds", 30) <= 0:
         raise ValueError("timeout_seconds must be positive")
@@ -211,7 +220,7 @@ def plan_jobs(config):
     """Keep the old nested order by default; shuffle each repetition otherwise."""
     combinations = [(item["name"], mode["name"], program["name"])
                     for item in config["inputs"] for mode in config["modes"]
-                    for program in config["programs"]]
+                    if mode_applies(mode, item) for program in config["programs"]]
     jobs = []
 
     def add(combination, warmup, repetition):
@@ -233,12 +242,32 @@ def plan_jobs(config):
         for repetition in range(repetitions):
             block = combinations.copy()
             rng.shuffle(block)
+            if config["order"]["kind"] == "beam_ascending":
+                widths = {m["name"]: beam_width(m) for m in config["modes"]}
+                block.sort(key=lambda c: widths[c[1]])
             for combination in block:
                 if repetition == 0:
                     for index in range(warmups):
                         add(combination, True, index)
                 add(combination, False, repetition)
     return jobs
+
+
+def beam_width(mode):
+    args = mode.get("args", [])
+    return int(args[args.index("-b") + 1]) if "-b" in args else 0
+
+
+def mode_applies(mode, item):
+    bounds = mode.get("length_range")
+    if bounds is None:
+        return True
+    length = item.get("length")
+    if type(length) is not int:
+        from rna_records import read_record
+        _, sequence, _ = read_record(experiment_path(item["path"]))
+        length = len(sequence)
+    return bounds["min_length"] <= length <= bounds["max_length"]
 
 
 def resume_manifest(output, config_path, config, software, build, parameter, sources,
@@ -284,6 +313,26 @@ def resume_manifest(output, config_path, config, software, build, parameter, sou
                     and result.get("directory") == str(directory), "job result " + job["id"])
             completed.append(result)
     manifest["jobs"] = completed
+    journal = output / "execution_events.jsonl"
+    if journal.exists():
+        attempts = []
+        lines = journal.read_text().splitlines()
+        for index, line in enumerate(lines):
+            try:
+                event = json.loads(line)
+            except json.JSONDecodeError:
+                if index == len(lines)-1:
+                    break
+                raise ValueError("cannot resume: execution journal is malformed") from None
+            kind = event.pop("event")
+            if kind == "started":
+                attempts.append(event)
+            else:
+                match = next((a for a in reversed(attempts) if a["id"] == event["id"] and "finished_utc" not in a), None)
+                if match is None:
+                    raise ValueError("cannot resume: execution journal has no matching start")
+                match.update(event)
+        manifest["execution_order"] = attempts
     return manifest
 
 
@@ -298,16 +347,27 @@ def job_process(connection, command, directory, env, timeout, memory):
         connection.close()
 
 
-def execute_jobs(manifest, output, build, env, workers):
+def execute_jobs(manifest, output, build, env, workers, through_beam=None):
     """Launch in saved order; serialize each combination and repetition block."""
     config = manifest["config"]
     completed = {job["id"] for job in manifest["jobs"]}
     pending = [job for job in manifest["planned_jobs"] if job["id"] not in completed]
     items = {item["name"]: item for item in manifest["inputs"]}
     modes = {mode["name"]: mode for mode in config["modes"]}
+    if through_beam is not None:
+        pending = [j for j in pending if beam_width(modes[j["mode"]]) <= through_beam]
     programs = {program["name"]: program for program in config["programs"]}
     active = {}
     interrupted = False
+    checkpoint = config.get("manifest_checkpoint_jobs", 1)
+
+    def save_progress(event):
+        if checkpoint > 1:
+            with (output / "execution_events.jsonl").open("a") as stream:
+                stream.write(json.dumps(event) + "\n")
+                stream.flush()
+        if checkpoint == 1 or len(manifest["jobs"]) % checkpoint == 0:
+            write_json(output / "run.json", manifest)
 
     def finish(job, directory, attempt, result):
         nonlocal interrupted
@@ -316,7 +376,7 @@ def execute_jobs(manifest, output, build, env, workers):
         write_json(directory / "result.json", result)
         manifest["jobs"].append(result)
         attempt.update({"finished_utc": now(), "status": result["status"]})
-        write_json(output / "run.json", manifest)
+        save_progress({"event": "finished", **attempt})
         print(job["id"] + ": " + result["status"], flush=True)
         interrupted |= result["status"] == "interrupted"
 
@@ -340,8 +400,10 @@ def execute_jobs(manifest, output, build, env, workers):
                 combination = tuple(job[k] for k in ("input", "mode", "program"))
                 block = 0 if job["warmup"] else job["repetition"]
                 blocked = any(tuple(a[1][k] for k in ("input", "mode", "program")) == combination
-                              or (config.get("order", {}).get("kind") == "blocked_random"
+                              or (config.get("order", {}).get("kind") in ("blocked_random", "beam_ascending")
                                   and (0 if a[1]["warmup"] else a[1]["repetition"]) != block)
+                              or (config.get("order", {}).get("kind") == "beam_ascending" and
+                                  beam_width(modes[a[1]["mode"]]) != beam_width(modes[job["mode"]]))
                               for a in active.values())
                 if not blocked:
                     pending.pop(0)
@@ -361,7 +423,7 @@ def execute_jobs(manifest, output, build, env, workers):
                         command.extend([product["flag"], str(directory / product["name"])])
                     attempt = {"id": job["id"], "started_utc": now()}
                     manifest["execution_order"].append(attempt)
-                    write_json(output / "run.json", manifest)
+                    save_progress({"event": "started", **attempt})
                     attempt["command"] = command
                     if workers == 1:
                         finish(job, directory, attempt,
@@ -392,8 +454,10 @@ def execute_jobs(manifest, output, build, env, workers):
     return interrupted
 
 
-def execute(config_path, software, build, output, resume=False, array_context=None, workers=1):
+def execute(config_path, software, build, output, resume=False, array_context=None, workers=1, through_beam=None):
     config = json.loads(config_path.read_text())
+    if any(i.get("scaffold_pending") for i in config.get("inputs", [])):
+        raise ValueError("pending scaffolds cannot be executed")
     validate(config, array=array_context is not None)
     if type(workers) is not int or workers < 1 or (workers != 1 and array_context is None):
         raise ValueError("parallel workers are available only through an accuracy array plan")
@@ -478,7 +542,8 @@ def execute(config_path, software, build, output, resume=False, array_context=No
             manifest.update(array_task=array_context, workers=workers)
     manifest["planned_jobs"] = plan
     write_json(output / "run.json", manifest)
-    interrupted = execute_jobs(manifest, output, build, env, workers)
+    interrupted = execute_jobs(manifest, output, build, env, workers, through_beam)
+    interrupted |= len(manifest["jobs"]) < len(plan)
     failed = any(job["status"] != "success" for job in manifest["jobs"])
     manifest.update({"finished_utc": now(), "status": "interrupted" if interrupted else
                      "failed" if failed else "success", "software_after": git_state(software),

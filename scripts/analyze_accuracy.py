@@ -7,6 +7,7 @@ import hashlib
 import json
 import math
 from pathlib import Path
+import re
 
 from rna_records import paired_positions, read_record, scaffold_pairs
 from run_cli import digest, git_state, now
@@ -222,14 +223,39 @@ def check_consistency(input_name, mode, repetition, group):
                                          bound_violation) <= TOLERANCE else "failed"}
 
 
-def analyze(run, reference_mode):
+def analyze(run, reference_mode, extra_runs=()):
     analysis_provenance = {"generated_utc": now(), "experiment_git_state": git_state(ROOT),
                            "analysis_script_sha256": digest(Path(__file__)),
                            "record_helpers_sha256": digest(Path(__file__).with_name("rna_records.py")),
                            "run_manifest_sha256": digest(run / "run.json")}
     manifest = json.loads((run / "run.json").read_text())
-    if manifest["status"] == "running":
+    if manifest["status"] == "running" or manifest.get("summary_only"):
         raise ValueError("wait for the run to finish")
+    manifest = {**manifest, "inputs": manifest["inputs"].copy(), "jobs": manifest["jobs"].copy()}
+    analysis_provenance["additional_runs"] = []
+    input_hashes = {i["name"]: i["sha256"] for i in manifest["inputs"]}
+    job_ids = {j["id"] for j in manifest["jobs"]}
+    for extra in extra_runs:
+        saved = json.loads((extra / "run.json").read_text())
+        if saved["status"] == "running" or saved.get("summary_only"):
+            raise ValueError("finish and aggregate every sensitivity run")
+        if (saved["software_before"]["commit"] != manifest["software_before"]["commit"] or
+                saved["config"]["model_settings"] != manifest["config"]["model_settings"] or
+                saved["software_lock"]["energy_parameter_sha256"] != manifest["software_lock"]["energy_parameter_sha256"]):
+            raise ValueError("sensitivity run models differ")
+        for item in saved["inputs"]:
+            if item["name"] in input_hashes:
+                if item["sha256"] != input_hashes[item["name"]]:
+                    raise ValueError("sensitivity runs require identical S and G")
+            else:
+                input_hashes[item["name"]] = item["sha256"]
+                manifest["inputs"].append(item)
+        for job in saved["jobs"]:
+            if job["id"] in job_ids:
+                raise ValueError("duplicate observations in sensitivity runs")
+            job_ids.add(job["id"])
+            manifest["jobs"].append({**job, "directory": str(extra / job["directory"])})
+        analysis_provenance["additional_runs"].append({"path": str(extra), "run_manifest_sha256": digest(extra / "run.json")})
     records = {}
     for entry in manifest["inputs"]:
         path = Path(entry["copied_path"])
@@ -246,8 +272,17 @@ def analyze(run, reference_mode):
             parsed[job["id"]] = read_job(run, job, records[job["input"]])
         except (ValueError, KeyError, OSError) as exc:
             errors[job["id"]] = str(exc)
-    references = {(job["input"], job["program"]): job["id"] for job in jobs
-                  if job["mode"] == reference_mode and job["repetition"] == 0}
+    references = {(job["input"], job["program"], job["mode"]): job["id"] for job in jobs
+                  if job["repetition"] == 0}
+    largest_modes = {}
+    if extra_runs:
+        for name, program, mode in references:
+            match = re.fullmatch(r"beam(\d+)_(default|nocap)", mode)
+            if match:
+                key = (name, program, match[2])
+                if key not in largest_modes or int(match[1]) > largest_modes[key][0]:
+                    largest_modes[key] = (int(match[1]), mode)
+    policy = manifest.get("config", {}).get("analysis", {})
     compare = {"LinearCParty": compare_bpp, "LinearPKCapR": compare_contexts,
                "LinearPKRaccess": compare_accessibility}
     observations = []
@@ -261,7 +296,15 @@ def analyze(run, reference_mode):
             artifacts["bpp_export"] = digest(Path(command[command.index("--bpp") + 1]))
         row["observed_artifact_sha256"] = artifacts
         row.update({key: job.get(key) for key in ("time_wall_seconds", "peak_rss_kib")})
-        reference = references.get((job["input"], job["program"]))
+        selected_mode, kind = reference_mode, "exact_error"
+        if len(records[job["input"]][1]) >= policy.get("exact_max_length_exclusive", float("inf")):
+            group = "nocap" if job["mode"].endswith("_nocap") else "default"
+            selected_mode = policy["long_reference_modes"][group]
+            if extra_runs:
+                selected_mode = largest_modes.get((job["input"], job["program"], group), (0,selected_mode))[1]
+            kind = "beam_width_sensitivity"
+        reference = references.get((job["input"], job["program"], selected_mode))
+        row.update(reference_mode=selected_mode, comparison_kind=kind)
         row["reference_job"] = reference
         if job["status"] != "success":
             row["analysis_status"] = "job_failed"
@@ -306,13 +349,16 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("run", type=Path)
     parser.add_argument("--reference-mode", default="exact")
+    parser.add_argument("--compare-runs", nargs="*", type=Path, default=[],
+                        help="merge staged long-width runs; use each RNA's largest planned width per cap regime")
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     run = args.run if args.run.is_absolute() else ROOT / args.run
     output = args.out if args.out.is_absolute() else ROOT / args.out
     if output.exists():
         parser.error("use a new analysis output path")
-    result = analyze(run, args.reference_mode)
+    extra = [p if p.is_absolute() else ROOT / p for p in args.compare_runs]
+    result = analyze(run, args.reference_mode, extra)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2, allow_nan=False) + "\n")
     failures = sum(row["analysis_status"] != "success" for row in result["observations"])

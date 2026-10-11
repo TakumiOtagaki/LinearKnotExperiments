@@ -15,8 +15,7 @@ from plan_array import exclusive, load_plan
 from run_cli import digest, execute, experiment_path, now, verify_lock, write_json
 
 
-def run_task(plan_path, tier, task_id=None, software=None, build=None, resume=False):
-    plan = load_plan(plan_path)
+def run_task(plan_path, tier, task_id=None, software=None, build=None, resume=False, through_beam=None):
     identifier = os.environ.get("SGE_TASK_ID")
     if identifier is None and task_id is not None:
         identifier = str(task_id)
@@ -24,6 +23,9 @@ def run_task(plan_path, tier, task_id=None, software=None, build=None, resume=Fa
         raise ValueError("SGE_TASK_ID (or development --task-id) must be a positive integer")
     if task_id is not None and int(identifier) != task_id:
         raise ValueError("task-id differs from SGE_TASK_ID")
+    plan = load_plan(plan_path, task_selector=(tier,int(identifier)))
+    if plan.get("pending_scaffolds"):
+        raise ValueError("pending scaffolds: finish G array, aggregate it, then regenerate a verified plan")
     if plan["config"]["purpose"] == "formal" and not (os.environ.get("JOB_ID") and os.environ.get("SGE_TASK_ID")):
         raise ValueError("formal tasks require JOB_ID and SGE_TASK_ID from an array allocation")
     matches = [t for t in plan["tasks"] if t["tier"] == tier and t["task_id"] == int(identifier)]
@@ -47,7 +49,7 @@ def run_task(plan_path, tier, task_id=None, software=None, build=None, resume=Fa
                    "SGE_TASK_ID": os.environ.get("SGE_TASK_ID"), "hostname": platform.node(),
                    "requested_resource": task["requested_resource"], "h_rt": task["h_rt"],
                    "workers": task["workers"], "software_root": str(software) if software else None,
-                   "build_dir": str(build) if build else None}
+                   "build_dir": str(build) if build else None, "through_beam": through_beam}
         metadata["attempts"].append(attempt)
         metadata.update(status="running", started_utc=attempt["started_utc"], finished_utc=None,
                         global_task_number=task["global_task_number"], requested_resource=task["requested_resource"],
@@ -71,7 +73,7 @@ def run_task(plan_path, tier, task_id=None, software=None, build=None, resume=Fa
                 shutil.move(str(output), str(archive / str(len(list(archive.iterdir())))))
             code = execute(Path(task["config_path"]), software, build, output,
                            resume=resume and (output / "run.json").is_file(),
-                           array_context=context, workers=task["workers"])
+                           array_context=context, workers=task["workers"], through_beam=through_beam)
             status = json.loads((output / "run.json").read_text())["status"]
         except KeyboardInterrupt:
             code, status = 130, "interrupted"
@@ -93,6 +95,8 @@ def main():
     parser.add_argument("--software-root", type=Path)
     parser.add_argument("--build-dir", type=Path)
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--through-beam", type=int, choices=(20,50,100,200,300,400),
+                        help="complete only widths up to this stage; review, then --resume the next stage")
     args = parser.parse_args()
 
     def terminate(signum, frame):
@@ -100,7 +104,7 @@ def main():
 
     signal.signal(signal.SIGTERM, terminate)
     return run_task(experiment_path(args.plan), args.tier, args.task_id,
-                    args.software_root, args.build_dir, args.resume)
+                    args.software_root, args.build_dir, args.resume, args.through_beam)
 
 
 if __name__ == "__main__":
