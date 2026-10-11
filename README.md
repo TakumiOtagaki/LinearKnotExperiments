@@ -115,9 +115,9 @@ checksummed `planned_jobs.json`, and the initial aggregate stores counts only.
 Use `aggregate_array.py --summary-only` for status summaries; omit the flag
 when observations are required. Accuracy analysis rejects a counts-only
 aggregate. Analyze large matrices per task and combine RNA-level observations.
-A `manifest_checkpoint_jobs` setting reduces repeated full manifest writes;
-an append journal records every start/finish and recovers execution order on
-resume, while each job's `result.json` remains the marker.
+A `manifest_checkpoint_jobs` setting reduces repeated full manifest writes.
+An append journal records starts/finishes; `task_results.jsonl` is the durable
+completion checkpoint for new tasks, including failures and timeouts.
 Long tiers support `--through-beam 20`, then `--resume --through-beam 50`,
 100 and 200 as separate invocations after reviewing each stage.
 Larger widths remain missing until explicitly resumed.
@@ -133,7 +133,7 @@ python3 scripts/plan_array.py --config configs/formal.json \
   --build-dir /path/to/dedicated/build --out results/runs/formal-001
 ```
 
-The planner saves byte copies of the original config and lock, input copies
+The planner saves byte copies of the original config and lock, inputs in one tar
 and hashes, task configs, full seeded schedules, and `array_plan.json` with a
 checksum. Existing output or script directories are refused. Task execution
 checks frozen files and the live lock again. An offline `--dry-run` may omit
@@ -154,12 +154,21 @@ qsub -g YOUR_TSUBAME_GROUP -t 3-3 jobs/formal-001/short.sh --resume
 ```
 
 Do not override the saved resource or `h_rt`. Outputs live under
-`tasks/<tier>/<six-digit-task-id>/run/`. The adjacent `task.json` records task
+`tasks/<tier>/<six-digit-task-id>/run/`. CLI jobs execute under node-local
+`$TMPDIR`, or an explicit `--scratch-dir` outside `/gs/bs`; no automatic shared
+scratch fallback is allowed. The adjacent `task.json` records task
 and global numbers, `JOB_ID`, `SGE_TASK_ID`, hostname, requested resource,
 wall time, workers, start/end times and all attempts. A per-task `flock` rejects
 concurrent execution; the kernel releases it even if the controller is killed.
-Resume keeps every `result.json`, including failures/timeouts, and runs only
-missing results. Partial jobs are archived by the existing runner.
+Resume keeps every complete JSONL record, including failures/timeouts, and runs
+only missing results. Each completed job's raw outputs are appended to the
+task's single `task_outputs.tar` and fsynced before its JSONL record is appended,
+flushed and fsynced. An uncommitted tar tail and unterminated JSONL tail are
+discarded on resume. Interrupted local work may be lost when the allocation
+ends and is rerun. New tasks create five run files: `config.json`, `run.json`,
+`execution_events.jsonl`, `task_results.jsonl`, and `task_outputs.tar`.
+The JSONL stores result/status, argv, stdout/stderr byte counts, hashes and
+bounded tails, elapsed/GNU time, peak RSS, and raw member hashes.
 A killed controller retains a null end time and is counted as interrupted.
 Stop surviving processes before resuming. If a resume changes nodes, inspect
 task attempts and CLI `resume_history` before pooling timing segments.
@@ -245,7 +254,7 @@ and five programs: LinearCParty, LinearPKCapR, LinearPKRaccess,
 LinearPKSampling and LinearPKMEA. It checks the execution and logging path.
 It is not an exactness benchmark or a biological experiment.
 
-Each run keeps a config snapshot, copied input and energy-parameter files,
+Each development run keeps a config snapshot, copied input and energy-parameter files,
 software and experiment Git state, executable hashes, selected CMake build
 settings, the command and output of every job, elapsed time, peak RSS in KiB,
 and return status. The runner returns nonzero if any measured job fails but
@@ -302,3 +311,63 @@ They exercise failures, process-group timeouts, warm-up exclusion, copied
 inputs, fixed/seeded measurement order, matching and rejected resumes,
 legacy manifests, interrupted summaries, scaffold subset preparation, array
 packing, SGE task selection, task locks, parallel accuracy bounds and aggregation.
+
+## Shared project file-count budget
+
+The shared project exhausted its file quota during the original full E1 run.
+Per-job directories and small files must never be written there by array tasks.
+The reported incident limit was 24,000,000 entries. A later live quota reports
+28,000,000; planning conservatively uses the smaller configured 24,000,000 cap.
+Directory entries count toward this budget as well as regular files.
+
+Both planners check `lfs quota -p 102571 /gs/bs` **before creating output**.
+Their `array.file_budget` (or the separate array config's `file_budget`) accepts
+`project`, `filesystem`, `hard_file_limit`, `max_remaining_fraction` (default
+0.1, at most 0.1), and `fallback_remaining_files`. Unavailable quota without an
+explicit fallback is refused. The full E1/G configs supply a conservative
+800,000-entry fallback; update it from a fresh observation before submission.
+The plan saves the estimate, raw quota, effective remaining count and decision.
+It budgets plan/task files, directories, scheduler logs and atomic-write
+temporaries. Resubmissions add scheduler logs; quota checks do not reserve space.
+
+For a full-matrix dry-run that writes only one JSON report and its directory:
+
+```bash
+python3 scripts/plan_array.py \
+  --config configs/e1_bprna_full_15aa7742_20261011.json \
+  --array-config configs/arrays/e1_bprna_full_20261011.json \
+  --software-root deps/LinearCParty-15aa7742 --build-dir build/linear-cparty-15aa7742 \
+  --out results/local/e1-packed-estimate --dry-run --estimate-only
+```
+
+This saves assignments and counts without task directories, schedules or input
+copies. It is not an executable plan. The saved
+[full E1 estimate](docs/packed_array_20261011/array_estimate.json) covers 841 tasks
+and 699,387 jobs: **10,963 shared entries**, including directories and temporary
+headroom, independent of the CLI job count. A full executable plan freezes all
+RNA inputs in one `inputs.tar`, then materializes only a task's inputs locally.
+
+G tasks likewise save `dataset.json`, `task_results.jsonl` and one
+`task_outputs.tar`. G aggregation publishes one `inputs.tar` plus `dataset.json`;
+cohort resolution and CLI planning read those members directly. The old G lock
+is preserved; the new G config uses a separate lock for the revised scripts.
+
+Aggregation, summary, accuracy, E0 and domain validation support new task
+archives and old directory runs. They also read archived **legacy** runs in
+`results/archives/*.tar` or `.tar.gz` without extracting files. For example:
+
+```bash
+python3 scripts/summarize.py results/archives/e1-bprna-full-20261011.tar::tasks/nt50_99/000001/run \
+  --out results/local/archived-task-summary.tsv
+python3 scripts/aggregate_array.py --plan results/archives/e1-bprna-full-20261011.tar \
+  --out results/local/archived-run.json
+python3 scripts/scaffold_array.py aggregate --plan results/archives/scaffold-bprna-full-20261011.tar
+```
+
+Use `archive.tar::tasks/<tier>/<id>/run` for per-task analysis of large legacy
+archives. Whole-run aggregation reconstructs all observations and needs memory
+proportional to the matrix. Readers scan tar headers and read member bytes from
+streams; they create no extracted directories. New compressed output archives
+are not used for checkpoints, because uncompressed tar permits recovery by its
+committed byte offset. Historical plans remain readable; create new plans for
+execution rather than resuming an old directory-layout task.

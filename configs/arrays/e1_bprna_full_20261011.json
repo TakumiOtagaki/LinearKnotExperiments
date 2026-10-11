@@ -748,5 +748,13 @@
       }
     }
   ],
-  "compact_plan": true
+  "compact_plan": true,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1,
+    "fallback_remaining_files": 800000,
+    "fallback_basis": "Conservative fallback below the 2026-10-11 snapshot; verify before submission"
+  }
 }

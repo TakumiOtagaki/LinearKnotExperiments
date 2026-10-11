@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "unit_tests": {
+    "command": "python3 -m unittest discover -s tests",
+    "tests": 52,
+    "status": "success",
+    "elapsed_seconds": 17.295
+  },
+  "e1_estimate_sha256": "7f55475a0fc86ec33ab3aeacbb9d175b54418538a17e5e9e60d981b0aa46b130",
+  "e1": {
+    "inputs": 26063,
+    "tasks": 841,
+    "planned_jobs": 699387,
+    "dependencies_verified_at_planning": true,
+    "pending_scaffolds": false,
+    "file_budget": {
+      "format": "task-jsonl-tar-v1",
+      "tasks": 841,
+      "nonempty_tiers": 8,
+      "entries_per_task": 13,
+      "fixed_entries": 30,
+      "estimated_shared_entries": 10963,
+      "counts_directories": true,
+      "scheduler_log_attempts": 1,
+      "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+      "project": 102571,
+      "filesystem": "/gs/bs",
+      "quota": {
+        "used_files": 23118679,
+        "limit_files": 28000000,
+        "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 8800873000  14680064000 14680064000       - 23118679  28000000 28000000       -"
+      },
+      "hard_file_limit": 24000000,
+      "remaining_files": 881321,
+      "remaining_source": "lfs quota (with configured conservative hard limit)",
+      "max_remaining_fraction": 0.1,
+      "allowed_entries": 88132,
+      "accepted": true
+    }
+  },
+  "archive_read_checks": {
+    "extracted_files": 0,
+    "e1": {
+      "archive": "results/archives/e1-bprna-full-20261011.tar",
+      "task": "nt50_99/000001",
+      "planned_jobs": 13500,
+      "sample_job": "bpRNA_RFAM_34405-beam20_default-LinearPKRaccess-rep0",
+      "stdout_bytes": 1939,
+      "input_bytes": 119
+    },
+    "g": {
+      "archive": "results/archives/scaffold-bprna-full-20261011.tar",
+      "status": "success",
+      "planned_tasks": 79,
+      "planned_jobs": 26063,
+      "completed_jobs": 26063
+    }
+  },
+  "packed_g_lock_sha256": "e6854feb38e6c5479dff33d44cc8350637975d4b2bd4a5b534b8ec8b5f4aad7e",
+  "local_workspaces_remaining": [],
+  "qsub_executed": false,
+  "commit_or_push": false,
+  "scientific_scope": "Storage/recovery/analysis parity on tiny synthetic fixtures and read-only archive checks; no new full-matrix scientific measurements"
+}

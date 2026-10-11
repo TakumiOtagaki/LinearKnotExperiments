@@ -5,6 +5,64 @@
 計画・job script・係数合わせ・テストと、52 nt の G 生成、4証人の小確認、およびE0更新時の14入力・両policyの版間確認だけを行った。
 本実験の結果ではない。
 
+## 共有 project のファイル数事故後の更新（2026-10-11）
+
+旧 E1 の投入後、研究室共有 project 102571 のファイル数上限に達し、
+研究室全員の書き込みが `Disk quota exceeded` になった。
+著者が array を停止し、旧 run を `results/archives/` の tar にまとめて約85万ファイルを空けた。
+本更新では qsub、commit、push、実装 tree や論文 repo の他のファイルの変更は行っていない。
+
+新形式 `task-jsonl-tar-v1` は各 CLI を node-local `$TMPDIR` で実行する。
+`TMPDIR` がなければ `--scratch-dir` を明示し、`/gs/bs` 以下は拒否する。
+結果・command・stdout/stderr のサイズ/hash/末尾要約・time・peak RSS を
+タスクの `task_results.jsonl` に保存し、全生出力を `task_outputs.tar` にまとめる。
+tar を flush/fsync してから JSONL に完了を追記し、flush/fsync する。
+再開は成功・failure・timeout を保ち、JSONL の途中行と tar の未確定末尾だけを除いて、
+未完了の CLI を保存済み順序で実行する。ローカルの途中出力は allocation 終了時に失われ得る。
+共有領域の `run/` は5ファイルで、ジョブ別 directory を作らない。
+
+入力凍結も全件で1つの `inputs.tar` にした。
+G は1 task 1 tar と JSONL、metadata の計3ファイル。
+G 集約後の公開 dataset も `dataset.json` と `inputs.tar` の2ファイルだけ。
+旧 directory 形式と `results/archives/*.tar[.gz]` は member のストリーム読み込みで解析し、
+共有領域へ展開しない。大きな旧 E1 archive は `archive.tar::tasks/<tier>/<id>/run` で task を指定できる。
+旧計画は読み取り用に保持し、実行には新しい計画を作る。
+
+両 planner は出力作成前に file-count budget を検査する。
+`lfs quota -p 102571 /gs/bs` の残りを取得し、取得失敗時は config の
+`file_budget.fallback_remaining_files` を使う（明示値がなければ拒否）。
+残りの10%を超える計画は拒否し、見積もりと quota 原文・判定を plan に保存する。
+事故時の上限2,400万を config の保守的上限に残した。
+今回の live 表示は2,800万で異なるため、有効上限は両者の小さい値を使う。
+fallback は80万とし、投入直前に実際の残りを再確認する。
+
+[新しい E1 全体の dry-run 見積もり](packed_array_20261011/array_estimate.json) は、
+実依存 lock と既存 G/input の hash 検証を通り、26,063 RNA・841 tasks・699,387 CLI jobs。
+`--dry-run --estimate-only` で1つの JSON とその directory だけを作り、task directory、
+699,387件の schedule、生出力、入力コピーは作っていない。実行用の計画ではない。
+
+| 対象 | 共有領域の見積もり（directory と一時ファイル余裕込み） |
+|---|---:|
+| E1 全体 | **10,963 entries** = 841 × 13 + 30 |
+| G 全体（79 tasks） | 743 entries = 79 × 9 + 32 |
+| 新 E1 見積もり artifact 自体 | 2 entries（JSON + directory） |
+
+E1 判定時の使用数は23,118,679、有効上限24,000,000、残り881,321。
+10%の許容枠88,132に対して10,963なので通過（残りの約1.24%）。
+初回 scheduler log、plan/config/schedule、task metadata/lock、tar/JSONL、directory、
+同時 atomic-write temporary を含む。再投入の log と別の解析結果は別途数える。
+検査は quota を予約しない。ローカル scratch 容量、共有 byte quota、tar 転送時間を含む
+task wall-time、同時 task 数、group/queue/module は投入前に要確認。
+
+G の旧 lock は保持し、改訂 script の hash を持つ別の packed lock を新 G config に指定する。
+既存 G dataset を読むことと、新形式で G を再実行することは別である。
+G の新公開先と cohort の `scaffold_dataset` を対応させてから ready plan を作る。
+
+開発上の検証は一時領域の数ジョブで行い、後で削除する。
+新旧形式の BPP/context/accessibility/E0 値、失敗の分母、停止・再開、JSONL の途中行、
+tar の未確定末尾、集計、旧 archive と G archive、予算超過時の作成前拒否を確認する。
+検証記録は [progress](progress.md) に追記する。性能や科学的な全件一致の主張は追加していない。
+
 ## 入力と条件
 
 [取得 manifest](../manifests/data-sources/bprna-local-20261008.json) の clean 集合を全件使用する。
@@ -235,7 +293,8 @@ cpu_4/8/16/40は0.015/0.03/0.06/0.15、node_q/hは0.25/0.5。
 
 Queue待ち、再実行、優先度追加、storageを含まない。料金の0.0001ポイント単位切捨ては概算では省いた。
 利用group・残額・同時task数・queueのresource/h_rt制限・module環境は投入前に要確認。
-E1は標準のraw配置で約373万ファイル＋約70万jobディレクトリになるため、容量とi-node quotaも確認する。
+旧E1のraw配置は約373万ファイル＋約70万jobディレクトリとなり、共有projectでは投入禁止。
+新形式のファイル数の事前検査は上の更新節を参照する。byte容量の確認も必要。
 短いCLIを一つずつarrayへ投げず、数百本のmatrixをbatchすることでscheduler task数と最低課金の影響を抑える。
 
 ## Dry-run artifacts と実行前の再計画

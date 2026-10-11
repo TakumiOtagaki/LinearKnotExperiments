@@ -3,7 +3,7 @@
   "purpose": "formal",
   "source_manifest": "manifests/data-sources/bprna-local-20261008.json",
   "linearpartition": "deps/LinearPartition-20261008/linearpartition",
-  "software_lock": "manifests/software-scaffold-b450fb3e-20261011.json",
+  "software_lock": "manifests/software-scaffold-b450fb3e-packed-20261011.json",
   "scaffold_dataset": "results/local/bprna-full-scaffolds-20261011/dataset.json",
   "timeout_seconds": 120,
   "array": {
@@ -211,6 +211,14 @@
           "safety_factor": 1.5
         }
       }
-    ]
+    ],
+    "file_budget": {
+      "project": 102571,
+      "filesystem": "/gs/bs",
+      "hard_file_limit": 24000000,
+      "max_remaining_fraction": 0.1,
+      "fallback_remaining_files": 800000,
+      "fallback_basis": "Conservative fallback below the 2026-10-11 snapshot; verify before submission"
+    }
   }
 }

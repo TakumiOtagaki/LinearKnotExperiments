@@ -162,3 +162,17 @@ was performed.
 - すべての変更は実験repo内。開発treeの変更・checkout・build、qsub、重い計算実験、commit、push、論文repoの他のファイルの変更は行っていない。
 
 [更新版計画](full_bprna_array_plan_20261011.md) と [再現・証拠一覧](e0_oracle_update_20261011/README.md) を参照。
+
+## 2026-10-11 共有 project のファイル数事故への対応
+
+- CLI array と G array のジョブ別 directory/生出力を node-local `$TMPDIR`（なければ明示した `--scratch-dir`、`/gs/bs` 以下は拒否）へ移した。共有結果は task ごとの `task_results.jsonl` と `task_outputs.tar`。CLI の `run/` は5ファイル、G は3ファイル。完了ごとに tar を fsync してから JSONL を追記・flush/fsync し、再開は JSONL を正本として成功・失敗・timeout を保つ。途中行と未確定 tar 末尾から回復し、共有書き込み失敗時は残りの worker を停止する。
+- 計画の入力凍結を全 RNA で1つの `inputs.tar` に変更。G 公開 dataset も `dataset.json` と `inputs.tar` の2ファイルにした。集計・summary・accuracy・E0・domain validation・cohort resolution は member をストリームで読み、共有領域へ展開しない。旧 directory と旧 tar/tar.gz の互換読み込み、旧 manifest 更新前の result marker 回復、archive 内の task 指定にも対応した。
+- 両 planner に共有 entry 数（directory、scheduler log、一時ファイル余裕込み）の見積もりと作成前拒否を追加。project 102571 の live quota と、config の保守的上限2,400万の小さい値を使い、残りの10%以内に制限する。quota 取得失敗時は明示 fallback が必要。全件 config の fallback は80万。旧 G lock を保持し、改訂 code の8 hash を持つ新しい packed G lock を作成・検証した。LP source/wrapper/binary は変更していない。
+- E1 全体の `--dry-run --estimate-only` は実依存 lock と既存 G/input hash の検証を通過。26,063 RNA・841 tasks・699,387 jobs、共有領域は **10,963 entries = 841 × 13 + 30**。live 使用数23,118,679、有効上限24,000,000、残り881,321、10%枠88,132に対し約1.24%で通過した。live の表示上限28,000,000と事故時の24,000,000の差を明記した。dry-run は1つの JSON と directory のみを作り、task directory・全 schedule・入力コピー・CLI 出力は作っていない。
+- 開発上の検証：`python3 -m unittest discover -s tests` は **52 tests、17.295秒、全成功**。小さな実 CLI fixture の新旧 accuracy/E0 値、summary、失敗と欠測の分母、段階停止/再開、完了 JSONL と stale manifest、途中 JSONL と orphan tar、quota 拒否前の無書き込み、G の新旧形式・公開 tar、SIGTERM と共有書き込み失敗時の worker 停止を確認した。fixture は一時領域で作成し削除した。既存の synthetic pilot テストも共有 data directory を使わないよう修正した。
+- 既存の実 archive も読み取りだけで確認：E1 `nt50_99/000001` の13,500計画ジョブから一件の stdout（1,939 bytes）と入力（119 bytes）を読み、G tar の79 tasks / 26,063 jobsを集計して全26,063件の完了を確認した。展開ファイルは0。G 全件を今回再生成した、または E1 全件の科学的な結果を検証したとの主張はしない。
+- README、protocol、全件計画を更新した。すべての変更は実験repo内。qsub、git commit/push、外部の実装 tree の変更、論文repoの他のファイルの変更、大量のファイルを作るテストは行っていない。旧計画からの実行再開は新計画への置き換えが必要。投入直前の quota/fallback、ローカル scratch 容量、共有 byte quota、tar 転送を含む wall-time、scheduler/group/module、G 公開先と cohort の対応は要確認。
+
+[E1 見積もり](packed_array_20261011/array_estimate.json)、
+[検証記録](packed_array_20261011/verification.json)、
+[改訂計画](full_bprna_array_plan_20261011.md) を参照。
