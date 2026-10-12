@@ -22,6 +22,21 @@ uses full-precision Raccess thermodynamic metadata, and checks consistency
 across the three programs. It does not yet score decoder structures or
 sampling frequencies.
 
+`scripts/analyze_bprna_short.py` extends a validated packed short-cohort TSV
+with capb (`h=d=max(b,30)`) using `--extend PREVIOUS_OUTPUT --capb-run RUN`.
+Its positional argument is the new output directory. It verifies the identical
+cohort, model, binaries and unchanged earlier task checkpoints before reusing
+the old scalar metrics. It streams new tar members and temporarily stores
+scalars in one SQLite file under `/tmp`; it never extracts raw outputs.
+The output has six files: one paired TSV, three JSON files (including validation),
+and two distribution PNGs. `report_bprna_short.py` and
+`validate_bprna_short.py` also accept this extended output.
+At b20, capb and the adopted policy reuse the measured `beam20_default`;
+b50/100/200 use the new capb measurements. The summary preserves the three
+cap regimes and the adopted policy, paired within-RNA error differences,
+monotonicity and resource ratios. Resource ratios are reference values from
+parallel accuracy runs, not isolated performance measurements.
+
 ## Biological input candidates
 
 The next accuracy pilot will use short bpRNA sequences. The author approved

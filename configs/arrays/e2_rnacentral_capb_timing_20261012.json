@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "measurement": "timing",
+  "seed": 20261012,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1
+  },
+  "tiers": [
+    {
+      "name": "rna_4_8kb",
+      "min_length": 1,
+      "max_length": 8191,
+      "resource": "node_f",
+      "h_rt": "20:00:00",
+      "target_seconds": 48000,
+      "max_inputs_per_task": 1,
+      "workers": 1,
+      "memory_budget_mib": 300000,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "timeout_seconds": 7200,
+        "memory_limit_mib": 262144
+      },
+      "cost_model": {
+        "basis": "Historical isolated 30/30 E2 wall/n <0.07 s/nt/CLI, peak <2.3 MiB/nt. Factor 2 time and 7 MiB/nt memory allow cap100 uncertainty; envelope only, not a measured cap100 prediction. One RNA per task.",
+        "seconds_per_nt_condition": 0.07,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 2,
+        "memory_base_mib": 2048,
+        "mib_per_nt": 7
+      }
+    },
+    {
+      "name": "rna_8_20kb",
+      "min_length": 8192,
+      "max_length": 19999,
+      "resource": "node_f",
+      "h_rt": "24:00:00",
+      "target_seconds": 60000,
+      "max_inputs_per_task": 1,
+      "workers": 1,
+      "memory_budget_mib": 300000,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "timeout_seconds": 7200,
+        "memory_limit_mib": 262144
+      },
+      "cost_model": {
+        "basis": "Historical isolated 30/30 E2 wall/n <0.07 s/nt/CLI, peak <2.3 MiB/nt. Factor 2 time and 7 MiB/nt memory allow cap100 uncertainty; envelope only, not a measured cap100 prediction. One RNA per task.",
+        "seconds_per_nt_condition": 0.07,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 2,
+        "memory_base_mib": 2048,
+        "mib_per_nt": 7
+      }
+    },
+    {
+      "name": "rna_20_30kb",
+      "min_length": 20000,
+      "max_length": 30000,
+      "resource": "node_f",
+      "h_rt": "24:00:00",
+      "target_seconds": 60000,
+      "max_inputs_per_task": 1,
+      "workers": 1,
+      "memory_budget_mib": 300000,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "timeout_seconds": 7200,
+        "memory_limit_mib": 262144
+      },
+      "cost_model": {
+        "basis": "Historical isolated 30/30 E2 wall/n <0.07 s/nt/CLI, peak <2.3 MiB/nt. Factor 2 time and 7 MiB/nt memory allow cap100 uncertainty; envelope only, not a measured cap100 prediction. One RNA per task.",
+        "seconds_per_nt_condition": 0.07,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 2,
+        "memory_base_mib": 2048,
+        "mib_per_nt": 7
+      }
+    }
+  ]
+}

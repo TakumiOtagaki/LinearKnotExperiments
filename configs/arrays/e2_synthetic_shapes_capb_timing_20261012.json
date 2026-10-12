@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "measurement": "timing",
+  "seed": 20261012,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1
+  },
+  "tiers": [
+    {
+      "name": "synthetic_n250",
+      "min_length": 250,
+      "max_length": 250,
+      "resource": "node_f",
+      "h_rt": "12:00:00",
+      "target_seconds": 24000,
+      "max_inputs_per_task": 4,
+      "workers": 1,
+      "memory_budget_mib": 140000,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Planning envelope only: historical isolated h=d=30 E2 worst wall/n is below 0.07 s/nt/CLI. Factor 3 allows cap100 and synthetic uncertainty; no calibrated shape model or asymptotic law. Start n250/500, then refit immutable larger-tier plan if needed.",
+        "seconds_per_nt_condition": 0.07,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 3,
+        "memory_base_mib": 2048,
+        "mib_per_nt": 7
+      }
+    },
+    {
+      "name": "synthetic_n500",
+      "min_length": 500,
+      "max_length": 500,
+      "resource": "node_f",
+      "h_rt": "12:00:00",
+      "target_seconds": 24000,
+      "max_inputs_per_task": 4,
+      "workers": 1,
+      "memory_budget_mib": 140000,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Planning envelope only: historical isolated h=d=30 E2 worst wall/n is below 0.07 s/nt/CLI. Factor 3 allows cap100 and synthetic uncertainty; no calibrated shape model or asymptotic law. Start n250/500, then refit immutable larger-tier plan if needed.",
+        "seconds_per_nt_condition": 0.07,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 3,
+        "memory_base_mib": 2048,
+        "mib_per_nt": 7
+      }
+    },
+    {
+      "name": "synthetic_n1000",
+      "min_length": 1000,
+      "max_length": 1000,
+      "resource": "node_f",
+      "h_rt": "12:00:00",
+      "target_seconds": 24000,
+      "max_inputs_per_task": 4,
+      "workers": 1,
+      "memory_budget_mib": 140000,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Planning envelope only: historical isolated h=d=30 E2 worst wall/n is below 0.07 s/nt/CLI. Factor 3 allows cap100 and synthetic uncertainty; no calibrated shape model or asymptotic law. Start n250/500, then refit immutable larger-tier plan if needed.",
+        "seconds_per_nt_condition": 0.07,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 3,
+        "memory_base_mib": 2048,
+        "mib_per_nt": 7
+      }
+    },
+    {
+      "name": "synthetic_n2000",
+      "min_length": 2000,
+      "max_length": 2000,
+      "resource": "node_f",
+      "h_rt": "12:00:00",
+      "target_seconds": 24000,
+      "max_inputs_per_task": 4,
+      "workers": 1,
+      "memory_budget_mib": 140000,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Planning envelope only: historical isolated h=d=30 E2 worst wall/n is below 0.07 s/nt/CLI. Factor 3 allows cap100 and synthetic uncertainty; no calibrated shape model or asymptotic law. Start n250/500, then refit immutable larger-tier plan if needed.",
+        "seconds_per_nt_condition": 0.07,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 3,
+        "memory_base_mib": 2048,
+        "mib_per_nt": 7
+      }
+    },
+    {
+      "name": "synthetic_n4000",
+      "min_length": 4000,
+      "max_length": 4000,
+      "resource": "node_f",
+      "h_rt": "12:00:00",
+      "target_seconds": 24000,
+      "max_inputs_per_task": 4,
+      "workers": 1,
+      "memory_budget_mib": 140000,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Planning envelope only: historical isolated h=d=30 E2 worst wall/n is below 0.07 s/nt/CLI. Factor 3 allows cap100 and synthetic uncertainty; no calibrated shape model or asymptotic law. Start n250/500, then refit immutable larger-tier plan if needed.",
+        "seconds_per_nt_condition": 0.07,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 3,
+        "memory_base_mib": 2048,
+        "mib_per_nt": 7
+      }
+    }
+  ]
+}
