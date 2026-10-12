@@ -102,8 +102,11 @@ def validate_array(config, settings):
         resource = tier.get("resource")
         if resource not in RESOURCES or type(workers) is not int or not 1 <= workers <= RESOURCES[resource][0]:
             raise ValueError("unknown resource or workers exceed allocated cores")
-        if settings["measurement"] == "timing" and (resource != "node_f" or workers != 1):
-            raise ValueError("timing arrays require node_f=1 and workers=1")
+        # Timing runs one single-threaded job at a time per task. A full node is
+        # not required: the allocation only has to hold the job's memory, and
+        # repeated measurements expose noise from co-scheduled jobs.
+        if settings["measurement"] == "timing" and workers != 1:
+            raise ValueError("timing arrays require workers=1")
         wall = wall_seconds(tier.get("h_rt"))
         target = positive(tier.get("target_seconds"), "target_seconds")
         fraction = positive(tier.get("max_wall_fraction", 0.7), "max_wall_fraction")

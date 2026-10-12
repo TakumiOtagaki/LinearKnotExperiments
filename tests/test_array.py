@@ -138,8 +138,9 @@ sys.exit(7 if pathlib.Path(sys.argv[0]).name == 'failure' else 0)
                 validate_array(self.config, settings)
         settings = copy.deepcopy(self.settings)
         settings["measurement"] = "timing"
-        with self.assertRaisesRegex(ValueError, "node_f"):
-            validate_array(self.config, settings)
+        for t in settings["tiers"]:
+            t["workers"] = 1
+        validate_array(self.config, settings)  # a partial node is allowed
         for t in settings["tiers"]:
             t["resource"] = "node_f"
         validate_array(self.config, settings)
