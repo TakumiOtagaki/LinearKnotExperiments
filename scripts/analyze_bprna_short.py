@@ -39,8 +39,14 @@ CHECKS = ["stem_vs_bpp_max_error", "accessibility_w1_vs_unpaired_max_error",
           "accessibility_above_marginal_max_violation"]
 REFERENCES = ["exact_LinearCParty_rerun", "exact_LinearPKCapR_rerun", "exact_LinearPKRaccess_rerun",
               "rt_kcal_mol", "exact_free_energy_kcal_mol"]
-FIELDS = IDENTITY + DESCRIPTORS + CORE + CONTEXT + ACCESS + CHECKS + REFERENCES
+RESOURCES = [f"{p}_{k}" for p in accuracy.PROGRAMS for k in
+             ("elapsed_seconds", "time_wall_seconds", "peak_rss_kib")]
+FIELDS = IDENTITY + DESCRIPTORS + CORE + CONTEXT + ACCESS + CHECKS + REFERENCES + RESOURCES
 METRICS = CORE + CONTEXT + [key for key in ACCESS if "mae" in key or "max_error" in key]
+
+
+def measured_modes(caps):
+    return [f"beam{b}_{c}" for c in caps for b in BEAMS if c != "capb" or b != 20]
 
 
 def crossing_descriptors(record, bpp, contexts):
@@ -221,37 +227,51 @@ def load_metrics(output):
     import numpy as np
     provenance = json.loads((output / "provenance.json").read_text())
     numeric = [key for key in FIELDS if key not in IDENTITY]
-    numbers = np.empty((provenance["inputs"] * 8, len(numeric)))
+    caps = provenance.get("caps", CAPS)
+    modes = measured_modes(caps)
+    numbers = np.full((provenance["inputs"], len(caps), len(BEAMS), len(numeric)), np.nan)
     metadata, names = [], []
     with (output / "metrics.tsv").open() as stream:
         for i, row in enumerate(csv.DictReader(stream, delimiter="\t")):
-            numbers[i] = [float(row[k]) if row[k] != "NA" else np.nan for k in numeric]
-            if i % 8 == 0:
+            if i >= provenance["inputs"] * len(modes):
+                raise ValueError("TSV row count differs from provenance")
+            ci, bi = list(caps).index(row["cap"]), BEAMS.index(int(row["beam"]))
+            numbers[i // len(modes), ci, bi] = [float(row[k]) if row.get(k, "NA") != "NA" else np.nan for k in numeric]
+            if i % len(modes) == 0:
                 names.append(row["input"])
                 metadata.append({k: (None if row[k] == "NA" else float(row[k])) for k in DESCRIPTORS})
-            expected = f"beam{BEAMS[i%4]}_{CAPS[(i%8)//4]}"
+            expected = modes[i % len(modes)]
             if row["input"] != names[-1] or row["mode"] != expected:
                 raise ValueError("TSV must keep each RNA's complete paired beam/cap block")
-    if i + 1 != len(numbers):
+    if len(names) * len(modes) != provenance["inputs"] * len(modes) or i + 1 != provenance["inputs"] * len(modes):
         raise ValueError("TSV row count differs from provenance")
-    return provenance, {key: numbers[:, j].reshape(-1, 2, 4) for j, key in enumerate(numeric)}, names, metadata
+    if "capb" in caps:
+        numbers[:, list(caps).index("capb"), 0] = numbers[:, list(caps).index("default"), 0]
+    return provenance, {key: numbers[..., j] for j, key in enumerate(numeric)}, names, metadata
 
 
 def summarize(output, make_plots=True):
     import numpy as np
     provenance, data, names, metadata = load_metrics(output)
+    caps = list(provenance.get("caps", CAPS))
+    if "capb" in caps:
+        # The adopted policy uses the measured default b20 and measured capb b>=50.
+        for key in data:
+            data[key] = np.concatenate((data[key], data[key][:, caps.index("capb"):caps.index("capb")+1, :]), axis=1)
+        caps.append("adopted")
     length = data["length"][:, 0, 0]
     bins = [("all", 50, 399)] + [(t, lo, hi) for t, lo, hi in zip(TIERS, (50,100,200,300), (99,199,299,399))]
     bins += [(f"nt{lo}_{lo+24}", lo, lo+24) for lo in range(50,400,25)]
     summary = {"schema_version": 1, "generated_utc": now(), "inputs": len(names),
                "quantiles": "RNA-weighted; numpy linear interpolation; NA excluded per metric with denominator retained",
-               "metrics_sha256": provenance["metrics_sha256"], "bins": [], "monotonicity": [],
+               "metrics_sha256": provenance["metrics_sha256"], "caps": caps, "bins": [], "monotonicity": [],
+               "condition_sources": {c: {str(b): f"beam{b}_{'default' if b == 20 and c in ('capb','adopted') else 'capb' if c == 'adopted' else c}" for b in BEAMS} for c in caps},
                "worst_examples": {}, "nonmonotone_examples": {}, "diagnostic_inputs": {}}
     for label, lo, hi in bins:
         selected = (length >= lo) & (length <= hi)
         group = {"bin": label, "min_length": lo, "max_length": hi, "sequences": int(selected.sum()),
                  "conditions": [], "cap_differences_default_minus_nocap": []}
-        for ci, cap in enumerate(CAPS):
+        for ci, cap in enumerate(caps):
             for bi, beam in enumerate(BEAMS):
                 metrics = {k: statistics(data[k][selected, ci, bi]) for k in METRICS}
                 delta = data[CORE[0]][selected, ci, bi]
@@ -271,17 +291,43 @@ def summarize(output, make_plots=True):
         for bi, beam in enumerate(BEAMS):
             values = {}
             for key in METRICS:
-                diff = data[key][selected,0,bi] - data[key][selected,1,bi]
+                diff = data[key][selected,caps.index("default"),bi] - data[key][selected,caps.index("nocap"),bi]
                 tolerance = 1e-8 if key.startswith("delta_free_energy") else 1e-9
                 finite = diff[np.isfinite(diff)]
                 values[key] = {**statistics(diff), "default_larger_count": int(np.sum(finite > tolerance)),
                                "nocap_larger_count": int(np.sum(finite < -tolerance)), "comparison_tolerance": tolerance}
             group["cap_differences_default_minus_nocap"].append({"beam": beam, "metrics": values})
+        if "capb" in caps:
+            group["paired_cap_differences"] = []
+            for right in ("nocap", "default"):
+                for bi, beam in enumerate(BEAMS):
+                    values = {}
+                    for key in METRICS:
+                        diff = data[key][selected,caps.index("capb"),bi] - data[key][selected,caps.index(right),bi]
+                        tolerance = 1e-8 if key.startswith("delta_free_energy") or "kcal_mol" in key else 1e-9
+                        finite = diff[np.isfinite(diff)]
+                        values[key] = {**statistics(diff), "left_larger_count": int(np.sum(finite > tolerance)),
+                                       "right_larger_count": int(np.sum(finite < -tolerance)),
+                                       "equal_within_tolerance_count": int(np.sum(np.abs(finite) <= tolerance)),
+                                       "comparison_tolerance": tolerance}
+                    group["paired_cap_differences"].append({"left": "capb", "right": right, "beam": beam, "metrics": values})
+            group["resource_ratios_capb_over_default"] = []
+            for bi, beam in enumerate(BEAMS):
+                metrics = {}
+                for key in RESOURCES:
+                    numerator = data[key][selected,caps.index("capb"),bi]
+                    denominator = data[key][selected,caps.index("default"),bi]
+                    valid = np.isfinite(numerator) & np.isfinite(denominator) & (denominator > 0) & (numerator >= 0)
+                    ratios = np.full(len(numerator), np.nan)
+                    np.divide(numerator, denominator, out=ratios, where=valid)
+                    metrics[key] = {**statistics(ratios), "total_sequences": int(selected.sum()),
+                                    "invalid_or_zero_denominator": int((~valid).sum())}
+                group["resource_ratios_capb_over_default"].append({"beam": beam, "metrics": metrics})
         summary["bins"].append(group)
     def example(index, ci, bi):
-        return {"input": names[index], "cap": CAPS[ci], "beam": BEAMS[bi], **metadata[index],
+        return {"input": names[index], "cap": caps[ci], "beam": BEAMS[bi], **metadata[index],
                 **{k: (float(data[k][index,ci,bi]) if np.isfinite(data[k][index,ci,bi]) else None) for k in CORE}}
-    for ci, cap in enumerate(CAPS):
+    for ci, cap in enumerate(caps):
         for key in (CORE[0], CORE[4], CORE[6]):
             for bi, beam in enumerate(BEAMS):
                 values = data[key][:,ci,bi]
@@ -300,36 +346,40 @@ def summarize(output, make_plots=True):
         if name not in names:
             continue
         i = names.index(name)
-        summary["diagnostic_inputs"][name] = [example(i,ci,bi) for ci in range(2) for bi in range(4)]
+        summary["diagnostic_inputs"][name] = [example(i,ci,bi) for ci in range(len(caps)) for bi in range(4)]
+    if "capb" in caps:
+        summary["resource_ratio_caveat"] = "Reference values only: concurrent accuracy runs, one measurement, different allocations/dates; elapsed includes GNU time wrapper; GNU wall rounds to 0.01s and zero denominators are excluded. b20 reuses the identical default observation."
     summary["maximum_consistency_errors"] = {k: float(np.nanmax(data[k])) for k in CHECKS}
     summary["rt_range"] = [float(np.nanmin(data["rt_kcal_mol"])), float(np.nanmax(data["rt_kcal_mol"]))]
     summary["eligible_zero_window_sequences"] = {str(w): int(np.sum(data[f"access_w{w}_eligible_windows"][:,0,0] == 0)) for w in (1,4,8,16)}
     (output / "summary.json").write_text(json.dumps(summary, indent=2, allow_nan=False) + "\n")
     if make_plots:
-        plot_distributions(output, data, length)
+        plot_distributions(output, data, length, caps)
     return summary
 
 
-def plot_distributions(output, data, length):
+def plot_distributions(output, data, length, caps=CAPS):
     import numpy as np
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     plt.rcParams.update({"font.size": 10, "axes.spines.top": False, "axes.spines.right": False})
     intervals = [(50,99),(100,199),(200,299),(300,399)]
-    colors = ("#416a9c", "#cd7b35")
+    colors = ("#416a9c", "#299768", "#cd7b35", "#a1559b")
+    plotted_caps = [c for c in caps if c != "adopted"]
     for metric, filename in [(CORE[0], "delta_F_distribution.png"), (CORE[1], "retention_distribution.png")]:
         fig, axes = plt.subplots(1,4,figsize=(14,4.2),sharey=True)
         for ax, (lo,hi) in zip(axes, intervals):
             selected = (length >= lo) & (length <= hi)
-            for ci, cap in enumerate(CAPS):
-                samples = [data[metric][selected,ci,bi] for bi in range(4)]
+            for ci, cap in enumerate(plotted_caps):
+                source_ci = list(caps).index(cap)
+                samples = [data[metric][selected,source_ci,bi] for bi in range(4)]
                 samples = [x[np.isfinite(x)] for x in samples]
                 if metric == CORE[0]:
                     # Only display clips roundoff; signed values remain unchanged in TSV/JSON.
                     samples = [np.maximum(x,0) for x in samples]
-                positions = np.arange(4)+1+(-.17 if ci == 0 else .17)
-                bp = ax.boxplot(samples,positions=positions,widths=.27,whis=(10,90),showfliers=False,
+                positions = np.arange(4)+1+(ci-(len(plotted_caps)-1)/2)*.24
+                bp = ax.boxplot(samples,positions=positions,widths=.2,whis=(10,90),showfliers=False,
                                 patch_artist=True,manage_ticks=False)
                 for box in bp["boxes"]: box.set(facecolor=colors[ci],alpha=.65)
                 for bi, sample in enumerate(samples):
@@ -345,8 +395,8 @@ def plot_distributions(output, data, length):
         else:
             axes[0].set(ylim=(-.03,1.04),ylabel="Partition-function ratio Zb / Zexact")
         from matplotlib.patches import Patch
-        fig.legend(handles=[Patch(facecolor=colors[ci],alpha=.65,label=cap) for ci,cap in enumerate(CAPS)],
-                   loc="upper center",ncol=2,frameon=False)
+        fig.legend(handles=[Patch(facecolor=colors[ci],alpha=.65,label=cap) for ci,cap in enumerate(plotted_caps)],
+                   loc="upper center",ncol=len(plotted_caps),frameon=False)
         fig.text(.5,.01,"Box: 25–75%, line: median, whiskers: 10–90%, triangle: 99%, x: extreme",ha="center",fontsize=9)
         fig.tight_layout(rect=(0,.055,1,.91))
         fig.savefig(output/filename,dpi=170)
@@ -365,5 +415,15 @@ def analyze_packed_array(run, rerun_paths, output):
 
 
 if __name__ == "__main__":
-    # Regenerate only aggregates/plots from the preserved single TSV.
-    summarize(Path(sys.argv[1]))
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("output", type=Path)
+    parser.add_argument("--extend", type=Path, help="reuse the validated earlier short-array metrics")
+    parser.add_argument("--capb-run", type=Path)
+    args = parser.parse_args()
+    if bool(args.extend) != bool(args.capb_run):
+        parser.error("--extend and --capb-run must be supplied together")
+    if args.extend:
+        from bprna_capb import extend_capb
+        extend_capb(args.extend, args.capb_run, args.output)
+    summarize(args.output)

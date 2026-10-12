@@ -176,3 +176,12 @@ was performed.
 [E1 見積もり](packed_array_20261011/array_estimate.json)、
 [検証記録](packed_array_20261011/verification.json)、
 [改訂計画](full_bprna_array_plan_20261011.md) を参照。
+
+## 2026-10-12 E1 short cohort に capb と採用条件を追加
+
+- `analyze_bprna_short.py --extend <validated-output> --capb-run <packed-run>` を追加した。新helper `bprna_capb.py` は同じS/G cohort・model・binary・計算引数を検証し、以前の全task/checkpointとexact再実行のhashを照合してから旧scalar指標を再利用する。tarはmember streamで読み、単一SQLiteを `/tmp` で一時使用して削除する。共有領域へraw出力を展開しない。
+- 固定版 `15aa7742` の24,625 RNAを、default30/30・capb=max(b,30)・nocap100000で比較した。capb b20と採用条件b20は既存defaultの同じ観測を共用し、b50/100/200は新capbを使う。TSVは実測11条件・270,875行、summaryは3上限条件と採用条件の4幅を表示する。既存197,000行の指標は全列そのまま保持した。
+- b200 capbとnocapのΔFは全配列で差0。旧defaultより小さいΔFは3,743 RNA、大きいΔFは0（許容10⁻⁸）。採用条件では全体99.27%がΔF≤0.01 kcal/molだが、300–399 ntは14.98%が0.01、2.56%が1を超え、最大4.198 kcal/mol・最小保持率0.1101%。b50 capbとnocapの差には538 RNAでcapb大、1 RNAでnocap大があり、設定の一般的な単調改善は仮定しない。
+- 採用条件の非増加はΔF 99.45%、BPP TV 97.48%、context TV 98.18%。旧defaultやnocapとの差は同じRNAのexact誤差指標の差であり、2設定のposterior同士のTVではない。LinearCPartyおよび他のCLIの時間・RSS比も保存し、並列accuracy runの参考値と明記した。0の分母と欠測を除き、分母を保持する。
+- 59/59 unittestと24/24成果物検証が成功。exact失敗349件の指定再実行置換と元履歴を保持し、差し替え後886,500成功CLI観測、295,500組の整合を確認した。新capb 73,875組とexact再確認24,625組も成功。既存pilotの96条件・4,416 scalarは最大差0。alias・配列内差・資源比・採用条件の単調性をTSVから照合した。
+- 成果物は `results/local/e1-bprna-short-capb-20261012/` のTSV 1、JSON 3、PNG 2（6ファイル、約247 MiB）。解析はsingle thread、全体1313.85秒・peak RSS 795,172 KiB。読み取り・集計だけで、qsub・git commit・外部実装変更は行っていない。論文側ノート `textbook/notes/e1_bprna_short_capb_20261012.md` に全表・主張の範囲・400 nt以上への含意・再生成コマンドをまとめた。

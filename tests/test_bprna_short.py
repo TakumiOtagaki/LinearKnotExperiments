@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 import analyze_accuracy as accuracy
 import analyze_bprna_short as short
+import bprna_capb as capb
 from task_storage import FORMAT, RunReader, TaskStore
 from run_cli import digest
 
@@ -40,14 +41,23 @@ class ShortAnalysisTests(unittest.TestCase):
         for mode in modes:
             weight = .4 if mode=='exact' else {20:0,50:.2,100:.1,200:.3}[int(mode.split('_')[0][4:])]
             delta = 0 if mode=='exact' else {20:1,50:.3,100:.4,200:.1}[int(mode.split('_')[0][4:])]
+            if mode.endswith('_capb'):
+                beam=int(mode[4:].split('_')[0])
+                weight={50:.25,100:.05,200:.35}[beam]
+                delta={50:.2,100:.45,200:.05}[beam]
             for program in accuracy.PROGRAMS:
                 command=['binary','-i',str(self.input)] + (['--exact'] if mode=='exact' else ['-b',mode[4:].split('_')[0]])
+                if mode.endswith('_capb'):
+                    beam = mode[4:].split('_')[0]
+                    command += ['--max-hairpin',beam,'--max-case3-depth',beam]
                 if program=='LinearCParty':command+=['--bpp-cutoff','0','--bpp','local/bpp.tsv']
                 job=dict(id=f'toy-{mode}-{program}',input='toy',mode=mode,program=program,warmup=False,repetition=0,command=command)
                 planned.append(job)
                 broken = failed and mode=='exact' and program=='LinearPKRaccess'
                 row={**job,'status':'failed' if broken else 'success','error':'bad_alloc' if broken else None,
-                     'directory':'jobs/'+job['id']}
+                     'directory':'jobs/'+job['id'], 'elapsed_seconds':4 if mode.endswith('_capb') else 2,
+                     'time_wall_seconds':0 if mode.startswith('beam50_') else 1,
+                     'peak_rss_kib':150 if mode.endswith('_capb') else 100}
                 bpp='>toy\n1 8 1\n'+(f'2 7 {weight}\n' if weight else '')
                 q=[0,1-weight,1,1,1,1,1-weight,0]+[1]*42
                 contexts={c:[0.]*50 for c in accuracy.CONTEXTS}
@@ -154,6 +164,100 @@ class ShortAnalysisTests(unittest.TestCase):
         self.assertAlmostEqual(result['p90'],8.2)
         self.assertAlmostEqual(result['p99'],9.82)
         self.assertEqual((result['min'],result['max']),(0,10))
+
+    def capb_fixture(self, failed=False):
+        run=self.root/'array'
+        task=run/'tasks/nt50_99/000001/run'
+        modes=['exact']+short.measured_modes(short.CAPS)
+        self.pack(task,modes,failed=failed)
+        reruns=[]
+        if failed:
+            rerun=self.pack(self.root/'rerun',['exact'])
+            checkpoint=rerun/'task_results.jsonl'
+            rows=[json.loads(line) for line in checkpoint.read_text().splitlines()]
+            rows=[r for r in rows if r['program']=='LinearPKRaccess']
+            checkpoint.write_text(''.join(json.dumps(r)+'\n' for r in rows))
+            m=json.loads((rerun/'run.json').read_text())
+            m['planned_jobs']=[{k:r[k] for k in ('id','input','mode','program','warmup','repetition','command')} for r in rows]
+            (rerun/'run.json').write_text(json.dumps(m))
+            reruns=[rerun]
+        task_entry=dict(tier='nt50_99',task_id=1,directory='tasks/nt50_99/000001',inputs=[self.entry])
+        plan={**self.base,'inputs':[self.entry],'tasks':[task_entry]}
+        (run/'array_plan.json').write_text(json.dumps(plan))
+        previous=self.root/'previous'
+        short.write_metrics(run,reruns,previous)
+        (previous/'validation.json').write_text(json.dumps({'all_passed':True}))
+        extra=self.root/'capb'
+        self.pack(extra/'tasks/nt50_99/000001/run',[f'beam{b}_capb' for b in short.BEAMS[1:]])
+        (extra/'array_plan.json').write_text(json.dumps(plan))
+        return previous,extra
+
+    def test_capb_extend_alias_pairing_resources_and_adopted_monotonicity(self):
+        previous,extra=self.capb_fixture(failed=True)
+        with patch('tarfile.TarFile.extractall',side_effect=AssertionError('must not extract')):
+            p=capb.extend_capb(previous,extra,self.root/'out')
+        self.assertEqual(p['original_job_status_counts'],{'success':35,'failed':1})
+        self.assertEqual(p['effective_job_status_counts'],{'success':36,'failed':0})
+        self.assertEqual(p['analysis_status_counts'],{'success':11})
+        self.assertEqual(p['consistency_check_counts'],{'success':12})
+        self.assertEqual(p['rechecked_exact_consistency_counts'],{'success':1})
+        _,data,_,_=short.load_metrics(self.root/'out')
+        import numpy as np
+        np.testing.assert_array_equal(data[short.CORE[0]][:,0,0],data[short.CORE[0]][:,1,0])
+        s=short.summarize(self.root/'out',make_plots=False)
+        overall=next(g for g in s['bins'] if g['bin']=='all')
+        adopted=[c for c in overall['conditions'] if c['cap']=='adopted']
+        np.testing.assert_allclose([c['metrics'][short.CORE[0]]['mean'] for c in adopted],[1,.2,.45,.05],atol=1e-14)
+        m=next(m for m in s['monotonicity'] if m['bin']=='all' and m['cap']=='adopted' and m['metric']==short.CORE[0])
+        self.assertEqual(m['nonmonotone_sequences'],1)
+        r=overall['resource_ratios_capb_over_default']
+        self.assertEqual(r[0]['metrics']['LinearCParty_elapsed_seconds']['median'],1)
+        self.assertEqual(r[1]['metrics']['LinearCParty_elapsed_seconds']['median'],2)
+        self.assertEqual(r[1]['metrics']['LinearCParty_peak_rss_kib']['median'],1.5)
+        self.assertEqual(r[1]['metrics']['LinearCParty_time_wall_seconds']['n'],0)
+        self.assertEqual(r[1]['metrics']['LinearCParty_time_wall_seconds']['invalid_or_zero_denominator'],1)
+        difference=overall['paired_cap_differences'][0]['metrics'][short.CORE[0]]
+        self.assertEqual(difference['equal_within_tolerance_count'],1)
+        difference=next(c for c in overall['paired_cap_differences'] if c['right']=='default' and c['beam']==50)['metrics'][short.CORE[0]]
+        self.assertAlmostEqual(difference['mean'],-.1)
+        self.assertEqual((difference['left_larger_count'],difference['right_larger_count']),(0,1))
+        probability=next(c for c in overall['paired_cap_differences'] if c['right']=='default' and c['beam']==50)['metrics'][short.CORE[4]]
+        self.assertAlmostEqual(probability['mean'],-.1/48)
+        difference=next(c for c in overall['paired_cap_differences'] if c['right']=='default' and c['beam']==100)['metrics'][short.CORE[0]]
+        self.assertAlmostEqual(difference['mean'],.05)
+        self.assertEqual((difference['left_larger_count'],difference['right_larger_count']),(1,0))
+        self.assertEqual(s['condition_sources']['adopted']['20'],'beam20_default')
+        self.assertEqual(s['condition_sources']['adopted']['50'],'beam50_capb')
+        self.assertEqual(len(list((self.root/'out').iterdir())),3)
+        import report_bprna_short as report
+        destination=self.root/'note.md'
+        report.write_capb_note(self.root/'out',destination,s,p,
+                              {'unit_tests_passed':59,'checks':[{'passed':True}],'analysis_resources':'fixture'})
+        rendered=destination.read_text()
+        self.assertIn('採用条件 max(b,30)',rendered)
+        self.assertIn('参考値、LinearCParty',rendered)
+        self.assertIn('400 nt 以上の区分に向けた含意',rendered)
+        self.assertIn('e1-bprna-15aa7742-20261011-accuracy.json',rendered)
+
+    def test_capb_rejects_changed_cohort_and_model(self):
+        previous,extra=self.capb_fixture()
+        plan_path=extra/'array_plan.json'
+        saved=json.loads(plan_path.read_text())
+        changed=copy.deepcopy(saved)
+        changed['tasks'][0]['inputs'][0]['sha256']='changed'
+        plan_path.write_text(json.dumps(changed))
+        with self.assertRaisesRegex(ValueError,'identical complete S/G'):
+            capb.extend_capb(previous,extra,self.root/'out')
+        changed=copy.deepcopy(saved)
+        changed['software_lock']['binaries']={'fixture':'changed'}
+        plan_path.write_text(json.dumps(changed))
+        with self.assertRaisesRegex(ValueError,'models or binaries'):
+            capb.extend_capb(previous,extra,self.root/'out')
+
+    def test_capb_rejects_wrong_cap_arguments(self):
+        job={'command':['binary','-b','50','--max-hairpin','30','--max-case3-depth','50']}
+        with self.assertRaisesRegex(ValueError,'cap rule'):
+            capb.check_capb_command(job,{'command':['binary','-b','50']},50)
 
 
 if __name__=='__main__':unittest.main()

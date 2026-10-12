@@ -27,6 +27,8 @@ def write_note(output,destination):
     s=json.loads((output/'summary.json').read_text())
     p=json.loads((output/'provenance.json').read_text())
     v=json.loads((output/'validation.json').read_text())
+    if 'capb_run' in p:
+        return write_capb_note(output,destination,s,p,v)
     bins=[x for x in s['bins'] if x['bin'] in ('nt50_99','nt100_199','nt200_299','nt300_399')]
     overall=next(g for g in s['bins'] if g['bin']=='all')
     d200=next(c for c in overall['conditions'] if c['cap']=='default' and c['beam']==200)
@@ -206,6 +208,179 @@ def write_note(output,destination):
     destination.write_text('\n'.join(text))
 
 
+def write_capb_note(output,destination,s,p,v):
+    labels=('all','nt50_99','nt100_199','nt200_299','nt300_399')
+    groups=[g for label in labels for g in s['bins'] if g['bin']==label]
+    bins=groups[1:]
+    title=lambda g:'全体' if g['bin']=='all' else f"{g['min_length']}–{g['max_length']}"
+    condition=lambda g,cap,b:next(c for c in g['conditions'] if c['cap']==cap and c['beam']==b)
+    adopted200=condition(groups[0],'adopted',200)
+    long200=condition(bins[-1],'adopted',200)
+    delta='delta_free_energy_kcal_mol';bpp='base_state_tv_mean_Gfree';context='context_tv_mean_Gfree'
+    paired200={c['right']:c['metrics'][delta] for c in groups[0]['paired_cap_differences'] if c['beam']==200}
+    nocap_differences={c['beam']:c['metrics'][delta] for c in groups[0]['paired_cap_differences'] if c['right']=='nocap'}
+    note=['# bpRNA 400 nt 未満の E1：cap=max(b,30) の追加集計（2026-10-12）','',
+          f"固定版 `15aa7742`、同じ **{s['inputs']:,}配列**・scaffold・モデル・exact 参照に、新 run の capb（b=50/100/200）を追加した。",
+          '著者の決定（2026-10-12）に従い、局所上限 h=d=max(b,30) を採用条件とする。b=20 は既存 `beam20_default`、b≥50 は新しい `beam{b}_capb` を使う。',
+          'ここで default は比較用の旧固定上限30/30、capb は max(b,30)、nocap は100000を意味する。defaultという mode 名を、新しく採用した既定と混同しない。','',
+          f"採用条件の b=200 で ΔF≤0.01 kcal/mol は全体の {percent(1-adopted200['delta_F_above']['0.01']['fraction_eligible'])}。300–399 nt では {percent(long200['delta_F_above']['0.01']['fraction_eligible'])}が0.01を超え、{percent(long200['delta_F_above']['1']['fraction_eligible'])}が1を超える。",
+          f"この区分の最大 ΔF は {number(long200['metrics'][delta]['max'])} kcal/mol、最小保持率は {percent(long200['metrics']['partition_function_retention']['min'])}。設定の変更だけでは有限 beam の大きな誤差は解消しない。",'',
+          f"b200のΔFは旧defaultよりcapbで小さい配列が {paired200['default']['right_larger_count']:,}、大きい配列が {paired200['default']['left_larger_count']:,}。capbとnocapのΔFは {paired200['nocap']['equal_within_tolerance_count']:,}/{s['inputs']:,}配列で許容10⁻⁸ kcal/mol以内に一致した。詳細は配列内差の表に示す。",'',
+          '## 入力・参照・保存方法','',
+          table(['長さ nt','配列数'],[[title(g),f"{g['sequences']:,}"] for g in bins]),'',
+          f"全体の {percent((bins[0]['sequences']+bins[1]['sequences'])/s['inputs'])}が200 nt未満。全体の割合と長さ別の上側分位点を併記する。",
+          'G は保存済みの LinearPartition-V `b450fb3e`、beam200、dangles2、posterior≥0.7、stacked helix長≥2の scaffold。Turner04、37°C、既定 closure、BPP cutoff0、accessibility w=1/4/8/16、3 CLI を共通にした。',
+          f"RT={s['rt_range'][0]:.10f} kcal/mol。新 run は {len(p['capb_tasks'])}タスク、{sum(p['capb_job_status_counts'].values()):,}/{sum(p['capb_job_status_counts'].values()):,} CLI 成功。元の短い区分は {len(p['tasks'])}タスク。",
+          'exact は前回と同じ本体および指定の再実行。元の失敗349件（CapR/Raccess各172、LinearCParty 5、重複を除く172配列）を成功した32 GiB再実行で置換し、元の失敗履歴を保持した。',
+          f"exact差し替え後の統合 CLI 観測は {p['effective_job_status_counts']['success']:,}件成功、指標行は {p['analysis_status_counts']['success']:,}行（RNA×実測11条件）。b20 capbや採用条件の再表示は新しい測定として数えない。",
+          '入力hash・S/G・source commit・モデル設定・parameter hash・binary hashes・計算引数を照合した。前回のTSVを再利用する前に、全タスクのmanifest/checkpointのhashと前回の検証結果を確認した。',
+          'tarは展開せず、member streamから読む。新しいscalar値と時間・RSSは /tmp の一つのSQLiteへ一時保存し、配列ごとの11条件を一つのTSVへ統合した。共有領域の出力はTSV 1、JSON 3、PNG 2の6ファイル。','',
+          '## 指標と集計','',
+          'ΔF=F_b−F_exact、F=−RT log Z。保持率r=Z_b/Z_exact=exp(−ΔF/RT)。Raccessのfull-precision metadataを使い、微小な負のΔFもそのまま保存した。',
+          'BPP TVはGの自由塩基における相手塩基・unpaired状態の平均TV。Context TVは同じ自由塩基の7 contextの平均TV。Generated-pair L1、unpaired MAE、context別MAEも保存した。',
+          'AccessibilityはGの対合塩基を含まないwindowを評価する。Probability MAEと最大誤差、両確率が正のwindowでのopening-energy MAE、片側だけ0の件数を分ける。',
+          'まずRNAごとの指標を計算し、RNAを等重みで集計する。NAを0にせず、有効件数を保持する。分位点は線形補間。JSONには全体・4区分・25 nt区分、中央値・平均・p90・p99・最大・最小を保存した。',
+          'このRTでは '+', '.join(f'ΔF={f:g} → r={percent(math.exp(-f/s["rt_range"][0]))}' for f in (.01,.1,1))+'。','',
+          '## 3上限条件の ΔF 分布と閾値超過','',
+          '単位はkcal/mol。閾値は厳密な >。b20 capbはdefaultの同じ観測である。','']
+    rows=[]
+    for g in bins:
+        for c in g['conditions']:
+            if c['cap']=='adopted':continue
+            m=c['metrics'][delta]
+            rows.append([title(g),c['cap'],c['beam']]+[number(m[k]) for k in ('median','mean','p90','p99','max')]+
+                        [percent(c['delta_F_above'][k]['fraction_eligible']) for k in ('0.01','0.1','1')])
+    note += [table(['nt','上限','b','中央値','平均','p90','p99','最大','>0.01','>0.1','>1'],rows),'',
+             '## 採用条件を一つの列にまとめた比較','',
+             '各セルは「ΔF p99 / ΔF>0.01 の割合」。採用条件はb20でdefault、b≥50でcapbを選ぶ。','']
+    rows=[]
+    for g in groups:
+        for b in (20,50,100,200):
+            rows.append([title(g),b]+[number(condition(g,cap,b)['metrics'][delta]['p99'])+' / '+percent(condition(g,cap,b)['delta_F_above']['0.01']['fraction_eligible']) for cap in ('default','nocap','adopted')])
+    note += [table(['nt','b','旧default 30/30','nocap 100000','採用条件 max(b,30)'],rows),'',
+             '## 採用条件の保持率・BPP・context・accessibility（全幅）','',
+             'TVとaccessibility列はRNA間p99。保持率は平均と最小。Accessibilityは各RNA内のprobability MAEを集計した。','']
+    rows=[]
+    for g in bins:
+        for c in g['conditions']:
+            if c['cap']!='adopted':continue
+            m=c['metrics'];r=m['partition_function_retention']
+            rows.append([title(g),c['beam'],ratio(r['mean']),ratio(r['min']),number(m[bpp]['p99']),number(m[context]['p99'])]+
+                        [number(m[f'access_w{w}_probability_mae_eligible']['p99']) for w in (1,4,8,16)])
+    note += [table(['nt','b','r平均','r最小','BPP TV','context TV','w1 MAE','w4 MAE','w8 MAE','w16 MAE'],rows),'',
+             '## b=200 の保持率と周辺確率（3条件）','']
+    rows=[]
+    for g in bins:
+        for cap in ('default','capb','nocap'):
+            m=condition(g,cap,200)['metrics'];r=m['partition_function_retention']
+            rows.append([title(g),cap,ratio(r['median']),ratio(r['mean']),ratio(r['min']),number(m[bpp]['median']),number(m[bpp]['p99']),number(m[bpp]['max']),number(m[context]['p99']),number(m[context]['max'])])
+    note += [table(['nt','上限','r中央値','r平均','r最小','BPP TV中央値','BPP TV p99','BPP TV最大','context TV p99','context TV最大'],rows),'',
+             '## b=200 の accessibility（3条件）','',
+             'Probability MAEのRNA間p90。全幅の分布・opening-energy誤差・window件数はJSON/TSVにある。','']
+    rows=[]
+    for g in bins:
+        for cap in ('default','capb','nocap'):
+            m=condition(g,cap,200)['metrics']
+            rows.append([title(g),cap]+[number(m[f'access_w{w}_probability_mae_eligible']['p90']) for w in (1,4,8,16)])
+    note += [table(['nt','上限','w1','w4','w8','w16'],rows),'',
+             'Eligible windowが0の配列数：'+', '.join(f'w={w}: {n:,}' for w,n in s['eligible_zero_window_sequences'].items())+'。','',
+             '## capb と nocap・旧default の配列内差','',
+             '以下は同じRNA・同じbの誤差指標について capb − 比較条件。負はcapbの誤差が小さい。TV列もexactに対するTV誤差の差であり、2設定のposterior同士のTVではない。有限beamで上限を変えると保持集合も変わるため、上限だけの損失分解とは呼ばない。',
+             '大小の判定許容はΔF 10⁻⁸ kcal/mol、TV 10⁻⁹。JSONは全指標の差・有効件数・両方向の件数・許容内同値の件数を保存する。','']
+    rows=[]
+    for g in bins:
+        for c in g['paired_cap_differences']:
+            m=c['metrics'][delta]
+            rows.append([title(g),c['right'],c['beam']]+[number(m[k]) for k in ('mean','p99','max','min')]+
+                        [m['left_larger_count'],m['right_larger_count'],number(c['metrics'][bpp]['p99']),number(c['metrics'][context]['p99'])])
+    note += [table(['nt','比較条件','b','ΔΔF平均','p99','最大','最小','capb誤差大','比較条件誤差大','ΔBPP TV p99','Δcontext TV p99'],rows),'',
+             '全体の配列内差：','']
+    rows=[]
+    for c in groups[0]['paired_cap_differences']:
+        m=c['metrics'][delta]
+        rows.append([c['right'],c['beam'],number(m['mean']),m['left_larger_count'],m['right_larger_count'],m['equal_within_tolerance_count']])
+    note += [table(['比較条件','b','ΔΔF平均','capb誤差大','比較条件誤差大','許容内同値'],rows),'',
+             f"b50ではcapbのΔFがnocapより大きい配列が {nocap_differences[50]['left_larger_count']}、小さい配列が {nocap_differences[50]['right_larger_count']}あり、最大差は {number(nocap_differences[50]['max'])} kcal/mol。b100で許容を超える差は {nocap_differences[100]['left_larger_count']}配列、最大差 {number(nocap_differences[100]['max'])} kcal/mol。b200では全配列のΔF差が0だった。幅ごとの観測として扱い、400 nt以上へ一致を外挿しない。",'',
+             '## 時間・peak RSS の capb/default 比（参考値、LinearCParty）','',
+             '同じRNA・同じbの個別比を計算してRNA間で集計した。時間はelapsed_seconds（GNU time wrapperを含む経過時間）。GNU wall timeの比もJSONと表に保存する。',
+             'これらは精度用の並列実行、各条件1回、別日・別割当の値。短い配列では起動・出力・スケジューリングの影響が大きい。孤立した速度比較、速度向上、計算量の根拠には使わない。',
+             '各比は有限の非負分子と正の分母を条件とし、分母0や欠測を除外して有効Nを示す。GNU wall timeは0.01秒に丸められる。RSSは個別プロセスのpeak。b20は同じdefault測定の共用なので比1は新測定の結果ではない。','']
+    rows=[]
+    for g in bins:
+        for c in g['resource_ratios_capb_over_default']:
+            m=c['metrics'];t=m['LinearCParty_elapsed_seconds'];r=m['LinearCParty_peak_rss_kib'];w=m['LinearCParty_time_wall_seconds']
+            rows.append([title(g),c['beam']]+[number(t[k]) for k in ('median','p90','p99')]+[t['n']]+
+                        [number(r[k]) for k in ('median','p90','p99')]+[r['n'],number(w['median']),w['invalid_or_zero_denominator']])
+    note += [table(['nt','b','時間中央値','時間p90','時間p99','有効N','RSS中央値','RSSp90','RSSp99','有効N','GNU比中央値','GNU除外N'],rows),'',
+             '## 採用条件の beam 幅に対する単調性','',
+             'b=20→50→100→200の3段階すべてでΔF・BPP TV・context TVの非増加、保持率の非減少を確認した。ΔF許容10⁻⁸ kcal/mol、r許容10⁻⁸、TV許容10⁻⁹。',
+             '採用条件では幅と局所上限の両方が変わる。この検査は採用する方法全体のbeam-width sensitivityであり、beamだけの効果とは呼ばない。ΔFとrの判定は数学的には同値でも、絶対許容の指数変換により割合が異なり得る。','']
+    rows=[]
+    for g in groups:
+        stats={x['metric']:x for x in s['monotonicity'] if x['bin']==g['bin'] and x['cap']=='adopted'}
+        rows.append([title(g),g['sequences']]+[percent(stats[k]['fraction_eligible']) for k in (delta,'partition_function_retention',bpp,context)]+
+                    [stats[k]['nonmonotone_sequences'] for k in (delta,bpp,context)])
+    note += [table(['nt','N','ΔF↓','r↑','BPP TV↓','context TV↓','ΔF違反N','BPP違反N','context違反N'],rows),'',
+             '採用条件の大きな単調性違反（値はb20/50/100/200）：','']
+    rows=[]
+    for metric,label in ((delta,'ΔF'),(bpp,'BPP TV'),(context,'context TV')):
+        for x in s['nonmonotone_examples']['adopted_'+metric][:3]:
+            rows.append([x['input'],int(x['length']),label,' → '.join(map(number,x['values_b20_50_100_200'])),'→'.join(map(str,x['transition'])),number(x['largest_violation'])])
+    note += [table(['ID','nt','指標','4幅の値','悪化した幅','悪化量'],rows),'',
+             '## 採用条件 b200 の外れ値','']
+    rows=[]
+    for x in s['worst_examples']['adopted_b200_'+delta][:5]:
+        rows.append([x['input'],int(x['length']),number(x[delta]),ratio(x['partition_function_retention']),number(x[bpp]),number(x[context]),int(x['scaffold_pairs']),int(x['free_bases'])])
+    note += [table(['ID','nt','ΔF','r','BPP TV','context TV','G対数','自由塩基'],rows),'',
+             '全条件の上位10例、単調性違反例、[質量診断](beam_mass_diag_20261011.md)の4入力はJSONに保存した。個別の取りこぼし箇所を全配列へ帰属させる実験は行っていない。','',
+             '## 論文で言えること・言えないこと','',
+             '日本語：保存済みの400 nt未満のcohortについて、新しい既定 max(b,30) の exact に対する誤差分布と保持率を、長さ別に報告できる。旧上限30/30と100000との配列内差から、固定条件下での設定の感度を報告できる。',
+             '', 'English: For the saved cohort below 400 nt, we can report error distributions and partition-function ratios for the adopted local caps max(b,30). Paired differences from caps of 30/30 and 100000 describe sensitivity to these settings under the fixed experimental conditions.','',
+             '日本語：採用条件で幅を広げても、すべての配列で誤差が単調に減るとは限らない。全体は短い配列が多いため、全体割合だけで長い配列の精度を説明せず、長さ別の上側分位点・外れ値を示す。',
+             '', 'English: Errors under the adopted settings do not decrease monotonically with beam width for every sequence. Because short sequences dominate this cohort, length-specific upper quantiles and individual large errors are needed alongside the overall fractions.','',
+             'この集計は注釈に対する構造予測精度、上限を緩めた場合の単調改善、全入力での収束、b≥nならexactという保証、実装の計算量の証明、独立したCParty構造和との一般的同値性を示さない。ID中の出典区分は相同性を調整した精度推定や信頼区間を意味しない。',
+             '時間・RSS比は参考値で、正式な性能の主張には逐次・同一環境・反復測定が必要。著者の既定の決定は本集計の結果による新たな最適化選択とは区別する。','',
+             '## 400 nt 以上の区分に向けた含意','',
+             '300–399 ntに残る大きな誤差と単調性違反から、b200やmax(b,30)が400 nt以上にも十分とは外挿できない。長い区分では同じ採用規則を明記し、幅ごとの完了・timeout・メモリ不足を含めて保存する。',
+             'exactを計算していない長い入力では、最大測定幅との差をexact誤差や保持率と呼ばない。幅を広げたときの出力変化として報告し、実行可能な境界付近のexact対照を別に用意する。',
+             'bとともに局所上限も広がるため、精度だけでなく実行可能性・資源使用量を幅ごとに確認する。必要に応じて固定上限・nocapの対照を同じS/Gで残す。b200を十分と仮定せず、外れ値の診断とb300以上の対照を候補にする。',
+             '本作業は既存runの集計のみ。新しい投入・幅300以上の測定・実装変更は行っていない。','',
+             '## 開発上の検証・成果物・再生成','',
+             f"全 {v['unit_tests_passed']}テスト成功。{sum(c['passed'] for c in v['checks'])}/{len(v['checks'])}成果物チェック成功。既存197,000行の指標は全列そのまま保持した。",
+             f"統合した実測条件のCLI間整合は {p['consistency_check_counts']['success']:,}組、新capbは {p['capb_consistency_check_counts']['success']:,}組。exact {p['rechecked_exact_consistency_counts']['success']:,}組も再確認した（統合件数へ重複計上しない）。",
+             '最大整合差：'+', '.join(f'{k}={number(value)}' for k,value in s['maximum_consistency_errors'].items())+'。',
+             '既存12配列gridの96条件・4,416指標も回帰照合した。これらは集計と出力整合の検証であり、科学的なexactnessの新たな証明とは区別する。',
+             '', '集計プロセスの資源使用量（CLI計測値ではない）：','', '```text',v['analysis_resources'],'```','']
+    base='../../experiments/results/local/'+output.name+'/'
+    note += ['- '+f'[{label}]({base}{filename})' for label,filename in (
+        ('配列×実測条件 TSV','metrics.tsv'),('全分布・配列内差・資源比・単調性 JSON','summary.json'),
+        ('参照と結合の provenance','provenance.json'),('検証結果','validation.json'),
+        ('ΔF分布 PNG','delta_F_distribution.png'),('保持率分布 PNG','retention_distribution.png'))]
+    note += ['', '図は3上限条件・4長さ区分・4幅。capb b20はdefaultと同じ値。箱25–75%、中央値、ひげ10–90%、三角p99、×最大ΔFまたは最小r。微小負ΔFは表示だけ0とし、TSV/JSONに符号を残す。','',
+             '論文repoをcwdとする再生成コマンド（出力先は新しいdirectoryにする）：','', '```bash',
+             'export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1',
+             'export PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR=/tmp/e1-capb-mpl-20261012',
+             '/usr/bin/time -v -o /tmp/e1-capb-resources-20261012.log \\',
+             '  python experiments/scripts/analyze_bprna_short.py \\',
+             '  experiments/results/local/e1-bprna-short-capb-20261012-new \\',
+             '  --extend experiments/results/local/e1-bprna-short-20261011 \\',
+             '  --capb-run experiments/results/runs/e1-bprna-capb-short-20261012',
+             'python -m unittest discover -s experiments/tests -v > /tmp/e1-capb-tests-20261012.log 2>&1',
+             'python experiments/scripts/validate_bprna_short.py \\',
+             '  experiments/results/local/e1-bprna-short-capb-20261012-new \\',
+             '  --pilot experiments/results/local/e1-bprna-15aa7742-20261011-accuracy.json \\',
+             '  --tests-log /tmp/e1-capb-tests-20261012.log \\',
+             '  --resource-log /tmp/e1-capb-resources-20261012.log',
+             'python experiments/scripts/report_bprna_short.py \\',
+             '  experiments/results/local/e1-bprna-short-capb-20261012-new \\',
+             '  --out textbook/notes/e1_bprna_short_capb_20261012.md',
+             '```','',
+             'TSVを保存したまま集計・図だけ再生成する場合は `python experiments/scripts/analyze_bprna_short.py <output>` を使い、validationとnoteも再生成する。',
+             'qsub・git commit・調整中の `../LinearCParty` の変更は行っていない。','']
+    destination.parent.mkdir(parents=True,exist_ok=True)
+    destination.write_text('\n'.join(note))
+
+
 def render_plots(output):
     import matplotlib
     matplotlib.use('Agg')
@@ -213,8 +388,8 @@ def render_plots(output):
     import analyze_bprna_short as short
     # Keep the zero baseline visible without a large unused negative ΔF range.
     plt.rcParams['axes.ymargin']=0
-    _,data,_,_=short.load_metrics(output)
-    short.plot_distributions(output,data,data['length'][:,0,0])
+    provenance,data,_,_=short.load_metrics(output)
+    short.plot_distributions(output,data,data['length'][:,0,0],provenance.get('caps',short.CAPS))
 
 
 if __name__=='__main__':
