@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "measurement": "accuracy",
+  "seed": 20261011,
+  "tiers": [
+    {
+      "name": "nt50_99",
+      "min_length": 50,
+      "max_length": 99,
+      "resource": "cpu_4",
+      "h_rt": "02:00:00",
+      "target_seconds": 3600,
+      "memory_budget_mib": 8192,
+      "task_overhead_mib": 512,
+      "workers": 4,
+      "max_inputs_per_task": 500,
+      "job_limits": {
+        "memory_limit_mib": 1024,
+        "timeout_seconds": 600
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam50_capb": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam100_capb": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam200_capb": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "nt100_199",
+      "min_length": 100,
+      "max_length": 199,
+      "resource": "cpu_8",
+      "h_rt": "03:00:00",
+      "target_seconds": 7200,
+      "memory_budget_mib": 16384,
+      "task_overhead_mib": 512,
+      "workers": 4,
+      "max_inputs_per_task": 300,
+      "job_limits": {
+        "memory_limit_mib": 2048,
+        "timeout_seconds": 600
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam50_capb": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.1304505106157999e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam100_capb": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.1304505106157999e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam200_capb": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.1304505106157999e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "nt200_299",
+      "min_length": 200,
+      "max_length": 299,
+      "resource": "cpu_16",
+      "h_rt": "03:00:00",
+      "target_seconds": 7200,
+      "memory_budget_mib": 32768,
+      "task_overhead_mib": 512,
+      "workers": 2,
+      "max_inputs_per_task": 150,
+      "job_limits": {
+        "memory_limit_mib": 8192,
+        "timeout_seconds": 600
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam50_capb": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.8471539237058932e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam100_capb": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.216584708447072e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam200_capb": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.216584708447072e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "nt300_399",
+      "min_length": 300,
+      "max_length": 399,
+      "resource": "cpu_40",
+      "h_rt": "05:00:00",
+      "target_seconds": 10800,
+      "memory_budget_mib": 81920,
+      "task_overhead_mib": 512,
+      "workers": 2,
+      "max_inputs_per_task": 30,
+      "job_limits": {
+        "memory_limit_mib": 16384,
+        "timeout_seconds": 600
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam50_capb": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 8.493202096566476e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 3.5065546621355876e-06,
+            "memory_exponent": 3
+          },
+          "beam100_capb": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 1.3510977669356353e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 5.15896141251226e-06,
+            "memory_exponent": 3
+          },
+          "beam200_capb": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.645829553818624e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 8.693053088800188e-06,
+            "memory_exponent": 3
+          }
+        }
+      }
+    }
+  ],
+  "compact_plan": true,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1,
+    "fallback_remaining_files": 800000,
+    "fallback_basis": "Conservative fallback below the 2026-10-11 snapshot; verify before submission"
+  },
+  "note": "E1 short tiers (<400 nt) with local caps max(b,30) for b=50/100/200."
+}
