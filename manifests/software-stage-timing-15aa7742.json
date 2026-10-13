@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-13T06:16:32.585412+00:00",
+  "purpose": "development",
+  "source_commit": "15aa7742a5497164573294e37972ff7ccf9ddfe1",
+  "source_git_state": {
+    "commit": "15aa7742a5497164573294e37972ff7ccf9ddfe1",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "build_revision_verified": true,
+  "verification_method": "External driver linked to base-lock verified dedicated build; archive hashes saved; exact/RNA also checked against E0 for 15aa7742",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "-O2 -std=c++17 -Wall -Wextra -pedantic"
+  },
+  "cmake_cache_sha256": "2e29e9adaceda3f729303d4fdaf52da934242a964c88a73a3921a28ab846df7e",
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "binaries": {
+    "stage_timing_driver": "06cabb43bec3d2b11a9b82261cc05a56db6a145499839e439b42a2630352e3c0"
+  },
+  "extra_files": [
+    {
+      "path": "tools/stage_timing_driver.cc",
+      "sha256": "d7a88afbcdbd4a5a09bb43533ee13264b9484b6331fe0f5e11bc144b50c0e7ab"
+    },
+    {
+      "path": "scripts/build_stage_timing_driver.py",
+      "sha256": "6a6851e3b9ee15bfd8dc4984e9ce1b1e2e97ecb2ef1e0404b7e1a949d6e1ff7d"
+    },
+    {
+      "path": "manifests/software-pilot-15aa7742.json",
+      "sha256": "81eb28edf06fed416e4d5d5c6972e2cc3839b0457de6f600c9743c067a6870ea"
+    },
+    {
+      "path": "build/linear-cparty-15aa7742/libcparty_scfg2_beam.a",
+      "sha256": "d8dd120b993d8abdaa827421393f3272deeb2056926f68f256c09495fb6f51bf"
+    },
+    {
+      "path": "build/linear-cparty-15aa7742/libcparty_scfg2_exact.a",
+      "sha256": "f6b2152dfd9b047c5bdf2e490496df32e8cbcedff36c7edd2615aa665ce586ab"
+    },
+    {
+      "path": "build/linear-cparty-15aa7742/libRNA.a",
+      "sha256": "6d1ad72cdb7598b1361a4e9c184cd53f61b24f4e11ccc6d90e24219ee13b7756"
+    },
+    {
+      "path": "build/linear-cparty-15aa7742/CMakeCache.txt",
+      "sha256": "d42c295ebc48b26c43075d35d6f2af1ecc3563e420a027fcf79f39144330b473"
+    },
+    {
+      "path": "build/stage-timing-15aa7742/build_provenance.json",
+      "sha256": "4a594d96cc1ee5334a6917a6787ce3b534019b12043115717c126a43896a578f"
+    },
+    {
+      "path": "build/linear-cparty-15aa7742/LinearCParty",
+      "sha256": "3de251427bb153c49b262088cf69312f6509e35710099f4108206dac33582374"
+    },
+    {
+      "path": "build/linear-cparty-15aa7742/LinearPKCapR",
+      "sha256": "560792a1745732483c8938f36f74c67232fc77970a4c5a4d0d3f49bfc8a6992d"
+    },
+    {
+      "path": "build/linear-cparty-15aa7742/LinearPKRaccess",
+      "sha256": "0366a5c9f8c6ab10e783daf1a0177433d727e8fe34470cbd5f773c5a0e563b18"
+    },
+    {
+      "path": "manifests/software-e0-15aa7742-20261011.json",
+      "sha256": "2dd48d7d82371d67592b35b68ba4db913a66dbf1c62840c84eb77976cda2a847"
+    }
+  ],
+  "scientific_scope": "Development observer, not E2 measurements; recollect on the prefix-ranking release"
+}
