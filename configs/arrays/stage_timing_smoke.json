@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "measurement": "timing",
+  "seed": 20261013,
+  "file_budget": {"project": 102571, "filesystem": "/gs/bs", "hard_file_limit": 24000000, "max_remaining_fraction": 0.1},
+  "tiers": [
+    {
+      "name": "smoke",
+      "min_length": 1,
+      "max_length": 300,
+      "resource": "cpu_4",
+      "h_rt": "00:10:00",
+      "target_seconds": 60,
+      "memory_budget_mib": 8000,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "cost_model": {
+        "basis": "Uncalibrated small observer smoke template. Refit on the prefix-ranking release before E2.",
+        "seconds_constant_per_condition": 2,
+        "seconds_per_nt_condition": 0.01,
+        "safety_factor": 1.5,
+        "memory_base_mib": 256,
+        "mib_per_nt": 1
+      }
+    }
+  ]
+}

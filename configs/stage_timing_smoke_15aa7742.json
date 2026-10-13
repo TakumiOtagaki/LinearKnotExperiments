@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "name": "stage-timing-smoke-15aa7742",
+  "purpose": "development",
+  "description": "Small public-API observer check only. Formal E2 collection waits for prefix ranking.",
+  "software_lock": "manifests/software-stage-timing-15aa7742.json",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {"temperature_celsius": 37, "build_revision_verified": true},
+  "timeout_seconds": 30,
+  "memory_limit_mib": 1024,
+  "warmups": 0,
+  "repetitions": 1,
+  "order": {"kind": "blocked_random", "seed": 20261013},
+  "environment": {"OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "LC_ALL": "C"},
+  "inputs": [
+    {"name": "empty", "path": "data/smoke/empty_scaffold.txt"},
+    {"name": "pk", "path": "data/smoke/pk_scaffold.txt"}
+  ],
+  "modes": [
+    {"name": "fresh", "args": ["-b", "20", "--max-hairpin", "30", "--max-case3-depth", "30", "--session-mode", "fresh"]},
+    {"name": "shared", "args": ["-b", "20", "--max-hairpin", "30", "--max-case3-depth", "30", "--session-mode", "shared"]}
+  ],
+  "programs": [
+    {"name": "stage_timing_driver", "args": ["--access-len", "1,2,4,7", "-k", "10", "--seed", "20261013", "--gamma", "1"]}
+  ]
+}

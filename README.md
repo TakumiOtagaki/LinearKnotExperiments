@@ -237,6 +237,24 @@ the dry-runs perform no CLI measurements.
 
 ## Development smoke
 
+For public-API call timings and RSS, build and run the external observer:
+
+```bash
+python3 scripts/build_stage_timing_driver.py
+export CPARTY_FIXED_ENERGY_PARAM_FILE="$PWD/deps/LinearCParty-15aa7742/params/rna_Turner04.par"
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 LC_ALL=C
+build/stage-timing-15aa7742/stage_timing_driver -i data/smoke/pk_scaffold.txt \
+  -b 20 --max-hairpin 30 --max-case3-depth 30 --session-mode both
+```
+
+It emits one JSON line for inside, MFE, outside/BPP, profiles, accessibility,
+sampling and MEA. Only the scalar inside result can be cached; other public
+calls rebuild their graphs. Use `--stage outside_bpp` (or another stage) in a
+new process for isolated process RSS, and `--include-values` for small CLI
+parity checks. The [observer guide](docs/stage_timing_driver.md) explains timing
+boundaries, build locks, the existing array runner and the development configs.
+Formal stage measurements wait for the prefix-ranking release.
+
 Supply the implementation and build locations explicitly while LinearCParty is
 under active development:
 
