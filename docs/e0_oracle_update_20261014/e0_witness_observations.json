@@ -1,0 +1,1063 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-14T15:11:08.194550+00:00",
+  "purpose": "development",
+  "passed": true,
+  "script_sha256": "5a19fd6d14940c4f0cfdcb2068bbbcd536704f51525b658f25612a528327b2b1",
+  "config_sha256": "d9e4d440f36ab1fcadba84f62d85192688b78355c7f7725db988de81504096ce",
+  "new_lock_sha256": "1e7f7d5d2a2729796859744319e5f6b9ae807d2bba60106126ff5a487bdf2cb1",
+  "historical": {
+    "source_commit": "15aa7742a5497164573294e37972ff7ccf9ddfe1",
+    "oracle": {
+      "source_commit": "800e95af9d1a97555233e2c7b37d73dbaa1a92b4",
+      "patches": 4,
+      "patch_order": [
+        "0001",
+        "0002",
+        "0006",
+        "0007"
+      ],
+      "completed_wmb_weak_closure": false,
+      "manifest_sha256": "c00f6a735842791f8f987f11d88ef99cbb40ff5345426afab532e4eed068615b"
+    },
+    "lock_sha256": "2dd48d7d82371d67592b35b68ba4db913a66dbf1c62840c84eb77976cda2a847",
+    "oracle_lock_sha256": "c2642b11b97d08221653998cbfa03a917c757b49a5d43707daab29cce8d5829e",
+    "verified_artifacts": [
+      {
+        "path": "build/e0-observers-15aa7742-800e95a-4patches/CMakeCache.txt",
+        "sha256": "888fd47307c7428dbf44357d196cea952e5c0f5133f10ddda21eae54eadd3ad4"
+      },
+      {
+        "path": "build/e0-observers-15aa7742-800e95a-4patches/E0LegacyCompatible",
+        "sha256": "3000733a70b6c5d84a2ad88f6eb695427aef5d7d77cfca855fd5e578ac5d0350"
+      },
+      {
+        "path": "build/e0-observers-15aa7742-800e95a-4patches/E0Default",
+        "sha256": "c8c148b8544b49afdbfd39a08a19a1efcdeaef8de68d0391034243745552e95e"
+      },
+      {
+        "path": "build/e0-observers-15aa7742-800e95a-4patches/E0CPartyOracle",
+        "sha256": "a1e9843caec2bcea631f3b3069648dff4645b807af6bb3994330c59dbaa9b8f3"
+      },
+      {
+        "path": "build/linear-cparty-15aa7742/CMakeCache.txt",
+        "sha256": "d42c295ebc48b26c43075d35d6f2af1ecc3563e420a027fcf79f39144330b473"
+      },
+      {
+        "path": "build/linear-cparty-15aa7742/libcparty_scfg2_exact.a",
+        "sha256": "f6b2152dfd9b047c5bdf2e490496df32e8cbcedff36c7edd2615aa665ce586ab"
+      },
+      {
+        "path": "build/linear-cparty-15aa7742/libRNA.a",
+        "sha256": "6d1ad72cdb7598b1361a4e9c184cd53f61b24f4e11ccc6d90e24219ee13b7756"
+      },
+      {
+        "path": "build/e0-observers-15aa7742-800e95a-4patches/e0-linear",
+        "sha256": "5d76ebcec14f80bb6865d2ee52e30b447e3904630ec09345c4cf739c19db7e89"
+      },
+      {
+        "path": "build/e0-observers-15aa7742-800e95a-4patches/build_provenance.json",
+        "sha256": "67f907652393dd6a28a9d39a6f5149823be6e5a2c7e0d95e610db2666041a240"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/manifest.json",
+        "sha256": "c00f6a735842791f8f987f11d88ef99cbb40ff5345426afab532e4eed068615b"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/cparty-oracle",
+        "sha256": "332670aa159ce12d340890ed57f4359e52fe73b9b7eb9a4f93ddd6c4772bebc8"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/build/CParty",
+        "sha256": "5cfe00dfebbc396af449c9f42448764fb8f7845f0040add531989abe4a0a379b"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/build/CMakeCache.txt",
+        "sha256": "13387a6baff98084407451bb8453a25e53f1542129592cf327c758a4206a4658"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/build/libRNA.a",
+        "sha256": "6b70a87a555194180bb3e1ef29b3313a173ea4824bcd1c9932e2e11283783bb6"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/build/CMakeFiles/CParty.dir/src/part_func.cc.o",
+        "sha256": "fcc7aa459b7279dd6cda4466c8d282a4c3946d8f5e5c5f0c643feed5b7245aeb"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/build/CMakeFiles/CParty.dir/src/dot_plot.cc.o",
+        "sha256": "637f4d05d7a39be86f14f1fba227602a25ed2cd4a6f205a173e1ee36b85f2fa0"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/build/CMakeFiles/CParty.dir/src/mea.cc.o",
+        "sha256": "f212c1d3475144b4b077f71b4377e7e0d97e4f878e64ace5dcd011b627837ae4"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/build/CMakeFiles/CParty.dir/src/centroid.cc.o",
+        "sha256": "779227aca830bb0fe4425b71f3df2a56f5a2c3022868ad9cda69dcc47e6f7f28"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/build/CMakeFiles/CParty.dir/src/W_final.cc.o",
+        "sha256": "ff879859aba2f40453e83af2d2f1414ebc6cdeb0c948c6a91b09944ec312a1d8"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/build/CMakeFiles/CParty.dir/src/pseudo_loop.cc.o",
+        "sha256": "542619da75f9d317023fcc2fa781024756de46eb7b200488fa85dbc2aa5f8e15"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/build/CMakeFiles/CParty.dir/src/s_energy_matrix.cc.o",
+        "sha256": "7b1a07c0dff2cdd7a71385effca5fa7a0e720e074654b923ad988325fd7eef13"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/build/CMakeFiles/CParty.dir/src/Hotspot.cc.o",
+        "sha256": "175cb2bdf0095d1045643466b53a650a0df3fa47e6043ac5876560aaf65eb26f"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/build/CMakeFiles/CParty.dir/src/sparse_tree.cc.o",
+        "sha256": "1d6e2e8cdf8885e6bd3b6438df7f55b8eef666aad768a5b00b2b3d07d3741f5c"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/build/CMakeFiles/CParty.dir/src/SHAPE.cc.o",
+        "sha256": "c3ccd0920c6481c10ec93c95a6d01416f2e2e9cb68e1707da57cc23f2a1a79e0"
+      },
+      {
+        "path": "deps/LinearCParty-2456f9b2/test/oracle/legacy_cparty/config.json",
+        "sha256": "b7e463d9e0f9769f1e347a15341c0ccfaa9166ca5af9c8535e369647c16ef081"
+      },
+      {
+        "path": "deps/LinearCParty-2456f9b2/test/oracle/legacy_cparty/build.sh",
+        "sha256": "45c2d943160e0e202528f4561b578843081c4df38b10b3ba9afd051345de90e2"
+      },
+      {
+        "path": "deps/LinearCParty-2456f9b2/test/oracle/legacy_cparty/oracle_config.py",
+        "sha256": "3c672378e19b6cc237e4bbbdc6f3cfeb91a28f586bbf277338dc756d26475c42"
+      },
+      {
+        "path": "deps/LinearCParty-2456f9b2/test/oracle/legacy_cparty/patches/0001-build-include-algorithm-in-centroid.cc-for-std-sort.patch",
+        "sha256": "5fa0acde00ae3e09c4574c483af5a4c7c0716a66568014a17d7b920abb77fca2"
+      },
+      {
+        "path": "deps/LinearCParty-2456f9b2/test/oracle/legacy_cparty/patches/0002-cli-read-input_structure_given-before-cmdline_parser.patch",
+        "sha256": "e4aa002d5e8093c3abd802fb965986f69a53d60e1e4f278f70e9a4e27875bc82"
+      },
+      {
+        "path": "deps/LinearCParty-2456f9b2/test/oracle/legacy_cparty/patches/0006-VPR-right-run-guard-covers-j-CParty-5-follow-up.patch",
+        "sha256": "f14610e62404e904b9345ffdaee83cd338f3bc69dd034e1b2667c3a159e25939"
+      },
+      {
+        "path": "deps/LinearCParty-2456f9b2/test/oracle/legacy_cparty/patches/0007-Extrapolate-PF-weights-for-long-scaffold-loops.patch",
+        "sha256": "ed3cba67f0f2047c8118613d83f4a6970c4cb138902a951c5b6b4d3815a251c1"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/CParty.cc",
+        "sha256": "332d78ee4d8ca4caa4d7cc2934d7de772cbff1d043d59d5fc9ba8911cab6750b"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/Hotspot.cc",
+        "sha256": "b94b8e5c00eb993f110511735c0bed2dda7553806bf2fa2d76e119a7d0d8eed5"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/Result.cc",
+        "sha256": "4b835bebffb77e3f257eee993fc3efa74507685dc6edf55f82241abc5d5c7c17"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/Result.hh",
+        "sha256": "63d7e234055e15815b91e92bd365015220d178711847fc62d045c31f63fcc829"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/SHAPE.cc",
+        "sha256": "d22802800a6ff1a032a7a23637d58fe646b325e4b84345f4475aec7a99288259"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/SHAPE.hh",
+        "sha256": "ec128b1ef87586926ed4f6b9b3dca7c229331dab2aa946c00bb409dfa2cd4a89"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/W_final.cc",
+        "sha256": "b02c284835bbc1a76df06696d6c70affc6fee00cb3d47193ab09fca98cf76731"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/W_final.hh",
+        "sha256": "f463200ae4bbca858592a3d6475a9f9c7dde0ad0823a86ea3da353bf81a3ff09"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/base_types.hh",
+        "sha256": "efff86365ef4e24221f4c454c0aaa7fc9f55b68805eca72d9ef55de145fe4a54"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/centroid.cc",
+        "sha256": "fa38a6931f83283fb45655522babf27bf3a54b78a1045ce1a05a3701f6e494cd"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/cmdline.cc",
+        "sha256": "2dd9aea1946409dab5c3b6ab5049af329b27505eaef6547f89a3a4f3394db669"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/cmdline.hh",
+        "sha256": "56d48966dcdf2899fd6cfc01998e4e2a4fceddf3011d481dbea77128d6c5ebe2"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/config.h",
+        "sha256": "f2e413ccde1fb4655833bdc33426fa5f68173e00ec8e9e6828befb00ad722523"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/constants.hh",
+        "sha256": "e0b4a2cf52e1b2c7c07147193db4663ffc2990f990d2ecf9786fade683b23c4b"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/cparty.ggo",
+        "sha256": "ca7b9fa6fed6e69ad1d7f499971e0d5e5aa793a666779428bad3072e8ece3066"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/dot_plot.cc",
+        "sha256": "ceffc00f41179345e20dfb1651ce9f6755ffb9f3eb45dc717ff40e6261625a6b"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/dot_plot.hh",
+        "sha256": "9bfaaac247ce4f966de7db57c4e52f615decac21c4984cc68214077e21a3bd30"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/h_externs.hh",
+        "sha256": "ee3cdd8963bd5af4d89c0e5f648b9c08f82b7e54a3dfe1d463cf558787555054"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/h_globals.hh",
+        "sha256": "4a9719d0a3db1a1e5e9ce3cc9428157281bd6a1ea8cf6bd3723909f0c0b895f2"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/h_struct.hh",
+        "sha256": "4ec90b2d2f0878c00272d552cdff71e177ac3ac65349c379d0f3eece95438fa6"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/hotspot.hh",
+        "sha256": "3404fda1218893bcc0ef7e8f2bf7c8e704a63ccb2cde746a0bd4c51d5700bc67"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/mea.cc",
+        "sha256": "dc283206c72670183592633c995a90a98f9ee03a6447790e0b35158b24a73cfe"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/mea.hh",
+        "sha256": "80d6fc52e504d7d385d9a7d2fa0a7b3be578ae0eeb5dd124e24ef451292dc9a0"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/mwm.cc",
+        "sha256": "697dad6632821e4c52fbc30b44d48ceb48b7d8924960c3938226073f3293bec9"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/mwm.hh",
+        "sha256": "844f943b402ad013fc0b70776026d5fe15d7ea69b5ee51a4fc3306daf7412bb2"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/part_func.cc",
+        "sha256": "897207d0df4cba290ae6b4ebc2198eca7f96515d65caed104e3a17de38c7375d"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/part_func.hh",
+        "sha256": "9a74faed97c51362b208f2140b6949afab7a0a609456ce767b7f90cb39b3faf4"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/pf_globals.hh",
+        "sha256": "d217a46ae79b876a4bc2714874e96d2bcf196843603fafaae9663db8fdeeedb4"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/pseudo_loop.cc",
+        "sha256": "2765229aee2d0045269d9295e392351309e17cb5ec2b3e487a17b3108b0453b7"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/pseudo_loop.hh",
+        "sha256": "c7b752baf3b7e1afad72ec3ac1bc61145c0d7559cef5a8cd3139a51d9c3cf0a4"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/s_energy_matrix.cc",
+        "sha256": "6e8222a49ff877a11801c8751bf7a1f59d726001181a1b719ae77aec79c6a01d"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/s_energy_matrix.hh",
+        "sha256": "03dc81a7fe65a3d808617183003825de4c6429b100aea04e786372ad4c35e95c"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/sparse_tree.cc",
+        "sha256": "99263c867a061a55a96d808be6677ba3d21ccacd63534eb6f787bd1d0e2456bd"
+      },
+      {
+        "path": "build/cparty-oracle-800e95a-4patches/src/src/sparse_tree.hh",
+        "sha256": "24a055b60c78554c8fa71c248e76a69413a3671ea68ce2564afad1ce9468f964"
+      },
+      {
+        "path": "deps/LinearCParty-d21618c5/params/rna_Turner04.par",
+        "sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+      },
+      {
+        "path": "deps/LinearCParty-15aa7742/params/rna_Turner04.par",
+        "sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+      }
+    ],
+    "scope": "Retained historical binaries, cache, libraries, oracle manifest/sources/objects, owner config/patches and parameters; edited experiment scripts are not rebuilt"
+  },
+  "raw_archive_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/local/e0-fixed-witnesses-d21618c5-5patches-20261014-v2/witness_run.tar",
+  "raw_archive_sha256": "e29a2af349bd14547378918cb9ff9d3977afc59ca0bd8fd73144cf084c7589fb",
+  "new_jobs": 15,
+  "old_jobs": 2,
+  "parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "max_absolute_delta_log_z": 2.1316282072803006e-14,
+  "max_absolute_delta_free_energy": 1.4210854715202004e-14,
+  "wip_regression": {
+    "old_compatible_minus_oracle": {
+      "delta_log_z": 0.0,
+      "delta_free_energy": 0.0
+    },
+    "new_compatible_minus_oracle": {
+      "delta_log_z": 3.552713678800501e-15,
+      "delta_free_energy": 0.0
+    },
+    "new_minus_old": {
+      "E0LegacyCompatible": {
+        "delta_log_z": 0.028226587401228187,
+        "delta_free_energy": -0.01739663223684218
+      },
+      "E0CPartyOracle": {
+        "delta_log_z": 0.028226587401224634,
+        "delta_free_energy": -0.01739663223684218
+      }
+    },
+    "passed": true
+  },
+  "observations": [
+    {
+      "input": "closure14",
+      "program": "E0Default",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0Default",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/closure14.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.033746365923434496,
+        "time_wall_seconds": 0.01,
+        "peak_rss_kib": 3072,
+        "id": "closure14-exact-E0Default-rep0",
+        "input": "closure14",
+        "mode": "exact",
+        "program": "E0Default",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0Default",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/closure14.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.248933+00:00",
+        "finished_utc": "2026-10-14T15:11:07.283591+00:00",
+        "directory": "jobs/closure14-exact-E0Default-rep0"
+      },
+      "value": {
+        "log_z": 0.02832634725545608,
+        "free_energy": -0.01745811630756499,
+        "rt": 0.6163207755,
+        "policy": "weakly-closed-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "c3099eebb04e5aa703d48a51077a5704df2cc62c325a438d729d23928d3ef0f5",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "41a033689f525594c202e10f4b5553f04203a9d26a9393f1f82e73931ea43a4b",
+        "result.json": "f22a25dd5f06621bb195e7f49a5b709c0d5c2b2dedc00c897442769ae520a59a",
+        "time.tsv": "859f5ded13b92046490da9240c07a21e0a771101c99647afe4cae60531080049"
+      }
+    },
+    {
+      "input": "BE41",
+      "program": "E0LegacyCompatible",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0LegacyCompatible",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/BE41.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.0335356667637825,
+        "time_wall_seconds": 0.02,
+        "peak_rss_kib": 3072,
+        "id": "BE41-exact-E0LegacyCompatible-rep0",
+        "input": "BE41",
+        "mode": "exact",
+        "program": "E0LegacyCompatible",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0LegacyCompatible",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/BE41.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.283972+00:00",
+        "finished_utc": "2026-10-14T15:11:07.317857+00:00",
+        "directory": "jobs/BE41-exact-E0LegacyCompatible-rep0"
+      },
+      "value": {
+        "log_z": -13.499740745904703,
+        "free_energy": 8.320170685564934,
+        "rt": 0.6163207755,
+        "policy": "legacy-compatible-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "11cfa7bb3a8d06e863461f9204d537a7f71ed2ee77b3f407e546ca708ea8d329",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "4f0f6256040bc55e090c6fe8ec5d730ea7376e4cc7a12a1dff22f90679977cc5",
+        "result.json": "e688ab1e39b44faddca72e0e10ffd6ea5eaab5b22932563510510bb2fbd1ca61",
+        "time.tsv": "6036631d09807b321e4a76d20b9023e1dd6fd2dce151a30313a074fc5273df8b"
+      }
+    },
+    {
+      "input": "BE65",
+      "program": "E0Default",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0Default",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/BE65.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.06548654986545444,
+        "time_wall_seconds": 0.05,
+        "peak_rss_kib": 6144,
+        "id": "BE65-exact-E0Default-rep0",
+        "input": "BE65",
+        "mode": "exact",
+        "program": "E0Default",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0Default",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/BE65.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.318234+00:00",
+        "finished_utc": "2026-10-14T15:11:07.384087+00:00",
+        "directory": "jobs/BE65-exact-E0Default-rep0"
+      },
+      "value": {
+        "log_z": -23.273976641986405,
+        "free_energy": 14.344235332957945,
+        "rt": 0.6163207755,
+        "policy": "weakly-closed-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "8002181216d0b8a102509895a36e9a399f91ad448c9f853a96ad7adf8b0b8701",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "d185144cf0523940360533e4bdf6ef9a9f7679d66864279dd97347079a029e74",
+        "result.json": "0a34bf1bb9bd7013a4374248e6c17fc1cf4b86f8db72969a8b56612719d8c4c9",
+        "time.tsv": "7118eac2da1a4bdb0295923e9063368e302f9991a315f12d36b3b000dad01aba"
+      }
+    },
+    {
+      "input": "closure14",
+      "program": "E0CPartyOracle",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0CPartyOracle",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/closure14.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.017437701113522053,
+        "time_wall_seconds": 0.0,
+        "peak_rss_kib": 3072,
+        "id": "closure14-exact-E0CPartyOracle-rep0",
+        "input": "closure14",
+        "mode": "exact",
+        "program": "E0CPartyOracle",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0CPartyOracle",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/closure14.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.384494+00:00",
+        "finished_utc": "2026-10-14T15:11:07.402258+00:00",
+        "directory": "jobs/closure14-exact-E0CPartyOracle-rep0"
+      },
+      "value": {
+        "log_z": 0.02832634725545669,
+        "free_energy": -0.01745811630756536,
+        "rt": 0.6163207755,
+        "policy": "legacy-compatible-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "ef12ea41891c76aae996e7220386751a7a88c26eaddd12b05f8362f737308c19",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "1ec5159c279ded28a7c128487cff698db9ee74ebb3aa91290ef04958bc40a8e9",
+        "result.json": "562bfc40d8377e5e612a28e67f7032f88f0e1f150ed1fe3b911e4422e85a4e70",
+        "time.tsv": "06e416cc5b72b3cf6dc1e0b087fb7646e80fd69579abcc747c4f9ce03f890ae8"
+      }
+    },
+    {
+      "input": "WIP29",
+      "program": "E0LegacyCompatible",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0LegacyCompatible",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/WIP29.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.0333458399400115,
+        "time_wall_seconds": 0.02,
+        "peak_rss_kib": 3072,
+        "id": "WIP29-exact-E0LegacyCompatible-rep0",
+        "input": "WIP29",
+        "mode": "exact",
+        "program": "E0LegacyCompatible",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0LegacyCompatible",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/WIP29.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.402659+00:00",
+        "finished_utc": "2026-10-14T15:11:07.436336+00:00",
+        "directory": "jobs/WIP29-exact-E0LegacyCompatible-rep0"
+      },
+      "value": {
+        "log_z": -21.226938775753077,
+        "free_energy": 13.082603367763157,
+        "rt": 0.6163207755,
+        "policy": "legacy-compatible-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "7448fd727c232ae7999133de3aa3e787a5a38dbbbdcc23f17da4b24e635a2d90",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "f8224483abbdedb0e56b1d52a8c447692bb77277a531123440080015535a50e5",
+        "result.json": "9516fc27cb51eaea29f84b4d516561cc4d76d58eb8813183103da028fe5bffec",
+        "time.tsv": "6036631d09807b321e4a76d20b9023e1dd6fd2dce151a30313a074fc5273df8b"
+      }
+    },
+    {
+      "input": "BE41",
+      "program": "E0CPartyOracle",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0CPartyOracle",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/BE41.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.017712015192955732,
+        "time_wall_seconds": 0.0,
+        "peak_rss_kib": 3072,
+        "id": "BE41-exact-E0CPartyOracle-rep0",
+        "input": "BE41",
+        "mode": "exact",
+        "program": "E0CPartyOracle",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0CPartyOracle",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/BE41.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.436712+00:00",
+        "finished_utc": "2026-10-14T15:11:07.454737+00:00",
+        "directory": "jobs/BE41-exact-E0CPartyOracle-rep0"
+      },
+      "value": {
+        "log_z": -13.4997407459047,
+        "free_energy": 8.320170685564934,
+        "rt": 0.6163207755,
+        "policy": "legacy-compatible-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "9a828fdf695bac24f4b166c32be19c300994c0f986bc0dc14c8516ed28cc03de",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "8b9c5f63770144062e8fc007dc1942f8619a7936eb9c7be89d6e418553e86e2d",
+        "result.json": "bb2aa0eacf43b8bbf3f1e96726c526f0999d8d8a5c638220d3e42b7ba159a30c",
+        "time.tsv": "06e416cc5b72b3cf6dc1e0b087fb7646e80fd69579abcc747c4f9ce03f890ae8"
+      }
+    },
+    {
+      "input": "nested45",
+      "program": "E0LegacyCompatible",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0LegacyCompatible",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/nested45.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.03346703387796879,
+        "time_wall_seconds": 0.02,
+        "peak_rss_kib": 3072,
+        "id": "nested45-exact-E0LegacyCompatible-rep0",
+        "input": "nested45",
+        "mode": "exact",
+        "program": "E0LegacyCompatible",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0LegacyCompatible",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/nested45.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.455096+00:00",
+        "finished_utc": "2026-10-14T15:11:07.488913+00:00",
+        "directory": "jobs/nested45-exact-E0LegacyCompatible-rep0"
+      },
+      "value": {
+        "log_z": -32.94201552267722,
+        "free_energy": 20.30284855346946,
+        "rt": 0.6163207755,
+        "policy": "legacy-compatible-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "138bf516f01673fea03575bcae5010bd8ec57670a6851a47ddd86b9ae56f196d",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "e450bfa2f758e0e496b64d2a0179e3de76ed5e0c18b064ad84c844fc6f0cb178",
+        "result.json": "3214d141fcc4e763ce9f4e88a05a978e9552731e27236551e8364b7ebfe029e0",
+        "time.tsv": "6036631d09807b321e4a76d20b9023e1dd6fd2dce151a30313a074fc5273df8b"
+      }
+    },
+    {
+      "input": "BE65",
+      "program": "E0CPartyOracle",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0CPartyOracle",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/BE65.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.017374314833432436,
+        "time_wall_seconds": 0.0,
+        "peak_rss_kib": 3072,
+        "id": "BE65-exact-E0CPartyOracle-rep0",
+        "input": "BE65",
+        "mode": "exact",
+        "program": "E0CPartyOracle",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0CPartyOracle",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/BE65.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.489318+00:00",
+        "finished_utc": "2026-10-14T15:11:07.507020+00:00",
+        "directory": "jobs/BE65-exact-E0CPartyOracle-rep0"
+      },
+      "value": {
+        "log_z": -23.2739766419864,
+        "free_energy": 14.344235332957943,
+        "rt": 0.6163207755,
+        "policy": "legacy-compatible-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "dd8fe5e2ee2ff54f98c5be3ece9eb665334204196155139830dc4ad0b663e9c4",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "9c52ee2f39f97c9ba90608db75793e03896e3b579870a2af68bdd20baa871b6f",
+        "result.json": "08a74d30947997d2b39105f683ba846d50606339843b48b1cb3d3b1886e5c1bd",
+        "time.tsv": "06e416cc5b72b3cf6dc1e0b087fb7646e80fd69579abcc747c4f9ce03f890ae8"
+      }
+    },
+    {
+      "input": "BE65",
+      "program": "E0LegacyCompatible",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0LegacyCompatible",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/BE65.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.06607558112591505,
+        "time_wall_seconds": 0.05,
+        "peak_rss_kib": 6144,
+        "id": "BE65-exact-E0LegacyCompatible-rep0",
+        "input": "BE65",
+        "mode": "exact",
+        "program": "E0LegacyCompatible",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0LegacyCompatible",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/BE65.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.507454+00:00",
+        "finished_utc": "2026-10-14T15:11:07.573900+00:00",
+        "directory": "jobs/BE65-exact-E0LegacyCompatible-rep0"
+      },
+      "value": {
+        "log_z": -23.273976641986405,
+        "free_energy": 14.344235332957945,
+        "rt": 0.6163207755,
+        "policy": "legacy-compatible-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "780fb2b34de1cb55146ec75049c4ee12667e6cfb1d42d5ded94ff2a916d4b9c7",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "2146b6bfc1b4d7c4135dce3e681d9426706705553b7ca905313b5fde40663bb5",
+        "result.json": "6fa337977af405b45edd08a684b0510b3dc0470a3a512e2dbdab880fad349f99",
+        "time.tsv": "7118eac2da1a4bdb0295923e9063368e302f9991a315f12d36b3b000dad01aba"
+      }
+    },
+    {
+      "input": "closure14",
+      "program": "E0LegacyCompatible",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0LegacyCompatible",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/closure14.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.03358934819698334,
+        "time_wall_seconds": 0.01,
+        "peak_rss_kib": 3072,
+        "id": "closure14-exact-E0LegacyCompatible-rep0",
+        "input": "closure14",
+        "mode": "exact",
+        "program": "E0LegacyCompatible",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0LegacyCompatible",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/closure14.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.574321+00:00",
+        "finished_utc": "2026-10-14T15:11:07.608244+00:00",
+        "directory": "jobs/closure14-exact-E0LegacyCompatible-rep0"
+      },
+      "value": {
+        "log_z": 0.02832634725545608,
+        "free_energy": -0.01745811630756499,
+        "rt": 0.6163207755,
+        "policy": "legacy-compatible-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "a0182e418fa29b5249ec1b5621e3699947a24087e3d113b1d43d5d6828739d8c",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "4ebcf4edfe204061a0abd2989fe84806ed1ba6c7301d06d7181ed83676c982da",
+        "result.json": "feef3f83ffcd75b41a75e7f0fe9627ed19f42d2fb8aa93365492ec2a2bd893df",
+        "time.tsv": "859f5ded13b92046490da9240c07a21e0a771101c99647afe4cae60531080049"
+      }
+    },
+    {
+      "input": "nested45",
+      "program": "E0Default",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0Default",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/nested45.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.06609719293192029,
+        "time_wall_seconds": 0.03,
+        "peak_rss_kib": 3072,
+        "id": "nested45-exact-E0Default-rep0",
+        "input": "nested45",
+        "mode": "exact",
+        "program": "E0Default",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0Default",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/nested45.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.608641+00:00",
+        "finished_utc": "2026-10-14T15:11:07.675131+00:00",
+        "directory": "jobs/nested45-exact-E0Default-rep0"
+      },
+      "value": {
+        "log_z": -32.94201575587514,
+        "free_energy": 20.302848697194182,
+        "rt": 0.6163207755,
+        "policy": "weakly-closed-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "3632acae5fe614e41eaf8dfb83cd101d16970a956e032c16d28c74bb2479f993",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "5b1578957997bf05b38703ce8e7eece914ef893baa1fa79ab68e440c9363eed1",
+        "result.json": "444b904ded076ebdf1561f135310efc529d9e69972c713d44c5d0fff90db8b8f",
+        "time.tsv": "0e586c859b3f6372b0d5f9c439785be001511abfcf31d055332dfd07132adc1c"
+      }
+    },
+    {
+      "input": "WIP29",
+      "program": "E0Default",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0Default",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/WIP29.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.03417934011667967,
+        "time_wall_seconds": 0.02,
+        "peak_rss_kib": 3072,
+        "id": "WIP29-exact-E0Default-rep0",
+        "input": "WIP29",
+        "mode": "exact",
+        "program": "E0Default",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0Default",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/WIP29.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.675572+00:00",
+        "finished_utc": "2026-10-14T15:11:07.710102+00:00",
+        "directory": "jobs/WIP29-exact-E0Default-rep0"
+      },
+      "value": {
+        "log_z": -21.226938775753077,
+        "free_energy": 13.082603367763157,
+        "rt": 0.6163207755,
+        "policy": "weakly-closed-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "cf03da812d3f5bf21003c6cef1bd433b7e910673a795a8d09a5c07f3c631905b",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "454027ea650290bc7e155bad00d14bb0e53617b8d8bc5f5bcb30ce324ac4d721",
+        "result.json": "a58e7274bb21edad638565901d1bdb2d0d11a9237b95d40b813528aa655520fb",
+        "time.tsv": "6036631d09807b321e4a76d20b9023e1dd6fd2dce151a30313a074fc5273df8b"
+      }
+    },
+    {
+      "input": "WIP29",
+      "program": "E0CPartyOracle",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0CPartyOracle",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/WIP29.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.01787840621545911,
+        "time_wall_seconds": 0.0,
+        "peak_rss_kib": 3072,
+        "id": "WIP29-exact-E0CPartyOracle-rep0",
+        "input": "WIP29",
+        "mode": "exact",
+        "program": "E0CPartyOracle",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0CPartyOracle",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/WIP29.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.710499+00:00",
+        "finished_utc": "2026-10-14T15:11:07.728712+00:00",
+        "directory": "jobs/WIP29-exact-E0CPartyOracle-rep0"
+      },
+      "value": {
+        "log_z": -21.22693877575308,
+        "free_energy": 13.082603367763157,
+        "rt": 0.6163207755,
+        "policy": "legacy-compatible-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "dd75aaca6cd512ea7ce110f4cd1da93846098fc58768416e85db39f13094c1cc",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "19eef98415078c2d8fb4145ec91091a38bbf013589f3792601e25bf57ae46961",
+        "result.json": "6bd838253911d56b95818c0a268c9b0e63c7e91b3b89724210d9bfd4be120bef",
+        "time.tsv": "06e416cc5b72b3cf6dc1e0b087fb7646e80fd69579abcc747c4f9ce03f890ae8"
+      }
+    },
+    {
+      "input": "nested45",
+      "program": "E0CPartyOracle",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0CPartyOracle",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/nested45.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.01773787382990122,
+        "time_wall_seconds": 0.0,
+        "peak_rss_kib": 3072,
+        "id": "nested45-exact-E0CPartyOracle-rep0",
+        "input": "nested45",
+        "mode": "exact",
+        "program": "E0CPartyOracle",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0CPartyOracle",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/nested45.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.729091+00:00",
+        "finished_utc": "2026-10-14T15:11:07.747184+00:00",
+        "directory": "jobs/nested45-exact-E0CPartyOracle-rep0"
+      },
+      "value": {
+        "log_z": -32.942015522677195,
+        "free_energy": 20.302848553469445,
+        "rt": 0.6163207755,
+        "policy": "legacy-compatible-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "e259b9d0366ba0ce971d7e89d18d9dde1bd4aaa4dc07f37f161e7752448fb996",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "9b04b945677b0ecc745103b9992de2cb9174c9cc27c29047b75cd5bf0cf0fda5",
+        "result.json": "5fdff9c6cfd00955b30b2093a2909cefd25d14cefc1e1ff42714b469054ddb69",
+        "time.tsv": "06e416cc5b72b3cf6dc1e0b087fb7646e80fd69579abcc747c4f9ce03f890ae8"
+      }
+    },
+    {
+      "input": "BE41",
+      "program": "E0Default",
+      "status": "success",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0Default",
+        "-i",
+        "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/BE41.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.033814037684351206,
+        "time_wall_seconds": 0.02,
+        "peak_rss_kib": 3072,
+        "id": "BE41-exact-E0Default-rep0",
+        "input": "BE41",
+        "mode": "exact",
+        "program": "E0Default",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-d21618c5-800e95a-5patches/E0Default",
+          "-i",
+          "/tmp/e0-fixed-witnesses-mhnfwz15/new/inputs/BE41.txt"
+        ],
+        "started_utc": "2026-10-14T15:11:07.747546+00:00",
+        "finished_utc": "2026-10-14T15:11:07.781704+00:00",
+        "directory": "jobs/BE41-exact-E0Default-rep0"
+      },
+      "value": {
+        "log_z": -13.499740745904703,
+        "free_energy": 8.320170685564934,
+        "rt": 0.6163207755,
+        "policy": "weakly-closed-wmb"
+      },
+      "raw_sha256": {
+        "stdout.txt": "66edeee6382cef8323ca8bd2fde7fca538ba5bd2df8c5d819253b6c6de2a9c1b",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "9dad6613f726630107a277bb12ca7b300752f8adfa40680b1a9072ef62ad7d2e",
+        "result.json": "486428f25f47c92b50569bf945c8bab6d6ac7989eea74271c2d08a06a2c041b7",
+        "time.tsv": "6036631d09807b321e4a76d20b9023e1dd6fd2dce151a30313a074fc5273df8b"
+      }
+    }
+  ],
+  "old_wip_observations": [
+    {
+      "program": "E0LegacyCompatible",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-15aa7742-800e95a-4patches/E0LegacyCompatible",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e0-witnesses-20261014/WIP29.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.03413405083119869,
+        "time_wall_seconds": 0.02,
+        "peak_rss_kib": 3072
+      },
+      "raw_sha256": {
+        "stdout.txt": "a7d569da67c555424a5678b2342418194aacf095829287e6a6fd71323bbbe6ca",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "34a5ecf2ac2cd809bdeda7fa7b7c876813dd9e8eda56cd96908fe9c643818090",
+        "result.json": "22726015905d92c84f62af6bbf7a6bc31d626466aa351d8d17fdf153baacfb29",
+        "time.tsv": "6036631d09807b321e4a76d20b9023e1dd6fd2dce151a30313a074fc5273df8b"
+      },
+      "value": {
+        "log_z": -21.255165363154305,
+        "free_energy": 13.1,
+        "rt": 0.6163207755,
+        "policy": "legacy-compatible-wmb"
+      }
+    },
+    {
+      "program": "E0CPartyOracle",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/e0-observers-15aa7742-800e95a-4patches/E0CPartyOracle",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e0-witnesses-20261014/WIP29.txt"
+      ],
+      "result": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 0.017476549837738276,
+        "time_wall_seconds": 0.0,
+        "peak_rss_kib": 3072
+      },
+      "raw_sha256": {
+        "stdout.txt": "f499bdf407daa594ed888e7c1699c80887dec4a88b4f9594a7b8d7ba433b5d19",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "command.json": "1d051c0c621fe7114c5dbdeeec508ab654587596563e8cb186f3fd5249dfa1c1",
+        "result.json": "f0ff8776a54d3911299948e27e138c16d99b9add7216e559ea007635cdaec067",
+        "time.tsv": "06e416cc5b72b3cf6dc1e0b087fb7646e80fd69579abcc747c4f9ce03f890ae8"
+      },
+      "value": {
+        "log_z": -21.255165363154305,
+        "free_energy": 13.1,
+        "rt": 0.6163207755,
+        "policy": "legacy-compatible-wmb"
+      }
+    }
+  ],
+  "scope": "Five small exact-inside PF witnesses and historical WIP change only; no full bpRNA, BPP/MFE or performance claim"
+}

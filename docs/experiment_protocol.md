@@ -38,7 +38,8 @@ E0. Keep the completion-domain ambiguity follow-up in implementation notes
 until its resolution is known; do not change either implementation here.
 
 The [full bpRNA/E0 plan](full_bprna_array_plan_20261011.md) pins the
-implementation's four-patch `800e95a` oracle (ordered 0001,0002,0006,0007).
+implementation's five-patch `800e95a` oracle (ordered 0001,0002,0006,0007,0008)
+and LinearCParty `d21618c5` for the new E0 plan.
 That single oracle omits completed-WMB
 weak closure. Compare `LegacyCompatible` for numerical parity and
 `RequireWeakClosure` for model differences, preserving both results.

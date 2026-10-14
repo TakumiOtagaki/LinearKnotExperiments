@@ -61,22 +61,25 @@ for their scope and the next seven-record feasibility matrix.
 
 The [full bpRNA preparation](docs/full_bprna_array_plan_20261011.md) covers
 26,063 scaffold-generation jobs, the 699,387-job E1 matrix, staged b300/b400
-pilots, and a 304-input CParty comparison. Configs, measured calibration,
+pilots, and a 305-input CParty comparison. Configs, measured calibration,
 software locks, tier assignments and script copies are saved there.
-No scheduler submission was made. Finish the G arrays and regenerate verified
-E1/E0 plans before execution; their current dry-runs explicitly reject pending G.
+No scheduler submission was made. The new d21618c5 E0 dry-run verifies the
+existing full G dataset. The historical 2026-10-11 E1/E0 dry-runs retain their
+pending-G guard and require new verified plans before execution.
 
 `scripts/scaffold_array.py plan/run/aggregate` generates and collects the G
 arrays using the existing posterior/helix procedure. `scripts/build_e0_tools.py`
 builds inside-only exact observers for both closure policies and the single
-four-patch CParty oracle (upstream `800e95a`, without a closure patch).
+five-patch CParty oracle (upstream `800e95a`, patches 0001/0002/0006/0007/0008,
+without a closure patch).
 `scripts/analyze_e0.py` compares log Z / PF free energy only, with absolute
 roundoff limits of 1e-9 and 1e-10 kcal/mol from the implementation's audit.
 It counts closure differences after compatible-versus-oracle parity passes.
 BPP and MFE equality are outside E0; the historical BE41 MFE difference is
-preserved in the earlier records. All four PF witnesses pass. The adopted
-LinearCParty remains `15aa7742`; 28 small comparisons with `2456f9b2` have
-identical PF values. See [the update evidence](docs/e0_oracle_update_20261011/).
+preserved in the earlier records. All five PF witnesses pass on `d21618c5`.
+The new WIP29 witness changes log Z in both implementations relative to the
+retained `15aa7742` / four-patch binaries. See
+[the new update evidence](docs/e0_oracle_update_20261014/).
 
 Run formal experiments as tier-specific TSUBAME Grid Engine array jobs.
 Interactive-node execution is limited to small development pilots.

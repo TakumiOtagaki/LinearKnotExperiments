@@ -1,4 +1,4 @@
-// Inside-only observation linked to the original four-patch oracle objects.
+// Inside-only observation linked to the manifest-verified oracle objects.
 #include "h_globals.hh"
 #include "part_func.hh"
 #include <cmath>

@@ -20,10 +20,10 @@ def analysis_settings():
     return {
         "quantities": list(QUANTITIES), "excluded_quantities": ["bpp", "mfe", "contexts"],
         "comparisons": {
-            "compatible_vs_oracle": "Exact inside log Z / PF free energy only; single upstream 800e95a + patches 0001,0002,0006,0007 oracle without closure",
+            "compatible_vs_oracle": "Exact inside log Z / PF free energy only; single upstream 800e95a + patches 0001,0002,0006,0007,0008 oracle without closure",
             "default_vs_oracle": "Reference model difference; also report default minus compatible, attributing closure only when compatible parity passes"},
         "log_z_absolute_tolerance": 1e-9, "free_energy_absolute_tolerance": 1e-10,
-        "tolerance_source": "LinearCParty 2456f9b2 test/tools/audit_legacy_inside_parity.py defaults",
+        "tolerance_source": "LinearCParty d21618c5 test/tools/audit_legacy_inside_parity.py defaults",
         "tolerance_scope": "Absolute roundoff allowance for full-precision inside values; no relative tolerance or printed-CLI tolerance",
         "closure_count_rule": "Count differences exceeding either PF tolerance only when compatible-versus-oracle passes both tolerances"}
 

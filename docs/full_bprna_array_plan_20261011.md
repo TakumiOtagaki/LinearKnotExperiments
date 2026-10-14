@@ -255,6 +255,94 @@ MFEやBPPが一致したとの主張へ広げない。
 旧 `full_bprna_arrays_20261011/E0/` の artifact は履歴として残す。
 G全件を生成・検証した後に新しい ready plan を作る。
 
+### E0 の取り直し準備：d21618c5 と5パッチ oracle（2026-10-14）
+
+新しい E0 は clean clone `deps/LinearCParty-d21618c5/`、固定 commit
+`d21618c5115453174204329fcc40534b1cb9aa9c` を使う。
+その clone の変更していない `test/oracle/legacy_cparty/build.sh <out_dir>` で
+`build/cparty-oracle-800e95a-5patches/` を Release build し、終了値0で成功した。
+既存4パッチ oracle の Git objects を `file://` で新しい `out/src` に clone してから実行した。
+元の checkout と開発 tree は変更していない。
+パッチ順序は config.json どおり **0001 → 0002 → 0006 → 0007 → 0008**。
+0008 は WIP が3塩基の最小 hairpin の V 枝を数える修正であり、closure のパッチは追加していない。
+[Oracle lock](../manifests/software-cparty-oracle-800e95a-5patches-20261014.json) に
+manifest、patch/source/binary/object hash、build 設定・ログ hash を保存した。
+
+[Build script](../scripts/build_e0_tools.py) は
+[既存の d21618c5 pilot lock](../manifests/software-pilot-d21618c5.json) と
+`build/linear-cparty-d21618c5/` の対応を検証し、exact/RNA library をリンク前後に hash 検査する。
+新 oracle の元 objects に直接リンクした inside 専用道具は
+`build/e0-observers-d21618c5-800e95a-5patches/` に build した（終了値0）。
+API の変更対応は不要だった。
+[E0 lock](../manifests/software-e0-d21618c5-20261014.json) に実依存を記録した。
+比較は従来と同じ **exact inside の log Z / PF free energy のみ**で、
+Turner04、37°C、dangles2、絶対許容 `1e-9` / `1e-10 kcal/mol` の両方を必要とする。
+`LegacyCompatible` 対 oracle が本比較、既定 closure 対 oracle は参考値。
+旧 lock と旧 config は履歴としてそのまま残した。
+
+新しい [WIP29 入力](../data/e0-witnesses-20261014/WIP29.txt) は
+固定 clone の `scfg2_wip_hairpin_boundary_test.cc::check_root_consumers` の29 nt証人を保存したもの。
+G の (3,7) の間に3塩基 (4,5,6) があり、WIP 内の最小 hairpin 枝を含む。
+実装側で用いる extension (13,29) の completed witness も dataset metadata に記録した。
+ここでは構造のエネルギーを別に採点せず、同じ Turner04 条件で ensemble の PF だけを観測する。
+元の4証人と合わせて **15/15 jobs成功、5/5 PF parity成功**。
+最大 `|Δlog Z| = 2.1316282072803006e-14`、
+最大 `|ΔPF free energy| = 1.4210854715202004e-14 kcal/mol`。
+Closure 差は nested45 の1/5入力で検出し、制限方向は全5入力で整合した。
+
+| WIP29 の観測 | log Z | PF free energy (kcal/mol) |
+|---|---:|---:|
+| d21618c5 LegacyCompatible | −21.226938775753077 | 13.082603367763157 |
+| 5パッチ oracle | −21.226938775753080 | 13.082603367763157 |
+| 15aa7742 LegacyCompatible | −21.255165363154305 | 13.1 |
+| 4パッチ oracle | −21.255165363154305 | 13.1 |
+
+旧2ジョブも成功し、旧版同士の PF は一致した。
+新−旧の差は log Z 約 **+0.02822658740123**、PF free energy 約 **−0.01739663223684 kcal/mol**。
+この例で両実装が最小 hairpin を含める変更を反映したことを確認した。
+旧 binary・library・oracle source/object・manifest・parameter の hash を旧 lock で確認した。
+編集済みの実験 script の hash を合わせるために旧 lock を書き換えてはいない。
+[再現 script](../scripts/check_e0_fixed_witnesses.py) はジョブ別ファイルを `/tmp` に置き、
+生出力を1つの tar にまとめる。保存 tar の読み込みでも解析値が一致した。
+[観測値](e0_oracle_update_20261014/e0_witness_observations.json) と
+[解析](e0_oracle_update_20261014/e0_witness_analysis.json) を保存した。
+
+[新 config](../configs/e0_bprna_legacy_d21618c5_20261014.json) は
+従来と同じ300本の bpRNA cohort と4証人、追加の WIP29 の **305入力**。
+[新 array config](../configs/arrays/e0_bprna_legacy_d21618c5_20261014.json) は
+199 nt以下を cpu_16、200–399 ntを cpu_40、全 tier を workers=1、h_rt=8 h とする。
+300–399 nt の旧128 GiB cap は cpu_40 に収まらないため、cap を80,000 MiB、
+task memory budget を81,920 MiBにした。既存の費用式と時間条件は維持した。
+
+| E0 tier nt | 入力数 | tasks | CLI jobs | 見積時間 h | resource |
+|---|---:|---:|---:|---:|---|
+| 1–49 | 4 | 1 | 12 | 0.006 | cpu_16 |
+| 50–99 | 76 | 2 | 228 | 0.124 | cpu_16 |
+| 100–199 | 75 | 2 | 225 | 0.828 | cpu_16 |
+| 200–299 | 75 | 8 | 225 | 3.163 | cpu_40 |
+| 300–399 | 75 | 8 | 225 | 19.994 | cpu_40 |
+| 合計 | **305** | **21** | **915** | **24.114** | 5 arrays |
+
+新しい dry-run は実依存 lock と既存の full G dataset を検証済みで、
+`pending_scaffolds=false`。915 jobs はすべて未開始。
+凍結 plan は `results/runs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/array_plan.json`、
+job script は `jobs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/` の
+`nt1_49.sh`、`nt50_99.sh`、`nt100_199.sh`、`nt200_299.sh`、`nt300_399.sh`。
+[Review 用の summary・割当・script copy](e0_oracle_update_20261014/E0/summary.json) を保存し、
+全5 script が `bash -n` を通った。
+共有結果は task ごとの JSONL/tar、compact plan と inode gate を有効にした。
+新計画の見積り297 entries は、live quota と保守的24,000,000上限での
+残り2,951,789 entriesの10%以内に収まる。
+
+既存の費用式は scalar inside の300 nt級で未校正であり、短い tier の実測による
+時間・RSS・cap・timeoutの点検、scheduler resource/h_rt制限、利用group・同時task数・module、
+投入直前の inode/byte quota と node-local scratch容量は要確認。
+94テストが成功し、旧 oracle の拒否、WIP の新旧差の両側検査、305入力の維持、
+cpu_40 に収まらない旧capの拒否を追加した。
+小確認は本実験の全件一致や性能の証拠ではない。
+qsub、git commit、開発 tree の変更、重い計算実験は行っていない。
+[再現手順と検証記録](e0_oracle_update_20261014/README.md) を参照する。
+
 ## 係数合わせとポイント
 
 [Calibration manifest](../manifests/calibration/bprna-array-20261011.json) はE1の324ジョブのwall/RSSと、

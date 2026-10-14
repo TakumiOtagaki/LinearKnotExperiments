@@ -1,0 +1,308 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-14T15:02:22.835050+00:00",
+  "purpose": "formal",
+  "source_commit": "d21618c5115453174204329fcc40534b1cb9aa9c",
+  "source_git_state": {
+    "commit": "d21618c5115453174204329fcc40534b1cb9aa9c",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "build_revision_verified": true,
+  "verification_method": "Inside-only observer linked to dedicated pilot-lock-verified d21618c5 exact/RNA libraries, hashed before/after linking, and manifest-verified five-patch oracle objects",
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "-O2 -std=c++17 (linear); -O2 -std=gnu++17 (oracle)"
+  },
+  "cmake_cache_sha256": "888fd47307c7428dbf44357d196cea952e5c0f5133f10ddda21eae54eadd3ad4",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "binaries": {
+    "E0LegacyCompatible": "daefddfc7506b872d69486a5cf0bfbbc20d69036dc29232339aee5e4ef38ab5c",
+    "E0Default": "cbe95352a79ab4abd209899f513b390a5eecc5a374a3b0c0d144da8cf6ae1acf",
+    "E0CPartyOracle": "9726abe642e60bae4b460773f50be7eec8602eef74d3fb1aa868c98e1678c5d7"
+  },
+  "extra_files": [
+    {
+      "path": "tools/e0_linear.cc",
+      "sha256": "db59148c8a33c24260ef9d53a7db03a6216a33e3cd37c0193d5f84901c986ee9"
+    },
+    {
+      "path": "tools/e0_legacy_scalar.cc",
+      "sha256": "e954bc688dbae0818c985335905d04fb4bd0faf61a6c4d50a29d1cd0feb5862c"
+    },
+    {
+      "path": "scripts/build_e0_tools.py",
+      "sha256": "9cf09fee849d398636e8a6edbd025900e6b3d9685b1293fbebb41c4d68d1020c"
+    },
+    {
+      "path": "manifests/software-pilot-d21618c5.json",
+      "sha256": "8278e6b39246153648f92bcfa64f1c87c1d53e6496c5e9378eb218da6722add0"
+    },
+    {
+      "path": "build/linear-cparty-d21618c5/CMakeCache.txt",
+      "sha256": "f0a82ce65cf60b7fe09dad549853b8bb6840d093610c2e2dc7c261c312ee49ad"
+    },
+    {
+      "path": "build/linear-cparty-d21618c5/libcparty_scfg2_exact.a",
+      "sha256": "ec6df4498c80cce39b0f4aa80f2f8f9d7bdaaeba82ed1c23fe08b40a784f94bd"
+    },
+    {
+      "path": "build/linear-cparty-d21618c5/libRNA.a",
+      "sha256": "5196beb31cc10afd319abe70261a0ec343232ba68b26a76cd4b1bba4c21b916d"
+    },
+    {
+      "path": "build/e0-observers-d21618c5-800e95a-5patches/e0-linear",
+      "sha256": "2ee29ab9af55602ace097a1c050cae9ac70152f242118edb8e91e7db5e597b7d"
+    },
+    {
+      "path": "build/e0-observers-d21618c5-800e95a-5patches/build_provenance.json",
+      "sha256": "0ac95c77b6683c3beed7cf6ec0dc2e8d02734727284c606aed29983480cc014e"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/manifest.json",
+      "sha256": "afdc24f9c3e71a8e007e6c84078e5631e42666b22531603f446058f2f586b025"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/cparty-oracle",
+      "sha256": "063d33c4cce73b89bd63bc11943b70f9070bb8b1b89a07bb11f76d1679be3969"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/build/CParty",
+      "sha256": "4afaa1d0826e9d7ad6fb66de56ba28129a81ff30fd1ba161b2c3cce134011a01"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/build/CMakeCache.txt",
+      "sha256": "42a35e06a7dd8ffe8da1f9684fc0cbebb7e950e4579e64a42c3083eeb0f3c334"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/build/libRNA.a",
+      "sha256": "e0ffedb2a09a345e13fdf5900163809ec51046a1406313417a0f8e12ab9f657c"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/build/CMakeFiles/CParty.dir/src/part_func.cc.o",
+      "sha256": "0565832c59eca15dd00690041df831d20731b761d86b03b0df9848f0ae6a84ca"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/build/CMakeFiles/CParty.dir/src/dot_plot.cc.o",
+      "sha256": "fbc82b4014929b5292ed5f3753db9f920632aa70a6acc5314a90a284ad86466f"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/build/CMakeFiles/CParty.dir/src/mea.cc.o",
+      "sha256": "435e7efe44a3ea2910aa6e5f50dc75c5ed5dad722033092c31fec783a02fb51d"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/build/CMakeFiles/CParty.dir/src/centroid.cc.o",
+      "sha256": "75aeb031e748469f6e12491242651bcf2ef81192cd9f58100bb69ba41f294ef9"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/build/CMakeFiles/CParty.dir/src/W_final.cc.o",
+      "sha256": "0a6c16a69f97883112476cd125156e4f31a0021cd1382e55ae8e16b9e5ac2313"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/build/CMakeFiles/CParty.dir/src/pseudo_loop.cc.o",
+      "sha256": "1bcc3043c13005b59da031da4b61cfd6c20e3078a9a553df0276ba50239bd594"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/build/CMakeFiles/CParty.dir/src/s_energy_matrix.cc.o",
+      "sha256": "7b9000e8b0dd231309706d59f080e557ce4d2a81be2259dbbaddb980ba6d3976"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/build/CMakeFiles/CParty.dir/src/Hotspot.cc.o",
+      "sha256": "d627361f887557dfd40dcf1e81a217f1a7d40eec30b52bd39de53b4d19ff1418"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/build/CMakeFiles/CParty.dir/src/sparse_tree.cc.o",
+      "sha256": "04780deb22fd368bdc613c077a16f0bb8df18bf4f06dd3f0b0d09a31128f20ae"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/build/CMakeFiles/CParty.dir/src/SHAPE.cc.o",
+      "sha256": "69b431194e437bb531011705f004c5e78e6aba0a3072426d0a45c3e060b15ba9"
+    },
+    {
+      "path": "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/config.json",
+      "sha256": "65b75f6daa38d096f2495c4720816019bf90f506698f244e2a72920c1a066214"
+    },
+    {
+      "path": "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/build.sh",
+      "sha256": "45c2d943160e0e202528f4561b578843081c4df38b10b3ba9afd051345de90e2"
+    },
+    {
+      "path": "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/oracle_config.py",
+      "sha256": "56f385328cfd2f1330d6f8f24bfab2a66d585f658eb71da7c25e1ded5a389ed6"
+    },
+    {
+      "path": "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/patches/0001-build-include-algorithm-in-centroid.cc-for-std-sort.patch",
+      "sha256": "5fa0acde00ae3e09c4574c483af5a4c7c0716a66568014a17d7b920abb77fca2"
+    },
+    {
+      "path": "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/patches/0002-cli-read-input_structure_given-before-cmdline_parser.patch",
+      "sha256": "e4aa002d5e8093c3abd802fb965986f69a53d60e1e4f278f70e9a4e27875bc82"
+    },
+    {
+      "path": "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/patches/0006-VPR-right-run-guard-covers-j-CParty-5-follow-up.patch",
+      "sha256": "f14610e62404e904b9345ffdaee83cd338f3bc69dd034e1b2667c3a159e25939"
+    },
+    {
+      "path": "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/patches/0007-Extrapolate-PF-weights-for-long-scaffold-loops.patch",
+      "sha256": "ed3cba67f0f2047c8118613d83f4a6970c4cb138902a951c5b6b4d3815a251c1"
+    },
+    {
+      "path": "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/patches/0008-WIP-include-minimal-hairpin-branch.patch",
+      "sha256": "a735b6da4adbd8b7f69a7a8acc5586ea635076e4108c704273da67accbaee8de"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/CParty.cc",
+      "sha256": "332d78ee4d8ca4caa4d7cc2934d7de772cbff1d043d59d5fc9ba8911cab6750b"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/Hotspot.cc",
+      "sha256": "b94b8e5c00eb993f110511735c0bed2dda7553806bf2fa2d76e119a7d0d8eed5"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/Result.cc",
+      "sha256": "4b835bebffb77e3f257eee993fc3efa74507685dc6edf55f82241abc5d5c7c17"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/Result.hh",
+      "sha256": "63d7e234055e15815b91e92bd365015220d178711847fc62d045c31f63fcc829"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/SHAPE.cc",
+      "sha256": "d22802800a6ff1a032a7a23637d58fe646b325e4b84345f4475aec7a99288259"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/SHAPE.hh",
+      "sha256": "ec128b1ef87586926ed4f6b9b3dca7c229331dab2aa946c00bb409dfa2cd4a89"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/W_final.cc",
+      "sha256": "b02c284835bbc1a76df06696d6c70affc6fee00cb3d47193ab09fca98cf76731"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/W_final.hh",
+      "sha256": "f463200ae4bbca858592a3d6475a9f9c7dde0ad0823a86ea3da353bf81a3ff09"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/base_types.hh",
+      "sha256": "efff86365ef4e24221f4c454c0aaa7fc9f55b68805eca72d9ef55de145fe4a54"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/centroid.cc",
+      "sha256": "fa38a6931f83283fb45655522babf27bf3a54b78a1045ce1a05a3701f6e494cd"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/cmdline.cc",
+      "sha256": "2dd9aea1946409dab5c3b6ab5049af329b27505eaef6547f89a3a4f3394db669"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/cmdline.hh",
+      "sha256": "56d48966dcdf2899fd6cfc01998e4e2a4fceddf3011d481dbea77128d6c5ebe2"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/config.h",
+      "sha256": "f2e413ccde1fb4655833bdc33426fa5f68173e00ec8e9e6828befb00ad722523"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/constants.hh",
+      "sha256": "e0b4a2cf52e1b2c7c07147193db4663ffc2990f990d2ecf9786fade683b23c4b"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/cparty.ggo",
+      "sha256": "ca7b9fa6fed6e69ad1d7f499971e0d5e5aa793a666779428bad3072e8ece3066"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/dot_plot.cc",
+      "sha256": "ceffc00f41179345e20dfb1651ce9f6755ffb9f3eb45dc717ff40e6261625a6b"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/dot_plot.hh",
+      "sha256": "9bfaaac247ce4f966de7db57c4e52f615decac21c4984cc68214077e21a3bd30"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/h_externs.hh",
+      "sha256": "ee3cdd8963bd5af4d89c0e5f648b9c08f82b7e54a3dfe1d463cf558787555054"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/h_globals.hh",
+      "sha256": "4a9719d0a3db1a1e5e9ce3cc9428157281bd6a1ea8cf6bd3723909f0c0b895f2"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/h_struct.hh",
+      "sha256": "4ec90b2d2f0878c00272d552cdff71e177ac3ac65349c379d0f3eece95438fa6"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/hotspot.hh",
+      "sha256": "3404fda1218893bcc0ef7e8f2bf7c8e704a63ccb2cde746a0bd4c51d5700bc67"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/mea.cc",
+      "sha256": "dc283206c72670183592633c995a90a98f9ee03a6447790e0b35158b24a73cfe"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/mea.hh",
+      "sha256": "80d6fc52e504d7d385d9a7d2fa0a7b3be578ae0eeb5dd124e24ef451292dc9a0"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/mwm.cc",
+      "sha256": "697dad6632821e4c52fbc30b44d48ceb48b7d8924960c3938226073f3293bec9"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/mwm.hh",
+      "sha256": "844f943b402ad013fc0b70776026d5fe15d7ea69b5ee51a4fc3306daf7412bb2"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/part_func.cc",
+      "sha256": "f360cfa676c0a4750371b5417aec6dd44443c398348d1fae0d3406bbff5af71e"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/part_func.hh",
+      "sha256": "9a74faed97c51362b208f2140b6949afab7a0a609456ce767b7f90cb39b3faf4"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/pf_globals.hh",
+      "sha256": "d217a46ae79b876a4bc2714874e96d2bcf196843603fafaae9663db8fdeeedb4"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/pseudo_loop.cc",
+      "sha256": "9aa9fccddc81ad4bcc038cad21d41418e8fe41f4196b305d0460cb9d5746a49e"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/pseudo_loop.hh",
+      "sha256": "c7b752baf3b7e1afad72ec3ac1bc61145c0d7559cef5a8cd3139a51d9c3cf0a4"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/s_energy_matrix.cc",
+      "sha256": "6e8222a49ff877a11801c8751bf7a1f59d726001181a1b719ae77aec79c6a01d"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/s_energy_matrix.hh",
+      "sha256": "03dc81a7fe65a3d808617183003825de4c6429b100aea04e786372ad4c35e95c"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/sparse_tree.cc",
+      "sha256": "99263c867a061a55a96d808be6677ba3d21ccacd63534eb6f787bd1d0e2456bd"
+    },
+    {
+      "path": "build/cparty-oracle-800e95a-5patches/src/src/sparse_tree.hh",
+      "sha256": "24a055b60c78554c8fa71c248e76a69413a3671ea68ce2564afad1ce9468f964"
+    }
+  ],
+  "oracle": {
+    "source_commit": "800e95af9d1a97555233e2c7b37d73dbaa1a92b4",
+    "patches": 5,
+    "patch_order": [
+      "0001",
+      "0002",
+      "0006",
+      "0007",
+      "0008"
+    ],
+    "completed_wmb_weak_closure": false,
+    "manifest_sha256": "afdc24f9c3e71a8e007e6c84078e5631e42666b22531603f446058f2f586b025"
+  },
+  "observation_scope": "log_z, free_energy, rt only; BPP and MFE parity excluded"
+}

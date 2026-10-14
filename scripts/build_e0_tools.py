@@ -10,10 +10,10 @@ from pathlib import Path
 
 from run_cli import ROOT, build_settings, digest, experiment_path, git_state, now, verify_lock, write_json
 
-LINEAR_COMMIT = "15aa7742a5497164573294e37972ff7ccf9ddfe1"
-ORACLE_OWNER_COMMIT = "2456f9b21691a14f63511df29068628a9b2e4193"
+LINEAR_COMMIT = "d21618c5115453174204329fcc40534b1cb9aa9c"
+ORACLE_OWNER_COMMIT = LINEAR_COMMIT
 ORACLE_COMMIT = "800e95af9d1a97555233e2c7b37d73dbaa1a92b4"
-PATCH_NUMBERS = ["0001", "0002", "0006", "0007"]
+PATCH_NUMBERS = ["0001", "0002", "0006", "0007", "0008"]
 OBJECT_NAMES = ("part_func", "dot_plot", "mea", "centroid", "W_final", "pseudo_loop",
                 "s_energy_matrix", "Hotspot", "sparse_tree", "SHAPE")
 
@@ -21,14 +21,14 @@ OBJECT_NAMES = ("part_func", "dot_plot", "mea", "centroid", "W_final", "pseudo_l
 def verify_oracle(owner, oracle):
     state = git_state(owner)
     if state["dirty"] or state["commit"] != ORACLE_OWNER_COMMIT:
-        raise ValueError("use the clean fixed LinearCParty-2456f9b2 oracle owner")
+        raise ValueError("use the clean fixed LinearCParty-d21618c5 oracle owner")
     spec = importlib.util.spec_from_file_location("e0_oracle_config", owner / "test/oracle/legacy_cparty/oracle_config.py")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     manifest = module.verify_checkout(oracle / "src")
     if (manifest["upstream_commit"] != ORACLE_COMMIT or
             [p["name"].split("-", 1)[0] for p in manifest["patches"]] != PATCH_NUMBERS):
-        raise ValueError("E0 requires the single four-patch oracle without closure")
+        raise ValueError("E0 requires the single five-patch oracle without closure")
     return manifest
 
 
@@ -39,7 +39,7 @@ def oracle_lock(owner, oracle):
         "schema_version": 1, "created_utc": now(), "purpose": "oracle",
         "source_repository": manifest["upstream_url"], "source_commit": ORACLE_COMMIT,
         "source_git_state": git_state(oracle / "src"),
-        "source_modifications": "Exactly ordered patches 0001,0002,0006,0007; completed WMB weak closure absent",
+        "source_modifications": "Exactly ordered patches 0001,0002,0006,0007,0008; completed WMB weak closure absent",
         "build_revision_verified": True, "oracle_owner_commit": ORACLE_OWNER_COMMIT,
         "verification_method": "Clean pinned owner build.sh; oracle_config.verify_checkout verifies commit, ordered patches, patched sources and binary/object hashes",
         "build_command": ["bash", str((patchdir / "build.sh").relative_to(ROOT)), str(oracle)],
@@ -59,21 +59,21 @@ def oracle_lock(owner, oracle):
 
 
 def build(source, library_build, oracle, output, oracle_owner=None):
-    oracle_owner = oracle_owner or ROOT / "deps/LinearCParty-2456f9b2"
+    oracle_owner = oracle_owner or ROOT / "deps/LinearCParty-d21618c5"
     state = git_state(source)
     if state["dirty"] or state["commit"] != LINEAR_COMMIT:
-        raise ValueError("use the clean fixed LinearCParty-15aa7742 checkout")
+        raise ValueError("use the clean fixed LinearCParty-d21618c5 checkout")
     manifest = verify_oracle(oracle_owner, oracle)
-    base_lock_path = ROOT / "manifests/software-pilot-15aa7742.json"
+    base_lock_path = ROOT / "manifests/software-pilot-d21618c5.json"
     base_lock = json.loads(base_lock_path.read_text())
+    if base_lock.get("build_revision_verified") is not True:
+        raise ValueError("the fixed library build must have verified source provenance")
     verify_lock(base_lock_path, source, library_build, [{"name": n} for n in base_lock["binaries"]],
                 source / "params/rna_Turner04.par")
-    previous = json.loads((ROOT / "manifests/software-e0-15aa7742-20261011.json").read_text())
-    for name in ("libcparty_scfg2_exact.a", "libRNA.a"):
-        path = library_build / name
-        expected = next(e["sha256"] for e in previous["extra_files"] if e["path"] == str(path.relative_to(ROOT)))
-        if digest(path) != expected:
-            raise ValueError("fixed library changed: " + name)
+    # The supplied pilot lock certifies the dedicated build. Freeze its exact/RNA
+    # archives here and check them again after linking; do not reuse old hashes.
+    libraries = {name: digest(library_build / name)
+                 for name in ("libcparty_scfg2_exact.a", "libRNA.a")}
     output.mkdir(parents=True, exist_ok=False)
     commands = []
     compiler = subprocess.check_output(["c++", "--version"], text=True).splitlines()[0]
@@ -99,6 +99,7 @@ def build(source, library_build, oracle, output, oracle_owner=None):
                                          "CMAKE_CXX_FLAGS:STRING=-O2 -std=c++17 (linear); -O2 -std=gnu++17 (oracle)\n")
     write_json(output / "build_provenance.json", {"created_utc": now(), "compiler": compiler, "commands": commands,
         "source_commit": state["commit"], "oracle_owner_commit": ORACLE_OWNER_COMMIT,
+        "library_sha256": libraries, "library_source_lock_sha256": digest(base_lock_path),
         "oracle_manifest_sha256": digest(oracle / "manifest.json"), "library_build": str(library_build),
         "oracle_build": str(oracle), "observation_scope": "inside only; original oracle objects; no AD/outside/MFE/profiles"})
     extras = [ROOT / "tools/e0_linear.cc", ROOT / "tools/e0_legacy_scalar.cc", Path(__file__), base_lock_path,
@@ -110,28 +111,37 @@ def build(source, library_build, oracle, output, oracle_owner=None):
     extras += [configdir / n for n in ("config.json", "build.sh", "oracle_config.py")]
     extras += [configdir / "patches" / p["name"] for p in manifest["patches"]]
     extras += [p for p in sorted((oracle / "src/src").glob("*")) if p.is_file()]
+    for name, expected in libraries.items():
+        if digest(library_build / name) != expected:
+            raise ValueError("fixed library changed during observer build: " + name)
+    verify_lock(base_lock_path, source, library_build, [{"name": n} for n in base_lock["binaries"]],
+                source / "params/rna_Turner04.par")
+    verify_oracle(oracle_owner, oracle)
     return {"schema_version": 1, "created_utc": now(), "purpose": "formal", "source_commit": state["commit"],
         "source_git_state": state, "build_revision_verified": True,
-        "verification_method": "Inside-only observer linked to unchanged locked 15aa7742 exact/RNA libraries and manifest-verified four-patch oracle objects",
+        "verification_method": "Inside-only observer linked to dedicated pilot-lock-verified d21618c5 exact/RNA libraries, hashed before/after linking, and manifest-verified five-patch oracle objects",
         "compiler": compiler, "build_settings": build_settings(output), "cmake_cache_sha256": digest(output / "CMakeCache.txt"),
         "energy_parameter_file": "params/rna_Turner04.par", "energy_parameter_sha256": digest(source / "params/rna_Turner04.par"),
         "binaries": {n: digest(output / n) for n in ("E0LegacyCompatible", "E0Default", "E0CPartyOracle")},
         "extra_files": [{"path": str(p.relative_to(ROOT)), "sha256": digest(p)} for p in extras],
-        "oracle": {"source_commit": ORACLE_COMMIT, "patches": 4, "patch_order": PATCH_NUMBERS,
+        "oracle": {"source_commit": ORACLE_COMMIT, "patches": 5, "patch_order": PATCH_NUMBERS,
                    "completed_wmb_weak_closure": False, "manifest_sha256": digest(oracle / "manifest.json")},
         "observation_scope": "log_z, free_energy, rt only; BPP and MFE parity excluded"}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--software-root", default="deps/LinearCParty-15aa7742")
-    parser.add_argument("--build-dir", default="build/linear-cparty-15aa7742")
-    parser.add_argument("--oracle-owner", default="deps/LinearCParty-2456f9b2")
-    parser.add_argument("--oracle-dir", default="build/cparty-oracle-800e95a-4patches")
-    parser.add_argument("--out", default="build/e0-observers-15aa7742-800e95a-4patches")
-    parser.add_argument("--lock", default="manifests/software-e0-15aa7742-20261011.json")
-    parser.add_argument("--oracle-lock", default="manifests/software-cparty-oracle-800e95a-4patches-20261011.json")
+    parser.add_argument("--software-root", default="deps/LinearCParty-d21618c5")
+    parser.add_argument("--build-dir", default="build/linear-cparty-d21618c5")
+    parser.add_argument("--oracle-owner", default="deps/LinearCParty-d21618c5")
+    parser.add_argument("--oracle-dir", default="build/cparty-oracle-800e95a-5patches")
+    parser.add_argument("--out", default="build/e0-observers-d21618c5-800e95a-5patches")
+    parser.add_argument("--lock", default="manifests/software-e0-d21618c5-20261014.json")
+    parser.add_argument("--oracle-lock", default="manifests/software-cparty-oracle-800e95a-5patches-20261014.json")
     args = parser.parse_args()
+    for destination in (args.out, args.lock, args.oracle_lock):
+        if experiment_path(destination).exists():
+            parser.error("use a new output/lock path: " + destination)
     owner, oracle = experiment_path(args.oracle_owner), experiment_path(args.oracle_dir)
     write_json(experiment_path(args.oracle_lock), oracle_lock(owner, oracle))
     result = build(*[experiment_path(v) for v in (args.software_root, args.build_dir, args.oracle_dir, args.out)], owner)

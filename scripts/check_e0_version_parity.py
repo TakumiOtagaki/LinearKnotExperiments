@@ -10,8 +10,12 @@ import random
 import subprocess
 
 from analyze_e0 import analysis_settings, compare, read_observation, within_tolerance
-from build_e0_tools import LINEAR_COMMIT, ORACLE_OWNER_COMMIT
 from run_cli import ROOT, digest, experiment_path, git_state, now, run_one, verify_lock, write_json
+
+# This script reproduces the historical 2026-10-11 comparison, not the latest
+# E0 builder's version pair.
+LINEAR_COMMIT = "15aa7742a5497164573294e37972ff7ccf9ddfe1"
+ORACLE_OWNER_COMMIT = "2456f9b21691a14f63511df29068628a9b2e4193"
 
 
 def check(output):

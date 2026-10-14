@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "preparation_only": true,
+  "priority": 0,
+  "billing_source": "https://www.somuka.titech.ac.jp/reiki_int/reiki_honbun/x385RG00001693.html",
+  "billing_checked_date": "2026-10-11",
+  "point_formula": "sum(resource_coefficient * (0.7*max(estimated_task_wall_seconds,300)+0.1*h_rt_seconds)/3600), priority0. No parallel speedup or queue wait included. h_rt envelope substitutes h_rt for actual wall. Estimates omit per-charge 0.0001-point truncation, disk charges, and retries.",
+  "plans": [
+    {
+      "label": "E0",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/array_plan.json",
+      "array_plan_sha256": "d5f3cc52b845313570ca99b78f5f882a0cb27f188db2014acf0b20388691b1a7",
+      "pending_scaffolds": false,
+      "tiers": [
+        {
+          "tier": "nt1_49",
+          "inputs": 4,
+          "tasks": 1,
+          "jobs": 12,
+          "estimated_hours": 0.006136728827683295,
+          "estimated_points": 0.051500000000000004,
+          "h_rt_envelope_points": 0.384,
+          "resource": "cpu_16=1",
+          "h_rt": "08:00:00",
+          "workers": 1,
+          "inputs_per_task_min": 4,
+          "inputs_per_task_max": 4,
+          "task_max_estimated_memory_mib": 751.4852140421101
+        },
+        {
+          "tier": "nt50_99",
+          "inputs": 76,
+          "tasks": 2,
+          "jobs": 228,
+          "estimated_hours": 0.12417235462058603,
+          "estimated_points": 0.10300000000000001,
+          "h_rt_envelope_points": 0.768,
+          "resource": "cpu_16=1",
+          "h_rt": "08:00:00",
+          "workers": 1,
+          "inputs_per_task_min": 26,
+          "inputs_per_task_max": 50,
+          "task_max_estimated_memory_mib": 640.08732691
+        },
+        {
+          "tier": "nt100_199",
+          "inputs": 75,
+          "tasks": 2,
+          "jobs": 225,
+          "estimated_hours": 0.8275099514428027,
+          "estimated_points": 0.1307554179605977,
+          "h_rt_envelope_points": 0.768,
+          "resource": "cpu_16=1",
+          "h_rt": "08:00:00",
+          "workers": 1,
+          "inputs_per_task_min": 25,
+          "inputs_per_task_max": 50,
+          "task_max_estimated_memory_mib": 7418.447472896905
+        },
+        {
+          "tier": "nt200_299",
+          "inputs": 75,
+          "tasks": 8,
+          "jobs": 225,
+          "estimated_hours": 3.162781922544895,
+          "estimated_points": 1.2920921018672138,
+          "h_rt_envelope_points": 7.68,
+          "resource": "cpu_40=1",
+          "h_rt": "08:00:00",
+          "workers": 1,
+          "inputs_per_task_min": 5,
+          "inputs_per_task_max": 10,
+          "task_max_estimated_memory_mib": 15205.867916617832
+        },
+        {
+          "tier": "nt300_399",
+          "inputs": 75,
+          "tasks": 8,
+          "jobs": 225,
+          "estimated_hours": 19.993542754892704,
+          "estimated_points": 3.0593219892637333,
+          "h_rt_envelope_points": 7.68,
+          "resource": "cpu_40=1",
+          "h_rt": "08:00:00",
+          "workers": 1,
+          "inputs_per_task_min": 5,
+          "inputs_per_task_max": 10,
+          "task_max_estimated_memory_mib": 76614.05178370481
+        }
+      ],
+      "totals": {
+        "inputs": 305,
+        "tasks": 21,
+        "jobs": 915,
+        "estimated_hours": 24.11414371232867,
+        "estimated_points": 4.636669509091545,
+        "h_rt_envelope_points": 17.28
+      },
+      "scripts": [
+        {
+          "tier": "nt1_49",
+          "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/nt1_49.sh",
+          "sha256": "b20d1b52f561594db930c9a79b7ea121025fca3a2e99038d68c734126a02b67e"
+        },
+        {
+          "tier": "nt50_99",
+          "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/nt50_99.sh",
+          "sha256": "e7d97c2db0c749a41251bba400778b90585dc27f17ddf62241034d8c3d9c8548"
+        },
+        {
+          "tier": "nt100_199",
+          "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/nt100_199.sh",
+          "sha256": "78a2841d01beedfeb31f6923e184a7b63fba7939d918262feafb76682816d7b9"
+        },
+        {
+          "tier": "nt200_299",
+          "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/nt200_299.sh",
+          "sha256": "f261a6dc02f75a90424a2ba1238bd1a0763bdd551548e632ac27db4f38aebea0"
+        },
+        {
+          "tier": "nt300_399",
+          "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/nt300_399.sh",
+          "sha256": "bc5f48d23f6c87697803f218dd29a7f54fdeb26b2242394c947f56821e8c9cf1"
+        }
+      ]
+    }
+  ]
+}

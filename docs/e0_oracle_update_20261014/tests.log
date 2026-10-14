@@ -1,0 +1,17 @@
+.............error: cannot resume: config differs from run.json
+...first: success
+..array 1/1 tasks; 1 RNA; 0.1s
+......task 1/1 nt50_99/1: 1 RNA, 0.1s
+capb task 1/1 nt50_99/1: 1 RNA, 0.1s
+.task 1/1 nt50_99/1: 1 RNA, 0.1s
+....task 1/1 nt50_99/1: 1 RNA, 0.1s
+....................................................pk-fresh-stage_timing_driver-rep0: success
+empty-shared-stage_timing_driver-rep0: success
+empty-fresh-stage_timing_driver-rep0: success
+pk-shared-stage_timing_driver-rep0: success
+.........error: Disk quota exceeded
+....
+----------------------------------------------------------------------
+Ran 94 tests in 22.890s
+
+OK

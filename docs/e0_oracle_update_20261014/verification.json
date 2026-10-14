@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-14T15:12:38.020366+00:00",
+  "purpose": "preparation",
+  "oracle_build_exit_status": 0,
+  "observer_build_exit_status": 0,
+  "oracle_manifest_verified": true,
+  "observer_live_lock_verified": true,
+  "source_git_state": {
+    "commit": "d21618c5115453174204329fcc40534b1cb9aa9c",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "historical_locks_configs_cohort_unchanged": [
+    {
+      "path": "manifests/software-cparty-oracle-800e95a-4patches-20261011.json",
+      "sha256": "c2642b11b97d08221653998cbfa03a917c757b49a5d43707daab29cce8d5829e"
+    },
+    {
+      "path": "manifests/software-e0-15aa7742-20261011.json",
+      "sha256": "2dd48d7d82371d67592b35b68ba4db913a66dbf1c62840c84eb77976cda2a847"
+    },
+    {
+      "path": "manifests/software-pilot-d21618c5.json",
+      "sha256": "8278e6b39246153648f92bcfa64f1c87c1d53e6496c5e9378eb218da6722add0"
+    },
+    {
+      "path": "configs/e0_bprna_legacy_20261011.json",
+      "sha256": "dbacc292ae68cccd3f7ff9fc95dd16e4528f9b89e0d9e102a64a2b7dbd6febe9"
+    },
+    {
+      "path": "configs/arrays/e0_bprna_legacy_20261011.json",
+      "sha256": "b4cbdff56270c2e7b7b8f469b0c8fc08404c13453ce873e266ad9ef13ff3e170"
+    },
+    {
+      "path": "manifests/cohorts/bprna-e0-subset-20261011.json",
+      "sha256": "26137320771281bd2196353e3d462a05eecad23acd7e0c4e53610639d0c8bfad"
+    }
+  ],
+  "tests": {
+    "command": "python3 -m unittest discover -s tests",
+    "count": 94,
+    "exit_status": 0,
+    "elapsed_seconds": 22.89,
+    "log_sha256": "ad31c8baee6d3d1b9c77fc90117519a823bef84a905231261ed7eef32a9e8a32",
+    "new_tests": 7,
+    "scope": "Experiment repository tests; maintained implementation tests were not rerun",
+    "log_path": "docs/e0_oracle_update_20261014/tests.log"
+  },
+  "witness_check": {
+    "new_jobs": 15,
+    "old_jobs": 2,
+    "pf_parity_inputs": 5,
+    "passed": true,
+    "max_absolute_delta_log_z": 2.1316282072803006e-14,
+    "max_absolute_delta_free_energy": 1.4210854715202004e-14,
+    "wip_regression": {
+      "old_compatible_minus_oracle": {
+        "delta_log_z": 0.0,
+        "delta_free_energy": 0.0
+      },
+      "new_compatible_minus_oracle": {
+        "delta_log_z": 3.552713678800501e-15,
+        "delta_free_energy": 0.0
+      },
+      "new_minus_old": {
+        "E0LegacyCompatible": {
+          "delta_log_z": 0.028226587401228187,
+          "delta_free_energy": -0.01739663223684218
+        },
+        "E0CPartyOracle": {
+          "delta_log_z": 0.028226587401224634,
+          "delta_free_energy": -0.01739663223684218
+        }
+      },
+      "passed": true
+    },
+    "raw_archive_path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/local/e0-fixed-witnesses-d21618c5-5patches-20261014-v2/witness_run.tar",
+    "raw_archive_sha256": "e29a2af349bd14547378918cb9ff9d3977afc59ca0bd8fd73144cf084c7589fb"
+  },
+  "plan": {
+    "path": "results/runs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/array_plan.json",
+    "sha256": "d5f3cc52b845313570ca99b78f5f882a0cb27f188db2014acf0b20388691b1a7",
+    "inputs": 305,
+    "tasks": 21,
+    "jobs": 915,
+    "completed_jobs": 0,
+    "dependencies_verified": true,
+    "pending_scaffolds": false,
+    "cohort_provenance": {
+      "cohort_sha256": "26137320771281bd2196353e3d462a05eecad23acd7e0c4e53610639d0c8bfad",
+      "source_sha256": "c76025522f1f9e174c25207595bc079e454deb656acbfd3a51de71c60c167bc5",
+      "acquisition_manifest_sha256": "50be1bd0d5ada5c34381d44a041980457e3f2d8782b6ae227ba649b178987190",
+      "scaffold_dataset_sha256": "746db8f5acb4c394df3d8f282f08ef53a2e9e444aa5b19ee14617da8d414bf5a",
+      "pending_scaffolds": false
+    },
+    "file_budget": {
+      "format": "task-jsonl-tar-v1",
+      "tasks": 21,
+      "nonempty_tiers": 5,
+      "entries_per_task": 13,
+      "fixed_entries": 24,
+      "estimated_shared_entries": 297,
+      "counts_directories": true,
+      "scheduler_log_attempts": 1,
+      "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+      "project": 102571,
+      "filesystem": "/gs/bs",
+      "quota": {
+        "used_files": 21048211,
+        "limit_files": 28000000,
+        "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 8525807124  14680064000 14680064000       - 21048211  28000000 28000000       -"
+      },
+      "hard_file_limit": 24000000,
+      "remaining_files": 2951789,
+      "remaining_source": "lfs quota (with configured conservative hard limit)",
+      "max_remaining_fraction": 0.1,
+      "allowed_entries": 295178,
+      "accepted": true
+    }
+  },
+  "job_scripts": [
+    {
+      "path": "jobs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/nt1_49.sh",
+      "sha256": "b20d1b52f561594db930c9a79b7ea121025fca3a2e99038d68c734126a02b67e",
+      "bash_n_exit_status": 0
+    },
+    {
+      "path": "jobs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/nt50_99.sh",
+      "sha256": "e7d97c2db0c749a41251bba400778b90585dc27f17ddf62241034d8c3d9c8548",
+      "bash_n_exit_status": 0
+    },
+    {
+      "path": "jobs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/nt100_199.sh",
+      "sha256": "78a2841d01beedfeb31f6923e184a7b63fba7939d918262feafb76682816d7b9",
+      "bash_n_exit_status": 0
+    },
+    {
+      "path": "jobs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/nt200_299.sh",
+      "sha256": "f261a6dc02f75a90424a2ba1238bd1a0763bdd551548e632ac27db4f38aebea0",
+      "bash_n_exit_status": 0
+    },
+    {
+      "path": "jobs/e0-bprna-legacy-dry-d21618c5-5patches-20261014/nt300_399.sh",
+      "sha256": "bc5f48d23f6c87697803f218dd29a7f54fdeb26b2242394c947f56821e8c9cf1",
+      "bash_n_exit_status": 0
+    }
+  ],
+  "git_diff_check_exit_status": 0,
+  "qsub_executed": false,
+  "git_commit_executed": false,
+  "external_development_tree_modified": false,
+  "heavy_experiment_executed": false,
+  "remaining_checks": [
+    "Scalar-inside cost and RSS/cap/timeout calibration, especially 300-399 nt",
+    "Scheduler resource/h_rt limits, accounting group, concurrency and runtime modules",
+    "Fresh project inode/byte quota and node-local scratch capacity before submission"
+  ]
+}

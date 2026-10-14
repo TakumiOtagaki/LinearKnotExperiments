@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-14T15:02:17.265747+00:00",
+  "purpose": "oracle",
+  "source_repository": "https://github.com/TheCOBRALab/CParty.git",
+  "source_commit": "800e95af9d1a97555233e2c7b37d73dbaa1a92b4",
+  "source_git_state": {
+    "commit": "800e95af9d1a97555233e2c7b37d73dbaa1a92b4",
+    "dirty": true,
+    "status": "M  src/CParty.cc\nM  src/centroid.cc\nM  src/part_func.cc\nM  src/pseudo_loop.cc",
+    "tracked_diff_sha256": "43e88f44f8f4e8945c306d53044aef3b6bcb7cea7a6aef43a1bd5fc6cd45fef6"
+  },
+  "source_modifications": "Exactly ordered patches 0001,0002,0006,0007,0008; completed WMB weak closure absent",
+  "build_revision_verified": true,
+  "oracle_owner_commit": "d21618c5115453174204329fcc40534b1cb9aa9c",
+  "verification_method": "Clean pinned owner build.sh; oracle_config.verify_checkout verifies commit, ordered patches, patched sources and binary/object hashes",
+  "build_command": [
+    "bash",
+    "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/build.sh",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/cparty-oracle-800e95a-5patches"
+  ],
+  "build_script_sha256": "45c2d943160e0e202528f4561b578843081c4df38b10b3ba9afd051345de90e2",
+  "build_log_sha256": "1542dc92e20ca1ac94d660076356d5315bcc945f02b84786b78213a0473a92f6",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "CMAKE_GENERATOR": "Unix Makefiles"
+  },
+  "cmake_cache_sha256": "42a35e06a7dd8ffe8da1f9684fc0cbebb7e950e4579e64a42c3083eeb0f3c334",
+  "binaries": {
+    "CParty": "4afaa1d0826e9d7ad6fb66de56ba28129a81ff30fd1ba161b2c3cce134011a01",
+    "cparty-oracle": "063d33c4cce73b89bd63bc11943b70f9070bb8b1b89a07bb11f76d1679be3969"
+  },
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "patches": [
+    {
+      "path": "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/patches/0001-build-include-algorithm-in-centroid.cc-for-std-sort.patch",
+      "sha256": "5fa0acde00ae3e09c4574c483af5a4c7c0716a66568014a17d7b920abb77fca2"
+    },
+    {
+      "path": "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/patches/0002-cli-read-input_structure_given-before-cmdline_parser.patch",
+      "sha256": "e4aa002d5e8093c3abd802fb965986f69a53d60e1e4f278f70e9a4e27875bc82"
+    },
+    {
+      "path": "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/patches/0006-VPR-right-run-guard-covers-j-CParty-5-follow-up.patch",
+      "sha256": "f14610e62404e904b9345ffdaee83cd338f3bc69dd034e1b2667c3a159e25939"
+    },
+    {
+      "path": "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/patches/0007-Extrapolate-PF-weights-for-long-scaffold-loops.patch",
+      "sha256": "ed3cba67f0f2047c8118613d83f4a6970c4cb138902a951c5b6b4d3815a251c1"
+    },
+    {
+      "path": "deps/LinearCParty-d21618c5/test/oracle/legacy_cparty/patches/0008-WIP-include-minimal-hairpin-branch.patch",
+      "sha256": "a735b6da4adbd8b7f69a7a8acc5586ea635076e4108c704273da67accbaee8de"
+    }
+  ],
+  "source_files_sha256": {
+    "CParty.cc": "332d78ee4d8ca4caa4d7cc2934d7de772cbff1d043d59d5fc9ba8911cab6750b",
+    "Hotspot.cc": "b94b8e5c00eb993f110511735c0bed2dda7553806bf2fa2d76e119a7d0d8eed5",
+    "Result.cc": "4b835bebffb77e3f257eee993fc3efa74507685dc6edf55f82241abc5d5c7c17",
+    "Result.hh": "63d7e234055e15815b91e92bd365015220d178711847fc62d045c31f63fcc829",
+    "SHAPE.cc": "d22802800a6ff1a032a7a23637d58fe646b325e4b84345f4475aec7a99288259",
+    "SHAPE.hh": "ec128b1ef87586926ed4f6b9b3dca7c229331dab2aa946c00bb409dfa2cd4a89",
+    "W_final.cc": "b02c284835bbc1a76df06696d6c70affc6fee00cb3d47193ab09fca98cf76731",
+    "W_final.hh": "f463200ae4bbca858592a3d6475a9f9c7dde0ad0823a86ea3da353bf81a3ff09",
+    "base_types.hh": "efff86365ef4e24221f4c454c0aaa7fc9f55b68805eca72d9ef55de145fe4a54",
+    "centroid.cc": "fa38a6931f83283fb45655522babf27bf3a54b78a1045ce1a05a3701f6e494cd",
+    "cmdline.cc": "2dd9aea1946409dab5c3b6ab5049af329b27505eaef6547f89a3a4f3394db669",
+    "cmdline.hh": "56d48966dcdf2899fd6cfc01998e4e2a4fceddf3011d481dbea77128d6c5ebe2",
+    "config.h": "f2e413ccde1fb4655833bdc33426fa5f68173e00ec8e9e6828befb00ad722523",
+    "constants.hh": "e0b4a2cf52e1b2c7c07147193db4663ffc2990f990d2ecf9786fade683b23c4b",
+    "cparty.ggo": "ca7b9fa6fed6e69ad1d7f499971e0d5e5aa793a666779428bad3072e8ece3066",
+    "dot_plot.cc": "ceffc00f41179345e20dfb1651ce9f6755ffb9f3eb45dc717ff40e6261625a6b",
+    "dot_plot.hh": "9bfaaac247ce4f966de7db57c4e52f615decac21c4984cc68214077e21a3bd30",
+    "h_externs.hh": "ee3cdd8963bd5af4d89c0e5f648b9c08f82b7e54a3dfe1d463cf558787555054",
+    "h_globals.hh": "4a9719d0a3db1a1e5e9ce3cc9428157281bd6a1ea8cf6bd3723909f0c0b895f2",
+    "h_struct.hh": "4ec90b2d2f0878c00272d552cdff71e177ac3ac65349c379d0f3eece95438fa6",
+    "hotspot.hh": "3404fda1218893bcc0ef7e8f2bf7c8e704a63ccb2cde746a0bd4c51d5700bc67",
+    "mea.cc": "dc283206c72670183592633c995a90a98f9ee03a6447790e0b35158b24a73cfe",
+    "mea.hh": "80d6fc52e504d7d385d9a7d2fa0a7b3be578ae0eeb5dd124e24ef451292dc9a0",
+    "mwm.cc": "697dad6632821e4c52fbc30b44d48ceb48b7d8924960c3938226073f3293bec9",
+    "mwm.hh": "844f943b402ad013fc0b70776026d5fe15d7ea69b5ee51a4fc3306daf7412bb2",
+    "part_func.cc": "f360cfa676c0a4750371b5417aec6dd44443c398348d1fae0d3406bbff5af71e",
+    "part_func.hh": "9a74faed97c51362b208f2140b6949afab7a0a609456ce767b7f90cb39b3faf4",
+    "pf_globals.hh": "d217a46ae79b876a4bc2714874e96d2bcf196843603fafaae9663db8fdeeedb4",
+    "pseudo_loop.cc": "9aa9fccddc81ad4bcc038cad21d41418e8fe41f4196b305d0460cb9d5746a49e",
+    "pseudo_loop.hh": "c7b752baf3b7e1afad72ec3ac1bc61145c0d7559cef5a8cd3139a51d9c3cf0a4",
+    "s_energy_matrix.cc": "6e8222a49ff877a11801c8751bf7a1f59d726001181a1b719ae77aec79c6a01d",
+    "s_energy_matrix.hh": "03dc81a7fe65a3d808617183003825de4c6429b100aea04e786372ad4c35e95c",
+    "sparse_tree.cc": "99263c867a061a55a96d808be6677ba3d21ccacd63534eb6f787bd1d0e2456bd",
+    "sparse_tree.hh": "24a055b60c78554c8fa71c248e76a69413a3671ea68ce2564afad1ce9468f964"
+  },
+  "manifest_path": "build/cparty-oracle-800e95a-5patches/manifest.json",
+  "manifest_sha256": "afdc24f9c3e71a8e007e6c84078e5631e42666b22531603f446058f2f586b025",
+  "oracle_manifest": {
+    "schema_version": 1,
+    "upstream_url": "https://github.com/TheCOBRALab/CParty.git",
+    "upstream_commit": "800e95af9d1a97555233e2c7b37d73dbaa1a92b4",
+    "wmb_closure_policy": "legacy-compatible-wmb",
+    "patches": [
+      {
+        "name": "0001-build-include-algorithm-in-centroid.cc-for-std-sort.patch",
+        "sha256": "5fa0acde00ae3e09c4574c483af5a4c7c0716a66568014a17d7b920abb77fca2"
+      },
+      {
+        "name": "0002-cli-read-input_structure_given-before-cmdline_parser.patch",
+        "sha256": "e4aa002d5e8093c3abd802fb965986f69a53d60e1e4f278f70e9a4e27875bc82"
+      },
+      {
+        "name": "0006-VPR-right-run-guard-covers-j-CParty-5-follow-up.patch",
+        "sha256": "f14610e62404e904b9345ffdaee83cd338f3bc69dd034e1b2667c3a159e25939"
+      },
+      {
+        "name": "0007-Extrapolate-PF-weights-for-long-scaffold-loops.patch",
+        "sha256": "ed3cba67f0f2047c8118613d83f4a6970c4cb138902a951c5b6b4d3815a251c1"
+      },
+      {
+        "name": "0008-WIP-include-minimal-hairpin-branch.patch",
+        "sha256": "a735b6da4adbd8b7f69a7a8acc5586ea635076e4108c704273da67accbaee8de"
+      }
+    ],
+    "config_sha256": "65b75f6daa38d096f2495c4720816019bf90f506698f244e2a72920c1a066214",
+    "patched_diff_sha256": "3718acbdd82b01b32ca9425f0040b89c3be26f7c44ced4a84829c43763232b2a",
+    "source_sha256": {
+      "src/CParty.cc": "332d78ee4d8ca4caa4d7cc2934d7de772cbff1d043d59d5fc9ba8911cab6750b",
+      "src/centroid.cc": "fa38a6931f83283fb45655522babf27bf3a54b78a1045ce1a05a3701f6e494cd",
+      "src/part_func.cc": "f360cfa676c0a4750371b5417aec6dd44443c398348d1fae0d3406bbff5af71e",
+      "src/pseudo_loop.cc": "9aa9fccddc81ad4bcc038cad21d41418e8fe41f4196b305d0460cb9d5746a49e"
+    },
+    "artifact_sha256": {
+      "build/CParty": "4afaa1d0826e9d7ad6fb66de56ba28129a81ff30fd1ba161b2c3cce134011a01",
+      "build/libRNA.a": "e0ffedb2a09a345e13fdf5900163809ec51046a1406313417a0f8e12ab9f657c",
+      "build/CMakeFiles/CParty.dir/src/part_func.cc.o": "0565832c59eca15dd00690041df831d20731b761d86b03b0df9848f0ae6a84ca",
+      "build/CMakeFiles/CParty.dir/src/pseudo_loop.cc.o": "1bcc3043c13005b59da031da4b61cfd6c20e3078a9a553df0276ba50239bd594",
+      "build/CMakeFiles/CParty.dir/src/sparse_tree.cc.o": "04780deb22fd368bdc613c077a16f0bb8df18bf4f06dd3f0b0d09a31128f20ae",
+      "build/CMakeFiles/CParty.dir/src/SHAPE.cc.o": "69b431194e437bb531011705f004c5e78e6aba0a3072426d0a45c3e060b15ba9",
+      "build/CMakeFiles/CParty.dir/src/dot_plot.cc.o": "fbc82b4014929b5292ed5f3753db9f920632aa70a6acc5314a90a284ad86466f",
+      "build/CMakeFiles/CParty.dir/src/mea.cc.o": "435e7efe44a3ea2910aa6e5f50dc75c5ed5dad722033092c31fec783a02fb51d",
+      "build/CMakeFiles/CParty.dir/src/centroid.cc.o": "75aeb031e748469f6e12491242651bcf2ef81192cd9f58100bb69ba41f294ef9"
+    }
+  },
+  "build_exit_status": 0,
+  "scientific_scope": "Exact inside log Z / PF free energy only; BPP and MFE parity excluded"
+}

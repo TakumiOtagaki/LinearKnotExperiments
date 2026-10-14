@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "name": "e0-bprna-legacy-d21618c5-5patches-20261014",
+  "purpose": "formal",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "temperature_source": "CLI/API default; verify RT metadata",
+    "build_revision_verified": true
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 600,
+  "warmups": 0,
+  "repetitions": 1,
+  "inputs": [
+    {
+      "name": "closure14",
+      "path": "data/e0-witnesses-20261011/closure14.txt"
+    },
+    {
+      "name": "nested45",
+      "path": "data/e0-witnesses-20261011/nested45.txt"
+    },
+    {
+      "name": "BE41",
+      "path": "data/e0-witnesses-20261011/BE41.txt"
+    },
+    {
+      "name": "BE65",
+      "path": "data/e0-witnesses-20261011/BE65.txt"
+    },
+    {
+      "name": "WIP29",
+      "path": "data/e0-witnesses-20261014/WIP29.txt"
+    }
+  ],
+  "modes": [
+    {
+      "name": "exact"
+    }
+  ],
+  "programs": [
+    {
+      "name": "E0LegacyCompatible"
+    },
+    {
+      "name": "E0Default"
+    },
+    {
+      "name": "E0CPartyOracle"
+    }
+  ],
+  "analysis": {
+    "quantities": [
+      "log_z",
+      "free_energy"
+    ],
+    "excluded_quantities": [
+      "bpp",
+      "mfe",
+      "contexts"
+    ],
+    "comparisons": {
+      "compatible_vs_oracle": "Exact inside log Z / PF free energy only; single upstream 800e95a + patches 0001,0002,0006,0007,0008 oracle without closure",
+      "default_vs_oracle": "Reference model difference; also report default minus compatible, attributing closure only when compatible parity passes"
+    },
+    "log_z_absolute_tolerance": 1e-09,
+    "free_energy_absolute_tolerance": 1e-10,
+    "tolerance_source": "LinearCParty d21618c5 test/tools/audit_legacy_inside_parity.py defaults",
+    "tolerance_scope": "Absolute roundoff allowance for full-precision inside values; no relative tolerance or printed-CLI tolerance",
+    "closure_count_rule": "Count differences exceeding either PF tolerance only when compatible-versus-oracle passes both tolerances"
+  },
+  "software_lock": "manifests/software-e0-d21618c5-20261014.json",
+  "memory_limit_mib": 65536,
+  "order": {
+    "kind": "blocked_random",
+    "seed": 20261011
+  },
+  "input_cohort": "manifests/cohorts/bprna-e0-subset-20261011.json",
+  "manifest_checkpoint_jobs": 1000
+}
