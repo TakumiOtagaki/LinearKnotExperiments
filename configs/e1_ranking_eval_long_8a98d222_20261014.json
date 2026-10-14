@@ -207,7 +207,7 @@
     "purpose": "compare --ranking outer (default) vs baseline on the same build; exact reference below 400 nt; caps h=d=max(b,30)"
   },
   "software_lock": "manifests/software-pilot-8a98d222.json",
-  "memory_limit_mib": 131072,
+  "memory_limit_mib": 65536,
   "order": {
     "kind": "blocked_random",
     "seed": 20261011
