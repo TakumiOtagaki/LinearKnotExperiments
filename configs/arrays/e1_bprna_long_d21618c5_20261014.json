@@ -1,0 +1,305 @@
+{
+  "schema_version": 1,
+  "measurement": "accuracy",
+  "seed": 20261011,
+  "tiers": [
+    {
+      "name": "nt400_799",
+      "min_length": 400,
+      "max_length": 799,
+      "resource": "cpu_40",
+      "h_rt": "06:00:00",
+      "target_seconds": 15000,
+      "memory_budget_mib": 85000,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "job_limits": {
+        "memory_limit_mib": 65536,
+        "timeout_seconds": 7200
+      },
+      "order_kind": "beam_ascending",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit; time coefficients scaled by 0.25 (measured long-tier tasks ran >=4x faster than estimates); memory not scaled up for b>200 (E2: 29 kb at b=100 used 35 GiB, so 4.4 kb at b=400 is ~20 GiB)",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam20_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.0018085990514410803,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.10925149922473554,
+            "memory_exponent": 1
+          },
+          "beam50_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.01130374407150675,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.6828218701545969,
+            "memory_exponent": 1
+          },
+          "beam100_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.045214976286027,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 2.7312874806183878,
+            "memory_exponent": 1
+          },
+          "beam200_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.180859905144108,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          },
+          "beam300_outer": {
+            "constant_seconds": 0.095625,
+            "seconds_coefficient": 0.406934786574243,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          },
+          "beam400_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 0.723439620576432,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "nt800_1599",
+      "min_length": 800,
+      "max_length": 1599,
+      "resource": "cpu_40",
+      "h_rt": "08:00:00",
+      "target_seconds": 20000,
+      "memory_budget_mib": 85000,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "job_limits": {
+        "memory_limit_mib": 65536,
+        "timeout_seconds": 7200
+      },
+      "order_kind": "beam_ascending",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit; time coefficients scaled by 0.25 (measured long-tier tasks ran >=4x faster than estimates); memory not scaled up for b>200 (E2: 29 kb at b=100 used 35 GiB, so 4.4 kb at b=400 is ~20 GiB)",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam20_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.0018085990514410803,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.10925149922473554,
+            "memory_exponent": 1
+          },
+          "beam50_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.01130374407150675,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.6828218701545969,
+            "memory_exponent": 1
+          },
+          "beam100_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.045214976286027,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 2.7312874806183878,
+            "memory_exponent": 1
+          },
+          "beam200_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.180859905144108,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          },
+          "beam300_outer": {
+            "constant_seconds": 0.095625,
+            "seconds_coefficient": 0.406934786574243,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          },
+          "beam400_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 0.723439620576432,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "nt1600_3199",
+      "min_length": 1600,
+      "max_length": 3199,
+      "resource": "cpu_40",
+      "h_rt": "12:00:00",
+      "target_seconds": 30000,
+      "memory_budget_mib": 85000,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "job_limits": {
+        "memory_limit_mib": 65536,
+        "timeout_seconds": 7200
+      },
+      "order_kind": "beam_ascending",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit; time coefficients scaled by 0.25 (measured long-tier tasks ran >=4x faster than estimates); memory not scaled up for b>200 (E2: 29 kb at b=100 used 35 GiB, so 4.4 kb at b=400 is ~20 GiB)",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam20_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.0018085990514410803,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.10925149922473554,
+            "memory_exponent": 1
+          },
+          "beam50_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.01130374407150675,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.6828218701545969,
+            "memory_exponent": 1
+          },
+          "beam100_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.045214976286027,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 2.7312874806183878,
+            "memory_exponent": 1
+          },
+          "beam200_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.180859905144108,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          },
+          "beam300_outer": {
+            "constant_seconds": 0.095625,
+            "seconds_coefficient": 0.406934786574243,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          },
+          "beam400_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 0.723439620576432,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          }
+        }
+      }
+    },
+    {
+      "name": "nt3200_4381",
+      "min_length": 3200,
+      "max_length": 4381,
+      "resource": "cpu_40",
+      "h_rt": "16:00:00",
+      "target_seconds": 40000,
+      "memory_budget_mib": 85000,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "job_limits": {
+        "memory_limit_mib": 65536,
+        "timeout_seconds": 7200
+      },
+      "order_kind": "beam_ascending",
+      "cost_model": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit; time coefficients scaled by 0.25 (measured long-tier tasks ran >=4x faster than estimates); memory not scaled up for b>200 (E2: 29 kb at b=100 used 35 GiB, so 4.4 kb at b=400 is ~20 GiB)",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "beam20_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.0018085990514410803,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.10925149922473554,
+            "memory_exponent": 1
+          },
+          "beam50_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.01130374407150675,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.6828218701545969,
+            "memory_exponent": 1
+          },
+          "beam100_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.045214976286027,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 2.7312874806183878,
+            "memory_exponent": 1
+          },
+          "beam200_outer": {
+            "constant_seconds": 0.0425,
+            "seconds_coefficient": 0.180859905144108,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          },
+          "beam300_outer": {
+            "constant_seconds": 0.095625,
+            "seconds_coefficient": 0.406934786574243,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          },
+          "beam400_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 0.723439620576432,
+            "length_exponent": 1,
+            "memory_base_mib": 128,
+            "memory_coefficient": 10.925149922473551,
+            "memory_exponent": 1
+          }
+        }
+      }
+    }
+  ],
+  "compact_plan": true,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1,
+    "fallback_remaining_files": 800000,
+    "fallback_basis": "Conservative fallback below the 2026-10-11 snapshot; verify before submission"
+  },
+  "note": "E1 long formal run on d21618c5, cpu_40, staged by --through-beam."
+}

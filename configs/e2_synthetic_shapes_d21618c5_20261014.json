@@ -1,0 +1,1484 @@
+{
+  "schema_version": 1,
+  "name": "e2-synthetic-shapes-d21618c5-20261014",
+  "purpose": "formal",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "temperature_source": "CLI/API default; verify RT metadata",
+    "build_revision_verified": true
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 3600,
+  "warmups": 1,
+  "repetitions": 3,
+  "inputs": [
+    {
+      "name": "syn_n250_s2026101201_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101201_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101201_empty.txt",
+      "sha256": "46a2705aa4a424186f890a8315f0101efea962105f243d9489063d3a7e39442b",
+      "family": "empty",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n250_s2026101201_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101201_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101201_long_stem.txt",
+      "sha256": "8193929d1f5feb4ff1eab143d602ac50ccad7c5370075778303d46876c5ffe79",
+      "family": "long_stem",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n250_s2026101201_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101201_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101201_separated_helices.txt",
+      "sha256": "633d43c143fe1f8f3a72fa2453ca8d5fb0229f5674ccb335a45394c2aa3830e5",
+      "family": "separated_helices",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n250_s2026101201_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101201_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101201_deep_branching.txt",
+      "sha256": "82c2ff47ac89433d854bcec270d0260667693473c5e78e30eca25b2da25d6152",
+      "family": "deep_branching",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n250_s2026101201_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101201_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101201_separated_concentrated.txt",
+      "sha256": "5a81119557b6a6e10bde9b9f1fa67f7a60a3f9455f76258be2ebddf8bea7a8e4",
+      "family": "separated_concentrated",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n250_s2026101201_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101201_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101201_separated_12.txt",
+      "sha256": "a88df9d304255e3acd1ede8ebf5ab5d0c4f0e5066c2f388bee2d4bc62a582e5f",
+      "family": "separated_12",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n250_s2026101201_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101201_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101201_balanced_branching.txt",
+      "sha256": "c4dc0513ed2f1ccc0cbd6d304809322bcafb8291228eb42928c0ffe89444b0b7",
+      "family": "balanced_branching",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n250_s2026101201_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101201_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101201_branch_depth_d15.txt",
+      "sha256": "9678cbddf910184f7bc2a7385e3979817724a07ee040f5e46632ec9785296104",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n250_s2026101202_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101202_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101202_empty.txt",
+      "sha256": "cce45988074a017d98b72b77f37a51d21e5df2bf348d743df2742c1e8923e06d",
+      "family": "empty",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n250_s2026101202_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101202_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101202_long_stem.txt",
+      "sha256": "71900bd7d742682dfb2a650ff74c0d50653b8780d25fd16bd0a14431320b2883",
+      "family": "long_stem",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n250_s2026101202_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101202_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101202_separated_helices.txt",
+      "sha256": "8ef3c60de32c5a0af432dbe9931980844ff5c31edc54a7f90014f1dc7747d448",
+      "family": "separated_helices",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n250_s2026101202_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101202_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101202_deep_branching.txt",
+      "sha256": "96d853b0bda8bd5cc289014d63ad9554bbfef3ec617e2246af10bae809ee1598",
+      "family": "deep_branching",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n250_s2026101202_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101202_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101202_separated_concentrated.txt",
+      "sha256": "392f06b05a0f30f6d79994d5e9bffd1b47ef05b59d7af42d157374d9172ac96a",
+      "family": "separated_concentrated",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n250_s2026101202_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101202_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101202_separated_12.txt",
+      "sha256": "35bf499a909cd9de2e27bb0d5f5e90594bd8a444de28649f7cebf101a8db74e7",
+      "family": "separated_12",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n250_s2026101202_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101202_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101202_balanced_branching.txt",
+      "sha256": "6529efc3cd3565f303a9a5b1b6b582ac81a88477883a634c96bfb756d9188677",
+      "family": "balanced_branching",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n250_s2026101202_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101202_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101202_branch_depth_d15.txt",
+      "sha256": "d18cf24b40930ff4e6868e65260e0c15181c777b65ff8c3717dd3a78874a7dd4",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n250_s2026101203_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101203_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101203_empty.txt",
+      "sha256": "623668e8274df1c0d240f1591e70a4cb2723fc900c6e50fcdab2ea97576e1d15",
+      "family": "empty",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n250_s2026101203_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101203_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101203_long_stem.txt",
+      "sha256": "a3bcc9297e3170c414291537ce1f96543ce3ae90b92f32e8cbfe50a6112697ba",
+      "family": "long_stem",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n250_s2026101203_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101203_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101203_separated_helices.txt",
+      "sha256": "e52b1ed370f915b0f8798140a610d074bc8c8df974b7f7ddf95c1c6f1a092b56",
+      "family": "separated_helices",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n250_s2026101203_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101203_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101203_deep_branching.txt",
+      "sha256": "6c8838a052b4b4924718ce9e5392013902e7a340c85055410903149ef2912f5d",
+      "family": "deep_branching",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n250_s2026101203_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101203_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101203_separated_concentrated.txt",
+      "sha256": "2325e8dcb0f27d6e53b2f9473074825487e49c9eea76574f9d5c0b91378e6cd5",
+      "family": "separated_concentrated",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n250_s2026101203_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101203_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101203_separated_12.txt",
+      "sha256": "152714b256796c07d1337a95a8e75ce729a1178b0d27ec025dbad44b8c9a10a9",
+      "family": "separated_12",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n250_s2026101203_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101203_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101203_balanced_branching.txt",
+      "sha256": "d923971bf1da4c4316ea1cbb06e1b7dd2970f14617db631783ad8d99106f8a9d",
+      "family": "balanced_branching",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n250_s2026101203_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n250_s2026101203_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n250_s2026101203_branch_depth_d15.txt",
+      "sha256": "a45af965266e3c8d0f09e36c084b636995f8969ddc25be4801e49038ce7fed72",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n500_s2026101201_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101201_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101201_empty.txt",
+      "sha256": "1160cc07303f28992af4526379808c873f1a6f629ba04e9b774ccd26ad8bcde3",
+      "family": "empty",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n500_s2026101201_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101201_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101201_long_stem.txt",
+      "sha256": "6715ce8f00482bb4a5f9915c6e5b09b190d432e45cac4b047f1c37603643e914",
+      "family": "long_stem",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n500_s2026101201_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101201_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101201_separated_helices.txt",
+      "sha256": "2a2c4ef84668391a02cbae015fcd2c593375257fd126e93627fd018d13cc1701",
+      "family": "separated_helices",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n500_s2026101201_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101201_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101201_deep_branching.txt",
+      "sha256": "40f9a56b38403afacd3c424e8a8d1437e1362f4a886bf372d1bb8396c81d12f0",
+      "family": "deep_branching",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n500_s2026101201_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101201_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101201_separated_concentrated.txt",
+      "sha256": "a884bab3cfe261c48c8d868e741dac094ebfaa14a650cc843c663f2f8b875053",
+      "family": "separated_concentrated",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n500_s2026101201_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101201_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101201_separated_12.txt",
+      "sha256": "a361a3b21127cc7c551c74fd0a1767cbb4861b74b00acc36e8ada4c0207f8e4a",
+      "family": "separated_12",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n500_s2026101201_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101201_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101201_balanced_branching.txt",
+      "sha256": "a5a0dff26947eab6b5d0c99741800933e1b614629c02a3c272c46bbbfbe573d0",
+      "family": "balanced_branching",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n500_s2026101201_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101201_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101201_branch_depth_d15.txt",
+      "sha256": "c59cf39df2c1d7f2970a54b7c272dfdde98a06d7b67586842de67b6378df4b39",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n500_s2026101201_branch_depth_d30",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101201_branch_depth_d30.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101201_branch_depth_d30.txt",
+      "sha256": "924208059d571c98df22c80ea9a4b30bbf0455550ef746bb9494a427c8ec81e6",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n500_s2026101201_branch_depth_d31",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101201_branch_depth_d31.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101201_branch_depth_d31.txt",
+      "sha256": "63f9fef6b714c540927e80d2979604ec633673997ae9d11d1e3840cd8046003f",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n500_s2026101202_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101202_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101202_empty.txt",
+      "sha256": "a890dadc450b2258be747e67d62d209bf097deba93e457d6fff1dbf406fb32ad",
+      "family": "empty",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n500_s2026101202_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101202_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101202_long_stem.txt",
+      "sha256": "620f4334210134e6f92eff3b160f7dccaca8c1555a9069409c7077e5527b7668",
+      "family": "long_stem",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n500_s2026101202_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101202_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101202_separated_helices.txt",
+      "sha256": "e9d4381b62ab239318a6802eb128a82649682e553d3ff823ad96bbf083226668",
+      "family": "separated_helices",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n500_s2026101202_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101202_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101202_deep_branching.txt",
+      "sha256": "452c7c2940b0c1bdb08c434a102946255bf03b3ba84f8ba7a65b6484eda65776",
+      "family": "deep_branching",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n500_s2026101202_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101202_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101202_separated_concentrated.txt",
+      "sha256": "b55a7d1537863697bb969864110edda83d244b97880498f2808e3d7db16fd420",
+      "family": "separated_concentrated",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n500_s2026101202_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101202_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101202_separated_12.txt",
+      "sha256": "aabd1b4b01046c9f623a46ccc772d145e74320d1bd1705f06c760f86d2b070a2",
+      "family": "separated_12",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n500_s2026101202_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101202_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101202_balanced_branching.txt",
+      "sha256": "67047eb8c031de2465479e133e9b70844207b141f5b83492ddae0ff260c154d8",
+      "family": "balanced_branching",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n500_s2026101202_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101202_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101202_branch_depth_d15.txt",
+      "sha256": "9f6480c1c3d8123501f7c61576b17b06209505f0b7857572721378257a34e76b",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n500_s2026101202_branch_depth_d30",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101202_branch_depth_d30.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101202_branch_depth_d30.txt",
+      "sha256": "01b1de697ccc342d24068c8423bb425606a59f650df19b09a2310417453175fc",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n500_s2026101202_branch_depth_d31",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101202_branch_depth_d31.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101202_branch_depth_d31.txt",
+      "sha256": "458f1779b3bf108ae4eaeda7bc7a1b176954e0ac35328232bc3778a0531c00d5",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n500_s2026101203_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101203_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101203_empty.txt",
+      "sha256": "0ba326ac7d2fcf3abf6cd7dcd713f785fe14db81562c41ee2ac39e4c271731bd",
+      "family": "empty",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n500_s2026101203_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101203_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101203_long_stem.txt",
+      "sha256": "8215be944d8f60a23b649f8e37079c38a59631772bfdeb1636ff2558e7b263ee",
+      "family": "long_stem",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n500_s2026101203_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101203_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101203_separated_helices.txt",
+      "sha256": "e2034ac46a2b0f140206e863f149c94370e63ca38c58ba0d876c90d814d2f756",
+      "family": "separated_helices",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n500_s2026101203_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101203_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101203_deep_branching.txt",
+      "sha256": "13a8c385a302a15fb0d60492e4438684f6054903e306701916c52031bc7ba38c",
+      "family": "deep_branching",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n500_s2026101203_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101203_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101203_separated_concentrated.txt",
+      "sha256": "ea508436cbc25c8ac2d8fd84221e5207a2e9ca0540131171fb5714695065db23",
+      "family": "separated_concentrated",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n500_s2026101203_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101203_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101203_separated_12.txt",
+      "sha256": "466cd93c99b59cf9d51d5b25b4183e30cce9fda6735f13113892d96fccf47a56",
+      "family": "separated_12",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n500_s2026101203_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101203_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101203_balanced_branching.txt",
+      "sha256": "5da761cea6c5c116e8152037ada74347b95818be2a35685aaa7be6bb0d2fd491",
+      "family": "balanced_branching",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n500_s2026101203_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101203_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101203_branch_depth_d15.txt",
+      "sha256": "8b6e6d997aaca2dd181a1d13fcf7c48f955b56520d93f376e4e0c847edee8631",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n500_s2026101203_branch_depth_d30",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101203_branch_depth_d30.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101203_branch_depth_d30.txt",
+      "sha256": "9a21334ece62905fe51b6263f3b5c59db6407c4e9a96ce633f29fc4c7d7279ff",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n500_s2026101203_branch_depth_d31",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n500_s2026101203_branch_depth_d31.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n500_s2026101203_branch_depth_d31.txt",
+      "sha256": "7033ab16c9bdeed124ce16f2d436b5911f7c62b0662f593fe7b1ff9ebcbd514d",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n1000_s2026101201_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101201_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101201_empty.txt",
+      "sha256": "76da934317ad71f87e2dd37dc235f49548c8a0e3c0532bd3bc566fcc3e869892",
+      "family": "empty",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n1000_s2026101201_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101201_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101201_long_stem.txt",
+      "sha256": "3ab69d0be52fdaa8d7b63f2a86f473cc53dd998a1577266ed0fca55a724c9332",
+      "family": "long_stem",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n1000_s2026101201_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101201_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101201_separated_helices.txt",
+      "sha256": "168c59c2421986fed7126e3ae5126b2a01cd8502ad5ea658cc129ba926e575be",
+      "family": "separated_helices",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n1000_s2026101201_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101201_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101201_deep_branching.txt",
+      "sha256": "28a3f585593a4c310e38b542874e397da3eb22bd81d519eacc5c7fdc06721b8b",
+      "family": "deep_branching",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n1000_s2026101201_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101201_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101201_separated_concentrated.txt",
+      "sha256": "b596be9e183b8e7f0bc5867edb977364754fbad3e25e0cad511c2e28bdc0721e",
+      "family": "separated_concentrated",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n1000_s2026101201_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101201_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101201_separated_12.txt",
+      "sha256": "9232126a60e90cee5110ea2239a676f6e6d9db20b1108377869aeff20ed3073c",
+      "family": "separated_12",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n1000_s2026101201_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101201_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101201_balanced_branching.txt",
+      "sha256": "e4cdbdeb7cd67ff3d80e950b3ff30a9a9f785f868eef0f513eafb9341f5dcad4",
+      "family": "balanced_branching",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n1000_s2026101201_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101201_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101201_branch_depth_d15.txt",
+      "sha256": "cd0e5a5c3532d4097dc19913fdeef41581171666f56e975abb584126d14bafad",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n1000_s2026101201_branch_depth_d30",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101201_branch_depth_d30.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101201_branch_depth_d30.txt",
+      "sha256": "251c619ae74afc6303a82b5d407c8353a59e955820606ad5addd585ba6440f19",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n1000_s2026101201_branch_depth_d31",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101201_branch_depth_d31.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101201_branch_depth_d31.txt",
+      "sha256": "37363d7cdcc059e2dad3578e91677162875a066035c421053bc7c524245df456",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n1000_s2026101202_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101202_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101202_empty.txt",
+      "sha256": "72ffb202b380a78bb839edb060c5fcc5a129c5cbb03b5746cf9cd2726f4780c0",
+      "family": "empty",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n1000_s2026101202_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101202_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101202_long_stem.txt",
+      "sha256": "bb503237c06193a62a4d29fb39632345835c28bf5c5c12aaa9a521b857fbdbbd",
+      "family": "long_stem",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n1000_s2026101202_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101202_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101202_separated_helices.txt",
+      "sha256": "3bfc14b74958ebca6c61a7c5e165a270128ac7b8b662ee94eab986d80223b1bb",
+      "family": "separated_helices",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n1000_s2026101202_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101202_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101202_deep_branching.txt",
+      "sha256": "f86bf97617e3991a45506bf8a2950ce3beaa4398e478ea8489efaf836fbb287f",
+      "family": "deep_branching",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n1000_s2026101202_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101202_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101202_separated_concentrated.txt",
+      "sha256": "0c51fd19470429ee150d8b3effab2374f34816a81612dadfd3bf3a05f25afc89",
+      "family": "separated_concentrated",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n1000_s2026101202_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101202_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101202_separated_12.txt",
+      "sha256": "aaace577cbc2013af5f36d97a8a5cfb4be4a1bc123bb29032da224b8e87dc406",
+      "family": "separated_12",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n1000_s2026101202_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101202_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101202_balanced_branching.txt",
+      "sha256": "25792c3c5fe31802c08d6150c67e7ffece6bb83344808187f4181851c58d54a9",
+      "family": "balanced_branching",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n1000_s2026101202_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101202_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101202_branch_depth_d15.txt",
+      "sha256": "684ca681cc9ab075b171bba0247a96422ec2a57601d516db1ced9c597d86953e",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n1000_s2026101202_branch_depth_d30",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101202_branch_depth_d30.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101202_branch_depth_d30.txt",
+      "sha256": "97ce62a56850acb00fa2cd6be717889d04b66a82dfa5806e1252f6d3600853be",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n1000_s2026101202_branch_depth_d31",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101202_branch_depth_d31.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101202_branch_depth_d31.txt",
+      "sha256": "640a17cb6b88915713889f191e4c392d4d5d839b31c975f00b95c76ae531cf57",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n1000_s2026101203_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101203_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101203_empty.txt",
+      "sha256": "9ffd620f1ec4a98389535b1bd3aab232eed08602721eb26523bb3a035b8989c3",
+      "family": "empty",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n1000_s2026101203_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101203_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101203_long_stem.txt",
+      "sha256": "4eba7081aad00cd43474201db0663489e0a0441ae56221f5e3d3193bdace156a",
+      "family": "long_stem",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n1000_s2026101203_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101203_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101203_separated_helices.txt",
+      "sha256": "8d5d58ababeab088318270d72550cd6a78ac69b82b21c34f4ad52e3973e5e569",
+      "family": "separated_helices",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n1000_s2026101203_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101203_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101203_deep_branching.txt",
+      "sha256": "9e53f604eb0de31fecb096ae8af09287125e80dcafe0d5585be055823f188be8",
+      "family": "deep_branching",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n1000_s2026101203_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101203_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101203_separated_concentrated.txt",
+      "sha256": "81c5a33d7fc23ff8e6b1d928193052c0579a05122d890ca74cc5726aef9e7e12",
+      "family": "separated_concentrated",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n1000_s2026101203_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101203_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101203_separated_12.txt",
+      "sha256": "90c632955edc99edfe62ce887305eae61fc4bdc109839a2b349f9f1c77ef39bd",
+      "family": "separated_12",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n1000_s2026101203_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101203_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101203_balanced_branching.txt",
+      "sha256": "637104195b9ea8e202fa31542f903a9b90c11ca21c5ea16a3cda77492350046c",
+      "family": "balanced_branching",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n1000_s2026101203_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101203_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101203_branch_depth_d15.txt",
+      "sha256": "711a65458174faefa48c94cfee936070748e50489901da5ca4c8fd7abb6daabc",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n1000_s2026101203_branch_depth_d30",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101203_branch_depth_d30.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101203_branch_depth_d30.txt",
+      "sha256": "21db11bd9a76aa959df2b9c588f6abb09f53ceb33a74914ba22f7f8ab4874fac",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n1000_s2026101203_branch_depth_d31",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n1000_s2026101203_branch_depth_d31.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n1000_s2026101203_branch_depth_d31.txt",
+      "sha256": "e8f90f32057488cb1c1c30d63db93bb1e73150d1df36611b914b2b8d39a604e1",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n2000_s2026101201_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101201_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101201_empty.txt",
+      "sha256": "c3f9e4544a20f212e09397f12dda1d5ab9b006bd7ee115f7e2064e33c6de95e5",
+      "family": "empty",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n2000_s2026101201_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101201_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101201_long_stem.txt",
+      "sha256": "3ff090ab7e119a9e288ab43563ce4943cee6dcc5eb12ee65afa1e7180df0ef05",
+      "family": "long_stem",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n2000_s2026101201_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101201_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101201_separated_helices.txt",
+      "sha256": "dff632d2d68696dd97dc97e120effe8f40a930eb4513988bdbe9618dd5952043",
+      "family": "separated_helices",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n2000_s2026101201_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101201_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101201_deep_branching.txt",
+      "sha256": "d2fb26547a7939e357daaf2b3f1d3cde82a83520be9ee22d095c60d0d140110d",
+      "family": "deep_branching",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n2000_s2026101201_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101201_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101201_separated_concentrated.txt",
+      "sha256": "438797ce24619127f98279450604b1d2338bb5b7a698bcbef2dfd8a498abf65d",
+      "family": "separated_concentrated",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n2000_s2026101201_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101201_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101201_separated_12.txt",
+      "sha256": "c26932424edafac7ba9ceb3ad1cf373b08c6599523d454695e7e307f6a4696c7",
+      "family": "separated_12",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n2000_s2026101201_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101201_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101201_balanced_branching.txt",
+      "sha256": "f6d9db7acfdeeb4b77b8b7ba05aedb95a6a0054b6c77f98556ce57fd1c7ef45e",
+      "family": "balanced_branching",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n2000_s2026101201_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101201_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101201_branch_depth_d15.txt",
+      "sha256": "8db37077948eebdb4d7d68768ffff0cd0e4905e6886d06bc9816e73d109db797",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n2000_s2026101201_branch_depth_d30",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101201_branch_depth_d30.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101201_branch_depth_d30.txt",
+      "sha256": "81868b621f75ff0fef0af3aa12651b8f814b75d3a9a872b993cd9c1da0c74230",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n2000_s2026101201_branch_depth_d31",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101201_branch_depth_d31.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101201_branch_depth_d31.txt",
+      "sha256": "450c16f15862e7cef42add7c2d84ed8f1b4e120f74f14d648b73d24d7182dd77",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n2000_s2026101201_branch_depth_d99",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101201_branch_depth_d99.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101201_branch_depth_d99.txt",
+      "sha256": "3ed6f5204fd7620c7741b3a8ad10332d1ef1144c59a281fc0dee580cce39e2f1",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n2000_s2026101201_branch_depth_d100",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101201_branch_depth_d100.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101201_branch_depth_d100.txt",
+      "sha256": "9f7a73de203521e0d6211c746aa7d57f1723d8a467426f02a68a14191093387c",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n2000_s2026101202_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101202_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101202_empty.txt",
+      "sha256": "762192b7577c09b804c7964daee4b270bfa4168656e6de7d47d38d87bc273fd7",
+      "family": "empty",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n2000_s2026101202_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101202_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101202_long_stem.txt",
+      "sha256": "dd72a73dd6ad85ed4dfddcfa8d75272648371ccd49045f6fa7a204f3784a9096",
+      "family": "long_stem",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n2000_s2026101202_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101202_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101202_separated_helices.txt",
+      "sha256": "4ef8a0756abe7ae3e970d43449c5e9d7680ff35c3a101a7a6e02726d195a554c",
+      "family": "separated_helices",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n2000_s2026101202_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101202_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101202_deep_branching.txt",
+      "sha256": "1e430a6ad004e550dca3c8e2109cbe5bbf3d4e3523c52f57acbd1b0b8d6853db",
+      "family": "deep_branching",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n2000_s2026101202_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101202_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101202_separated_concentrated.txt",
+      "sha256": "95f70799611d9989eff5a8d760ac41d6d7d8cd0f023bf11b9112c888900f4037",
+      "family": "separated_concentrated",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n2000_s2026101202_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101202_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101202_separated_12.txt",
+      "sha256": "914483f8dd22b601d0120fd98d1ba07e992128326d3e9bf8d684dbb7fd85c7d4",
+      "family": "separated_12",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n2000_s2026101202_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101202_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101202_balanced_branching.txt",
+      "sha256": "6d8d28bb71f3bfbb18a987a17929371bebdd69bf56a2e8373bcb0b0ca1358774",
+      "family": "balanced_branching",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n2000_s2026101202_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101202_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101202_branch_depth_d15.txt",
+      "sha256": "1bed3773f3952f10f27479ef4c7235d1afa71d041e04af85dcb447c4f131474d",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n2000_s2026101202_branch_depth_d30",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101202_branch_depth_d30.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101202_branch_depth_d30.txt",
+      "sha256": "616576e43a16631517e682480dfe44c97c4bb395e56a857a0cda43b3587d6ba6",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n2000_s2026101202_branch_depth_d31",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101202_branch_depth_d31.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101202_branch_depth_d31.txt",
+      "sha256": "67d929d9beb943753911ec094a74e45006a8bc1ab2091f50c1fc4ef92f6ba2b1",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n2000_s2026101202_branch_depth_d99",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101202_branch_depth_d99.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101202_branch_depth_d99.txt",
+      "sha256": "dc3bc158b71e5a1adfe501d0f8a0ff2aee7127dfec8969c7abc58fe030bd8c8c",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n2000_s2026101202_branch_depth_d100",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101202_branch_depth_d100.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101202_branch_depth_d100.txt",
+      "sha256": "13e5c1dba735e0c3113743a8d72da4c16575d669a8da232ad5292c47b1336d90",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n2000_s2026101203_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101203_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101203_empty.txt",
+      "sha256": "4622abf0aa454cb7fdb85301af947e09e77d024ab38f4701d5001fcad09d7c4d",
+      "family": "empty",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n2000_s2026101203_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101203_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101203_long_stem.txt",
+      "sha256": "d205967ef8d29ce12f8220e7e7755e483e2a81578280d01cad6a8c8edcd1989a",
+      "family": "long_stem",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n2000_s2026101203_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101203_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101203_separated_helices.txt",
+      "sha256": "58901414481858efd3098cccb52ba1e8dae06a525b236054e9455cc8f2a19cbb",
+      "family": "separated_helices",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n2000_s2026101203_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101203_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101203_deep_branching.txt",
+      "sha256": "fa580c79542a092f13474de131162e7cbd0a7101a188974d93d2103bc8318daf",
+      "family": "deep_branching",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n2000_s2026101203_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101203_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101203_separated_concentrated.txt",
+      "sha256": "067180cbdc5b6ea397e9fec368b41e085195f8a49fc0f81df2b6201a2acab251",
+      "family": "separated_concentrated",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n2000_s2026101203_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101203_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101203_separated_12.txt",
+      "sha256": "614766adbd41e33d64751d0fe1374f76fa26543455071a95aa429f6720e38135",
+      "family": "separated_12",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n2000_s2026101203_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101203_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101203_balanced_branching.txt",
+      "sha256": "18b57e234398fcfb776e9af310a9c4b9c237ca004b737fd31530cef2497bc388",
+      "family": "balanced_branching",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n2000_s2026101203_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101203_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101203_branch_depth_d15.txt",
+      "sha256": "a2f7fb57d5f73d6199a9d64be77fc00ca3a243ecd2352d16507609e5c6685788",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n2000_s2026101203_branch_depth_d30",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101203_branch_depth_d30.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101203_branch_depth_d30.txt",
+      "sha256": "f5607f90e664f2f37eaa53e17e637e2e672462455b84e4e8ed45b12686a7595d",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n2000_s2026101203_branch_depth_d31",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101203_branch_depth_d31.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101203_branch_depth_d31.txt",
+      "sha256": "36fdd5e730bdbb4aa50366ff6b31babe2b3e60e98bfda2f7544314cc2d30ca94",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n2000_s2026101203_branch_depth_d99",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101203_branch_depth_d99.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101203_branch_depth_d99.txt",
+      "sha256": "f83488f715912a4cd1af54ff58ad3669bc2b33168623ca9af30ae462d03cb3eb",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n2000_s2026101203_branch_depth_d100",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n2000_s2026101203_branch_depth_d100.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n2000_s2026101203_branch_depth_d100.txt",
+      "sha256": "2d34e46ce9ff65d648f6c117b054c6acae040db3208a3746adc739fb5c4b710a",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n4000_s2026101201_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101201_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101201_empty.txt",
+      "sha256": "a2633002ba20788a42b4645ccecd02fb196b649cfadf7c1d4fee1c852803370c",
+      "family": "empty",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n4000_s2026101201_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101201_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101201_long_stem.txt",
+      "sha256": "94a5aadc6a902fcd73fdf72c067dd91de550eb7f9e2c292d42df27d7500d7022",
+      "family": "long_stem",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n4000_s2026101201_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101201_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101201_separated_helices.txt",
+      "sha256": "4dfa6f35026407935af053bb22d4560d430a969ce80c82824495ac0482f33935",
+      "family": "separated_helices",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n4000_s2026101201_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101201_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101201_deep_branching.txt",
+      "sha256": "403da67cfc8e8f4cdb0b8ddec6d7dee985de35b418b99091cc8dc0131a56cab4",
+      "family": "deep_branching",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n4000_s2026101201_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101201_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101201_separated_concentrated.txt",
+      "sha256": "b0ddb05eb34ecd0776ed26e1483f60335521d2cb2a4922d816695a0706d09040",
+      "family": "separated_concentrated",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n4000_s2026101201_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101201_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101201_separated_12.txt",
+      "sha256": "4461e7adb32f457e2210ceb4e70d7bfa422234ed7334f9a741b448b3060d50ce",
+      "family": "separated_12",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n4000_s2026101201_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101201_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101201_balanced_branching.txt",
+      "sha256": "62017b64683f4d05e777df2bb657096d64391249ad5dd3910dc5b29aedfe3bad",
+      "family": "balanced_branching",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n4000_s2026101201_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101201_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101201_branch_depth_d15.txt",
+      "sha256": "73319297a04bf8ab3a87dc5aba744768d1139729e4e2dbf0d661466aea1b7b04",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n4000_s2026101201_branch_depth_d30",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101201_branch_depth_d30.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101201_branch_depth_d30.txt",
+      "sha256": "8d0707aaf590780d87a95eba2c0aa3101e44a380c937b4bf06a5989035c1c25e",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n4000_s2026101201_branch_depth_d31",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101201_branch_depth_d31.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101201_branch_depth_d31.txt",
+      "sha256": "b1f139b427c75d34785b1d7dcd7fc94a74275dfc1b6436aa3a434b68a533b269",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n4000_s2026101201_branch_depth_d99",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101201_branch_depth_d99.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101201_branch_depth_d99.txt",
+      "sha256": "9cffefd9472b3ceb565790bc9dccabaffdb47d9dd8773c7b45075ca084e3e0f8",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n4000_s2026101201_branch_depth_d100",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101201_branch_depth_d100.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101201_branch_depth_d100.txt",
+      "sha256": "4ec0256c79c8b8b190f9cd0fc9324f8c7d54ae8ac7d37a6b4acae6c0f4735c95",
+      "family": "branch_depth",
+      "seed": 2026101201
+    },
+    {
+      "name": "syn_n4000_s2026101202_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101202_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101202_empty.txt",
+      "sha256": "d6e88a6a21d771d363aafc65cb9adfb6ad1697284bee9aaa45b064ddcc9b11c5",
+      "family": "empty",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n4000_s2026101202_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101202_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101202_long_stem.txt",
+      "sha256": "9a171486420ecfdbfbf7fc06386206ec86bffb7872ab869fa24e83b5d126b416",
+      "family": "long_stem",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n4000_s2026101202_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101202_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101202_separated_helices.txt",
+      "sha256": "5b9123b23b04d7e03e8611a21f0a8ee76257c253ac4589ad667ccea17b9e8808",
+      "family": "separated_helices",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n4000_s2026101202_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101202_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101202_deep_branching.txt",
+      "sha256": "fe46ed1a87b30353d873653ef867ee8ab7184699b50ac63e8f56cd633aab4108",
+      "family": "deep_branching",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n4000_s2026101202_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101202_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101202_separated_concentrated.txt",
+      "sha256": "225c25722527a74ce8d7beb0a3dc215e6d30cbc72a777bb0a880c113e390c5e8",
+      "family": "separated_concentrated",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n4000_s2026101202_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101202_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101202_separated_12.txt",
+      "sha256": "c3a747067e14b47b7d220b6457ad4c32165c6280ae4009cb516df26c51ba977a",
+      "family": "separated_12",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n4000_s2026101202_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101202_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101202_balanced_branching.txt",
+      "sha256": "10f4527a81a75e45b01715f32c22e4aa869081ef6b25cb4da7615a159252206c",
+      "family": "balanced_branching",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n4000_s2026101202_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101202_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101202_branch_depth_d15.txt",
+      "sha256": "e79057d6b14edeec6e91ca423f8a2dbab9999bfded9945b435f64ee8549755d2",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n4000_s2026101202_branch_depth_d30",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101202_branch_depth_d30.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101202_branch_depth_d30.txt",
+      "sha256": "cb61692b49c0b681d3b32a5304cae92f5cc89f7871358a70a632009415b759ee",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n4000_s2026101202_branch_depth_d31",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101202_branch_depth_d31.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101202_branch_depth_d31.txt",
+      "sha256": "5c846813efc1cf4e053e57cd6085da7891ac00964ce65d08c8eecb2ea10c8810",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n4000_s2026101202_branch_depth_d99",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101202_branch_depth_d99.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101202_branch_depth_d99.txt",
+      "sha256": "a4a93c72d5761e65579acef9c77d11fd2cd898288aa339017e24d2c8cd9a130f",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n4000_s2026101202_branch_depth_d100",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101202_branch_depth_d100.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101202_branch_depth_d100.txt",
+      "sha256": "0a69c5764abe8d7d885a66aa15c8e15fbc1b56860d9ad35decd4363fc2477a2f",
+      "family": "branch_depth",
+      "seed": 2026101202
+    },
+    {
+      "name": "syn_n4000_s2026101203_empty",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101203_empty.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101203_empty.txt",
+      "sha256": "df6a9bbf1a3d5581e8adb151f82f325110181e4e94efb536f7755f742d4c12d1",
+      "family": "empty",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n4000_s2026101203_long_stem",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101203_long_stem.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101203_long_stem.txt",
+      "sha256": "fa3f85d5f58177a45ba35b2e0bfbeae2eb0c8a432272a13d6b5f7362b5624117",
+      "family": "long_stem",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n4000_s2026101203_separated_helices",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101203_separated_helices.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101203_separated_helices.txt",
+      "sha256": "933d1e11392677ecc39bdf8ba2f60c7e4c0d399181dff85852f44f750894ff01",
+      "family": "separated_helices",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n4000_s2026101203_deep_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101203_deep_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101203_deep_branching.txt",
+      "sha256": "dcbc9fa9d910d899b5e4cb453333eb4e690187c7aca0513a40113262fed7890e",
+      "family": "deep_branching",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n4000_s2026101203_separated_concentrated",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101203_separated_concentrated.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101203_separated_concentrated.txt",
+      "sha256": "9c3b91b7ac5f374ba4dfeca98613f0e7e59f0de1b2cb1f2df182eddd28fb5603",
+      "family": "separated_concentrated",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n4000_s2026101203_separated_12",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101203_separated_12.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101203_separated_12.txt",
+      "sha256": "ed76db6f9024f6264da696a92eaaffbfdcd9ee346cb41a69af984c806edfa338",
+      "family": "separated_12",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n4000_s2026101203_balanced_branching",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101203_balanced_branching.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101203_balanced_branching.txt",
+      "sha256": "e1f7f9065fb6385468a6cc32c182dff2992fd0c4d6458426f36646474295ad37",
+      "family": "balanced_branching",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n4000_s2026101203_branch_depth_d15",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101203_branch_depth_d15.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101203_branch_depth_d15.txt",
+      "sha256": "947275939c4d6030667220c57668af99bbbce253491c288f0393bf90d15c6434",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n4000_s2026101203_branch_depth_d30",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101203_branch_depth_d30.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101203_branch_depth_d30.txt",
+      "sha256": "097d8de36f08ea6542f5f3a436e44e00a9c0b929eb5bff977eec11e357414e78",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n4000_s2026101203_branch_depth_d31",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101203_branch_depth_d31.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101203_branch_depth_d31.txt",
+      "sha256": "dacad983edceb5941f89d0f30a0c89dbe0e85620083568f7667b60b0cc904cfa",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n4000_s2026101203_branch_depth_d99",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101203_branch_depth_d99.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101203_branch_depth_d99.txt",
+      "sha256": "698a9e6d4691dd79fdfd4fc967f98a8e29490eea83ea777bbca9afc94a3b0877",
+      "family": "branch_depth",
+      "seed": 2026101203
+    },
+    {
+      "name": "syn_n4000_s2026101203_branch_depth_d100",
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs/syn_n4000_s2026101203_branch_depth_d100.txt",
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/inputs.tar",
+      "input_member": "inputs/syn_n4000_s2026101203_branch_depth_d100.txt",
+      "sha256": "4b3c003c3eb841373f13b8b3b614cc84471a9a250959ba7aaa927fd9fe08fcae",
+      "family": "branch_depth",
+      "seed": 2026101203
+    }
+  ],
+  "modes": [
+    {
+      "name": "beam100_capb_outer",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "name": "LinearCParty",
+      "args": [
+        "--bpp-cutoff",
+        "0"
+      ],
+      "outputs": [
+        {
+          "name": "bpp.tsv",
+          "flag": "--bpp"
+        }
+      ]
+    },
+    {
+      "name": "LinearPKCapR",
+      "args": []
+    },
+    {
+      "name": "LinearPKRaccess",
+      "args": [
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ]
+    }
+  ],
+  "analysis": {
+    "scope": "Whole-CLI timing/RSS; node_f, one thread, warmup 1, measured 3. Explicit adopted h=d=max(b,30)=100; no exact long-RNA accuracy claim. Joint (S,G) synthetic controls; embedded canonical pairs change sequence. Run/calibrate n250/500 tiers before n1000/2000/4000."
+  },
+  "software_lock": "manifests/software-pilot-d21618c5.json",
+  "memory_limit_mib": 65536,
+  "order": {
+    "kind": "blocked_random",
+    "seed": 20261012
+  },
+  "input_generation": {
+    "manifest": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/e2-synthetic-shapes-20261012/manifest.json",
+    "sha256": "8169c1ca8aad4e406378401f1d3d498d05e347d6e78afd80ebb62656869f0e8f",
+    "same_sequence_shape_only": false,
+    "main_inputs": 60,
+    "total_inputs": 156
+  }
+}
