@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-14T08:03:56.676864+00:00",
+  "purpose": "development",
+  "source_repository": "https://github.com/TakumiOtagaki/LinearCParty",
+  "source_commit": "8a98d2226c39122a34aec7feed308a9a18be2b02",
+  "source_git_state": {
+    "commit": "8a98d2226c39122a34aec7feed308a9a18be2b02",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_tree": "87f46e8bbee4fadf3f0e9374e574a3f1df974d56",
+  "build_revision_verified": true,
+  "verification_method": "dedicated clean checkout; CMake configure/build; selected maintained checks",
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "CMAKE_GENERATOR": "Unix Makefiles"
+  },
+  "configure_arguments": [
+    "-DBUILD_TESTING=ON",
+    "-DCMAKE_BUILD_TYPE=Release"
+  ],
+  "cmake_cache_sha256": "6cb17f5638bf79c22fb4cd7b40b498ae2e0fc74d4e02f42242e2f850792943b8",
+  "binaries": {
+    "LinearCParty": "ba737fd10601a5fccb2c9694cd387373efe6990411ae2d6538261b9500a70edc",
+    "LinearPKCapR": "83acb40e01e1c47d70f342cad2f59b36c9846cecaf3a13ae58f3c4f1c22b26f9",
+    "LinearPKRaccess": "4b8d3852378643e81061f12e2e6a0c47b75538495d033874c1b67936488a5b81"
+  },
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "verification_results": [
+    {
+      "name": "scfg2_rules_core_exact_weight_test",
+      "returncode": 0,
+      "stdout": "scfg2_rules_core_exact_weight=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_exact_inside_oracle_test",
+      "returncode": 0,
+      "stdout": "scfg2_exact_inside_oracle=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_beam_api_test",
+      "returncode": 0,
+      "stdout": "scfg2_beam_api=ok\n",
+      "stderr": ""
+    }
+  ],
+  "required_suite": "test/tools/run_required_scfg2_tests.sh: required set ok (89 targets/checks; source root with build symlink)",
+  "scientific_scope": "fixed implementation pilot, not independent proof of ensemble semantics",
+  "known_semantic_followup": "Outer ranking (pilot p=ceil(b^(2/3)), bounded max outer) is the default for finite public CLI/API; --ranking baseline restores previous priorities. Includes WIP minimal-hairpin fix (d9554a8e), inside speedups and dependency checks. Test target scfg2_vp_wmbp_composed_beam_test does not compile."
+}
