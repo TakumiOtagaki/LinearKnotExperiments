@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-14T14:54:31.185434+00:00",
+  "purpose": "development",
+  "source_repository": "https://github.com/TakumiOtagaki/LinearCParty",
+  "source_commit": "d21618c5115453174204329fcc40534b1cb9aa9c",
+  "source_git_state": {
+    "commit": "d21618c5115453174204329fcc40534b1cb9aa9c",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_tree": "5b30a5e08076777ff8766af82c0c0139027f8cdc",
+  "build_revision_verified": true,
+  "verification_method": "dedicated clean checkout; CMake configure/build; selected maintained checks",
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "CMAKE_GENERATOR": "Unix Makefiles"
+  },
+  "configure_arguments": [
+    "-DBUILD_TESTING=ON",
+    "-DCMAKE_BUILD_TYPE=Release"
+  ],
+  "cmake_cache_sha256": "f0a82ce65cf60b7fe09dad549853b8bb6840d093610c2e2dc7c261c312ee49ad",
+  "binaries": {
+    "LinearCParty": "de9cc68f899acd0fec9286e859d0529d3d7f1b9d16f1fb5da0dcfe1a6beecd45",
+    "LinearPKCapR": "80ed8d4c4457ab50f90f5fb5378f3c8ef4ed45fed6cd2ed9708d65aa4bf77488",
+    "LinearPKRaccess": "cb08e4c8956bf49fc2fa3e5dfbc92b706bb1499a18f6a4a33e57f0c676e996be"
+  },
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "verification_results": [
+    {
+      "name": "scfg2_rules_core_exact_weight_test",
+      "returncode": 0,
+      "stdout": "scfg2_rules_core_exact_weight=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_exact_inside_oracle_test",
+      "returncode": 0,
+      "stdout": "scfg2_exact_inside_oracle=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_beam_api_test",
+      "returncode": 0,
+      "stdout": "scfg2_beam_api=ok\n",
+      "stderr": ""
+    }
+  ],
+  "required_suite": "test/tools/run_required_scfg2_tests.sh: required set ok (97 targets/checks)",
+  "scientific_scope": "fixed implementation pilot, not independent proof of ensemble semantics",
+  "known_semantic_followup": "Bounded numeric inside/BPP/CapR/Raccess O(nb^2 log b) time, O(nb) space (fixed L,h,d; standard forcing; b<=n; expected O(1) dictionary). Linear-space beam MFE/MEA/centroid. Streaming sampling/subopt output (forest still saved). Outer ranking default. WIP minimal-hairpin fix. Test target scfg2_vp_wmbp_composed_beam_test does not compile."
+}
