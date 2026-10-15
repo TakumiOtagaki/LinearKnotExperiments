@@ -154,6 +154,14 @@ the schedule. A sequence matrix exceeding its tier budget is rejected.
 Cost coefficients are planning assumptions until calibrated with the adopted
 build's pilot; they are not empirical or theoretical complexity results.
 
+Choose resources by what the run measures.
+Accuracy runs (E0, E1, including long E1 tiers) use `cpu_16` with several
+workers per node, sized so the workers' memory caps fit the node.
+Only timing runs (E2) use one single-threaded worker per node, on `cpu_40`
+or another full node, so that wall time and RSS are not disturbed.
+The 2026-10-15 E1 b=300/400 stage on `cpu_40` with one worker used about
+370 single-process hours over ~13 h and kept later arrays waiting ~11 h.
+
 Each task writes a separate CLI run and `task.json`, including task numbers,
 `JOB_ID`, `SGE_TASK_ID`, hostname, requested resources and start/end times for
 every attempt. A per-task lock rejects duplicate controllers. Restart only the
