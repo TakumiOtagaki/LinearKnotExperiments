@@ -207,3 +207,18 @@ was performed.
 - 要確認：scalar insideの短いtier実測による時間・RSS/cap/timeout校正（特に300–399 nt）、schedulerのresource/h_rt制限・利用group・同時task数・module、投入直前のinode/byte quotaとnode-local scratch容量。qsub、git commit、重い計算実験、開発treeの変更は行っていない。
 
 [E0追記](full_bprna_array_plan_20261011.md) と [再現・証拠](e0_oracle_update_20261014/README.md) を参照。
+
+## 2026-10-16 E2 メモリ内訳測定の準備（d21618c5）
+
+- 外部 stage driver の既存 JSON を保ち、`positive_items`、VP/WMBP/CASE3 の候補・選択数、4種の probe 数、全族の visits/positive/candidate/selected を追加した。`--ranking outer|baseline`、`--outer-pilot-exponent 0.5|2/3`、一度だけ inside を呼ぶ `--skip-inside-repeat` を追加し、既定の二度呼び出す診断は維持した。
+- 公開 `BeamConfig` と固定版 api/beam/replay を調査した。baseline は outer pilot/guide を省く。b=100 の pilot 幅は p=22 または10で、任意幅の指定はない。scaffold-only LogMax 前走は baseline でも残る。内部 replay に forcing の flag はあるが公開 config に経路がなく、前走・強制保持の停止や前走幅 max(1000,b) の変更を public API driver では指定できない。CASE3 祖先登録の byte 数も公開統計にはない。
+- `software-pilot-d21618c5.json` と E0 lock の exact/RNA archive hash を照合して `build/stage-timing-d21618c5/` に buildし、新しい `manifests/software-stage-timing-d21618c5-20261016.json` に source/builder/両lock/archives/CLI/provenance を固定した。依存 source を変更せず、従来15aa7742 APIへの syntax-only compileも成功した。
+- 元E2の入力tar全体のhashと7入力すべての元byteをストリーム照合した。同じS/G、b=h=d=100、outerの inside/mfe/outside_bpp/loop_profile＋baseline insideを各別プロセスで1回、warm-up 0・repeat 1とするconfigとarray configを作成した。cpu_40・1 worker/thread、49,152 MiBのプロセス address-space cap、task budget 51,200 MiB。1 RNAの5条件を1 taskで逐次実行する。
+- `plan_array.py --dry-run --estimate-only` のみ実行した。7 tasks・35 jobs・共有111 entries（7×13＋20）。h_rt は3/2/2 tasksに2/4/6時間、timeoutは各job 900/2100/2700秒。既存tierの最大whole-CLI時間を切り上げ、0.001n秒と2倍の余裕を加えた見積もりは全体56,743.98秒（15.76時間）、要求h_rt合計26 task-hours。stage/baselineの校正値ではない。live使用21,069,547、保守的2,400万上限まで残り2,930,453、10%枠293,045に対しinode gate成功。estimateはJSON1個とdirectoryのみで、本番plan・script・入力コピーは作成していない。
+- 開発上の検証：全103 testsが25.240秒で成功。2つの既存smoke入力×outer/baseline/outer p10×inside/mfe/outsideを別プロセスで計算し、CLIのMFE構造・丸め表示のenergy/PF・full-precision BPP、全族と総数、一度だけのinside呼出しを照合した。既存全stageのCLI値とpacked runner/resumeも成功。E0 archive改変はbuild出力作成前に拒否した。smoke出力は`/tmp`のみ。両固定dependency treeはcleanを維持した。
+- 科学的な範囲：workはmain forwardの活動数であり、pilot・scaffold前走・CASE3登録のbyte数を含まない。profile APIにはwork統計がない。別processのRSS peakやbaselineとの差は加算可能な内訳ではなく、baselineは保持集合も変える。長入力の測定・メモリ増大原因の確定は未実施。本番plan、qsub、git commit、外部実装・原稿・文献の変更は行っていない。
+
+[driverの追記](stage_timing_driver.md#d21618c5-memory-breakdown-preparation-2026-10-16)、
+[測定config](../configs/e2_memory_breakdown_d21618c5_20261016.json)、
+[array config](../configs/arrays/e2_memory_breakdown_d21618c5_20261016.json)、
+[見積もり](e2_memory_breakdown_d21618c5_20261016/array_estimate.json) を参照。

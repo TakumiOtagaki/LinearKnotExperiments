@@ -4,6 +4,13 @@
 #include "scfg2/api/profiles.hh"
 #include "scfg2/api/sampling.hh"
 
+// Keep the observer buildable against the historical pre-ranking API too.
+#if __has_include("scfg2/beam/ranking_config.hh")
+#define LCP_HAS_OUTER_RANKING 1
+#else
+#define LCP_HAS_OUTER_RANKING 0
+#endif
+
 #include <algorithm>
 #include <chrono>
 #include <cmath>
@@ -102,6 +109,13 @@ struct Options {
   std::uint64_t seed = 1;
   double gamma = 1;
   bool values = false;
+  bool inside_repeat = true, pilot_explicit = false;
+#if LCP_HAS_OUTER_RANKING
+  std::string ranking = "outer";
+#else
+  std::string ranking = "baseline";
+#endif
+  std::string pilot_exponent = "2/3";
 };
 
 std::uint64_t integer(const std::string &s) {
@@ -155,6 +169,11 @@ Options parse(int argc, char **argv) {
     else if (key == "--session-mode") o.session_mode = value();
     else if (key == "--stage") o.stage = value();
     else if (key == "--include-values") o.values = true;
+    else if (key == "--skip-inside-repeat") o.inside_repeat = false;
+    else if (key == "--ranking") o.ranking = value();
+    else if (key == "--outer-pilot-exponent") {
+      o.pilot_exponent = value(); o.pilot_explicit = true;
+    }
     else if (key == "--gamma") {
       const auto s = value(); std::size_t used;
       o.gamma = std::stod(s, &used);
@@ -179,6 +198,20 @@ Options parse(int argc, char **argv) {
     read_one(o);
   } else if (o.sequence.empty() || o.scaffold.empty()) throw std::invalid_argument("supply sequence and scaffold");
   if (!o.beam.beam_size) throw std::invalid_argument("beam must be positive");
+  if (o.ranking != "outer" && o.ranking != "baseline")
+    throw std::invalid_argument("ranking must be outer or baseline");
+  if (o.pilot_exponent != "0.5" && o.pilot_exponent != "2/3")
+    throw std::invalid_argument("outer pilot exponent must be 0.5 or 2/3");
+  if (o.pilot_explicit && o.ranking != "outer")
+    throw std::invalid_argument("outer pilot exponent requires outer ranking");
+#if LCP_HAS_OUTER_RANKING
+  o.beam.ranking = o.ranking == "outer" ? api::BeamRanking::Outer : api::BeamRanking::Baseline;
+  o.beam.outer_pilot_exponent = o.pilot_exponent == "0.5" ?
+      api::OuterPilotExponent::Half : api::OuterPilotExponent::TwoThirds;
+#else
+  if (o.ranking != "baseline" || o.pilot_explicit)
+    throw std::invalid_argument("this source revision has no outer ranking API");
+#endif
   if (o.session_mode != "fresh" && o.session_mode != "shared" && o.session_mode != "both")
     throw std::invalid_argument("session mode must be fresh, shared or both");
   const std::vector<std::string> stages{"all", "inside", "mfe", "outside_bpp", "loop_profile", "accessibility", "sampling", "mea"};
@@ -187,9 +220,21 @@ Options parse(int argc, char **argv) {
 }
 
 Json work(const api::BeamWorkStats &w) {
+  std::vector<Json> families;
+  for (const auto &f : w.families)
+    families.push_back(Json::object({{"nonterminal", f.nonterminal},
+      {"item_visits", f.item_visits}, {"positive_items", f.positive_items},
+      {"frontier_candidates", f.frontier_candidates}, {"frontier_selected", f.frontier_selected}}));
   return Json::object({{"item_visits", w.total_item_visits},
     {"frontier_candidates", w.total_frontier_candidates}, {"frontier_selected", w.total_frontier_selected},
-    {"case3_truncated_endpoints", w.case3_truncated_endpoints}});
+    {"case3_truncated_endpoints", w.case3_truncated_endpoints},
+    {"positive_items", w.total_positive_items},
+    {"vp_candidates", w.vp_candidates}, {"vp_selected", w.vp_selected},
+    {"wmbp_candidates", w.wmbp_candidates}, {"wmbp_selected", w.wmbp_selected},
+    {"case3_candidates", w.case3_candidates}, {"case3_selected", w.case3_selected},
+    {"binary_join_probes", w.binary_join_probes}, {"extension_probes", w.extension_probes},
+    {"v_parent_probes", w.v_parent_probes}, {"vp_loop_parent_probes", w.vp_loop_parent_probes},
+    {"families", Json::array(families)}});
 }
 Json summary(const api::BeamInsideResult &r, const Options &) {
   return Json::object({{"log_z", r.log_partition_weight}, {"free_energy", r.ensemble_free_energy}, {"work", work(r.work)}});
@@ -288,7 +333,7 @@ Json run(const Options &o, bool shared, bool &ok) {
   std::vector<Json> stages;
   const auto want = [&](const std::string &s) { return o.stage == "all" || o.stage == s; };
   if (want("inside")) {
-    for (int repeat = 0; repeat < 2; ++repeat)
+    for (int repeat = 0; repeat < (o.inside_repeat ? 2 : 1); ++repeat)
       stages.push_back(measure(repeat ? "inside_repeat" : "inside",
         shared ? "BeamSession::inside" : "beam_inside",
         shared && repeat ? "cached result copy; no forward pass" : "numeric forward and preparation",
@@ -321,7 +366,9 @@ int main(int argc, char **argv) {
     std::cout << "stage_timing_driver -i ONE_RECORD | --sequence S --scaffold G\n"
       "  -b N --max-hairpin N --max-case3-depth N --access-len 1,2,4,7\n"
       "  -k N --seed N --gamma X --session-mode fresh|shared|both\n"
+      "  --ranking outer|baseline --outer-pilot-exponent 0.5|2/3\n"
       "  --stage all|inside|mfe|outside_bpp|loop_profile|accessibility|sampling|mea\n"
+      "  --skip-inside-repeat  (one inside call per run; omit cache diagnostic)\n"
       "  --include-values  (full numerical output for small validation inputs)\n";
     return 0;
   }
@@ -337,6 +384,9 @@ int main(int argc, char **argv) {
       {"config", Json::object({{"beam", o.beam.beam_size}, {"max_hairpin", o.beam.max_hairpin_unpaired},
         {"max_case3_depth", o.beam.max_case3_ancestor_depth}, {"access_lengths", numbers(o.lengths)},
         {"sample_count", o.count}, {"seed", o.seed}, {"gamma", o.gamma}, {"include_values", o.values},
+        {"ranking", o.ranking},
+        {"outer_pilot_exponent", o.ranking == "outer" ? Json(o.pilot_exponent) : Json()},
+        {"inside_repeat", o.inside_repeat},
         {"stage", o.stage}, {"wmb_closure_policy", "RequireWeakClosure"}, {"temperature_celsius", 37},
         {"energy_parameter_file", parameter ? Json(parameter) : Json()}})},
       {"reuse_contract", "Only inside result is cached. No public graph handoff; other calls rebuild, as in the CLIs."},

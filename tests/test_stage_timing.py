@@ -18,9 +18,10 @@ from plan_array import prepare
 from run_array_task import run_task
 from run_cli import write_json
 
-SOURCE = ROOT / "deps/LinearCParty-15aa7742"
-LIB_BUILD = ROOT / "build/linear-cparty-15aa7742"
-DRIVER_BUILD = ROOT / "build/stage-timing-15aa7742"
+SOURCE = ROOT / "deps/LinearCParty-d21618c5"
+LIB_BUILD = ROOT / "build/linear-cparty-d21618c5"
+DRIVER_BUILD = ROOT / "build/stage-timing-d21618c5"
+DRIVER_LOCK = "manifests/software-stage-timing-d21618c5-20261016.json"
 STAGES = ["inside", "inside_repeat", "mfe", "outside_bpp", "loop_profile", "accessibility", "sampling", "mea"]
 CONTEXTS = ["Stem", "Hairpin", "Bulge", "Internal", "Multiloop", "Exterior", "PseudoLoop"]
 PK_S = "AAAGGGAAAGGGCCCAAACCCAAA"
@@ -160,11 +161,58 @@ class StageTimingTests(unittest.TestCase):
         path.write_text(path.read_text() + "AAAA\n....\n")
         self.assertFalse(self.driver(["-i", str(path)], 2)["ok"])
 
+    def test_isolated_stages_ranking_and_complete_work_match_cli(self):
+        # Separate processes, with the same explicit b/h/d as the E2 matrix.
+        for name in ("empty_scaffold.txt", "pk_scaffold.txt"):
+            for ranking in (["--ranking", "outer"], ["--ranking", "baseline"],
+                            ["--ranking", "outer", "--outer-pilot-exponent", "0.5"]):
+                with self.subTest(input=name, ranking=ranking):
+                    args = ["-i", str(ROOT / "data/smoke" / name), "-b", "100",
+                            "--max-hairpin", "100", "--max-case3-depth", "100", *ranking]
+                    summaries = {}
+                    for stage in ("inside", "mfe", "outside_bpp"):
+                        record = self.driver([*args, "--stage", stage, "--skip-inside-repeat", "--include-values"])
+                        stages = record["runs"][0]["stages"]
+                        self.assertEqual([s["stage"] for s in stages], [stage])
+                        self.assertEqual(record["config"]["ranking"], ranking[1])
+                        self.assertFalse(record["config"]["inside_repeat"])
+                        summaries[stage] = stages[0]["summary"]
+                        work = summaries[stage]["work"]
+                        fields = {"item_visits", "positive_items", "frontier_candidates", "frontier_selected",
+                                  "vp_candidates", "vp_selected", "wmbp_candidates", "wmbp_selected",
+                                  "case3_candidates", "case3_selected", "binary_join_probes", "extension_probes",
+                                  "v_parent_probes", "vp_loop_parent_probes", "case3_truncated_endpoints", "families"}
+                        self.assertEqual(set(work), fields)
+                        families = work["families"]
+                        self.assertTrue(families)
+                        self.assertEqual(len({f["nonterminal"] for f in families}), len(families))
+                        self.assertIn("V", {f["nonterminal"] for f in families})
+                        for key in ("item_visits", "positive_items", "frontier_candidates", "frontier_selected"):
+                            self.assertEqual(sum(f[key] for f in families), work[key])
+                        self.assertGreater(work["positive_items"], 0)
+                    self.assertEqual(summaries["inside"]["work"], summaries["outside_bpp"]["work"])
+                    self.assertAlmostEqual(summaries["inside"]["log_z"], summaries["outside_bpp"]["log_z"], places=12)
+                    bpp = self.directory / "isolated-bpp.tsv"
+                    folding = self.launch(LIB_BUILD / "LinearCParty", [*args, "--bpp", str(bpp), "--bpp-cutoff", "0"]).stdout
+                    mfe = float(re.search(r"\((-?\d+(?:\.\d+)?)\)", folding)[1])
+                    pf = float(re.search(r"ensemble free energy:\s*(-?[0-9.]+)", folding)[1])
+                    self.assertLessEqual(abs(mfe - summaries["mfe"]["energy"]), 0.00501)
+                    self.assertLessEqual(abs(pf - summaries["inside"]["free_energy"]), 0.00005001)
+                    self.assertIn(summaries["mfe"]["union_structure"], folding)
+                    expected = {(int(i), int(j)): float(p) for i, j, p in
+                                (line.split() for line in bpp.read_text().splitlines() if line and not line.startswith(">"))}
+                    observed = {(p[0], p[1]): p[4] for p in summaries["outside_bpp"]["pairs"]}
+                    self.assertEqual(expected.keys(), observed.keys())
+                    for pair in expected:
+                        self.assertAlmostEqual(expected[pair], observed[pair], places=12)
+
     def test_invalid_options_and_api_errors_are_strict_json(self):
         args = ["--sequence", "GGGAAACCC", "--scaffold", "........."]
         for extra in (["-b", "0"], ["-k", "-1"], ["--seed", "1x"], ["--gamma", "nan"],
                       ["--gamma", "-1"], ["--access-len", "0"], ["--access-len", "1,"],
-                      ["--access-len", "1,1"], ["--session-mode", "graph"], ["--stage", "beta"], ["--seed"]):
+                      ["--access-len", "1,1"], ["--session-mode", "graph"], ["--stage", "beta"], ["--seed"],
+                      ["--ranking", "invalid"], ["--outer-pilot-exponent", "0.7"],
+                      ["--ranking", "baseline", "--outer-pilot-exponent", "0.5"]):
             with self.subTest(extra=extra): self.assertFalse(self.driver([*args, *extra], 2)["ok"])
         record = self.driver(["--sequence", "ACGU", "--scaffold", "(", "--stage", "inside", "--session-mode", "both"], 1)
         self.assertFalse(record["ok"])
@@ -201,7 +249,7 @@ class StageTimingTests(unittest.TestCase):
                 self.assertIsNone(window["probabilities"])
 
     def test_build_rejects_unverified_dependency_before_creating_files(self):
-        lock = json.loads((ROOT / "manifests/software-pilot-15aa7742.json").read_text())
+        lock = json.loads((ROOT / "manifests/software-pilot-d21618c5.json").read_text())
         lock["build_revision_verified"] = False
         path = self.directory / "unverified.json"; write_json(path, lock)
         target = self.directory / "build"
@@ -209,8 +257,21 @@ class StageTimingTests(unittest.TestCase):
             build(SOURCE, LIB_BUILD, target, path)
         self.assertFalse(target.exists())
 
+    def test_build_rejects_mismatched_e0_archive_before_creating_files(self):
+        archive = json.loads((ROOT / "manifests/software-e0-d21618c5-20261014.json").read_text())
+        for entry in archive["extra_files"]:
+            if entry["path"].endswith("libRNA.a"):
+                entry["sha256"] = "0" * 64
+        path = self.directory / "bad-archive.json"; write_json(path, archive)
+        target = self.directory / "build"
+        with self.assertRaisesRegex(ValueError, "differs from E0 lock"):
+            build(SOURCE, LIB_BUILD, target, ROOT / "manifests/software-pilot-d21618c5.json", path)
+        self.assertFalse(target.exists())
+
     def test_existing_array_runner_packs_json_and_resumes_without_jobs(self):
         config = json.loads((ROOT / "configs/stage_timing_smoke_15aa7742.json").read_text())
+        # The historical lock deliberately freezes the old observer source.
+        config["software_lock"] = DRIVER_LOCK
         config_path = self.directory / "config.json"; write_json(config_path, config)
         plan = prepare(config_path, ROOT / "configs/arrays/stage_timing_smoke.json",
                        self.directory / "plan", self.directory / "scripts", SOURCE, DRIVER_BUILD)

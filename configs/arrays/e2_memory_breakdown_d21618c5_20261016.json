@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "measurement": "timing",
+  "seed": 20261016,
+  "compact_plan": true,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1
+  },
+  "tiers": [
+    {
+      "name": "rna_4_8kb",
+      "min_length": 1,
+      "max_length": 8191,
+      "resource": "cpu_40",
+      "h_rt": "02:00:00",
+      "target_seconds": 4200,
+      "max_inputs_per_task": 1,
+      "workers": 1,
+      "memory_budget_mib": 51200,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "2026-10-16 E2 note, d21618c5 cpu_40 b=h=d=100 outer: max LinearCParty wall by tier 350.41/937.37/1293.19 s, peak RSS up to 35.7734 GiB. Each stage is budgeted as a full CLI with rounded tier maximum plus 0.001*n seconds; safety factor 2 across five processes. Baseline retention can differ, so this is an envelope, not a calibrated stage prediction. Memory envelope 40960 MiB exceeds historical peak and stays below the 48 GiB address-space cap.",
+        "seconds_constant_per_condition": 360,
+        "seconds_per_nt_condition": 0.001,
+        "safety_factor": 2,
+        "memory_base_mib": 40960,
+        "mib_per_nt": 0
+      },
+      "job_limits": {
+        "timeout_seconds": 900
+      }
+    },
+    {
+      "name": "rna_8_20kb",
+      "min_length": 8192,
+      "max_length": 19999,
+      "resource": "cpu_40",
+      "h_rt": "04:00:00",
+      "target_seconds": 10000,
+      "max_inputs_per_task": 1,
+      "workers": 1,
+      "memory_budget_mib": 51200,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "2026-10-16 E2 note, d21618c5 cpu_40 b=h=d=100 outer: max LinearCParty wall by tier 350.41/937.37/1293.19 s, peak RSS up to 35.7734 GiB. Each stage is budgeted as a full CLI with rounded tier maximum plus 0.001*n seconds; safety factor 2 across five processes. Baseline retention can differ, so this is an envelope, not a calibrated stage prediction. Memory envelope 40960 MiB exceeds historical peak and stays below the 48 GiB address-space cap.",
+        "seconds_constant_per_condition": 950,
+        "seconds_per_nt_condition": 0.001,
+        "safety_factor": 2,
+        "memory_base_mib": 40960,
+        "mib_per_nt": 0
+      },
+      "job_limits": {
+        "timeout_seconds": 2100
+      }
+    },
+    {
+      "name": "rna_20_30kb",
+      "min_length": 20000,
+      "max_length": 30000,
+      "resource": "cpu_40",
+      "h_rt": "06:00:00",
+      "target_seconds": 14500,
+      "max_inputs_per_task": 1,
+      "workers": 1,
+      "memory_budget_mib": 51200,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "2026-10-16 E2 note, d21618c5 cpu_40 b=h=d=100 outer: max LinearCParty wall by tier 350.41/937.37/1293.19 s, peak RSS up to 35.7734 GiB. Each stage is budgeted as a full CLI with rounded tier maximum plus 0.001*n seconds; safety factor 2 across five processes. Baseline retention can differ, so this is an envelope, not a calibrated stage prediction. Memory envelope 40960 MiB exceeds historical peak and stays below the 48 GiB address-space cap.",
+        "seconds_constant_per_condition": 1300,
+        "seconds_per_nt_condition": 0.001,
+        "safety_factor": 2,
+        "memory_base_mib": 40960,
+        "mib_per_nt": 0
+      },
+      "job_limits": {
+        "timeout_seconds": 2700
+      }
+    }
+  ],
+  "note": "One RNA matrix (five sequential, isolated processes) per task. No warmup, one repetition, cpu_40 and one worker/thread. Resource envelopes are planning assumptions, not stage calibration."
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "run_kind": "array_estimate",
+  "output_format": "task-jsonl-tar-v1",
+  "dry_run": true,
+  "executable": false,
+  "created_utc": "2026-10-15T23:25:13.356695+00:00",
+  "config_sha256": "9442ddf027af85468f4e464e78cd60bb6b43309e8213836fc515da4f94c4baa9",
+  "array_config_sha256": "710bffdde008d68fb4c878fecb4307cdbc197a7bf9f8678d856e52550eafe2eb",
+  "dependencies_verified_at_planning": true,
+  "pending_scaffolds": false,
+  "inputs": 7,
+  "tasks": 7,
+  "planned_jobs": 35,
+  "file_budget": {
+    "format": "task-jsonl-tar-v1",
+    "tasks": 7,
+    "nonempty_tiers": 3,
+    "entries_per_task": 13,
+    "fixed_entries": 20,
+    "estimated_shared_entries": 111,
+    "counts_directories": true,
+    "scheduler_log_attempts": 1,
+    "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "quota": {
+      "used_files": 21069547,
+      "limit_files": 28000000,
+      "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 8704759344  14680064000 14680064000       - 21069547  28000000 28000000       -"
+    },
+    "hard_file_limit": 24000000,
+    "remaining_files": 2930453,
+    "remaining_source": "lfs quota (with configured conservative hard limit)",
+    "max_remaining_fraction": 0.1,
+    "allowed_entries": 293045,
+    "accepted": true
+  },
+  "estimate_artifact_entries": 2,
+  "tiers": [
+    {
+      "tier": "rna_20_30kb",
+      "tasks": 2,
+      "inputs": 2
+    },
+    {
+      "tier": "rna_4_8kb",
+      "tasks": 3,
+      "inputs": 3
+    },
+    {
+      "tier": "rna_8_20kb",
+      "tasks": 2,
+      "inputs": 2
+    }
+  ],
+  "task_assignments": [
+    {
+      "tier": "rna_4_8kb",
+      "task_id": 1,
+      "inputs": [
+        "URS000233CDDE"
+      ]
+    },
+    {
+      "tier": "rna_4_8kb",
+      "task_id": 2,
+      "inputs": [
+        "URS00019626CE"
+      ]
+    },
+    {
+      "tier": "rna_4_8kb",
+      "task_id": 3,
+      "inputs": [
+        "URS000239D8A4"
+      ]
+    },
+    {
+      "tier": "rna_8_20kb",
+      "task_id": 1,
+      "inputs": [
+        "URS00023C9544"
+      ]
+    },
+    {
+      "tier": "rna_8_20kb",
+      "task_id": 2,
+      "inputs": [
+        "URS000241043C"
+      ]
+    },
+    {
+      "tier": "rna_20_30kb",
+      "task_id": 1,
+      "inputs": [
+        "URS000238C72C"
+      ]
+    },
+    {
+      "tier": "rna_20_30kb",
+      "task_id": 2,
+      "inputs": [
+        "URS00023A4DB9"
+      ]
+    }
+  ]
+}

@@ -134,3 +134,183 @@ Fresh/shared summaries and cached inside values agree. JSON/RSS, invalid inputs,
 zero samples, overlong windows, unreachable roots, build rejection, packed task execution and resume
 are checked. Build first: integration tests skip if dependencies are absent.
 These checks do not establish ensemble semantics or performance scaling.
+
+## d21618c5 memory breakdown preparation (2026-10-16)
+
+The sections above describe the historical 15aa7742 observer. The new observer
+links the clean `d21618c5115453174204329fcc40534b1cb9aa9c` dedicated build.
+The new [formal config](../configs/e2_memory_breakdown_d21618c5_20261016.json)
+collects isolated whole-call observations; no long-input measurement was run
+during this preparation.
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/build_stage_timing_driver.py \
+  --software-root deps/LinearCParty-d21618c5 \
+  --build-dir build/linear-cparty-d21618c5 \
+  --base-lock manifests/software-pilot-d21618c5.json \
+  --archive-lock manifests/software-e0-d21618c5-20261014.json \
+  --out build/stage-timing-d21618c5 \
+  --lock manifests/software-stage-timing-d21618c5-20261016.json --purpose formal
+export CPARTY_FIXED_ENERGY_PARAM_FILE="$PWD/deps/LinearCParty-d21618c5/params/rna_Turner04.par"
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 LC_ALL=C
+build/stage-timing-d21618c5/stage_timing_driver \
+  -i data/smoke/pk_scaffold.txt -b 100 --max-hairpin 100 --max-case3-depth 100 \
+  --ranking outer --session-mode fresh --stage inside --skip-inside-repeat
+```
+
+The builder verifies the base lock before and after linking, checks exact/RNA
+archive hashes against the same-revision E0 lock, and freezes both locks,
+archives, CLI binaries, driver source, builder and provenance in the
+[new software lock](../manifests/software-stage-timing-d21618c5-20261016.json).
+`--archive-lock` is inferred for 15aa7742 and d21618c5 when omitted.
+`--purpose` defaults to `development`; this build explicitly uses `formal`.
+Existing output directories and locks remain protected from overwriting.
+The pre-ranking 15aa7742 API still passes a syntax-only compilation check.
+Historical locks were not rewritten to accept the edited observer source.
+
+### Added JSON fields and options
+
+All previous JSON keys and the four previous `work` entries remain.
+For inside, MFE and outside/BPP, `summary.work` now exports every public
+`BeamWorkStats` field. The existing total aliases are `item_visits`,
+`frontier_candidates` and `frontier_selected`; the added total alias is
+`positive_items`. Additional fields are:
+
+- `vp_candidates`, `vp_selected`, `wmbp_candidates`, `wmbp_selected`,
+  `case3_candidates`, `case3_selected`;
+- `binary_join_probes`, `extension_probes`, `v_parent_probes`,
+  `vp_loop_parent_probes`;
+- `families`, an array of objects with `nonterminal`, `item_visits`,
+  `positive_items`, `frontier_candidates` and `frontier_selected`, including
+  families whose counts are zero.
+
+`case3_truncated_endpoints` keeps its previous meaning. These counters summarize
+the **main forward DP**; they exclude scaffold-only prepass and pilot/guide work.
+They count activity, not live objects, container capacity or allocated bytes.
+In particular, CASE3 candidates are not branching-ancestor registration counts.
+`StructuralProfileResult` exposes no `BeamWorkStats`, so loop-profile JSON
+continues to contain numerical profile summaries and RSS/timing, without work
+counters. Counter absence there does not mean zero work.
+
+New driver options are:
+
+| Option | Behavior |
+|---|---|
+| `--ranking outer\|baseline` | Sets public `BeamConfig::ranking`; default outer on d21618c5 |
+| `--outer-pilot-exponent 0.5\|2/3` | Selects the pilot width rule; default 2/3, explicit option requires outer |
+| `--skip-inside-repeat` | Runs one inside call; omits the second diagnostic call |
+
+`config` adds `ranking`, `outer_pilot_exponent` (null for baseline) and
+`inside_repeat`. Omitting `--skip-inside-repeat` preserves the old diagnostic
+behavior: fresh executes two forwards, while shared copies the cached inside
+result on its second call. The formal config uses fresh plus this option,
+so each process performs exactly one selected API call. Full-value export is
+disabled. On the old API the driver defaults to baseline and rejects outer
+options rather than silently ignoring them.
+
+### Preparation controls and limits of the comparison
+
+Inspection covered the fixed [public config](../deps/LinearCParty-d21618c5/src/scfg2/api/beam.hh),
+[API adapter](../deps/LinearCParty-d21618c5/src/scfg2/api/beam_detail.hh),
+[ranking preparation](../deps/LinearCParty-d21618c5/src/scfg2/beam/prepare_ranking.hh),
+[pilot width calculation](../deps/LinearCParty-d21618c5/src/scfg2/beam/pilot_outer.hh)
+and [online replay](../deps/LinearCParty-d21618c5/src/scfg2/replay/w_final_vp_wmbp_online.hh).
+
+| Preparation | Public control on d21618c5 | Consequence |
+|---|---|---|
+| (d) LogSumExp pilot and bounded outer guide | `ranking=Baseline` skips both; `outer_pilot_exponent` chooses p=ceil(sqrt(b)) or ceil(b^(2/3)) | At b=100, p=10 or 22; guide frontier is 4p. No arbitrary pilot-width field exists. |
+| (e) Scaffold-only LogMax prepass and forced retention | No control in public `BeamConfig` or CLI settings | Baseline still runs the prepass. Its width is internally max(1000,b) for these finite uniform beams. |
+
+Replay's internal widths type has `force_scaffold_derivation` and `forced_items`.
+The public adapter does not expose them, and the scaffold-only function computes
+its own width. No public-API driver option was added for disabling the prepass,
+changing its width or dropping forced retention. Replacing the public calls
+with internal replay calls would change this observer's measurement contract.
+Outer prepares the forced set before its pilot; baseline obtains it from the
+online runner. Thus baseline disables (d) while retaining (e), but it also
+changes main-beam selection. RSS subtraction does not isolate guide bytes.
+
+Unlike 15aa7742, a shared d21618c5 `BeamSession` caches immutable guide scores
+and forced keys as well as the scalar inside result. It still does not hand
+off the main graph. Fresh free-function calls reconstruct their own preparation,
+and standalone profiles prepare their own ranking. All formal conditions use
+separate fresh processes, so this guide reuse does not cross observations.
+
+The main replay constructs CASE3 child indexes using the branching-ancestor
+depth cap, including
+[endpoint paths](../deps/LinearCParty-d21618c5/src/scfg2/beam/vp_case3_border_event_plan.hh)
+and the
+[nonleft index](../deps/LinearCParty-d21618c5/src/scfg2/beam/vp_case3_nonleft_last_child_index.hh).
+Their internal path/registration sizes and byte allocations are not returned
+by `BeamWorkStats`. This preparation can help distinguish (a), (b) and whole
+(c) by process peak RSS and main-family activity, but cannot assign bytes to
+(e), (f), individual containers, outside alone or BPP aggregation alone.
+Lifetime RSS peaks and stage differences are not additive memory costs.
+
+### Formal matrix and estimate only
+
+The seven inputs match both the saved E2 plan hashes and the bytes streamed
+from its hash-verified `inputs.tar`; no input was regenerated or extracted.
+Each input has four outer conditions (`inside`, `mfe`, `outside_bpp`,
+`loop_profile`) and baseline `inside`: **35 isolated processes in 7 tasks**.
+All use b=h=d=100, 37 C, RequireWeakClosure, warm-ups 0, repetition 1,
+cpu_40, one worker and one thread, with a blocked order seed of 20261016.
+
+The [array config](../configs/arrays/e2_memory_breakdown_d21618c5_20261016.json)
+keeps one RNA's five calls sequential in one task. Each process has a 49,152 MiB
+(48 GiB) `RLIMIT_AS` address-space cap; this is not an RSS limit requested from
+the scheduler. Task memory budget is 51,200 MiB including 1,024 MiB overhead.
+The planning memory envelope is 40,960 MiB per process, above the historical
+35.7734 GiB peak RSS; address-space use and baseline retention remain unmeasured
+on long inputs.
+
+| Length tier | Inputs/tasks | Job timeout | h_rt per task | Estimated five-call task time |
+|---|---:|---:|---:|---:|
+| 4–8 kb | 3 | 900 s | 02:00:00 | 3,647.93–3,669.90 s |
+| 8–20 kb | 2 | 2,100 s | 04:00:00 | 9,618.32–9,636.52 s |
+| 20–30 kb | 2 | 2,700 s | 06:00:00 | 13,225.43–13,291.06 s |
+
+The budget uses the
+[2026-10-16 E2 note](../../textbook/notes/e0_e2_d21618c5_20261016.md):
+the largest LinearCParty wall times by tier were 350.41, 937.37 and 1,293.19 s.
+Every condition receives a rounded whole-CLI maximum (360/950/1300 s), plus
+0.001n seconds, then a factor of two. This is a conservative scheduling envelope,
+not a calibrated prediction for isolated stages or baseline. The sequential
+sum is 56,743.98 s (15.76 h); summed requested h_rt is 26 task-hours. Even five
+job timeouts fit each task's h_rt with runner headroom.
+
+Only the following estimate was created, with actual dependency verification:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 scripts/plan_array.py \
+  --config configs/e2_memory_breakdown_d21618c5_20261016.json \
+  --array-config configs/arrays/e2_memory_breakdown_d21618c5_20261016.json \
+  --software-root deps/LinearCParty-d21618c5 --build-dir build/stage-timing-d21618c5 \
+  --out docs/e2_memory_breakdown_d21618c5_20261016 --dry-run --estimate-only
+```
+
+The [estimate](e2_memory_breakdown_d21618c5_20261016/array_estimate.json) reports
+no pending scaffolds and **111 planned shared entries = 7 × 13 + 20**, including
+directories, scheduler logs and temporary-file headroom. Live quota was
+21,069,547 / 28,000,000 files; the planner's conservative 24,000,000 cap leaves
+2,930,453, with a 10% allowance of 293,045. The inode gate passed. Per-task
+results remain one JSONL and one tar, plus constant-size metadata. Estimate-only
+created one JSON and its directory; it created no executable plan, task
+directories, schedules, input copies or scheduler scripts.
+
+### Development verification
+
+All **103 tests passed** (`PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover
+-s tests -v`, 25.240 s). The observer tests now use the d21618c5 build and new
+lock while retaining the historical smoke config as a fixture. New checks run
+inside, MFE and outside/BPP as separate processes on both existing smoke inputs,
+with outer, baseline and outer p=10. They verify complete work fields, family
+totals, one-call selection, CLI MFE structure/rounded energy, PF rounded free
+energy and full-precision BPP. Existing all-stage CLI/profile/accessibility/
+sampling/MEA parity and packed runner/resume checks passed. A changed E0 archive
+hash is rejected before an output directory is created.
+
+Smoke outputs and test logs stayed in `/tmp`; temporary test files were cleaned.
+The retained log is `/tmp/e2-memory-breakdown-tests-20261016.log` for this session.
+Both fixed dependency trees remain clean. No implementation source, manuscript
+or bibliography was edited, and no production plan, qsub or git commit was made.
