@@ -17,7 +17,9 @@ def load_tsv(path):
 def number(value):
     if value == "NA":
         return "---"
-    return format(float(value), ".3g")
+    value = float(value)
+    # Do not display a probability error just below one as exactly one.
+    return format(value, ".6g" if 0.999 <= value < 1 else ".3g")
 
 
 def render(directory):
@@ -34,7 +36,7 @@ def render(directory):
     counts = {(r["axis"], r["stratum"]): r for r in load_tsv(directory / "stratum_counts.tsv")}
     lines = [
         r"% exact の交差対の期待数で RNA を層別し、高確率の位置・対・窓の局所誤差も示す。",
-        r"% A は RNA 内平均から求めた RNA 間 p90 と最大値、件数は全 RNA / 16 nt 適格 RNA。",
+        r"% A は RNA 単位の値の RNA 間 p90 と最大値、件数は全 RNA / 16 nt 適格 RNA。",
         r"% B は exact 確率 0.1 以上の事象の絶対誤差の中央値・p90・最大値と RNA 内最大値の RNA 間 p90。",
         r"% 窓は total accessibility であり、重なる窓を含む。",
         r"\begin{table}[!htbp]",
@@ -43,7 +45,9 @@ def render(directory):
         r"\caption{Exact-reference errors in RNAs and positions with pseudoknot probability mass.",
         r"A: crossing mass is the sum of exact probabilities of pairs that cross at least one pair in $G$; each pair is counted once.",
         r"$\Delta F=F_b-F_{\mathrm{exact}}$ is in kcal/mol; TV is total variation distance and MAE is mean absolute error.",
+        r"Here p90 denotes the 90th percentile.",
         r"The RNA counts give all RNAs / RNAs with eligible 16-nt windows.",
+        r"An eligible window contains no base paired in $G$.",
         r"Each error cell gives p90 / maximum across RNA-level values, using the definitions in Table~\ref{tab:si_accuracy_short}.",
         r"The groups are not matched by RNA length.",
         r"B: exact probability is at least 0.1 for the selected PseudoLoop bases, crossing pairs, or total-accessibility windows.",
