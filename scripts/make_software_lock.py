@@ -15,7 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from run_cli import build_settings, digest, git_state, now, write_json  # noqa: E402
 
-PROGRAMS = ("LinearCParty", "LinearPKCapR", "LinearPKRaccess")
+PROGRAMS = ("LinearCParty", "LinearPKCapR", "LinearPKRaccess", "LinearPKSampling", "LinearPKMEA", "LinearPKCentroid")
 CHECKS = ("scfg2_rules_core_exact_weight_test", "scfg2_exact_inside_oracle_test",
           "scfg2_beam_api_test")
 PARAMETER = "params/rna_Turner04.par"

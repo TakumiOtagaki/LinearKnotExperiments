@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "dataset": "NEAT1 RefSeq transcripts for E3",
+  "retrieved_utc": "2026-10-16T05:30:00Z",
+  "scaffold_method": "LinearPartition-V posterior threshold, no MEA",
+  "scaffold_settings": {
+    "beam": 200,
+    "dangles": 2,
+    "pair_probability_threshold": 0.7,
+    "min_helix": 2
+  },
+  "linearpartition": {
+    "path": "deps/LinearPartition-20261008/linearpartition",
+    "commit": "b450fb3e63189073b68d385589035f992080aa3a",
+    "binary_sha256": "850ef5f778fda1275dabc1f561be11563a2334ceff956fb538f2f24b22633e87"
+  },
+  "records": [
+    {
+      "name": "NEAT1_1",
+      "accession": "NR_028272.1",
+      "fasta_header": ">NR_028272.1 Homo sapiens nuclear paraspeckle assembly transcript 1 (NEAT1), transcript variant MENepsilon, long non-coding RNA",
+      "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NR_028272.1&rettype=fasta&retmode=text",
+      "fasta_sha256": "4818c9a68097f9e9c644fdbe8c2441abb20aae85466036ab75fd30afe95f31a5",
+      "length": 3756,
+      "sequence_sha256": "041121bdb28860f47416a731888b3465085f31b28153bfca6f21adf23e279c12",
+      "scaffold_sha256": "416a1f040f4fa94ed007230cb387989cfd75276537fc89ca01f3d2376dfc16f3",
+      "scaffold_pairs": 727,
+      "path": "NEAT1_1.txt",
+      "linearpartition_seconds": 19.11,
+      "linearpartition_command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearPartition-20261008/linearpartition",
+        "-V",
+        "-b",
+        "200",
+        "--dangles",
+        "2",
+        "-c",
+        "0.7",
+        "-r",
+        "<tmp>/pairs.tsv"
+      ]
+    },
+    {
+      "name": "NEAT1_2",
+      "accession": "NR_131012.1",
+      "fasta_header": ">NR_131012.1 Homo sapiens nuclear paraspeckle assembly transcript 1 (NEAT1), transcript variant MENbeta, long non-coding RNA",
+      "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NR_131012.1&rettype=fasta&retmode=text",
+      "fasta_sha256": "702a8a26a9131593d91a8dc64a0afdbb9dd619604f2dd699818a1435f7db4898",
+      "length": 22743,
+      "sequence_sha256": "0c1be35c8280ce56ac585d822077e6a0838036a97b6755dc4b994ee1e75af22e",
+      "scaffold_sha256": "95015f4aa25e5f3685b34474101856d8e9f627eb37eaf88d5bb7da66569d87a4",
+      "scaffold_pairs": 4161,
+      "path": "NEAT1_2.txt",
+      "linearpartition_seconds": 140.091,
+      "linearpartition_command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearPartition-20261008/linearpartition",
+        "-V",
+        "-b",
+        "200",
+        "--dangles",
+        "2",
+        "-c",
+        "0.7",
+        "-r",
+        "<tmp>/pairs.tsv"
+      ]
+    }
+  ],
+  "isoform_shared_prefix_nt": 3735
+}
