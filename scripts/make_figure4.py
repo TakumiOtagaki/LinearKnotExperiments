@@ -1,0 +1,528 @@
+#!/usr/bin/env python3
+"""Make the 183 x 90 mm NEAT1 manuscript figure from saved E3 outputs.
+
+Run from either repository root. No RNA CLI, tar extraction, or new experiment
+is used. Archived members are streamed, checked against the E3 snapshot hashes,
+and compared with the existing analysis tables before plotting.
+"""
+import argparse
+import csv
+import gzip
+import hashlib
+import json
+import os
+from pathlib import Path
+import sys
+import tarfile
+import tempfile
+
+import numpy as np
+
+os.environ.setdefault('MPLCONFIGDIR', str(Path(tempfile.gettempdir()) / 'figure4-mpl'))
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from matplotlib.collections import LineCollection
+from matplotlib.lines import Line2D
+from matplotlib.patches import Patch, Rectangle
+
+from analyze_e3_neat1 import pairs_of, parse_access, parse_context, structure_from_stdout
+
+ROOT = Path(__file__).resolve().parents[1]
+MM = 1 / 25.4
+WIDTH, HEIGHT = 183, 90
+REGION = (20350, 20600)
+FOCUS = (20451, 20500)
+WINDOW = 8
+PAIR_CUTOFF = .01
+INK, MUTED, GRID = '#1f1f1e', '#6b6b66', '#d9d8d3'
+G_COLOR, NEW_COLOR, CROSS_COLOR = '#8a8a85', '#2a78d6', '#eb6834'
+FOCUS_COLOR = '#f4efcf'
+CONTEXTS = ('Stem', 'Hairpin', 'Bulge', 'Internal', 'Multiloop', 'Exterior', 'PseudoLoop')
+CONTEXT_COLORS = ('#2a78d6', '#1baf7a', '#eda100', '#e87ba4', '#6250d6', '#b9b8b1', '#eb6834')
+
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+
+def rows(path):
+    opener = gzip.open if path.suffix == '.gz' else open
+    with opener(path, 'rt') as f:
+        yield from csv.DictReader(f, delimiter='\t')
+
+
+def read_data(data):
+    """Read a fixed snapshot, not newly appearing checkpoints in active runs."""
+    provenance = json.loads((data / 'provenance.json').read_text())
+    table_names = ('provenance.json', 'position_profiles.tsv.gz', 'accessibility.tsv.gz',
+                   'bpp_pairs.tsv.gz', 'sampling_histograms.tsv', 'sampling_summary.tsv',
+                   'sampling_reference_distances.tsv.gz', 'representative_distances.tsv')
+    sources = [{'path': str((data / name).relative_to(ROOT)),
+                'sha256': sha((data / name).read_bytes())} for name in table_names]
+    inputs = {}
+    for name, path in [('NEAT1_2', 'data/neat1-20261016/NEAT1_2.txt'),
+                       ('NEAT1_2_emptyG', 'data/neat1-variants-20261016/NEAT1_2_emptyG.txt'),
+                       ('NEAT1_1', 'data/neat1-20261016/NEAT1_1.txt')]:
+        raw = (ROOT / path).read_bytes()
+        expected = next(r for r in provenance['inputs'] if r['path'] == path)
+        assert sha(raw) == expected['sha256']
+        header, seq, db = [s.strip() for s in raw.decode().splitlines() if s.strip()]
+        assert header == '>' + name and len(seq) == len(db)
+        inputs[name] = dict(name=name, sequence=seq, scaffold=db, n=len(seq), fixed=pairs_of(db))
+        sources.append(expected)
+    assert inputs['NEAT1_2']['n'] == 22743 and inputs['NEAT1_1']['n'] == 3756
+    assert len(inputs['NEAT1_2']['fixed']) == 4161
+    assert len(inputs['NEAT1_1']['fixed']) == 727
+    assert not inputs['NEAT1_2_emptyG']['fixed']
+    assert inputs['NEAT1_2']['sequence'] == inputs['NEAT1_2_emptyG']['sequence']
+
+    # Only the saved artifacts needed by panels B--D are consumed.
+    wanted = {}
+    for a in provenance['artifacts']:
+        name = Path(a['member']).parent.name
+        selected = any(name.startswith(f'{v}-beam100_outer-') for v in ['NEAT1_2', 'NEAT1_2_emptyG'])
+        kind = a['archive'].split('/')[2].replace('e3-neat1-', '').replace('variants-', '').split('-e2')[0]
+        selected = selected and kind in ('bpp', 'capr', 'raccess')
+        selected |= any(name.startswith(f'NEAT1_1-beam{b}_outer-') for b in (100, 200)) and kind in ('bpp', 'sampling', 'mea') and a['member'].endswith('stdout.txt')
+        if selected:
+            wanted.setdefault(a['archive'], {})[a['member']] = (kind, a)
+    saved, consumed = {}, []
+    for archive, members in sorted(wanted.items()):
+        with tarfile.open(ROOT / archive, 'r|') as stream:
+            for member in stream:
+                if member.name not in members:
+                    continue
+                kind, expected = members.pop(member.name)
+                raw = stream.extractfile(member).read()
+                assert len(raw) == expected['bytes'] and sha(raw) == expected['sha256']
+                cmd = expected['command']
+                beam = int(cmd[cmd.index('-b') + 1])
+                assert cmd[cmd.index('--ranking') + 1] == 'outer'
+                for flag in ('--max-hairpin', '--max-case3-depth'):
+                    assert int(cmd[cmd.index(flag) + 1]) == max(beam, 30)
+                name = Path(member.name).parent.name.split('-beam')[0]
+                saved[name, beam, kind, Path(member.name).name] = raw.decode()
+                consumed.append(expected)
+                if not members:
+                    break
+        assert not members
+
+    paired = np.array([c != '.' for c in inputs['NEAT1_2']['scaffold']])
+    fixed_window = np.convolve(paired.astype(int), np.ones(WINDOW, int), 'valid') > 0
+    assert not fixed_window[FOCUS[0] - 1:FOCUS[1]].any()
+    profile, access, pairs, diagnostics = {}, {}, {}, {}
+    for name, method in [('NEAT1_2', 'G0.7'), ('NEAT1_2_emptyG', 'emptyG')]:
+        v = inputs[name]
+        ctx = parse_context(saved[name, 100, 'capr', 'stdout.txt'], v)
+        acc = parse_access(saved[name, 100, 'raccess', 'stdout.txt'], v)[WINDOW]
+        own_paired = np.array([c != '.' for c in v['scaffold']])
+        raw_fixed_residual = float(np.max(acc[fixed_window])) if method == 'G0.7' else 0.
+        assert raw_fixed_residual < 1e-8
+        for c in CONTEXTS:
+            assert np.allclose(ctx[c][own_paired], 1 if c == 'Stem' else 0, atol=1e-8)
+            ctx[c][own_paired] = 1 if c == 'Stem' else 0
+        if method == 'G0.7':
+            acc[fixed_window] = 0
+        assert np.max(np.abs(sum(ctx.values()) - 1)) < 1e-8
+        # Compare full profiles to the independently saved table coordinates.
+        table = [r for r in rows(data / 'position_profiles.tsv.gz') if r['iso'] == 'NEAT1_2' and r['method'] == method and r['beam'] == '100']
+        assert [int(r['position']) for r in table] == list(range(1, v['n'] + 1))
+        for c in CONTEXTS:
+            assert np.allclose(ctx[c], [float(r[c]) for r in table], atol=1e-12, rtol=1e-12)
+        table = [r for r in rows(data / 'accessibility.tsv.gz') if r['iso'] == 'NEAT1_2' and r['method'] == method and r['beam'] == '100' and r['width'] == str(WINDOW)]
+        assert [int(r['start']) for r in table] == list(range(1, v['n'] - WINDOW + 2))
+        assert np.allclose(acc, [float(r['accessibility']) for r in table], atol=1e-12, rtol=1e-12)
+        bp = {}
+        fixed = inputs['NEAT1_2']['fixed'] if method == 'G0.7' else set()
+        for line in saved[name, 100, 'bpp', 'bpp.tsv'].splitlines():
+            if not line or line.startswith(('#', '>')):
+                continue
+            i, j, p = line.split()
+            i, j, p = int(i), int(j), float(p)
+            assert 1 <= i < j <= v['n'] and 0 <= p <= 1 + 1e-8
+            bp[i, j] = p
+        bptable = [r for r in rows(data / 'bpp_pairs.tsv.gz') if r['iso'] == 'NEAT1_2' and r['method'] == method and r['beam'] == '100']
+        assert len(bp) == len(bptable)
+        for r in bptable:
+            assert bp[int(r['i']), int(r['j'])] == float(r['probability'])
+        assert all(abs(bp[p] - 1) < 1e-8 for p in fixed)
+        for (i, j), p in bp.items():
+            if (i, j) not in fixed:
+                assert not own_paired[i - 1] and not own_paired[j - 1]
+        profile[method], access[method], pairs[method] = ctx, acc, bptable
+        diagnostics[method] = dict(focus_mean=float(acc[FOCUS[0] - 1:FOCUS[1]].mean()),
+                                   fixed_window_raw_residual=raw_fixed_residual,
+                                   focus_context_max={c: float(ctx[c][FOCUS[0] - 1:FOCUS[1] + 7].max()) for c in CONTEXTS})
+
+    # Recompute every pair-set distance from streamed samples with integer bitsets.
+    # This checks the plotted histograms, references, and exact means independently.
+    hist = list(rows(data / 'sampling_histograms.tsv'))
+    summary = list(rows(data / 'sampling_summary.tsv'))
+    refdist = list(rows(data / 'sampling_reference_distances.tsv.gz'))
+    representative = list(rows(data / 'representative_distances.tsv'))
+    sample_checks = []
+    fixed = inputs['NEAT1_1']['fixed']
+    for beam in (100, 200):
+        sample_cmd = next(a['command'] for a in consumed if f'NEAT1_1-beam{beam}_' in a['member'] and '-sampling-' in a['archive'])
+        assert sample_cmd[sample_cmd.index('--seed') + 1] == '20261016'
+        seqs = structure_from_stdout(saved['NEAT1_1', beam, 'sampling', 'stdout.txt'], 3756, sampled=True)
+        assert len(seqs) == len(set(seqs)) == 1000
+        ss = [pairs_of(db) for db in seqs]
+        assert all(fixed <= s for s in ss)
+        refs = {}
+        for ref, kind in [('MFE', 'bpp'), ('MEA', 'mea')]:
+            if kind == 'mea':
+                cmd = next(a['command'] for a in consumed if f'NEAT1_1-beam{beam}_' in a['member'] and '-mea-' in a['archive'])
+                assert float(cmd[cmd.index('--gamma') + 1]) == 1.
+            dbs = structure_from_stdout(saved['NEAT1_1', beam, kind, 'stdout.txt'], 3756)
+            assert len(dbs) == 2 and dbs[0] == inputs['NEAT1_1']['scaffold']
+            refs[ref] = pairs_of(dbs[-1])
+            assert fixed <= refs[ref]
+        sets = [s - fixed for s in ss] + [refs['MFE'] - fixed, refs['MEA'] - fixed]
+        universe = {p: k for k, p in enumerate(sorted(set().union(*sets)))}
+        masks = [sum(1 << universe[p] for p in s) for s in sets]
+        popcount = getattr(int, 'bit_count', lambda x: bin(x).count('1'))
+        def distance(a, b):
+            u = popcount(a | b)
+            return 1 - popcount(a & b) / u if u else 0.
+        distances = {'sample_sample': np.fromiter((distance(masks[i], masks[j]) for i in range(1000) for j in range(i + 1, 1000)), float, count=499500)}
+        for ref, m in zip(('MFE', 'MEA'), masks[-2:]):
+            distances['sample_' + ref] = np.array([distance(s, m) for s in masks[:1000]])
+            expected = [float(r['jaccard_distance']) for r in refdist if r['beam'] == str(beam) and r['space'] == 'extension' and r['reference'] == ref]
+            assert np.allclose(distances['sample_' + ref], expected, atol=1e-14, rtol=0)
+        for comparison, values in distances.items():
+            h = [r for r in hist if r['beam'] == str(beam) and r['space'] == 'extension' and r['comparison'] == comparison]
+            assert len(h) == 100
+            counts, _ = np.histogram(values, bins=np.linspace(0, 1, 101))
+            assert np.array_equal(counts, [int(r['count']) for r in h])
+            s = next(r for r in summary if r['beam'] == str(beam) and r['space'] == 'extension' and r['comparison'] == comparison)
+            assert len(values) == int(s['n']) and abs(values.mean() - float(s['mean'])) < 1e-12
+        r = next(r for r in representative if r['beam'] == str(beam) and r['space'] == 'extension')
+        assert abs(distance(*masks[-2:]) - float(r['jaccard_distance'])) < 1e-14
+        sample_checks.append(dict(beam=beam, samples=1000, sample_pairs=499500, histogram_counts_exact=True,
+                                  means_verified=True, reference_distances_verified=True))
+    return dict(inputs=inputs, profile=profile, access=access, pairs=pairs, fixed_window=fixed_window,
+                hist=hist, summary=summary, diagnostics=diagnostics, sample_checks=sample_checks,
+                sources=sources, artifacts=consumed)
+
+
+def axis_mm(fig, x, y, w, h):
+    return fig.add_axes([x / WIDTH, y / HEIGHT, w / WIDTH, h / HEIGHT])
+
+
+def text_mm(fig, x, y, s, **kwargs):
+    return fig.text(x / WIDTH, y / HEIGHT, s, **kwargs)
+
+
+def panel(fig, x, y, letter, title):
+    text_mm(fig, x, y, letter, fontsize=9, weight='bold', va='top')
+    text_mm(fig, x + 5, y - .1, title, fontsize=7, weight='bold', va='top')
+
+
+def clean_axis(ax):
+    ax.spines[['top', 'right']].set_visible(False)
+    ax.tick_params(pad=1.5)
+
+
+def focus(ax, starts=False):
+    ax.axvspan(FOCUS[0] - .5, FOCUS[1] + (.5 if starts else 7.5),
+               facecolor=FOCUS_COLOR, lw=0, zorder=-1)
+    for x in (FOCUS[0] - .5, FOCUS[1] + (.5 if starts else 7.5)):
+        ax.axvline(x, color='#c3b879', lw=.4, zorder=0)
+
+
+def draw(fig, d):
+    plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': 6,
+                         'text.color': INK, 'axes.labelcolor': INK,
+                         'axes.edgecolor': MUTED, 'axes.linewidth': .5,
+                         'xtick.color': MUTED, 'ytick.color': MUTED,
+                         'xtick.major.size': 2, 'ytick.major.size': 2,
+                         'xtick.major.width': .5, 'ytick.major.width': .5,
+                         'pdf.fonttype': 42, 'hatch.linewidth': .35})
+    panel(fig, 1.5, 88.8, 'A', 'NEAT1_2  ·  22,743 nt')
+    ax = axis_mm(fig, 13, 77.7, 109, 6)
+    n = d['inputs']['NEAT1_2']['n']
+    ax.plot([1, n], [0, 0], color=G_COLOR, lw=2, solid_capstyle='butt')
+    ax.plot(REGION, [0, 0], color=INK, lw=3, solid_capstyle='butt')
+    ax.plot([np.mean(FOCUS)], [0], marker='v', color=INK, ms=3)
+    ax.set(xlim=(1, n), ylim=(-1, 1), xticks=[1, 10000, n],
+           xticklabels=['1', '10,000', '22,743'], yticks=[])
+    ax.spines[:].set_visible(False)
+    ax.tick_params(axis='x', length=0, pad=-1)
+    ax.annotate('Shown below: 20,350–20,600', xy=(np.mean(REGION), .15), xycoords='data',
+                xytext=(.64, .98), textcoords='axes fraction', ha='center', va='bottom',
+                fontsize=5.9, arrowprops=dict(arrowstyle='-', color=MUTED, lw=.5))
+    text_mm(fig, 13, 75.5, 'Highlighted: 50 window starts, 20,451–20,500', fontsize=6, va='top',
+            bbox=dict(facecolor=FOCUS_COLOR, edgecolor='none', pad=1.2))
+
+    panel(fig, 1.5, 70.3, 'B', 'Base-pairing probabilities  ·  beam width 100')
+    # B and C have identical coordinate limits and aligned comparison columns.
+    columns = [('G0.7', 13, 'Scaffold G: threshold 0.7'), ('emptyG', 72, 'Empty scaffold')]
+    arc_counts = {}
+    arc_height = max((int(r['j']) - int(r['i'])) / 2 for method, _, _ in columns
+                     for r in d['pairs'][method] if float(r['probability']) >= PAIR_CUTOFF
+                     and REGION[0] <= int(r['i']) < int(r['j']) <= REGION[1]) * 1.05
+    for method, x, label in columns:
+        text_mm(fig, x, 65.6, label, fontsize=6.5, weight='bold', va='top')
+        ax = axis_mm(fig, x, 48.3, 50, 13.5)
+        focus(ax)
+        paths, colors = [], []
+        counts = {'scaffold': 0, 'new_nested': 0, 'crossing': 0, 'external_omitted': 0}
+        selected = sorted(d['pairs'][method], key=lambda r: float(r['probability']))
+        for r in selected:
+            i, j, p = int(r['i']), int(r['j']), float(r['probability'])
+            if p < PAIR_CUTOFF:
+                continue
+            if (REGION[0] <= i <= REGION[1]) != (REGION[0] <= j <= REGION[1]):
+                counts['external_omitted'] += 1
+            if not REGION[0] <= i < j <= REGION[1]:
+                continue
+            category = 'scaffold' if r['is_scaffold'] == '1' else ('crossing' if r['crosses_G'] == '1' else 'new_nested')
+            color = {'scaffold': G_COLOR, 'new_nested': NEW_COLOR, 'crossing': CROSS_COLOR}[category]
+            t = np.linspace(0, np.pi, 70)
+            y = (j - i) / 2 * np.sin(t)
+            paths.append(np.column_stack(((i + j) / 2 + (j - i) / 2 * np.cos(t), y)))
+            colors.append(matplotlib.colors.to_rgba(color, p))
+            counts[category] += 1
+        ax.add_collection(LineCollection(paths, colors=colors, linewidths=.65))
+        ax.axhline(0, color=MUTED, lw=.4)
+        ax.set(xlim=(REGION[0] - .5, REGION[1] + .5), ylim=(-.02 * arc_height, arc_height), xticks=[], yticks=[])
+        ax.spines[:].set_visible(False)
+        arc_counts[method] = counts
+    handles = [Line2D([], [], color=G_COLOR, lw=1, label='Pair in G'),
+               Line2D([], [], color=NEW_COLOR, lw=1, label='New pair')]
+    fig.legend(handles=handles, loc='center left', bbox_to_anchor=(13 / WIDTH, 45.8 / HEIGHT),
+               frameon=False, ncol=2, fontsize=5.7, borderaxespad=0, handlelength=1.5,
+               columnspacing=1.2, handletextpad=.45)
+    text_mm(fig, 122, 45.8, '≥0.01; darker = higher', fontsize=5.7, ha='right', va='center')
+
+    panel(fig, 1.5, 41.7, 'C', 'Seven context probabilities and 8-nt accessibility')
+    for method, x, label in columns:
+        ax = axis_mm(fig, x, 22.8, 50, 10.8)
+        pos = np.arange(REGION[0], REGION[1] + 1)
+        ctx = np.array([d['profile'][method][c][REGION[0] - 1:REGION[1]] for c in CONTEXTS])
+        # Per-base steps, no smoothing or interpolation between base probabilities.
+        ax.stackplot(pos, ctx, colors=CONTEXT_COLORS, linewidth=0, step='mid')
+        for xx in (FOCUS[0] - .5, FOCUS[1] + 7.5):
+            ax.axvline(xx, color=INK, lw=.45, ls=(0, (2, 2)))
+        ax.set(xlim=(REGION[0] - .5, REGION[1] + .5), ylim=(0, 1), yticks=[0, 1], xticks=[])
+        clean_axis(ax)
+        ax = axis_mm(fig, x, 7.7, 50, 11.7)
+        focus(ax, starts=True)
+        acc = d['access'][method][REGION[0] - 1:REGION[1]]
+        ax.plot(pos, acc, color=INK, lw=.8, drawstyle='steps-mid', zorder=3)
+        if method == 'G0.7':
+            mask = d['fixed_window'][REGION[0] - 1:REGION[1]]
+            for a, b in boolean_runs(mask):
+                ax.axvspan(REGION[0] + a - .5, REGION[0] + b - .5,
+                           facecolor='#e8e8e4', edgecolor=G_COLOR, hatch='////', lw=0, zorder=1)
+        # Mark the focal segment on the zero baseline even when the curve is tiny.
+        ax.plot([FOCUS[0] - .5, FOCUS[1] + .5], [0, 0], color='#9e8b36', lw=1.1, zorder=2)
+        mean = d['diagnostics'][method]['focus_mean']
+        text_mm(fig, x, 21.1, f'8-nt accessibility  ·  50-window mean: {mean:.3f}',
+                fontsize=5.7, va='top')
+        ax.set(xlim=(REGION[0] - .5, REGION[1] + .5), ylim=(-.015, 1.05), yticks=[0, 1],
+               xticks=[20350, 20450, 20550], xticklabels=['20,350', '20,450', '20,550'])
+        clean_axis(ax)
+        ax.tick_params(labelsize=5.5)
+    text_mm(fig, 67.5, 1.3, 'Nucleotide position (B, contexts); window start (accessibility)', fontsize=5.7, ha='center', va='bottom')
+
+    # One compact seven-context key is shared by both comparison columns.
+    # The title band above C carries it, so no legend overlaps the data.
+    legend = [Patch(facecolor=c, edgecolor='none', label=n) for n, c in zip(CONTEXTS, CONTEXT_COLORS)]
+    legend.append(Patch(facecolor='#e8e8e4', edgecolor=G_COLOR, hatch='////', label='Fixed-base window'))
+    fig.legend(handles=legend, loc='lower left', bbox_to_anchor=(13 / WIDTH, 35.1 / HEIGHT),
+               ncol=8, fontsize=5.1, frameon=False, borderaxespad=0, handlelength=.8,
+               handletextpad=.3, columnspacing=.65)
+
+    # Panel D is a separate isoform; it is explicitly labelled, not coordinate-linked.
+    fig.add_artist(Line2D([130 / WIDTH] * 2, [3 / HEIGHT, 89 / HEIGHT],
+                         transform=fig.transFigure, color=GRID, lw=.5))
+    panel(fig, 133.5, 88.8, 'D', 'Sampled structure diversity')
+    text_mm(fig, 138.5, 83.7, 'NEAT1_1  ·  3,756 nt\n1,000 samples per beam; same G',
+            fontsize=6, va='top', linespacing=1.4)
+    fig.legend(handles=[Line2D([], [], color=INK, lw=.9, label='Beam 100'),
+                        Line2D([], [], color=MUTED, lw=.9, ls='--', label='Beam 200')],
+               loc='upper left', bbox_to_anchor=(138 / WIDTH, 74.5 / HEIGHT), ncol=2,
+               frameon=False, fontsize=5.7, handlelength=1.6, columnspacing=.8, borderaxespad=0)
+    for k, (comparison, title) in enumerate([('sample_sample', 'Sample–sample'),
+                                            ('sample_MFE', 'Sample–MFE'),
+                                            ('sample_MEA', 'Sample–MEA')]):
+        y = 50.8 - k * 20
+        means = [float(next(r['mean'] for r in d['summary'] if r['space'] == 'extension'
+                            and r['beam'] == str(b) and r['comparison'] == comparison)) for b in (100, 200)]
+        text_mm(fig, 138.5, y + 16.4, title, fontsize=6.3, weight='bold', va='top')
+        text_mm(fig, 181.5, y + 16.4, f'{means[0]:.3f} / {means[1]:.3f}',
+                fontsize=5.5, ha='right', va='top')
+        ax = axis_mm(fig, 139.5, y, 41, 12.8)
+        for beam in (100, 200):
+            h = [r for r in d['hist'] if r['space'] == 'extension' and r['beam'] == str(beam) and r['comparison'] == comparison]
+            edges = np.array([float(r['left']) for r in h] + [float(h[-1]['right'])])
+            counts = np.array([int(r['count']) for r in h])
+            density = counts / counts.sum() / np.diff(edges)
+            if beam == 100:
+                ax.stairs(density, edges, fill=True, color=GRID, lw=0)
+            ax.stairs(density, edges, color=INK if beam == 100 else MUTED,
+                      lw=.75, ls='-' if beam == 100 else '--')
+        ax.set(xlim=(.3, .95), ylim=(0, 8), yticks=[0, 5], xticks=[.4, .6, .8])
+        clean_axis(ax)
+        if k < 2:
+            ax.set_xticklabels([])
+        if k == 1:
+            ax.set_ylabel('Density', fontsize=5.7, labelpad=1)
+    text_mm(fig, 160, 7, 'Jaccard distance of pairs outside G', fontsize=5.6, ha='center', va='top')
+    text_mm(fig, 138.5, 3.5, 'Numbers above: means at beam 100 / 200', fontsize=5.4, va='top')
+    return arc_counts
+
+
+def boolean_runs(mask):
+    starts = np.flatnonzero(np.diff(np.r_[False, mask, False].astype(int)) == 1)
+    ends = np.flatnonzero(np.diff(np.r_[False, mask, False].astype(int)) == -1)
+    return zip(starts, ends)
+
+
+def caption(d):
+    g = d['diagnostics']['G0.7']['focus_mean']
+    e = d['diagnostics']['emptyG']['focus_mean']
+    return f'''<!-- 日本語：同じ長い RNA の同じ区間で複数の予測量を読み合わせる。G は保持する固定対の集合である。 -->
+**Figure 4. Reading predicted pairing, local structure, and window exposure together in NEAT1.**
+The scaffold G is a set of base pairs kept in every predicted structure.
+The threshold-0.7 scaffold uses LinearPartition pairs with probability at least 0.7 in runs of two or more stacked pairs.
+Beam width limits the candidates retained during calculation.
+Panels B and C show local views of full-transcript calculations.
+
+<!-- 日本語：A は全長に対する表示区間。B は同じ表示区間内に両端をもつ対の確率。左右は G ありと空の条件。 -->
+**(A)** Location of the interval in NEAT1_2 (22,743 nucleotides, nt).
+The highlight marks 50 eight-base windows starting at 20,451–20,500.
+**(B)** Base-pairing probabilities with G (left) and an empty scaffold (right), at beam width 100.
+Gray marks pairs in G; blue marks new pairs without crossings of G.
+Darker arcs have higher probabilities.
+Arcs show only pairs with both bases in 20,350–20,600 and probability at least 0.01.
+
+<!-- 日本語：C は同じ座標の七つの context と accessibility。網掛けは固定塩基を含む window の定義上のゼロを示す。 -->
+**(C)** Seven structural-context probabilities (defined in Methods) and window accessibility, the probability that all eight bases are unpaired together.
+Hatching marks windows containing a base paired in G; their accessibility is zero.
+All 50 highlighted windows contain only bases unpaired in G.
+Their means are {g:.3f} with G and {e:.3f} with an empty scaffold.
+The highlighted bases extend to 20,507; window starts end at 20,500.
+
+<!-- 日本語：D は別のアイソフォーム NEAT1_1 の全長標本。共通の G を除いて構造多様性を測る。 -->
+**(D)** NEAT1_1 (3,756 nt): 1,000 samples at each beam width, compared with each other and with minimum-free-energy (MFE) and maximum expected accuracy (MEA) structures.
+Distances exclude the 727 common pairs in G.
+Jaccard distance is one minus the shared-pair count divided by the union-pair count.
+Each distribution uses 499,500 distinct unordered sample pairs or 1,000 sample-to-reference distances.
+Histograms have bin width 0.01 and area one; numbers give exact means.
+MEA uses accuracy weight 1.
+Finite-beam MFE may search a different structure set.
+The panels compare predictions, rather than validate them experimentally.
+'''
+
+
+def source_note(d, counts):
+    g = d['diagnostics']['G0.7']['focus_mean']
+    e = d['diagnostics']['emptyG']['focus_mean']
+    return f'''# Figure 4: NEAT1 (2026-10-16)
+
+[PDF](figure4.pdf) / [PNG](figure4.png) / [caption](caption.md) / [provenance](provenance.json)
+
+The PDF is exactly 183 × 90 mm. The PNG is rendered at 400 dpi.
+The script is [make_figure4.py](../../../scripts/make_figure4.py).
+From the paper repository run:
+
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 python experiments/scripts/make_figure4.py
+```
+
+From the experiment repository, omit the `experiments/` prefix.
+The script reads the fixed E3 analysis snapshot and streams only its recorded archive members.
+It does not discover newly completed jobs, run RNA software, or extract archives.
+
+## Panel sources
+
+All table links below refer to [the E3 analysis snapshot](../../local/e3-neat1-20261016/README.md).
+`provenance.json` records input and table hashes plus every consumed archive path, member, hash, and saved command.
+
+| Panel | Direct data | Saved run and conditions |
+|---|---|---|
+| A | [NEAT1_2.txt](../../../data/neat1-20261016/NEAT1_2.txt), [input manifest](../../../data/neat1-20261016/manifest.json) | NR_131012.1, 22,743 nt; coordinates are one-based and inclusive. The whole-transcript track is schematic. |
+| B | [bpp_pairs.tsv.gz](../../local/e3-neat1-20261016/bpp_pairs.tsv.gz), cross-checked against streamed `bpp.tsv` | `e3-neat1-bpp-e2cecbb4-20261016` and `e3-neat1-variants-bpp-e2cecbb4-20261016`, `neat1_long/000001`; NEAT1_2, threshold-0.7 G versus empty G, beam 100. |
+| C | [position_profiles.tsv.gz](../../local/e3-neat1-20261016/position_profiles.tsv.gz), [accessibility.tsv.gz](../../local/e3-neat1-20261016/accessibility.tsv.gz), cross-checked against streamed CapR/Raccess stdout | Corresponding `e3-neat1-[variants-]capr/raccess-e2cecbb4-20261016` runs, `neat1_long/000001`; the same two conditions as B. |
+| D | [sampling_histograms.tsv](../../local/e3-neat1-20261016/sampling_histograms.tsv), [sampling_summary.tsv](../../local/e3-neat1-20261016/sampling_summary.tsv), [sampling_reference_distances.tsv.gz](../../local/e3-neat1-20261016/sampling_reference_distances.tsv.gz), [representative_distances.tsv](../../local/e3-neat1-20261016/representative_distances.tsv) | `e3-neat1-sampling/bpp/mea-e2cecbb4-20261016` runs, `neat1_short/000001`; NEAT1_1 (NR_028272.1), threshold-0.7 G, beam 100/200, 1,000 samples per beam, seed 20261016, MEA accuracy weight 1. Every distance was recomputed from streamed structures. |
+
+## Scientific scope and display choices
+
+- B and C are local views of calculations on the full 22,743-nt transcript. They do not use a refolded fragment.
+- Both bases of a displayed arc must lie in 20,350–20,600. B draws probabilities ≥0.01; the original BPP export cutoff is 0.001. For G, {counts['G0.7']['scaffold']} scaffold pairs and {counts['G0.7']['new_nested']} new pairs are drawn; for empty G, {counts['emptyG']['new_nested']} pairs are drawn. {counts['G0.7']['external_omitted']} / {counts['emptyG']['external_omitted']} pairs at the display cutoff touch the interval but have their other base outside and are omitted. Contexts and accessibility still include full-transcript contributions.
+- Gray, blue, and orange follow Figure 1: scaffold pairs, new pairs without G crossings, and new pairs crossing G. No orange arc passes the display cutoff here. The seven-context colors match Figure 1 exactly. No small PseudoLoop value is inflated for visibility.
+- C shows the seven probabilities as per-base steps with no smoothing. Their sum is one. Hatch marks identify 8-nt windows containing at least one scaffold-paired base. Their exact accessibility is zero; microscopic raw numerical residuals are checked before assigning this exact condition.
+- Every highlighted window starting at 20,451–20,500 contains only bases unpaired in G. The 50-window means are {g:.12f} with G and {e:.12f} with empty G. The 57 covered base positions run from 20,451 to 20,507. B/context boundaries cover these bases; the accessibility highlight covers the 50 starts.
+- The focus was selected exploratorily for its large accessibility difference in the earlier E3 analysis; it is not a pre-specified biological region. Its coordinates were explicitly requested for this figure. No experimental validation or causal pseudoknot effect is inferred.
+- D is a whole-transcript analysis of the shorter NEAT1_1 isoform, separate from the NEAT1_2 interval. Removing G prevents its 727 shared pairs from reducing the apparent diversity. Each beam has 1,000 distinct sampled structures and 499,500 unordered sample pairs. Pairs sharing a sample are not independent replicates.
+- D uses 100 bins over [0,1], width 0.01, with density normalized separately to area one. The displayed distance axis is 0.30–0.95; all observed distances lie within it. Means come from exact distances, not bin centers. Beam 100 is solid and beam 200 dashed. MFE and MEA are separate reference structures for each beam; finite-beam MFE may use a different search set from the sampled ensemble.
+
+## Development checks
+
+Input hashes, archived member hashes and byte counts, saved beam/ranking/local-limit/seed/MEA settings, transcript identity, all per-base context probabilities, all width-8 accessibility values, BPP tables, and scaffold constraints are checked before plotting.
+All 499,500 pairwise distances and 2,000 sample-to-reference distances per beam are independently recomputed with integer bitsets and compared with the saved tables.
+Histogram counts and exact means must agree. The source analysis used sparse pair-incidence matrix products.
+The script checks text bounds and overlapping text. Visual PNG review and the final PDF/PNG dimensions are recorded in the paper repository's `docs/progress.md`.
+No manuscript file, bibliography, external implementation, RNA CLI, scheduler job, or Git commit is part of this script.
+
+## 著者に選んでほしい点
+
+1. 20,350–20,600 の周辺も含めた表示区間を本文に採用するか。この範囲は注目 window に加えて近傍の対と固定塩基を含む window を同時に示す。
+2. D に beam 100/200 の両方を残すか、beam 100 のみとしてさらに簡潔にするか。現在は幅による分布の違いも小さく示せる両方を採用した。
+'''
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--data', type=Path, default=ROOT / 'results/local/e3-neat1-20261016')
+    ap.add_argument('--out', type=Path, default=ROOT / 'results/figures/figure4_20261016')
+    args = ap.parse_args()
+    d = read_data(args.data.resolve())
+    args.out.mkdir(parents=True, exist_ok=True)
+    fig = plt.figure(figsize=(WIDTH * MM, HEIGHT * MM))
+    counts = draw(fig, d)
+    # No tight bounding box: the PDF remains exactly 183 x 90 mm.
+    fig.savefig(args.out / 'figure4.pdf', facecolor='white')
+    fig.savefig(args.out / 'figure4.png', dpi=400, facecolor='white')
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    outside = []
+    texts = []
+    for t in fig.findobj(matplotlib.text.Text):
+        if t.get_visible() and t.get_text():
+            bb = t.get_window_extent(renderer)
+            texts.append((t.get_text(), bb))
+            if not fig.bbox.contains(bb.x0, bb.y0) or not fig.bbox.contains(bb.x1, bb.y1):
+                outside.append(t.get_text())
+    assert not outside, 'Text outside figure: ' + repr(outside)
+    overlap = []
+    for k, (a, bb) in enumerate(texts):
+        for b, other in texts[k + 1:]:
+            if min(bb.x1, other.x1) - max(bb.x0, other.x0) > .5 and min(bb.y1, other.y1) - max(bb.y0, other.y0) > .5:
+                overlap.append([a, b])
+    assert not overlap, 'Overlapping text: ' + repr(overlap)
+    plt.close(fig)
+    (args.out / 'caption.md').write_text(caption(d))
+    (args.out / 'README.md').write_text(source_note(d, counts))
+    metadata = dict(figure_size_mm=[WIDTH, HEIGHT], region_one_based_inclusive=REGION,
+                    focus_window_starts_one_based_inclusive=FOCUS, window_length=WINDOW,
+                    focus_bases_one_based_inclusive=[FOCUS[0], FOCUS[1] + 7],
+                    bpp_display_cutoff=PAIR_CUTOFF, bpp_export_cutoff=.001,
+                    arc_counts=counts, diagnostics=d['diagnostics'], sampling_validation=d['sample_checks'],
+                    source_tables_and_inputs=d['sources'], streamed_artifacts=d['artifacts'],
+                    script_sha256=sha(Path(__file__).read_bytes()), command=sys.argv,
+                    software_revision='e2cecbb4', coordinate_convention='one-based inclusive',
+                    validation=dict(text_inside_canvas=True, text_overlap=False, smoothing=False, raw_archives_extracted=False,
+                                    rna_cli_called=False, all_pairwise_distances_recomputed=True))
+    (args.out / 'provenance.json').write_text(json.dumps(metadata, indent=2) + '\n')
+    print(json.dumps(dict(output=str(args.out), figure_size_mm=[WIDTH, HEIGHT], arc_counts=counts,
+                          focus_mean={k: v['focus_mean'] for k, v in d['diagnostics'].items()},
+                          sampling_validation=d['sample_checks']), indent=2))
+
+
+if __name__ == '__main__':
+    main()

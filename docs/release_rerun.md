@@ -111,3 +111,55 @@ remain NA. Stage RSS differences are not additive memory components.
 `validate_e0_e2_runs.py OUTPUT --test-log LOG` accepts an E2-only output;
 the historical `--e0-output` option still validates E0 as before.
 Exclude `test_stage_timing.py` when collecting tests without RNA CLI execution.
+
+## E2 febd2bc1 replacement (2026-10-16)
+
+The five febd2bc1 runs use the same cpu_40, workers=10, RLIMIT_AS=8 GiB,
+beam/local caps and requested outputs as e2cecbb4 (the paired w1 run uses
+workers=1). Refresh their root manifests with `aggregate_array.py --plan`
+before analysis; task JSONL and raw tar files are unchanged.
+The release receipt is `manifests/release-preparation-febd2bc1.json`.
+
+Analysis accepts `--revision` and `--previous-revision` as full commits or
+hexadecimal prefixes. These pins check CLI and memory-driver task revisions;
+current parallel checks must also match the current production signature.
+`--previous-workers` defaults to 1 for historical reproduction; specify 10
+when comparing with e2cecbb4. Existing run defaults and E0 options remain
+unchanged. Omitting revision pins retains historical behavior.
+
+From the paper root:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 TMPDIR=/tmp \
+OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+MPLCONFIGDIR=/tmp/e2-febd2bc1-mpl \
+python3 experiments/scripts/analyze_e0_e2_runs.py \
+  --revision febd2bc1 --previous-revision e2cecbb4 \
+  --workers 10 --previous-workers 10 --previous-resource cpu_40=1 \
+  --skip-cap30-history \
+  --synthetic-run experiments/results/runs/e2-synthetic-shapes-febd2bc1-20261016 \
+  --rna-run experiments/results/runs/e2-rnacentral-febd2bc1-20261016 \
+  --previous-rna-run experiments/results/runs/e2-rnacentral-e2cecbb4-20261016 \
+  --previous-synthetic-run experiments/results/runs/e2-synthetic-shapes-e2cecbb4-20261016 \
+  --memory-run experiments/results/runs/e2-memory-breakdown-febd2bc1-20261016 \
+  --previous-memory-run experiments/results/runs/e2-memory-breakdown-e2cecbb4-20261016 \
+  --parallel-w1-run experiments/results/runs/e2-parallel-impact-w1-febd2bc1-20261016 \
+  --parallel-w10-run experiments/results/runs/e2-parallel-impact-w10-febd2bc1-20261016 \
+  --out experiments/results/local/e2-febd2bc1-20261016
+python3 experiments/scripts/validate_e0_e2_runs.py \
+  experiments/results/local/e2-febd2bc1-20261016 \
+  --revision febd2bc1 --previous-revision e2cecbb4 --test-log /tmp/e2_febd2bc1/tests.log
+PYTHONDONTWRITEBYTECODE=1 python3 experiments/scripts/make_figures.py \
+  --figure3-only --figure3-panels abc --e2-revision febd2bc1 \
+  --e2 experiments/results/local/e2-febd2bc1-20261016 \
+  --out experiments/results/figures/draft_febd2bc1_20261016
+```
+
+Use a fresh analysis output directory for reproduction.
+The validator defaults to the pins saved by the analysis and checks them
+against task metadata as well as the exported provenance.
+The figure builder checks both CLI and stage revisions against `--e2-revision`;
+its historical default is e2cecbb4. `--figure3-panels abc` separates stage RSS
+into `figure3_mode_memory_{183,89}mm.pdf/png` for the Supplementary material.
+The default `abcd` layout remains available for historical figures.
+No output in `results/figures/draft_20261016/` is overwritten by this command.

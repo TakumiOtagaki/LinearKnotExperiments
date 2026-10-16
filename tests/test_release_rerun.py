@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from compare_release_outputs import PROGRAMS, compare, compare_bytes, specification
 from make_rerun_configs import generate, write_configs
 from prepare_release import inspect_build, prepare, test_build_link as build_link
+from prepare_release import CHECKS, PROGRAMS as RELEASE_PROGRAMS
 
 
 class ReleaseComparisonTests(unittest.TestCase):
@@ -89,7 +90,7 @@ class ReleasePreparationTests(unittest.TestCase):
                     build.mkdir(parents=True)
                     (build / "CMakeCache.txt").write_text(f"CMAKE_BUILD_TYPE:STRING=Release\nCMAKE_HOME_DIRECTORY:INTERNAL={source}\n")
                 elif argv[:2] == ["cmake", "--build"]:
-                    for name in PROGRAMS:
+                    for name in (*RELEASE_PROGRAMS, *CHECKS):
                         (build / name).write_text("fake binary")
                 elif argv[0] == "bash":
                     self.assertEqual(env["SCFG2_BUILD_DIR"], str(build))
@@ -144,7 +145,7 @@ class ReleasePreparationTests(unittest.TestCase):
             (source / "params/rna_Turner04.par").write_text("test")
             cache = build / "CMakeCache.txt"
             cache.write_text(f"CMAKE_BUILD_TYPE:STRING=Release\nCMAKE_HOME_DIRECTORY:INTERNAL={source}\n")
-            for name in PROGRAMS:
+            for name in RELEASE_PROGRAMS:
                 (build / name).write_text("fake binary")
             lock, input_path = root / "lock.json", root / "input.txt"
             lock.write_text('{}')
@@ -153,7 +154,7 @@ class ReleasePreparationTests(unittest.TestCase):
                 out=root / "receipt.json", dry_run=True, estimate_only=True, jobs=8, estimated_build_files=20000,
                 fallback_remaining_files=100000, scratch_dir=root, beam_reference_build=build, exact_reference_build=build,
                 candidate_exact_build=None, input=[input_path], beams="20,200", timeout=2)
-            before = {p: p.read_bytes() for p in [cache, lock, *(build / n for n in PROGRAMS)]}
+            before = {p: p.read_bytes() for p in [cache, lock, *(build / n for n in RELEASE_PROGRAMS)]}
             with patch("prepare_release.git", side_effect=lambda _, command, *a: "1"*40 if command == "rev-parse" else "file.cc"), \
                     patch("prepare_release.inspect_source", return_value={"commit": "1"*40, "dirty": False}), \
                     patch("prepare_release.verify_lock", return_value={"build_revision_verified": True, "required_suite": "required set ok"}), \

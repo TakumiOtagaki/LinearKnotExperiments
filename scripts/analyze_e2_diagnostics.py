@@ -5,7 +5,7 @@ import json
 import math
 from pathlib import Path
 
-from analyze_e2_synthetic import audit_packed_payload, file_digest, write_union_tsv
+from analyze_e2_synthetic import audit_packed_payload, check_revision, file_digest, write_union_tsv
 from task_storage import RunReader, input_records
 
 
@@ -14,7 +14,7 @@ MODES = {"inside_outer": ("inside", "outer"), "inside_baseline": ("inside", "bas
          "loop_profile_outer": ("loop_profile", "outer")}
 
 
-def read_memory(path, label, workers):
+def read_memory(path, label, workers, expected_revision=None):
     reader = RunReader(path)
     manifest = reader.manifest
     records = input_records(reader)
@@ -29,6 +29,7 @@ def read_memory(path, label, workers):
             raise ValueError("memory task allocation/status mismatch")
         base = Path(path) / task["directory"] / "run"
         metadata = json.loads((base / "run.json").read_text())
+        check_revision(metadata["software_before"]["commit"], expected_revision)
         if (file_digest(base / "run.json") != task["run_manifest_sha256"]
                 or metadata["binaries_before"] != metadata["binaries_after"]
                 or metadata["software_changed_during_run"] or metadata["binaries_changed_during_run"]
@@ -119,13 +120,15 @@ def memory_pairs(old, new):
     return pairs
 
 
-def analyze_memory(output, current_path, previous_path, workers):
-    new, nf, np = read_memory(current_path, "memory_current", workers)
-    old, of, op = read_memory(previous_path, "memory_previous", 1)
+def analyze_memory(output, current_path, previous_path, workers, previous_workers=1,
+                   revision=None, previous_revision=None):
+    new, nf, np = read_memory(current_path, "memory_current", workers, revision)
+    old, of, op = read_memory(previous_path, "memory_previous", previous_workers, previous_revision)
     write_union_tsv(output / "memory_metrics.tsv", old + new)
     write_union_tsv(output / "memory_families.tsv", of + nf)
     write_union_tsv(output / "memory_comparisons.tsv", memory_pairs(old, new))
     (output / "memory_summary.json").write_text(json.dumps({"provenance": {"current": np, "previous": op},
+        "expected_revisions": {"current": revision, "previous": previous_revision},
         "rss_source": "GNU time peak RSS; driver VmHWM retained separately",
         "counter_scope": "Cumulative main-forward work, including family counts; excludes forcing/pilot/outer. Not allocation bytes or simultaneous live counts. Profile work is unavailable, recorded as NA.",
         "script_sha256": file_digest(__file__),
@@ -133,7 +136,8 @@ def analyze_memory(output, current_path, previous_path, workers):
         "tar_extractions_to_filesystem": 0}, indent=2) + "\n")
     import matplotlib.pyplot as plt
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.2), constrained_layout=True)
-    for ax, rows, title in zip(axes, (old, new), ("d21618c5; workers=1", "e2cecbb4; workers=10")):
+    for ax, rows in zip(axes, (old, new)):
+        title = f"{rows[0]['source_revision'][:8]}; workers={rows[0]['workers']}"
         for mode in MODES:
             group = sorted((r for r in rows if r["mode"] == mode), key=lambda r: r["n"])
             ax.plot([r["n"] / 1000 for r in group], [r["rss_gib"] for r in group], "o-", ms=3, label=mode)

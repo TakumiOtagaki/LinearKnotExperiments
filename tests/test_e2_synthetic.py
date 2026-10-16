@@ -11,12 +11,20 @@ from unittest.mock import patch
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from analyze_e2_synthetic import (audit_packed_payload, distribution, fit_log_model,
+from analyze_e2_synthetic import (audit_packed_payload, check_revision, distribution, fit_log_model,
     grouped_validation, log_contributions, pair_comparison, predict,
     repetition_summary, selected_task_jobs, write_union_tsv)
 
 
 class E2SyntheticTests(unittest.TestCase):
+    def test_revision_pins_reject_other_releases_and_invalid_prefixes(self):
+        commit = "febd2bc1fecfa6619a86b19a7382e3fc4a3746af"
+        for expected in (None, "febd2bc1", commit):
+            check_revision(commit, expected)
+        for expected in ("e2cecbb4", "", "f", "febd2bc1*", commit + "0"):
+            with self.subTest(expected=expected), self.assertRaisesRegex(ValueError, "source revision mismatch"):
+                check_revision(commit, expected)
+
     def test_repetition_ranges_units_and_order(self):
         jobs = [{"repetition": i, "time_wall_seconds": t, "peak_rss_kib": r * 2**20,
                  "status": "success", "warmup": False} for i, t, r in ((2, 30, 3), (0, 10, 1), (1, 20, 2))]

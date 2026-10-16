@@ -30,6 +30,7 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Rectangle
 from matplotlib.text import Text
 import numpy as np
+from analyze_e2_synthetic import check_revision
 
 ROOT = Path(__file__).resolve().parents[1]
 MM = 1 / 25.4
@@ -96,10 +97,13 @@ def close(a, b, context):
 class Data:
     def __init__(self, args):
         self.paths = {}
-        for cohort, directory in (("short", args.e1_short), ("long", args.e1_long)):
+        self.figure3_only = args.figure3_only
+        self.figure3_panels = args.figure3_panels
+        self.e2_revision = args.e2_revision
+        for cohort, directory in (() if self.figure3_only else (("short", args.e1_short), ("long", args.e1_long))):
             for filename in ("metrics.tsv", "quantiles.tsv"):
                 self.paths[f"e1_{cohort}_{filename}"] = directory / filename
-        for filename in ("metrics.tsv", "comparisons.tsv", "memory_metrics.tsv"):
+        for filename in ("metrics.tsv", "comparisons.tsv", "memory_metrics.tsv", "summary.json"):
             self.paths[f"e2_{filename}"] = args.e2 / filename
         self.paths["g_features"] = args.g_features
         self.hashes = {key: digest(path) for key, path in self.paths.items()}
@@ -107,7 +111,8 @@ class Data:
         self.checks = defaultdict(int)
         self.q = {}
         self.thresholds = {}
-        self.load_e1()
+        if not self.figure3_only:
+            self.load_e1()
         self.load_e2()
 
     def load_e1(self):
@@ -184,6 +189,12 @@ class Data:
                 require(len(set(ids)) == 1, "E1 beam denominators differ")
 
     def load_e2(self):
+        summary = json.loads(self.paths["e2_summary.json"].read_text())
+        commits = {summary["provenance"]["runs"][label]["signature"]["commit"]
+                   for label in ("rnacentral_current", "synthetic_current")}
+        require(len(commits) == 1, "E2 CLI source revisions differ")
+        self.e2_commit = commits.pop()
+        check_revision(self.e2_commit, self.e2_revision)
         all_rows = read_tsv(self.paths["e2_metrics.tsv"])
         selected = [r for r in all_rows if r["run"] in ("rnacentral_current", "synthetic_current")]
         identities = set()
@@ -232,9 +243,10 @@ class Data:
         require(len(self.memory) == 28, "Expected 7 RNA x 4 independent memory modes")
         require(len({(r["name"], r["mode"]) for r in self.memory}) == 28, "Duplicate memory row")
         for r in self.memory:
-            require(r["source_revision"].startswith("e2cecbb4"), "Memory source revision changed")
+            require(r["source_revision"] == self.e2_commit, "Memory/CLI source revisions differ")
             close(value(r, "rss_gib"), value(r, "rss_kib") / 2**20, "Memory units")
-            self.audit.append(dict(panel="3D", name=r["name"], mode=r["mode"],
+            self.audit.append(dict(panel="SI_mode_memory" if self.figure3_panels == "abc" else "3D",
+                                   name=r["name"], mode=r["mode"],
                                    length=int(r["n"]), metric="rss_gib", value=value(r, "rss_gib"), n=1))
         self.features = {r["name"]: r for r in read_tsv(self.paths["g_features"])}
         for r in self.rna + self.memory:
@@ -496,9 +508,13 @@ def annotation_text(data, narrow):
 
 def figure3(data, width, annotated):
     narrow = width == 89
-    fig = plt.figure(figsize=(width * MM, ((463 if annotated else 438) if narrow else
-                                          (256 if annotated else 241)) * MM), layout="constrained")
-    subfigs = fig.subfigures(3, 1, height_ratios=(1.12 if annotated else .96, 1.1, .7))
+    include_stages = data.figure3_panels == "abcd"
+    height = ((463 if annotated else 438) if narrow else (256 if annotated else 241))
+    if not include_stages:
+        height -= 105 if narrow else 60
+    fig = plt.figure(figsize=(width * MM, height * MM), layout="constrained")
+    ratios = (1.12 if annotated else .96, 1.1) + ((.7,) if include_stages else ())
+    subfigs = fig.subfigures(len(ratios), 1, height_ratios=ratios)
     top = subfigs[0]
     ratios = (1, 1, .75 if annotated else .35) if narrow else (1, .35 if annotated else .12)
     grid = top.add_gridspec(len(ratios), 1 if narrow else 2, height_ratios=ratios)
@@ -525,19 +541,29 @@ def figure3(data, width, annotated):
     footer.set_axis_off()
     footer.legend(handles=handles(SERIES_LABELS), loc="center", ncol=2 if narrow else 3,
                   frameon=False, columnspacing=1, handlelength=2)
-    bottom = subfigs[2]
+    if include_stages:
+        stage_panel(subfigs[2], data, narrow, "D (candidate)  ")
+    fig.suptitle("Figure 3 · Length and resource use" + (("\n" if narrow else " · ") + "annotated" if annotated else ""),
+                 fontweight="bold")
+    return fig
+
+
+def stage_panel(bottom, data, narrow, prefix=""):
     grid = bottom.add_gridspec(2, 1, height_ratios=(1, .27 if narrow else .13))
     ax = bottom.add_subplot(grid[0, 0])
     plot_stages(ax, data)
-    ax.set_title("D (candidate)  Independent processes\nPeak RSS; one measurement per mode\nPeaks are not additive" if narrow else
-                 "D (candidate)  Independent processes: peak RSS\nOne measurement per mode; peaks are not additive",
+    ax.set_title(prefix + ("Independent processes\nPeak RSS; one measurement per mode\nPeaks are not additive" if narrow else
+                 "Independent processes: peak RSS\nOne measurement per mode; peaks are not additive"),
                  loc="left", pad=7)
     footer = bottom.add_subplot(grid[1, 0])
     footer.set_axis_off()
     footer.legend(handles=handles(STAGE_LABELS), loc="center", ncol=2 if narrow else 4,
                   frameon=False, columnspacing=1)
-    fig.suptitle("Figure 3 · Length and resource use" + (("\n" if narrow else " · ") + "annotated" if annotated else ""),
-                 fontweight="bold")
+
+
+def stage_detail(data, width):
+    fig = plt.figure(figsize=(width * MM, (115 if width == 89 else 85) * MM), layout="constrained")
+    stage_panel(fig, data, width == 89)
     return fig
 
 
@@ -616,12 +642,12 @@ def write_captions(data, out):
     sources = {k: os.path.relpath(v, out) for k, v in data.paths.items()}
     source_table = "\n".join(f"| `{k}` | [{v.name}]({sources[k]}) |" for k, v in data.paths.items())
     counts = []
-    for cohort, tiers in COHORTS.items():
+    for cohort, tiers in (() if data.figure3_only else COHORTS.items()):
         for tier in tiers:
             first = data.q[(cohort, tier, BEAMS[cohort][0], DELTA)]
             counts.append(f"| {REF_LABEL[cohort]} | {bin_label(tier)} | {first['rna']:,} |")
     access_counts = []
-    for cohort in COHORTS:
+    for cohort in (() if data.figure3_only else COHORTS):
         for w, metric in zip(WINDOWS, ACCESS):
             q = data.q[(cohort, "all", BEAMS[cohort][0], metric)]
             access_counts.append(f"| {cohort} | {w} | {q['n']:,} | {q['missing']:,} | {q['eligible_windows']:,} |")
@@ -891,6 +917,20 @@ The script neither runs RNA CLIs/scheduler jobs nor executes or changes the exte
 """
     text = text.replace("SOURCE_TABLE", source_table).replace("RNA_COUNTS", "\n".join(counts))
     text = text.replace("ACCESS_COUNTS", "\n".join(access_counts))
+    text = text.replace("e2cecbb4", data.e2_commit[:8])
+    if data.figure3_panels == "abc":
+        text = text.replace("注記なし、D を含む案。", "注記なし、A–C の3パネル。")
+        text = text.replace("**D案**", "**Supplementary 別図**").replace("**D candidate**", "**Separate Supplementary figure**")
+        text = text.replace("この案は本文のDまたはSupplementaryへの配置を選べる。", "段階別 RSS は `figure3_mode_memory_*` に保存する。")
+        text = text.replace("This panel can be placed in the main figure or the Supplementary material.",
+                            "Stage RSS is saved separately as `figure3_mode_memory_*` for the Supplementary material.")
+        text = text.replace("| 3D |", "| SI mode memory |")
+    if data.figure3_only:
+        text = "# Figure 3 と段階別 RSS（" + data.e2_commit[:8] + "）\n\n" + text.split("## Figure 3 caption\n", 1)[1].split("### Figure 2A/B/D1 RNA counts", 1)[0]
+        text = "\n".join(line for line in text.splitlines() if not line.startswith("| 2")) + "\n"
+        text += ("\n## 再生成 / Regeneration\n\n```bash\n"
+                 f"PYTHONDONTWRITEBYTECODE=1 python3 experiments/scripts/make_figures.py --figure3-only --figure3-panels {data.figure3_panels} "
+                 f"--e2 {data.paths['e2_metrics.tsv'].parent} --e2-revision {data.e2_commit[:8]} --out {out}\n```\n")
     (out / "captions.md").write_text(text, encoding="utf-8")
 
 
@@ -899,6 +939,10 @@ def main():
     parser.add_argument("--e1-short", type=Path, default=ROOT / "results/local/e1-bprna-short-d21618c5-20261016")
     parser.add_argument("--e1-long", type=Path, default=ROOT / "results/local/e1-bprna-long-d21618c5-20261016")
     parser.add_argument("--e2", type=Path, default=ROOT / "results/local/e2-e2cecbb4-20261016")
+    parser.add_argument("--e2-revision", default="e2cecbb4", help="Required E2 commit (full hash or hex prefix)")
+    parser.add_argument("--figure3-only", action="store_true", help="Read and render only E2 figures")
+    parser.add_argument("--figure3-panels", choices=("abc", "abcd"), default="abcd",
+                        help="Use abc for the manuscript; abcd preserves the historical layout")
     parser.add_argument("--g-features", type=Path,
                         default=ROOT / "results/local/e2-e2cecbb4-g-features-20261016/rnacentral_g_features.tsv")
     parser.add_argument("--out", type=Path, default=ROOT / "results/figures/draft_20261016")
@@ -909,7 +953,7 @@ def main():
         require(not (args.out.is_relative_to(directory) or directory.is_relative_to(args.out)),
                 "Output must not overlap an input directory")
     data = Data(args)
-    for cohort in COHORTS:
+    for cohort in (() if args.figure3_only else COHORTS):
         for metric in ACCESS:
             counts = {(data.q[(cohort, "all", b, metric)]["n"],
                        data.q[(cohort, "all", b, metric)]["missing"],
@@ -919,12 +963,14 @@ def main():
     style()
     records = []
     for width in (183, 89):
-        for option in ("d1", "d2"):
+        for option in (() if args.figure3_only else ("d1", "d2")):
             save(figure2(data, width, option), f"figure2_{option}_{width}mm", args.out, width, records)
         for annotated in (False, True):
             name = "annotated" if annotated else "plain"
             save(figure3(data, width, annotated), f"figure3_{name}_{width}mm", args.out, width, records)
         save(synthetic_detail(data, width), f"figure3_synthetic_all_cli_{width}mm", args.out, width, records)
+        if args.figure3_panels == "abc":
+            save(stage_detail(data, width), f"figure3_mode_memory_{width}mm", args.out, width, records)
         print(f"Rendered {width} mm drafts", flush=True)
     write_audit(data, args.out)
     write_captions(data, args.out)
@@ -936,6 +982,7 @@ def main():
                       font_pt=dict(labels=8.5, ticks=8, legends=8, annotations=8, headings=9))
     (args.out / "validation.json").write_text(json.dumps(validation, indent=2) + "\n")
     manifest = dict(script_sha256=digest(Path(__file__)), numpy=np.__version__, matplotlib=matplotlib.__version__,
+                    e2_revision=data.e2_commit, figure3_panels=args.figure3_panels,
                     sources={k: dict(path=os.path.relpath(p, args.out), sha256=data.hashes[k], bytes=p.stat().st_size)
                              for k, p in data.paths.items()}, outputs=records,
                     derived_files={name: digest(args.out / name) for name in

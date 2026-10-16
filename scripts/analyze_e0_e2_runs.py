@@ -248,17 +248,18 @@ def analyze(args):
     if output.exists():
         raise ValueError("use a new E2 output directory")
     dataset, hashes = load_dataset(args.dataset)
-    specifications = [(args.synthetic_run, "synthetic_current", dataset, (100, 100, 100), "cpu_40=1", args.workers),
-        (args.rna_run, "rnacentral_current", {}, (100, 100, 100), "cpu_40=1", args.workers),
+    specifications = [(args.synthetic_run, "synthetic_current", dataset, (100, 100, 100), "cpu_40=1", args.workers, args.revision),
+        (args.rna_run, "rnacentral_current", {}, (100, 100, 100), "cpu_40=1", args.workers, args.revision),
         (args.previous_rna_run, "rnacentral_previous" if args.skip_cap30_history else "rnacentral_15aa_cap100",
-         {}, (100, 100, 100), args.previous_resource, 1)]
+         {}, (100, 100, 100), args.previous_resource, args.previous_workers, args.previous_revision)]
     if not args.skip_cap30_history:
-        specifications.append((args.previous_rna_cap30_run, "rnacentral_15aa_cap30", {}, (100, 30, 30), "node_f=1", 1))
+        specifications.append((args.previous_rna_cap30_run, "rnacentral_15aa_cap30", {}, (100, 30, 30), "node_f=1", 1, None))
     if args.previous_synthetic_run:
-        specifications.append((args.previous_synthetic_run, "synthetic_previous", dataset, (100, 100, 100), args.previous_resource, 1))
+        specifications.append((args.previous_synthetic_run, "synthetic_previous", dataset, (100, 100, 100),
+                               args.previous_resource, args.previous_workers, args.previous_revision))
     cohorts, provenance, outcomes = [], {}, {}
-    for path, label, data, caps, resource, workers in specifications:
-        rows, p = load_run(path, label, data, caps, resource, expected_workers=workers)
+    for path, label, data, caps, resource, workers, revision in specifications:
+        rows, p = load_run(path, label, data, caps, resource, expected_workers=workers, expected_revision=revision)
         provenance[label] = {**p, "mode": RunReader(path).manifest["config"]["modes"][0]}
         cohorts.append(rows)
         if label.endswith("current"):
@@ -288,7 +289,8 @@ def analyze(args):
         if not (args.parallel_w1_run and args.parallel_w10_run):
             raise ValueError("supply both parallel comparison runs")
         for path, label, workers in ((args.parallel_w1_run, "parallel_w1", 1), (args.parallel_w10_run, "parallel_w10", 10)):
-            rows, p = load_run(path, label, {}, (100, 100, 100), "cpu_40=1", expected_workers=workers)
+            rows, p = load_run(path, label, {}, (100, 100, 100), "cpu_40=1", expected_workers=workers,
+                               expected_revision=args.revision)
             if (len(rows) != 9 or p["signature"] != provenance["rnacentral_current"]["signature"]
                     or p["mode"] != provenance["rnacentral_current"]["mode"]):
                 raise ValueError("parallel comparison cohort/software mismatch")
@@ -326,6 +328,7 @@ def analyze(args):
             "RNAcentral predictions extrapolate beyond synthetic n=250..4000, without refitting or resource calibration.",
             "CapR reports no numeric root; successful complete profiles use the CLI's finite-root check."],
         "provenance": {"runs": provenance, "dataset_sha256": hashes,
+            "expected_revisions": {"current": args.revision, "previous": args.previous_revision},
             "scripts_sha256": {name: file_digest(Path(__file__).with_name(name)) for name in
                 (Path(__file__).name, "analyze_e0.py", "analyze_e2_shape.py", "analyze_e2_synthetic.py", "analyze_e2_diagnostics.py", "scaffold_features.py", "task_storage.py")},
             "tar_extractions_to_filesystem": 0}}
@@ -345,7 +348,9 @@ def analyze(args):
         if not (args.memory_run and args.previous_memory_run):
             raise ValueError("supply both memory breakdown runs")
         from analyze_e2_diagnostics import analyze_memory
-        analyze_memory(output, args.memory_run, args.previous_memory_run, args.workers)
+        analyze_memory(output, args.memory_run, args.previous_memory_run, args.workers,
+                       previous_workers=args.previous_workers, revision=args.revision,
+                       previous_revision=args.previous_revision)
     print(json.dumps({"metrics_rows": sum(map(len, cohorts)), "comparison_rows": len(pairs),
         "raw_artifacts_verified": sum(p["raw_artifacts_verified"] for p in provenance.values()), "output": str(output)}))
 
@@ -361,6 +366,9 @@ def main():
     parser.add_argument("--previous-rna-run", default=str(root / "results/runs/e2-rnacentral-capb-timing-20261012"))
     parser.add_argument("--previous-rna-cap30-run", default=str(root / "results/runs/e2-rnacentral-15aa7742-timing-20261011"))
     parser.add_argument("--workers", type=int, default=1)
+    parser.add_argument("--revision", help="Require this current E2 commit (full hash or hex prefix)")
+    parser.add_argument("--previous-revision", help="Require this previous E2 commit (full hash or hex prefix)")
+    parser.add_argument("--previous-workers", type=int, default=1)
     parser.add_argument("--previous-resource", default="node_f=1")
     parser.add_argument("--skip-cap30-history", action="store_true")
     parser.add_argument("--previous-synthetic-run")

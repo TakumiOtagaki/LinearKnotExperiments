@@ -12,6 +12,7 @@ import re
 import statistics
 
 from task_storage import RunReader
+from analyze_e2_synthetic import check_revision
 
 
 def near(a, b):
@@ -32,7 +33,7 @@ def digest(path):
     return h.hexdigest()
 
 
-def validate_memory(output):
+def validate_memory(output, revision=None, previous_revision=None):
     summary = json.loads((output / "memory_summary.json").read_text())
     rows = table(output / "memory_metrics.tsv")
     families = table(output / "memory_families.tsv")
@@ -41,6 +42,8 @@ def validate_memory(output):
         raise ValueError("duplicate memory rows")
     checks = 0
     for kind, provenance in summary["provenance"].items():
+        revision_pin = revision if kind == "current" else previous_revision
+        revision_pin = revision_pin or summary.get("expected_revisions", {}).get(kind)
         reader = RunReader(provenance["path"])
         if reader.manifest_sha256 != provenance["manifest_sha256"]:
             raise ValueError("memory manifest changed")
@@ -50,6 +53,9 @@ def validate_memory(output):
         for job in reader.manifest["jobs"]:
             row = lookup[label, job["input"], job["mode"]]
             raw = json.loads(reader.artifact(job, "stdout.txt"))
+            check_revision(raw["source_revision"], revision_pin)
+            if row["source_revision"] != raw["source_revision"]:
+                raise ValueError("memory source revision mismatch")
             stage = raw["runs"][0]["stages"][0]
             near(row["rss_gib"], job["peak_rss_kib"] / 2**20)
             near(row["wall_seconds"], job["time_wall_seconds"])
@@ -89,10 +95,12 @@ def validate_memory(output):
     return checks
 
 
-def validate(output, e0_output, test_log):
+def validate(output, e0_output, test_log, revision=None, previous_revision=None):
     output = Path(output)
     e0_output = Path(e0_output) if e0_output else None
     summary = json.loads((output / "summary.json").read_text())
+    revision = revision or summary["provenance"].get("expected_revisions", {}).get("current")
+    previous_revision = previous_revision or summary["provenance"].get("expected_revisions", {}).get("previous")
     rows = table(output / "metrics.tsv")
     lookup = {(r["run"], r["name"], r["program"]): r for r in rows}
     if len(lookup) != len(rows):
@@ -101,6 +109,14 @@ def validate(output, e0_output, test_log):
         reader = RunReader(provenance["path"])
         if reader.manifest_sha256 != provenance["manifest_sha256"]:
             raise ValueError("run manifest changed since analysis")
+        expected = (revision if label.endswith("current") or label.startswith("parallel_")
+                    else None if label == "rnacentral_15aa_cap30" else previous_revision)
+        for task in reader.manifest["tasks"]:
+            metadata = json.loads((Path(provenance["path"]) / task["directory"] / "run/run.json").read_text())
+            actual = metadata["software_before"]["commit"]
+            check_revision(actual, expected)
+            if actual != provenance["signature"]["commit"]:
+                raise ValueError("exported source revision differs from task")
         jobs = defaultdict(list)
         for job in reader.manifest["jobs"]:
             if not job["warmup"]:
@@ -198,13 +214,14 @@ def validate(output, e0_output, test_log):
                 pos = (len(values) - 1) * q
                 lo, hi = math.floor(pos), math.ceil(pos)
                 near(row[key], values[lo] + (values[hi] - values[lo]) * (pos - lo))
-    memory_checks = validate_memory(output) if (output / "memory_summary.json").exists() else 0
+    memory_checks = validate_memory(output, revision, previous_revision) if (output / "memory_summary.json").exists() else 0
     log = Path(test_log).read_text()
     match = re.search(r"Ran (\d+) tests in ([\d.]+)s\n\nOK \(skipped=(\d+)\)\s*$", log)
     if not match:
         raise ValueError("successful test log with explicit RNA CLI skips required")
     files = [p for directory in (e0_output, output) if directory is not None for p in directory.iterdir() if p.is_file() and p.name != "validation.json"]
     report = {"metrics_rows_recomputed": len(rows), "comparisons_recomputed": len(pairs), "slopes_recomputed": len(slopes),
+        "expected_revisions": {"current": revision, "previous": previous_revision},
         "e0_rows_recomputed": len(e0), "memory_scalar_checks": memory_checks, "prediction_checks": prediction_checks, "grouped_cv_scalar_checks": cv_checks,
         "test_cases": int(match[1]), "tests_passed": int(match[1]) - int(match[3]), "tests_skipped": int(match[3]),
         "test_log": log, "test_log_sha256": digest(test_log), "validator_sha256": digest(__file__),
@@ -220,5 +237,7 @@ if __name__ == "__main__":
     parser.add_argument("output")
     parser.add_argument("--e0-output")
     parser.add_argument("--test-log", required=True)
+    parser.add_argument("--revision", help="Require this current E2 commit; defaults to the analysis pin")
+    parser.add_argument("--previous-revision", help="Require this previous E2 commit; defaults to the analysis pin")
     args = parser.parse_args()
-    validate(args.output, args.e0_output, args.test_log)
+    validate(args.output, args.e0_output, args.test_log, args.revision, args.previous_revision)

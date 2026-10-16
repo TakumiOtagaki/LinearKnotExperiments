@@ -13,6 +13,7 @@ import hashlib
 import json
 import math
 from pathlib import Path
+import re
 import statistics
 import tarfile
 
@@ -199,7 +200,15 @@ def selected_task_jobs(jobs, selected, task_directory):
     return [j for j in jobs if j["input"] in selected and j["directory"].startswith(task_directory + "/run/")]
 
 
-def load_run(path, label, dataset, caps, resource, selected_lengths=None, expected_workers=1):
+def check_revision(actual, expected):
+    """Allow a pinned full commit or hexadecimal prefix; omission preserves history."""
+    if expected is not None and (not re.fullmatch(r"[0-9a-f]{7,40}", expected)
+                                 or not actual.startswith(expected)):
+        raise ValueError(f"source revision mismatch: expected {expected}, found {actual}")
+
+
+def load_run(path, label, dataset, caps, resource, selected_lengths=None, expected_workers=1,
+             expected_revision=None):
     reader = RunReader(path)
     m, groups = reader.manifest, defaultdict(list)
     c = m["config"]
@@ -243,6 +252,7 @@ def load_run(path, label, dataset, caps, resource, selected_lengths=None, expect
         sig = {"binaries": metadata["binaries_before"], "energy_parameter_sha256": metadata["energy_parameter_sha256"],
                "commit": metadata["software_before"]["commit"], "build_settings": metadata["build_settings"],
                "programs": c["programs"], "model_settings_temperature": c["model_settings"]["temperature_celsius"]}
+        check_revision(sig["commit"], expected_revision)
         if signature is not None and sig != signature:
             raise ValueError("inconsistent task software/model")
         signature = sig

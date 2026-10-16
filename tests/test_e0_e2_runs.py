@@ -11,9 +11,38 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from analyze_e0_e2_runs import FULL_FEATURES, empirical_slopes, historical_comparisons, summarize_e0
 from analyze_e2_diagnostics import MODES, memory_pairs
+from analyze_e2_synthetic import write_union_tsv
+from validate_e0_e2_runs import validate_memory
 
 
 class E0E2RunTests(unittest.TestCase):
+    def test_memory_validator_checks_release_pin_after_family_counters(self):
+        commit = "febd2bc1fecfa6619a86b19a7382e3fc4a3746af"
+        jobs = [{"input": "rna", "mode": mode, "peak_rss_kib": 1024, "time_wall_seconds": 2}
+                for mode in ("inside_outer", "mfe_outer")]
+        family = {"nonterminal": "V", "item_visits": 10}
+        raw = {"source_revision": commit, "runs": [{"stages": [{"rss_after": {"vmhwm_kib": 1024},
+               "summary": {"work": {"item_visits": 10, "families": [family]}}}]}]}
+        with tempfile.TemporaryDirectory(dir="/tmp") as tmp:
+            output = Path(tmp)
+            (output / "memory_summary.json").write_text(json.dumps({
+                "provenance": {"current": {"path": "unused", "manifest_sha256": "hash"}},
+                "expected_revisions": {"current": "febd2bc1"}}))
+            write_union_tsv(output / "memory_metrics.tsv", [{"run": "memory_current", "name": j["input"],
+                "mode": j["mode"], "source_revision": commit, "rss_gib": 1024 / 2**20,
+                "wall_seconds": 2, "driver_vmhwm_kib": 1024, "rss_bytes_per_item_visit": 1024 * 1024 / 10,
+                "item_visits": 10} for j in jobs])
+            write_union_tsv(output / "memory_families.tsv", [{"run": "memory_current", "name": "rna",
+                "mode": j["mode"], **family} for j in jobs])
+            (output / "memory_comparisons.tsv").write_text("kind\n")
+            with patch("validate_e0_e2_runs.RunReader") as reader:
+                reader.return_value.manifest_sha256 = "hash"
+                reader.return_value.manifest = {"jobs": jobs}
+                reader.return_value.artifact.return_value = json.dumps(raw).encode()
+                self.assertGreater(validate_memory(output), 0)
+                with self.assertRaisesRegex(ValueError, "source revision mismatch"):
+                    validate_memory(output, revision="e2cecbb4")
+
     def test_memory_pairs_match_stage_identity_and_preserve_probe_ratios(self):
         old = [{"run": "old", "name": name, "mode": mode,
                 "sequence_sha256": name, "scaffold_sha256": "g", "energy_parameter_sha256": "p",

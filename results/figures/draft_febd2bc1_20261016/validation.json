@@ -1,0 +1,134 @@
+{
+  "all_passed": true,
+  "checks": {
+    "e2_replicate_scalars_checked": 2934,
+    "e2_feature_identity_fields_checked": 147,
+    "e2_current_metric_rows": 489,
+    "e2_current_stage_rows": 28
+  },
+  "source_files_unchanged": true,
+  "text_within_pages": true,
+  "plotted_points_within_axis_limits": true,
+  "outputs": [
+    {
+      "file": "figure3_plain_183mm.pdf",
+      "width_mm": 183,
+      "height_mm": 181.0,
+      "bytes": 37335,
+      "sha256": "b1e7033db0c776e3e7840346c6ad5eabb2155814897773be4960791fac8e5778"
+    },
+    {
+      "file": "figure3_plain_183mm.png",
+      "width_mm": 183,
+      "height_mm": 181.0,
+      "bytes": 332120,
+      "sha256": "53e46778eaf3fef6a981bf1621c7e1b20f7dc33d186090edbc1984d2d5e9b595"
+    },
+    {
+      "file": "figure3_annotated_183mm.pdf",
+      "width_mm": 183,
+      "height_mm": 196.0,
+      "bytes": 39339,
+      "sha256": "2bf519e80460a3aaa9378daac953a155e670bc09faacc2d284d6b3cb3728beb6"
+    },
+    {
+      "file": "figure3_annotated_183mm.png",
+      "width_mm": 183,
+      "height_mm": 196.0,
+      "bytes": 387795,
+      "sha256": "97123dd64b131715fb0d94d9a12d49b4c87a076d8572f98268b39791c02a72bc"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_183mm.pdf",
+      "width_mm": 183,
+      "height_mm": 171.0,
+      "bytes": 46057,
+      "sha256": "b1d071be1d9862ab44806a8c10f85017a7ba5637a490c0729f7999c887501212"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_183mm.png",
+      "width_mm": 183,
+      "height_mm": 171.0,
+      "bytes": 420395,
+      "sha256": "0ddcfe82be4e8ff6ddfceb710f0939b98d1f589e24cb37c6c2c4e2c9d016ae39"
+    },
+    {
+      "file": "figure3_mode_memory_183mm.pdf",
+      "width_mm": 183,
+      "height_mm": 85.0,
+      "bytes": 15238,
+      "sha256": "e2502acc21397cdb4d353096da9d86ce1e53a72d324b5995040648f0db13091e"
+    },
+    {
+      "file": "figure3_mode_memory_183mm.png",
+      "width_mm": 183,
+      "height_mm": 85.0,
+      "bytes": 136509,
+      "sha256": "3e87a58ec4761ef267527fbe0d3c2f0babb6b6c2e733604ab3c778005da061a2"
+    },
+    {
+      "file": "figure3_plain_89mm.pdf",
+      "width_mm": 89,
+      "height_mm": 333.0,
+      "bytes": 37099,
+      "sha256": "7f58f75a5a19d38b1287e70d7e50eb4540e5d2f8c47349eb519233cb2a657d42"
+    },
+    {
+      "file": "figure3_plain_89mm.png",
+      "width_mm": 89,
+      "height_mm": 333.0,
+      "bytes": 354929,
+      "sha256": "54ca4db94aa1ede756ef87ee64f32c246080757cf9f33b074703c64490c5ff0a"
+    },
+    {
+      "file": "figure3_annotated_89mm.pdf",
+      "width_mm": 89,
+      "height_mm": 358.0,
+      "bytes": 38979,
+      "sha256": "cc90d261b19d6ac035ed625969a9268abbde2bbb5a78433dec2b2176cc13b09d"
+    },
+    {
+      "file": "figure3_annotated_89mm.png",
+      "width_mm": 89,
+      "height_mm": 358.0,
+      "bytes": 410728,
+      "sha256": "2630367553a4e66229a92fac4561539f3af063cd825b58eef0d4a908a2a24077"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_89mm.pdf",
+      "width_mm": 89,
+      "height_mm": 388.0,
+      "bytes": 46289,
+      "sha256": "d7b59baee2c230e62c0b17204859166fbffdf2128261eb10023923371910dc89"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_89mm.png",
+      "width_mm": 89,
+      "height_mm": 388.0,
+      "bytes": 562260,
+      "sha256": "e2c28f8f0c1104dd2d3bd4f19de8b11375c60912766febe447cfc52a5894124f"
+    },
+    {
+      "file": "figure3_mode_memory_89mm.pdf",
+      "width_mm": 89,
+      "height_mm": 115.0,
+      "bytes": 15201,
+      "sha256": "27338e857a23fc9e46a5a40c606a3ec48bac1b407e7626579f5ccf5ed840bc65"
+    },
+    {
+      "file": "figure3_mode_memory_89mm.png",
+      "width_mm": 89,
+      "height_mm": 115.0,
+      "bytes": 119585,
+      "sha256": "3ed0b6750b989969d4ed1e9eb1b1f2c587c909ca32c63180f0aeba732c6688e3"
+    }
+  ],
+  "quantile_method": "NumPy quantile(method='linear'), equal weight per evaluable RNA",
+  "font_pt": {
+    "labels": 8.5,
+    "ticks": 8,
+    "legends": 8,
+    "annotations": 8,
+    "headings": 9
+  }
+}

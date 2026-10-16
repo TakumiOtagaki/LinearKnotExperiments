@@ -1,0 +1,475 @@
+{
+  "figure_size_mm": [
+    183,
+    90
+  ],
+  "region_one_based_inclusive": [
+    20350,
+    20600
+  ],
+  "focus_window_starts_one_based_inclusive": [
+    20451,
+    20500
+  ],
+  "window_length": 8,
+  "focus_bases_one_based_inclusive": [
+    20451,
+    20507
+  ],
+  "bpp_display_cutoff": 0.01,
+  "bpp_export_cutoff": 0.001,
+  "arc_counts": {
+    "G0.7": {
+      "scaffold": 17,
+      "new_nested": 130,
+      "crossing": 0,
+      "external_omitted": 55
+    },
+    "emptyG": {
+      "scaffold": 0,
+      "new_nested": 217,
+      "crossing": 0,
+      "external_omitted": 24
+    }
+  },
+  "diagnostics": {
+    "G0.7": {
+      "focus_mean": 0.5267654630819681,
+      "fixed_window_raw_residual": 1.3598850091679405e-13,
+      "focus_context_max": {
+        "Stem": 0.9687658861729084,
+        "Hairpin": 0.697983459878604,
+        "Bulge": 0.0396000215923645,
+        "Internal": 0.2523170011644709,
+        "Multiloop": 0.9346759331799019,
+        "Exterior": 0.0,
+        "PseudoLoop": 2.3242794731993585e-11
+      }
+    },
+    "emptyG": {
+      "focus_mean": 0.013738773627232586,
+      "fixed_window_raw_residual": 0.0,
+      "focus_context_max": {
+        "Stem": 0.9988000961468773,
+        "Hairpin": 0.772802263697954,
+        "Bulge": 0.41461786174731313,
+        "Internal": 0.9915691987307056,
+        "Multiloop": 0.48889695284866314,
+        "Exterior": 1.5592341001700358e-21,
+        "PseudoLoop": 0.0
+      }
+    }
+  },
+  "sampling_validation": [
+    {
+      "beam": 100,
+      "samples": 1000,
+      "sample_pairs": 499500,
+      "histogram_counts_exact": true,
+      "means_verified": true,
+      "reference_distances_verified": true
+    },
+    {
+      "beam": 200,
+      "samples": 1000,
+      "sample_pairs": 499500,
+      "histogram_counts_exact": true,
+      "means_verified": true,
+      "reference_distances_verified": true
+    }
+  ],
+  "source_tables_and_inputs": [
+    {
+      "path": "results/local/e3-neat1-20261016/provenance.json",
+      "sha256": "15ae61f5e58c83457ec995ad64cc42ea45aa24c24ed6ced8fe6ff1046bf1daaa"
+    },
+    {
+      "path": "results/local/e3-neat1-20261016/position_profiles.tsv.gz",
+      "sha256": "925c3785e9239250edcb1bd8e7d46cdcd7d1ca3fa543bb878ed299b4b65c67ce"
+    },
+    {
+      "path": "results/local/e3-neat1-20261016/accessibility.tsv.gz",
+      "sha256": "02bec56436f9ef52228c72a979191d044c57387b38978571158a69b820340f5e"
+    },
+    {
+      "path": "results/local/e3-neat1-20261016/bpp_pairs.tsv.gz",
+      "sha256": "4c9abaf67071fa7dccdcc30976a94e94c5c5b5046f66cd8222aecc45afedc790"
+    },
+    {
+      "path": "results/local/e3-neat1-20261016/sampling_histograms.tsv",
+      "sha256": "d4ca9d610378c3565ff71ffde3761e41c69c2490445d920d94c9c6aa185e9dbe"
+    },
+    {
+      "path": "results/local/e3-neat1-20261016/sampling_summary.tsv",
+      "sha256": "f3c48588e64a40f3fac6ae03f36fcb33da1c6194181800a44490c6e824d076b3"
+    },
+    {
+      "path": "results/local/e3-neat1-20261016/sampling_reference_distances.tsv.gz",
+      "sha256": "9e7ca905b35aac041618b7a6abd7da103049271315e6e5170999f0ae420b1a30"
+    },
+    {
+      "path": "results/local/e3-neat1-20261016/representative_distances.tsv",
+      "sha256": "1154cab3e4dc439072dd9a0bf68051f0c29c2677407f55cb04ed5c26004c883f"
+    },
+    {
+      "path": "data/neat1-20261016/NEAT1_2.txt",
+      "sha256": "97238dd464ca55d37f146ce1b84d8a0ff1a3197b82f273de5c9ded933f1232c8",
+      "length": 22743,
+      "scaffold_pairs": 4161
+    },
+    {
+      "path": "data/neat1-variants-20261016/NEAT1_2_emptyG.txt",
+      "sha256": "5a1a3d4d7ed5b89316c19aebc17b4e6cbd421dd941d1584ba254ca07fb71173d",
+      "length": 22743,
+      "scaffold_pairs": 0
+    },
+    {
+      "path": "data/neat1-20261016/NEAT1_1.txt",
+      "sha256": "113ccf81eff2e9f2992f05bacb7eb220c6294675b9b5957c58e43794e147dbf8",
+      "length": 3756,
+      "scaffold_pairs": 727
+    }
+  ],
+  "streamed_artifacts": [
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "3df7e467b84da323627381a587e617c19385c8a0f8f6476ee738fd7578b988db",
+      "bytes": 68294,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearCParty",
+        "-i",
+        "/tmp/9029032.1.all.q/lcp-task-dis832bn/inputs/NEAT1_2.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9029032.1.all.q/lcp-task-dis832bn/jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-16T05:19:27.401525+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "95f6ca5e2b5a4a74884438d28be13cd98be34e756503fde6888e9d73989ab172",
+      "bytes": 899348,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearCParty",
+        "-i",
+        "/tmp/9029032.1.all.q/lcp-task-dis832bn/inputs/NEAT1_2.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9029032.1.all.q/lcp-task-dis832bn/jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-16T05:19:27.401525+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "3d40920cfd205da4f13fbbfc9c0aa73635bca4c428fddf3515316004a1244745",
+      "bytes": 11333,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearCParty",
+        "-i",
+        "/tmp/9029033.1.all.q/lcp-task-0ck1qspg/inputs/NEAT1_1.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9029033.1.all.q/lcp-task-0ck1qspg/jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-16T05:05:18.881387+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "3e4e1d65ed62a5b32d9c747310a8146379358f3daa3ec9ac337eae893c6dbfa5",
+      "bytes": 11333,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearCParty",
+        "-i",
+        "/tmp/9029033.1.all.q/lcp-task-0ck1qspg/inputs/NEAT1_1.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9029033.1.all.q/lcp-task-0ck1qspg/jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-16T05:08:29.364071+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "61f5e7e73fb0bf8199ec22d994dbae678ef28dd29af2be50030fc7622b7f426c",
+      "bytes": 2833953,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKCapR",
+        "-i",
+        "/tmp/9029034.1.all.q/lcp-task-2xwx3etl/inputs/NEAT1_2.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-16T05:14:18.387241+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/stdout.txt",
+      "sha256": "e5ad338c323ef4e5d63c652c1c8c56c0fc845a00179729247e2451df3a16f4bf",
+      "bytes": 11314,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKMEA",
+        "-i",
+        "/tmp/9029037.1.all.q/lcp-task-2uqht9az/inputs/NEAT1_1.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--gamma",
+        "1",
+        "--stats"
+      ],
+      "finished_utc": "2026-10-16T05:05:40.536622+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/stdout.txt",
+      "sha256": "ab779c5dc5e718bfaf68ddedf607c1680fc5aee94709b54584079f13c36e576f",
+      "bytes": 11314,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKMEA",
+        "-i",
+        "/tmp/9029037.1.all.q/lcp-task-2uqht9az/inputs/NEAT1_1.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--gamma",
+        "1",
+        "--stats"
+      ],
+      "finished_utc": "2026-10-16T05:09:20.096191+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "647d52cb8266c650e22a4202bd220a8dcb75f694e59c8c933cbd86e7a4eec58e",
+      "bytes": 2233098,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKRaccess",
+        "-i",
+        "/tmp/9029039.1.all.q/lcp-task-gw8coyeq/inputs/NEAT1_2.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-16T05:13:52.885771+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/stdout.txt",
+      "sha256": "940c9c4f873fae4e078d14478c284e25950adb213352e6e0b987f599f043d2c8",
+      "bytes": 3762767,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKSampling",
+        "-i",
+        "/tmp/9029044.1.all.q/lcp-task-hitl665s/inputs/NEAT1_1.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "-k",
+        "1000",
+        "--seed",
+        "20261016",
+        "--unique"
+      ],
+      "finished_utc": "2026-10-16T05:04:55.545722+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/stdout.txt",
+      "sha256": "6b55445dbc98fb7300b0f50fbd30c2c08bce2d781c8a13c54c9047297fbfffac",
+      "bytes": 3762767,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKSampling",
+        "-i",
+        "/tmp/9029044.1.all.q/lcp-task-hitl665s/inputs/NEAT1_1.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "-k",
+        "1000",
+        "--seed",
+        "20261016",
+        "--unique"
+      ],
+      "finished_utc": "2026-10-16T05:07:21.648115+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2_emptyG-beam100_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "d7649f498a2273c1941233bae4c5a481ad962997fd3066aa13539863d1a0c8ed",
+      "bytes": 68301,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearCParty",
+        "-i",
+        "/tmp/9029226.1.all.q/lcp-task-xzg3caqz/inputs/NEAT1_2_emptyG.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9029226.1.all.q/lcp-task-xzg3caqz/jobs/NEAT1_2_emptyG-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-16T06:05:46.992380+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2_emptyG-beam100_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "3a26b0b9f936d823fbe480df58aacd4508592296981164c97444b2c54edfe2b5",
+      "bytes": 1867884,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearCParty",
+        "-i",
+        "/tmp/9029226.1.all.q/lcp-task-xzg3caqz/inputs/NEAT1_2_emptyG.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9029226.1.all.q/lcp-task-xzg3caqz/jobs/NEAT1_2_emptyG-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-16T06:05:46.992380+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2_emptyG-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "6314a3e7a7cd04e56f80c93acd6d00eee1caae1f40fcdc9c51406d971a56384e",
+      "bytes": 2979762,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKCapR",
+        "-i",
+        "/tmp/9029228.1.all.q/lcp-task-kns4gfmj/inputs/NEAT1_2_emptyG.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-16T05:53:45.862954+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2_emptyG-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "125835db840f697e7b05521f4405a3fa7010e16ad6a553c8dcae8872e94eeb4d",
+      "bytes": 2330604,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKRaccess",
+        "-i",
+        "/tmp/9029230.1.all.q/lcp-task-ehq1df__/inputs/NEAT1_2_emptyG.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-16T05:52:18.156885+00:00"
+    }
+  ],
+  "script_sha256": "b44b155a73e097a858354c001273b3ad031d98742aa4ecbda6677f12a07106ef",
+  "command": [
+    "experiments/scripts/make_figure4.py"
+  ],
+  "software_revision": "e2cecbb4",
+  "coordinate_convention": "one-based inclusive",
+  "validation": {
+    "text_inside_canvas": true,
+    "text_overlap": false,
+    "smoothing": false,
+    "raw_archives_extracted": false,
+    "rna_cli_called": false,
+    "all_pairwise_distances_recomputed": true
+  }
+}
