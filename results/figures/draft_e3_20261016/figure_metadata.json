@@ -1,0 +1,81 @@
+{
+  "context_region": [
+    3020,
+    3520
+  ],
+  "arc_threshold_neat1_1": 0.01,
+  "arc_counts": [
+    {
+      "iso": "NEAT1_1",
+      "beam": 100,
+      "Scaffold G": 727,
+      "New, no G crossing": 2235,
+      "New, crosses G": 0
+    },
+    {
+      "iso": "NEAT1_1",
+      "beam": 200,
+      "Scaffold G": 727,
+      "New, no G crossing": 2274,
+      "New, crosses G": 0
+    },
+    {
+      "iso": "NEAT1_1",
+      "beam": 400,
+      "Scaffold G": 727,
+      "New, no G crossing": 2345,
+      "New, crosses G": 2
+    },
+    {
+      "iso": "NEAT1_2",
+      "method": "LinearPartition",
+      "beam": 200,
+      "Scaffold G": 0,
+      "New, no G crossing": 109,
+      "New, crosses G": 0
+    },
+    {
+      "iso": "NEAT1_2",
+      "method": "emptyG",
+      "beam": 100,
+      "Scaffold G": 0,
+      "New, no G crossing": 0,
+      "New, crosses G": 0
+    },
+    {
+      "iso": "NEAT1_2",
+      "method": "emptyG",
+      "beam": 200,
+      "Scaffold G": 0,
+      "New, no G crossing": 0,
+      "New, crosses G": 0
+    },
+    {
+      "iso": "NEAT1_2",
+      "method": "G0.7",
+      "beam": 100,
+      "Scaffold G": 0,
+      "New, no G crossing": 0,
+      "New, crosses G": 0
+    },
+    {
+      "iso": "NEAT1_2",
+      "method": "G0.7",
+      "beam": 200,
+      "Scaffold G": 0,
+      "New, no G crossing": 0,
+      "New, crosses G": 0
+    },
+    {
+      "iso": "NEAT1_2",
+      "method": "G0.7",
+      "beam": 400,
+      "Scaffold G": 0,
+      "New, no G crossing": 0,
+      "New, crosses G": 0
+    }
+  ],
+  "smoothing": "centered; shorter support at sequence ends; skip missing SHAPE",
+  "analysis_provenance_sha256": "15ae61f5e58c83457ec995ad64cc42ea45aa24c24ed6ced8fe6ff1046bf1daaa",
+  "plot_script_sha256": "6457ce9185a22cd4afd2c906e48dbbb5aef2c662bfff746905576ad771d28fcc"
+}
