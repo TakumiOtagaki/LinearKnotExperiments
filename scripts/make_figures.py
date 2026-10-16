@@ -15,6 +15,7 @@ import json
 import math
 import os
 from pathlib import Path
+import sys
 import tempfile
 from collections import defaultdict
 
@@ -1105,15 +1106,29 @@ def main():
                         help="Use abc for the manuscript; abcd preserves the historical layout")
     parser.add_argument("--main-compact", action="store_true",
                         help="Render 183-mm main Figures 2 (92 mm) and 3 (55 mm), plus separate SI panel 2D")
+    parser.add_argument("--review-layout", action="store_true",
+                        help="Render revised 178-mm main and 165-mm SI figures; preserve historical layouts")
+    parser.add_argument("--e2-version", choices=("febd2bc1", "d02d261c"),
+                        help="With --review-layout, select the dated E2 aggregate and required revision")
     parser.add_argument("--g-features", type=Path,
                         default=ROOT / "results/local/e2-e2cecbb4-g-features-20261016/rnacentral_g_features.tsv")
     parser.add_argument("--out", type=Path,
-                        help="Output directory; defaults to main_20261016 with --main-compact, otherwise draft_20261016")
+                        help="Output directory; defaults to main_20261017 with --review-layout, "
+                             "main_20261016 with --main-compact, otherwise draft_20261016")
     args = parser.parse_args()
+    require(not (args.main_compact and args.review_layout), "Choose one manuscript layout")
+    require(not args.e2_version or args.review_layout, "--e2-version requires --review-layout")
+    if args.review_layout:
+        args.figure3_panels = "abc"
+        if args.e2_version:
+            date = "20261016" if args.e2_version == "febd2bc1" else "20261017"
+            args.e2 = ROOT / f"results/local/e2-{args.e2_version}-{date}"
+            args.e2_revision = args.e2_version
     if args.main_compact:
         args.figure3_panels = "abc"
     if args.out is None:
-        args.out = ROOT / "results/figures" / ("main_20261016" if args.main_compact else "draft_20261016")
+        args.out = ROOT / "results/figures" / ("main_20261017" if args.review_layout else
+                                              "main_20261016" if args.main_compact else "draft_20261016")
     args.out = args.out.resolve()
     for directory in (args.e1_short, args.e1_long, args.e2, args.g_features.parent):
         directory = directory.resolve()
@@ -1127,6 +1142,10 @@ def main():
                        data.q[(cohort, "all", b, metric)]["eligible_windows"]) for b in BEAMS[cohort]}
             require(len(counts) == 1, "E1 accessibility domains vary with beam")
     args.out.mkdir(parents=True, exist_ok=True)
+    if args.review_layout:
+        from make_figures_review import render_review
+        render_review(args, data, sys.modules[__name__])
+        return
     style()
     records = []
     if args.main_compact:

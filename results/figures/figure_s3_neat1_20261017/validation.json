@@ -1,0 +1,49 @@
+{
+  "pdf_size_mm": [
+    165.00000000001026,
+    144.99999999998442
+  ],
+  "png_size_px": [
+    1948,
+    1712
+  ],
+  "png_dpi": [
+    299.9994,
+    299.9994
+  ],
+  "embedded_pdf_minimum_pt": 7.0,
+  "embedded_pdf_maximum_pt": 9.0,
+  "embedded_pdf_distinct_sizes_pt": [
+    7.0,
+    9.0
+  ],
+  "embedded_pdf_spans_checked": 100,
+  "embedded_pdf_glyphs_below_6pt": [],
+  "pdf_font_inspection": "Ghostscript txtwrite TextFormat=0; no NODISPLAY flag",
+  "text_inside_canvas": true,
+  "text_overlap": false,
+  "minimum_matplotlib_text_pt": 7,
+  "histogram_densities_integrate_to_one": true,
+  "all_pairwise_distances_recomputed": true,
+  "focus_windows_contain_only_scaffold_free_bases": true,
+  "si_inclusion_check": {
+    "scope": "isolated SI-style wrapper, not the complete manuscript",
+    "document_class": "article 11pt",
+    "margins": "1 inch",
+    "figure_width_mm": 165,
+    "figure_height_mm": 145,
+    "pages": 1,
+    "caption_height_tex_pt": 221.60425,
+    "text_height_tex_pt": 650.43001,
+    "float_too_large": false,
+    "overfull_boxes": false,
+    "minimum_embedded_text_pt": 7.0,
+    "glyph_spans_below_6pt": 0,
+    "final_figure_pdf_sha256": "364a1d51ba287f5241711816009e84bd9ed399350ca0fe27246ab034bf452629",
+    "caption_sha256": "be07a36323a4abe539cd0dddd0b2261dcc3e56b692437b510aebd85982ce8356",
+    "figure_and_wrapper_png_visually_inspected": true
+  },
+  "old_new_scientific_fields_identical": 13,
+  "old_figure_files_unchanged": 6,
+  "final_png_visually_inspected": true
+}

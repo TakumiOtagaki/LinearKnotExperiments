@@ -1,0 +1,279 @@
+{
+  "all_passed": true,
+  "checks": {
+    "e1_quantile_scalars_checked": 1750,
+    "e1_summaries_checked": 350,
+    "e1_short_rows": 98500,
+    "e1_long_rows": 8628,
+    "e2_replicate_scalars_checked": 2934,
+    "e2_feature_identity_fields_checked": 147,
+    "e2_current_metric_rows": 489,
+    "e2_current_stage_rows": 28
+  },
+  "source_files_unchanged": true,
+  "text_within_pages": true,
+  "text_without_overlap": true,
+  "plotted_points_within_axis_limits": true,
+  "minimum_normal_font_pt": 7,
+  "pdf_text_checks": {
+    "figure2_main.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 88,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    },
+    "figure2_d_si.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 34,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    },
+    "figure2_accessibility_si.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 128,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    },
+    "figure3_main.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 57,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    },
+    "figure3_mode_memory_si.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 7.0,
+      "spans": 24,
+      "sizes_pt": [
+        7.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    },
+    "figure3_synthetic_all_cli_si.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 98,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    }
+  },
+  "outputs": [
+    {
+      "file": "figure2_main.pdf",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 36113,
+      "sha256": "059e0572482a77fcd5116268ddb1b432141be5257bc631b031c96b02a4e277b6"
+    },
+    {
+      "file": "figure2_main.png",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 177864,
+      "sha256": "135c077d90d6f1230dae76ed96e61c8f033b563c92a3d80065558a320bce528d"
+    },
+    {
+      "file": "figure2_d_si.pdf",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 22973,
+      "sha256": "9c083a6a49d62f9849f11e8c9eb0ec8761c659de39b10ab9a193feac4e88b5cb"
+    },
+    {
+      "file": "figure2_d_si.png",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 73427,
+      "sha256": "7c536e75572b2575bc394c5fba65cc634149d94a9ae680df5f84ba43c8b443cc"
+    },
+    {
+      "file": "figure2_accessibility_si.pdf",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 31195,
+      "sha256": "a7b838b38ffef26dacc14f64987b6e97b18f9b014b9abd7a17e35c3c0e8d1b76"
+    },
+    {
+      "file": "figure2_accessibility_si.png",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 216512,
+      "sha256": "22f0d4ec92acb72ebb2ca5eaa7ed5544af6fdf03f1a4db609c833947cff34c7d"
+    },
+    {
+      "file": "figure3_main.pdf",
+      "width_mm": 178,
+      "height_mm": 55.00000000000001,
+      "bytes": 28599,
+      "sha256": "366d1fdf92fce0f7bcddb0eb492f9b398306c2a4af448552265cb90e22d4dad5"
+    },
+    {
+      "file": "figure3_main.png",
+      "width_mm": 178,
+      "height_mm": 55.00000000000001,
+      "bytes": 134572,
+      "sha256": "890a2e04bfa6b5bef19735625afcdd4b4448abc79455cdd378d7d115ccd79d0e"
+    },
+    {
+      "file": "figure3_mode_memory_si.pdf",
+      "width_mm": 165,
+      "height_mm": 65.0,
+      "bytes": 21435,
+      "sha256": "dfa4a7ebab738d930f42e8a7c7cba37428bad9e851c818470ceac545a50312a1"
+    },
+    {
+      "file": "figure3_mode_memory_si.png",
+      "width_mm": 165,
+      "height_mm": 65.0,
+      "bytes": 68885,
+      "sha256": "5a7832b6bb584ebe1547bdfe9c834d453e31261eb2634e0db3a1f58137df1b91"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.pdf",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 60886,
+      "sha256": "447395b84a4955f6e85705c6d40b1a9be2a7ae6eeabe21e547dcf97acbc42c69"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.png",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 450703,
+      "sha256": "1b1a5688bf0e5d360ee226205f2757cd6933ba3ff1d306149552a852801a85a2"
+    }
+  ],
+  "physical_output_checks": [
+    {
+      "file": "figure2_main.pdf",
+      "width_mm": 178.0000000000147,
+      "height_mm": 91.99999999999888
+    },
+    {
+      "file": "figure2_main.png",
+      "pixels": [
+        2102,
+        1086
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "figure2_d_si.pdf",
+      "width_mm": 165.00000000001026,
+      "height_mm": 54.999999999991665
+    },
+    {
+      "file": "figure2_d_si.png",
+      "pixels": [
+        1948,
+        649
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "figure2_accessibility_si.pdf",
+      "width_mm": 165.00000000001026,
+      "height_mm": 136.99999999999528
+    },
+    {
+      "file": "figure2_accessibility_si.png",
+      "pixels": [
+        1948,
+        1618
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "figure3_main.pdf",
+      "width_mm": 178.0000000000147,
+      "height_mm": 54.999999999991665
+    },
+    {
+      "file": "figure3_main.png",
+      "pixels": [
+        2102,
+        649
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "figure3_mode_memory_si.pdf",
+      "width_mm": 165.00000000001026,
+      "height_mm": 64.99999999998694
+    },
+    {
+      "file": "figure3_mode_memory_si.png",
+      "pixels": [
+        1948,
+        767
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.pdf",
+      "width_mm": 165.00000000001026,
+      "height_mm": 178.0000000000147
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.png",
+      "pixels": [
+        1948,
+        2102
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    }
+  ],
+  "historical_layouts_pixel_identical": 15,
+  "historical_output_files_unchanged": 30,
+  "visual_inspection": {
+    "completed": true,
+    "png_files": [
+      "figure2_main.png",
+      "figure2_d_si.png",
+      "figure2_accessibility_si.png",
+      "figure3_main.png",
+      "figure3_mode_memory_si.png",
+      "figure3_synthetic_all_cli_si.png"
+    ],
+    "report": "review_report.md"
+  },
+  "historical_function_class_definitions_unchanged": 33,
+  "missing_e2_aggregate_refused_without_output": true
+}

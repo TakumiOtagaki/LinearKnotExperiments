@@ -1,0 +1,47 @@
+{
+  "checked_utc": "2026-10-16T16:23:34.593184+00:00",
+  "runs": [
+    {
+      "run": "e2-memory-breakdown-d02d261c-20261017",
+      "planned_tasks": 4,
+      "task_status_counts": {
+        "success": 4
+      },
+      "all_tasks_success": true
+    },
+    {
+      "run": "e2-parallel-impact-w1-d02d261c-20261017",
+      "planned_tasks": 1,
+      "task_status_counts": {
+        "running": 1
+      },
+      "all_tasks_success": false
+    },
+    {
+      "run": "e2-parallel-impact-w10-d02d261c-20261017",
+      "planned_tasks": 1,
+      "task_status_counts": {
+        "running": 1
+      },
+      "all_tasks_success": false
+    },
+    {
+      "run": "e2-rnacentral-d02d261c-20261017",
+      "planned_tasks": 4,
+      "task_status_counts": {
+        "running": 4
+      },
+      "all_tasks_success": false
+    },
+    {
+      "run": "e2-synthetic-shapes-d02d261c-20261017",
+      "planned_tasks": 55,
+      "task_status_counts": {
+        "not_started": 49,
+        "running": 6
+      },
+      "all_tasks_success": false
+    }
+  ],
+  "all_runs_complete": false
+}

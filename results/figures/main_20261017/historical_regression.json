@@ -1,0 +1,152 @@
+[
+  {
+    "name": "figure2_d1_183",
+    "all_pixels_equal": true,
+    "shape": [
+      1078,
+      720,
+      4
+    ],
+    "rgba_sha256": "5de733436542ace31f7139b76ad628ba0af2387d1eb97d7d5a1a92eedd257d52"
+  },
+  {
+    "name": "figure2_d2_183",
+    "all_pixels_equal": true,
+    "shape": [
+      1078,
+      720,
+      4
+    ],
+    "rgba_sha256": "6990c6b339800c674720144475502819d8609b435359775aa8b93217552b3f4a"
+  },
+  {
+    "name": "figure3_False_183",
+    "all_pixels_equal": true,
+    "shape": [
+      712,
+      720,
+      4
+    ],
+    "rgba_sha256": "0ef984a265c5129c8e0eef4446fa8f13d13473af2105845e2b7ef8134d728186"
+  },
+  {
+    "name": "figure3_True_183",
+    "all_pixels_equal": true,
+    "shape": [
+      771,
+      720,
+      4
+    ],
+    "rgba_sha256": "85309e56c6afe198a13b4c145a6ab9bd46f019e8b939017f3267fb0540867600"
+  },
+  {
+    "name": "synthetic_183",
+    "all_pixels_equal": true,
+    "shape": [
+      673,
+      720,
+      4
+    ],
+    "rgba_sha256": "0aceb882e9ef1a685d4aea04703ee5a67b957fbb2596bb7759c03201168395dd"
+  },
+  {
+    "name": "memory_183",
+    "all_pixels_equal": true,
+    "shape": [
+      334,
+      720,
+      4
+    ],
+    "rgba_sha256": "66abe86bd2ac2872f073b36d08422a9dae5d2465a91c70856e7bdb6d8e580bc7"
+  },
+  {
+    "name": "figure2_d1_89",
+    "all_pixels_equal": true,
+    "shape": [
+      2000,
+      350,
+      4
+    ],
+    "rgba_sha256": "6bdddb98de9ff3b76cd57242f832ca65a66c025df29eb626e9faa9fa7f6c8337"
+  },
+  {
+    "name": "figure2_d2_89",
+    "all_pixels_equal": true,
+    "shape": [
+      2000,
+      350,
+      4
+    ],
+    "rgba_sha256": "7b318e041073ba973f6ba321def753ab27f6c1b0727b7192807e7c482373c094"
+  },
+  {
+    "name": "figure3_False_89",
+    "all_pixels_equal": true,
+    "shape": [
+      1311,
+      350,
+      4
+    ],
+    "rgba_sha256": "0d1543cbad342e2b57421c0919323613b5812e8e51b1fb79681f1865546176be"
+  },
+  {
+    "name": "figure3_True_89",
+    "all_pixels_equal": true,
+    "shape": [
+      1409,
+      350,
+      4
+    ],
+    "rgba_sha256": "b83e8f3584af4f3560ba26a6a94f726a330fc82a15fe8e07fa51371e1cd1cd46"
+  },
+  {
+    "name": "synthetic_89",
+    "all_pixels_equal": true,
+    "shape": [
+      1527,
+      350,
+      4
+    ],
+    "rgba_sha256": "645057f1222054d5820f9772080a2f59b0e33c9e9d08326ef2a891b5de15a538"
+  },
+  {
+    "name": "memory_89",
+    "all_pixels_equal": true,
+    "shape": [
+      452,
+      350,
+      4
+    ],
+    "rgba_sha256": "b05bd66196ce6ebd2f047ee90a83366d2bc48b8d7dd5e0c40586592be6f306a8"
+  },
+  {
+    "name": "figure2_main",
+    "all_pixels_equal": true,
+    "shape": [
+      362,
+      720,
+      4
+    ],
+    "rgba_sha256": "1c77ada709087112145f99f5cecf60f095116cb801991ddf67a2e953f66ec342"
+  },
+  {
+    "name": "figure2_d_si",
+    "all_pixels_equal": true,
+    "shape": [
+      216,
+      720,
+      4
+    ],
+    "rgba_sha256": "d8aceb1683be24601b78105037651fce26114d9dd4a95a3198ac9a38cd3aa1a9"
+  },
+  {
+    "name": "figure3_main",
+    "all_pixels_equal": true,
+    "shape": [
+      216,
+      720,
+      4
+    ],
+    "rgba_sha256": "ae3847b13c6e8a18e5937848f0d9f2244c0dadd5ff775bac0914827e78cddfbf"
+  }
+]

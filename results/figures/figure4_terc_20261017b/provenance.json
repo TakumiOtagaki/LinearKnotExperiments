@@ -1,0 +1,1250 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-16T16:18:56.693262+00:00",
+  "purpose": "Figure 4 from existing rat Terc outputs",
+  "rna": {
+    "id": "bpRNA_RFAM_4317",
+    "length": 388,
+    "species": "Rattus norvegicus",
+    "gene": "Terc",
+    "refseq": "NR_001567.1",
+    "rnacentral": "URS00001ED027",
+    "identity_source": "results/local/figure4-terc-20261017/README.md"
+  },
+  "software": {
+    "source_commit": "febedd98fe08175749bfa32daf5b3105bf9af193",
+    "lock": "manifests/software-pilot-febedd98.json",
+    "association_source": "results/local/figure4-terc-20261017/febedd98/README.md"
+  },
+  "environment": {
+    "python": "3.9.25",
+    "numpy": "2.0.2",
+    "matplotlib": "3.9.4"
+  },
+  "regeneration": {
+    "argv": [
+      "experiments/scripts/make_figure4_terc.py"
+    ],
+    "script": "scripts/make_figure4_terc.py",
+    "script_sha256": "182c0113ecde15c7ccccf1fb1a6e925d0134fe917e70a77e0c6074e81762489e"
+  },
+  "sources": [
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/in.txt",
+      "sha256": "897919ac1bed916f670363299b4002971fb8479146127b75b0dae6508b21ce1b",
+      "bytes": 804
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/rec.json",
+      "sha256": "e4ef4d227a3e5b34f67ca1d05098ed6497ad75d8f7ef14055848e72cbb65aa3b",
+      "bytes": 1650
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/README.md",
+      "sha256": "18e57e38b6b2df5638b8baca45684d9103c19db2d7802a75035353add054b87c",
+      "bytes": 114
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/b200.bpp.tsv",
+      "sha256": "c1449d8f82833273af41d7251eccad56ee7c1977238ebf9323bc064df08bd62d",
+      "bytes": 12242
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/b200.capr",
+      "sha256": "c785fcb07a1585420998971bba6a00328e32107a9536f92bb8725aedad974cd3",
+      "bytes": 46457
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/b200.racc",
+      "sha256": "def729b34597ca2f62cfd40775bcd275626068bc921c19f6a1eef0646b1c49ce",
+      "bytes": 148665
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/b200.samp",
+      "sha256": "279be1231fd9577a87699a634f0f01ea8de1fae66b8109935ad81e505882376e",
+      "bytes": 390634
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/b200.lc.out",
+      "sha256": "66ea02fec80f18539c8e09849e6f775203edbb500a54aab5cf85a37f2be36ac3",
+      "bytes": 1244
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/b200.mea",
+      "sha256": "a4daf684ce57c36bce8cabb6454f677b96200d32e7eb2c6148b1550316210b69",
+      "bytes": 1227
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/exact.bpp.tsv",
+      "sha256": "56089bb40724efc9fe1c7195290cbbd719621d6313c278d67799b6796ceb850d",
+      "bytes": 12483
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/exact.capr",
+      "sha256": "a9656a199c6ff930c7a31f6d81cb00108ddadf564f2c790a2c62bb9da335ee09",
+      "bytes": 41947
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/exact.racc",
+      "sha256": "961f33103633206a8e5d638f44a378199da9cc3fa3fa1403912510cf94149a6e",
+      "bytes": 143864
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/exact.samp",
+      "sha256": "41ecd697f944ceae1aca785e7c6da927d92ffdc98ebf74dc5e3c0a325987c2b7",
+      "bytes": 391416
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/exact.lc.out",
+      "sha256": "ddf4aa8c1208bfaa6514fe65fd3eb13aeaf78561796a0042310cb96b7cbb8a78",
+      "bytes": 1244
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/febedd98/exact.mea",
+      "sha256": "f524c319025c188aa5e66a99ab8454f8e47c45aa86ffbcd8e54ef598471fbcbb",
+      "bytes": 1227
+    },
+    {
+      "path": "results/local/figure4-terc-20261017/README.md",
+      "sha256": "65e6ec2c1b2bfd2235271d66a6f8dd443acc34f6699ebf1cd2388da0d234b7bb",
+      "bytes": 633
+    },
+    {
+      "path": "manifests/software-pilot-febedd98.json",
+      "sha256": "f6811e19e18e2cfc3c05265d728b79b98006798b5cd7fe305b829c8d59f54d46",
+      "bytes": 2628
+    }
+  ],
+  "design": {
+    "beam": 200,
+    "scaffold_pairs": 61,
+    "reference_pk_pairs": 9,
+    "region": [
+      40,
+      160
+    ],
+    "scaffold_definition": "canonical AU/UA, GC/CG, GU/UG nested bpRNA reference pairs; j-i>3",
+    "reference_nested_pair_count": 73,
+    "excluded_noncanonical_reference_pairs": [
+      [
+        34,
+        88
+      ],
+      [
+        46,
+        80
+      ],
+      [
+        163,
+        306
+      ],
+      [
+        164,
+        305
+      ],
+      [
+        165,
+        304
+      ],
+      [
+        166,
+        303
+      ],
+      [
+        195,
+        265
+      ],
+      [
+        321,
+        376
+      ],
+      [
+        322,
+        374
+      ],
+      [
+        325,
+        372
+      ],
+      [
+        329,
+        366
+      ],
+      [
+        338,
+        365
+      ]
+    ],
+    "sampling_seed_reported_in_raw_readme": 20261017,
+    "mea_gamma": 1,
+    "coordinates": "1-based inclusive; accessibility position is window start",
+    "accessibility_window": 4,
+    "colors": {
+      "Stem": "#2a78d6",
+      "Hairpin": "#1baf7a",
+      "Bulge": "#eda100",
+      "Internal": "#e87ba4",
+      "Multiloop": "#6250d6",
+      "Exterior": "#b9b8b1",
+      "PseudoLoop": "#eb6834"
+    },
+    "complete_stem_definition": "every listed reference pair occurs; other pairs are allowed",
+    "sample_counts": "multiplicity-weighted; do not treat each unique row as one draw",
+    "caption_exact_agreement_scope": "probabilities near reference pseudoknot, positions 40–160",
+    "raw_command_line_receipt": "not present; settings taken from raw README and Raccess metadata"
+  },
+  "raw_metadata": {
+    "b200": {
+      "linearpkraccess_metadata": "1",
+      "engine": "linearcparty-scfg2",
+      "ensemble": "conditional_on_scaffold_G",
+      "beam": "200",
+      "beam_ranking": "outer",
+      "outer_pilot_exponent": "2/3",
+      "max_hairpin": "200",
+      "max_case3_depth": "200",
+      "output_mode": "probability",
+      "byloop_value": "joint_probability",
+      "byloop_contexts": "E:Exterior,H:Hairpin,B:Bulge,I:Internal,M:Multi,P:PseudoLoop",
+      "access_lens": "1,4,8",
+      "scaffold": "..................................((((........((((((((.................))))))))....))))..........................................................................(....((......(((((((.(((((((.((((.........(((((.((((..(((..........)))...))))))))).((((.....))))........))))..)))))))....))))..)))).........)....)...........((...(.(((..........((...((((........))))..)).....))).)....)).........",
+      "ensemble_free_energy": "-121.34646715519222",
+      "folding_rt": "0.61632077549999997",
+      "elapsed_seconds": "6.8661542649999996",
+      "value": "probability"
+    },
+    "exact": {
+      "linearpkraccess_metadata": "1",
+      "engine": "linearcparty-scfg2",
+      "ensemble": "conditional_on_scaffold_G",
+      "beam": "exact",
+      "output_mode": "probability",
+      "byloop_value": "joint_probability",
+      "byloop_contexts": "E:Exterior,H:Hairpin,B:Bulge,I:Internal,M:Multi,P:PseudoLoop",
+      "access_lens": "1,4,8",
+      "scaffold": "..................................((((........((((((((.................))))))))....))))..........................................................................(....((......(((((((.(((((((.((((.........(((((.((((..(((..........)))...))))))))).((((.....))))........))))..)))))))....))))..)))).........)....)...........((...(.(((..........((...((((........))))..)).....))).)....)).........",
+      "ensemble_free_energy": "-121.4024798181058",
+      "folding_rt": "0.61632077549999997",
+      "elapsed_seconds": "21.359554826",
+      "value": "probability"
+    }
+  },
+  "summaries": {
+    "b200": {
+      "stems": {
+        "outer": {
+          "pairs": [
+            [
+              63,
+              139
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              137
+            ],
+            [
+              66,
+              136
+            ],
+            [
+              67,
+              135
+            ],
+            [
+              68,
+              134
+            ]
+          ],
+          "pair_probabilities": [
+            0.8413579143458895,
+            0.8414189720615717,
+            0.8404115991685566,
+            0.8413429500569721,
+            0.8405951040293277,
+            0.8306355048142958
+          ],
+          "pair_probability_min": 0.8306355048142958,
+          "pair_probability_max": 0.8414189720615717,
+          "mean_pair_probability": 0.8392936740794356,
+          "complete_sample_count": 810,
+          "complete_sample_fraction": 0.81,
+          "any_pair_sample_count": 821,
+          "individual_pair_sample_counts": [
+            821,
+            821,
+            819,
+            821,
+            821,
+            812
+          ],
+          "mfe_pairs_present": [
+            [
+              63,
+              139
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              137
+            ],
+            [
+              66,
+              136
+            ],
+            [
+              67,
+              135
+            ],
+            [
+              68,
+              134
+            ]
+          ],
+          "mea_pairs_present": [
+            [
+              63,
+              139
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              137
+            ],
+            [
+              66,
+              136
+            ],
+            [
+              67,
+              135
+            ],
+            [
+              68,
+              134
+            ]
+          ]
+        },
+        "inner": {
+          "pairs": [
+            [
+              69,
+              132
+            ],
+            [
+              70,
+              131
+            ],
+            [
+              71,
+              130
+            ]
+          ],
+          "pair_probabilities": [
+            0.31477262708539383,
+            0.33961437239177383,
+            0.28111734485867235
+          ],
+          "pair_probability_min": 0.28111734485867235,
+          "pair_probability_max": 0.33961437239177383,
+          "mean_pair_probability": 0.31183478144528,
+          "complete_sample_count": 237,
+          "complete_sample_fraction": 0.237,
+          "any_pair_sample_count": 349,
+          "individual_pair_sample_counts": [
+            302,
+            329,
+            281
+          ],
+          "mfe_pairs_present": [
+            [
+              69,
+              132
+            ],
+            [
+              70,
+              131
+            ],
+            [
+              71,
+              130
+            ]
+          ],
+          "mea_pairs_present": [
+            [
+              70,
+              131
+            ]
+          ]
+        },
+        "both": {
+          "pairs": [
+            [
+              63,
+              139
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              137
+            ],
+            [
+              66,
+              136
+            ],
+            [
+              67,
+              135
+            ],
+            [
+              68,
+              134
+            ],
+            [
+              69,
+              132
+            ],
+            [
+              70,
+              131
+            ],
+            [
+              71,
+              130
+            ]
+          ],
+          "pair_probabilities": [
+            0.8413579143458895,
+            0.8414189720615717,
+            0.8404115991685566,
+            0.8413429500569721,
+            0.8405951040293277,
+            0.8306355048142958,
+            0.31477262708539383,
+            0.33961437239177383,
+            0.28111734485867235
+          ],
+          "pair_probability_min": 0.28111734485867235,
+          "pair_probability_max": 0.8414189720615717,
+          "mean_pair_probability": 0.6634740432013837,
+          "complete_sample_count": 235,
+          "complete_sample_fraction": 0.235,
+          "any_pair_sample_count": 821,
+          "individual_pair_sample_counts": [
+            821,
+            821,
+            819,
+            821,
+            821,
+            812,
+            302,
+            329,
+            281
+          ],
+          "mfe_pairs_present": [
+            [
+              63,
+              139
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              137
+            ],
+            [
+              66,
+              136
+            ],
+            [
+              67,
+              135
+            ],
+            [
+              68,
+              134
+            ],
+            [
+              69,
+              132
+            ],
+            [
+              70,
+              131
+            ],
+            [
+              71,
+              130
+            ]
+          ],
+          "mea_pairs_present": [
+            [
+              63,
+              139
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              137
+            ],
+            [
+              66,
+              136
+            ],
+            [
+              67,
+              135
+            ],
+            [
+              68,
+              134
+            ],
+            [
+              70,
+              131
+            ]
+          ]
+        }
+      },
+      "sample_draws": 1000,
+      "unique_sample_structures": 998,
+      "largest_structure_count": 2,
+      "pseudoloop": {
+        "global_peak": {
+          "position": 308,
+          "probability": 0.8961548614069857
+        },
+        "region_peak": {
+          "position": 123,
+          "probability": 0.8397382015378942
+        },
+        "selected_positions": {
+          "55": 0.8201910521416832,
+          "123": 0.8397382015378942,
+          "308": 0.8961548614069857
+        }
+      },
+      "accessibility": {
+        "window_length": 4,
+        "region_component_peaks": {
+          "total": {
+            "position": 152,
+            "probability": 0.984628090497755
+          },
+          "E": {
+            "position": 142,
+            "probability": 0.008169822880221018
+          },
+          "H": {
+            "position": 152,
+            "probability": 0.9845955706915345
+          },
+          "B": {
+            "position": 130,
+            "probability": 0.02804988805469298
+          },
+          "I": {
+            "position": 43,
+            "probability": 0.9373795659522871
+          },
+          "M": {
+            "position": 128,
+            "probability": 0.024768414364012472
+          },
+          "P": {
+            "position": 123,
+            "probability": 0.8396724006665353
+          }
+        },
+        "selected_windows": {
+          "43": {
+            "end": 46,
+            "total": 0.938105775521979,
+            "E": 0.0,
+            "H": 0.0,
+            "B": 0.0007245252060220159,
+            "I": 0.9373795659522871,
+            "M": 7.842558952348495e-13,
+            "P": 1.68436288565159e-06
+          },
+          "123": {
+            "end": 126,
+            "total": 0.8587786610390077,
+            "E": 0.0007653645810751053,
+            "H": 0.015544235230789252,
+            "B": 0.0012489257835028773,
+            "I": 0.0005667308004413292,
+            "M": 0.0009810039766616641,
+            "P": 0.8396724006665353
+          },
+          "128": {
+            "end": 131,
+            "total": 0.19227939664673135,
+            "E": 0.0028006786292867902,
+            "H": 0.013692483674293564,
+            "B": 0.0022883917292458914,
+            "I": 0.01774848031371217,
+            "M": 0.024768414364012472,
+            "P": 0.13098094793617795
+          },
+          "130": {
+            "end": 133,
+            "total": 0.14576522453094276,
+            "E": 0.002815458991675201,
+            "H": 0.008379687217557455,
+            "B": 0.02804988805469298,
+            "I": 0.020027162716134278,
+            "M": 0.015149780929681719,
+            "P": 0.07134324662119843
+          },
+          "142": {
+            "end": 145,
+            "total": 0.03568332275739758,
+            "E": 0.008169822880221018,
+            "H": 0.01013113157401007,
+            "B": 1.4294005984135934e-05,
+            "I": 0.00020973863211944994,
+            "M": 0.01285801723592355,
+            "P": 0.004300318429136698
+          },
+          "152": {
+            "end": 155,
+            "total": 0.984628090497755,
+            "E": 5.286960836464613e-06,
+            "H": 0.9845955706915345,
+            "B": 4.5946320380883603e-07,
+            "I": 1.434292579277395e-06,
+            "M": 4.268687774289399e-06,
+            "P": 2.1070401820711033e-05
+          }
+        }
+      }
+    },
+    "exact": {
+      "stems": {
+        "outer": {
+          "pairs": [
+            [
+              63,
+              139
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              137
+            ],
+            [
+              66,
+              136
+            ],
+            [
+              67,
+              135
+            ],
+            [
+              68,
+              134
+            ]
+          ],
+          "pair_probabilities": [
+            0.8432724359416622,
+            0.8433336149955093,
+            0.842323948840714,
+            0.8432574193356591,
+            0.8425078719799861,
+            0.832525610194923
+          ],
+          "pair_probability_min": 0.832525610194923,
+          "pair_probability_max": 0.8433336149955093,
+          "mean_pair_probability": 0.8412034835480755,
+          "complete_sample_count": 836,
+          "complete_sample_fraction": 0.836,
+          "any_pair_sample_count": 851,
+          "individual_pair_sample_counts": [
+            851,
+            851,
+            849,
+            851,
+            849,
+            839
+          ],
+          "mfe_pairs_present": [
+            [
+              63,
+              139
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              137
+            ],
+            [
+              66,
+              136
+            ],
+            [
+              67,
+              135
+            ],
+            [
+              68,
+              134
+            ]
+          ],
+          "mea_pairs_present": [
+            [
+              63,
+              139
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              137
+            ],
+            [
+              66,
+              136
+            ],
+            [
+              67,
+              135
+            ],
+            [
+              68,
+              134
+            ]
+          ]
+        },
+        "inner": {
+          "pairs": [
+            [
+              69,
+              132
+            ],
+            [
+              70,
+              131
+            ],
+            [
+              71,
+              130
+            ]
+          ],
+          "pair_probabilities": [
+            0.3154888918579617,
+            0.34038716473887837,
+            0.28175702731296515
+          ],
+          "pair_probability_min": 0.28175702731296515,
+          "pair_probability_max": 0.34038716473887837,
+          "mean_pair_probability": 0.3125443613032684,
+          "complete_sample_count": 247,
+          "complete_sample_fraction": 0.247,
+          "any_pair_sample_count": 373,
+          "individual_pair_sample_counts": [
+            329,
+            342,
+            289
+          ],
+          "mfe_pairs_present": [
+            [
+              69,
+              132
+            ],
+            [
+              70,
+              131
+            ],
+            [
+              71,
+              130
+            ]
+          ],
+          "mea_pairs_present": [
+            [
+              70,
+              131
+            ]
+          ]
+        },
+        "both": {
+          "pairs": [
+            [
+              63,
+              139
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              137
+            ],
+            [
+              66,
+              136
+            ],
+            [
+              67,
+              135
+            ],
+            [
+              68,
+              134
+            ],
+            [
+              69,
+              132
+            ],
+            [
+              70,
+              131
+            ],
+            [
+              71,
+              130
+            ]
+          ],
+          "pair_probabilities": [
+            0.8432724359416622,
+            0.8433336149955093,
+            0.842323948840714,
+            0.8432574193356591,
+            0.8425078719799861,
+            0.832525610194923,
+            0.3154888918579617,
+            0.34038716473887837,
+            0.28175702731296515
+          ],
+          "pair_probability_min": 0.28175702731296515,
+          "pair_probability_max": 0.8433336149955093,
+          "mean_pair_probability": 0.6649837761331399,
+          "complete_sample_count": 245,
+          "complete_sample_fraction": 0.245,
+          "any_pair_sample_count": 851,
+          "individual_pair_sample_counts": [
+            851,
+            851,
+            849,
+            851,
+            849,
+            839,
+            329,
+            342,
+            289
+          ],
+          "mfe_pairs_present": [
+            [
+              63,
+              139
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              137
+            ],
+            [
+              66,
+              136
+            ],
+            [
+              67,
+              135
+            ],
+            [
+              68,
+              134
+            ],
+            [
+              69,
+              132
+            ],
+            [
+              70,
+              131
+            ],
+            [
+              71,
+              130
+            ]
+          ],
+          "mea_pairs_present": [
+            [
+              63,
+              139
+            ],
+            [
+              64,
+              138
+            ],
+            [
+              65,
+              137
+            ],
+            [
+              66,
+              136
+            ],
+            [
+              67,
+              135
+            ],
+            [
+              68,
+              134
+            ],
+            [
+              70,
+              131
+            ]
+          ]
+        }
+      },
+      "sample_draws": 1000,
+      "unique_sample_structures": 1000,
+      "largest_structure_count": 1,
+      "pseudoloop": {
+        "global_peak": {
+          "position": 308,
+          "probability": 0.896683933866503
+        },
+        "region_peak": {
+          "position": 123,
+          "probability": 0.8416500252098845
+        },
+        "selected_positions": {
+          "55": 0.8220534019526556,
+          "123": 0.8416500252098845,
+          "308": 0.896683933866503
+        }
+      },
+      "accessibility": {
+        "window_length": 4,
+        "region_component_peaks": {
+          "total": {
+            "position": 152,
+            "probability": 0.9849981771146229
+          },
+          "E": {
+            "position": 142,
+            "probability": 0.008185840143940153
+          },
+          "H": {
+            "position": 152,
+            "probability": 0.9849587362623933
+          },
+          "B": {
+            "position": 130,
+            "probability": 0.02809029411166422
+          },
+          "I": {
+            "position": 43,
+            "probability": 0.9381330454300665
+          },
+          "M": {
+            "position": 128,
+            "probability": 0.024393761428025722
+          },
+          "P": {
+            "position": 123,
+            "probability": 0.8415838285025082
+          }
+        },
+        "selected_windows": {
+          "43": {
+            "end": 46,
+            "total": 0.9388509580054866,
+            "E": 0.0,
+            "H": 1.0137290312739466e-17,
+            "B": 0.0007157659200935034,
+            "I": 0.9381330454300665,
+            "M": 7.748209684537856e-13,
+            "P": 2.1466545512644874e-06
+          },
+          "123": {
+            "end": 126,
+            "total": 0.8605460286342042,
+            "E": 0.000983937770204754,
+            "H": 0.01519464851174486,
+            "B": 0.0012512266428914038,
+            "I": 0.0005659097009278482,
+            "M": 0.0009664775059261809,
+            "P": 0.8415838285025082
+          },
+          "128": {
+            "end": 131,
+            "total": 0.1922216866269913,
+            "E": 0.0036005199665654583,
+            "H": 0.013350528761514002,
+            "B": 0.0022696986594298446,
+            "I": 0.017327413157680382,
+            "M": 0.024393761428025722,
+            "P": 0.13127976465377528
+          },
+          "130": {
+            "end": 133,
+            "total": 0.14601559112543694,
+            "E": 0.0036207662223399118,
+            "H": 0.008133008424401587,
+            "B": 0.02809029411166422,
+            "I": 0.01974568891510914,
+            "M": 0.01491939328796729,
+            "P": 0.07150644016395419
+          },
+          "142": {
+            "end": 145,
+            "total": 0.035953364939925216,
+            "E": 0.008185840143940153,
+            "H": 0.009790848320806005,
+            "B": 1.4004747791160984e-05,
+            "I": 0.00020292525801257188,
+            "M": 0.012221623819560752,
+            "P": 0.005538122649814176
+          },
+          "152": {
+            "end": 155,
+            "total": 0.9849981771146229,
+            "E": 6.039034687147662e-06,
+            "H": 0.9849587362623933,
+            "B": 5.71103113060203e-07,
+            "I": 1.7629924663200043e-06,
+            "M": 4.0554619422294745e-06,
+            "P": 2.7012260021606678e-05
+          }
+        }
+      }
+    }
+  },
+  "beam_exact_comparison": {
+    "context_max_abs_difference": [
+      0.08184812766895096,
+      "Exterior",
+      380
+    ],
+    "context_region_max_abs_difference": [
+      0.0028334925767467198,
+      "Multiloop",
+      145
+    ],
+    "bpp_max_abs_difference_in_stored_files": [
+      0.06596003733915001,
+      [
+        318,
+        380
+      ]
+    ],
+    "bpp_region_max_abs_difference_in_stored_files": [
+      0.0019146429339376159,
+      [
+        64,
+        138
+      ]
+    ],
+    "bpp_missing_row_handling": "zero for comparison of stored files; low probabilities may be omitted",
+    "accessibility": {
+      "1": {
+        "total_global_max": [
+          0.06868590930659435,
+          317
+        ],
+        "total_region_max": [
+          0.0027147601149446754,
+          136
+        ],
+        "component_region_max": [
+          0.0028334925767463798,
+          145,
+          "M"
+        ]
+      },
+      "4": {
+        "total_global_max": [
+          0.07442499511423281,
+          380
+        ],
+        "total_region_max": [
+          0.0019091771776775235,
+          68
+        ],
+        "component_region_max": [
+          0.0019114278359729786,
+          123,
+          "P"
+        ]
+      },
+      "8": {
+        "total_global_max": [
+          0.08172658661204656,
+          380
+        ],
+        "total_region_max": [
+          0.0014913056598462315,
+          122
+        ],
+        "component_region_max": [
+          0.0015819287817450123,
+          122,
+          "P"
+        ]
+      }
+    }
+  },
+  "validation": {
+    "saved_output_consistency": {
+      "b200": {
+        "context_sum_max_error": 1.1102230246251565e-15,
+        "byloop_sum_max_error": 2.9976021664879227e-14,
+        "window1_context_max_error": 2.55351295663786e-14,
+        "scaffold_pair_max_error": 0.0
+      },
+      "exact": {
+        "context_sum_max_error": 1.9984014443252818e-15,
+        "byloop_sum_max_error": 6.217248937900877e-15,
+        "window1_context_max_error": 1.2434497875801753e-14,
+        "scaffold_pair_max_error": 0.0
+      }
+    },
+    "figure": {
+      "width_mm": 178,
+      "height_mm": 100,
+      "png_dpi": 300,
+      "min_font_pt": 7.0,
+      "visible_text_items": 103,
+      "pdf_embedded_font_sizes_pt": [
+        7.0,
+        7.5,
+        8.0,
+        9.0
+      ],
+      "pdf_text_span_count": 120,
+      "pdf_font_inspection": [
+        "gs",
+        "-q",
+        "-dBATCH",
+        "-dNOPAUSE",
+        "-sDEVICE=txtwrite",
+        "-dTextFormat=0",
+        "-sOutputFile=-",
+        "figure4.pdf"
+      ],
+      "text_outside_figure": [],
+      "overlapping_text_pairs": [],
+      "aligned_Bzoom_C_max_horizontal_difference_px": 0.0,
+      "aligned_Bzoom_C_xlimits": [
+        39.5,
+        160.5
+      ],
+      "aligned_Bzoom_C_width_mm": 108,
+      "displayed_pair_counts": {
+        "scaffold": 61,
+        "new_no_crossing": 153,
+        "new_crossing_G": 59
+      },
+      "pair_display_cutoff": 0.01,
+      "arc_opacity": "pair probability, without rescaling",
+      "reference_marks": {
+        "outer": [
+          [
+            63,
+            68
+          ],
+          [
+            134,
+            139
+          ]
+        ],
+        "inner": [
+          [
+            69,
+            71
+          ],
+          [
+            130,
+            132
+          ]
+        ]
+      },
+      "reference_bulged_base": 133,
+      "context_hatches": {
+        "Stem": "",
+        "Hairpin": "",
+        "Bulge": "",
+        "Internal": "/",
+        "Multiloop": "",
+        "Exterior": "",
+        "PseudoLoop": ""
+      },
+      "direct_context_labels": [
+        "PseudoLoop in B and C callouts"
+      ],
+      "pair_linestyles": {
+        "scaffold": "solid",
+        "new_no_crossing": "dotted",
+        "new_crossing_G": "dashed"
+      }
+    },
+    "caption_english_words": 249
+  },
+  "outputs": [
+    {
+      "path": "README.md",
+      "sha256": "457381590ab36e7518c6b44034ab2c0f9934105e3058e332bf8ea228690e2a29",
+      "bytes": 8323
+    },
+    {
+      "path": "accessibility_region.tsv",
+      "sha256": "0a15798c70fad5748f93ff7bf59d434b89d78dd9c9f6d7a13d3e16a0877925b9",
+      "bytes": 16651
+    },
+    {
+      "path": "caption.md",
+      "sha256": "cae0213e041af10cdc19766c361f2d9687083dd72d2e0fcc8e2898668d3144f9",
+      "bytes": 3304
+    },
+    {
+      "path": "figure4.pdf",
+      "sha256": "224f60bcb48ff4cd8c29ca343c8e0455dff70ed9dc2dfe050003a20c63fe791d",
+      "bytes": 123057
+    },
+    {
+      "path": "figure4.png",
+      "sha256": "8ade6ecba6efea50b22e27cdef9497bff4bc186c84c423422323d63745daa482",
+      "bytes": 406681
+    },
+    {
+      "path": "reference_pairs.tsv",
+      "sha256": "7f7650d7241706a04d7696af5871e7ac8634f734907cc430c274cbdca99a0f6f",
+      "bytes": 578
+    }
+  ]
+}

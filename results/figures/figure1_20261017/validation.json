@@ -1,0 +1,89 @@
+{
+  "pdf_page_mm": [
+    178.0000000000147,
+    144.99999999998442
+  ],
+  "png_pixels": [
+    2102,
+    1712
+  ],
+  "png_dpi": [
+    299.9994,
+    299.9994
+  ],
+  "pdf_text_sizes_pt": [
+    7.0,
+    7.3,
+    7.5,
+    8.0,
+    9.0
+  ],
+  "minimum_embedded_text_pt": 7.0,
+  "minimum_matplotlib_text_pt": 7.0,
+  "text_outside_page": [],
+  "gs_command": [
+    "gs",
+    "-q",
+    "-dBATCH",
+    "-dNOPAUSE",
+    "-sDEVICE=txtwrite",
+    "-dTextFormat=0",
+    "-sOutputFile=-",
+    "experiments/results/figures/figure1_20261017/figure1.pdf"
+  ],
+  "visual_inspection": {
+    "status": "passed",
+    "image": "figure1.png",
+    "method": "Opened the final 300 dpi PNG with view_image and inspected all three panels.",
+    "findings": "No text overlap, clipping, or out-of-frame labels found; band spans, PseudoLoop label, sample counts and separate MFE branch are legible.",
+    "revision_checks": "Moved the lower frame clear of the x-axis label, removed the crowded 60 tick, and separated the stage arrow from Higher rank."
+  },
+  "input_directory": "results/figures/figure1_20261016/data",
+  "input_sha256": {
+    "rec.json": "2ae03f723c97a60915c11c3c9c4a3f40e70f983db908bfe515d6b0c4ac4aebe8",
+    "in.txt": "cd8670e7429a5a63449353d5339a45a73b287ebdbabc8f9bc5c9f5ee2280f57e",
+    "lc.out": "1c81d48443a3eed9855e0080bf0eac98b5da1154fd05483fc1451cd6d559a257",
+    "bpp.tsv": "3c73a6fcd522ea65916fccf1426768bb975471468d151fcaf0cf1c0078137ae3",
+    "capr.out": "274cdaf683e7355a390cf26305018c89d5b1e4fc5338f81ac41366f57de4e4c7",
+    "racc.out": "db0f496c2ee1a9762b45ae0d662e1db496b67d025e0aed8c2ccd79b5ae2d011e",
+    "samp.out": "07626b9a4beb02533cb805003277a1ffebe6bd8eab14f2a67a18732d17036254",
+    "mea.out": "fce426f00cc97a9bf8a8bee84c1840b697bd0df843992f4a702873120ac8aff7"
+  },
+  "script_sha256": "aa0c51fdf106c3cfb78b991a14f2d4d344cce228c92d6377ea9f1e968b5e4018",
+  "sequence_length": 63,
+  "scaffold_pair_count": 11,
+  "extension_pair_count": 7,
+  "displayed_bpp_pair_count": 18,
+  "bpp_display_cutoff_exclusive": 0.01,
+  "sample_draws_total": 1000,
+  "sample_counts_shown": [
+    975,
+    6
+  ],
+  "sample_draws_other": 19,
+  "sample_selection": "Most frequent; most frequent with a new non-crossing pair",
+  "accessibility_window_lengths": [
+    1,
+    4,
+    8
+  ],
+  "mea_gamma": 1.0,
+  "pseudoloop_label_region": [
+    39,
+    51
+  ],
+  "band_spans": [
+    [
+      5,
+      38
+    ],
+    [
+      18,
+      58
+    ]
+  ],
+  "band_overlap_probe": 28.0,
+  "bands_spanning_probe": 2,
+  "max_context_sum_error": 1.1102230246251565e-16,
+  "illustrative_beam_width": 3
+}

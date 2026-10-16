@@ -9,10 +9,12 @@ import argparse
 from datetime import datetime, timezone
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import platform
 import re
+import subprocess
 import sys
 import tempfile
 
@@ -27,15 +29,16 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DATA = ROOT / "results/local/figure4-terc-20261017/febedd98"
-DEFAULT_OUT = ROOT / "results/figures/figure4_terc_20261017"
+DEFAULT_OUT = ROOT / "results/figures/figure4_terc_20261017b"
 MM = 1 / 25.4
-WIDTH, HEIGHT, DPI = 183, 100, 400
+WIDTH, HEIGHT, DPI = 178, 100, 300
 REGION, WINDOW, CUTOFF = (40, 160), 4, 0.01
 INK, MUTED, GRID = "#1f1f1e", "#6b6b66", "#d9d8d3"
 G_COLOR, NEW_COLOR, CROSS_COLOR = "#8a8a85", "#2a78d6", "#eb6834"
 CONTEXTS = ("Stem", "Hairpin", "Bulge", "Internal", "Multiloop", "Exterior", "PseudoLoop")
 COLORS = dict(zip(CONTEXTS, ("#2a78d6", "#1baf7a", "#eda100", "#e87ba4",
                             "#6250d6", "#b9b8b1", "#eb6834")))
+HATCHES = {c: "/" if c == "Internal" else "" for c in CONTEXTS}
 LOOPS = dict(zip("EHBIMP", ("Exterior", "Hairpin", "Bulge", "Internal", "Multiloop", "PseudoLoop")))
 
 
@@ -234,11 +237,14 @@ def style(ax):
 
 
 def stack(ax, positions, values, labels):
-    bottom = np.zeros(len(positions))
+    # Draw one continuous shape per context, so sparse hatching does not restart
+    # in every narrow base column. Each base/window occupies a unit-width bin.
+    edges = np.append(np.asarray(positions) - 0.5, positions[-1] + 0.5)
+    bottom = np.zeros(len(positions) + 1)
     for label in labels:
-        v = np.array(values[label])
-        ax.bar(positions, v, bottom=bottom, width=0.92, color=COLORS[label], linewidth=0,
-               rasterized=False, zorder=2)
+        v = np.append(values[label], values[label][-1])
+        ax.fill_between(edges, bottom, bottom + v, step="post", color=COLORS[label],
+                        hatch=HATCHES[label], edgecolor=MUTED, linewidth=0, zorder=2)
         bottom += v
     ax.set_ylim(0, 1.01)
     ax.set_yticks((0, 0.5, 1), ("0", "0.5", "1"))
@@ -246,28 +252,38 @@ def stack(ax, positions, values, labels):
 
 
 def make_plot(out, rec, setting, stats):
-    plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 6.3,
+    plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 7,
         "axes.linewidth": 0.6, "axes.edgecolor": MUTED, "text.color": INK,
         "xtick.color": MUTED, "ytick.color": MUTED, "xtick.major.width": 0.5,
         "ytick.major.width": 0.5, "xtick.major.size": 2, "ytick.major.size": 2,
-        "pdf.fonttype": 42, "axes.labelsize": 6.3, "axes.labelcolor": MUTED})
+        "hatch.linewidth": 0.3, "pdf.fonttype": 42,
+        "axes.labelsize": 7, "axes.labelcolor": MUTED})
     n, lo, hi = len(rec["seq"]), *REGION
     g = {tuple(p) for p in rec["nested"]}
     fig = plt.figure(figsize=(WIDTH * MM, HEIGHT * MM), dpi=DPI)
-    fig.text(0.04, 0.988, "Rat telomerase RNA  |  388 nt  |  G: reference nested pairs  |  beam width 200",
-             fontsize=7.5, fontweight="bold", va="top")
 
-    def title(x, y, letter, text):
-        fig.text(x, y, letter, fontsize=9, fontweight="bold", va="top")
-        fig.text(x + 0.033, y - 0.001, text, fontsize=7, fontweight="bold", va="top")
+    def text(x, y, value, **kwargs):
+        return fig.text(x / WIDTH, y / HEIGHT, value, va="top", **kwargs)
 
-    title(0.007, 0.935, "A", "Base-pairing probabilities")
-    legend = fig.legend(handles=[Line2D([], [], color=c, lw=1.3, label=l) for l, c in
-                        (("G", G_COLOR), ("new, no crossing", NEW_COLOR), ("crossing G", CROSS_COLOR))],
-               loc="upper left", bbox_to_anchor=(0.486, 0.941), ncol=3, frameon=False,
-               fontsize=6.1, handlelength=1.5, handletextpad=0.4, columnspacing=1.0, borderaxespad=0)
-    fig.text(0.98, 0.935, "Darker = higher", fontsize=6.1, va="top", ha="right")
-    axa = fig.add_axes((0.065, 0.749, 0.915, 0.151))
+    def axes(x, y, width, height):
+        return fig.add_axes((x / WIDTH, y / HEIGHT, width / WIDTH, height / HEIGHT))
+
+    def title(x, y, letter, value):
+        text(x, y, letter, fontsize=9, fontweight="bold")
+        text(x + 7, y - 0.15, value, fontsize=7.5, fontweight="bold")
+
+    text(8, 99, f"Rat Terc  |  {n} nt  |  G: {len(g)} canonical nested reference pairs  |  beam width 200",
+         fontsize=8, fontweight="bold")
+    title(1, 93, "A", "Base-pairing probabilities")
+    pair_styles = (("G", G_COLOR, "solid"),
+                   ("New, no crossing", NEW_COLOR, (0, (1, 1))),
+                   ("Crossing G", CROSS_COLOR, (0, (4, 2))))
+    fig.legend(handles=[Line2D([], [], color=c, lw=1.2, linestyle=ls, label=label)
+                        for label, c, ls in pair_styles],
+               loc="upper right", bbox_to_anchor=(176 / WIDTH, 93.5 / HEIGHT),
+               ncol=3, frameon=False, fontsize=7, handlelength=1.8,
+               handletextpad=0.4, columnspacing=1.1, borderaxespad=0)
+    axa = axes(12, 77, 164, 12)
     axa.set_xlim(0.5, n + 0.5)
     axa.set_ylim(-10, 180)
     axa.axhline(0, color=MUTED, lw=0.5)
@@ -278,72 +294,119 @@ def make_plot(out, rec, setting, stats):
             continue
         kind = "scaffold" if pair in g else "new_crossing_G" if any(crosses(pair, q) for q in g) else "new_no_crossing"
         groups[kind].append((pair, p))
-    for kind, color in zip(groups, (G_COLOR, NEW_COLOR, CROSS_COLOR)):
+    for kind, (_, color, linestyle) in zip(groups, pair_styles):
         for (i, j), p in sorted(groups[kind], key=lambda v: v[1]):
             axa.add_patch(Arc(((i + j) / 2, 0), j - i, (j - i) * 0.9,
-                             theta1=0, theta2=180, color=color, lw=0.65, alpha=p))
+                             theta1=0, theta2=180, color=color, lw=0.65,
+                             linestyle=linestyle, alpha=p))
             displayed[kind] += 1
-    # Small baseline marks locate both arms of the reference pseudoknot.
-    for start, end in ((63, 71), (130, 139)):
-        axa.plot((start, end), (-6, -6), color=CROSS_COLOR, lw=2, solid_capstyle="butt")
+    # Separate solid/dotted marks distinguish the two reference groups even
+    # without color; their complete pair identities are drawn in D.
+    reference_marks = {}
+    for name, level, linestyle in (("outer", -5, "solid"), ("inner", -9, (0, (1, 1)))):
+        pairs = stats["stems"][name]["pairs"]
+        arms = [(min(p[k] for p in pairs), max(p[k] for p in pairs)) for k in (0, 1)]
+        reference_marks[name] = arms
+        for start, end in arms:
+            axa.plot((start, end), (level, level), color=INK, lw=1.5,
+                     linestyle=linestyle, solid_capstyle="butt")
     axa.set_xticks((1, 50, 100, 150, 200, 250, 300, 350, n))
+    axa.get_xticklabels()[-1].set_ha("right")
     axa.set_yticks([])
     for spine in axa.spines.values():
         spine.set_visible(False)
 
-    title(0.007, 0.694, "B", "Structural contexts")
-    fig.legend(handles=[Patch(facecolor=COLORS[c], label=c) for c in CONTEXTS],
-               loc="upper left", bbox_to_anchor=(0.283, 0.699), ncol=7, frameon=False,
-               fontsize=6, handlelength=0.9, handletextpad=0.35, columnspacing=0.9, borderaxespad=0)
-    axfull = fig.add_axes((0.065, 0.58, 0.915, 0.08))
+    title(1, 70, "B", "Structural contexts")
+    fig.legend(handles=[Patch(facecolor=COLORS[c], hatch=HATCHES[c], edgecolor=MUTED,
+                              linewidth=0, label=c) for c in CONTEXTS],
+               loc="upper left", bbox_to_anchor=(12 / WIDTH, 66 / HEIGHT),
+               ncol=7, frameon=False, fontsize=7, handlelength=1.0,
+               handletextpad=0.35, columnspacing=1.1, borderaxespad=0)
+    axfull = axes(12, 54, 164, 8)
     stack(axfull, np.arange(1, n + 1), setting["context"], CONTEXTS)
     axfull.set_xlim(0.5, n + 0.5)
     axfull.set_yticks((0, 1), ("0", "1"))
     axfull.set_xticks((1, 50, 100, 150, 200, 250, 300, 350, n))
+    axfull.get_xticklabels()[-1].set_ha("right")
     axfull.add_patch(Rectangle((lo - 0.5, 0), hi - lo + 1, 1.01, fill=False,
-                              edgecolor=INK, lw=0.65, linestyle=(0, (3, 2)), zorder=4, clip_on=False))
-    fig.text(0.065, 0.542, "40–160 enlarged", fontsize=6.3, va="top")
+                              edgecolor=INK, lw=0.8, linestyle=(0, (3, 2)),
+                              zorder=4, clip_on=False))
     peak = stats["pseudoloop"]["region_peak"]
-    fig.text(0.98, 0.542, f"PseudoLoop peak: {peak['probability']:.3f} at base {peak['position']}",
-             fontsize=6.3, ha="right", va="top", color=CROSS_COLOR)
-    axzoom = fig.add_axes((0.065, 0.405, 0.915, 0.11))
+    text(12, 47.5, f"{lo}–{hi} enlarged")
+    text(120, 47.5, f"Base {peak['position']}: PseudoLoop {peak['probability']:.3f}", ha="right")
     positions = np.arange(lo, hi + 1)
+    axzoom = axes(12, 32, 108, 11)
     stack(axzoom, positions, {c: setting["context"][c][lo - 1:hi] for c in CONTEXTS}, CONTEXTS)
     axzoom.set_xlim(lo - 0.5, hi + 0.5)
     axzoom.set_xticks((40, 60, 80, 100, 120, 140, 160))
-    fig.text(0.018, 0.535, "Probability", fontsize=6.3, rotation=90, ha="center", va="center", color=MUTED)
-    axzoom.set_xlabel("Position (nt)", labelpad=2)
+    axzoom.set_ylabel("Probability", labelpad=3)
 
-    title(0.007, 0.323, "C", "4-nt window accessibility, by loop type")
-    fig.text(0.065, 0.288, "All four bases unpaired together; black line = total", fontsize=6.1, va="top")
-    axc = fig.add_axes((0.065, 0.105, 0.605, 0.164))
+    selected = stats["accessibility"]["selected_windows"]["123"]
+    start, end = 123, selected["end"]
+    # This bracket spans bases in B. C's guide instead marks a window START.
+    axzoom.plot((start - 0.5, start - 0.5, end + 0.5, end + 0.5),
+                (1.015, 1.08, 1.08, 1.015), transform=axzoom.get_xaxis_transform(),
+                color=INK, lw=0.7, clip_on=False, zorder=4)
+    axzoom.axvspan(start - 0.5, end + 0.5, fill=False, edgecolor=INK, lw=0.8, zorder=4)
+    axzoom.axvline(start, color=INK, lw=0.6, linestyle=(0, (2, 2)), zorder=4)
+
+    title(1, 25.5, "C", "4-nt window accessibility by loop type")
+    text(12, 21.5, f"{start}–{end}: total {selected['total']:.3f}; PseudoLoop {selected['P']:.3f}")
+    axc = axes(12, 7, 108, 11)
     values = {c: [setting["access"][i, WINDOW][k] for i in positions] for k, c in LOOPS.items()}
     stack(axc, positions, values, tuple(LOOPS.values()))
-    axc.plot(positions, [setting["access"][i, WINDOW]["total"] for i in positions], color=INK, lw=0.65, zorder=3)
+    axc.plot(positions, [setting["access"][i, WINDOW]["total"] for i in positions],
+             color=INK, lw=0.9, zorder=3)
     axc.set_xlim(lo - 0.5, hi + 0.5)
     axc.set_xticks((40, 60, 80, 100, 120, 140, 160))
     axc.set_xlabel("Start of 4-nt window (nt)", labelpad=2)
     axc.set_ylabel("Probability", labelpad=3)
-
-    title(0.711, 0.323, "D", "Reference stems in samples")
-    fig.text(0.75, 0.288, "All pairs present; 1,000 samples", fontsize=6.1, va="top")
-    axd = fig.add_axes((0.82, 0.126, 0.157, 0.143))
-    for y, name in zip((2, 1, 0), ("outer", "inner", "both")):
-        value = stats["stems"][name]["complete_sample_fraction"] * 100
-        axd.barh(y, value, height=0.53, color=CROSS_COLOR, lw=0)
-        axd.text(value + 3, y, f"{value:.1f}%", fontsize=6.2, va="center")
-    axd.set_yticks((2, 1, 0), ("Outer (6)", "Inner (3)", "Both (9)"))
-    axd.set_xlim(0, 115)
-    axd.set_ylim(-0.6, 2.6)
-    axd.set_xticks((0, 50, 100))
-    axd.set_xlabel("Samples (%)", labelpad=1)
-    axd.spines["left"].set_visible(False)
-    axd.tick_params(axis="y", length=0, pad=3)
-    style(axd)
-    for y, key, label in ((0.053, "mfe_pairs_present", "MFE"), (0.027, "mea_pairs_present", "MEA, γ = 1")):
-        outer = len(stats["stems"]["outer"][key])
-        inner = len(stats["stems"]["inner"][key])
-        fig.text(0.75, y, f"{label}: outer {outer}/6, inner {inner}/3 pairs", fontsize=6.1, va="top")
+    axc.axvline(start, color=INK, lw=0.6, linestyle=(0, (2, 2)), zorder=4)
+    axc.plot(start, selected["total"], "o", color=INK, ms=2.5, zorder=5)
+    axc.annotate("", xy=(start, selected["total"]), xytext=(start - 2, 1.14),
+                 arrowprops=dict(arrowstyle="->", lw=0.7, color=INK), annotation_clip=False)
+    title(127, 47.5, "D", "Reference pairs and samples")
+    # Pair ladder: both arms are explicit 1-based coordinates. The extra
+    # right-arm base between the two groups is obtained from the saved pairs.
+    column_positions = {"outer": np.linspace(128, 155, len(stats["stems"]["outer"]["pairs"])),
+                        "inner": np.linspace(164.5, 175.3, len(stats["stems"]["inner"]["pairs"]))}
+    for name, label in (("outer", "Outer"), ("inner", "Inner")):
+        stem = stats["stems"][name]
+        columns = column_positions[name]
+        text(float(np.mean(columns)), 43, f"{label} ({len(stem['pairs'])})", ha="center", fontweight="bold")
+        text(float(np.mean(columns)) if name == "outer" else 177, 39.5,
+             f"p {stem['pair_probability_min']:.3f}–{stem['pair_probability_max']:.3f}",
+             ha="center" if name == "outer" else "right")
+        for x, (i, j) in zip(columns, stem["pairs"]):
+            text(x, 35.5, str(i), ha="center")
+            text(x, 29.5, str(j), ha="center")
+            fig.add_artist(Line2D([x / WIDTH] * 2, [30.5 / HEIGHT, 32.5 / HEIGHT],
+                                 transform=fig.transFigure, color=CROSS_COLOR, lw=1,
+                                 linestyle="solid" if name == "outer" else (0, (1, 1))))
+    outer_j = min(p[1] for p in stats["stems"]["outer"]["pairs"])
+    inner_j = max(p[1] for p in stats["stems"]["inner"]["pairs"])
+    gap = list(range(inner_j + 1, outer_j))
+    require(len(gap) == 1, "Expected one reference bulged base")
+    text(159.75, 26.5, f"{gap[0]}: bulge", ha="center")
+    text(129, 23, "Samples with every listed pair")
+    # No per-pair average: each bar requires the complete specified set.
+    # Fixed labels and percentage columns keep even the shorter bars readable.
+    for y, name in ((19, "outer"), (15.5, "inner"), (12, "both")):
+        fraction = stats["stems"][name]["complete_sample_fraction"]
+        text(129, y + 1.1, f"{name.title()}: all {len(stats['stems'][name]['pairs'])}")
+        fig.add_artist(Rectangle((148 / WIDTH, (y - 0.5) / HEIGHT),
+                                16 * fraction / WIDTH, 1.7 / HEIGHT,
+                                transform=fig.transFigure, facecolor=CROSS_COLOR,
+                                edgecolor=INK, linewidth=0.4))
+        text(176, y + 1.1, f"{fraction:.1%}", ha="right")
+    text(158, 8.7, "Outer", ha="center")
+    text(172, 8.7, "Inner", ha="center")
+    for y, key, label in ((5.7, "mfe_pairs_present", "MFE"),
+                           (2.7, "mea_pairs_present", "MEA")):
+        text(129, y, label)
+        for x, name in ((158, "outer"), (172, "inner")):
+            stem = stats["stems"][name]
+            text(x, y, f"{len(stem[key])}/{len(stem['pairs'])}", ha="center")
 
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
@@ -356,41 +419,90 @@ def make_plot(out, rec, setting, stats):
     overlaps = []
     for i, a in enumerate(texts):
         for b in texts[i + 1:]:
-            bb_a, bb_b = a.get_window_extent(renderer), b.get_window_extent(renderer)
-            if bb_a.overlaps(bb_b):
+            if a.get_window_extent(renderer).overlaps(b.get_window_extent(renderer)):
                 overlaps.append((a.get_text(), b.get_text()))
     require(not overlaps, f"Text overlap: {overlaps}")
+    # Verify the actual coordinate transforms, not just the manually set limits.
+    aligned = max(abs(axzoom.transData.transform((i, 0))[0] -
+                      axc.transData.transform((i, 0))[0]) for i in positions)
+    require(aligned < 1e-10, "B zoom and C coordinates are not aligned")
     for suffix in ("pdf", "png"):
         fig.savefig(out / f"figure4.{suffix}", dpi=DPI, facecolor="white")
+    # NODISPLAY suppresses txtwrite output on the installed Ghostscript; use
+    # its real text device and require a nonempty list of embedded text spans.
+    gs_argv = ["gs", "-q", "-dBATCH", "-dNOPAUSE", "-sDEVICE=txtwrite", "-dTextFormat=0",
+               "-sOutputFile=-", str(out / "figure4.pdf")]
+    gs_result = subprocess.run(gs_argv, capture_output=True, text=True, check=True)
+    pdf_sizes = [float(v) for v in re.findall(r'<span[^>]* size="([0-9.]+)"', gs_result.stdout)]
+    require(pdf_sizes and min(pdf_sizes) >= 6, "PDF has absent text or embedded text below 6 pt")
     validation = dict(width_mm=WIDTH, height_mm=HEIGHT, png_dpi=DPI,
         min_font_pt=min(t.get_fontsize() for t in texts), visible_text_items=len(texts),
+        pdf_embedded_font_sizes_pt=sorted(set(pdf_sizes)), pdf_text_span_count=len(pdf_sizes),
+        pdf_font_inspection=gs_argv[:-1] + ["figure4.pdf"],
         text_outside_figure=outside, overlapping_text_pairs=overlaps,
-        displayed_pair_counts=displayed, pair_display_cutoff=CUTOFF,
-        arc_opacity="pair probability, without rescaling", reference_marks=[[63, 71], [130, 139]])
+        aligned_Bzoom_C_max_horizontal_difference_px=aligned,
+        aligned_Bzoom_C_xlimits=list(axzoom.get_xlim()),
+        aligned_Bzoom_C_width_mm=108, displayed_pair_counts=displayed,
+        pair_display_cutoff=CUTOFF, arc_opacity="pair probability, without rescaling",
+        reference_marks=reference_marks, reference_bulged_base=gap[0],
+        context_hatches=HATCHES, direct_context_labels=["PseudoLoop in B and C callouts"],
+        pair_linestyles={"scaffold": "solid", "new_no_crossing": "dotted", "new_crossing_G": "dashed"})
     plt.close(fig)
     return validation
 
 
-def write_caption(out):
-    caption = """<!-- 日本語：ラットのテロメラーゼRNAの局所構造とaccessibility。beam幅200で参照構造の入れ子の対Gを保持する。Aの弧は対合確率で、濃いほど高い。確率0.01以上の対を示す。灰色はG、青色はGと交差しない新しい対、橙色はGと交差する対。橙色の目印は参照のpseudoknotの位置を示す。 -->
+def write_caption(out, rec, stats, differences):
+    stems = stats["stems"]
+    selected = stats["accessibility"]["selected_windows"]["123"]
+    # Display upper bounds rounded upward, rather than claim an incorrectly
+    # rounded maximum. Preserve full precision in the provenance and README.
+    ctx_bound = math.ceil(differences["context_region_max_abs_difference"][0] * 1e5) / 1e5
+    acc_bound = math.ceil(differences["accessibility"]["4"]["total_region_max"][0] * 1e5) / 1e5
+    counts = [stems[name]["complete_sample_count"] for name in ("outer", "inner", "both")]
+    n = len(rec["seq"])
+    caption = f"""<!-- 日本語：ラットTerc（NR_001567.1、{n} nt）をbeam幅200で解析した。
+GはbpRNA参照構造の入れ子の部分から選んだcanonicalな61対を含む。 -->
 **Figure 4. Structural contexts and accessibility in rat telomerase RNA.**
-Calculations retain scaffold G, the reference nested pairs, at beam width 200.
-**(A)** Darker arcs indicate higher pairing probabilities.
-Arcs require probability ≥0.01.
-Grey pairs belong to G; new pairs are blue without crossings or orange when crossing G.
-Orange marks locate the reference pseudoknot.
+Rat Terc (NR_001567.1; {n} nt) was analyzed at beam width 200.
+Scaffold G contains the 61 canonical AU, GC, or GU pairs in the nested part of the bpRNA reference structure.
 
-<!-- 日本語：BのLinearPKCapRは各塩基の七つの局所構造確率を示す。PseudoLoopはpseudoknotのloop内の非対合塩基を表す。拡大区間でのPseudoLoopの最大値は123の0.840。CのLinearPKRaccessは4塩基窓のaccessibilityをloopの種類ごとに分ける。六つの同時確率の和は4塩基全部が非対合になる確率（黒線）。 -->
-**(B)** LinearPKCapR gives seven context probabilities per base.
-PseudoLoop describes unpaired bases in pseudoknot loops.
-PseudoLoop peaks at 0.840 at base 123 in the enlarged region.
-**(C)** LinearPKRaccess partitions four-base window accessibility by loop type.
-The six joint probabilities sum to the probability that all four bases are unpaired (black).
+<!-- 日本語：Aは確率0.01以上の対を示す。
+灰色の実線はG、青色の点線はGと交差しない新しい対、橙色の破線はGと交差する対を表す。
+弧の不透明度は対確率そのものとし、重なった弧は濃く見えることがある。
+基線下の印は参照9対の二群の位置を示し、Dに全座標と対確率pの範囲を示す。 -->
+**(A)** Arcs show pairs with probability ≥0.01.
+Grey solid arcs show G; blue dotted arcs show new pairs without crossings; orange dashed arcs show new pairs crossing G.
+Arc opacity equals pair probability; overlapping arcs may appear darker.
+Baseline marks locate the two reference pair groups drawn in D, where p denotes pair probability.
 
-<!-- 日本語：DはBoltzmann samplingの1,000標本中、各参照stemの全対を含む割合を示す。MFEは自由エネルギー最小構造、MEAは期待正確度最大構造を表す。exact計算はpseudoknot付近でほぼ同じ確率を与える。 -->
-**(D)** Bars count complete reference stems among 1,000 Boltzmann samples.
-MFE and MEA denote minimum free energy and maximum expected accuracy structures.
-Exact calculations give nearly identical probabilities near the pseudoknot.
+<!-- 日本語：Bは各塩基の七つのcontext確率を示す。
+PseudoLoopはMethodsで定義したpseudoknotに対応する非対合contextである。
+Internalには疎な斜線を付ける。
+拡大図とCは同じ40–160の座標を共有する。
+Bの括弧は塩基123–126、Cの補助線は窓の開始位置123を示す。 -->
+**(B)** Stacks show seven context probabilities per base.
+PseudoLoop is the pseudoknot-associated unpaired context defined in Methods.
+Sparse hatching identifies Internal.
+The enlarged track and C share coordinates 40–160.
+The bracket in B spans bases 123–126; the guide in C marks the window start, 123.
+
+<!-- 日本語：Cの色付き成分は、4塩基すべてが非対合で同じloopの種類に属する同時確率である。
+黒線は六成分の和である。
+窓123–126のaccessibilityは{selected['total']:.3f}で、そのうちPseudoLoopは{selected['P']:.3f}を占める。 -->
+**(C)** Each colored component is the joint probability that all four bases are unpaired and assigned to that loop type.
+The black line is their sum.
+Window 123–126 has accessibility {selected['total']:.3f}, including a PseudoLoop contribution of {selected['P']:.3f}.
+
+<!-- 日本語：Dは外側6対、内側3対、または全9対を含む標本の割合を示す。
+1,000回のBoltzmann samplingで該当する標本は順に{counts[0]}、{counts[1]}、{counts[2]}個だった。
+MFEは自由エネルギー最小構造、MEAは期待正確度最大構造で、表は含まれる参照対の数を示す。
+MEAはgamma=1を使う。
+40–160のcontextと4塩基accessibilityのexactからの最大絶対差は、それぞれ{ctx_bound:.5f}未満と{acc_bound:.5f}未満である。 -->
+**(D)** Bars show the fractions of samples containing all six outer reference pairs, all three inner pairs, or all nine.
+The corresponding counts are {counts[0]}, {counts[1]}, and {counts[2]} of {stats['sample_draws']:,} Boltzmann samples.
+The table reports reference pairs present in the minimum-free-energy (MFE) and maximum expected accuracy (MEA) structures.
+MEA uses γ=1.
+Within coordinates 40–160, maximum absolute differences from exact calculations are <{ctx_bound:.5f} for contexts and <{acc_bound:.5f} for four-base accessibility (window start coordinates).
 """
     (out / "caption.md").write_text(caption)
     english = re.sub(r"<!--.*?-->", "", caption, flags=re.S)
@@ -415,55 +527,93 @@ def write_tables(out, a, b, stats):
 def write_readme(out, data, stats, differences, validation, caption_words):
     stems = stats["stems"]
     windows = stats["accessibility"]["selected_windows"]
-    lines = ["# Figure 4: ラットのテロメラーゼ RNA", "",
-        "[PDF](figure4.pdf) · [PNG](figure4.png) · [caption](caption.md) · [provenance](provenance.json)", "",
+    lines = ["# Figure 4: ラット Terc（20261017b）", "",
+        "[PDF](figure4.pdf) · [PNG、300 dpi](figure4.png) · [caption](caption.md) · [provenance](provenance.json)", "",
         "bpRNA_RFAM_4317、ラット Terc（RefSeq NR_001567.1、RNAcentral URS00001ED027）、388 nt。",
-        "識別情報は保存済みデータの README に従い、外部データの取得は行っていない。",
-        "G は参照構造の canonical な入れ子の61対（j − i > 3）。表示値はすべて beam 幅200。", "",
-        "実験 repo から次で再生成できる。RNA CLI は実行しない。", "", "```bash",
-        f"python3 scripts/make_figure4_terc.py --data {relative(data)} --out {relative(out)}", "```", "",
-        "依存: Python 3、NumPy、Matplotlib。キャッシュは /tmp に置き、共有領域に塩基・窓・標本ごとのファイルを作らない。", "",
+        "識別情報は保存済みデータの README に従う。外部データの取得と RNA CLI の再実行は行わない。",
+        "G は bpRNA 参照構造の入れ子の73対のうち、AU/UA、GC/CG、GU/UG の61対（j − i > 3）。",
+        "除いた12対は非canonical対であり、参照の入れ子の全対を保持する条件ではない。",
+        "入力 in.txt と rec.json の配列・対集合を照合して確認する。表示する予測はすべて beam 幅200。", "",
+        "## 入力・版・再生成", "",
+        f"保存済みの入力・出力: `{relative(data)}`。",
+        "親ディレクトリの README は対象と条件、febedd98/README.md は --by-loop 出力の版の出典。",
+        "版は febedd98fe08175749bfa32daf5b3105bf9af193、software lock は manifests/software-pilot-febedd98.json。",
+        "元の全 CLI コマンド行と stderr は保存データにないため復元しない。",
+        "元図 results/figures/figure4_terc_20261017/ を変更せず、別ディレクトリへ出力する。", "",
+        "実験 repo から次で再生成できる。", "", "```bash",
+        f"python3 -B scripts/make_figure4_terc.py --data {relative(data)} --out {relative(out)}", "```", "",
+        "依存: Python 3、NumPy、Matplotlib、Ghostscript（gs）。キャッシュと一時ファイルは /tmp を使う。",
+        "共有領域の新規ファイルは PDF、PNG、caption、README、2 TSV、provenance の7個だけ。", "",
         "## 図の読み方", "",
-        "- A: 全長のBPP。0.01以上の対を表示し、弧のalphaを確率そのものとする。Gは灰色、新しい非交差対は青、Gと交差する対は橙。基線下の橙の目印は参照pseudoknotの両腕63–71、130–139。",
-        "- B: 七つのcontextをFigure 1と同じ色で積み上げる。上段は全長、破線の40–160を下段で拡大する。",
-        "- C: 40–160を開始位置とする4塩基窓。各色は全塩基が非対合かつ同じloopの種類に属する同時確率。六色の和が全体のaccessibilityで、黒線は保存済みの全体値。Bと色を共有する。座標は1-based、窓の開始位置。",
-        "- D: 各stemの指定した参照対がすべて存在する標本の割合。外側6対は(63,139)–(68,134)、内側3対は(69,132)、(70,131)、(71,130)。133のbulgeを挟む。Bothは9対すべての同時出現。棒は周辺対確率の平均や積ではない。MFE/MEAには存在する参照対の個数を示す。", "",
-        "## 科学的な集計", "", "| 参照stem | 対ごとの確率の範囲 | 全対を含む標本 | MFE | MEA (γ=1) |",
+        "- A: 全長の対確率の概観。0.01以上の対を表示し、弧の alpha を確率そのものとする。",
+        "  G は灰色の実線、新しい非交差対は青の点線、G と交差する対は橙の破線。重なりの濃さを個別対の確率として読まない。",
+        "  基線下の実線は外側6対の両腕、点線は内側3対の両腕。D が各対の座標と予測対確率 p の範囲を示す。",
+        "- B: 七つの context の周辺確率。上段は全長、破線の40–160を下段で拡大する。Internal は疎な斜線を共有する。",
+        "  括弧と枠は塩基123–126、破線は塩基123。PseudoLoop の値は拡大区間の最大値であり、全長の最大値ではない。",
+        "- C: 開始位置40–160の4塩基窓。六成分は全4塩基が非対合かつ同じ loop の種類に属する同時確率。",
+        "  六成分の和が全体の accessibility（黒線）。B の拡大図と C は同じ左端、108 mm幅、x範囲39.5–160.5を使う。",
+        "  C の点・矢印は開始位置123の窓123–126であり、B の塩基123の周辺確率とは別の量。",
+        "- D: 上部は bpRNA 由来の参照対の座標図、p の範囲は保存された beam200 の予測対確率。",
+        "  外側6対は (63,139)–(68,134)、内側3対は (69,132)、(70,131)、(71,130)。133 の bulge を挟む。",
+        "  棒は各群の全対を含む標本の割合であり、Both は全9対の同時出現。ほかの対も含んでよい。",
+        "  周辺対確率の平均や積ではない。MFE/MEA 表は含まれる参照対の個数を示す。MEA は γ=1。", "",
+        "## 科学的な集計", "",
+        "| 参照対の群 | 対確率の範囲 | 全対を含む標本 | MFE | MEA (γ=1) |",
         "|---|---:|---:|---:|---:|"]
     for name in ("outer", "inner", "both"):
-        s = stems[name]
-        lines.append(f"| {name} ({len(s['pairs'])}対) | {s['pair_probability_min']:.6f}–{s['pair_probability_max']:.6f} | "
-                     f"{s['complete_sample_count']}/1000 ({s['complete_sample_fraction']:.1%}) | "
-                     f"{len(s['mfe_pairs_present'])}/{len(s['pairs'])} | {len(s['mea_pairs_present'])}/{len(s['pairs'])} |")
+        v = stems[name]
+        lines.append(f"| {name} ({len(v['pairs'])}対) | {v['pair_probability_min']:.6f}–{v['pair_probability_max']:.6f} | "
+                     f"{v['complete_sample_count']}/{stats['sample_draws']} ({v['complete_sample_fraction']:.1%}) | "
+                     f"{len(v['mfe_pairs_present'])}/{len(v['pairs'])} | {len(v['mea_pairs_present'])}/{len(v['pairs'])} |")
     p = stats["pseudoloop"]
-    lines += ["", f"PseudoLoop: 55で{p['selected_positions']['55']:.6f}、拡大区間内の最大は123で{p['region_peak']['probability']:.6f}。",
-        f"全長の最大は308で{p['global_peak']['probability']:.6f}。参照pseudoknot付近の山と全長最大を区別する。", "",
+    w = windows["123"]
+    lines += ["", f"PseudoLoop の拡大区間内の最大は塩基{p['region_peak']['position']}で{p['region_peak']['probability']:.9f}。",
+        f"全長の最大は塩基{p['global_peak']['position']}で{p['global_peak']['probability']:.9f}。",
+        f"窓123–126の total は{w['total']:.9f}、PseudoLoop 成分は{w['P']:.9f}。",
+        f"PseudoLoop は total の{w['P'] / w['total']:.3%}を占める。これは予測同時確率の内訳であり、物理的露出の実証ではない。", "",
         "| 4塩基窓 | Total | Exterior | Hairpin | Bulge | Internal | Multiloop | PseudoLoop |",
         "|---|---:|---:|---:|---:|---:|---:|---:|"]
     for i, v in windows.items():
         lines.append(f"| {i}–{v['end']} | " + " | ".join(f"{v[k]:.6f}" for k in ("total", *LOOPS)) + " |")
-    lines += ["", "各loop成分の拡大区間内の最大値（括弧内は窓の開始位置）:", "",
+    lines += ["", "各 loop 成分の40–160での最大値（開始位置）:", "",
         "| Loop | 最大同時確率 | 開始 |", "|---|---:|---:|"]
     for k, c in LOOPS.items():
         peak = stats["accessibility"]["region_component_peaks"][k]
         lines.append(f"| {c} | {peak['probability']:.6f} | {peak['position']} |")
-    lines += ["", f"1,000標本は{stats['unique_sample_structures']}種類で、同じ構造の最多出現は{stats['largest_structure_count']}回。sampling seedはraw READMEによれば20261017。", "",
-        "### exactとの比較", "",
-        f"40–160の全contextの最大絶対差は{differences['context_region_max_abs_difference'][0]:.8f}、4塩基accessibilityは{differences['accessibility']['4']['total_region_max'][0]:.8f}。",
-        "参照9対の確率は [reference_pairs.tsv](reference_pairs.tsv) にbeam200とexactを並べる。",
-        f"一方、全長のcontextでは最大{differences['context_max_abs_difference'][0]:.6f}、4塩基accessibilityでは最大{differences['accessibility']['4']['total_global_max'][0]:.6f}の差がある。",
-        "captionの『ほぼ同じ』はpseudoknot付近に限り、全長の完全一致を主張しない。",
-        "この条件付き計算例は、無条件の構造予測精度や生物学的機能を評価する実験ではない。", "",
-        "## 開発上の検証とprovenance", "",
-        "入力とrec.jsonの配列・G、参照9対、全標本と代表構造でのG保持を照合する。",
-        "全contextの和=1、loop別accessibilityの和=total、1塩基窓とCapRの各loop確率の一致をbeam200/exactの両方で確認する。",
-        "BPPは保存済みの数表を使う。省略された低確率の対を復元しない。BPP差の集計だけは欠行を0として扱う。",
-        f"図は{WIDTH} × {HEIGHT} mm、{DPI} dpi、すべての可視文字は{validation['min_font_pt']:g} pt以上。",
-        "作図時に文字同士の重複と図外へのはみ出しを検査する。視覚確認の結果は論文repoのdocs/progress.mdに記録する。",
-        f"captionは英語{caption_words}語（日本語コメントを除き、空白で分割）。", "",
-        "[accessibility_region.tsv](accessibility_region.tsv) はCの全数表、provenance.jsonは入力・スクリプト・出力hash、環境、設定、集計、整合検査結果を含む。",
-        "既存のraw READMEとRaccessヘッダが実行条件の出典。元の全CLIコマンド行とstderrはこのデータディレクトリに保存されていないため復元していない。",
-        "software lockは固定buildの出典として記録する。RNA CLI再実行、原稿・参考文献・外部実装repoの編集、git commitは行わない。", ""]
+    lines += ["", f"{stats['sample_draws']:,}標本は{stats['unique_sample_structures']}種類。同一構造の最多出現は{stats['largest_structure_count']}回。",
+        "標本数は samp の各行の multiplicity で重みづけする。sampling seed は raw README によると20261017。", "",
+        "### exact との比較", "",
+        f"40–160の全 context の最大絶対差は{differences['context_region_max_abs_difference'][0]:.11f}。",
+        f"開始位置40–160の4塩基 total accessibility の最大絶対差は{differences['accessibility']['4']['total_region_max'][0]:.11f}。",
+        "caption の <0.00284 と <0.00191 は上の最大値を小数第5位で切り上げた上限（通常の四捨五入の最大値ではない）。",
+        f"六つの4塩基成分の最大絶対差は{differences['accessibility']['4']['component_region_max'][0]:.11f}で、total と区別する。",
+        f"全長では context の最大差{differences['context_max_abs_difference'][0]:.9f}、4塩基 total の最大差{differences['accessibility']['4']['total_global_max'][0]:.9f}。",
+        "caption の比較を全長へ広げない。BPP の保存ファイルの欠行は比較に限り0とし、低確率の未保存値を復元しない。",
+        "この条件付き解析例は、無条件の予測精度や生物学的機能を評価しない。", "",
+        "## 開発上の検証", "",
+        "G の61対と canonical フィルタ、参照9対、全標本と MFE/MEA での G 保持を照合する。",
+        "context の和=1、loop 別 accessibility の和=total、1塩基窓と context の一致を beam200/exact の両方で検査する。",
+        f"図は{WIDTH} × {HEIGHT} mm、PNG は{DPI} dpi。Matplotlib の可視文字は{validation['min_font_pt']:g} pt以上。",
+        f"PDF 内の文字は Ghostscript txtwrite で{validation['pdf_text_span_count']} span を検出し、文字サイズは{validation['pdf_embedded_font_sizes_pt']} pt。",
+        "-dNODISPLAY は使用環境で空の出力となったため付けず、空でない span を必須として検査する。",
+        f"B 拡大と C の全塩基座標の横位置差は{validation['aligned_Bzoom_C_max_horizontal_difference_px']:g} px。",
+        "文字同士の重複0、図外の文字0。PNG の最終目視結果と変更対応は下記の担当報告に記録する。",
+        f"caption は英語{caption_words}語（日本語コメントを除く空白分割）。", "",
+        "## レビュー対応", "",
+        "- F4-1 / G1: 178 mm幅・100 mm高・通常7 pt。B 拡大/C の範囲と幅をそろえ、123の補助線を付ける。",
+        "- F4-2 / C9 / L56: 全9対の座標図を D に追加し、外側6対・内側3対と133の bulge を明示。",
+        "- F4-3: 弧の濃さは概観、9参照対の確率は D の数値範囲として示す。alpha=確率、閾値0.01は維持。",
+        "- F4-4 / C10: 窓123–126の total/PseudoLoop を数値・矢印で示し、同時確率の内訳と定義する。",
+        "- F4-5 / L61: 全対を含む標本の割合と個数を明記。MFE/MEA は対数表にする。",
+        "- F4-6 / C2 / C11 / L60: G は canonical な61対。PseudoLoop は Methods の定義へ接続し、exact 比較を40–160に限定。",
+        "- G2 / G3: 対の線種、Internal の疎な斜線、PseudoLoop の直接注記。独立した太字9 ptの A–D。", "",
+        "## 未変更・著者への引継ぎ", "",
+        "原稿、参考文献、他担当の図、raw、旧図、外部実装は変更しない。git commit もしない。",
+        "各参照対の値は reference_pairs.tsv、C の全数表は accessibility_region.tsv、入力・出力 hash と環境は provenance.json。",
+        "組み替え案 B に伴う図番号・caption の原稿への組込み・最終掲載 PDF の検査は統合担当へ引き継ぐ。",
+        "新しい科学的主張・条件の変更はない。著者には新配置と caption の採用を確認いただく。",
+        "同じ変更・未変更・判断事項・検証結果を論文 repo の textbook/notes/codex_logs/figure4_terc_round2.last.txt に記録する。",
+        "docs/progress.md は担当外なので直接変更せず、この報告から統合担当が転記する。", ""]
     (out / "README.md").write_text("\n".join(lines))
 
 
@@ -483,9 +633,13 @@ def main():
     require(g == pairs_of(scaffold) and len(g) == 61, "Unexpected scaffold")
     require(g <= pairs_of(rec["ref"]) and pk <= pairs_of(rec["ref"]), "Pairs absent from reference")
     canonical = {"AU", "UA", "CG", "GC", "GU", "UG"}
-    require(g == {p for p in pairs_of(rec["ref"]) - pk
+    reference_nested = pairs_of(rec["ref"]) - pk
+    require(g == {p for p in reference_nested
                   if p[1] - p[0] > 3 and seq[p[0] - 1] + seq[p[1] - 1] in canonical},
             "Scaffold differs from canonical nested reference pairs")
+    noncanonical = {p for p in reference_nested if seq[p[0] - 1] + seq[p[1] - 1] not in canonical}
+    require(len(reference_nested) == 73 and len(noncanonical) == 12 and reference_nested - g == noncanonical,
+            "Unexpected reference pair exclusions")
     require(len(pk) == 9 and all(any(crosses(p, q) for q in g) for p in pk), "Wrong reference pseudoknot")
     require(not any(crosses(p, q) for p in g for q in g), "Scaffold contains crossings")
     stems = dict(outer={p for p in pk if p[0] <= 68}, inner={p for p in pk if p[0] >= 69}, both=pk)
@@ -497,7 +651,7 @@ def main():
     differences = compare(settings["b200"], settings["exact"])
     out.mkdir(parents=True, exist_ok=True)
     validation = make_plot(out, rec, settings["b200"], stats["b200"])
-    caption_words = write_caption(out)
+    caption_words = write_caption(out, rec, stats["b200"], differences)
     write_tables(out, settings["b200"], settings["exact"], stats["b200"])
     write_readme(out, data, stats["b200"], differences, validation, caption_words)
     sources = [data / name for name in ("in.txt", "rec.json", "README.md")]
@@ -514,6 +668,9 @@ def main():
         regeneration=dict(argv=sys.argv, script=relative(Path(__file__)), script_sha256=sha(Path(__file__))),
         sources=[dict(path=relative(p), sha256=sha(p), bytes=p.stat().st_size) for p in sources],
         design=dict(beam=200, scaffold_pairs=len(g), reference_pk_pairs=len(pk), region=list(REGION),
+            scaffold_definition="canonical AU/UA, GC/CG, GU/UG nested bpRNA reference pairs; j-i>3",
+            reference_nested_pair_count=len(reference_nested),
+            excluded_noncanonical_reference_pairs=[list(p) for p in sorted(noncanonical)],
             sampling_seed_reported_in_raw_readme=20261017, mea_gamma=1,
             coordinates="1-based inclusive; accessibility position is window start",
             accessibility_window=WINDOW, colors=COLORS,
