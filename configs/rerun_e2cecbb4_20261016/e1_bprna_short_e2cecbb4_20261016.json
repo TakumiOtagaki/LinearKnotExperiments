@@ -1,0 +1,327 @@
+{
+  "schema_version": 1,
+  "name": "e1-bprna-short-e2cecbb4-20261016",
+  "purpose": "formal",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "temperature_source": "CLI/API default; verify RT metadata",
+    "build_revision_verified": true
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 600,
+  "warmups": 0,
+  "repetitions": 1,
+  "inputs": [],
+  "modes": [
+    {
+      "name": "exact",
+      "args": [
+        "--exact"
+      ]
+    },
+    {
+      "name": "beam20_outer",
+      "args": [
+        "-b",
+        "20",
+        "--max-hairpin",
+        "30",
+        "--max-case3-depth",
+        "30",
+        "--ranking",
+        "outer"
+      ]
+    },
+    {
+      "name": "beam50_outer",
+      "args": [
+        "-b",
+        "50",
+        "--max-hairpin",
+        "50",
+        "--max-case3-depth",
+        "50",
+        "--ranking",
+        "outer"
+      ]
+    },
+    {
+      "name": "beam100_outer",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ]
+    },
+    {
+      "name": "beam200_outer",
+      "args": [
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "name": "LinearCParty",
+      "args": [
+        "--bpp-cutoff",
+        "0"
+      ],
+      "outputs": [
+        {
+          "name": "bpp.tsv",
+          "flag": "--bpp"
+        }
+      ]
+    },
+    {
+      "name": "LinearPKCapR",
+      "args": []
+    },
+    {
+      "name": "LinearPKRaccess",
+      "args": [
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ]
+    }
+  ],
+  "analysis": {
+    "purpose": "E1 formal: exact reference below 400 nt; outer ranking; caps h=d=max(b,30)"
+  },
+  "software_lock": "manifests/software-pilot-e2cecbb4.json",
+  "memory_limit_mib": 4096,
+  "order": {
+    "kind": "blocked_random",
+    "seed": 20261011
+  },
+  "input_cohort": "manifests/cohorts/bprna-under400-20261012.json",
+  "manifest_checkpoint_jobs": 1000,
+  "rerun": {
+    "template_config": "configs/e1_bprna_short_d21618c5_20261014.json",
+    "template_config_sha256": "f1c3df6274e6ebd25111f604f87626acbf631c422b6c8e7710c0f6f1c50f7b1c",
+    "template_array": "configs/arrays/e1_bprna_short_d21618c5_20261014.json",
+    "template_array_sha256": "5e23c66f133c3eba492ef62769d0b083f8cc74b8c29035370e70313d81f14e44",
+    "software_root": "deps/LinearCParty-e2cecbb4",
+    "build_dir": "build/linear-cparty-e2cecbb4",
+    "workers": 8,
+    "parallel_slowdown_factor": 1.5,
+    "memory_basis": "Explicit per-process RLIMIT_AS cap; allocation feasibility is not a measured RSS prediction.",
+    "historical_template_analysis": {
+      "purpose": "E1 formal: exact reference below 400 nt; outer ranking; caps h=d=max(b,30)"
+    },
+    "original_cost_models": {
+      "nt50_99": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 6.010518407212619e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam20_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 1.7e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam50_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 1.7e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam100_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 1.7e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam200_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 1.7e-10,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          }
+        }
+      },
+      "nt100_199": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.7826474107465843e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.0001647093228579702,
+            "memory_exponent": 3
+          },
+          "beam20_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 1.1087110777193422e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam50_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 1.9217658680468598e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam100_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 1.9217658680468598e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam200_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 1.9217658680468598e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          }
+        }
+      },
+      "nt200_299": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 2.4875006172572693e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 9.081792021920545e-05,
+            "memory_exponent": 3
+          },
+          "beam20_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 4.186882227066689e-09,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam50_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 3.1401616703000185e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam100_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 3.768194004360022e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam200_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 3.768194004360022e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          }
+        }
+      },
+      "nt300_399": {
+        "basis": "manifests/calibration/bprna-array-20261011.json: observed envelopes plus safety, not a complexity fit",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 0.1,
+            "seconds_coefficient": 4.858360511310758e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.00020390528402763612,
+            "memory_exponent": 3
+          },
+          "beam20_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 4.195189413316127e-08,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 1.5000000000000002e-08,
+            "memory_exponent": 3
+          },
+          "beam50_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 1.4438443564163007e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 3.5065546621355876e-06,
+            "memory_exponent": 3
+          },
+          "beam100_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 2.29686620379058e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 5.15896141251226e-06,
+            "memory_exponent": 3
+          },
+          "beam200_outer": {
+            "constant_seconds": 0.17,
+            "seconds_coefficient": 4.4979102414916606e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 8.693053088800188e-06,
+            "memory_exponent": 3
+          }
+        }
+      }
+    }
+  }
+}

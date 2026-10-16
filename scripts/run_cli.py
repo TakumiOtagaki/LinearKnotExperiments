@@ -492,7 +492,7 @@ def execute(config_path, software, build, output, resume=False, array_context=No
         raise ValueError("pending scaffolds cannot be executed")
     validate(config, array=array_context is not None)
     if type(workers) is not int or workers < 1 or (workers != 1 and array_context is None):
-        raise ValueError("parallel workers are available only through an accuracy array plan")
+        raise ValueError("parallel workers are available only through an array plan")
     if not software.is_dir() or not build.is_dir():
         raise ValueError("supply existing --software-root and --build-dir paths")
     if not TIME.is_file():

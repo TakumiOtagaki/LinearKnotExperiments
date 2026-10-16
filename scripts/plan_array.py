@@ -74,6 +74,14 @@ def validate_array(config, settings):
         raise ValueError("array schema_version=1 and measurement=timing/accuracy are required")
     if type(settings.get("seed")) is not int:
         raise ValueError("array seed must be an integer")
+    if "max_concurrent_tasks" in settings and (type(settings["max_concurrent_tasks"]) is not int or
+                                               not 1 <= settings["max_concurrent_tasks"] <= 30):
+        raise ValueError("max_concurrent_tasks must be an integer in 1..30")
+    parallel = settings.get("parallel_timing", {})
+    if (not isinstance(parallel, dict) or
+            (parallel and (type(parallel.get("allowed")) is not bool or
+                           not isinstance(parallel.get("reason"), str) or not parallel["reason"].strip()))):
+        raise ValueError("parallel_timing requires boolean allowed and a nonempty reason")
     if not config.get("software_lock"):
         raise ValueError("array runs require a software lock, including development arrays")
     if "memory_limit_mib" not in config:
@@ -102,11 +110,8 @@ def validate_array(config, settings):
         resource = tier.get("resource")
         if resource not in RESOURCES or type(workers) is not int or not 1 <= workers <= RESOURCES[resource][0]:
             raise ValueError("unknown resource or workers exceed allocated cores")
-        # Timing runs one single-threaded job at a time per task. A full node is
-        # not required: the allocation only has to hold the job's memory, and
-        # repeated measurements expose noise from co-scheduled jobs.
-        if settings["measurement"] == "timing" and workers != 1:
-            raise ValueError("timing arrays require workers=1")
+        if settings["measurement"] == "timing" and workers != 1 and parallel.get("allowed") is not True:
+            raise ValueError("timing arrays require workers=1 unless parallel_timing explicitly allows concurrency")
         wall = wall_seconds(tier.get("h_rt"))
         target = positive(tier.get("target_seconds"), "target_seconds")
         fraction = positive(tier.get("max_wall_fraction", 0.7), "max_wall_fraction")
@@ -214,6 +219,8 @@ def make_tasks(config, settings, inputs):
                           "job_limits": tier.get("job_limits", {}),
                           "requested_resource": tier["resource"] + "=1", "h_rt": tier["h_rt"],
                           "workers": tier.get("workers", 1), "cost_model": tier["cost_model"]})
+            if "parallel_timing" in settings:
+                tasks[-1]["parallel_timing"] = copy.deepcopy(settings["parallel_timing"])
     return tasks
 
 
@@ -244,6 +251,9 @@ def script_text(plan, tier, count):
               'exec "${LCP_PYTHON:-python3}" scripts/run_array_task.py \\',
               "  --plan " + shlex.quote(str(output / "array_plan.json")) + " \\",
               "  --tier " + shlex.quote(tier["name"]) + ' "$@"', ""]
+    concurrency = plan.get("array_config", {}).get("max_concurrent_tasks")
+    if concurrency is not None:
+        script.insert(8, "#$ -tc " + str(concurrency))
     return "\n".join(script)
 
 
@@ -300,9 +310,15 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
                   "config_sha256": digest(config_path), "array_config_sha256": digest(settings_path) if settings_path else None,
                   "dependencies_verified_at_planning": verified, "pending_scaffolds": pending,
                   "inputs": len(inputs), "tasks": len(tasks), "planned_jobs": planned_jobs,
+                  "parallel_timing": settings.get("parallel_timing"),
+                  "estimated_sequential_seconds": sum(t["estimated_seconds"] for t in tasks),
+                  "max_estimated_task_seconds": max((t["estimated_seconds"] for t in tasks), default=0),
                   "file_budget": budget, "estimate_artifact_entries": 2,
                   "tiers": [{"tier": name, "tasks": sum(t["tier"] == name for t in tasks),
-                             "inputs": sum(len(t["inputs"]) for t in tasks if t["tier"] == name)}
+                             "inputs": sum(len(t["inputs"]) for t in tasks if t["tier"] == name),
+                             "h_rt": next(t["h_rt"] for t in tasks if t["tier"] == name),
+                             "workers": next(t["workers"] for t in tasks if t["tier"] == name),
+                             "max_estimated_task_seconds": max(t["estimated_seconds"] for t in tasks if t["tier"] == name)}
                             for name in sorted({t["tier"] for t in tasks})],
                   "task_assignments": [{"tier": t["tier"], "task_id": t["task_id"],
                                         "inputs": [i["name"] for i in t["inputs"]]} for t in tasks]}
@@ -360,6 +376,8 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
                                   **{k: frozen[i["name"]][k] for k in ("input_archive", "input_member", "sha256")}}
                                  for i in task["inputs"]]
         task_config["software_lock"] = str(output / "software_lock.json")
+        if "parallel_timing" in settings:
+            task_config["parallel_timing"] = copy.deepcopy(settings["parallel_timing"])
         tier = next(t for t in settings["tiers"] if t["name"] == task["tier"])
         task_config["order"] = {"kind": tier.get("order_kind", "blocked_random"), "seed": settings["seed"]}
         task_config.setdefault("environment", {}).update(
@@ -373,7 +391,8 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
             write_json(schedule, task.pop("planned_jobs"))
             task.update(planned_jobs_path=str(schedule), planned_jobs_sha256=digest(schedule))
         write_json(output / directory / "task.json", {"schema_version": 1, "status": "not_started",
-                   "tier": task["tier"], "task_id": task["task_id"], "attempts": []})
+                   "tier": task["tier"], "task_id": task["task_id"], "workers": task["workers"],
+                   "parallel_timing": settings.get("parallel_timing"), "attempts": []})
     plan = {"schema_version": 1, "run_kind": "array", "created_utc": now(),
             "output_format": FORMAT, "file_budget": budget, "inputs_archive_sha256": digest(input_tar),
             "output_dir": str(output), "config": config, "array_config": settings,
@@ -383,6 +402,7 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
             "software_root": str(software) if software else None, "build_dir": str(build) if build else None,
             "software_before": state, "dependencies_verified_at_planning": verified,
             "dry_run": dry_run, "experiment_before": git_state(ROOT), "inputs": inputs, "tasks": tasks,
+            "parallel_timing": settings.get("parallel_timing"),
             "pending_scaffolds": pending, "cohort_provenance": cohort_provenance,
             "resource_reference": {"url": RESOURCE_SOURCE, "checked_date": "2026-10-11",
                                    "memory_unit": "decimal GB; conservative conversion to MiB"}}

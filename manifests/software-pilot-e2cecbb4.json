@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-16T00:53:48.897804+00:00",
+  "purpose": "development",
+  "source_repository": "https://github.com/TakumiOtagaki/LinearCParty",
+  "source_commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+  "source_git_state": {
+    "commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_tree": "ed0c43f8cf2ab824101c5324ef69de6acd94ab7a",
+  "build_revision_verified": true,
+  "verification_method": "dedicated clean checkout; CMake configure/build; selected maintained checks",
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "CMAKE_GENERATOR": "Unix Makefiles"
+  },
+  "configure_arguments": [
+    "-DBUILD_TESTING=ON",
+    "-DCMAKE_BUILD_TYPE=Release"
+  ],
+  "cmake_cache_sha256": "453e0a74dd3ab20def1936cb4435d2c5ee86d8c3ca2c9bd665aa1ee69a1264e1",
+  "binaries": {
+    "LinearCParty": "35ca580d1d709254cba5f93a871d6be91047ee93b9f96adf28bf9bca7d16e157",
+    "LinearPKCapR": "b27a7d49a57ff75fa5da518a29f5b03addc6d27c104e35c23a4db0f8a7887ee0",
+    "LinearPKRaccess": "4fc4f942ff6522eea0e2828bc210805d7efec6e22026631c34d0080d87d4bcb3"
+  },
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "verification_results": [
+    {
+      "name": "scfg2_rules_core_exact_weight_test",
+      "returncode": 0,
+      "stdout": "scfg2_rules_core_exact_weight=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_exact_inside_oracle_test",
+      "returncode": 0,
+      "stdout": "scfg2_exact_inside_oracle=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_beam_api_test",
+      "returncode": 0,
+      "stdout": "scfg2_beam_api=ok\n",
+      "stderr": ""
+    }
+  ],
+  "required_suite": "test/tools/run_required_scfg2_tests.sh: required set ok (83 targets/checks)",
+  "scientific_scope": "fixed implementation pilot, not independent proof of ensemble semantics",
+  "known_semantic_followup": "Beam inside memory reductions (retired VP loop columns, compacted BTAIL capacity, retired skipped V candidates) and memory observation API. Exact outside as in d9804df6. Test targets scfg2_vp_wmbp_composed_beam_test and scfg2_wmbp_be_vp_prefix_top_width_test do not compile (also absent at d21618c5/d9804df6)."
+}

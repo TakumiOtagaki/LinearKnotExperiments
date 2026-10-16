@@ -255,6 +255,32 @@ sys.exit(7 if pathlib.Path(sys.argv[0]).name == 'failure' else 0)
         self.assertEqual(self.run_task(resume=True), 1)
         self.assertEqual(self.events.read_bytes(), before)
 
+    def test_parallel_timing_opt_in_is_validated_and_saved_at_execution(self):
+        self.settings["measurement"] = "timing"
+        self.settings["tiers"][0]["workers"] = 2
+        for value in (None, True, {"allowed": "true", "reason": "pilot"},
+                      {"allowed": True}, {"allowed": True, "reason": " "},
+                      {"allowed": False, "reason": "no concurrency"}):
+            self.settings["parallel_timing"] = value
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                validate_array(self.config, self.settings)
+        policy = {"allowed": True, "reason": "Fixed Supplementary concurrency pilot"}
+        self.settings["parallel_timing"] = policy
+        self.settings["max_concurrent_tasks"] = 30
+        plan = self.prepare()
+        self.assertEqual(plan["parallel_timing"], policy)
+        self.assertEqual(plan["tasks"][0]["parallel_timing"], policy)
+        self.assertIn("#$ -tc 30", (self.jobs / "short.sh").read_text())
+        directory = self.output / plan["tasks"][0]["directory"]
+        self.assertEqual(json.loads((directory / "task.json").read_text())["parallel_timing"], policy)
+        self.assertEqual(json.loads((directory / "task_config.json").read_text())["parallel_timing"], policy)
+        self.assertEqual(self.run_task(), 1)  # intentional fixture CLI failure remains an observation
+        metadata = json.loads((directory / "task.json").read_text())
+        self.assertEqual(metadata["attempts"][0]["parallel_timing"], policy)
+        manifest = json.loads((directory / "run/run.json").read_text())
+        self.assertEqual(manifest["array_task"]["parallel_timing"], policy)
+        self.assertEqual(manifest["workers"], 2)
+
     def test_task_index_locks_and_rejected_dependency_resume(self):
         self.prepare()
         task_dir = self.output / self.plan["tasks"][0]["directory"]

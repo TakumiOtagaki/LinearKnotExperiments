@@ -1,0 +1,17 @@
+{
+  "revision": "e2cecbb4",
+  "date": "20261016",
+  "software_root": "deps/LinearCParty-e2cecbb4",
+  "build_dir": "build/linear-cparty-e2cecbb4",
+  "software_lock": "manifests/software-pilot-e2cecbb4.json",
+  "stage_build_dir": "build/stage-timing-e2cecbb4",
+  "stage_software_lock": "manifests/software-stage-timing-e2cecbb4-20261016.json",
+  "resource": "cpu_16",
+  "workers": 8,
+  "memory_limit_mib": 4096,
+  "task_overhead_mib": 1024,
+  "h_rt": "24:00:00",
+  "max_inputs_per_task": 1024,
+  "parallel_slowdown_factor": 1.5,
+  "parallel_check_h_rt": "12:00:00"
+}

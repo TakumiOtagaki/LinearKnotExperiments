@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "measurement": "timing",
+  "seed": 20261012,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1
+  },
+  "tiers": [
+    {
+      "name": "synthetic_n250",
+      "min_length": 250,
+      "max_length": 250,
+      "resource": "cpu_16",
+      "h_rt": "24:00:00",
+      "target_seconds": 60479,
+      "max_inputs_per_task": 1024,
+      "workers": 8,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Planning envelope only: historical isolated h=d=30 E2 worst wall/n is below 0.07 s/nt/CLI. Factor 3 allows cap100 and synthetic uncertainty; no calibrated shape model or asymptotic law. Start n250/500, then refit immutable larger-tier plan if needed.; scaled by 0.25 to E2 15aa7742 measurements (29 kb: ~2.8 h for 3 CLIs x 4 runs); rerun time slowdown factor 1.5; memory envelope replaced by explicit 4096 MiB RLIMIT_AS cap (not a calibrated RSS prediction)",
+        "seconds_per_nt_condition": 0.0175,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 4.5,
+        "memory_base_mib": 4096,
+        "mib_per_nt": 0
+      },
+      "job_limits": {
+        "memory_limit_mib": 4096
+      }
+    },
+    {
+      "name": "synthetic_n500",
+      "min_length": 500,
+      "max_length": 500,
+      "resource": "cpu_16",
+      "h_rt": "24:00:00",
+      "target_seconds": 60479,
+      "max_inputs_per_task": 1024,
+      "workers": 8,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Planning envelope only: historical isolated h=d=30 E2 worst wall/n is below 0.07 s/nt/CLI. Factor 3 allows cap100 and synthetic uncertainty; no calibrated shape model or asymptotic law. Start n250/500, then refit immutable larger-tier plan if needed.; scaled by 0.25 to E2 15aa7742 measurements (29 kb: ~2.8 h for 3 CLIs x 4 runs); rerun time slowdown factor 1.5; memory envelope replaced by explicit 4096 MiB RLIMIT_AS cap (not a calibrated RSS prediction)",
+        "seconds_per_nt_condition": 0.0175,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 4.5,
+        "memory_base_mib": 4096,
+        "mib_per_nt": 0
+      },
+      "job_limits": {
+        "memory_limit_mib": 4096
+      }
+    },
+    {
+      "name": "synthetic_n1000",
+      "min_length": 1000,
+      "max_length": 1000,
+      "resource": "cpu_16",
+      "h_rt": "24:00:00",
+      "target_seconds": 60479,
+      "max_inputs_per_task": 1024,
+      "workers": 8,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Planning envelope only: historical isolated h=d=30 E2 worst wall/n is below 0.07 s/nt/CLI. Factor 3 allows cap100 and synthetic uncertainty; no calibrated shape model or asymptotic law. Start n250/500, then refit immutable larger-tier plan if needed.; rerun time slowdown factor 1.5; memory envelope replaced by explicit 4096 MiB RLIMIT_AS cap (not a calibrated RSS prediction)",
+        "seconds_per_nt_condition": 0.07,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 4.5,
+        "memory_base_mib": 4096,
+        "mib_per_nt": 0
+      },
+      "job_limits": {
+        "memory_limit_mib": 4096
+      }
+    },
+    {
+      "name": "synthetic_n2000",
+      "min_length": 2000,
+      "max_length": 2000,
+      "resource": "cpu_16",
+      "h_rt": "24:00:00",
+      "target_seconds": 60479,
+      "max_inputs_per_task": 1024,
+      "workers": 8,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Planning envelope only: historical isolated h=d=30 E2 worst wall/n is below 0.07 s/nt/CLI. Factor 3 allows cap100 and synthetic uncertainty; no calibrated shape model or asymptotic law. Start n250/500, then refit immutable larger-tier plan if needed.; rerun time slowdown factor 1.5; memory envelope replaced by explicit 4096 MiB RLIMIT_AS cap (not a calibrated RSS prediction)",
+        "seconds_per_nt_condition": 0.07,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 4.5,
+        "memory_base_mib": 4096,
+        "mib_per_nt": 0
+      },
+      "job_limits": {
+        "memory_limit_mib": 4096
+      }
+    },
+    {
+      "name": "synthetic_n4000",
+      "min_length": 4000,
+      "max_length": 4000,
+      "resource": "cpu_16",
+      "h_rt": "24:00:00",
+      "target_seconds": 60479,
+      "max_inputs_per_task": 1024,
+      "workers": 8,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Planning envelope only: historical isolated h=d=30 E2 worst wall/n is below 0.07 s/nt/CLI. Factor 3 allows cap100 and synthetic uncertainty; no calibrated shape model or asymptotic law. Start n250/500, then refit immutable larger-tier plan if needed.; rerun time slowdown factor 1.5; memory envelope replaced by explicit 4096 MiB RLIMIT_AS cap (not a calibrated RSS prediction)",
+        "seconds_per_nt_condition": 0.07,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 4.5,
+        "memory_base_mib": 4096,
+        "mib_per_nt": 0
+      },
+      "job_limits": {
+        "memory_limit_mib": 4096
+      }
+    }
+  ],
+  "note": "Release rerun; cpu_16; time coefficients inherited from the recorded template; sequential-work wall estimate.",
+  "compact_plan": true,
+  "max_concurrent_tasks": 30,
+  "parallel_timing": {
+    "allowed": true,
+    "reason": "Author policy 2026-10-16: fixed single-thread CLI concurrency on cpu_16; record workers and describe concurrent wall-time shifts in Supplementary."
+  }
+}

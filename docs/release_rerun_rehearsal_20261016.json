@@ -1,0 +1,2207 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-16T00:55:57.059509+00:00",
+  "scope": "Read-only preparation rehearsal; actual two-input self-comparison; offline array estimates only, no submission or new build.",
+  "preparation": {
+    "schema_version": 1,
+    "created_utc": "2026-10-16T00:53:19.674004+00:00",
+    "dry_run": true,
+    "release": {
+      "commit": "d21618c5115453174204329fcc40534b1cb9aa9c",
+      "source": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d21618c5",
+      "build": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5",
+      "lock": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/manifests/software-pilot-d21618c5.json"
+    },
+    "stages": {
+      "clone": {
+        "status": "verified_existing",
+        "state": {
+          "commit": "d21618c5115453174204329fcc40534b1cb9aa9c",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "build": {
+        "status": "verified_existing",
+        "cmake_cache_sha256": "f0a82ce65cf60b7fe09dad549853b8bb6840d093610c2e2dc7c261c312ee49ad",
+        "binaries": {
+          "LinearCParty": "de9cc68f899acd0fec9286e859d0529d3d7f1b9d16f1fb5da0dcfe1a6beecd45",
+          "LinearPKCapR": "80ed8d4c4457ab50f90f5fb5378f3c8ef4ed45fed6cd2ed9708d65aa4bf77488",
+          "LinearPKRaccess": "cb08e4c8956bf49fc2fa3e5dfbc92b706bb1499a18f6a4a33e57f0c676e996be"
+        }
+      },
+      "required_suite": {
+        "status": "verified_existing_lock",
+        "summary": "test/tools/run_required_scfg2_tests.sh: required set ok (97 targets/checks)",
+        "lock_sha256": "8278e6b39246153648f92bcfa64f1c87c1d53e6496c5e9378eb218da6722add0"
+      },
+      "lock": {
+        "status": "verified_existing",
+        "sha256": "8278e6b39246153648f92bcfa64f1c87c1d53e6496c5e9378eb218da6722add0"
+      },
+      "comparison": {
+        "schema_version": 1,
+        "created_utc": "2026-10-16T00:53:20.031399+00:00",
+        "specification": {
+          "builds": {
+            "candidate_beam": {
+              "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5",
+              "binaries": {
+                "LinearCParty": "de9cc68f899acd0fec9286e859d0529d3d7f1b9d16f1fb5da0dcfe1a6beecd45",
+                "LinearPKCapR": "80ed8d4c4457ab50f90f5fb5378f3c8ef4ed45fed6cd2ed9708d65aa4bf77488",
+                "LinearPKRaccess": "cb08e4c8956bf49fc2fa3e5dfbc92b706bb1499a18f6a4a33e57f0c676e996be"
+              }
+            },
+            "candidate_exact": {
+              "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6",
+              "binaries": {
+                "LinearCParty": "88395580c6c478fb624a5105e201cc6f12ae80ebf9b7995de3464ec83871c21d",
+                "LinearPKCapR": "6412d1968d37edad7f78066cd37fe451873cb0c7fef3ae75bdc6ac1e392548e6",
+                "LinearPKRaccess": "02aa11657ea370b36cc85c66cabac487d1057c8993763fed693f70809616e69e"
+              }
+            },
+            "reference_beam": {
+              "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5",
+              "binaries": {
+                "LinearCParty": "de9cc68f899acd0fec9286e859d0529d3d7f1b9d16f1fb5da0dcfe1a6beecd45",
+                "LinearPKCapR": "80ed8d4c4457ab50f90f5fb5378f3c8ef4ed45fed6cd2ed9708d65aa4bf77488",
+                "LinearPKRaccess": "cb08e4c8956bf49fc2fa3e5dfbc92b706bb1499a18f6a4a33e57f0c676e996be"
+              }
+            },
+            "reference_exact": {
+              "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6",
+              "binaries": {
+                "LinearCParty": "88395580c6c478fb624a5105e201cc6f12ae80ebf9b7995de3464ec83871c21d",
+                "LinearPKCapR": "6412d1968d37edad7f78066cd37fe451873cb0c7fef3ae75bdc6ac1e392548e6",
+                "LinearPKRaccess": "02aa11657ea370b36cc85c66cabac487d1057c8993763fed693f70809616e69e"
+              }
+            }
+          },
+          "inputs": [
+            {
+              "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/pk_scaffold.txt",
+              "name": "pk_scaffold",
+              "length": 24,
+              "sha256": "9e8475f18912402fc83ca7c98a65f390d12a4a4540782e6d3171c54f9f47a72d"
+            },
+            {
+              "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/empty_scaffold.txt",
+              "name": "empty_scaffold",
+              "length": 9,
+              "sha256": "6817f6b3d174b8d0e9ea86e3356d1a7ad264b75847d99c291c731dc8df575ad3"
+            }
+          ],
+          "parameter": {
+            "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d21618c5/params/rna_Turner04.par",
+            "sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+          },
+          "beams": [
+            20,
+            200
+          ],
+          "beam_settings": "h=d=max(b,30), ranking=outer",
+          "exact_args": [
+            "--exact"
+          ],
+          "ignored_lines": [
+            "# elapsed_seconds"
+          ],
+          "threads": 1
+        },
+        "timeout_seconds": 120,
+        "dry_run": true,
+        "planned_processes": 36
+      }
+    },
+    "file_budget": {
+      "estimated_shared_entries": 2,
+      "basis": "clone tracked files plus directory allowance (2*tracked+100), explicit build allowance, one report plus atomic temporary; actual build may vary",
+      "project": 102571,
+      "filesystem": "/gs/bs",
+      "quota": {
+        "used_files": 21074280,
+        "limit_files": 28000000,
+        "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 8716658256  14680064000 14680064000       - 21074280  28000000 28000000       -"
+      },
+      "hard_file_limit": 24000000,
+      "remaining_files": 2925720,
+      "remaining_source": "lfs quota (with configured conservative hard limit)",
+      "max_remaining_fraction": 0.1,
+      "allowed_entries": 292572,
+      "accepted": true
+    }
+  },
+  "comparison": {
+    "schema_version": 1,
+    "created_utc": "2026-10-16T00:53:20.466620+00:00",
+    "specification": {
+      "builds": {
+        "candidate_beam": {
+          "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5",
+          "binaries": {
+            "LinearCParty": "de9cc68f899acd0fec9286e859d0529d3d7f1b9d16f1fb5da0dcfe1a6beecd45",
+            "LinearPKCapR": "80ed8d4c4457ab50f90f5fb5378f3c8ef4ed45fed6cd2ed9708d65aa4bf77488",
+            "LinearPKRaccess": "cb08e4c8956bf49fc2fa3e5dfbc92b706bb1499a18f6a4a33e57f0c676e996be"
+          }
+        },
+        "candidate_exact": {
+          "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6",
+          "binaries": {
+            "LinearCParty": "88395580c6c478fb624a5105e201cc6f12ae80ebf9b7995de3464ec83871c21d",
+            "LinearPKCapR": "6412d1968d37edad7f78066cd37fe451873cb0c7fef3ae75bdc6ac1e392548e6",
+            "LinearPKRaccess": "02aa11657ea370b36cc85c66cabac487d1057c8993763fed693f70809616e69e"
+          }
+        },
+        "reference_beam": {
+          "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5",
+          "binaries": {
+            "LinearCParty": "de9cc68f899acd0fec9286e859d0529d3d7f1b9d16f1fb5da0dcfe1a6beecd45",
+            "LinearPKCapR": "80ed8d4c4457ab50f90f5fb5378f3c8ef4ed45fed6cd2ed9708d65aa4bf77488",
+            "LinearPKRaccess": "cb08e4c8956bf49fc2fa3e5dfbc92b706bb1499a18f6a4a33e57f0c676e996be"
+          }
+        },
+        "reference_exact": {
+          "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6",
+          "binaries": {
+            "LinearCParty": "88395580c6c478fb624a5105e201cc6f12ae80ebf9b7995de3464ec83871c21d",
+            "LinearPKCapR": "6412d1968d37edad7f78066cd37fe451873cb0c7fef3ae75bdc6ac1e392548e6",
+            "LinearPKRaccess": "02aa11657ea370b36cc85c66cabac487d1057c8993763fed693f70809616e69e"
+          }
+        }
+      },
+      "inputs": [
+        {
+          "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/pk_scaffold.txt",
+          "name": "pk_scaffold",
+          "length": 24,
+          "sha256": "9e8475f18912402fc83ca7c98a65f390d12a4a4540782e6d3171c54f9f47a72d"
+        },
+        {
+          "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/empty_scaffold.txt",
+          "name": "empty_scaffold",
+          "length": 9,
+          "sha256": "6817f6b3d174b8d0e9ea86e3356d1a7ad264b75847d99c291c731dc8df575ad3"
+        }
+      ],
+      "parameter": {
+        "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d21618c5/params/rna_Turner04.par",
+        "sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+      },
+      "beams": [
+        20,
+        200
+      ],
+      "beam_settings": "h=d=max(b,30), ranking=outer",
+      "exact_args": [
+        "--exact"
+      ],
+      "ignored_lines": [
+        "# elapsed_seconds"
+      ],
+      "threads": 1
+    },
+    "timeout_seconds": 120,
+    "dry_run": false,
+    "planned_processes": 36,
+    "rows": [
+      {
+        "input": "pk_scaffold",
+        "input_sha256": "9e8475f18912402fc83ca7c98a65f390d12a4a4540782e6d3171c54f9f47a72d",
+        "mode": "beam",
+        "beam": 20,
+        "program": "LinearCParty",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.0332648369949311,
+          "time_wall_seconds": 0.01,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearCParty",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "20",
+            "--max-hairpin",
+            "30",
+            "--max-case3-depth",
+            "30",
+            "--ranking",
+            "outer",
+            "--bpp-cutoff",
+            "0",
+            "--bpp",
+            "/tmp/lcp-task-mhgxe3wk/reference/bpp.tsv"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.01689144200645387,
+          "time_wall_seconds": 0.01,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearCParty",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "20",
+            "--max-hairpin",
+            "30",
+            "--max-case3-depth",
+            "30",
+            "--ranking",
+            "outer",
+            "--bpp-cutoff",
+            "0",
+            "--bpp",
+            "/tmp/lcp-task-mhgxe3wk/candidate/bpp.tsv"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "4f65ff2549720f5e3d0b4b7c6817fbd52c5a02ee9fbb2b78c5e6600bd3a58d00",
+            "candidate_normalized_sha256": "4f65ff2549720f5e3d0b4b7c6817fbd52c5a02ee9fbb2b78c5e6600bd3a58d00"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "bpp.tsv": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "40261d79aca3794a96b12956617e430d6d29e58c2d1307ad9acd3c9626e4ad75",
+            "candidate_normalized_sha256": "40261d79aca3794a96b12956617e430d6d29e58c2d1307ad9acd3c9626e4ad75"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "pk_scaffold",
+        "input_sha256": "9e8475f18912402fc83ca7c98a65f390d12a4a4540782e6d3171c54f9f47a72d",
+        "mode": "beam",
+        "beam": 20,
+        "program": "LinearPKCapR",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016964021138846874,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKCapR",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "20",
+            "--max-hairpin",
+            "30",
+            "--max-case3-depth",
+            "30",
+            "--ranking",
+            "outer"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016880805836990476,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKCapR",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "20",
+            "--max-hairpin",
+            "30",
+            "--max-case3-depth",
+            "30",
+            "--ranking",
+            "outer"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "fd45f57bac9a8ce79f959183c5b2972b56392f7179d5546cd12c6e2cd443ea97",
+            "candidate_normalized_sha256": "fd45f57bac9a8ce79f959183c5b2972b56392f7179d5546cd12c6e2cd443ea97"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "pk_scaffold",
+        "input_sha256": "9e8475f18912402fc83ca7c98a65f390d12a4a4540782e6d3171c54f9f47a72d",
+        "mode": "beam",
+        "beam": 20,
+        "program": "LinearPKRaccess",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016852283151820302,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKRaccess",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "20",
+            "--max-hairpin",
+            "30",
+            "--max-case3-depth",
+            "30",
+            "--ranking",
+            "outer",
+            "--access-len",
+            "1,4,8,16",
+            "--probability"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.01692008413374424,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKRaccess",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "20",
+            "--max-hairpin",
+            "30",
+            "--max-case3-depth",
+            "30",
+            "--ranking",
+            "outer",
+            "--access-len",
+            "1,4,8,16",
+            "--probability"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "afd68e3763a67711eb9c2992fd2939eee8222618fad1c4d1114459c51dbd066b",
+            "candidate_normalized_sha256": "afd68e3763a67711eb9c2992fd2939eee8222618fad1c4d1114459c51dbd066b"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "pk_scaffold",
+        "input_sha256": "9e8475f18912402fc83ca7c98a65f390d12a4a4540782e6d3171c54f9f47a72d",
+        "mode": "beam",
+        "beam": 200,
+        "program": "LinearCParty",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016814857022836804,
+          "time_wall_seconds": 0.01,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearCParty",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "200",
+            "--max-hairpin",
+            "200",
+            "--max-case3-depth",
+            "200",
+            "--ranking",
+            "outer",
+            "--bpp-cutoff",
+            "0",
+            "--bpp",
+            "/tmp/lcp-task-mhgxe3wk/reference/bpp.tsv"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.01689759106375277,
+          "time_wall_seconds": 0.01,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearCParty",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "200",
+            "--max-hairpin",
+            "200",
+            "--max-case3-depth",
+            "200",
+            "--ranking",
+            "outer",
+            "--bpp-cutoff",
+            "0",
+            "--bpp",
+            "/tmp/lcp-task-mhgxe3wk/candidate/bpp.tsv"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "4f65ff2549720f5e3d0b4b7c6817fbd52c5a02ee9fbb2b78c5e6600bd3a58d00",
+            "candidate_normalized_sha256": "4f65ff2549720f5e3d0b4b7c6817fbd52c5a02ee9fbb2b78c5e6600bd3a58d00"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "bpp.tsv": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "40261d79aca3794a96b12956617e430d6d29e58c2d1307ad9acd3c9626e4ad75",
+            "candidate_normalized_sha256": "40261d79aca3794a96b12956617e430d6d29e58c2d1307ad9acd3c9626e4ad75"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "pk_scaffold",
+        "input_sha256": "9e8475f18912402fc83ca7c98a65f390d12a4a4540782e6d3171c54f9f47a72d",
+        "mode": "beam",
+        "beam": 200,
+        "program": "LinearPKCapR",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.01684691500850022,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKCapR",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "200",
+            "--max-hairpin",
+            "200",
+            "--max-case3-depth",
+            "200",
+            "--ranking",
+            "outer"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.0168140958994627,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKCapR",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "200",
+            "--max-hairpin",
+            "200",
+            "--max-case3-depth",
+            "200",
+            "--ranking",
+            "outer"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "fd45f57bac9a8ce79f959183c5b2972b56392f7179d5546cd12c6e2cd443ea97",
+            "candidate_normalized_sha256": "fd45f57bac9a8ce79f959183c5b2972b56392f7179d5546cd12c6e2cd443ea97"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "pk_scaffold",
+        "input_sha256": "9e8475f18912402fc83ca7c98a65f390d12a4a4540782e6d3171c54f9f47a72d",
+        "mode": "beam",
+        "beam": 200,
+        "program": "LinearPKRaccess",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016909077996388078,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKRaccess",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "200",
+            "--max-hairpin",
+            "200",
+            "--max-case3-depth",
+            "200",
+            "--ranking",
+            "outer",
+            "--access-len",
+            "1,4,8,16",
+            "--probability"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.01679664896801114,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKRaccess",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "200",
+            "--max-hairpin",
+            "200",
+            "--max-case3-depth",
+            "200",
+            "--ranking",
+            "outer",
+            "--access-len",
+            "1,4,8,16",
+            "--probability"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "ebccd02dbfa719b5bf6978747fb5c77ebf1c96dc9fb09ec1ee197489fc9710fa",
+            "candidate_normalized_sha256": "ebccd02dbfa719b5bf6978747fb5c77ebf1c96dc9fb09ec1ee197489fc9710fa"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "pk_scaffold",
+        "input_sha256": "9e8475f18912402fc83ca7c98a65f390d12a4a4540782e6d3171c54f9f47a72d",
+        "mode": "exact",
+        "beam": null,
+        "program": "LinearCParty",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.03300766204483807,
+          "time_wall_seconds": 0.01,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6/LinearCParty",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "--exact",
+            "--bpp-cutoff",
+            "0",
+            "--bpp",
+            "/tmp/lcp-task-mhgxe3wk/reference/bpp.tsv"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.03311746707186103,
+          "time_wall_seconds": 0.01,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6/LinearCParty",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "--exact",
+            "--bpp-cutoff",
+            "0",
+            "--bpp",
+            "/tmp/lcp-task-mhgxe3wk/candidate/bpp.tsv"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "4f65ff2549720f5e3d0b4b7c6817fbd52c5a02ee9fbb2b78c5e6600bd3a58d00",
+            "candidate_normalized_sha256": "4f65ff2549720f5e3d0b4b7c6817fbd52c5a02ee9fbb2b78c5e6600bd3a58d00"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "bpp.tsv": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "90a93b171beb1af831e43ccac0210e9050fb013cea2ef4b7cae816e3be2446a2",
+            "candidate_normalized_sha256": "90a93b171beb1af831e43ccac0210e9050fb013cea2ef4b7cae816e3be2446a2"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "pk_scaffold",
+        "input_sha256": "9e8475f18912402fc83ca7c98a65f390d12a4a4540782e6d3171c54f9f47a72d",
+        "mode": "exact",
+        "beam": null,
+        "program": "LinearPKCapR",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016976109007373452,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6/LinearPKCapR",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "--exact"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016770371003076434,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6/LinearPKCapR",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "--exact"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "2a65e90d261675247150e098e2136ba6caad58549f8a89534619cdf2198d5e63",
+            "candidate_normalized_sha256": "2a65e90d261675247150e098e2136ba6caad58549f8a89534619cdf2198d5e63"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "pk_scaffold",
+        "input_sha256": "9e8475f18912402fc83ca7c98a65f390d12a4a4540782e6d3171c54f9f47a72d",
+        "mode": "exact",
+        "beam": null,
+        "program": "LinearPKRaccess",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.01685762102715671,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6/LinearPKRaccess",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "--exact",
+            "--access-len",
+            "1,4,8,16",
+            "--probability"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016885663149878383,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6/LinearPKRaccess",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "--exact",
+            "--access-len",
+            "1,4,8,16",
+            "--probability"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "abd541a994c58c016404df58f52145eeac9f19603a5b2d7005bfbacb384fbdb3",
+            "candidate_normalized_sha256": "abd541a994c58c016404df58f52145eeac9f19603a5b2d7005bfbacb384fbdb3"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "empty_scaffold",
+        "input_sha256": "6817f6b3d174b8d0e9ea86e3356d1a7ad264b75847d99c291c731dc8df575ad3",
+        "mode": "beam",
+        "beam": 20,
+        "program": "LinearCParty",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016994845820590854,
+          "time_wall_seconds": 0.01,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearCParty",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "20",
+            "--max-hairpin",
+            "30",
+            "--max-case3-depth",
+            "30",
+            "--ranking",
+            "outer",
+            "--bpp-cutoff",
+            "0",
+            "--bpp",
+            "/tmp/lcp-task-mhgxe3wk/reference/bpp.tsv"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016893734922632575,
+          "time_wall_seconds": 0.01,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearCParty",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "20",
+            "--max-hairpin",
+            "30",
+            "--max-case3-depth",
+            "30",
+            "--ranking",
+            "outer",
+            "--bpp-cutoff",
+            "0",
+            "--bpp",
+            "/tmp/lcp-task-mhgxe3wk/candidate/bpp.tsv"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "446a671ed0f4c56f281d187bef1c752b1b4d23b3fa4d97d0190acc31012ac0d7",
+            "candidate_normalized_sha256": "446a671ed0f4c56f281d187bef1c752b1b4d23b3fa4d97d0190acc31012ac0d7"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "bpp.tsv": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "d30922e0b59a3041af8943d647ef711891be5b8bafd4ed7fac76e21cec1a07bd",
+            "candidate_normalized_sha256": "d30922e0b59a3041af8943d647ef711891be5b8bafd4ed7fac76e21cec1a07bd"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "empty_scaffold",
+        "input_sha256": "6817f6b3d174b8d0e9ea86e3356d1a7ad264b75847d99c291c731dc8df575ad3",
+        "mode": "beam",
+        "beam": 20,
+        "program": "LinearPKCapR",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.01682500191964209,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKCapR",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "20",
+            "--max-hairpin",
+            "30",
+            "--max-case3-depth",
+            "30",
+            "--ranking",
+            "outer"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016859424067661166,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKCapR",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "20",
+            "--max-hairpin",
+            "30",
+            "--max-case3-depth",
+            "30",
+            "--ranking",
+            "outer"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "844b209e8ef19abc0c73f5984af00592daa36af302447532e9ecefde04c03551",
+            "candidate_normalized_sha256": "844b209e8ef19abc0c73f5984af00592daa36af302447532e9ecefde04c03551"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "empty_scaffold",
+        "input_sha256": "6817f6b3d174b8d0e9ea86e3356d1a7ad264b75847d99c291c731dc8df575ad3",
+        "mode": "beam",
+        "beam": 20,
+        "program": "LinearPKRaccess",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.01683734101243317,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKRaccess",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "20",
+            "--max-hairpin",
+            "30",
+            "--max-case3-depth",
+            "30",
+            "--ranking",
+            "outer",
+            "--access-len",
+            "1,4,8,16",
+            "--probability"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016943749971687794,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKRaccess",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "20",
+            "--max-hairpin",
+            "30",
+            "--max-case3-depth",
+            "30",
+            "--ranking",
+            "outer",
+            "--access-len",
+            "1,4,8,16",
+            "--probability"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "0fc3f8e8c4e3043e4f5e86b0d992c7b312d6c991dcd124cbe25d9d894416acbe",
+            "candidate_normalized_sha256": "0fc3f8e8c4e3043e4f5e86b0d992c7b312d6c991dcd124cbe25d9d894416acbe"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "empty_scaffold",
+        "input_sha256": "6817f6b3d174b8d0e9ea86e3356d1a7ad264b75847d99c291c731dc8df575ad3",
+        "mode": "beam",
+        "beam": 200,
+        "program": "LinearCParty",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016816678922623396,
+          "time_wall_seconds": 0.01,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearCParty",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "200",
+            "--max-hairpin",
+            "200",
+            "--max-case3-depth",
+            "200",
+            "--ranking",
+            "outer",
+            "--bpp-cutoff",
+            "0",
+            "--bpp",
+            "/tmp/lcp-task-mhgxe3wk/reference/bpp.tsv"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.01687385607510805,
+          "time_wall_seconds": 0.01,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearCParty",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "200",
+            "--max-hairpin",
+            "200",
+            "--max-case3-depth",
+            "200",
+            "--ranking",
+            "outer",
+            "--bpp-cutoff",
+            "0",
+            "--bpp",
+            "/tmp/lcp-task-mhgxe3wk/candidate/bpp.tsv"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "446a671ed0f4c56f281d187bef1c752b1b4d23b3fa4d97d0190acc31012ac0d7",
+            "candidate_normalized_sha256": "446a671ed0f4c56f281d187bef1c752b1b4d23b3fa4d97d0190acc31012ac0d7"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "bpp.tsv": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "d30922e0b59a3041af8943d647ef711891be5b8bafd4ed7fac76e21cec1a07bd",
+            "candidate_normalized_sha256": "d30922e0b59a3041af8943d647ef711891be5b8bafd4ed7fac76e21cec1a07bd"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "empty_scaffold",
+        "input_sha256": "6817f6b3d174b8d0e9ea86e3356d1a7ad264b75847d99c291c731dc8df575ad3",
+        "mode": "beam",
+        "beam": 200,
+        "program": "LinearPKCapR",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016862147953361273,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKCapR",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "200",
+            "--max-hairpin",
+            "200",
+            "--max-case3-depth",
+            "200",
+            "--ranking",
+            "outer"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.01695130206644535,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKCapR",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "200",
+            "--max-hairpin",
+            "200",
+            "--max-case3-depth",
+            "200",
+            "--ranking",
+            "outer"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "844b209e8ef19abc0c73f5984af00592daa36af302447532e9ecefde04c03551",
+            "candidate_normalized_sha256": "844b209e8ef19abc0c73f5984af00592daa36af302447532e9ecefde04c03551"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "empty_scaffold",
+        "input_sha256": "6817f6b3d174b8d0e9ea86e3356d1a7ad264b75847d99c291c731dc8df575ad3",
+        "mode": "beam",
+        "beam": 200,
+        "program": "LinearPKRaccess",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.0169194838963449,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKRaccess",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "200",
+            "--max-hairpin",
+            "200",
+            "--max-case3-depth",
+            "200",
+            "--ranking",
+            "outer",
+            "--access-len",
+            "1,4,8,16",
+            "--probability"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.0168538149446249,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5/LinearPKRaccess",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "-b",
+            "200",
+            "--max-hairpin",
+            "200",
+            "--max-case3-depth",
+            "200",
+            "--ranking",
+            "outer",
+            "--access-len",
+            "1,4,8,16",
+            "--probability"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "77e91fe6d53c9d5da5191905da6a6f6b7a447b568da0a646af352bdd2380d1b5",
+            "candidate_normalized_sha256": "77e91fe6d53c9d5da5191905da6a6f6b7a447b568da0a646af352bdd2380d1b5"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "empty_scaffold",
+        "input_sha256": "6817f6b3d174b8d0e9ea86e3356d1a7ad264b75847d99c291c731dc8df575ad3",
+        "mode": "exact",
+        "beam": null,
+        "program": "LinearCParty",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.01681765099056065,
+          "time_wall_seconds": 0.01,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6/LinearCParty",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "--exact",
+            "--bpp-cutoff",
+            "0",
+            "--bpp",
+            "/tmp/lcp-task-mhgxe3wk/reference/bpp.tsv"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016833194997161627,
+          "time_wall_seconds": 0.01,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6/LinearCParty",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "--exact",
+            "--bpp-cutoff",
+            "0",
+            "--bpp",
+            "/tmp/lcp-task-mhgxe3wk/candidate/bpp.tsv"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "446a671ed0f4c56f281d187bef1c752b1b4d23b3fa4d97d0190acc31012ac0d7",
+            "candidate_normalized_sha256": "446a671ed0f4c56f281d187bef1c752b1b4d23b3fa4d97d0190acc31012ac0d7"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "bpp.tsv": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "14ca7193463dfcaa52f63ec3167cbaa75bcae1cd6ab57b3a776210107de9668b",
+            "candidate_normalized_sha256": "14ca7193463dfcaa52f63ec3167cbaa75bcae1cd6ab57b3a776210107de9668b"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "empty_scaffold",
+        "input_sha256": "6817f6b3d174b8d0e9ea86e3356d1a7ad264b75847d99c291c731dc8df575ad3",
+        "mode": "exact",
+        "beam": null,
+        "program": "LinearPKCapR",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016800696030259132,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6/LinearPKCapR",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "--exact"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016861006151884794,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6/LinearPKCapR",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "--exact"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "4e43cda455a5ffb069a2ccae221c120e3dfdfc3b8d66e340947c2419651d5005",
+            "candidate_normalized_sha256": "4e43cda455a5ffb069a2ccae221c120e3dfdfc3b8d66e340947c2419651d5005"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "successful": true,
+        "identical": true
+      },
+      {
+        "input": "empty_scaffold",
+        "input_sha256": "6817f6b3d174b8d0e9ea86e3356d1a7ad264b75847d99c291c731dc8df575ad3",
+        "mode": "exact",
+        "beam": null,
+        "program": "LinearPKRaccess",
+        "reference": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016870110062882304,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6/LinearPKRaccess",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "--exact",
+            "--access-len",
+            "1,4,8,16",
+            "--probability"
+          ]
+        },
+        "candidate": {
+          "status": "success",
+          "returncode": 0,
+          "error": null,
+          "elapsed_seconds": 0.016828257124871016,
+          "time_wall_seconds": 0.0,
+          "peak_rss_kib": 3072,
+          "argv": [
+            "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6/LinearPKRaccess",
+            "-i",
+            "/tmp/lcp-task-mhgxe3wk/input.txt",
+            "--exact",
+            "--access-len",
+            "1,4,8,16",
+            "--probability"
+          ]
+        },
+        "files": {
+          "stdout.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "767bfa76dd2fbeff26fdfe47ff40bf365cb0bfd6a610233cbd036385a97b4bb6",
+            "candidate_normalized_sha256": "767bfa76dd2fbeff26fdfe47ff40bf365cb0bfd6a610233cbd036385a97b4bb6"
+          },
+          "stderr.txt": {
+            "identical": true,
+            "max_absolute_numeric_difference": 0.0,
+            "all_differences_numeric": true,
+            "different_lines": 0,
+            "different_line_examples": [],
+            "reference_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "candidate_normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          }
+        },
+        "successful": true,
+        "identical": true
+      }
+    ],
+    "successful": true,
+    "identical": true,
+    "identical_comparisons": 18,
+    "comparisons": 18,
+    "max_absolute_numeric_difference": 0.0,
+    "all_differences_numeric": true
+  },
+  "generation": {
+    "schema_version": 1,
+    "created_utc": "2026-10-16T00:54:08.798995+00:00",
+    "settings": {
+      "revision": "d21618c5-rehearsal",
+      "date": "20261016",
+      "software_root": "deps/LinearCParty-d21618c5",
+      "build_dir": "build/linear-cparty-d21618c5",
+      "software_lock": "manifests/software-pilot-d21618c5.json",
+      "stage_build_dir": "build/stage-timing-d21618c5",
+      "stage_software_lock": "manifests/software-stage-timing-d21618c5-20261016.json",
+      "workers": 8,
+      "memory_limit_mib": 4096,
+      "task_overhead_mib": 1024,
+      "h_rt": "24:00:00",
+      "max_inputs_per_task": 1024,
+      "parallel_slowdown_factor": 1.5
+    },
+    "dry_run": true,
+    "estimate_only": true,
+    "variants": [
+      {
+        "name": "e1_bprna_short_d21618c5-rehearsal_20261016",
+        "config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/e1_bprna_short_d21618c5-rehearsal_20261016.json",
+        "array_config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/arrays/e1_bprna_short_d21618c5-rehearsal_20261016.json",
+        "software_root": "deps/LinearCParty-d21618c5",
+        "build_dir": "build/linear-cparty-d21618c5",
+        "memory_cap_envelope_mib": 33792,
+        "estimate": {
+          "schema_version": 1,
+          "run_kind": "array_estimate",
+          "output_format": "task-jsonl-tar-v1",
+          "dry_run": true,
+          "executable": false,
+          "created_utc": "2026-10-16T00:54:22.076761+00:00",
+          "config_sha256": "7db2967dc88e1368d0d7f7cb4df63c8be46d54b851378c3633b8557aeedebacc",
+          "array_config_sha256": "e556d80f415fd79363cff910f7ad1b04eef3ef09e3a7bec27374eecab9a20556",
+          "dependencies_verified_at_planning": false,
+          "pending_scaffolds": false,
+          "inputs": 24625,
+          "tasks": 33,
+          "planned_jobs": 369375,
+          "parallel_timing": null,
+          "estimated_sequential_seconds": 788915.2362047491,
+          "max_estimated_task_seconds": 60446.59303974759,
+          "file_budget": {
+            "format": "task-jsonl-tar-v1",
+            "tasks": 33,
+            "nonempty_tiers": 4,
+            "entries_per_task": 13,
+            "fixed_entries": 22,
+            "estimated_shared_entries": 451,
+            "counts_directories": true,
+            "scheduler_log_attempts": 1,
+            "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+            "project": 102571,
+            "filesystem": "/gs/bs",
+            "quota": {
+              "used_files": 21074298,
+              "limit_files": 28000000,
+              "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 8716675852  14680064000 14680064000       - 21074298  28000000 28000000       -"
+            },
+            "hard_file_limit": 24000000,
+            "remaining_files": 2925702,
+            "remaining_source": "lfs quota (with configured conservative hard limit)",
+            "max_remaining_fraction": 0.1,
+            "allowed_entries": 292570,
+            "accepted": true
+          },
+          "estimate_artifact_entries": 2,
+          "tiers": [
+            {
+              "tier": "nt100_199",
+              "tasks": 10,
+              "inputs": 9656,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 44282.2113312885
+            },
+            {
+              "tier": "nt200_299",
+              "tasks": 2,
+              "inputs": 1446,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 31774.93565566492
+            },
+            {
+              "tier": "nt300_399",
+              "tasks": 8,
+              "inputs": 1095,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 60446.59303974759
+            },
+            {
+              "tier": "nt50_99",
+              "tasks": 13,
+              "inputs": 12428,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 5771.424934342787
+            }
+          ]
+        }
+      },
+      {
+        "name": "e1_bprna_long_d21618c5-rehearsal_20261016",
+        "config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/e1_bprna_long_d21618c5-rehearsal_20261016.json",
+        "array_config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/arrays/e1_bprna_long_d21618c5-rehearsal_20261016.json",
+        "software_root": "deps/LinearCParty-d21618c5",
+        "build_dir": "build/linear-cparty-d21618c5",
+        "memory_cap_envelope_mib": 33792,
+        "estimate": {
+          "schema_version": 1,
+          "run_kind": "array_estimate",
+          "output_format": "task-jsonl-tar-v1",
+          "dry_run": true,
+          "executable": false,
+          "created_utc": "2026-10-16T00:54:24.209493+00:00",
+          "config_sha256": "ba380d9083344bb64440f60562f4c0c4bb5c079bb6863044565b275e59386530",
+          "array_config_sha256": "d289af160345e4f7f767162f3d7d5b9fde6a2038821074eb903b18c788fdcbd5",
+          "dependencies_verified_at_planning": false,
+          "pending_scaffolds": false,
+          "inputs": 1438,
+          "tasks": 379,
+          "planned_jobs": 25884,
+          "parallel_timing": null,
+          "estimated_sequential_seconds": 18867048.726177245,
+          "max_estimated_task_seconds": 60363.06608314438,
+          "file_budget": {
+            "format": "task-jsonl-tar-v1",
+            "tasks": 379,
+            "nonempty_tiers": 4,
+            "entries_per_task": 13,
+            "fixed_entries": 22,
+            "estimated_shared_entries": 4949,
+            "counts_directories": true,
+            "scheduler_log_attempts": 1,
+            "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+            "project": 102571,
+            "filesystem": "/gs/bs",
+            "quota": {
+              "used_files": 21074298,
+              "limit_files": 28000000,
+              "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 8716675852  14680064000 14680064000       - 21074298  28000000 28000000       -"
+            },
+            "hard_file_limit": 24000000,
+            "remaining_files": 2925702,
+            "remaining_source": "lfs quota (with configured conservative hard limit)",
+            "max_remaining_fraction": 0.1,
+            "allowed_entries": 292570,
+            "accepted": true
+          },
+          "estimate_artifact_entries": 2,
+          "tiers": [
+            {
+              "tier": "nt1600_3199",
+              "tasks": 148,
+              "inputs": 340,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 60064.30030194637
+            },
+            {
+              "tier": "nt3200_4381",
+              "tasks": 89,
+              "inputs": 91,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 60086.15298748837
+            },
+            {
+              "tier": "nt400_799",
+              "tasks": 48,
+              "inputs": 584,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 60339.94399331036
+            },
+            {
+              "tier": "nt800_1599",
+              "tasks": 94,
+              "inputs": 423,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 60363.06608314438
+            }
+          ]
+        }
+      },
+      {
+        "name": "e2_rnacentral_d21618c5-rehearsal_20261016",
+        "config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/e2_rnacentral_d21618c5-rehearsal_20261016.json",
+        "array_config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/arrays/e2_rnacentral_d21618c5-rehearsal_20261016.json",
+        "software_root": "deps/LinearCParty-d21618c5",
+        "build_dir": "build/linear-cparty-d21618c5",
+        "memory_cap_envelope_mib": 33792,
+        "estimate": {
+          "schema_version": 1,
+          "run_kind": "array_estimate",
+          "output_format": "task-jsonl-tar-v1",
+          "dry_run": true,
+          "executable": false,
+          "created_utc": "2026-10-16T00:54:24.250231+00:00",
+          "config_sha256": "40f26f308799dbaabe94964c88d5f018ff3b166c1fd7785a450adf3568f6afeb",
+          "array_config_sha256": "e1720902565b1d72fdfaffc016ad1c63f2cf07a1747da8cd1c25ffb44bb57b76",
+          "dependencies_verified_at_planning": false,
+          "pending_scaffolds": false,
+          "inputs": 7,
+          "tasks": 3,
+          "planned_jobs": 84,
+          "parallel_timing": {
+            "allowed": true,
+            "reason": "Author policy 2026-10-16: fixed single-thread CLI concurrency on cpu_16; record workers and describe concurrent wall-time shifts in Supplementary."
+          },
+          "estimated_sequential_seconds": 60730.740000000005,
+          "max_estimated_task_seconds": 32898.87,
+          "file_budget": {
+            "format": "task-jsonl-tar-v1",
+            "tasks": 3,
+            "nonempty_tiers": 3,
+            "entries_per_task": 13,
+            "fixed_entries": 20,
+            "estimated_shared_entries": 59,
+            "counts_directories": true,
+            "scheduler_log_attempts": 1,
+            "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+            "project": 102571,
+            "filesystem": "/gs/bs",
+            "quota": {
+              "used_files": 21074298,
+              "limit_files": 28000000,
+              "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 8716675852  14680064000 14680064000       - 21074298  28000000 28000000       -"
+            },
+            "hard_file_limit": 24000000,
+            "remaining_files": 2925702,
+            "remaining_source": "lfs quota (with configured conservative hard limit)",
+            "max_remaining_fraction": 0.1,
+            "allowed_entries": 292570,
+            "accepted": true
+          },
+          "estimate_artifact_entries": 2,
+          "tiers": [
+            {
+              "tier": "rna_20_30kb",
+              "tasks": 1,
+              "inputs": 2,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 32898.87
+            },
+            {
+              "tier": "rna_4_8kb",
+              "tasks": 1,
+              "inputs": 3,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 11416.95
+            },
+            {
+              "tier": "rna_8_20kb",
+              "tasks": 1,
+              "inputs": 2,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 16414.920000000002
+            }
+          ]
+        }
+      },
+      {
+        "name": "e2_synthetic_shapes_d21618c5-rehearsal_20261016",
+        "config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/e2_synthetic_shapes_d21618c5-rehearsal_20261016.json",
+        "array_config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/arrays/e2_synthetic_shapes_d21618c5-rehearsal_20261016.json",
+        "software_root": "deps/LinearCParty-d21618c5",
+        "build_dir": "build/linear-cparty-d21618c5",
+        "memory_cap_envelope_mib": 33792,
+        "estimate": {
+          "schema_version": 1,
+          "run_kind": "array_estimate",
+          "output_format": "task-jsonl-tar-v1",
+          "dry_run": true,
+          "executable": false,
+          "created_utc": "2026-10-16T00:54:24.355186+00:00",
+          "config_sha256": "d1b535d53346a781c8874618f29c1bb422f6f370d7394705e56c67f96c0f06ea",
+          "array_config_sha256": "6b832b664df1857c3b646c37280cde9fad27b914b0df84f3091409a690309d43",
+          "dependencies_verified_at_planning": false,
+          "pending_scaffolds": false,
+          "inputs": 156,
+          "tasks": 23,
+          "planned_jobs": 1872,
+          "parallel_timing": {
+            "allowed": true,
+            "reason": "Author policy 2026-10-16: fixed single-thread CLI concurrency on cpu_16; record workers and describe concurrent wall-time shifts in Supplementary."
+          },
+          "estimated_sequential_seconds": 991845.0,
+          "max_estimated_task_seconds": 56700.0,
+          "file_budget": {
+            "format": "task-jsonl-tar-v1",
+            "tasks": 23,
+            "nonempty_tiers": 5,
+            "entries_per_task": 13,
+            "fixed_entries": 24,
+            "estimated_shared_entries": 323,
+            "counts_directories": true,
+            "scheduler_log_attempts": 1,
+            "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+            "project": 102571,
+            "filesystem": "/gs/bs",
+            "quota": {
+              "used_files": 21074298,
+              "limit_files": 28000000,
+              "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 8716675852  14680064000 14680064000       - 21074298  28000000 28000000       -"
+            },
+            "hard_file_limit": 24000000,
+            "remaining_files": 2925702,
+            "remaining_source": "lfs quota (with configured conservative hard limit)",
+            "max_remaining_fraction": 0.1,
+            "allowed_entries": 292570,
+            "accepted": true
+          },
+          "estimate_artifact_entries": 2,
+          "tiers": [
+            {
+              "tier": "synthetic_n1000",
+              "tasks": 3,
+              "inputs": 30,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 56700.0
+            },
+            {
+              "tier": "synthetic_n2000",
+              "tasks": 6,
+              "inputs": 36,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 54810.0
+            },
+            {
+              "tier": "synthetic_n250",
+              "tasks": 1,
+              "inputs": 24,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 12150.0
+            },
+            {
+              "tier": "synthetic_n4000",
+              "tasks": 12,
+              "inputs": 36,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 46170.0
+            },
+            {
+              "tier": "synthetic_n500",
+              "tasks": 1,
+              "inputs": 30,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 22275.0
+            }
+          ]
+        }
+      },
+      {
+        "name": "e2_memory_breakdown_d21618c5-rehearsal_20261016",
+        "config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/e2_memory_breakdown_d21618c5-rehearsal_20261016.json",
+        "array_config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/arrays/e2_memory_breakdown_d21618c5-rehearsal_20261016.json",
+        "software_root": "deps/LinearCParty-d21618c5",
+        "build_dir": "build/stage-timing-d21618c5",
+        "memory_cap_envelope_mib": 33792,
+        "estimate": {
+          "schema_version": 1,
+          "run_kind": "array_estimate",
+          "output_format": "task-jsonl-tar-v1",
+          "dry_run": true,
+          "executable": false,
+          "created_utc": "2026-10-16T00:54:24.389656+00:00",
+          "config_sha256": "58d89b742e71b7447c815f1ae875a145abb34eedb92837c9c5b6ba1410aad8dc",
+          "array_config_sha256": "8c53087e653f22ffeefd56d72a98739d0eb1d5ce6923171a55e555a966438ba3",
+          "dependencies_verified_at_planning": false,
+          "pending_scaffolds": false,
+          "inputs": 7,
+          "tasks": 3,
+          "planned_jobs": 35,
+          "parallel_timing": {
+            "allowed": true,
+            "reason": "Author policy 2026-10-16: fixed single-thread CLI concurrency on cpu_16; record workers and describe concurrent wall-time shifts in Supplementary."
+          },
+          "estimated_sequential_seconds": 85115.97,
+          "max_estimated_task_seconds": 39774.735,
+          "file_budget": {
+            "format": "task-jsonl-tar-v1",
+            "tasks": 3,
+            "nonempty_tiers": 3,
+            "entries_per_task": 13,
+            "fixed_entries": 20,
+            "estimated_shared_entries": 59,
+            "counts_directories": true,
+            "scheduler_log_attempts": 1,
+            "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+            "project": 102571,
+            "filesystem": "/gs/bs",
+            "quota": {
+              "used_files": 21074298,
+              "limit_files": 28000000,
+              "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 8716675852  14680064000 14680064000       - 21074298  28000000 28000000       -"
+            },
+            "hard_file_limit": 24000000,
+            "remaining_files": 2925702,
+            "remaining_source": "lfs quota (with configured conservative hard limit)",
+            "max_remaining_fraction": 0.1,
+            "allowed_entries": 292570,
+            "accepted": true
+          },
+          "estimate_artifact_entries": 2,
+          "tiers": [
+            {
+              "tier": "rna_20_30kb",
+              "tasks": 1,
+              "inputs": 2,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 39774.735
+            },
+            {
+              "tier": "rna_4_8kb",
+              "tasks": 1,
+              "inputs": 3,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 16458.975
+            },
+            {
+              "tier": "rna_8_20kb",
+              "tasks": 1,
+              "inputs": 2,
+              "h_rt": "24:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 28882.260000000002
+            }
+          ]
+        }
+      },
+      {
+        "name": "e2_parallel_impact_w1_d21618c5-rehearsal_20261016",
+        "config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/e2_parallel_impact_w1_d21618c5-rehearsal_20261016.json",
+        "array_config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/arrays/e2_parallel_impact_w1_d21618c5-rehearsal_20261016.json",
+        "software_root": "deps/LinearCParty-d21618c5",
+        "build_dir": "build/linear-cparty-d21618c5",
+        "memory_cap_envelope_mib": 5120,
+        "estimate": {
+          "schema_version": 1,
+          "run_kind": "array_estimate",
+          "output_format": "task-jsonl-tar-v1",
+          "dry_run": true,
+          "executable": false,
+          "created_utc": "2026-10-16T00:54:24.411405+00:00",
+          "config_sha256": "2825dcf6ff28c2479ddcaaa52b19a8e60cd164e4a5595e2f545f1c77e37a048f",
+          "array_config_sha256": "d0e8ab3699957c0f78eb09300173bc7cc2f74a2e2ec43e294df6277d5e1b2fd8",
+          "dependencies_verified_at_planning": false,
+          "pending_scaffolds": false,
+          "inputs": 3,
+          "tasks": 1,
+          "planned_jobs": 36,
+          "parallel_timing": {
+            "allowed": true,
+            "reason": "Author policy 2026-10-16: fixed single-thread CLI concurrency on cpu_16; record workers and describe concurrent wall-time shifts in Supplementary."
+          },
+          "estimated_sequential_seconds": 11416.95,
+          "max_estimated_task_seconds": 11416.95,
+          "file_budget": {
+            "format": "task-jsonl-tar-v1",
+            "tasks": 1,
+            "nonempty_tiers": 1,
+            "entries_per_task": 13,
+            "fixed_entries": 16,
+            "estimated_shared_entries": 29,
+            "counts_directories": true,
+            "scheduler_log_attempts": 1,
+            "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+            "project": 102571,
+            "filesystem": "/gs/bs",
+            "quota": {
+              "used_files": 21074298,
+              "limit_files": 28000000,
+              "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 8716675852  14680064000 14680064000       - 21074298  28000000 28000000       -"
+            },
+            "hard_file_limit": 24000000,
+            "remaining_files": 2925702,
+            "remaining_source": "lfs quota (with configured conservative hard limit)",
+            "max_remaining_fraction": 0.1,
+            "allowed_entries": 292570,
+            "accepted": true
+          },
+          "estimate_artifact_entries": 2,
+          "tiers": [
+            {
+              "tier": "parallel_impact",
+              "tasks": 1,
+              "inputs": 3,
+              "h_rt": "12:00:00",
+              "workers": 1,
+              "max_estimated_task_seconds": 11416.95
+            }
+          ]
+        }
+      },
+      {
+        "name": "e2_parallel_impact_w8_d21618c5-rehearsal_20261016",
+        "config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/e2_parallel_impact_w8_d21618c5-rehearsal_20261016.json",
+        "array_config": "/tmp/rerun-d21618c5-rehearsal-final-20261016/arrays/e2_parallel_impact_w8_d21618c5-rehearsal_20261016.json",
+        "software_root": "deps/LinearCParty-d21618c5",
+        "build_dir": "build/linear-cparty-d21618c5",
+        "memory_cap_envelope_mib": 33792,
+        "estimate": {
+          "schema_version": 1,
+          "run_kind": "array_estimate",
+          "output_format": "task-jsonl-tar-v1",
+          "dry_run": true,
+          "executable": false,
+          "created_utc": "2026-10-16T00:54:24.432952+00:00",
+          "config_sha256": "5d6b10e17ede63312596efc77600d64a65be793b8d4796f5eca21632b1dba54f",
+          "array_config_sha256": "4ad63368982a4e657cc9e1e850da6814ac33af818cfb12863808e73aff085cad",
+          "dependencies_verified_at_planning": false,
+          "pending_scaffolds": false,
+          "inputs": 3,
+          "tasks": 1,
+          "planned_jobs": 36,
+          "parallel_timing": {
+            "allowed": true,
+            "reason": "Author policy 2026-10-16: fixed single-thread CLI concurrency on cpu_16; record workers and describe concurrent wall-time shifts in Supplementary."
+          },
+          "estimated_sequential_seconds": 11416.95,
+          "max_estimated_task_seconds": 11416.95,
+          "file_budget": {
+            "format": "task-jsonl-tar-v1",
+            "tasks": 1,
+            "nonempty_tiers": 1,
+            "entries_per_task": 13,
+            "fixed_entries": 16,
+            "estimated_shared_entries": 29,
+            "counts_directories": true,
+            "scheduler_log_attempts": 1,
+            "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+            "project": 102571,
+            "filesystem": "/gs/bs",
+            "quota": {
+              "used_files": 21074298,
+              "limit_files": 28000000,
+              "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 8716675852  14680064000 14680064000       - 21074298  28000000 28000000       -"
+            },
+            "hard_file_limit": 24000000,
+            "remaining_files": 2925702,
+            "remaining_source": "lfs quota (with configured conservative hard limit)",
+            "max_remaining_fraction": 0.1,
+            "allowed_entries": 292570,
+            "accepted": true
+          },
+          "estimate_artifact_entries": 2,
+          "tiers": [
+            {
+              "tier": "parallel_impact",
+              "tasks": 1,
+              "inputs": 3,
+              "h_rt": "12:00:00",
+              "workers": 8,
+              "max_estimated_task_seconds": 11416.95
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "totals": {
+    "tasks": 443,
+    "planned_jobs_including_warmups": 397322,
+    "planned_shared_entries": 5899,
+    "sequential_work_hours": 5782.358214550553,
+    "max_estimated_task_hours": 16.790720288818775,
+    "requested_task_hours": 10608.0,
+    "config_generation_permanent_entries": 17,
+    "estimate_only_scratch_entries": 14,
+    "e2_and_paired_check_tasks": 31,
+    "e2_and_paired_check_jobs": 2063,
+    "e2_and_paired_check_shared_entries": 499
+  },
+  "limitations": [
+    "The candidate is the adopted split beam/exact pair, not e2cecbb4.",
+    "No actual new-release output comparison, stage-driver build or cap/time calibration.",
+    "Sequential time coefficients are inherited from old templates; concurrency speedup is not assumed.",
+    "The 4 GiB address-space cap is an explicit assumption; old long-RNA CLIs were not run at that cap.",
+    "Per-array -tc 30 does not coordinate the combined concurrency of multiple arrays."
+  ],
+  "verification": {
+    "tests_run": 102,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "excluded_module": "test_stage_timing.py",
+    "successful": true
+  },
+  "protected_artifact_checks": [
+    {
+      "software_root": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d21618c5",
+      "build_dir": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d21618c5",
+      "lock": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/manifests/software-pilot-d21618c5.json",
+      "lock_sha256": "8278e6b39246153648f92bcfa64f1c87c1d53e6496c5e9378eb218da6722add0",
+      "source_state": {
+        "commit": "d21618c5115453174204329fcc40534b1cb9aa9c",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "cache_and_binary_hashes_match_lock": true
+    },
+    {
+      "software_root": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d9804df6",
+      "build_dir": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d9804df6",
+      "lock": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/manifests/software-pilot-d9804df6.json",
+      "lock_sha256": "47776c85ae6d34ee5bb19b06aa40459a7e36276086ef66f51d5082467aea9325",
+      "source_state": {
+        "commit": "d9804df6a6a20590d6762475878d24a14c4e8239",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "cache_and_binary_hashes_match_lock": true
+    },
+    {
+      "software_root": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d21618c5",
+      "build_dir": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/stage-timing-d21618c5",
+      "lock": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/manifests/software-stage-timing-d21618c5-20261016.json",
+      "lock_sha256": "f946fd8b0db05e022faece893b253672507c97c2ee8d55f658dab7b066300f50",
+      "source_state": {
+        "commit": "d21618c5115453174204329fcc40534b1cb9aa9c",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "cache_and_binary_hashes_match_lock": true
+    }
+  ],
+  "tool_sha256": {
+    "scripts/prepare_release.py": "7e93d6bc48b57624548f1f0335dc096a3ffa82d9a2b5803615eeff722263a271",
+    "scripts/compare_release_outputs.py": "0a5577a0c1b9f8646815e62cbfc1f14389fb7b21cd6ba06cc86a528c0d3763d4",
+    "scripts/make_rerun_configs.py": "6d8b57df3b3e39820e48ba5004322e0c3fe1ab81efde7959909ca3abfd9ff622",
+    "scripts/plan_array.py": "082554610b9f6b4b14c6c28951276def31a8b5a1fe4dc2b8439e0f6e025b0288",
+    "scripts/run_array_task.py": "32648f8c1b5d61a518096cc5fb58793fe7e58af4ffb4fb7541fbc4cda223b6ab",
+    "scripts/run_cli.py": "2d22ff7cdc784df2fe674ed367bfa1c86ab952b644b2e4f2e004119718ae0d58"
+  },
+  "static_checks": {
+    "python_syntax": true,
+    "generated_configs_match_generator": true,
+    "documentation_links": true
+  }
+}

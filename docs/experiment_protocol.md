@@ -78,17 +78,20 @@ completion is pending. Start/finish events separately recover attempt order.
 `elapsed_seconds` measures elapsed wall time around the command, including
 the GNU time wrapper. `time_wall_seconds` is GNU time's wall measurement;
 `peak_rss_kib` is the peak resident set size of that individual process.
-Timing tasks run sequentially, in separate processes, with `node_f=1` and
-thread counts at 1. Accuracy-only arrays may choose concurrent CLI processes
-through their tier's `workers` setting; do not use these concurrent timings as
-isolated runtime measurements. Warm-ups complete before the matching first
-measurement, and each seeded repetition block finishes before the next begins.
+The 2026-10-16 release reruns use `cpu_16` (16 cores, 36.8 decimal GB), with
+8–10 concurrent single-threaded CLI processes per task, including E2 timing.
+Timing concurrency requires an explicit array entry
+`"parallel_timing": {"allowed": true, "reason": "..."}`.
+The plan, task metadata, each attempt and run manifest record that entry and
+the fixed worker count; the worker count is an upper bound on active processes.
+Report the process count in Methods and describe possible wall-time shifts from
+concurrent execution in Supplementary, using the paired workers=1/8 check.
+Warm-ups complete before the matching first measurement, and each seeded
+repetition block finishes before the next begins.
 Configured warm-ups
 are logged separately and excluded from the summary's measured-job count.
-Do not run measurements alongside other calculations on the same node,
-including scaffold generation, implementation checks or another CLI matrix.
-Finish input preparation and checks before measuring; use a scheduler allocation
-that avoids concurrent calculations on that node.
+Finish scaffold generation, build and implementation checks before measuring.
+Only the fixed experiment worker pool runs calculations within its allocation.
 
 The default order remains input → mode → program, followed by that combination's
 warm-ups and repetitions. An optional config entry
@@ -154,13 +157,17 @@ the schedule. A sequence matrix exceeding its tier budget is rejected.
 Cost coefficients are planning assumptions until calibrated with the adopted
 build's pilot; they are not empirical or theoretical complexity results.
 
-Choose resources by what the run measures.
-Accuracy runs (E0, E1, including long E1 tiers) use `cpu_16` with several
-workers per node, sized so the workers' memory caps fit the node.
-Only timing runs (E2) use one single-threaded worker per node, on `cpu_40`
-or another full node, so that wall time and RSS are not disturbed.
-The 2026-10-15 E1 b=300/400 stage on `cpu_40` with one worker used about
-370 single-process hours over ~13 h and kept later arrays waiting ~11 h.
+The author policy of 2026-10-16 uses `cpu_16` for accuracy and timing reruns.
+Set a fixed 8–10 workers per task and keep workers × per-process memory cap
+plus task overhead within the allocation's memory budget.
+Each process remains single-threaded.
+Weekday array concurrency is at most 30 tasks in total.
+Generated scripts use `-tc 30`; coordinate simultaneously submitted arrays so
+their combined active-task count also stays within 30.
+The 2026-10-15 policy of one process per E2 allocation is historical and is
+superseded for these release reruns.
+Use [release rerun tooling](release_rerun.md) to prepare a release, compare its
+outputs with the separate adopted beam/exact builds, and generate configs.
 
 Each task writes a separate CLI run and `task.json`, including task numbers,
 `JOB_ID`, `SGE_TASK_ID`, hostname, requested resources and start/end times for

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-16T01:04:48.599362+00:00",
+  "purpose": "formal",
+  "source_commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+  "source_git_state": {
+    "commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "build_revision_verified": true,
+  "verification_method": "External driver linked to base-lock verified dedicated build; archive hashes saved",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "-O2 -std=c++17 -Wall -Wextra -pedantic"
+  },
+  "cmake_cache_sha256": "2e29e9adaceda3f729303d4fdaf52da934242a964c88a73a3921a28ab846df7e",
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "binaries": {
+    "stage_timing_driver": "f635e7d51a4cd7258ad1eeb5cc28bf10fce08240eb36dfec37fc4d88e0e07076"
+  },
+  "extra_files": [
+    {
+      "path": "tools/stage_timing_driver.cc",
+      "sha256": "3b9d1f5b96b0d1f2ef55e2cbbbcb1f47319e3e0e809eedbcf247707d44336d51"
+    },
+    {
+      "path": "scripts/build_stage_timing_driver.py",
+      "sha256": "7ff0ce4a955687228c023197d6b50617d62d5b033c92ff8eabd8605fc0228b0b"
+    },
+    {
+      "path": "manifests/software-pilot-e2cecbb4.json",
+      "sha256": "0e7e84b2a639e12121c71867f4081f4bbace230dd82c1a34136b57d419b6b606"
+    },
+    {
+      "path": "build/linear-cparty-e2cecbb4/libcparty_scfg2_beam.a",
+      "sha256": "e7a62ba639d24d86c5537a000f697033bfaf369eda90e5ec51cb48b7075e49f1"
+    },
+    {
+      "path": "build/linear-cparty-e2cecbb4/libcparty_scfg2_exact.a",
+      "sha256": "2353ea1c8ea1be8c433bfa4e4e0106b3a0a32da94736ccc61cadeaf6cc628442"
+    },
+    {
+      "path": "build/linear-cparty-e2cecbb4/libRNA.a",
+      "sha256": "6819701d8717e658bb704757aea99d498a0b67e079e441a18b2415a7dc079564"
+    },
+    {
+      "path": "build/linear-cparty-e2cecbb4/CMakeCache.txt",
+      "sha256": "453e0a74dd3ab20def1936cb4435d2c5ee86d8c3ca2c9bd665aa1ee69a1264e1"
+    },
+    {
+      "path": "build/stage-timing-e2cecbb4/build_provenance.json",
+      "sha256": "cf84501f9b5551957f30476c03a34cab8604a28914aacea93ceb4363054c7314"
+    },
+    {
+      "path": "build/linear-cparty-e2cecbb4/LinearCParty",
+      "sha256": "35ca580d1d709254cba5f93a871d6be91047ee93b9f96adf28bf9bca7d16e157"
+    },
+    {
+      "path": "build/linear-cparty-e2cecbb4/LinearPKCapR",
+      "sha256": "b27a7d49a57ff75fa5da518a29f5b03addc6d27c104e35c23a4db0f8a7887ee0"
+    },
+    {
+      "path": "build/linear-cparty-e2cecbb4/LinearPKRaccess",
+      "sha256": "4fc4f942ff6522eea0e2828bc210805d7efec6e22026631c34d0080d87d4bcb3"
+    }
+  ],
+  "scientific_scope": "Isolated whole public API calls; work counters describe main DP activity, not allocated bytes or a complexity proof"
+}

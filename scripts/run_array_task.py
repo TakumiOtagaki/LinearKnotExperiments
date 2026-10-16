@@ -49,13 +49,15 @@ def run_task(plan_path, tier, task_id=None, software=None, build=None, resume=Fa
                    "requested_resource": task["requested_resource"], "h_rt": task["h_rt"],
                    "workers": task["workers"], "software_root": str(software) if software else None,
                    "build_dir": str(build) if build else None, "through_beam": through_beam}
+        attempt["parallel_timing"] = task.get("parallel_timing")
         metadata["attempts"].append(attempt)
         metadata.update(status="running", started_utc=attempt["started_utc"], finished_utc=None,
                         global_task_number=task["global_task_number"], requested_resource=task["requested_resource"],
-                        h_rt=task["h_rt"], workers=task["workers"], array_plan_sha256=digest(plan_path))
+                        h_rt=task["h_rt"], workers=task["workers"], parallel_timing=task.get("parallel_timing"),
+                        array_plan_sha256=digest(plan_path))
         write_json(metadata_path, metadata)
         context = {key: metadata[key] for key in ("tier", "task_id", "global_task_number",
-                                                 "requested_resource", "h_rt", "workers", "array_plan_sha256")}
+                                                 "requested_resource", "h_rt", "workers", "parallel_timing", "array_plan_sha256")}
         output = directory / "run"
         try:
             if software is None or build is None:
