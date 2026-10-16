@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-16T16:08:39.487310+00:00",
+  "settings": {
+    "revision": "d02d261c",
+    "date": "20261017",
+    "software_root": "deps/LinearCParty-d02d261c",
+    "build_dir": "build/linear-cparty-d02d261c",
+    "software_lock": "manifests/software-pilot-d02d261c.json",
+    "stage_build_dir": "build/stage-timing-d02d261c",
+    "stage_software_lock": "manifests/software-stage-timing-d02d261c-20261017.json",
+    "resource": "cpu_40",
+    "workers": 10,
+    "memory_limit_mib": 8192,
+    "task_overhead_mib": 1024,
+    "h_rt": "12:00:00",
+    "max_inputs_per_task": 1024,
+    "parallel_slowdown_factor": 1.5,
+    "parallel_check_h_rt": "12:00:00",
+    "note": "d02d261c (author's last commit of 2026-10-16 night; after febedd98 only relic removal and cleanup). Remeasure E2 with the same resources as febd2bc1: cpu_40 x10, RLIMIT_AS 8 GiB. Outputs compared with febedd98 in manifests/release-preparation-d02d261c.json.",
+    "templates": [
+      "e2_rnacentral_d21618c5_20261014",
+      "e2_synthetic_shapes_d21618c5_20261014",
+      "e2_memory_breakdown_d21618c5_20261016"
+    ]
+  },
+  "dry_run": false,
+  "estimate_only": false,
+  "variants": [
+    {
+      "name": "e2_rnacentral_d02d261c_20261017",
+      "config": "configs/rerun_d02d261c_cpu40_20261017/e2_rnacentral_d02d261c_20261017.json",
+      "array_config": "configs/rerun_d02d261c_cpu40_20261017/arrays/e2_rnacentral_d02d261c_20261017.json",
+      "software_root": "deps/LinearCParty-d02d261c",
+      "build_dir": "build/linear-cparty-d02d261c",
+      "memory_cap_envelope_mib": 82944
+    },
+    {
+      "name": "e2_synthetic_shapes_d02d261c_20261017",
+      "config": "configs/rerun_d02d261c_cpu40_20261017/e2_synthetic_shapes_d02d261c_20261017.json",
+      "array_config": "configs/rerun_d02d261c_cpu40_20261017/arrays/e2_synthetic_shapes_d02d261c_20261017.json",
+      "software_root": "deps/LinearCParty-d02d261c",
+      "build_dir": "build/linear-cparty-d02d261c",
+      "memory_cap_envelope_mib": 82944
+    },
+    {
+      "name": "e2_memory_breakdown_d02d261c_20261017",
+      "config": "configs/rerun_d02d261c_cpu40_20261017/e2_memory_breakdown_d02d261c_20261017.json",
+      "array_config": "configs/rerun_d02d261c_cpu40_20261017/arrays/e2_memory_breakdown_d02d261c_20261017.json",
+      "software_root": "deps/LinearCParty-d02d261c",
+      "build_dir": "build/stage-timing-d02d261c",
+      "memory_cap_envelope_mib": 82944
+    },
+    {
+      "name": "e2_parallel_impact_w1_d02d261c_20261017",
+      "config": "configs/rerun_d02d261c_cpu40_20261017/e2_parallel_impact_w1_d02d261c_20261017.json",
+      "array_config": "configs/rerun_d02d261c_cpu40_20261017/arrays/e2_parallel_impact_w1_d02d261c_20261017.json",
+      "software_root": "deps/LinearCParty-d02d261c",
+      "build_dir": "build/linear-cparty-d02d261c",
+      "memory_cap_envelope_mib": 9216
+    },
+    {
+      "name": "e2_parallel_impact_w10_d02d261c_20261017",
+      "config": "configs/rerun_d02d261c_cpu40_20261017/e2_parallel_impact_w10_d02d261c_20261017.json",
+      "array_config": "configs/rerun_d02d261c_cpu40_20261017/arrays/e2_parallel_impact_w10_d02d261c_20261017.json",
+      "software_root": "deps/LinearCParty-d02d261c",
+      "build_dir": "build/linear-cparty-d02d261c",
+      "memory_cap_envelope_mib": 82944
+    }
+  ]
+}
