@@ -3,81 +3,200 @@
     183,
     90
   ],
+  "beam_width": 200,
+  "panel_beam_widths": {
+    "B": 200,
+    "C": 200,
+    "D": 200
+  },
+  "accessibility_overlay": {
+    "panel": "C",
+    "scaffold": "G0.7",
+    "beam_width": 400,
+    "color": "#2a78d6",
+    "alpha": 0.4,
+    "linewidth": 1.4
+  },
+  "context_program": "LinearPKCapR",
+  "accessibility_program": "LinearPKRaccess",
   "region_one_based_inclusive": [
-    20350,
-    20600
+    21000,
+    21300
   ],
   "focus_window_starts_one_based_inclusive": [
-    20451,
-    20500
+    21134,
+    21143
   ],
   "window_length": 8,
   "focus_bases_one_based_inclusive": [
-    20451,
-    20507
+    21134,
+    21150
   ],
   "bpp_display_cutoff": 0.01,
   "bpp_export_cutoff": 0.001,
   "arc_counts": {
     "G0.7": {
-      "scaffold": 17,
-      "new_nested": 130,
+      "scaffold": 44,
+      "new_nested": 139,
       "crossing": 0,
-      "external_omitted": 55
+      "external_omitted": 53
     },
     "emptyG": {
       "scaffold": 0,
-      "new_nested": 217,
+      "new_nested": 165,
       "crossing": 0,
-      "external_omitted": 24
+      "external_omitted": 204
     }
   },
   "diagnostics": {
     "G0.7": {
-      "focus_mean": 0.5267654630819681,
-      "fixed_window_raw_residual": 1.3598850091679405e-13,
+      "focus_mean": 0.785137595592449,
+      "fixed_window_raw_residual": 1.893924470378061e-13,
+      "bpp_table_crosschecked": true,
+      "bpp_pairs": 31884,
+      "focus_windows": 10,
+      "focus_scaffold_paired_bases": 0,
       "focus_context_max": {
-        "Stem": 0.9687658861729084,
-        "Hairpin": 0.697983459878604,
-        "Bulge": 0.0396000215923645,
-        "Internal": 0.2523170011644709,
-        "Multiloop": 0.9346759331799019,
+        "Stem": 0.11494253857323433,
+        "Hairpin": 0.8823146000586131,
+        "Bulge": 0.07475685930633376,
+        "Internal": 0.17675826237801154,
+        "Multiloop": 0.043439210925406306,
         "Exterior": 0.0,
-        "PseudoLoop": 2.3242794731993585e-11
+        "PseudoLoop": 4.121174222934121e-23
       }
     },
     "emptyG": {
-      "focus_mean": 0.013738773627232586,
+      "focus_mean": 0.011004753319797231,
       "fixed_window_raw_residual": 0.0,
+      "bpp_table_crosschecked": false,
+      "bpp_pairs": 58928,
+      "focus_windows": 10,
+      "focus_scaffold_paired_bases": 0,
       "focus_context_max": {
-        "Stem": 0.9988000961468773,
-        "Hairpin": 0.772802263697954,
-        "Bulge": 0.41461786174731313,
-        "Internal": 0.9915691987307056,
-        "Multiloop": 0.48889695284866314,
-        "Exterior": 1.5592341001700358e-21,
+        "Stem": 0.893199428376354,
+        "Hairpin": 1.8192856797354137e-08,
+        "Bulge": 0.9217140288603682,
+        "Internal": 0.7529110137572044,
+        "Multiloop": 1.0564364679403055e-08,
+        "Exterior": 3.878880191248498e-38,
         "PseudoLoop": 0.0
       }
     }
   },
   "sampling_validation": [
     {
-      "beam": 100,
-      "samples": 1000,
-      "sample_pairs": 499500,
-      "histogram_counts_exact": true,
-      "means_verified": true,
-      "reference_distances_verified": true
-    },
-    {
       "beam": 200,
       "samples": 1000,
       "sample_pairs": 499500,
       "histogram_counts_exact": true,
       "means_verified": true,
-      "reference_distances_verified": true
+      "reference_distances_verified": true,
+      "exact_means": {
+        "sample_sample": 0.6855680095527139,
+        "sample_MFE": 0.6049100563496258,
+        "sample_MEA": 0.5779926080212707
+      }
     }
   ],
+  "accessibility_validation": {
+    "G0.7": {
+      "200": {
+        "focus_mean": 0.785137595592449,
+        "focus_values": [
+          0.7982369621922358,
+          0.7942934206480893,
+          0.8197981607781379,
+          0.8327702662363288,
+          0.825954718938567,
+          0.8186474700117042,
+          0.7388870220362808,
+          0.7549407506394232,
+          0.7441913942889814,
+          0.7236557901547404
+        ],
+        "fixed_window_raw_residual": 1.893924470378061e-13,
+        "full_transcript_table_crosschecked": true
+      },
+      "400": {
+        "focus_mean": 0.7851375955939182,
+        "focus_values": [
+          0.7982369621937289,
+          0.7942934206495753,
+          0.8197981607796702,
+          0.8327702662378847,
+          0.8259547189401105,
+          0.8186474700132343,
+          0.7388870220376659,
+          0.7549407506408375,
+          0.7441913942903762,
+          0.7236557901560978
+        ],
+        "fixed_window_raw_residual": 2.3002211030007103e-13,
+        "full_transcript_table_crosschecked": true
+      }
+    },
+    "emptyG": {
+      "100": {
+        "focus_mean": 3.103196239844372e-05,
+        "focus_values": [
+          0.00012856824917944413,
+          5.0259372103815975e-05,
+          5.2731960246324886e-06,
+          7.0803227367124005e-06,
+          6.0547833388675146e-06,
+          5.905530545847478e-06,
+          5.632396528976813e-06,
+          5.501436602160889e-06,
+          3.053967797852369e-05,
+          6.550465894545582e-05
+        ],
+        "fixed_window_raw_residual": 0.0,
+        "full_transcript_table_crosschecked": true
+      },
+      "200": {
+        "focus_mean": 0.011004753319797231,
+        "focus_values": [
+          0.033536632117204604,
+          0.024190291312669022,
+          0.021937687994906495,
+          0.02217679758487574,
+          0.007524064721884351,
+          0.00026918188608914526,
+          0.0001349143798312984,
+          6.449363982682188e-05,
+          0.0001410634694398458,
+          7.240609124498808e-05
+        ],
+        "fixed_window_raw_residual": 0.0,
+        "full_transcript_table_crosschecked": true
+      }
+    }
+  },
+  "beam_width_sensitivity": {
+    "G0.7": {
+      "beam_widths": [
+        200,
+        400
+      ],
+      "focus_windows": 10,
+      "mean_absolute_change": 1.4692580485586859e-12,
+      "absolute_mean_change": 1.4691581284864696e-12,
+      "max_absolute_window_change": 1.5559775690121569e-12,
+      "every_window_change_below_0_05": true
+    },
+    "emptyG": {
+      "beam_widths": [
+        100,
+        200
+      ],
+      "focus_windows": 10,
+      "mean_absolute_change": 0.010973721357398786,
+      "absolute_mean_change": 0.010973721357398788,
+      "max_absolute_window_change": 0.03340806386802516,
+      "every_window_change_below_0_05": true
+    }
+  },
   "source_tables_and_inputs": [
     {
       "path": "results/local/e3-neat1-20261016/provenance.json",
@@ -133,75 +252,51 @@
   "streamed_artifacts": [
     {
       "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
-      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/stdout.txt",
-      "sha256": "3df7e467b84da323627381a587e617c19385c8a0f8f6476ee738fd7578b988db",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "65abefde0171cfa126cd0c93fd99b6eabec599e9936b3e30f943ce47d44fff12",
       "bytes": 68294,
       "command": [
         "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearCParty",
         "-i",
         "/tmp/9029032.1.all.q/lcp-task-dis832bn/inputs/NEAT1_2.txt",
         "-b",
-        "100",
+        "200",
         "--max-hairpin",
-        "100",
+        "200",
         "--max-case3-depth",
-        "100",
+        "200",
         "--ranking",
         "outer",
         "--bpp-cutoff",
         "0.001",
         "--bpp",
-        "/tmp/9029032.1.all.q/lcp-task-dis832bn/jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/bpp.tsv"
+        "/tmp/9029032.1.all.q/lcp-task-dis832bn/jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/bpp.tsv"
       ],
-      "finished_utc": "2026-10-16T05:19:27.401525+00:00"
+      "finished_utc": "2026-10-16T05:45:06.869647+00:00"
     },
     {
       "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
-      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/bpp.tsv",
-      "sha256": "95f6ca5e2b5a4a74884438d28be13cd98be34e756503fde6888e9d73989ab172",
-      "bytes": 899348,
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "7802f1d08f07ca3a97fbbc6c6ac4f09d341a6e62e054ec7d8404f160e5b7a2d3",
+      "bytes": 946739,
       "command": [
         "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearCParty",
         "-i",
         "/tmp/9029032.1.all.q/lcp-task-dis832bn/inputs/NEAT1_2.txt",
         "-b",
-        "100",
+        "200",
         "--max-hairpin",
-        "100",
+        "200",
         "--max-case3-depth",
-        "100",
+        "200",
         "--ranking",
         "outer",
         "--bpp-cutoff",
         "0.001",
         "--bpp",
-        "/tmp/9029032.1.all.q/lcp-task-dis832bn/jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/bpp.tsv"
+        "/tmp/9029032.1.all.q/lcp-task-dis832bn/jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/bpp.tsv"
       ],
-      "finished_utc": "2026-10-16T05:19:27.401525+00:00"
-    },
-    {
-      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
-      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/stdout.txt",
-      "sha256": "3d40920cfd205da4f13fbbfc9c0aa73635bca4c428fddf3515316004a1244745",
-      "bytes": 11333,
-      "command": [
-        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearCParty",
-        "-i",
-        "/tmp/9029033.1.all.q/lcp-task-0ck1qspg/inputs/NEAT1_1.txt",
-        "-b",
-        "100",
-        "--max-hairpin",
-        "100",
-        "--max-case3-depth",
-        "100",
-        "--ranking",
-        "outer",
-        "--bpp-cutoff",
-        "0.001",
-        "--bpp",
-        "/tmp/9029033.1.all.q/lcp-task-0ck1qspg/jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/bpp.tsv"
-      ],
-      "finished_utc": "2026-10-16T05:05:18.881387+00:00"
+      "finished_utc": "2026-10-16T05:45:06.869647+00:00"
     },
     {
       "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
@@ -229,46 +324,23 @@
     },
     {
       "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
-      "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/stdout.txt",
-      "sha256": "61f5e7e73fb0bf8199ec22d994dbae678ef28dd29af2be50030fc7622b7f426c",
-      "bytes": 2833953,
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "2a528f7fd8af4fbf84e2b269b27d605d0d512bda0062f044f7b8afdcf6ffb017",
+      "bytes": 2523575,
       "command": [
         "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKCapR",
         "-i",
         "/tmp/9029034.1.all.q/lcp-task-2xwx3etl/inputs/NEAT1_2.txt",
         "-b",
-        "100",
+        "200",
         "--max-hairpin",
-        "100",
+        "200",
         "--max-case3-depth",
-        "100",
+        "200",
         "--ranking",
         "outer"
       ],
-      "finished_utc": "2026-10-16T05:14:18.387241+00:00"
-    },
-    {
-      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
-      "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/stdout.txt",
-      "sha256": "e5ad338c323ef4e5d63c652c1c8c56c0fc845a00179729247e2451df3a16f4bf",
-      "bytes": 11314,
-      "command": [
-        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKMEA",
-        "-i",
-        "/tmp/9029037.1.all.q/lcp-task-2uqht9az/inputs/NEAT1_1.txt",
-        "-b",
-        "100",
-        "--max-hairpin",
-        "100",
-        "--max-case3-depth",
-        "100",
-        "--ranking",
-        "outer",
-        "--gamma",
-        "1",
-        "--stats"
-      ],
-      "finished_utc": "2026-10-16T05:05:40.536622+00:00"
+      "finished_utc": "2026-10-16T05:30:17.849451+00:00"
     },
     {
       "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
@@ -295,51 +367,49 @@
     },
     {
       "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
-      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
-      "sha256": "647d52cb8266c650e22a4202bd220a8dcb75f694e59c8c933cbd86e7a4eec58e",
-      "bytes": 2233098,
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "0a33f79818c7514d8dc6c911aa4c178c1115b92223810bc4e32229092a8eca88",
+      "bytes": 2200252,
       "command": [
         "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKRaccess",
         "-i",
         "/tmp/9029039.1.all.q/lcp-task-gw8coyeq/inputs/NEAT1_2.txt",
         "-b",
-        "100",
+        "200",
         "--max-hairpin",
-        "100",
+        "200",
         "--max-case3-depth",
-        "100",
+        "200",
         "--ranking",
         "outer",
         "--access-len",
         "1,4,8,16",
         "--probability"
       ],
-      "finished_utc": "2026-10-16T05:13:52.885771+00:00"
+      "finished_utc": "2026-10-16T05:28:30.997194+00:00"
     },
     {
-      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
-      "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/stdout.txt",
-      "sha256": "940c9c4f873fae4e078d14478c284e25950adb213352e6e0b987f599f043d2c8",
-      "bytes": 3762767,
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "6db96196b13a2088559d7d1793176e3fbda02e046be6a1cf39440b0e26151f14",
+      "bytes": 2081717,
       "command": [
-        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKSampling",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKRaccess",
         "-i",
-        "/tmp/9029044.1.all.q/lcp-task-hitl665s/inputs/NEAT1_1.txt",
+        "/tmp/9029039.1.all.q/lcp-task-gw8coyeq/inputs/NEAT1_2.txt",
         "-b",
-        "100",
+        "400",
         "--max-hairpin",
-        "100",
+        "400",
         "--max-case3-depth",
-        "100",
+        "400",
         "--ranking",
         "outer",
-        "-k",
-        "1000",
-        "--seed",
-        "20261016",
-        "--unique"
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
       ],
-      "finished_utc": "2026-10-16T05:04:55.545722+00:00"
+      "finished_utc": "2026-10-16T06:05:25.522714+00:00"
     },
     {
       "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
@@ -368,71 +438,75 @@
     },
     {
       "archive": "results/runs/e3-neat1-variants-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
-      "member": "jobs/NEAT1_2_emptyG-beam100_outer-LinearCParty-rep0/stdout.txt",
-      "sha256": "d7649f498a2273c1941233bae4c5a481ad962997fd3066aa13539863d1a0c8ed",
+      "member": "jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/stdout.txt",
       "bytes": 68301,
+      "sha256": "25812627fdb550d438557210f87e38f4aa969c84a281020b01cb97e8c0b9365c",
       "command": [
         "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearCParty",
         "-i",
         "/tmp/9029226.1.all.q/lcp-task-xzg3caqz/inputs/NEAT1_2_emptyG.txt",
         "-b",
-        "100",
+        "200",
         "--max-hairpin",
-        "100",
+        "200",
         "--max-case3-depth",
-        "100",
+        "200",
         "--ranking",
         "outer",
         "--bpp-cutoff",
         "0.001",
         "--bpp",
-        "/tmp/9029226.1.all.q/lcp-task-xzg3caqz/jobs/NEAT1_2_emptyG-beam100_outer-LinearCParty-rep0/bpp.tsv"
+        "/tmp/9029226.1.all.q/lcp-task-xzg3caqz/jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/bpp.tsv"
       ],
-      "finished_utc": "2026-10-16T06:05:46.992380+00:00"
+      "finished_utc": "2026-10-16T07:46:46.826968+00:00",
+      "archive_end": 3929600,
+      "source": "supplemental_checkpoint"
     },
     {
       "archive": "results/runs/e3-neat1-variants-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
-      "member": "jobs/NEAT1_2_emptyG-beam100_outer-LinearCParty-rep0/bpp.tsv",
-      "sha256": "3a26b0b9f936d823fbe480df58aacd4508592296981164c97444b2c54edfe2b5",
-      "bytes": 1867884,
+      "member": "jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/bpp.tsv",
+      "bytes": 1900082,
+      "sha256": "9690c4afd855496b13377226484cb399d966349e7cd0cfdd988b2fe7c4356164",
       "command": [
         "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearCParty",
         "-i",
         "/tmp/9029226.1.all.q/lcp-task-xzg3caqz/inputs/NEAT1_2_emptyG.txt",
         "-b",
-        "100",
+        "200",
         "--max-hairpin",
-        "100",
+        "200",
         "--max-case3-depth",
-        "100",
+        "200",
         "--ranking",
         "outer",
         "--bpp-cutoff",
         "0.001",
         "--bpp",
-        "/tmp/9029226.1.all.q/lcp-task-xzg3caqz/jobs/NEAT1_2_emptyG-beam100_outer-LinearCParty-rep0/bpp.tsv"
+        "/tmp/9029226.1.all.q/lcp-task-xzg3caqz/jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/bpp.tsv"
       ],
-      "finished_utc": "2026-10-16T06:05:46.992380+00:00"
+      "finished_utc": "2026-10-16T07:46:46.826968+00:00",
+      "archive_end": 3929600,
+      "source": "supplemental_checkpoint"
     },
     {
       "archive": "results/runs/e3-neat1-variants-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
-      "member": "jobs/NEAT1_2_emptyG-beam100_outer-LinearPKCapR-rep0/stdout.txt",
-      "sha256": "6314a3e7a7cd04e56f80c93acd6d00eee1caae1f40fcdc9c51406d971a56384e",
-      "bytes": 2979762,
+      "member": "jobs/NEAT1_2_emptyG-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "7a179dfdb32489ed80647ede915887c7ca2346a7cae6d36867d9645b103f61ca",
+      "bytes": 2998671,
       "command": [
         "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKCapR",
         "-i",
         "/tmp/9029228.1.all.q/lcp-task-kns4gfmj/inputs/NEAT1_2_emptyG.txt",
         "-b",
-        "100",
+        "200",
         "--max-hairpin",
-        "100",
+        "200",
         "--max-case3-depth",
-        "100",
+        "200",
         "--ranking",
         "outer"
       ],
-      "finished_utc": "2026-10-16T05:53:45.862954+00:00"
+      "finished_utc": "2026-10-16T07:01:57.550242+00:00"
     },
     {
       "archive": "results/runs/e3-neat1-variants-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
@@ -456,11 +530,124 @@
         "--probability"
       ],
       "finished_utc": "2026-10-16T05:52:18.156885+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2_emptyG-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "f89fb6c27ef31c6ea130b81347a8bb9a18537829237890e979ad6280a027ff06",
+      "bytes": 2331423,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearPKRaccess",
+        "-i",
+        "/tmp/9029230.1.all.q/lcp-task-ehq1df__/inputs/NEAT1_2_emptyG.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-16T06:57:48.763141+00:00"
     }
   ],
-  "script_sha256": "b44b155a73e097a858354c001273b3ad031d98742aa4ecbda6677f12a07106ef",
+  "supplemental_checkpoints": [
+    {
+      "path": "results/runs/e3-neat1-variants-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_results.jsonl",
+      "snapshot_bytes": 8478,
+      "complete_bytes": 8478,
+      "sha256_complete_lines": "73004757796446be684925e26035e09666dd96e07f027aee5079de0bdcb601ab",
+      "ignored_partial_tail": 0,
+      "selected_job": {
+        "status": "success",
+        "returncode": 0,
+        "error": null,
+        "elapsed_seconds": 8315.831096419133,
+        "time_wall_seconds": 8315.82,
+        "peak_rss_kib": 13689652,
+        "id": "NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0",
+        "input": "NEAT1_2_emptyG",
+        "mode": "beam200_outer",
+        "program": "LinearCParty",
+        "warmup": false,
+        "repetition": 0,
+        "command": [
+          "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-e2cecbb4/LinearCParty",
+          "-i",
+          "/tmp/9029226.1.all.q/lcp-task-xzg3caqz/inputs/NEAT1_2_emptyG.txt",
+          "-b",
+          "200",
+          "--max-hairpin",
+          "200",
+          "--max-case3-depth",
+          "200",
+          "--ranking",
+          "outer",
+          "--bpp-cutoff",
+          "0.001",
+          "--bpp",
+          "/tmp/9029226.1.all.q/lcp-task-xzg3caqz/jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/bpp.tsv"
+        ],
+        "started_utc": "2026-10-16T05:28:10.988098+00:00",
+        "finished_utc": "2026-10-16T07:46:46.826968+00:00",
+        "directory": "jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0",
+        "output_archive": "task_outputs.tar",
+        "archive_end": 3929600,
+        "artifacts": {
+          "jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/command.json": {
+            "bytes": 583,
+            "sha256": "176e2a3be0719dcec5acbebac1ccfc70304b370f3679114b79d9dbbd58680449"
+          },
+          "jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/stdout.txt": {
+            "bytes": 68301,
+            "sha256": "25812627fdb550d438557210f87e38f4aa969c84a281020b01cb97e8c0b9365c"
+          },
+          "jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/stderr.txt": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/time.tsv": {
+            "bytes": 17,
+            "sha256": "4a308153c8638a11b9a506b61d103beb0cf7cdf3962e0b94378c28d8e3832ef6"
+          },
+          "jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/bpp.tsv": {
+            "bytes": 1900082,
+            "sha256": "9690c4afd855496b13377226484cb399d966349e7cd0cfdd988b2fe7c4356164"
+          },
+          "jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/result.json": {
+            "bytes": 1000,
+            "sha256": "9b13f311be3bede4a270e2533fa600da0771bc6dc65f1dd6e2971afedc0b8965"
+          }
+        },
+        "stdout_summary": {
+          "bytes": 68301,
+          "sha256": "25812627fdb550d438557210f87e38f4aa969c84a281020b01cb97e8c0b9365c",
+          "tail": "...))).))((.((((((((((....((((((((((((((((.((((((.(((.(((((.(((((...((((((((.(((((.(((...(((.......(((.((((....)))))))........)))...))).)))))..)))...)))..))...))))))))))...)))...))).))).))..))).)))))...)))))).)))))))).)).))(((((((.............)))))))(((..((((((((....((((..(((....))).))))))))))))...)))..(((...))).(.(((((((((..(((((..(((((((.(..(((((..(((..............................(((((.(((((.......(((.(((((((((((((.(((...(((.((...(((..(((....((((..(((((.((.(((((((..(((((................)))))..).)))))).)).)))))..))))))).))))).)))......))).)))...))))))))).).)))))))).))))))))..)))))..).)))))))..)))))........))))))))).).(((.(.(((....((.((((((((.((.(((..........(((((((((.((((......((((...))))......)))).)))))))))..........))).).).)))))).)).))...))).).))).................................((((..((((..(((..(((((((((..(((....))))))))))))))).))))..)))).((((((.((.((..(((.((((.((....((....((((((((.(((((.(((((((((((((((..(.((((((((.((((((((((((((((((.((....))..))))))))).)))))))))))).....)))))...)..))).........))).))).))))))))))).)))))))))))).)))).))).)).)).)))))).((((...))))......((((((....))))))((((.(.(((..(((((....((((((((((....(((((....((((..((((((...((.((..((((((((((((((.(((.(((.(((((......((((((.........................((((((((((.((((((...((((..(((...((((..(((((.((.(..((..........))..))).)))))....))))..)))..))))..)))))).).)))).))))).)))))))))))))).))).)))))..))))))))).))))..)))))).)))).....)))))...))))).))))))))))..)))).))))...........(((((((((....(((......(((.((......))))).....)))......)))))))))...........)))))).))))....................((((((((.(((....((((((...)))))).....))).)))))))).....(((((....)))))((((((((......))))))))..(((((((((((.(((((.(((..........))).)))))..)))..))))..)))).(((((((.(((......)))))))))).((((.(((((.((.(..(((((((((.....))))...))))).).)).))))).)))).((((((.(((.(((((((((((...))))))))))).))).)))))).((((((...(((((((((((((((.(((((((..(.(((((((((.((((((.....))))..)).))))))))......).)..)))).)))))).))).....)))))))))..))))))..((((..........))))......)).... (-6260.64)\nensemble free energy: -6673.2865 kcal/mol\n"
+        },
+        "stderr_summary": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tail": ""
+        }
+      },
+      "selected_record_sha256": "005c70e973e0aa4e189ec85f71e4076ae036529997fb41040742e6c233e75390"
+    }
+  ],
+  "script_sha256": "dec8d0dc506c9d8f26102f639b0dbf23ee4beff563146fb1ca249528bab2a3bf",
   "command": [
-    "experiments/scripts/make_figure4.py"
+    "experiments/scripts/make_figure4.py",
+    "--beam",
+    "200",
+    "--region",
+    "21000",
+    "21300",
+    "--focus",
+    "21134",
+    "21143"
   ],
   "software_revision": "e2cecbb4",
   "coordinate_convention": "one-based inclusive",
@@ -470,6 +657,7 @@
     "smoothing": false,
     "raw_archives_extracted": false,
     "rna_cli_called": false,
-    "all_pairwise_distances_recomputed": true
+    "all_pairwise_distances_recomputed": true,
+    "focus_windows_contain_only_scaffold_free_bases": true
   }
 }
