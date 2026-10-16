@@ -187,7 +187,7 @@ def empirical_slopes(cpu):
     return rows
 
 
-def figures(output, cpu, rna):
+def figures(output, cpu, rna, revision="d21618c5", workers=1):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -212,7 +212,7 @@ def figures(output, cpu, rna):
             ax.grid(alpha=.2)
         handles, labels = axes[0].get_legend_handles_labels()
         fig.legend(handles, labels, loc="outside lower center", ncol=4, fontsize=8)
-        fig.suptitle("d21618c5; cpu_40, outer, b=h=d=100. Median across 3 seeds; band spans 9 measurements.", fontsize=10)
+        fig.suptitle(f"{revision}; cpu_40, workers={workers}, outer, b=h=d=100. Median across 3 seeds; band spans 9 measurements.", fontsize=10)
         fig.savefig(output / ("scaling_time.png" if outcome == "wall_seconds" else "scaling_rss.png"), dpi=170)
         plt.close(fig)
     fig, axes = plt.subplots(2, 3, figsize=(14, 8), constrained_layout=True)
@@ -224,7 +224,7 @@ def figures(output, cpu, rna):
                            s=12, c=[colors[shape]], label=shape)
             ax.set(xscale="log", yscale="log", xlabel="Same-loop free endpoint pairs J_V (TURN=3)", ylabel=ylabel, title=program)
             ax.grid(alpha=.2)
-    fig.suptitle("Synthetic inputs: scaffold descriptor and observed whole-CLI resource use (d21618c5)")
+    fig.suptitle(f"Synthetic inputs: scaffold descriptor and observed whole-CLI resource use ({revision})")
     fig.savefig(output / "feature_resources.png", dpi=170)
     plt.close(fig)
     fig, axes = plt.subplots(1, 2, figsize=(10, 4), constrained_layout=True)
@@ -238,7 +238,7 @@ def figures(output, cpu, rna):
             ax.set(xlabel="Sequence length (kb)", ylabel=ylabel)
             ax.grid(alpha=.2)
     axes[0].legend(fontsize=8)
-    fig.suptitle("RNAcentral d21618c5; cpu_40, outer, b=h=d=100; median and range of 3 measurements", fontsize=10)
+    fig.suptitle(f"RNAcentral {revision}; cpu_40, workers={workers}, outer, b=h=d=100; median and range of 3 measurements", fontsize=10)
     fig.savefig(output / "rnacentral_time_rss.png", dpi=180)
     plt.close(fig)
 
@@ -248,21 +248,25 @@ def analyze(args):
     if output.exists():
         raise ValueError("use a new E2 output directory")
     dataset, hashes = load_dataset(args.dataset)
-    specifications = [(args.synthetic_run, "synthetic_current", dataset, (100, 100, 100), "cpu_40=1"),
-        (args.rna_run, "rnacentral_current", {}, (100, 100, 100), "cpu_40=1"),
-        (args.previous_rna_run, "rnacentral_15aa_cap100", {}, (100, 100, 100), "node_f=1"),
-        (args.previous_rna_cap30_run, "rnacentral_15aa_cap30", {}, (100, 30, 30), "node_f=1")]
+    specifications = [(args.synthetic_run, "synthetic_current", dataset, (100, 100, 100), "cpu_40=1", args.workers),
+        (args.rna_run, "rnacentral_current", {}, (100, 100, 100), "cpu_40=1", args.workers),
+        (args.previous_rna_run, "rnacentral_previous" if args.skip_cap30_history else "rnacentral_15aa_cap100",
+         {}, (100, 100, 100), args.previous_resource, 1)]
+    if not args.skip_cap30_history:
+        specifications.append((args.previous_rna_cap30_run, "rnacentral_15aa_cap30", {}, (100, 30, 30), "node_f=1", 1))
+    if args.previous_synthetic_run:
+        specifications.append((args.previous_synthetic_run, "synthetic_previous", dataset, (100, 100, 100), args.previous_resource, 1))
     cohorts, provenance, outcomes = [], {}, {}
-    for path, label, data, caps, resource in specifications:
-        rows, p = load_run(path, label, data, caps, resource)
+    for path, label, data, caps, resource, workers in specifications:
+        rows, p = load_run(path, label, data, caps, resource, expected_workers=workers)
         provenance[label] = {**p, "mode": RunReader(path).manifest["config"]["modes"][0]}
         cohorts.append(rows)
         if label.endswith("current"):
             if provenance[label]["mode"]["args"][-2:] != ["--ranking", "outer"]:
                 raise ValueError("current run must explicitly select outer ranking")
             outcomes[label] = audit_outcomes(path)
-    cpu, rna, old100, old30 = cohorts
-    if list(map(len, cohorts)) != [468, 21, 21, 21]:
+    cpu, rna = cohorts[:2]
+    if [len(c) for c in cohorts] != [468 if s[1].startswith("synthetic") else 21 for s in specifications]:
         raise ValueError("unexpected cohort counts")
     if provenance["synthetic_current"]["signature"] != provenance["rnacentral_current"]["signature"]:
         raise ValueError("current E2 software/model/output mismatch")
@@ -278,8 +282,26 @@ def analyze(args):
                     row[name + "_outside_training_features"] = [k for k, (lo, hi) in model["training_range"].items()
                                                                  if not lo <= row[k] <= hi]
     pairs = geometry_comparisons(cpu, rna, models)
-    for old in (old100, old30):
-        pairs.extend(historical_comparisons(old, rna))
+    for old, specification in zip(cohorts[2:], specifications[2:]):
+        pairs.extend(historical_comparisons(old, cpu if specification[1].startswith("synthetic") else rna))
+    if args.parallel_w1_run or args.parallel_w10_run:
+        if not (args.parallel_w1_run and args.parallel_w10_run):
+            raise ValueError("supply both parallel comparison runs")
+        for path, label, workers in ((args.parallel_w1_run, "parallel_w1", 1), (args.parallel_w10_run, "parallel_w10", 10)):
+            rows, p = load_run(path, label, {}, (100, 100, 100), "cpu_40=1", expected_workers=workers)
+            if (len(rows) != 9 or p["signature"] != provenance["rnacentral_current"]["signature"]
+                    or p["mode"] != provenance["rnacentral_current"]["mode"]):
+                raise ValueError("parallel comparison cohort/software mismatch")
+            outcomes[label] = audit_outcomes(path)
+            cohorts.append(rows)
+            provenance[label] = p
+        w1, w10 = cohorts[-2:]
+        names = {r["name"] for r in w1}
+        production = [r for r in rna if r["name"] in names]
+        for group, kind in ((w10, "parallel_w10_over_w1"), (production, "production_over_w1")):
+            for pair in historical_comparisons(w1, group):
+                pair["kind"] = kind
+                pairs.append(pair)
     variability = [{"run": label, "program": program, "outcome": outcome,
         "relative_range": distribution([r[outcome + "_relative_range"] for r in rows if r["program"] == program]),
         "over_5_percent": sum(r[outcome + "_relative_range"] > .05 for r in rows if r["program"] == program)}
@@ -295,22 +317,35 @@ def analyze(args):
         "validation": "Refit within each training fold, leave one n/family/seed out; synthetic inputs only"},
         "outcome_counts": outcomes, "input_counts": {k: p["selected_inputs"] for k, p in provenance.items()},
         "variability": variability, "correlations": correlations, "models": models, "feature_block_ablation": ablation,
-        "historical_comparison_caveat": "Same S/G and b; version, ranking, allocation and date differ; cap30 also changes h,d. No isolated speedup claim.",
+        "historical_comparison_caveat": (
+            "Same S/G, b/h/d, outer ranking and requested outputs; version, workers, host and date differ. No implementation-only speedup claim."
+            if args.skip_cap30_history else
+            "Same S/G and b; version, ranking, allocation and date differ; cap30 also changes h,d. No isolated speedup claim."),
         "limitations": ["Three repetitions, fixed input cohort; S also changes between synthetic shapes.",
             "Correlated geometry descriptors do not identify causal work or RSS bytes.",
             "RNAcentral predictions extrapolate beyond synthetic n=250..4000, without refitting or resource calibration.",
             "CapR reports no numeric root; successful complete profiles use the CLI's finite-root check."],
         "provenance": {"runs": provenance, "dataset_sha256": hashes,
             "scripts_sha256": {name: file_digest(Path(__file__).with_name(name)) for name in
-                (Path(__file__).name, "analyze_e0.py", "analyze_e2_shape.py", "analyze_e2_synthetic.py", "scaffold_features.py", "task_storage.py")},
+                (Path(__file__).name, "analyze_e0.py", "analyze_e2_shape.py", "analyze_e2_synthetic.py", "analyze_e2_diagnostics.py", "scaffold_features.py", "task_storage.py")},
             "tar_extractions_to_filesystem": 0}}
-    summarize_e0(args.e0_analysis, args.e0_run)
+    summary["comparison_distributions"] = [{"kind": kind, "program": program, "outcome": outcome,
+        **distribution([p[outcome + "_ratio"] for p in pairs if p["kind"] == kind and p["program"] == program])}
+        for kind in sorted({p["kind"] for p in pairs}) for program in PROGRAMS for outcome in OUTCOMES]
+    if args.e0_analysis:
+        summarize_e0(args.e0_analysis, args.e0_run)
     output.mkdir(parents=True)
     write_union_tsv(output / "metrics.tsv", sum(cohorts, []))
     write_union_tsv(output / "comparisons.tsv", pairs)
     write_union_tsv(output / "slopes.tsv", empirical_slopes(cpu))
     save_json(output / "summary.json", summary)
-    figures(output, cpu, rna)
+    revision = provenance["rnacentral_current"]["signature"]["commit"][:8]
+    figures(output, cpu, rna, revision, args.workers)
+    if args.memory_run or args.previous_memory_run:
+        if not (args.memory_run and args.previous_memory_run):
+            raise ValueError("supply both memory breakdown runs")
+        from analyze_e2_diagnostics import analyze_memory
+        analyze_memory(output, args.memory_run, args.previous_memory_run, args.workers)
     print(json.dumps({"metrics_rows": sum(map(len, cohorts)), "comparison_rows": len(pairs),
         "raw_artifacts_verified": sum(p["raw_artifacts_verified"] for p in provenance.values()), "output": str(output)}))
 
@@ -320,11 +355,19 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dataset", default=str(root / "data/e2-synthetic-shapes-20261012"))
     parser.add_argument("--e0-run", default=str(root / "results/runs/e0-bprna-legacy-d21618c5-20261014"))
-    parser.add_argument("--e0-analysis", required=True)
+    parser.add_argument("--e0-analysis", help="Omit for E2-only analysis; existing E0 output stays untouched")
     parser.add_argument("--synthetic-run", default=str(root / "results/runs/e2-synthetic-shapes-d21618c5-20261014"))
     parser.add_argument("--rna-run", default=str(root / "results/runs/e2-rnacentral-d21618c5-20261014"))
     parser.add_argument("--previous-rna-run", default=str(root / "results/runs/e2-rnacentral-capb-timing-20261012"))
     parser.add_argument("--previous-rna-cap30-run", default=str(root / "results/runs/e2-rnacentral-15aa7742-timing-20261011"))
+    parser.add_argument("--workers", type=int, default=1)
+    parser.add_argument("--previous-resource", default="node_f=1")
+    parser.add_argument("--skip-cap30-history", action="store_true")
+    parser.add_argument("--previous-synthetic-run")
+    parser.add_argument("--memory-run")
+    parser.add_argument("--previous-memory-run")
+    parser.add_argument("--parallel-w1-run")
+    parser.add_argument("--parallel-w10-run")
     parser.add_argument("--out", required=True)
     analyze(parser.parse_args())
 

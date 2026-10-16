@@ -10,9 +10,31 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from analyze_e0_e2_runs import FULL_FEATURES, empirical_slopes, historical_comparisons, summarize_e0
+from analyze_e2_diagnostics import MODES, memory_pairs
 
 
 class E0E2RunTests(unittest.TestCase):
+    def test_memory_pairs_match_stage_identity_and_preserve_probe_ratios(self):
+        old = [{"run": "old", "name": name, "mode": mode,
+                "sequence_sha256": name, "scaffold_sha256": "g", "energy_parameter_sha256": "p",
+                "wall_seconds": size * 10, "rss_gib": size * 2, "rss_bytes_per_item_visit": 1024,
+                "item_visits": size * 100, "positive_items": size * 90,
+                "binary_join_probes": size * 1000, "extension_probes": 0,
+                "v_parent_probes": size * 300, "vp_loop_parent_probes": size * 5000}
+               for name, size in (("URS00023C9544", 1), ("URS000241043C", 2)) for mode in MODES]
+        new = [{**r, "run": "new", "rss_gib": r["rss_gib"] / 10} for r in reversed(old)]
+        pairs = memory_pairs(old, new)
+        self.assertEqual(len(pairs), 20)
+        for p in pairs:
+            if p["kind"] == "new_over_previous":
+                self.assertAlmostEqual(p["rss_gib_ratio"], .1)
+                self.assertEqual(p["vp_loop_parent_probes_ratio"], 1)
+            else:
+                self.assertEqual(p["vp_loop_parent_probes_ratio"], 2)
+            self.assertIsNone(p["extension_probes_ratio"])
+        with self.assertRaisesRegex(ValueError, "S/G/parameter mismatch"):
+            memory_pairs(old, [{**new[0], "scaffold_sha256": "changed"}, *new[1:]])
+
     def test_slopes_keep_each_seed_and_series_separate(self):
         rows = [{"program": "LinearCParty", "series": series, "seed": seed, "n": n,
                  "wall_seconds_median": 7 * n**power, "rss_gib_median": .03 * n**.5}

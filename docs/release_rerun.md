@@ -79,3 +79,35 @@ Sequential-work envelopes total 5,782.36 hours, the largest task is 16.79 hours,
 E2 plus the paired check alone needs 31 tasks, 2,063 CLI jobs and 499 planned shared entries.
 The actual e2cecbb4 output comparison, stage-driver build/lock and memory/time calibration remain outstanding; no new build or scheduler submission occurred in this rehearsal.
 If the author retains E0/E1 after output comparison, submit only the selected E2 reruns.
+
+## Completed E2 e2cecbb4 rerun analysis (2026-10-16)
+
+The actual reruns use cpu_40, at most 10 single-thread processes per allocation,
+and an 8 GiB RLIMIT_AS per process, superseding the cpu_16 rehearsal above.
+RNAcentral and synthetic runs retain one warm-up and three measurements;
+the memory driver uses one fresh process per input/stage without warm-ups.
+The w1/w10 check has nine input/CLI combinations, so w10 reaches nine active
+processes. Hosts differ between w1, w10 and production; report paired ratios
+without attributing the entire difference to concurrency or applying a correction.
+
+`analyze_e0_e2_runs.py` keeps its historical run defaults. Omit `--e0-analysis`
+for E2-only work. Use `--workers 10 --previous-resource cpu_40=1
+--skip-cap30-history`, `--previous-synthetic-run`, `--memory-run` with
+`--previous-memory-run`, and `--parallel-w1-run` with `--parallel-w10-run`
+to compare the completed reruns. Specify the new RNAcentral and synthetic
+runs with the existing `--rna-run` and `--synthetic-run` options and d21618c5
+with `--previous-rna-run`. All paths are relative to the caller for analysis;
+`aggregate_array.py --plan` resolves relative paths from the experiment root,
+so use an absolute plan path when calling from the paper root.
+
+The output `results/local/e2-e2cecbb4-20261016/` contains 14 files: CLI metrics,
+comparisons, slopes and model/provenance JSON; four CLI figures; stage metrics,
+family counters, stage comparisons and provenance JSON; one stage figure; and
+validation JSON. Packed artifacts are streamed and never extracted.
+The public work counters are cumulative main-forward counts, not simultaneous
+live retention or allocation bytes. Profiles do not expose work; these fields
+remain NA. Stage RSS differences are not additive memory components.
+
+`validate_e0_e2_runs.py OUTPUT --test-log LOG` accepts an E2-only output;
+the historical `--e0-output` option still validates E0 as before.
+Exclude `test_stage_timing.py` when collecting tests without RNA CLI execution.

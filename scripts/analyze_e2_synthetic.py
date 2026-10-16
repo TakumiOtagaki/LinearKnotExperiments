@@ -199,7 +199,7 @@ def selected_task_jobs(jobs, selected, task_directory):
     return [j for j in jobs if j["input"] in selected and j["directory"].startswith(task_directory + "/run/")]
 
 
-def load_run(path, label, dataset, caps, resource, selected_lengths=None):
+def load_run(path, label, dataset, caps, resource, selected_lengths=None, expected_workers=1):
     reader = RunReader(path)
     m, groups = reader.manifest, defaultdict(list)
     c = m["config"]
@@ -223,8 +223,11 @@ def load_run(path, label, dataset, caps, resource, selected_lengths=None):
         tj = selected_task_jobs(m["jobs"], selected, t["directory"])
         if not tj:
             continue
-        if t["status"] != "success" or t["workers"] != 1 or t["requested_resource"] != resource:
+        if t["status"] != "success" or t["workers"] != expected_workers or t["requested_resource"] != resource:
             raise ValueError("selected timing task has wrong status/allocation/workers")
+        if expected_workers > 1 and not (t.get("parallel_timing", {}).get("allowed") is True
+                and t["parallel_timing"].get("reason", "").strip()):
+            raise ValueError("parallel timing lacks explicit authorization metadata")
         if len({a["hostname"] for a in t["attempts"]}) != 1:
             raise ValueError("timing repetitions pooled across hosts")
         base = Path(path) / t["directory"] / "run"
@@ -266,6 +269,13 @@ def load_run(path, label, dataset, caps, resource, selected_lengths=None):
                 "hostname": t["attempts"][0]["hostname"], "task_manifest_sha256": file_digest(base / "run.json"),
                 "checkpoint_sha256": file_digest(checkpoint) if checkpoint.exists() else None,
                 "raw_artifact_hashes_verified": checkpoint.exists()}
+        if all(j.get("started_utc") and j.get("finished_utc") for j in tj):
+            events = sorted([(j["started_utc"], 1) for j in tj] + [(j["finished_utc"], -1) for j in tj])
+            active = peak = 0
+            for _, change in events:
+                active += change
+                peak = max(peak, active)
+            info["observed_max_active_processes"] = peak
         tasks.append(info)
         task_by_number[t["global_task_number"]] = info
     rows = []
@@ -289,13 +299,14 @@ def load_run(path, label, dataset, caps, resource, selected_lengths=None):
             task = task_by_number[jobs[0]["global_task_number"]]
             rows.append({"run": label, "name": name, "program": program, "family": family, "series": series,
                          "seed": saved["seed"] if saved else None, "branch_budget": saved["branch_budget"] if saved else None,
-                         "resource": resource, "task": task["directory"], "hostname": task["hostname"],
+                         "resource": resource, "workers": expected_workers, "task": task["directory"], "hostname": task["hostname"],
                          **repetition_summary(measured), **f})
     provenance = {"path": str(path), "manifest_sha256": reader.manifest_sha256, "overall_status": m["status"],
                   "selected_inputs": len(selected), "selected_tasks": len(tasks), "measured_jobs": len(rows) * 3,
                   "warmups": len(rows), "unselected_planned_jobs": sum(j["input"] not in selected for j in m["jobs"]),
                   "unselected_statuses": dict(Counter(j["status"] for j in m["jobs"] if j["input"] not in selected)),
-                  "caps": dict(zip(("b", "h", "d"), caps)), "resource": resource, "signature": signature,
+                  "caps": dict(zip(("b", "h", "d"), caps)), "resource": resource, "workers": expected_workers, "signature": signature,
+                  "memory_limit_mib": c.get("memory_limit_mib"), "mode": c["modes"][0],
                   "raw_artifacts_verified": artifacts, "tasks": tasks}
     return rows, provenance
 

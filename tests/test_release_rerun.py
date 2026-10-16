@@ -199,9 +199,15 @@ class RerunConfigTests(unittest.TestCase):
 
     def test_memory_oversubscription_and_invalid_settings_are_refused_before_writing(self):
         for changes in ({"workers": 10}, {"memory_limit_mib": 8192}, {"parallel_slowdown_factor": .5},
-                        {"h_rt": "25:00:00"}, {"workers": 17}, {"resource": "cpu_40"}):
+                        {"h_rt": "25:00:00"}, {"workers": 17}, {"resource": "cpu_8"}):
             with self.subTest(changes=changes), self.assertRaises(ValueError):
                 generate({**self.settings, **changes})
+        cpu40 = generate({**self.settings, "resource": "cpu_40", "workers": 10, "memory_limit_mib": 8192})
+        for _, config, array in cpu40:
+            for tier in array["tiers"]:
+                self.assertEqual(tier["resource"], "cpu_40")
+                self.assertLessEqual(tier["workers"] * config["memory_limit_mib"] + tier["task_overhead_mib"],
+                                     tier["memory_budget_mib"])
         with tempfile.TemporaryDirectory(dir="/tmp") as directory:
             out = Path(directory) / "new"
             with self.assertRaises(ValueError):
