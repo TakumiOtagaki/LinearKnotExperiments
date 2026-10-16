@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "dataset": "NEAT1 scaffold variants for the E3 baseline and E4 sensitivity",
+  "base": "data/neat1-20261016/manifest.json",
+  "linearpartition_commit": "b450fb3e63189073b68d385589035f992080aa3a",
+  "records": [
+    {
+      "name": "NEAT1_1_emptyG",
+      "base": "NEAT1_1",
+      "variant": "emptyG",
+      "length": 3756,
+      "scaffold_pairs": 0,
+      "sequence_sha256": "041121bdb28860f47416a731888b3465085f31b28153bfca6f21adf23e279c12",
+      "scaffold_sha256": "209672a554bc4dc1d2ca61fe098cdf59d66b332cf007dc6320ac31146a841e1d",
+      "path": "NEAT1_1_emptyG.txt",
+      "rule": "empty scaffold"
+    },
+    {
+      "name": "NEAT1_1_p05",
+      "base": "NEAT1_1",
+      "variant": "p0.5",
+      "length": 3756,
+      "scaffold_pairs": 986,
+      "sequence_sha256": "041121bdb28860f47416a731888b3465085f31b28153bfca6f21adf23e279c12",
+      "scaffold_sha256": "0809096c1f8edc69dcfaedf23234215011e94b618fdf1cdde3a2c1a57d878a94",
+      "path": "NEAT1_1_p05.txt",
+      "rule": "LinearPartition-V b=200 dangles 2, p >= 0.5, helices >= 2 pairs"
+    },
+    {
+      "name": "NEAT1_1_p09",
+      "base": "NEAT1_1",
+      "variant": "p0.9",
+      "length": 3756,
+      "scaffold_pairs": 491,
+      "sequence_sha256": "041121bdb28860f47416a731888b3465085f31b28153bfca6f21adf23e279c12",
+      "scaffold_sha256": "e6d878b285910067533585d9d21dbf8ba8c85513b018bd038168561177dd58e3",
+      "path": "NEAT1_1_p09.txt",
+      "rule": "LinearPartition-V b=200 dangles 2, p >= 0.9, helices >= 2 pairs"
+    },
+    {
+      "name": "NEAT1_2_emptyG",
+      "base": "NEAT1_2",
+      "variant": "emptyG",
+      "length": 22743,
+      "scaffold_pairs": 0,
+      "sequence_sha256": "0c1be35c8280ce56ac585d822077e6a0838036a97b6755dc4b994ee1e75af22e",
+      "scaffold_sha256": "76788a2b91f3a0094fb7ef32a8967393e20accb6b5ba0ccce3e85681f773545d",
+      "path": "NEAT1_2_emptyG.txt",
+      "rule": "empty scaffold"
+    }
+  ]
+}
