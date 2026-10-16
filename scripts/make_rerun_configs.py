@@ -18,7 +18,8 @@ TEMPLATES = (
     "e2_rnacentral_d21618c5_20261014", "e2_synthetic_shapes_d21618c5_20261014",
     "e2_memory_breakdown_d21618c5_20261016",
 )
-PARALLEL_REASON = ("Author policy 2026-10-16: fixed single-thread CLI concurrency on cpu_16; "
+ALLOWED_RESOURCES = ("cpu_16", "cpu_40")
+PARALLEL_REASON = ("Author policy 2026-10-16: fixed single-thread CLI concurrency within one cpu_16/cpu_40 allocation; "
                    "record workers and describe concurrent wall-time shifts in Supplementary.")
 
 
@@ -34,13 +35,18 @@ def generate(settings):
         raise ValueError("settings require " + ", ".join(required))
     if not re.fullmatch(r"[A-Za-z0-9_-]+", settings["revision"]) or not re.fullmatch(r"\d{8}", settings["date"]):
         raise ValueError("revision must be a simple name and date must be YYYYMMDD")
-    if settings.get("resource", "cpu_16") != "cpu_16":
-        raise ValueError("release reruns use cpu_16")
+    if settings.get("resource", "cpu_16") not in ALLOWED_RESOURCES:
+        raise ValueError("release reruns use cpu_16 or cpu_40")
     slowdown = positive(settings.get("parallel_slowdown_factor", 1), "parallel_slowdown_factor")
     if slowdown < 1:
         raise ValueError("parallel_slowdown_factor must be at least 1")
     variants = []
-    for template in TEMPLATES:
+    selected_templates = settings.get("templates", list(TEMPLATES))
+    if not selected_templates or any(t not in TEMPLATES for t in selected_templates):
+        raise ValueError("templates must be a non-empty subset of the production templates")
+    if "e2_rnacentral_d21618c5_20261014" not in selected_templates:
+        raise ValueError("the paired parallel check needs the E2 RNAcentral template")
+    for template in selected_templates:
         cp, ap = ROOT / "configs" / (template + ".json"), ROOT / "configs/arrays" / (template + ".json")
         config, array = json.loads(cp.read_text()), json.loads(ap.read_text())
         name = template.split("_d21618c5_")[0] + "_" + settings["revision"] + "_" + settings["date"]
@@ -62,17 +68,18 @@ def generate(settings):
         # Preserve metric definitions; replace resource descriptions inherited from old runs.
         analysis = config.setdefault("analysis", {})
         if "scope" in analysis:
-            analysis["scope"] = re.sub(r"node_f, one thread", "cpu_16, one thread per process", analysis["scope"])
+            analysis["scope"] = re.sub(r"node_f, one thread", f"{settings.get('resource', 'cpu_16')}, one thread per process", analysis["scope"])
         if "memory_limit_kind" in analysis:
             analysis["memory_limit_kind"] = f"Per-process RLIMIT_AS address-space cap, {settings['memory_limit_mib']} MiB; not an RSS limit."
         array["compact_plan"] = True
         array["max_concurrent_tasks"] = 30
-        array["note"] = "Release rerun; cpu_16; time coefficients inherited from the recorded template; sequential-work wall estimate."
+        array["note"] = f"Release rerun; {settings.get('resource', 'cpu_16')}; time coefficients inherited from the recorded template; sequential-work wall estimate."
         if array["measurement"] == "timing":
             array["parallel_timing"] = {"allowed": True, "reason": PARALLEL_REASON}
         for tier in array["tiers"]:
-            tier.update(resource="cpu_16", workers=settings["workers"],
-                        memory_budget_mib=settings.get("memory_budget_mib", math.floor(RESOURCES["cpu_16"][1] * 1e9 / 2**20)),
+            resource = settings.get("resource", "cpu_16")
+            tier.update(resource=resource, workers=settings["workers"],
+                        memory_budget_mib=settings.get("memory_budget_mib", math.floor(RESOURCES[resource][1] * 1e9 / 2**20)),
                         task_overhead_mib=settings.get("task_overhead_mib", 1024))
             limits = tier.setdefault("job_limits", {})
             limits["memory_limit_mib"] = settings["memory_limit_mib"]
@@ -99,15 +106,16 @@ def generate(settings):
     lengths = [len(read_record(experiment_path(i["path"]))[1]) for i in selected]
     if len(selected) != 3:
         raise ValueError("RNAcentral parallel check requires the frozen 4.8/5.5/7.0 kb inputs")
-    for workers in (1, 8):
+    paired = [1, settings["workers"]]
+    for workers in paired:
         config, array = copy.deepcopy(base_config), copy.deepcopy(base_array)
         name = f"e2_parallel_impact_w{workers}_{settings['revision']}_{settings['date']}"
         config["name"] = name.replace("_", "-")
         config["inputs"] = selected
         if "runtime_eligibility" in config:
             config["runtime_eligibility"]["selected_ids"] = [i["name"] for i in selected]
-        config["rerun"].update(workers=workers, paired_workers=[1, 8], selected_lengths=lengths,
-                               scope="Supplementary concurrency check; compare whole-CLI wall time at fixed cpu_16 and thread count.")
+        config["rerun"].update(workers=workers, paired_workers=paired, selected_lengths=lengths,
+                               scope="Supplementary concurrency check; compare whole-CLI wall time at fixed allocation and thread count.")
         array["tiers"] = [copy.deepcopy(base_array["tiers"][0])]
         # Keep all 9 combinations on one task, making 8 CLI slots available.
         tier = array["tiers"][0]

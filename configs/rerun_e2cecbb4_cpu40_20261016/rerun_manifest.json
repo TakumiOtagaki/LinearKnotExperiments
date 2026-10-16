@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-16T01:38:12.973446+00:00",
+  "settings": {
+    "revision": "e2cecbb4",
+    "date": "20261016",
+    "software_root": "deps/LinearCParty-e2cecbb4",
+    "build_dir": "build/linear-cparty-e2cecbb4",
+    "software_lock": "manifests/software-pilot-e2cecbb4.json",
+    "stage_build_dir": "build/stage-timing-e2cecbb4",
+    "stage_software_lock": "manifests/software-stage-timing-e2cecbb4-20261016.json",
+    "resource": "cpu_40",
+    "workers": 10,
+    "memory_limit_mib": 8192,
+    "task_overhead_mib": 1024,
+    "h_rt": "12:00:00",
+    "max_inputs_per_task": 1024,
+    "parallel_slowdown_factor": 1.5,
+    "parallel_check_h_rt": "12:00:00",
+    "note": "2026-10-16 calibration on e2cecbb4: LinearCParty peak RSS 2.83 GiB at 13,652 nt and 4.63 GiB at 29,106 nt (b=h=d=100, outer); 8 GiB RLIMIT_AS per process x 10 on cpu_40. E1 and E0 are not rerun: e2cecbb4 outputs are byte-identical to the adopted d21618c5 beam and d9804df6 exact on 14 inputs (results/local/release-e2cecbb4-vs-adopted-20261016).",
+    "templates": [
+      "e2_rnacentral_d21618c5_20261014",
+      "e2_synthetic_shapes_d21618c5_20261014",
+      "e2_memory_breakdown_d21618c5_20261016"
+    ]
+  },
+  "dry_run": false,
+  "estimate_only": false,
+  "variants": [
+    {
+      "name": "e2_rnacentral_e2cecbb4_20261016",
+      "config": "configs/rerun_e2cecbb4_cpu40_20261016/e2_rnacentral_e2cecbb4_20261016.json",
+      "array_config": "configs/rerun_e2cecbb4_cpu40_20261016/arrays/e2_rnacentral_e2cecbb4_20261016.json",
+      "software_root": "deps/LinearCParty-e2cecbb4",
+      "build_dir": "build/linear-cparty-e2cecbb4",
+      "memory_cap_envelope_mib": 82944
+    },
+    {
+      "name": "e2_synthetic_shapes_e2cecbb4_20261016",
+      "config": "configs/rerun_e2cecbb4_cpu40_20261016/e2_synthetic_shapes_e2cecbb4_20261016.json",
+      "array_config": "configs/rerun_e2cecbb4_cpu40_20261016/arrays/e2_synthetic_shapes_e2cecbb4_20261016.json",
+      "software_root": "deps/LinearCParty-e2cecbb4",
+      "build_dir": "build/linear-cparty-e2cecbb4",
+      "memory_cap_envelope_mib": 82944
+    },
+    {
+      "name": "e2_memory_breakdown_e2cecbb4_20261016",
+      "config": "configs/rerun_e2cecbb4_cpu40_20261016/e2_memory_breakdown_e2cecbb4_20261016.json",
+      "array_config": "configs/rerun_e2cecbb4_cpu40_20261016/arrays/e2_memory_breakdown_e2cecbb4_20261016.json",
+      "software_root": "deps/LinearCParty-e2cecbb4",
+      "build_dir": "build/stage-timing-e2cecbb4",
+      "memory_cap_envelope_mib": 82944
+    },
+    {
+      "name": "e2_parallel_impact_w1_e2cecbb4_20261016",
+      "config": "configs/rerun_e2cecbb4_cpu40_20261016/e2_parallel_impact_w1_e2cecbb4_20261016.json",
+      "array_config": "configs/rerun_e2cecbb4_cpu40_20261016/arrays/e2_parallel_impact_w1_e2cecbb4_20261016.json",
+      "software_root": "deps/LinearCParty-e2cecbb4",
+      "build_dir": "build/linear-cparty-e2cecbb4",
+      "memory_cap_envelope_mib": 9216
+    },
+    {
+      "name": "e2_parallel_impact_w10_e2cecbb4_20261016",
+      "config": "configs/rerun_e2cecbb4_cpu40_20261016/e2_parallel_impact_w10_e2cecbb4_20261016.json",
+      "array_config": "configs/rerun_e2cecbb4_cpu40_20261016/arrays/e2_parallel_impact_w10_e2cecbb4_20261016.json",
+      "software_root": "deps/LinearCParty-e2cecbb4",
+      "build_dir": "build/linear-cparty-e2cecbb4",
+      "memory_cap_envelope_mib": 82944
+    }
+  ]
+}
