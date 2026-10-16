@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "name": "e2-memory-breakdown-febd2bc1-20261016",
+  "purpose": "formal",
+  "description": "Isolated public API stages, one process and one call per input/stage; main-DP activity counters plus lifetime peak RSS. Baseline inside changes retention as well as omitting the outer guide.",
+  "software_lock": "manifests/software-stage-timing-febd2bc1-20261016.json",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "temperature_source": "CLI/API default; verify RT metadata",
+    "build_revision_verified": true
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 2700,
+  "memory_limit_mib": 8192,
+  "warmups": 0,
+  "repetitions": 1,
+  "order": {
+    "kind": "blocked_random",
+    "seed": 20261016
+  },
+  "inputs": [
+    {
+      "name": "URS000233CDDE",
+      "path": "data/rnacentral-initial-20261008/URS000233CDDE.txt"
+    },
+    {
+      "name": "URS00019626CE",
+      "path": "data/rnacentral-initial-20261008/URS00019626CE.txt"
+    },
+    {
+      "name": "URS000239D8A4",
+      "path": "data/rnacentral-initial-20261008/URS000239D8A4.txt"
+    },
+    {
+      "name": "URS00023C9544",
+      "path": "data/rnacentral-initial-20261008/URS00023C9544.txt"
+    },
+    {
+      "name": "URS000241043C",
+      "path": "data/rnacentral-initial-20261008/URS000241043C.txt"
+    },
+    {
+      "name": "URS000238C72C",
+      "path": "data/rnacentral-retry-20261011/URS000238C72C.txt"
+    },
+    {
+      "name": "URS00023A4DB9",
+      "path": "data/rnacentral-retry-20261011/URS00023A4DB9.txt"
+    }
+  ],
+  "modes": [
+    {
+      "name": "inside_outer",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--stage",
+        "inside"
+      ]
+    },
+    {
+      "name": "mfe_outer",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--stage",
+        "mfe"
+      ]
+    },
+    {
+      "name": "outside_bpp_outer",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--stage",
+        "outside_bpp"
+      ]
+    },
+    {
+      "name": "loop_profile_outer",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--stage",
+        "loop_profile"
+      ]
+    },
+    {
+      "name": "inside_baseline",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "baseline",
+        "--stage",
+        "inside"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "name": "stage_timing_driver",
+      "args": [
+        "--session-mode",
+        "fresh",
+        "--skip-inside-repeat"
+      ]
+    }
+  ],
+  "analysis": {
+    "scope": "GNU time whole-process wall time and peak RSS for each isolated API call; includes preparation, result assembly and process startup. No full-value export.",
+    "reference_run": "results/runs/e2-rnacentral-d21618c5-20261014",
+    "input_identity": "All seven current input byte hashes checked against the reference array plan on 2026-10-16; identical S/G.",
+    "counter_scope": "BeamWorkStats covers main forward only, excluding scaffold-only prepass and outer pilot/guide. StructuralProfileResult exposes no BeamWorkStats.",
+    "memory_limit_kind": "Per-process RLIMIT_AS address-space cap, 8192 MiB; not an RSS limit.",
+    "interpretation": "Peak RSS values are not additive. Baseline changes retained states; it does not isolate guide allocation. Family counters are activity counts, not allocated bytes."
+  },
+  "rerun": {
+    "template_config": "configs/e2_memory_breakdown_d21618c5_20261016.json",
+    "template_config_sha256": "9442ddf027af85468f4e464e78cd60bb6b43309e8213836fc515da4f94c4baa9",
+    "template_array": "configs/arrays/e2_memory_breakdown_d21618c5_20261016.json",
+    "template_array_sha256": "710bffdde008d68fb4c878fecb4307cdbc197a7bf9f8678d856e52550eafe2eb",
+    "software_root": "deps/LinearCParty-febd2bc1",
+    "build_dir": "build/stage-timing-febd2bc1",
+    "workers": 10,
+    "parallel_slowdown_factor": 1.5,
+    "memory_basis": "Explicit per-process RLIMIT_AS cap; allocation feasibility is not a measured RSS prediction.",
+    "historical_template_analysis": {
+      "scope": "GNU time whole-process wall time and peak RSS for each isolated API call; includes preparation, result assembly and process startup. No full-value export.",
+      "reference_run": "results/runs/e2-rnacentral-d21618c5-20261014",
+      "input_identity": "All seven current input byte hashes checked against the reference array plan on 2026-10-16; identical S/G.",
+      "counter_scope": "BeamWorkStats covers main forward only, excluding scaffold-only prepass and outer pilot/guide. StructuralProfileResult exposes no BeamWorkStats.",
+      "memory_limit_kind": "Per-process RLIMIT_AS address-space cap, 49152 MiB (48 GiB); not a scheduler RSS limit.",
+      "interpretation": "Peak RSS values are not additive. Baseline changes retained states; it does not isolate guide allocation. Family counters are activity counts, not allocated bytes."
+    },
+    "original_cost_models": {
+      "rna_4_8kb": {
+        "basis": "2026-10-16 E2 note, d21618c5 cpu_40 b=h=d=100 outer: max LinearCParty wall by tier 350.41/937.37/1293.19 s, peak RSS up to 35.7734 GiB. Each stage is budgeted as a full CLI with rounded tier maximum plus 0.001*n seconds; safety factor 2 across five processes. Baseline retention can differ, so this is an envelope, not a calibrated stage prediction. Memory envelope 40960 MiB exceeds historical peak and stays below the 48 GiB address-space cap.",
+        "seconds_constant_per_condition": 360,
+        "seconds_per_nt_condition": 0.001,
+        "safety_factor": 2,
+        "memory_base_mib": 40960,
+        "mib_per_nt": 0
+      },
+      "rna_8_20kb": {
+        "basis": "2026-10-16 E2 note, d21618c5 cpu_40 b=h=d=100 outer: max LinearCParty wall by tier 350.41/937.37/1293.19 s, peak RSS up to 35.7734 GiB. Each stage is budgeted as a full CLI with rounded tier maximum plus 0.001*n seconds; safety factor 2 across five processes. Baseline retention can differ, so this is an envelope, not a calibrated stage prediction. Memory envelope 40960 MiB exceeds historical peak and stays below the 48 GiB address-space cap.",
+        "seconds_constant_per_condition": 950,
+        "seconds_per_nt_condition": 0.001,
+        "safety_factor": 2,
+        "memory_base_mib": 40960,
+        "mib_per_nt": 0
+      },
+      "rna_20_30kb": {
+        "basis": "2026-10-16 E2 note, d21618c5 cpu_40 b=h=d=100 outer: max LinearCParty wall by tier 350.41/937.37/1293.19 s, peak RSS up to 35.7734 GiB. Each stage is budgeted as a full CLI with rounded tier maximum plus 0.001*n seconds; safety factor 2 across five processes. Baseline retention can differ, so this is an envelope, not a calibrated stage prediction. Memory envelope 40960 MiB exceeds historical peak and stays below the 48 GiB address-space cap.",
+        "seconds_constant_per_condition": 1300,
+        "seconds_per_nt_condition": 0.001,
+        "safety_factor": 2,
+        "memory_base_mib": 40960,
+        "mib_per_nt": 0
+      }
+    }
+  }
+}

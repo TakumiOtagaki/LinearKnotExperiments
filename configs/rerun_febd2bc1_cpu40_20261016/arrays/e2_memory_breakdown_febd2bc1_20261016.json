@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "measurement": "timing",
+  "seed": 20261016,
+  "compact_plan": true,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1
+  },
+  "tiers": [
+    {
+      "name": "rna_4_8kb",
+      "min_length": 1,
+      "max_length": 8191,
+      "resource": "cpu_40",
+      "h_rt": "12:00:00",
+      "target_seconds": 30239,
+      "max_inputs_per_task": 1024,
+      "workers": 10,
+      "memory_budget_mib": 87738,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "2026-10-16 E2 note, d21618c5 cpu_40 b=h=d=100 outer: max LinearCParty wall by tier 350.41/937.37/1293.19 s, peak RSS up to 35.7734 GiB. Each stage is budgeted as a full CLI with rounded tier maximum plus 0.001*n seconds; safety factor 2 across five processes. Baseline retention can differ, so this is an envelope, not a calibrated stage prediction. Memory envelope 40960 MiB exceeds historical peak and stays below the 48 GiB address-space cap.; rerun time slowdown factor 1.5; memory envelope replaced by explicit 8192 MiB RLIMIT_AS cap (not a calibrated RSS prediction)",
+        "seconds_constant_per_condition": 360,
+        "seconds_per_nt_condition": 0.001,
+        "safety_factor": 3.0,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 0
+      },
+      "job_limits": {
+        "timeout_seconds": 900,
+        "memory_limit_mib": 8192
+      }
+    },
+    {
+      "name": "rna_8_20kb",
+      "min_length": 8192,
+      "max_length": 19999,
+      "resource": "cpu_40",
+      "h_rt": "12:00:00",
+      "target_seconds": 30239,
+      "max_inputs_per_task": 1024,
+      "workers": 10,
+      "memory_budget_mib": 87738,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "2026-10-16 E2 note, d21618c5 cpu_40 b=h=d=100 outer: max LinearCParty wall by tier 350.41/937.37/1293.19 s, peak RSS up to 35.7734 GiB. Each stage is budgeted as a full CLI with rounded tier maximum plus 0.001*n seconds; safety factor 2 across five processes. Baseline retention can differ, so this is an envelope, not a calibrated stage prediction. Memory envelope 40960 MiB exceeds historical peak and stays below the 48 GiB address-space cap.; rerun time slowdown factor 1.5; memory envelope replaced by explicit 8192 MiB RLIMIT_AS cap (not a calibrated RSS prediction)",
+        "seconds_constant_per_condition": 950,
+        "seconds_per_nt_condition": 0.001,
+        "safety_factor": 3.0,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 0
+      },
+      "job_limits": {
+        "timeout_seconds": 2100,
+        "memory_limit_mib": 8192
+      }
+    },
+    {
+      "name": "rna_20_30kb",
+      "min_length": 20000,
+      "max_length": 30000,
+      "resource": "cpu_40",
+      "h_rt": "12:00:00",
+      "target_seconds": 30239,
+      "max_inputs_per_task": 1024,
+      "workers": 10,
+      "memory_budget_mib": 87738,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "2026-10-16 E2 note, d21618c5 cpu_40 b=h=d=100 outer: max LinearCParty wall by tier 350.41/937.37/1293.19 s, peak RSS up to 35.7734 GiB. Each stage is budgeted as a full CLI with rounded tier maximum plus 0.001*n seconds; safety factor 2 across five processes. Baseline retention can differ, so this is an envelope, not a calibrated stage prediction. Memory envelope 40960 MiB exceeds historical peak and stays below the 48 GiB address-space cap.; rerun time slowdown factor 1.5; memory envelope replaced by explicit 8192 MiB RLIMIT_AS cap (not a calibrated RSS prediction)",
+        "seconds_constant_per_condition": 1300,
+        "seconds_per_nt_condition": 0.001,
+        "safety_factor": 3.0,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 0
+      },
+      "job_limits": {
+        "timeout_seconds": 2700,
+        "memory_limit_mib": 8192
+      }
+    }
+  ],
+  "note": "Release rerun; cpu_40; time coefficients inherited from the recorded template; sequential-work wall estimate.",
+  "max_concurrent_tasks": 30,
+  "parallel_timing": {
+    "allowed": true,
+    "reason": "Author policy 2026-10-16: fixed single-thread CLI concurrency within one cpu_16/cpu_40 allocation; record workers and describe concurrent wall-time shifts in Supplementary."
+  }
+}

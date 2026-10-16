@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-16T06:27:33.403720+00:00",
+  "purpose": "development",
+  "source_repository": "https://github.com/TakumiOtagaki/LinearCParty",
+  "source_commit": "febd2bc1fecfa6619a86b19a7382e3fc4a3746af",
+  "source_git_state": {
+    "commit": "febd2bc1fecfa6619a86b19a7382e3fc4a3746af",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_tree": "9fb7398a05371ba17dff5985703f0effb0626ebf",
+  "build_revision_verified": true,
+  "verification_method": "dedicated clean checkout; CMake configure/build; selected maintained checks",
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "CMAKE_GENERATOR": "Unix Makefiles"
+  },
+  "configure_arguments": [
+    "-DBUILD_TESTING=ON",
+    "-DCMAKE_BUILD_TYPE=Release"
+  ],
+  "cmake_cache_sha256": "df84b5f0f77ed3dbbd398dca7c070e2d94e852222959d09f4c62732d266f9bf5",
+  "binaries": {
+    "LinearCParty": "386e20306aacb5ab950af4d4aa2878943d319c36599fb20391683a10d88fbb05",
+    "LinearPKCapR": "40aa12cb9391e37d40bca4dfddcd4f7d34172ca9ef0b652cfa95eaa627641419",
+    "LinearPKRaccess": "4ea303980efe414f5763b0a785d4815a8a541d7f500e121f18c6f97d015da8d4",
+    "LinearPKSampling": "7376576321c32d1bc6976d6aa8b8a8771b169a01a741edc68e71ae7ff2a52e12",
+    "LinearPKMEA": "c4830833af5697ae7699e62d742d3b21a9469e5d97ca1f61484aa31b586fc3d7",
+    "LinearPKCentroid": "d15f2033d29ba4bb9984b6019574eece9e4751e5f45e7a3fcc69e714ee15b0d5"
+  },
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "verification_results": [
+    {
+      "name": "scfg2_rules_core_exact_weight_test",
+      "returncode": 0,
+      "stdout": "scfg2_rules_core_exact_weight=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_exact_inside_oracle_test",
+      "returncode": 0,
+      "stdout": "scfg2_exact_inside_oracle=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_beam_api_test",
+      "returncode": 0,
+      "stdout": "scfg2_beam_api=ok\n",
+      "stderr": ""
+    }
+  ],
+  "required_suite": "test/tools/run_required_scfg2_tests.sh: required set ok; receipt /gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/manifests/release-preparation-febd2bc1.json",
+  "scientific_scope": "fixed implementation pilot, not independent proof of ensemble semantics",
+  "known_semantic_followup": ""
+}

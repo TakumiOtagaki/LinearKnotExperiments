@@ -99,7 +99,7 @@ def prepare(args):
                "PYTHONDONTWRITEBYTECODE": "1", "OMP_NUM_THREADS": "1", "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1", "LC_ALL": "C",
                "CPARTY_FIXED_ENERGY_PARAM_FILE": str(source / PARAMETER)}
 
-        def command(argv, cwd=None):
+        def command(argv, cwd=None, allow_failure=False):
             log = work / "command.log"
             with log.open("wb") as stream:
                 result = subprocess.run(list(map(str, argv)), cwd=cwd, env=env, stdout=stream, stderr=stream)
@@ -108,7 +108,7 @@ def prepare(args):
                 tail = stream.read().decode("utf-8", "replace")
             record = {"argv": list(map(str, argv)), "returncode": result.returncode,
                       "log_sha256": digest(log), "log_tail": tail}
-            if result.returncode:
+            if result.returncode and not allow_failure:
                 save("failed_command", record)
                 raise ValueError("release preparation command failed: " + str(argv[0]) + " (see JSON log tail)")
             return record
@@ -133,8 +133,15 @@ def prepare(args):
             snapshot = None
         else:
             command(["cmake", "-S", source, "-B", build, "-DCMAKE_BUILD_TYPE=Release", "-DBUILD_TESTING=ON"])
-            # Do not build unmaintained optional targets through the default 'all'.
-            command(["cmake", "--build", build, "-j", args.jobs, "--target", *PROGRAMS, *CHECKS])
+            # The required suite runs prebuilt test tools, so build every target.
+            # Some unmaintained test targets do not compile; keep going (-k) and
+            # require that the CLIs and the lock checks were built.
+            full = command(["cmake", "--build", build, "-j", args.jobs, "--", "-k"], allow_failure=True)
+            missing = [t for t in (*PROGRAMS, *CHECKS) if not (build / t).exists()]
+            if missing:
+                save("failed_command", full)
+                raise ValueError("required build targets are missing: " + ", ".join(missing))
+            save("build_full_target_log", {k: full[k] for k in ("returncode", "log_sha256", "log_tail")})
             snapshot = inspect_build(source, build)
             created_build = True
             save("build", {"status": "created", "created_by_prepare": True, **snapshot})

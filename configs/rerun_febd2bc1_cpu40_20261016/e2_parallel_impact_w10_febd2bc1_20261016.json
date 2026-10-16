@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "name": "e2-parallel-impact-w10-febd2bc1-20261016",
+  "purpose": "formal",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "temperature_source": "CLI/API default; verify RT metadata",
+    "build_revision_verified": true
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 3600,
+  "warmups": 1,
+  "repetitions": 3,
+  "inputs": [
+    {
+      "name": "URS000233CDDE",
+      "path": "data/rnacentral-initial-20261008/URS000233CDDE.txt"
+    },
+    {
+      "name": "URS00019626CE",
+      "path": "data/rnacentral-initial-20261008/URS00019626CE.txt"
+    },
+    {
+      "name": "URS000239D8A4",
+      "path": "data/rnacentral-initial-20261008/URS000239D8A4.txt"
+    }
+  ],
+  "modes": [
+    {
+      "name": "beam100_capb_outer",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "name": "LinearCParty",
+      "args": [
+        "--bpp-cutoff",
+        "0"
+      ],
+      "outputs": [
+        {
+          "name": "bpp.tsv",
+          "flag": "--bpp"
+        }
+      ]
+    },
+    {
+      "name": "LinearPKCapR",
+      "args": []
+    },
+    {
+      "name": "LinearPKRaccess",
+      "args": [
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ]
+    }
+  ],
+  "analysis": {
+    "scope": "Whole-CLI timing/RSS; cpu_40, one thread per process, warmup 1, measured 3. Explicit adopted h=d=max(b,30)=100; no exact long-RNA accuracy claim."
+  },
+  "software_lock": "manifests/software-pilot-febd2bc1.json",
+  "memory_limit_mib": 8192,
+  "runtime_eligibility": {
+    "implementation_max_length": null,
+    "reason": "Seven frozen, previously successful inputs; same S/G hashes, fixed 15aa7742. Re-measure only local caps at 100/100.",
+    "selected_ids": [
+      "URS000233CDDE",
+      "URS00019626CE",
+      "URS000239D8A4"
+    ],
+    "deferred_records": [],
+    "scaffold_datasets": [
+      {
+        "path": "data/rnacentral-initial-20261008/dataset.json",
+        "sha256": "e45eca921b6d4d327e91ad61406f0103273b45e01308cfbe98bced7c1f3e2487"
+      },
+      {
+        "path": "data/rnacentral-retry-20261011/dataset.json",
+        "sha256": "6ec4c85cfcd0a40996f9c14a7656aaab9db9c4f50179c8b5fdd607d0f6f89b7b"
+      }
+    ],
+    "retry_provenance": {
+      "path": "manifests/rnacentral-scaffold-retry-20261011.json",
+      "sha256": "56ea032c6a9dd99694ca09f16773e0c9a488344fd4ddd8f52b73da86e5a881de"
+    }
+  },
+  "order": {
+    "kind": "blocked_random",
+    "seed": 20261012
+  },
+  "rerun": {
+    "template_config": "configs/e2_rnacentral_d21618c5_20261014.json",
+    "template_config_sha256": "74ac7508bebf11d63532c6e161805054e6dbdafe650daba13322a076059c9e54",
+    "template_array": "configs/arrays/e2_rnacentral_d21618c5_20261014.json",
+    "template_array_sha256": "dba233535dcb18ac097d59f506fedb0af0a86aeeb34088ff6de4645f1d556ec8",
+    "software_root": "deps/LinearCParty-febd2bc1",
+    "build_dir": "build/linear-cparty-febd2bc1",
+    "workers": 10,
+    "parallel_slowdown_factor": 1.5,
+    "memory_basis": "Explicit per-process RLIMIT_AS cap; allocation feasibility is not a measured RSS prediction.",
+    "historical_template_analysis": {
+      "scope": "Whole-CLI timing/RSS; node_f, one thread, warmup 1, measured 3. Explicit adopted h=d=max(b,30)=100; no exact long-RNA accuracy claim."
+    },
+    "original_cost_models": {
+      "rna_4_8kb": {
+        "basis": "Historical isolated 30/30 E2 wall/n <0.07 s/nt/CLI, peak <2.3 MiB/nt. Factor 2 time and 7 MiB/nt memory allow cap100 uncertainty; envelope only, not a measured cap100 prediction. One RNA per task.; scaled by 0.25 to E2 15aa7742 measurements (29 kb: ~2.8 h for 3 CLIs x 4 runs); mib_per_nt set from E2 measurements (29 kb at b=100: 35 GiB, ~1.2 MiB/nt)",
+        "seconds_per_nt_condition": 0.0175,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 2,
+        "memory_base_mib": 2048,
+        "mib_per_nt": 1.5
+      },
+      "rna_8_20kb": {
+        "basis": "Historical isolated 30/30 E2 wall/n <0.07 s/nt/CLI, peak <2.3 MiB/nt. Factor 2 time and 7 MiB/nt memory allow cap100 uncertainty; envelope only, not a measured cap100 prediction. One RNA per task.; scaled by 0.25 to E2 15aa7742 measurements (29 kb: ~2.8 h for 3 CLIs x 4 runs); mib_per_nt set from E2 measurements (29 kb at b=100: 35 GiB, ~1.2 MiB/nt)",
+        "seconds_per_nt_condition": 0.0175,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 2,
+        "memory_base_mib": 2048,
+        "mib_per_nt": 1.5
+      },
+      "rna_20_30kb": {
+        "basis": "Historical isolated 30/30 E2 wall/n <0.07 s/nt/CLI, peak <2.3 MiB/nt. Factor 2 time and 7 MiB/nt memory allow cap100 uncertainty; envelope only, not a measured cap100 prediction. One RNA per task.; scaled by 0.25 to E2 15aa7742 measurements (29 kb: ~2.8 h for 3 CLIs x 4 runs); mib_per_nt set from E2 measurements (29 kb at b=100: 35 GiB, ~1.2 MiB/nt)",
+        "seconds_per_nt_condition": 0.0175,
+        "seconds_constant_per_condition": 5,
+        "safety_factor": 2,
+        "memory_base_mib": 2048,
+        "mib_per_nt": 1.5
+      }
+    },
+    "paired_workers": [
+      1,
+      10
+    ],
+    "selected_lengths": [
+      4793,
+      5482,
+      6990
+    ],
+    "scope": "Supplementary concurrency check; compare whole-CLI wall time at fixed allocation and thread count."
+  }
+}
