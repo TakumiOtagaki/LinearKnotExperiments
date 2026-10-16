@@ -1,0 +1,985 @@
+row	id	dangles	term	i	j	native_pf_energy	guarded_pf_energy	pair_type	neighbor5	neighbor3	guarded_neighbor5	guarded_neighbor3	unpaired	inner_i	inner_j
+355	ml_gapped_GC_pad00	2	exterior_branch_terminal_AU_GU	1	25	0.0	0.0	2							
+355	ml_gapped_GC_pad00	2	exterior_branch_neighbor	1	25	0.0	0.0	2	-1	-1	-1	-1			
+355	ml_gapped_GC_pad00	2	MLclosing	1	25	9.3	9.3								
+355	ml_gapped_GC_pad00	2	closing_terminal_AU_GU	1	25	0.0	0.0	1							
+355	ml_gapped_GC_pad00	2	closing_MLintern	1	25	-0.8999999999999999	-0.8999999999999999	1							
+355	ml_gapped_GC_pad00	2	closing_neighbor	1	25	-1.1	0.0	1	1	1	-1	-1			
+355	ml_gapped_GC_pad00	2	MLbase	1	25	-0.0	-0.0						3		
+355	ml_gapped_GC_pad00	2	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+355	ml_gapped_GC_pad00	2	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+355	ml_gapped_GC_pad00	2	multiloop_branch_neighbor	3	12	-1.5	-1.5	2	1	1	1	1			
+355	ml_gapped_GC_pad00	2	multiloop_branch_terminal_AU_GU	14	23	0.0	0.0	2							
+355	ml_gapped_GC_pad00	2	multiloop_branch_MLintern	14	23	-0.8999999999999999	-0.8999999999999999	2							
+355	ml_gapped_GC_pad00	2	multiloop_branch_neighbor	14	23	-1.5	-1.5	2	1	1	1	1			
+355	ml_gapped_GC_pad00	2	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+355	ml_gapped_GC_pad00	2	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+355	ml_gapped_GC_pad00	2	hairpin	5	10	4.499999999999999	4.499999999999999								
+355	ml_gapped_GC_pad00	2	stack	14	23	-3.3000000000000003	-3.3000000000000003							15	22
+355	ml_gapped_GC_pad00	2	stack	15	22	-3.3000000000000003	-3.3000000000000003							16	21
+355	ml_gapped_GC_pad00	2	hairpin	16	21	4.499999999999999	4.499999999999999								
+357	ml_gapped_GC_pad00	0	exterior_branch_terminal_AU_GU	1	25	0.0	0.0	2							
+357	ml_gapped_GC_pad00	0	exterior_branch_neighbor	1	25	0.0	0.0	2	-1	-1	-1	-1			
+357	ml_gapped_GC_pad00	0	MLclosing	1	25	9.3	9.3								
+357	ml_gapped_GC_pad00	0	closing_terminal_AU_GU	1	25	0.0	0.0	1							
+357	ml_gapped_GC_pad00	0	closing_MLintern	1	25	-0.8999999999999999	-0.8999999999999999	1							
+357	ml_gapped_GC_pad00	0	closing_neighbor	1	25	0.0	0.0	1	-1	-1	-1	-1			
+357	ml_gapped_GC_pad00	0	MLbase	1	25	-0.0	-0.0						3		
+357	ml_gapped_GC_pad00	0	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+357	ml_gapped_GC_pad00	0	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+357	ml_gapped_GC_pad00	0	multiloop_branch_neighbor	3	12	0.0	0.0	2	-1	-1	-1	-1			
+357	ml_gapped_GC_pad00	0	multiloop_branch_terminal_AU_GU	14	23	0.0	0.0	2							
+357	ml_gapped_GC_pad00	0	multiloop_branch_MLintern	14	23	-0.8999999999999999	-0.8999999999999999	2							
+357	ml_gapped_GC_pad00	0	multiloop_branch_neighbor	14	23	0.0	0.0	2	-1	-1	-1	-1			
+357	ml_gapped_GC_pad00	0	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+357	ml_gapped_GC_pad00	0	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+357	ml_gapped_GC_pad00	0	hairpin	5	10	4.499999999999999	4.499999999999999								
+357	ml_gapped_GC_pad00	0	stack	14	23	-3.3000000000000003	-3.3000000000000003							15	22
+357	ml_gapped_GC_pad00	0	stack	15	22	-3.3000000000000003	-3.3000000000000003							16	21
+357	ml_gapped_GC_pad00	0	hairpin	16	21	4.499999999999999	4.499999999999999								
+361	ml_gapped_GC_pad01	2	exterior_branch_terminal_AU_GU	1	25	0.0	0.0	2							
+361	ml_gapped_GC_pad01	2	exterior_branch_neighbor	1	25	-1.7	-1.7	2	-1	1	-1	1			
+361	ml_gapped_GC_pad01	2	MLclosing	1	25	9.3	9.3								
+361	ml_gapped_GC_pad01	2	closing_terminal_AU_GU	1	25	0.0	0.0	1							
+361	ml_gapped_GC_pad01	2	closing_MLintern	1	25	-0.8999999999999999	-0.8999999999999999	1							
+361	ml_gapped_GC_pad01	2	closing_neighbor	1	25	-1.1	-0.5	1	1	1	1	-1			
+361	ml_gapped_GC_pad01	2	MLbase	1	25	-0.0	-0.0						3		
+361	ml_gapped_GC_pad01	2	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+361	ml_gapped_GC_pad01	2	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+361	ml_gapped_GC_pad01	2	multiloop_branch_neighbor	3	12	-1.5	-1.5	2	1	1	1	1			
+361	ml_gapped_GC_pad01	2	multiloop_branch_terminal_AU_GU	14	23	0.0	0.0	2							
+361	ml_gapped_GC_pad01	2	multiloop_branch_MLintern	14	23	-0.8999999999999999	-0.8999999999999999	2							
+361	ml_gapped_GC_pad01	2	multiloop_branch_neighbor	14	23	-1.5	-1.5	2	1	1	1	1			
+361	ml_gapped_GC_pad01	2	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+361	ml_gapped_GC_pad01	2	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+361	ml_gapped_GC_pad01	2	hairpin	5	10	4.499999999999999	4.499999999999999								
+361	ml_gapped_GC_pad01	2	stack	14	23	-3.3000000000000003	-3.3000000000000003							15	22
+361	ml_gapped_GC_pad01	2	stack	15	22	-3.3000000000000003	-3.3000000000000003							16	21
+361	ml_gapped_GC_pad01	2	hairpin	16	21	4.499999999999999	4.499999999999999								
+363	ml_gapped_GC_pad01	0	exterior_branch_terminal_AU_GU	1	25	0.0	0.0	2							
+363	ml_gapped_GC_pad01	0	exterior_branch_neighbor	1	25	0.0	0.0	2	-1	-1	-1	-1			
+363	ml_gapped_GC_pad01	0	MLclosing	1	25	9.3	9.3								
+363	ml_gapped_GC_pad01	0	closing_terminal_AU_GU	1	25	0.0	0.0	1							
+363	ml_gapped_GC_pad01	0	closing_MLintern	1	25	-0.8999999999999999	-0.8999999999999999	1							
+363	ml_gapped_GC_pad01	0	closing_neighbor	1	25	0.0	0.0	1	-1	-1	-1	-1			
+363	ml_gapped_GC_pad01	0	MLbase	1	25	-0.0	-0.0						3		
+363	ml_gapped_GC_pad01	0	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+363	ml_gapped_GC_pad01	0	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+363	ml_gapped_GC_pad01	0	multiloop_branch_neighbor	3	12	0.0	0.0	2	-1	-1	-1	-1			
+363	ml_gapped_GC_pad01	0	multiloop_branch_terminal_AU_GU	14	23	0.0	0.0	2							
+363	ml_gapped_GC_pad01	0	multiloop_branch_MLintern	14	23	-0.8999999999999999	-0.8999999999999999	2							
+363	ml_gapped_GC_pad01	0	multiloop_branch_neighbor	14	23	0.0	0.0	2	-1	-1	-1	-1			
+363	ml_gapped_GC_pad01	0	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+363	ml_gapped_GC_pad01	0	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+363	ml_gapped_GC_pad01	0	hairpin	5	10	4.499999999999999	4.499999999999999								
+363	ml_gapped_GC_pad01	0	stack	14	23	-3.3000000000000003	-3.3000000000000003							15	22
+363	ml_gapped_GC_pad01	0	stack	15	22	-3.3000000000000003	-3.3000000000000003							16	21
+363	ml_gapped_GC_pad01	0	hairpin	16	21	4.499999999999999	4.499999999999999								
+367	ml_gapped_GC_pad10	2	exterior_branch_terminal_AU_GU	2	26	0.0	0.0	2							
+367	ml_gapped_GC_pad10	2	exterior_branch_neighbor	2	26	-0.20000000000000004	-0.20000000000000004	2	1	-1	1	-1			
+367	ml_gapped_GC_pad10	2	MLclosing	2	26	9.3	9.3								
+367	ml_gapped_GC_pad10	2	closing_terminal_AU_GU	2	26	0.0	0.0	1							
+367	ml_gapped_GC_pad10	2	closing_MLintern	2	26	-0.8999999999999999	-0.8999999999999999	1							
+367	ml_gapped_GC_pad10	2	closing_neighbor	2	26	-1.1	-1.1	1	1	1	-1	1			
+367	ml_gapped_GC_pad10	2	MLbase	2	26	-0.0	-0.0						3		
+367	ml_gapped_GC_pad10	2	multiloop_branch_terminal_AU_GU	4	13	0.0	0.0	2							
+367	ml_gapped_GC_pad10	2	multiloop_branch_MLintern	4	13	-0.8999999999999999	-0.8999999999999999	2							
+367	ml_gapped_GC_pad10	2	multiloop_branch_neighbor	4	13	-1.5	-1.5	2	1	1	1	1			
+367	ml_gapped_GC_pad10	2	multiloop_branch_terminal_AU_GU	15	24	0.0	0.0	2							
+367	ml_gapped_GC_pad10	2	multiloop_branch_MLintern	15	24	-0.8999999999999999	-0.8999999999999999	2							
+367	ml_gapped_GC_pad10	2	multiloop_branch_neighbor	15	24	-1.5	-1.5	2	1	1	1	1			
+367	ml_gapped_GC_pad10	2	stack	4	13	-3.3000000000000003	-3.3000000000000003							5	12
+367	ml_gapped_GC_pad10	2	stack	5	12	-3.3000000000000003	-3.3000000000000003							6	11
+367	ml_gapped_GC_pad10	2	hairpin	6	11	4.499999999999999	4.499999999999999								
+367	ml_gapped_GC_pad10	2	stack	15	24	-3.3000000000000003	-3.3000000000000003							16	23
+367	ml_gapped_GC_pad10	2	stack	16	23	-3.3000000000000003	-3.3000000000000003							17	22
+367	ml_gapped_GC_pad10	2	hairpin	17	22	4.499999999999999	4.499999999999999								
+369	ml_gapped_GC_pad10	0	exterior_branch_terminal_AU_GU	2	26	0.0	0.0	2							
+369	ml_gapped_GC_pad10	0	exterior_branch_neighbor	2	26	0.0	0.0	2	-1	-1	-1	-1			
+369	ml_gapped_GC_pad10	0	MLclosing	2	26	9.3	9.3								
+369	ml_gapped_GC_pad10	0	closing_terminal_AU_GU	2	26	0.0	0.0	1							
+369	ml_gapped_GC_pad10	0	closing_MLintern	2	26	-0.8999999999999999	-0.8999999999999999	1							
+369	ml_gapped_GC_pad10	0	closing_neighbor	2	26	0.0	0.0	1	-1	-1	-1	-1			
+369	ml_gapped_GC_pad10	0	MLbase	2	26	-0.0	-0.0						3		
+369	ml_gapped_GC_pad10	0	multiloop_branch_terminal_AU_GU	4	13	0.0	0.0	2							
+369	ml_gapped_GC_pad10	0	multiloop_branch_MLintern	4	13	-0.8999999999999999	-0.8999999999999999	2							
+369	ml_gapped_GC_pad10	0	multiloop_branch_neighbor	4	13	0.0	0.0	2	-1	-1	-1	-1			
+369	ml_gapped_GC_pad10	0	multiloop_branch_terminal_AU_GU	15	24	0.0	0.0	2							
+369	ml_gapped_GC_pad10	0	multiloop_branch_MLintern	15	24	-0.8999999999999999	-0.8999999999999999	2							
+369	ml_gapped_GC_pad10	0	multiloop_branch_neighbor	15	24	0.0	0.0	2	-1	-1	-1	-1			
+369	ml_gapped_GC_pad10	0	stack	4	13	-3.3000000000000003	-3.3000000000000003							5	12
+369	ml_gapped_GC_pad10	0	stack	5	12	-3.3000000000000003	-3.3000000000000003							6	11
+369	ml_gapped_GC_pad10	0	hairpin	6	11	4.499999999999999	4.499999999999999								
+369	ml_gapped_GC_pad10	0	stack	15	24	-3.3000000000000003	-3.3000000000000003							16	23
+369	ml_gapped_GC_pad10	0	stack	16	23	-3.3000000000000003	-3.3000000000000003							17	22
+369	ml_gapped_GC_pad10	0	hairpin	17	22	4.499999999999999	4.499999999999999								
+373	ml_gapped_GC_pad11	2	exterior_branch_terminal_AU_GU	2	26	0.0	0.0	2							
+373	ml_gapped_GC_pad11	2	exterior_branch_neighbor	2	26	-1.5	-1.5	2	1	1	1	1			
+373	ml_gapped_GC_pad11	2	MLclosing	2	26	9.3	9.3								
+373	ml_gapped_GC_pad11	2	closing_terminal_AU_GU	2	26	0.0	0.0	1							
+373	ml_gapped_GC_pad11	2	closing_MLintern	2	26	-0.8999999999999999	-0.8999999999999999	1							
+373	ml_gapped_GC_pad11	2	closing_neighbor	2	26	-1.1	-1.1	1	1	1	1	1			
+373	ml_gapped_GC_pad11	2	MLbase	2	26	-0.0	-0.0						3		
+373	ml_gapped_GC_pad11	2	multiloop_branch_terminal_AU_GU	4	13	0.0	0.0	2							
+373	ml_gapped_GC_pad11	2	multiloop_branch_MLintern	4	13	-0.8999999999999999	-0.8999999999999999	2							
+373	ml_gapped_GC_pad11	2	multiloop_branch_neighbor	4	13	-1.5	-1.5	2	1	1	1	1			
+373	ml_gapped_GC_pad11	2	multiloop_branch_terminal_AU_GU	15	24	0.0	0.0	2							
+373	ml_gapped_GC_pad11	2	multiloop_branch_MLintern	15	24	-0.8999999999999999	-0.8999999999999999	2							
+373	ml_gapped_GC_pad11	2	multiloop_branch_neighbor	15	24	-1.5	-1.5	2	1	1	1	1			
+373	ml_gapped_GC_pad11	2	stack	4	13	-3.3000000000000003	-3.3000000000000003							5	12
+373	ml_gapped_GC_pad11	2	stack	5	12	-3.3000000000000003	-3.3000000000000003							6	11
+373	ml_gapped_GC_pad11	2	hairpin	6	11	4.499999999999999	4.499999999999999								
+373	ml_gapped_GC_pad11	2	stack	15	24	-3.3000000000000003	-3.3000000000000003							16	23
+373	ml_gapped_GC_pad11	2	stack	16	23	-3.3000000000000003	-3.3000000000000003							17	22
+373	ml_gapped_GC_pad11	2	hairpin	17	22	4.499999999999999	4.499999999999999								
+375	ml_gapped_GC_pad11	0	exterior_branch_terminal_AU_GU	2	26	0.0	0.0	2							
+375	ml_gapped_GC_pad11	0	exterior_branch_neighbor	2	26	0.0	0.0	2	-1	-1	-1	-1			
+375	ml_gapped_GC_pad11	0	MLclosing	2	26	9.3	9.3								
+375	ml_gapped_GC_pad11	0	closing_terminal_AU_GU	2	26	0.0	0.0	1							
+375	ml_gapped_GC_pad11	0	closing_MLintern	2	26	-0.8999999999999999	-0.8999999999999999	1							
+375	ml_gapped_GC_pad11	0	closing_neighbor	2	26	0.0	0.0	1	-1	-1	-1	-1			
+375	ml_gapped_GC_pad11	0	MLbase	2	26	-0.0	-0.0						3		
+375	ml_gapped_GC_pad11	0	multiloop_branch_terminal_AU_GU	4	13	0.0	0.0	2							
+375	ml_gapped_GC_pad11	0	multiloop_branch_MLintern	4	13	-0.8999999999999999	-0.8999999999999999	2							
+375	ml_gapped_GC_pad11	0	multiloop_branch_neighbor	4	13	0.0	0.0	2	-1	-1	-1	-1			
+375	ml_gapped_GC_pad11	0	multiloop_branch_terminal_AU_GU	15	24	0.0	0.0	2							
+375	ml_gapped_GC_pad11	0	multiloop_branch_MLintern	15	24	-0.8999999999999999	-0.8999999999999999	2							
+375	ml_gapped_GC_pad11	0	multiloop_branch_neighbor	15	24	0.0	0.0	2	-1	-1	-1	-1			
+375	ml_gapped_GC_pad11	0	stack	4	13	-3.3000000000000003	-3.3000000000000003							5	12
+375	ml_gapped_GC_pad11	0	stack	5	12	-3.3000000000000003	-3.3000000000000003							6	11
+375	ml_gapped_GC_pad11	0	hairpin	6	11	4.499999999999999	4.499999999999999								
+375	ml_gapped_GC_pad11	0	stack	15	24	-3.3000000000000003	-3.3000000000000003							16	23
+375	ml_gapped_GC_pad11	0	stack	16	23	-3.3000000000000003	-3.3000000000000003							17	22
+375	ml_gapped_GC_pad11	0	hairpin	17	22	4.499999999999999	4.499999999999999								
+379	ml_adjacent_GC_pad00	2	exterior_branch_terminal_AU_GU	1	22	0.0	0.0	2							
+379	ml_adjacent_GC_pad00	2	exterior_branch_neighbor	1	22	0.0	0.0	2	-1	-1	-1	-1			
+379	ml_adjacent_GC_pad00	2	MLclosing	1	22	9.3	9.3								
+379	ml_adjacent_GC_pad00	2	closing_terminal_AU_GU	1	22	0.0	0.0	1							
+379	ml_adjacent_GC_pad00	2	closing_MLintern	1	22	-0.8999999999999999	-0.8999999999999999	1							
+379	ml_adjacent_GC_pad00	2	closing_neighbor	1	22	-1.5	0.0	1	2	3	-1	-1			
+379	ml_adjacent_GC_pad00	2	MLbase	1	22	-0.0	-0.0						0		
+379	ml_adjacent_GC_pad00	2	multiloop_branch_terminal_AU_GU	2	11	0.0	0.0	2							
+379	ml_adjacent_GC_pad00	2	multiloop_branch_MLintern	2	11	-0.8999999999999999	-0.8999999999999999	2							
+379	ml_adjacent_GC_pad00	2	multiloop_branch_neighbor	2	11	-1.5999999999999996	-1.5999999999999996	2	3	3	3	3			
+379	ml_adjacent_GC_pad00	2	multiloop_branch_terminal_AU_GU	12	21	0.0	0.0	2							
+379	ml_adjacent_GC_pad00	2	multiloop_branch_MLintern	12	21	-0.8999999999999999	-0.8999999999999999	2							
+379	ml_adjacent_GC_pad00	2	multiloop_branch_neighbor	12	21	-1.1	-1.1	2	2	2	2	2			
+379	ml_adjacent_GC_pad00	2	stack	2	11	-3.3000000000000003	-3.3000000000000003							3	10
+379	ml_adjacent_GC_pad00	2	stack	3	10	-3.3000000000000003	-3.3000000000000003							4	9
+379	ml_adjacent_GC_pad00	2	hairpin	4	9	4.499999999999999	4.499999999999999								
+379	ml_adjacent_GC_pad00	2	stack	12	21	-3.3000000000000003	-3.3000000000000003							13	20
+379	ml_adjacent_GC_pad00	2	stack	13	20	-3.3000000000000003	-3.3000000000000003							14	19
+379	ml_adjacent_GC_pad00	2	hairpin	14	19	4.499999999999999	4.499999999999999								
+381	ml_adjacent_GC_pad00	0	exterior_branch_terminal_AU_GU	1	22	0.0	0.0	2							
+381	ml_adjacent_GC_pad00	0	exterior_branch_neighbor	1	22	0.0	0.0	2	-1	-1	-1	-1			
+381	ml_adjacent_GC_pad00	0	MLclosing	1	22	9.3	9.3								
+381	ml_adjacent_GC_pad00	0	closing_terminal_AU_GU	1	22	0.0	0.0	1							
+381	ml_adjacent_GC_pad00	0	closing_MLintern	1	22	-0.8999999999999999	-0.8999999999999999	1							
+381	ml_adjacent_GC_pad00	0	closing_neighbor	1	22	0.0	0.0	1	-1	-1	-1	-1			
+381	ml_adjacent_GC_pad00	0	MLbase	1	22	-0.0	-0.0						0		
+381	ml_adjacent_GC_pad00	0	multiloop_branch_terminal_AU_GU	2	11	0.0	0.0	2							
+381	ml_adjacent_GC_pad00	0	multiloop_branch_MLintern	2	11	-0.8999999999999999	-0.8999999999999999	2							
+381	ml_adjacent_GC_pad00	0	multiloop_branch_neighbor	2	11	0.0	0.0	2	-1	-1	-1	-1			
+381	ml_adjacent_GC_pad00	0	multiloop_branch_terminal_AU_GU	12	21	0.0	0.0	2							
+381	ml_adjacent_GC_pad00	0	multiloop_branch_MLintern	12	21	-0.8999999999999999	-0.8999999999999999	2							
+381	ml_adjacent_GC_pad00	0	multiloop_branch_neighbor	12	21	0.0	0.0	2	-1	-1	-1	-1			
+381	ml_adjacent_GC_pad00	0	stack	2	11	-3.3000000000000003	-3.3000000000000003							3	10
+381	ml_adjacent_GC_pad00	0	stack	3	10	-3.3000000000000003	-3.3000000000000003							4	9
+381	ml_adjacent_GC_pad00	0	hairpin	4	9	4.499999999999999	4.499999999999999								
+381	ml_adjacent_GC_pad00	0	stack	12	21	-3.3000000000000003	-3.3000000000000003							13	20
+381	ml_adjacent_GC_pad00	0	stack	13	20	-3.3000000000000003	-3.3000000000000003							14	19
+381	ml_adjacent_GC_pad00	0	hairpin	14	19	4.499999999999999	4.499999999999999								
+385	ml_adjacent_GC_pad01	2	exterior_branch_terminal_AU_GU	1	22	0.0	0.0	2							
+385	ml_adjacent_GC_pad01	2	exterior_branch_neighbor	1	22	-1.7	-1.7	2	-1	1	-1	1			
+385	ml_adjacent_GC_pad01	2	MLclosing	1	22	9.3	9.3								
+385	ml_adjacent_GC_pad01	2	closing_terminal_AU_GU	1	22	0.0	0.0	1							
+385	ml_adjacent_GC_pad01	2	closing_MLintern	1	22	-0.8999999999999999	-0.8999999999999999	1							
+385	ml_adjacent_GC_pad01	2	closing_neighbor	1	22	-1.5	-0.30000000000000004	1	2	3	2	-1			
+385	ml_adjacent_GC_pad01	2	MLbase	1	22	-0.0	-0.0						0		
+385	ml_adjacent_GC_pad01	2	multiloop_branch_terminal_AU_GU	2	11	0.0	0.0	2							
+385	ml_adjacent_GC_pad01	2	multiloop_branch_MLintern	2	11	-0.8999999999999999	-0.8999999999999999	2							
+385	ml_adjacent_GC_pad01	2	multiloop_branch_neighbor	2	11	-1.5999999999999996	-1.5999999999999996	2	3	3	3	3			
+385	ml_adjacent_GC_pad01	2	multiloop_branch_terminal_AU_GU	12	21	0.0	0.0	2							
+385	ml_adjacent_GC_pad01	2	multiloop_branch_MLintern	12	21	-0.8999999999999999	-0.8999999999999999	2							
+385	ml_adjacent_GC_pad01	2	multiloop_branch_neighbor	12	21	-1.1	-1.1	2	2	2	2	2			
+385	ml_adjacent_GC_pad01	2	stack	2	11	-3.3000000000000003	-3.3000000000000003							3	10
+385	ml_adjacent_GC_pad01	2	stack	3	10	-3.3000000000000003	-3.3000000000000003							4	9
+385	ml_adjacent_GC_pad01	2	hairpin	4	9	4.499999999999999	4.499999999999999								
+385	ml_adjacent_GC_pad01	2	stack	12	21	-3.3000000000000003	-3.3000000000000003							13	20
+385	ml_adjacent_GC_pad01	2	stack	13	20	-3.3000000000000003	-3.3000000000000003							14	19
+385	ml_adjacent_GC_pad01	2	hairpin	14	19	4.499999999999999	4.499999999999999								
+387	ml_adjacent_GC_pad01	0	exterior_branch_terminal_AU_GU	1	22	0.0	0.0	2							
+387	ml_adjacent_GC_pad01	0	exterior_branch_neighbor	1	22	0.0	0.0	2	-1	-1	-1	-1			
+387	ml_adjacent_GC_pad01	0	MLclosing	1	22	9.3	9.3								
+387	ml_adjacent_GC_pad01	0	closing_terminal_AU_GU	1	22	0.0	0.0	1							
+387	ml_adjacent_GC_pad01	0	closing_MLintern	1	22	-0.8999999999999999	-0.8999999999999999	1							
+387	ml_adjacent_GC_pad01	0	closing_neighbor	1	22	0.0	0.0	1	-1	-1	-1	-1			
+387	ml_adjacent_GC_pad01	0	MLbase	1	22	-0.0	-0.0						0		
+387	ml_adjacent_GC_pad01	0	multiloop_branch_terminal_AU_GU	2	11	0.0	0.0	2							
+387	ml_adjacent_GC_pad01	0	multiloop_branch_MLintern	2	11	-0.8999999999999999	-0.8999999999999999	2							
+387	ml_adjacent_GC_pad01	0	multiloop_branch_neighbor	2	11	0.0	0.0	2	-1	-1	-1	-1			
+387	ml_adjacent_GC_pad01	0	multiloop_branch_terminal_AU_GU	12	21	0.0	0.0	2							
+387	ml_adjacent_GC_pad01	0	multiloop_branch_MLintern	12	21	-0.8999999999999999	-0.8999999999999999	2							
+387	ml_adjacent_GC_pad01	0	multiloop_branch_neighbor	12	21	0.0	0.0	2	-1	-1	-1	-1			
+387	ml_adjacent_GC_pad01	0	stack	2	11	-3.3000000000000003	-3.3000000000000003							3	10
+387	ml_adjacent_GC_pad01	0	stack	3	10	-3.3000000000000003	-3.3000000000000003							4	9
+387	ml_adjacent_GC_pad01	0	hairpin	4	9	4.499999999999999	4.499999999999999								
+387	ml_adjacent_GC_pad01	0	stack	12	21	-3.3000000000000003	-3.3000000000000003							13	20
+387	ml_adjacent_GC_pad01	0	stack	13	20	-3.3000000000000003	-3.3000000000000003							14	19
+387	ml_adjacent_GC_pad01	0	hairpin	14	19	4.499999999999999	4.499999999999999								
+391	ml_adjacent_GC_pad10	2	exterior_branch_terminal_AU_GU	2	23	0.0	0.0	2							
+391	ml_adjacent_GC_pad10	2	exterior_branch_neighbor	2	23	-0.20000000000000004	-0.20000000000000004	2	1	-1	1	-1			
+391	ml_adjacent_GC_pad10	2	MLclosing	2	23	9.3	9.3								
+391	ml_adjacent_GC_pad10	2	closing_terminal_AU_GU	2	23	0.0	0.0	1							
+391	ml_adjacent_GC_pad10	2	closing_MLintern	2	23	-0.8999999999999999	-0.8999999999999999	1							
+391	ml_adjacent_GC_pad10	2	closing_neighbor	2	23	-1.5	-1.2999999999999998	1	2	3	-1	3			
+391	ml_adjacent_GC_pad10	2	MLbase	2	23	-0.0	-0.0						0		
+391	ml_adjacent_GC_pad10	2	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+391	ml_adjacent_GC_pad10	2	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+391	ml_adjacent_GC_pad10	2	multiloop_branch_neighbor	3	12	-1.5999999999999996	-1.5999999999999996	2	3	3	3	3			
+391	ml_adjacent_GC_pad10	2	multiloop_branch_terminal_AU_GU	13	22	0.0	0.0	2							
+391	ml_adjacent_GC_pad10	2	multiloop_branch_MLintern	13	22	-0.8999999999999999	-0.8999999999999999	2							
+391	ml_adjacent_GC_pad10	2	multiloop_branch_neighbor	13	22	-1.1	-1.1	2	2	2	2	2			
+391	ml_adjacent_GC_pad10	2	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+391	ml_adjacent_GC_pad10	2	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+391	ml_adjacent_GC_pad10	2	hairpin	5	10	4.499999999999999	4.499999999999999								
+391	ml_adjacent_GC_pad10	2	stack	13	22	-3.3000000000000003	-3.3000000000000003							14	21
+391	ml_adjacent_GC_pad10	2	stack	14	21	-3.3000000000000003	-3.3000000000000003							15	20
+391	ml_adjacent_GC_pad10	2	hairpin	15	20	4.499999999999999	4.499999999999999								
+393	ml_adjacent_GC_pad10	0	exterior_branch_terminal_AU_GU	2	23	0.0	0.0	2							
+393	ml_adjacent_GC_pad10	0	exterior_branch_neighbor	2	23	0.0	0.0	2	-1	-1	-1	-1			
+393	ml_adjacent_GC_pad10	0	MLclosing	2	23	9.3	9.3								
+393	ml_adjacent_GC_pad10	0	closing_terminal_AU_GU	2	23	0.0	0.0	1							
+393	ml_adjacent_GC_pad10	0	closing_MLintern	2	23	-0.8999999999999999	-0.8999999999999999	1							
+393	ml_adjacent_GC_pad10	0	closing_neighbor	2	23	0.0	0.0	1	-1	-1	-1	-1			
+393	ml_adjacent_GC_pad10	0	MLbase	2	23	-0.0	-0.0						0		
+393	ml_adjacent_GC_pad10	0	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+393	ml_adjacent_GC_pad10	0	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+393	ml_adjacent_GC_pad10	0	multiloop_branch_neighbor	3	12	0.0	0.0	2	-1	-1	-1	-1			
+393	ml_adjacent_GC_pad10	0	multiloop_branch_terminal_AU_GU	13	22	0.0	0.0	2							
+393	ml_adjacent_GC_pad10	0	multiloop_branch_MLintern	13	22	-0.8999999999999999	-0.8999999999999999	2							
+393	ml_adjacent_GC_pad10	0	multiloop_branch_neighbor	13	22	0.0	0.0	2	-1	-1	-1	-1			
+393	ml_adjacent_GC_pad10	0	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+393	ml_adjacent_GC_pad10	0	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+393	ml_adjacent_GC_pad10	0	hairpin	5	10	4.499999999999999	4.499999999999999								
+393	ml_adjacent_GC_pad10	0	stack	13	22	-3.3000000000000003	-3.3000000000000003							14	21
+393	ml_adjacent_GC_pad10	0	stack	14	21	-3.3000000000000003	-3.3000000000000003							15	20
+393	ml_adjacent_GC_pad10	0	hairpin	15	20	4.499999999999999	4.499999999999999								
+397	ml_adjacent_GC_pad11	2	exterior_branch_terminal_AU_GU	2	23	0.0	0.0	2							
+397	ml_adjacent_GC_pad11	2	exterior_branch_neighbor	2	23	-1.5	-1.5	2	1	1	1	1			
+397	ml_adjacent_GC_pad11	2	MLclosing	2	23	9.3	9.3								
+397	ml_adjacent_GC_pad11	2	closing_terminal_AU_GU	2	23	0.0	0.0	1							
+397	ml_adjacent_GC_pad11	2	closing_MLintern	2	23	-0.8999999999999999	-0.8999999999999999	1							
+397	ml_adjacent_GC_pad11	2	closing_neighbor	2	23	-1.5	-1.5	1	2	3	2	3			
+397	ml_adjacent_GC_pad11	2	MLbase	2	23	-0.0	-0.0						0		
+397	ml_adjacent_GC_pad11	2	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+397	ml_adjacent_GC_pad11	2	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+397	ml_adjacent_GC_pad11	2	multiloop_branch_neighbor	3	12	-1.5999999999999996	-1.5999999999999996	2	3	3	3	3			
+397	ml_adjacent_GC_pad11	2	multiloop_branch_terminal_AU_GU	13	22	0.0	0.0	2							
+397	ml_adjacent_GC_pad11	2	multiloop_branch_MLintern	13	22	-0.8999999999999999	-0.8999999999999999	2							
+397	ml_adjacent_GC_pad11	2	multiloop_branch_neighbor	13	22	-1.1	-1.1	2	2	2	2	2			
+397	ml_adjacent_GC_pad11	2	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+397	ml_adjacent_GC_pad11	2	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+397	ml_adjacent_GC_pad11	2	hairpin	5	10	4.499999999999999	4.499999999999999								
+397	ml_adjacent_GC_pad11	2	stack	13	22	-3.3000000000000003	-3.3000000000000003							14	21
+397	ml_adjacent_GC_pad11	2	stack	14	21	-3.3000000000000003	-3.3000000000000003							15	20
+397	ml_adjacent_GC_pad11	2	hairpin	15	20	4.499999999999999	4.499999999999999								
+399	ml_adjacent_GC_pad11	0	exterior_branch_terminal_AU_GU	2	23	0.0	0.0	2							
+399	ml_adjacent_GC_pad11	0	exterior_branch_neighbor	2	23	0.0	0.0	2	-1	-1	-1	-1			
+399	ml_adjacent_GC_pad11	0	MLclosing	2	23	9.3	9.3								
+399	ml_adjacent_GC_pad11	0	closing_terminal_AU_GU	2	23	0.0	0.0	1							
+399	ml_adjacent_GC_pad11	0	closing_MLintern	2	23	-0.8999999999999999	-0.8999999999999999	1							
+399	ml_adjacent_GC_pad11	0	closing_neighbor	2	23	0.0	0.0	1	-1	-1	-1	-1			
+399	ml_adjacent_GC_pad11	0	MLbase	2	23	-0.0	-0.0						0		
+399	ml_adjacent_GC_pad11	0	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+399	ml_adjacent_GC_pad11	0	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+399	ml_adjacent_GC_pad11	0	multiloop_branch_neighbor	3	12	0.0	0.0	2	-1	-1	-1	-1			
+399	ml_adjacent_GC_pad11	0	multiloop_branch_terminal_AU_GU	13	22	0.0	0.0	2							
+399	ml_adjacent_GC_pad11	0	multiloop_branch_MLintern	13	22	-0.8999999999999999	-0.8999999999999999	2							
+399	ml_adjacent_GC_pad11	0	multiloop_branch_neighbor	13	22	0.0	0.0	2	-1	-1	-1	-1			
+399	ml_adjacent_GC_pad11	0	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+399	ml_adjacent_GC_pad11	0	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+399	ml_adjacent_GC_pad11	0	hairpin	5	10	4.499999999999999	4.499999999999999								
+399	ml_adjacent_GC_pad11	0	stack	13	22	-3.3000000000000003	-3.3000000000000003							14	21
+399	ml_adjacent_GC_pad11	0	stack	14	21	-3.3000000000000003	-3.3000000000000003							15	20
+399	ml_adjacent_GC_pad11	0	hairpin	15	20	4.499999999999999	4.499999999999999								
+403	ml_gapped_AU_pad00	2	exterior_branch_terminal_AU_GU	1	25	0.5	0.5	5							
+403	ml_gapped_AU_pad00	2	exterior_branch_neighbor	1	25	0.0	0.0	5	-1	-1	-1	-1			
+403	ml_gapped_AU_pad00	2	MLclosing	1	25	9.3	9.3								
+403	ml_gapped_AU_pad00	2	closing_terminal_AU_GU	1	25	0.5	0.5	6							
+403	ml_gapped_AU_pad00	2	closing_MLintern	1	25	-0.8999999999999999	-0.8999999999999999	6							
+403	ml_gapped_AU_pad00	2	closing_neighbor	1	25	-0.8	0.0	6	1	1	-1	-1			
+403	ml_gapped_AU_pad00	2	MLbase	1	25	-0.0	-0.0						3		
+403	ml_gapped_AU_pad00	2	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+403	ml_gapped_AU_pad00	2	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+403	ml_gapped_AU_pad00	2	multiloop_branch_neighbor	3	12	-1.5	-1.5	2	1	1	1	1			
+403	ml_gapped_AU_pad00	2	multiloop_branch_terminal_AU_GU	14	23	0.0	0.0	2							
+403	ml_gapped_AU_pad00	2	multiloop_branch_MLintern	14	23	-0.8999999999999999	-0.8999999999999999	2							
+403	ml_gapped_AU_pad00	2	multiloop_branch_neighbor	14	23	-1.5	-1.5	2	1	1	1	1			
+403	ml_gapped_AU_pad00	2	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+403	ml_gapped_AU_pad00	2	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+403	ml_gapped_AU_pad00	2	hairpin	5	10	4.499999999999999	4.499999999999999								
+403	ml_gapped_AU_pad00	2	stack	14	23	-3.3000000000000003	-3.3000000000000003							15	22
+403	ml_gapped_AU_pad00	2	stack	15	22	-3.3000000000000003	-3.3000000000000003							16	21
+403	ml_gapped_AU_pad00	2	hairpin	16	21	4.499999999999999	4.499999999999999								
+405	ml_gapped_AU_pad00	0	exterior_branch_terminal_AU_GU	1	25	0.5	0.5	5							
+405	ml_gapped_AU_pad00	0	exterior_branch_neighbor	1	25	0.0	0.0	5	-1	-1	-1	-1			
+405	ml_gapped_AU_pad00	0	MLclosing	1	25	9.3	9.3								
+405	ml_gapped_AU_pad00	0	closing_terminal_AU_GU	1	25	0.5	0.5	6							
+405	ml_gapped_AU_pad00	0	closing_MLintern	1	25	-0.8999999999999999	-0.8999999999999999	6							
+405	ml_gapped_AU_pad00	0	closing_neighbor	1	25	0.0	0.0	6	-1	-1	-1	-1			
+405	ml_gapped_AU_pad00	0	MLbase	1	25	-0.0	-0.0						3		
+405	ml_gapped_AU_pad00	0	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+405	ml_gapped_AU_pad00	0	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+405	ml_gapped_AU_pad00	0	multiloop_branch_neighbor	3	12	0.0	0.0	2	-1	-1	-1	-1			
+405	ml_gapped_AU_pad00	0	multiloop_branch_terminal_AU_GU	14	23	0.0	0.0	2							
+405	ml_gapped_AU_pad00	0	multiloop_branch_MLintern	14	23	-0.8999999999999999	-0.8999999999999999	2							
+405	ml_gapped_AU_pad00	0	multiloop_branch_neighbor	14	23	0.0	0.0	2	-1	-1	-1	-1			
+405	ml_gapped_AU_pad00	0	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+405	ml_gapped_AU_pad00	0	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+405	ml_gapped_AU_pad00	0	hairpin	5	10	4.499999999999999	4.499999999999999								
+405	ml_gapped_AU_pad00	0	stack	14	23	-3.3000000000000003	-3.3000000000000003							15	22
+405	ml_gapped_AU_pad00	0	stack	15	22	-3.3000000000000003	-3.3000000000000003							16	21
+405	ml_gapped_AU_pad00	0	hairpin	16	21	4.499999999999999	4.499999999999999								
+409	ml_gapped_AU_pad01	2	exterior_branch_terminal_AU_GU	1	25	0.5	0.5	5							
+409	ml_gapped_AU_pad01	2	exterior_branch_neighbor	1	25	-0.7	-0.7	5	-1	1	-1	1			
+409	ml_gapped_AU_pad01	2	MLclosing	1	25	9.3	9.3								
+409	ml_gapped_AU_pad01	2	closing_terminal_AU_GU	1	25	0.5	0.5	6							
+409	ml_gapped_AU_pad01	2	closing_MLintern	1	25	-0.8999999999999999	-0.8999999999999999	6							
+409	ml_gapped_AU_pad01	2	closing_neighbor	1	25	-0.8	-0.30000000000000016	6	1	1	1	-1			
+409	ml_gapped_AU_pad01	2	MLbase	1	25	-0.0	-0.0						3		
+409	ml_gapped_AU_pad01	2	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+409	ml_gapped_AU_pad01	2	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+409	ml_gapped_AU_pad01	2	multiloop_branch_neighbor	3	12	-1.5	-1.5	2	1	1	1	1			
+409	ml_gapped_AU_pad01	2	multiloop_branch_terminal_AU_GU	14	23	0.0	0.0	2							
+409	ml_gapped_AU_pad01	2	multiloop_branch_MLintern	14	23	-0.8999999999999999	-0.8999999999999999	2							
+409	ml_gapped_AU_pad01	2	multiloop_branch_neighbor	14	23	-1.5	-1.5	2	1	1	1	1			
+409	ml_gapped_AU_pad01	2	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+409	ml_gapped_AU_pad01	2	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+409	ml_gapped_AU_pad01	2	hairpin	5	10	4.499999999999999	4.499999999999999								
+409	ml_gapped_AU_pad01	2	stack	14	23	-3.3000000000000003	-3.3000000000000003							15	22
+409	ml_gapped_AU_pad01	2	stack	15	22	-3.3000000000000003	-3.3000000000000003							16	21
+409	ml_gapped_AU_pad01	2	hairpin	16	21	4.499999999999999	4.499999999999999								
+411	ml_gapped_AU_pad01	0	exterior_branch_terminal_AU_GU	1	25	0.5	0.5	5							
+411	ml_gapped_AU_pad01	0	exterior_branch_neighbor	1	25	0.0	0.0	5	-1	-1	-1	-1			
+411	ml_gapped_AU_pad01	0	MLclosing	1	25	9.3	9.3								
+411	ml_gapped_AU_pad01	0	closing_terminal_AU_GU	1	25	0.5	0.5	6							
+411	ml_gapped_AU_pad01	0	closing_MLintern	1	25	-0.8999999999999999	-0.8999999999999999	6							
+411	ml_gapped_AU_pad01	0	closing_neighbor	1	25	0.0	0.0	6	-1	-1	-1	-1			
+411	ml_gapped_AU_pad01	0	MLbase	1	25	-0.0	-0.0						3		
+411	ml_gapped_AU_pad01	0	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+411	ml_gapped_AU_pad01	0	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+411	ml_gapped_AU_pad01	0	multiloop_branch_neighbor	3	12	0.0	0.0	2	-1	-1	-1	-1			
+411	ml_gapped_AU_pad01	0	multiloop_branch_terminal_AU_GU	14	23	0.0	0.0	2							
+411	ml_gapped_AU_pad01	0	multiloop_branch_MLintern	14	23	-0.8999999999999999	-0.8999999999999999	2							
+411	ml_gapped_AU_pad01	0	multiloop_branch_neighbor	14	23	0.0	0.0	2	-1	-1	-1	-1			
+411	ml_gapped_AU_pad01	0	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+411	ml_gapped_AU_pad01	0	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+411	ml_gapped_AU_pad01	0	hairpin	5	10	4.499999999999999	4.499999999999999								
+411	ml_gapped_AU_pad01	0	stack	14	23	-3.3000000000000003	-3.3000000000000003							15	22
+411	ml_gapped_AU_pad01	0	stack	15	22	-3.3000000000000003	-3.3000000000000003							16	21
+411	ml_gapped_AU_pad01	0	hairpin	16	21	4.499999999999999	4.499999999999999								
+415	ml_gapped_AU_pad10	2	exterior_branch_terminal_AU_GU	2	26	0.5	0.5	5							
+415	ml_gapped_AU_pad10	2	exterior_branch_neighbor	2	26	-0.30000000000000004	-0.30000000000000004	5	1	-1	1	-1			
+415	ml_gapped_AU_pad10	2	MLclosing	2	26	9.3	9.3								
+415	ml_gapped_AU_pad10	2	closing_terminal_AU_GU	2	26	0.5	0.5	6							
+415	ml_gapped_AU_pad10	2	closing_MLintern	2	26	-0.8999999999999999	-0.8999999999999999	6							
+415	ml_gapped_AU_pad10	2	closing_neighbor	2	26	-0.8	-0.8	6	1	1	-1	1			
+415	ml_gapped_AU_pad10	2	MLbase	2	26	-0.0	-0.0						3		
+415	ml_gapped_AU_pad10	2	multiloop_branch_terminal_AU_GU	4	13	0.0	0.0	2							
+415	ml_gapped_AU_pad10	2	multiloop_branch_MLintern	4	13	-0.8999999999999999	-0.8999999999999999	2							
+415	ml_gapped_AU_pad10	2	multiloop_branch_neighbor	4	13	-1.5	-1.5	2	1	1	1	1			
+415	ml_gapped_AU_pad10	2	multiloop_branch_terminal_AU_GU	15	24	0.0	0.0	2							
+415	ml_gapped_AU_pad10	2	multiloop_branch_MLintern	15	24	-0.8999999999999999	-0.8999999999999999	2							
+415	ml_gapped_AU_pad10	2	multiloop_branch_neighbor	15	24	-1.5	-1.5	2	1	1	1	1			
+415	ml_gapped_AU_pad10	2	stack	4	13	-3.3000000000000003	-3.3000000000000003							5	12
+415	ml_gapped_AU_pad10	2	stack	5	12	-3.3000000000000003	-3.3000000000000003							6	11
+415	ml_gapped_AU_pad10	2	hairpin	6	11	4.499999999999999	4.499999999999999								
+415	ml_gapped_AU_pad10	2	stack	15	24	-3.3000000000000003	-3.3000000000000003							16	23
+415	ml_gapped_AU_pad10	2	stack	16	23	-3.3000000000000003	-3.3000000000000003							17	22
+415	ml_gapped_AU_pad10	2	hairpin	17	22	4.499999999999999	4.499999999999999								
+417	ml_gapped_AU_pad10	0	exterior_branch_terminal_AU_GU	2	26	0.5	0.5	5							
+417	ml_gapped_AU_pad10	0	exterior_branch_neighbor	2	26	0.0	0.0	5	-1	-1	-1	-1			
+417	ml_gapped_AU_pad10	0	MLclosing	2	26	9.3	9.3								
+417	ml_gapped_AU_pad10	0	closing_terminal_AU_GU	2	26	0.5	0.5	6							
+417	ml_gapped_AU_pad10	0	closing_MLintern	2	26	-0.8999999999999999	-0.8999999999999999	6							
+417	ml_gapped_AU_pad10	0	closing_neighbor	2	26	0.0	0.0	6	-1	-1	-1	-1			
+417	ml_gapped_AU_pad10	0	MLbase	2	26	-0.0	-0.0						3		
+417	ml_gapped_AU_pad10	0	multiloop_branch_terminal_AU_GU	4	13	0.0	0.0	2							
+417	ml_gapped_AU_pad10	0	multiloop_branch_MLintern	4	13	-0.8999999999999999	-0.8999999999999999	2							
+417	ml_gapped_AU_pad10	0	multiloop_branch_neighbor	4	13	0.0	0.0	2	-1	-1	-1	-1			
+417	ml_gapped_AU_pad10	0	multiloop_branch_terminal_AU_GU	15	24	0.0	0.0	2							
+417	ml_gapped_AU_pad10	0	multiloop_branch_MLintern	15	24	-0.8999999999999999	-0.8999999999999999	2							
+417	ml_gapped_AU_pad10	0	multiloop_branch_neighbor	15	24	0.0	0.0	2	-1	-1	-1	-1			
+417	ml_gapped_AU_pad10	0	stack	4	13	-3.3000000000000003	-3.3000000000000003							5	12
+417	ml_gapped_AU_pad10	0	stack	5	12	-3.3000000000000003	-3.3000000000000003							6	11
+417	ml_gapped_AU_pad10	0	hairpin	6	11	4.499999999999999	4.499999999999999								
+417	ml_gapped_AU_pad10	0	stack	15	24	-3.3000000000000003	-3.3000000000000003							16	23
+417	ml_gapped_AU_pad10	0	stack	16	23	-3.3000000000000003	-3.3000000000000003							17	22
+417	ml_gapped_AU_pad10	0	hairpin	17	22	4.499999999999999	4.499999999999999								
+421	ml_gapped_AU_pad11	2	exterior_branch_terminal_AU_GU	2	26	0.5	0.5	5							
+421	ml_gapped_AU_pad11	2	exterior_branch_neighbor	2	26	-1.0	-1.0	5	1	1	1	1			
+421	ml_gapped_AU_pad11	2	MLclosing	2	26	9.3	9.3								
+421	ml_gapped_AU_pad11	2	closing_terminal_AU_GU	2	26	0.5	0.5	6							
+421	ml_gapped_AU_pad11	2	closing_MLintern	2	26	-0.8999999999999999	-0.8999999999999999	6							
+421	ml_gapped_AU_pad11	2	closing_neighbor	2	26	-0.8	-0.8	6	1	1	1	1			
+421	ml_gapped_AU_pad11	2	MLbase	2	26	-0.0	-0.0						3		
+421	ml_gapped_AU_pad11	2	multiloop_branch_terminal_AU_GU	4	13	0.0	0.0	2							
+421	ml_gapped_AU_pad11	2	multiloop_branch_MLintern	4	13	-0.8999999999999999	-0.8999999999999999	2							
+421	ml_gapped_AU_pad11	2	multiloop_branch_neighbor	4	13	-1.5	-1.5	2	1	1	1	1			
+421	ml_gapped_AU_pad11	2	multiloop_branch_terminal_AU_GU	15	24	0.0	0.0	2							
+421	ml_gapped_AU_pad11	2	multiloop_branch_MLintern	15	24	-0.8999999999999999	-0.8999999999999999	2							
+421	ml_gapped_AU_pad11	2	multiloop_branch_neighbor	15	24	-1.5	-1.5	2	1	1	1	1			
+421	ml_gapped_AU_pad11	2	stack	4	13	-3.3000000000000003	-3.3000000000000003							5	12
+421	ml_gapped_AU_pad11	2	stack	5	12	-3.3000000000000003	-3.3000000000000003							6	11
+421	ml_gapped_AU_pad11	2	hairpin	6	11	4.499999999999999	4.499999999999999								
+421	ml_gapped_AU_pad11	2	stack	15	24	-3.3000000000000003	-3.3000000000000003							16	23
+421	ml_gapped_AU_pad11	2	stack	16	23	-3.3000000000000003	-3.3000000000000003							17	22
+421	ml_gapped_AU_pad11	2	hairpin	17	22	4.499999999999999	4.499999999999999								
+423	ml_gapped_AU_pad11	0	exterior_branch_terminal_AU_GU	2	26	0.5	0.5	5							
+423	ml_gapped_AU_pad11	0	exterior_branch_neighbor	2	26	0.0	0.0	5	-1	-1	-1	-1			
+423	ml_gapped_AU_pad11	0	MLclosing	2	26	9.3	9.3								
+423	ml_gapped_AU_pad11	0	closing_terminal_AU_GU	2	26	0.5	0.5	6							
+423	ml_gapped_AU_pad11	0	closing_MLintern	2	26	-0.8999999999999999	-0.8999999999999999	6							
+423	ml_gapped_AU_pad11	0	closing_neighbor	2	26	0.0	0.0	6	-1	-1	-1	-1			
+423	ml_gapped_AU_pad11	0	MLbase	2	26	-0.0	-0.0						3		
+423	ml_gapped_AU_pad11	0	multiloop_branch_terminal_AU_GU	4	13	0.0	0.0	2							
+423	ml_gapped_AU_pad11	0	multiloop_branch_MLintern	4	13	-0.8999999999999999	-0.8999999999999999	2							
+423	ml_gapped_AU_pad11	0	multiloop_branch_neighbor	4	13	0.0	0.0	2	-1	-1	-1	-1			
+423	ml_gapped_AU_pad11	0	multiloop_branch_terminal_AU_GU	15	24	0.0	0.0	2							
+423	ml_gapped_AU_pad11	0	multiloop_branch_MLintern	15	24	-0.8999999999999999	-0.8999999999999999	2							
+423	ml_gapped_AU_pad11	0	multiloop_branch_neighbor	15	24	0.0	0.0	2	-1	-1	-1	-1			
+423	ml_gapped_AU_pad11	0	stack	4	13	-3.3000000000000003	-3.3000000000000003							5	12
+423	ml_gapped_AU_pad11	0	stack	5	12	-3.3000000000000003	-3.3000000000000003							6	11
+423	ml_gapped_AU_pad11	0	hairpin	6	11	4.499999999999999	4.499999999999999								
+423	ml_gapped_AU_pad11	0	stack	15	24	-3.3000000000000003	-3.3000000000000003							16	23
+423	ml_gapped_AU_pad11	0	stack	16	23	-3.3000000000000003	-3.3000000000000003							17	22
+423	ml_gapped_AU_pad11	0	hairpin	17	22	4.499999999999999	4.499999999999999								
+427	ml_adjacent_AU_pad00	2	exterior_branch_terminal_AU_GU	1	22	0.5	0.5	5							
+427	ml_adjacent_AU_pad00	2	exterior_branch_neighbor	1	22	0.0	0.0	5	-1	-1	-1	-1			
+427	ml_adjacent_AU_pad00	2	MLclosing	1	22	9.3	9.3								
+427	ml_adjacent_AU_pad00	2	closing_terminal_AU_GU	1	22	0.5	0.5	6							
+427	ml_adjacent_AU_pad00	2	closing_MLintern	1	22	-0.8999999999999999	-0.8999999999999999	6							
+427	ml_adjacent_AU_pad00	2	closing_neighbor	1	22	-1.0	0.0	6	2	3	-1	-1			
+427	ml_adjacent_AU_pad00	2	MLbase	1	22	-0.0	-0.0						0		
+427	ml_adjacent_AU_pad00	2	multiloop_branch_terminal_AU_GU	2	11	0.0	0.0	2							
+427	ml_adjacent_AU_pad00	2	multiloop_branch_MLintern	2	11	-0.8999999999999999	-0.8999999999999999	2							
+427	ml_adjacent_AU_pad00	2	multiloop_branch_neighbor	2	11	-1.4	-1.4	2	1	3	1	3			
+427	ml_adjacent_AU_pad00	2	multiloop_branch_terminal_AU_GU	12	21	0.0	0.0	2							
+427	ml_adjacent_AU_pad00	2	multiloop_branch_MLintern	12	21	-0.8999999999999999	-0.8999999999999999	2							
+427	ml_adjacent_AU_pad00	2	multiloop_branch_neighbor	12	21	-1.4	-1.4	2	2	4	2	4			
+427	ml_adjacent_AU_pad00	2	stack	2	11	-3.3000000000000003	-3.3000000000000003							3	10
+427	ml_adjacent_AU_pad00	2	stack	3	10	-3.3000000000000003	-3.3000000000000003							4	9
+427	ml_adjacent_AU_pad00	2	hairpin	4	9	4.499999999999999	4.499999999999999								
+427	ml_adjacent_AU_pad00	2	stack	12	21	-3.3000000000000003	-3.3000000000000003							13	20
+427	ml_adjacent_AU_pad00	2	stack	13	20	-3.3000000000000003	-3.3000000000000003							14	19
+427	ml_adjacent_AU_pad00	2	hairpin	14	19	4.499999999999999	4.499999999999999								
+429	ml_adjacent_AU_pad00	0	exterior_branch_terminal_AU_GU	1	22	0.5	0.5	5							
+429	ml_adjacent_AU_pad00	0	exterior_branch_neighbor	1	22	0.0	0.0	5	-1	-1	-1	-1			
+429	ml_adjacent_AU_pad00	0	MLclosing	1	22	9.3	9.3								
+429	ml_adjacent_AU_pad00	0	closing_terminal_AU_GU	1	22	0.5	0.5	6							
+429	ml_adjacent_AU_pad00	0	closing_MLintern	1	22	-0.8999999999999999	-0.8999999999999999	6							
+429	ml_adjacent_AU_pad00	0	closing_neighbor	1	22	0.0	0.0	6	-1	-1	-1	-1			
+429	ml_adjacent_AU_pad00	0	MLbase	1	22	-0.0	-0.0						0		
+429	ml_adjacent_AU_pad00	0	multiloop_branch_terminal_AU_GU	2	11	0.0	0.0	2							
+429	ml_adjacent_AU_pad00	0	multiloop_branch_MLintern	2	11	-0.8999999999999999	-0.8999999999999999	2							
+429	ml_adjacent_AU_pad00	0	multiloop_branch_neighbor	2	11	0.0	0.0	2	-1	-1	-1	-1			
+429	ml_adjacent_AU_pad00	0	multiloop_branch_terminal_AU_GU	12	21	0.0	0.0	2							
+429	ml_adjacent_AU_pad00	0	multiloop_branch_MLintern	12	21	-0.8999999999999999	-0.8999999999999999	2							
+429	ml_adjacent_AU_pad00	0	multiloop_branch_neighbor	12	21	0.0	0.0	2	-1	-1	-1	-1			
+429	ml_adjacent_AU_pad00	0	stack	2	11	-3.3000000000000003	-3.3000000000000003							3	10
+429	ml_adjacent_AU_pad00	0	stack	3	10	-3.3000000000000003	-3.3000000000000003							4	9
+429	ml_adjacent_AU_pad00	0	hairpin	4	9	4.499999999999999	4.499999999999999								
+429	ml_adjacent_AU_pad00	0	stack	12	21	-3.3000000000000003	-3.3000000000000003							13	20
+429	ml_adjacent_AU_pad00	0	stack	13	20	-3.3000000000000003	-3.3000000000000003							14	19
+429	ml_adjacent_AU_pad00	0	hairpin	14	19	4.499999999999999	4.499999999999999								
+433	ml_adjacent_AU_pad01	2	exterior_branch_terminal_AU_GU	1	22	0.5	0.5	5							
+433	ml_adjacent_AU_pad01	2	exterior_branch_neighbor	1	22	-0.7	-0.7	5	-1	1	-1	1			
+433	ml_adjacent_AU_pad01	2	MLclosing	1	22	9.3	9.3								
+433	ml_adjacent_AU_pad01	2	closing_terminal_AU_GU	1	22	0.5	0.5	6							
+433	ml_adjacent_AU_pad01	2	closing_MLintern	1	22	-0.8999999999999999	-0.8999999999999999	6							
+433	ml_adjacent_AU_pad01	2	closing_neighbor	1	22	-1.0	-0.10000000000000009	6	2	3	2	-1			
+433	ml_adjacent_AU_pad01	2	MLbase	1	22	-0.0	-0.0						0		
+433	ml_adjacent_AU_pad01	2	multiloop_branch_terminal_AU_GU	2	11	0.0	0.0	2							
+433	ml_adjacent_AU_pad01	2	multiloop_branch_MLintern	2	11	-0.8999999999999999	-0.8999999999999999	2							
+433	ml_adjacent_AU_pad01	2	multiloop_branch_neighbor	2	11	-1.4	-1.4	2	1	3	1	3			
+433	ml_adjacent_AU_pad01	2	multiloop_branch_terminal_AU_GU	12	21	0.0	0.0	2							
+433	ml_adjacent_AU_pad01	2	multiloop_branch_MLintern	12	21	-0.8999999999999999	-0.8999999999999999	2							
+433	ml_adjacent_AU_pad01	2	multiloop_branch_neighbor	12	21	-1.4	-1.4	2	2	4	2	4			
+433	ml_adjacent_AU_pad01	2	stack	2	11	-3.3000000000000003	-3.3000000000000003							3	10
+433	ml_adjacent_AU_pad01	2	stack	3	10	-3.3000000000000003	-3.3000000000000003							4	9
+433	ml_adjacent_AU_pad01	2	hairpin	4	9	4.499999999999999	4.499999999999999								
+433	ml_adjacent_AU_pad01	2	stack	12	21	-3.3000000000000003	-3.3000000000000003							13	20
+433	ml_adjacent_AU_pad01	2	stack	13	20	-3.3000000000000003	-3.3000000000000003							14	19
+433	ml_adjacent_AU_pad01	2	hairpin	14	19	4.499999999999999	4.499999999999999								
+435	ml_adjacent_AU_pad01	0	exterior_branch_terminal_AU_GU	1	22	0.5	0.5	5							
+435	ml_adjacent_AU_pad01	0	exterior_branch_neighbor	1	22	0.0	0.0	5	-1	-1	-1	-1			
+435	ml_adjacent_AU_pad01	0	MLclosing	1	22	9.3	9.3								
+435	ml_adjacent_AU_pad01	0	closing_terminal_AU_GU	1	22	0.5	0.5	6							
+435	ml_adjacent_AU_pad01	0	closing_MLintern	1	22	-0.8999999999999999	-0.8999999999999999	6							
+435	ml_adjacent_AU_pad01	0	closing_neighbor	1	22	0.0	0.0	6	-1	-1	-1	-1			
+435	ml_adjacent_AU_pad01	0	MLbase	1	22	-0.0	-0.0						0		
+435	ml_adjacent_AU_pad01	0	multiloop_branch_terminal_AU_GU	2	11	0.0	0.0	2							
+435	ml_adjacent_AU_pad01	0	multiloop_branch_MLintern	2	11	-0.8999999999999999	-0.8999999999999999	2							
+435	ml_adjacent_AU_pad01	0	multiloop_branch_neighbor	2	11	0.0	0.0	2	-1	-1	-1	-1			
+435	ml_adjacent_AU_pad01	0	multiloop_branch_terminal_AU_GU	12	21	0.0	0.0	2							
+435	ml_adjacent_AU_pad01	0	multiloop_branch_MLintern	12	21	-0.8999999999999999	-0.8999999999999999	2							
+435	ml_adjacent_AU_pad01	0	multiloop_branch_neighbor	12	21	0.0	0.0	2	-1	-1	-1	-1			
+435	ml_adjacent_AU_pad01	0	stack	2	11	-3.3000000000000003	-3.3000000000000003							3	10
+435	ml_adjacent_AU_pad01	0	stack	3	10	-3.3000000000000003	-3.3000000000000003							4	9
+435	ml_adjacent_AU_pad01	0	hairpin	4	9	4.499999999999999	4.499999999999999								
+435	ml_adjacent_AU_pad01	0	stack	12	21	-3.3000000000000003	-3.3000000000000003							13	20
+435	ml_adjacent_AU_pad01	0	stack	13	20	-3.3000000000000003	-3.3000000000000003							14	19
+435	ml_adjacent_AU_pad01	0	hairpin	14	19	4.499999999999999	4.499999999999999								
+439	ml_adjacent_AU_pad10	2	exterior_branch_terminal_AU_GU	2	23	0.5	0.5	5							
+439	ml_adjacent_AU_pad10	2	exterior_branch_neighbor	2	23	-0.30000000000000004	-0.30000000000000004	5	1	-1	1	-1			
+439	ml_adjacent_AU_pad10	2	MLclosing	2	23	9.3	9.3								
+439	ml_adjacent_AU_pad10	2	closing_terminal_AU_GU	2	23	0.5	0.5	6							
+439	ml_adjacent_AU_pad10	2	closing_MLintern	2	23	-0.8999999999999999	-0.8999999999999999	6							
+439	ml_adjacent_AU_pad10	2	closing_neighbor	2	23	-1.0	-0.8	6	2	3	-1	3			
+439	ml_adjacent_AU_pad10	2	MLbase	2	23	-0.0	-0.0						0		
+439	ml_adjacent_AU_pad10	2	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+439	ml_adjacent_AU_pad10	2	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+439	ml_adjacent_AU_pad10	2	multiloop_branch_neighbor	3	12	-1.4	-1.4	2	1	3	1	3			
+439	ml_adjacent_AU_pad10	2	multiloop_branch_terminal_AU_GU	13	22	0.0	0.0	2							
+439	ml_adjacent_AU_pad10	2	multiloop_branch_MLintern	13	22	-0.8999999999999999	-0.8999999999999999	2							
+439	ml_adjacent_AU_pad10	2	multiloop_branch_neighbor	13	22	-1.4	-1.4	2	2	4	2	4			
+439	ml_adjacent_AU_pad10	2	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+439	ml_adjacent_AU_pad10	2	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+439	ml_adjacent_AU_pad10	2	hairpin	5	10	4.499999999999999	4.499999999999999								
+439	ml_adjacent_AU_pad10	2	stack	13	22	-3.3000000000000003	-3.3000000000000003							14	21
+439	ml_adjacent_AU_pad10	2	stack	14	21	-3.3000000000000003	-3.3000000000000003							15	20
+439	ml_adjacent_AU_pad10	2	hairpin	15	20	4.499999999999999	4.499999999999999								
+441	ml_adjacent_AU_pad10	0	exterior_branch_terminal_AU_GU	2	23	0.5	0.5	5							
+441	ml_adjacent_AU_pad10	0	exterior_branch_neighbor	2	23	0.0	0.0	5	-1	-1	-1	-1			
+441	ml_adjacent_AU_pad10	0	MLclosing	2	23	9.3	9.3								
+441	ml_adjacent_AU_pad10	0	closing_terminal_AU_GU	2	23	0.5	0.5	6							
+441	ml_adjacent_AU_pad10	0	closing_MLintern	2	23	-0.8999999999999999	-0.8999999999999999	6							
+441	ml_adjacent_AU_pad10	0	closing_neighbor	2	23	0.0	0.0	6	-1	-1	-1	-1			
+441	ml_adjacent_AU_pad10	0	MLbase	2	23	-0.0	-0.0						0		
+441	ml_adjacent_AU_pad10	0	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+441	ml_adjacent_AU_pad10	0	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+441	ml_adjacent_AU_pad10	0	multiloop_branch_neighbor	3	12	0.0	0.0	2	-1	-1	-1	-1			
+441	ml_adjacent_AU_pad10	0	multiloop_branch_terminal_AU_GU	13	22	0.0	0.0	2							
+441	ml_adjacent_AU_pad10	0	multiloop_branch_MLintern	13	22	-0.8999999999999999	-0.8999999999999999	2							
+441	ml_adjacent_AU_pad10	0	multiloop_branch_neighbor	13	22	0.0	0.0	2	-1	-1	-1	-1			
+441	ml_adjacent_AU_pad10	0	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+441	ml_adjacent_AU_pad10	0	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+441	ml_adjacent_AU_pad10	0	hairpin	5	10	4.499999999999999	4.499999999999999								
+441	ml_adjacent_AU_pad10	0	stack	13	22	-3.3000000000000003	-3.3000000000000003							14	21
+441	ml_adjacent_AU_pad10	0	stack	14	21	-3.3000000000000003	-3.3000000000000003							15	20
+441	ml_adjacent_AU_pad10	0	hairpin	15	20	4.499999999999999	4.499999999999999								
+445	ml_adjacent_AU_pad11	2	exterior_branch_terminal_AU_GU	2	23	0.5	0.5	5							
+445	ml_adjacent_AU_pad11	2	exterior_branch_neighbor	2	23	-1.0	-1.0	5	1	1	1	1			
+445	ml_adjacent_AU_pad11	2	MLclosing	2	23	9.3	9.3								
+445	ml_adjacent_AU_pad11	2	closing_terminal_AU_GU	2	23	0.5	0.5	6							
+445	ml_adjacent_AU_pad11	2	closing_MLintern	2	23	-0.8999999999999999	-0.8999999999999999	6							
+445	ml_adjacent_AU_pad11	2	closing_neighbor	2	23	-1.0	-1.0	6	2	3	2	3			
+445	ml_adjacent_AU_pad11	2	MLbase	2	23	-0.0	-0.0						0		
+445	ml_adjacent_AU_pad11	2	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+445	ml_adjacent_AU_pad11	2	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+445	ml_adjacent_AU_pad11	2	multiloop_branch_neighbor	3	12	-1.4	-1.4	2	1	3	1	3			
+445	ml_adjacent_AU_pad11	2	multiloop_branch_terminal_AU_GU	13	22	0.0	0.0	2							
+445	ml_adjacent_AU_pad11	2	multiloop_branch_MLintern	13	22	-0.8999999999999999	-0.8999999999999999	2							
+445	ml_adjacent_AU_pad11	2	multiloop_branch_neighbor	13	22	-1.4	-1.4	2	2	4	2	4			
+445	ml_adjacent_AU_pad11	2	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+445	ml_adjacent_AU_pad11	2	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+445	ml_adjacent_AU_pad11	2	hairpin	5	10	4.499999999999999	4.499999999999999								
+445	ml_adjacent_AU_pad11	2	stack	13	22	-3.3000000000000003	-3.3000000000000003							14	21
+445	ml_adjacent_AU_pad11	2	stack	14	21	-3.3000000000000003	-3.3000000000000003							15	20
+445	ml_adjacent_AU_pad11	2	hairpin	15	20	4.499999999999999	4.499999999999999								
+447	ml_adjacent_AU_pad11	0	exterior_branch_terminal_AU_GU	2	23	0.5	0.5	5							
+447	ml_adjacent_AU_pad11	0	exterior_branch_neighbor	2	23	0.0	0.0	5	-1	-1	-1	-1			
+447	ml_adjacent_AU_pad11	0	MLclosing	2	23	9.3	9.3								
+447	ml_adjacent_AU_pad11	0	closing_terminal_AU_GU	2	23	0.5	0.5	6							
+447	ml_adjacent_AU_pad11	0	closing_MLintern	2	23	-0.8999999999999999	-0.8999999999999999	6							
+447	ml_adjacent_AU_pad11	0	closing_neighbor	2	23	0.0	0.0	6	-1	-1	-1	-1			
+447	ml_adjacent_AU_pad11	0	MLbase	2	23	-0.0	-0.0						0		
+447	ml_adjacent_AU_pad11	0	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+447	ml_adjacent_AU_pad11	0	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+447	ml_adjacent_AU_pad11	0	multiloop_branch_neighbor	3	12	0.0	0.0	2	-1	-1	-1	-1			
+447	ml_adjacent_AU_pad11	0	multiloop_branch_terminal_AU_GU	13	22	0.0	0.0	2							
+447	ml_adjacent_AU_pad11	0	multiloop_branch_MLintern	13	22	-0.8999999999999999	-0.8999999999999999	2							
+447	ml_adjacent_AU_pad11	0	multiloop_branch_neighbor	13	22	0.0	0.0	2	-1	-1	-1	-1			
+447	ml_adjacent_AU_pad11	0	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+447	ml_adjacent_AU_pad11	0	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+447	ml_adjacent_AU_pad11	0	hairpin	5	10	4.499999999999999	4.499999999999999								
+447	ml_adjacent_AU_pad11	0	stack	13	22	-3.3000000000000003	-3.3000000000000003							14	21
+447	ml_adjacent_AU_pad11	0	stack	14	21	-3.3000000000000003	-3.3000000000000003							15	20
+447	ml_adjacent_AU_pad11	0	hairpin	15	20	4.499999999999999	4.499999999999999								
+451	ml_gapped_GU_pad00	2	exterior_branch_terminal_AU_GU	1	25	0.5	0.5	3							
+451	ml_gapped_GU_pad00	2	exterior_branch_neighbor	1	25	0.0	0.0	3	-1	-1	-1	-1			
+451	ml_gapped_GU_pad00	2	MLclosing	1	25	9.3	9.3								
+451	ml_gapped_GU_pad00	2	closing_terminal_AU_GU	1	25	0.5	0.5	4							
+451	ml_gapped_GU_pad00	2	closing_MLintern	1	25	-0.8999999999999999	-0.8999999999999999	4							
+451	ml_gapped_GU_pad00	2	closing_neighbor	1	25	-0.30000000000000016	0.0	4	1	1	-1	-1			
+451	ml_gapped_GU_pad00	2	MLbase	1	25	-0.0	-0.0						3		
+451	ml_gapped_GU_pad00	2	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+451	ml_gapped_GU_pad00	2	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+451	ml_gapped_GU_pad00	2	multiloop_branch_neighbor	3	12	-1.5	-1.5	2	1	1	1	1			
+451	ml_gapped_GU_pad00	2	multiloop_branch_terminal_AU_GU	14	23	0.0	0.0	2							
+451	ml_gapped_GU_pad00	2	multiloop_branch_MLintern	14	23	-0.8999999999999999	-0.8999999999999999	2							
+451	ml_gapped_GU_pad00	2	multiloop_branch_neighbor	14	23	-1.5	-1.5	2	1	1	1	1			
+451	ml_gapped_GU_pad00	2	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+451	ml_gapped_GU_pad00	2	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+451	ml_gapped_GU_pad00	2	hairpin	5	10	4.499999999999999	4.499999999999999								
+451	ml_gapped_GU_pad00	2	stack	14	23	-3.3000000000000003	-3.3000000000000003							15	22
+451	ml_gapped_GU_pad00	2	stack	15	22	-3.3000000000000003	-3.3000000000000003							16	21
+451	ml_gapped_GU_pad00	2	hairpin	16	21	4.499999999999999	4.499999999999999								
+453	ml_gapped_GU_pad00	0	exterior_branch_terminal_AU_GU	1	25	0.5	0.5	3							
+453	ml_gapped_GU_pad00	0	exterior_branch_neighbor	1	25	0.0	0.0	3	-1	-1	-1	-1			
+453	ml_gapped_GU_pad00	0	MLclosing	1	25	9.3	9.3								
+453	ml_gapped_GU_pad00	0	closing_terminal_AU_GU	1	25	0.5	0.5	4							
+453	ml_gapped_GU_pad00	0	closing_MLintern	1	25	-0.8999999999999999	-0.8999999999999999	4							
+453	ml_gapped_GU_pad00	0	closing_neighbor	1	25	0.0	0.0	4	-1	-1	-1	-1			
+453	ml_gapped_GU_pad00	0	MLbase	1	25	-0.0	-0.0						3		
+453	ml_gapped_GU_pad00	0	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+453	ml_gapped_GU_pad00	0	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+453	ml_gapped_GU_pad00	0	multiloop_branch_neighbor	3	12	0.0	0.0	2	-1	-1	-1	-1			
+453	ml_gapped_GU_pad00	0	multiloop_branch_terminal_AU_GU	14	23	0.0	0.0	2							
+453	ml_gapped_GU_pad00	0	multiloop_branch_MLintern	14	23	-0.8999999999999999	-0.8999999999999999	2							
+453	ml_gapped_GU_pad00	0	multiloop_branch_neighbor	14	23	0.0	0.0	2	-1	-1	-1	-1			
+453	ml_gapped_GU_pad00	0	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+453	ml_gapped_GU_pad00	0	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+453	ml_gapped_GU_pad00	0	hairpin	5	10	4.499999999999999	4.499999999999999								
+453	ml_gapped_GU_pad00	0	stack	14	23	-3.3000000000000003	-3.3000000000000003							15	22
+453	ml_gapped_GU_pad00	0	stack	15	22	-3.3000000000000003	-3.3000000000000003							16	21
+453	ml_gapped_GU_pad00	0	hairpin	16	21	4.499999999999999	4.499999999999999								
+457	ml_gapped_GU_pad01	2	exterior_branch_terminal_AU_GU	1	25	0.5	0.5	3							
+457	ml_gapped_GU_pad01	2	exterior_branch_neighbor	1	25	-0.7	-0.7	3	-1	1	-1	1			
+457	ml_gapped_GU_pad01	2	MLclosing	1	25	9.3	9.3								
+457	ml_gapped_GU_pad01	2	closing_terminal_AU_GU	1	25	0.5	0.5	4							
+457	ml_gapped_GU_pad01	2	closing_MLintern	1	25	-0.8999999999999999	-0.8999999999999999	4							
+457	ml_gapped_GU_pad01	2	closing_neighbor	1	25	-0.30000000000000016	-0.30000000000000016	4	1	1	1	-1			
+457	ml_gapped_GU_pad01	2	MLbase	1	25	-0.0	-0.0						3		
+457	ml_gapped_GU_pad01	2	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+457	ml_gapped_GU_pad01	2	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+457	ml_gapped_GU_pad01	2	multiloop_branch_neighbor	3	12	-1.5	-1.5	2	1	1	1	1			
+457	ml_gapped_GU_pad01	2	multiloop_branch_terminal_AU_GU	14	23	0.0	0.0	2							
+457	ml_gapped_GU_pad01	2	multiloop_branch_MLintern	14	23	-0.8999999999999999	-0.8999999999999999	2							
+457	ml_gapped_GU_pad01	2	multiloop_branch_neighbor	14	23	-1.5	-1.5	2	1	1	1	1			
+457	ml_gapped_GU_pad01	2	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+457	ml_gapped_GU_pad01	2	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+457	ml_gapped_GU_pad01	2	hairpin	5	10	4.499999999999999	4.499999999999999								
+457	ml_gapped_GU_pad01	2	stack	14	23	-3.3000000000000003	-3.3000000000000003							15	22
+457	ml_gapped_GU_pad01	2	stack	15	22	-3.3000000000000003	-3.3000000000000003							16	21
+457	ml_gapped_GU_pad01	2	hairpin	16	21	4.499999999999999	4.499999999999999								
+459	ml_gapped_GU_pad01	0	exterior_branch_terminal_AU_GU	1	25	0.5	0.5	3							
+459	ml_gapped_GU_pad01	0	exterior_branch_neighbor	1	25	0.0	0.0	3	-1	-1	-1	-1			
+459	ml_gapped_GU_pad01	0	MLclosing	1	25	9.3	9.3								
+459	ml_gapped_GU_pad01	0	closing_terminal_AU_GU	1	25	0.5	0.5	4							
+459	ml_gapped_GU_pad01	0	closing_MLintern	1	25	-0.8999999999999999	-0.8999999999999999	4							
+459	ml_gapped_GU_pad01	0	closing_neighbor	1	25	0.0	0.0	4	-1	-1	-1	-1			
+459	ml_gapped_GU_pad01	0	MLbase	1	25	-0.0	-0.0						3		
+459	ml_gapped_GU_pad01	0	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+459	ml_gapped_GU_pad01	0	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+459	ml_gapped_GU_pad01	0	multiloop_branch_neighbor	3	12	0.0	0.0	2	-1	-1	-1	-1			
+459	ml_gapped_GU_pad01	0	multiloop_branch_terminal_AU_GU	14	23	0.0	0.0	2							
+459	ml_gapped_GU_pad01	0	multiloop_branch_MLintern	14	23	-0.8999999999999999	-0.8999999999999999	2							
+459	ml_gapped_GU_pad01	0	multiloop_branch_neighbor	14	23	0.0	0.0	2	-1	-1	-1	-1			
+459	ml_gapped_GU_pad01	0	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+459	ml_gapped_GU_pad01	0	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+459	ml_gapped_GU_pad01	0	hairpin	5	10	4.499999999999999	4.499999999999999								
+459	ml_gapped_GU_pad01	0	stack	14	23	-3.3000000000000003	-3.3000000000000003							15	22
+459	ml_gapped_GU_pad01	0	stack	15	22	-3.3000000000000003	-3.3000000000000003							16	21
+459	ml_gapped_GU_pad01	0	hairpin	16	21	4.499999999999999	4.499999999999999								
+463	ml_gapped_GU_pad10	2	exterior_branch_terminal_AU_GU	2	26	0.5	0.5	3							
+463	ml_gapped_GU_pad10	2	exterior_branch_neighbor	2	26	-0.30000000000000004	-0.30000000000000004	3	1	-1	1	-1			
+463	ml_gapped_GU_pad10	2	MLclosing	2	26	9.3	9.3								
+463	ml_gapped_GU_pad10	2	closing_terminal_AU_GU	2	26	0.5	0.5	4							
+463	ml_gapped_GU_pad10	2	closing_MLintern	2	26	-0.8999999999999999	-0.8999999999999999	4							
+463	ml_gapped_GU_pad10	2	closing_neighbor	2	26	-0.30000000000000016	-0.8	4	1	1	-1	1			
+463	ml_gapped_GU_pad10	2	MLbase	2	26	-0.0	-0.0						3		
+463	ml_gapped_GU_pad10	2	multiloop_branch_terminal_AU_GU	4	13	0.0	0.0	2							
+463	ml_gapped_GU_pad10	2	multiloop_branch_MLintern	4	13	-0.8999999999999999	-0.8999999999999999	2							
+463	ml_gapped_GU_pad10	2	multiloop_branch_neighbor	4	13	-1.5	-1.5	2	1	1	1	1			
+463	ml_gapped_GU_pad10	2	multiloop_branch_terminal_AU_GU	15	24	0.0	0.0	2							
+463	ml_gapped_GU_pad10	2	multiloop_branch_MLintern	15	24	-0.8999999999999999	-0.8999999999999999	2							
+463	ml_gapped_GU_pad10	2	multiloop_branch_neighbor	15	24	-1.5	-1.5	2	1	1	1	1			
+463	ml_gapped_GU_pad10	2	stack	4	13	-3.3000000000000003	-3.3000000000000003							5	12
+463	ml_gapped_GU_pad10	2	stack	5	12	-3.3000000000000003	-3.3000000000000003							6	11
+463	ml_gapped_GU_pad10	2	hairpin	6	11	4.499999999999999	4.499999999999999								
+463	ml_gapped_GU_pad10	2	stack	15	24	-3.3000000000000003	-3.3000000000000003							16	23
+463	ml_gapped_GU_pad10	2	stack	16	23	-3.3000000000000003	-3.3000000000000003							17	22
+463	ml_gapped_GU_pad10	2	hairpin	17	22	4.499999999999999	4.499999999999999								
+465	ml_gapped_GU_pad10	0	exterior_branch_terminal_AU_GU	2	26	0.5	0.5	3							
+465	ml_gapped_GU_pad10	0	exterior_branch_neighbor	2	26	0.0	0.0	3	-1	-1	-1	-1			
+465	ml_gapped_GU_pad10	0	MLclosing	2	26	9.3	9.3								
+465	ml_gapped_GU_pad10	0	closing_terminal_AU_GU	2	26	0.5	0.5	4							
+465	ml_gapped_GU_pad10	0	closing_MLintern	2	26	-0.8999999999999999	-0.8999999999999999	4							
+465	ml_gapped_GU_pad10	0	closing_neighbor	2	26	0.0	0.0	4	-1	-1	-1	-1			
+465	ml_gapped_GU_pad10	0	MLbase	2	26	-0.0	-0.0						3		
+465	ml_gapped_GU_pad10	0	multiloop_branch_terminal_AU_GU	4	13	0.0	0.0	2							
+465	ml_gapped_GU_pad10	0	multiloop_branch_MLintern	4	13	-0.8999999999999999	-0.8999999999999999	2							
+465	ml_gapped_GU_pad10	0	multiloop_branch_neighbor	4	13	0.0	0.0	2	-1	-1	-1	-1			
+465	ml_gapped_GU_pad10	0	multiloop_branch_terminal_AU_GU	15	24	0.0	0.0	2							
+465	ml_gapped_GU_pad10	0	multiloop_branch_MLintern	15	24	-0.8999999999999999	-0.8999999999999999	2							
+465	ml_gapped_GU_pad10	0	multiloop_branch_neighbor	15	24	0.0	0.0	2	-1	-1	-1	-1			
+465	ml_gapped_GU_pad10	0	stack	4	13	-3.3000000000000003	-3.3000000000000003							5	12
+465	ml_gapped_GU_pad10	0	stack	5	12	-3.3000000000000003	-3.3000000000000003							6	11
+465	ml_gapped_GU_pad10	0	hairpin	6	11	4.499999999999999	4.499999999999999								
+465	ml_gapped_GU_pad10	0	stack	15	24	-3.3000000000000003	-3.3000000000000003							16	23
+465	ml_gapped_GU_pad10	0	stack	16	23	-3.3000000000000003	-3.3000000000000003							17	22
+465	ml_gapped_GU_pad10	0	hairpin	17	22	4.499999999999999	4.499999999999999								
+469	ml_gapped_GU_pad11	2	exterior_branch_terminal_AU_GU	2	26	0.5	0.5	3							
+469	ml_gapped_GU_pad11	2	exterior_branch_neighbor	2	26	-1.0	-1.0	3	1	1	1	1			
+469	ml_gapped_GU_pad11	2	MLclosing	2	26	9.3	9.3								
+469	ml_gapped_GU_pad11	2	closing_terminal_AU_GU	2	26	0.5	0.5	4							
+469	ml_gapped_GU_pad11	2	closing_MLintern	2	26	-0.8999999999999999	-0.8999999999999999	4							
+469	ml_gapped_GU_pad11	2	closing_neighbor	2	26	-0.30000000000000016	-0.30000000000000016	4	1	1	1	1			
+469	ml_gapped_GU_pad11	2	MLbase	2	26	-0.0	-0.0						3		
+469	ml_gapped_GU_pad11	2	multiloop_branch_terminal_AU_GU	4	13	0.0	0.0	2							
+469	ml_gapped_GU_pad11	2	multiloop_branch_MLintern	4	13	-0.8999999999999999	-0.8999999999999999	2							
+469	ml_gapped_GU_pad11	2	multiloop_branch_neighbor	4	13	-1.5	-1.5	2	1	1	1	1			
+469	ml_gapped_GU_pad11	2	multiloop_branch_terminal_AU_GU	15	24	0.0	0.0	2							
+469	ml_gapped_GU_pad11	2	multiloop_branch_MLintern	15	24	-0.8999999999999999	-0.8999999999999999	2							
+469	ml_gapped_GU_pad11	2	multiloop_branch_neighbor	15	24	-1.5	-1.5	2	1	1	1	1			
+469	ml_gapped_GU_pad11	2	stack	4	13	-3.3000000000000003	-3.3000000000000003							5	12
+469	ml_gapped_GU_pad11	2	stack	5	12	-3.3000000000000003	-3.3000000000000003							6	11
+469	ml_gapped_GU_pad11	2	hairpin	6	11	4.499999999999999	4.499999999999999								
+469	ml_gapped_GU_pad11	2	stack	15	24	-3.3000000000000003	-3.3000000000000003							16	23
+469	ml_gapped_GU_pad11	2	stack	16	23	-3.3000000000000003	-3.3000000000000003							17	22
+469	ml_gapped_GU_pad11	2	hairpin	17	22	4.499999999999999	4.499999999999999								
+471	ml_gapped_GU_pad11	0	exterior_branch_terminal_AU_GU	2	26	0.5	0.5	3							
+471	ml_gapped_GU_pad11	0	exterior_branch_neighbor	2	26	0.0	0.0	3	-1	-1	-1	-1			
+471	ml_gapped_GU_pad11	0	MLclosing	2	26	9.3	9.3								
+471	ml_gapped_GU_pad11	0	closing_terminal_AU_GU	2	26	0.5	0.5	4							
+471	ml_gapped_GU_pad11	0	closing_MLintern	2	26	-0.8999999999999999	-0.8999999999999999	4							
+471	ml_gapped_GU_pad11	0	closing_neighbor	2	26	0.0	0.0	4	-1	-1	-1	-1			
+471	ml_gapped_GU_pad11	0	MLbase	2	26	-0.0	-0.0						3		
+471	ml_gapped_GU_pad11	0	multiloop_branch_terminal_AU_GU	4	13	0.0	0.0	2							
+471	ml_gapped_GU_pad11	0	multiloop_branch_MLintern	4	13	-0.8999999999999999	-0.8999999999999999	2							
+471	ml_gapped_GU_pad11	0	multiloop_branch_neighbor	4	13	0.0	0.0	2	-1	-1	-1	-1			
+471	ml_gapped_GU_pad11	0	multiloop_branch_terminal_AU_GU	15	24	0.0	0.0	2							
+471	ml_gapped_GU_pad11	0	multiloop_branch_MLintern	15	24	-0.8999999999999999	-0.8999999999999999	2							
+471	ml_gapped_GU_pad11	0	multiloop_branch_neighbor	15	24	0.0	0.0	2	-1	-1	-1	-1			
+471	ml_gapped_GU_pad11	0	stack	4	13	-3.3000000000000003	-3.3000000000000003							5	12
+471	ml_gapped_GU_pad11	0	stack	5	12	-3.3000000000000003	-3.3000000000000003							6	11
+471	ml_gapped_GU_pad11	0	hairpin	6	11	4.499999999999999	4.499999999999999								
+471	ml_gapped_GU_pad11	0	stack	15	24	-3.3000000000000003	-3.3000000000000003							16	23
+471	ml_gapped_GU_pad11	0	stack	16	23	-3.3000000000000003	-3.3000000000000003							17	22
+471	ml_gapped_GU_pad11	0	hairpin	17	22	4.499999999999999	4.499999999999999								
+475	ml_adjacent_GU_pad00	2	exterior_branch_terminal_AU_GU	1	22	0.5	0.5	3							
+475	ml_adjacent_GU_pad00	2	exterior_branch_neighbor	1	22	0.0	0.0	3	-1	-1	-1	-1			
+475	ml_adjacent_GU_pad00	2	MLclosing	1	22	9.3	9.3								
+475	ml_adjacent_GU_pad00	2	closing_terminal_AU_GU	1	22	0.5	0.5	4							
+475	ml_adjacent_GU_pad00	2	closing_MLintern	1	22	-0.8999999999999999	-0.8999999999999999	4							
+475	ml_adjacent_GU_pad00	2	closing_neighbor	1	22	-1.0	0.0	4	2	3	-1	-1			
+475	ml_adjacent_GU_pad00	2	MLbase	1	22	-0.0	-0.0						0		
+475	ml_adjacent_GU_pad00	2	multiloop_branch_terminal_AU_GU	2	11	0.0	0.0	2							
+475	ml_adjacent_GU_pad00	2	multiloop_branch_MLintern	2	11	-0.8999999999999999	-0.8999999999999999	2							
+475	ml_adjacent_GU_pad00	2	multiloop_branch_neighbor	2	11	-1.5999999999999996	-1.5999999999999996	2	3	3	3	3			
+475	ml_adjacent_GU_pad00	2	multiloop_branch_terminal_AU_GU	12	21	0.0	0.0	2							
+475	ml_adjacent_GU_pad00	2	multiloop_branch_MLintern	12	21	-0.8999999999999999	-0.8999999999999999	2							
+475	ml_adjacent_GU_pad00	2	multiloop_branch_neighbor	12	21	-1.4	-1.4	2	2	4	2	4			
+475	ml_adjacent_GU_pad00	2	stack	2	11	-3.3000000000000003	-3.3000000000000003							3	10
+475	ml_adjacent_GU_pad00	2	stack	3	10	-3.3000000000000003	-3.3000000000000003							4	9
+475	ml_adjacent_GU_pad00	2	hairpin	4	9	4.499999999999999	4.499999999999999								
+475	ml_adjacent_GU_pad00	2	stack	12	21	-3.3000000000000003	-3.3000000000000003							13	20
+475	ml_adjacent_GU_pad00	2	stack	13	20	-3.3000000000000003	-3.3000000000000003							14	19
+475	ml_adjacent_GU_pad00	2	hairpin	14	19	4.499999999999999	4.499999999999999								
+477	ml_adjacent_GU_pad00	0	exterior_branch_terminal_AU_GU	1	22	0.5	0.5	3							
+477	ml_adjacent_GU_pad00	0	exterior_branch_neighbor	1	22	0.0	0.0	3	-1	-1	-1	-1			
+477	ml_adjacent_GU_pad00	0	MLclosing	1	22	9.3	9.3								
+477	ml_adjacent_GU_pad00	0	closing_terminal_AU_GU	1	22	0.5	0.5	4							
+477	ml_adjacent_GU_pad00	0	closing_MLintern	1	22	-0.8999999999999999	-0.8999999999999999	4							
+477	ml_adjacent_GU_pad00	0	closing_neighbor	1	22	0.0	0.0	4	-1	-1	-1	-1			
+477	ml_adjacent_GU_pad00	0	MLbase	1	22	-0.0	-0.0						0		
+477	ml_adjacent_GU_pad00	0	multiloop_branch_terminal_AU_GU	2	11	0.0	0.0	2							
+477	ml_adjacent_GU_pad00	0	multiloop_branch_MLintern	2	11	-0.8999999999999999	-0.8999999999999999	2							
+477	ml_adjacent_GU_pad00	0	multiloop_branch_neighbor	2	11	0.0	0.0	2	-1	-1	-1	-1			
+477	ml_adjacent_GU_pad00	0	multiloop_branch_terminal_AU_GU	12	21	0.0	0.0	2							
+477	ml_adjacent_GU_pad00	0	multiloop_branch_MLintern	12	21	-0.8999999999999999	-0.8999999999999999	2							
+477	ml_adjacent_GU_pad00	0	multiloop_branch_neighbor	12	21	0.0	0.0	2	-1	-1	-1	-1			
+477	ml_adjacent_GU_pad00	0	stack	2	11	-3.3000000000000003	-3.3000000000000003							3	10
+477	ml_adjacent_GU_pad00	0	stack	3	10	-3.3000000000000003	-3.3000000000000003							4	9
+477	ml_adjacent_GU_pad00	0	hairpin	4	9	4.499999999999999	4.499999999999999								
+477	ml_adjacent_GU_pad00	0	stack	12	21	-3.3000000000000003	-3.3000000000000003							13	20
+477	ml_adjacent_GU_pad00	0	stack	13	20	-3.3000000000000003	-3.3000000000000003							14	19
+477	ml_adjacent_GU_pad00	0	hairpin	14	19	4.499999999999999	4.499999999999999								
+481	ml_adjacent_GU_pad01	2	exterior_branch_terminal_AU_GU	1	22	0.5	0.5	3							
+481	ml_adjacent_GU_pad01	2	exterior_branch_neighbor	1	22	-0.7	-0.7	3	-1	1	-1	1			
+481	ml_adjacent_GU_pad01	2	MLclosing	1	22	9.3	9.3								
+481	ml_adjacent_GU_pad01	2	closing_terminal_AU_GU	1	22	0.5	0.5	4							
+481	ml_adjacent_GU_pad01	2	closing_MLintern	1	22	-0.8999999999999999	-0.8999999999999999	4							
+481	ml_adjacent_GU_pad01	2	closing_neighbor	1	22	-1.0	-0.10000000000000009	4	2	3	2	-1			
+481	ml_adjacent_GU_pad01	2	MLbase	1	22	-0.0	-0.0						0		
+481	ml_adjacent_GU_pad01	2	multiloop_branch_terminal_AU_GU	2	11	0.0	0.0	2							
+481	ml_adjacent_GU_pad01	2	multiloop_branch_MLintern	2	11	-0.8999999999999999	-0.8999999999999999	2							
+481	ml_adjacent_GU_pad01	2	multiloop_branch_neighbor	2	11	-1.5999999999999996	-1.5999999999999996	2	3	3	3	3			
+481	ml_adjacent_GU_pad01	2	multiloop_branch_terminal_AU_GU	12	21	0.0	0.0	2							
+481	ml_adjacent_GU_pad01	2	multiloop_branch_MLintern	12	21	-0.8999999999999999	-0.8999999999999999	2							
+481	ml_adjacent_GU_pad01	2	multiloop_branch_neighbor	12	21	-1.4	-1.4	2	2	4	2	4			
+481	ml_adjacent_GU_pad01	2	stack	2	11	-3.3000000000000003	-3.3000000000000003							3	10
+481	ml_adjacent_GU_pad01	2	stack	3	10	-3.3000000000000003	-3.3000000000000003							4	9
+481	ml_adjacent_GU_pad01	2	hairpin	4	9	4.499999999999999	4.499999999999999								
+481	ml_adjacent_GU_pad01	2	stack	12	21	-3.3000000000000003	-3.3000000000000003							13	20
+481	ml_adjacent_GU_pad01	2	stack	13	20	-3.3000000000000003	-3.3000000000000003							14	19
+481	ml_adjacent_GU_pad01	2	hairpin	14	19	4.499999999999999	4.499999999999999								
+483	ml_adjacent_GU_pad01	0	exterior_branch_terminal_AU_GU	1	22	0.5	0.5	3							
+483	ml_adjacent_GU_pad01	0	exterior_branch_neighbor	1	22	0.0	0.0	3	-1	-1	-1	-1			
+483	ml_adjacent_GU_pad01	0	MLclosing	1	22	9.3	9.3								
+483	ml_adjacent_GU_pad01	0	closing_terminal_AU_GU	1	22	0.5	0.5	4							
+483	ml_adjacent_GU_pad01	0	closing_MLintern	1	22	-0.8999999999999999	-0.8999999999999999	4							
+483	ml_adjacent_GU_pad01	0	closing_neighbor	1	22	0.0	0.0	4	-1	-1	-1	-1			
+483	ml_adjacent_GU_pad01	0	MLbase	1	22	-0.0	-0.0						0		
+483	ml_adjacent_GU_pad01	0	multiloop_branch_terminal_AU_GU	2	11	0.0	0.0	2							
+483	ml_adjacent_GU_pad01	0	multiloop_branch_MLintern	2	11	-0.8999999999999999	-0.8999999999999999	2							
+483	ml_adjacent_GU_pad01	0	multiloop_branch_neighbor	2	11	0.0	0.0	2	-1	-1	-1	-1			
+483	ml_adjacent_GU_pad01	0	multiloop_branch_terminal_AU_GU	12	21	0.0	0.0	2							
+483	ml_adjacent_GU_pad01	0	multiloop_branch_MLintern	12	21	-0.8999999999999999	-0.8999999999999999	2							
+483	ml_adjacent_GU_pad01	0	multiloop_branch_neighbor	12	21	0.0	0.0	2	-1	-1	-1	-1			
+483	ml_adjacent_GU_pad01	0	stack	2	11	-3.3000000000000003	-3.3000000000000003							3	10
+483	ml_adjacent_GU_pad01	0	stack	3	10	-3.3000000000000003	-3.3000000000000003							4	9
+483	ml_adjacent_GU_pad01	0	hairpin	4	9	4.499999999999999	4.499999999999999								
+483	ml_adjacent_GU_pad01	0	stack	12	21	-3.3000000000000003	-3.3000000000000003							13	20
+483	ml_adjacent_GU_pad01	0	stack	13	20	-3.3000000000000003	-3.3000000000000003							14	19
+483	ml_adjacent_GU_pad01	0	hairpin	14	19	4.499999999999999	4.499999999999999								
+487	ml_adjacent_GU_pad10	2	exterior_branch_terminal_AU_GU	2	23	0.5	0.5	3							
+487	ml_adjacent_GU_pad10	2	exterior_branch_neighbor	2	23	-0.30000000000000004	-0.30000000000000004	3	1	-1	1	-1			
+487	ml_adjacent_GU_pad10	2	MLclosing	2	23	9.3	9.3								
+487	ml_adjacent_GU_pad10	2	closing_terminal_AU_GU	2	23	0.5	0.5	4							
+487	ml_adjacent_GU_pad10	2	closing_MLintern	2	23	-0.8999999999999999	-0.8999999999999999	4							
+487	ml_adjacent_GU_pad10	2	closing_neighbor	2	23	-1.0	-0.8	4	2	3	-1	3			
+487	ml_adjacent_GU_pad10	2	MLbase	2	23	-0.0	-0.0						0		
+487	ml_adjacent_GU_pad10	2	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+487	ml_adjacent_GU_pad10	2	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+487	ml_adjacent_GU_pad10	2	multiloop_branch_neighbor	3	12	-1.5999999999999996	-1.5999999999999996	2	3	3	3	3			
+487	ml_adjacent_GU_pad10	2	multiloop_branch_terminal_AU_GU	13	22	0.0	0.0	2							
+487	ml_adjacent_GU_pad10	2	multiloop_branch_MLintern	13	22	-0.8999999999999999	-0.8999999999999999	2							
+487	ml_adjacent_GU_pad10	2	multiloop_branch_neighbor	13	22	-1.4	-1.4	2	2	4	2	4			
+487	ml_adjacent_GU_pad10	2	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+487	ml_adjacent_GU_pad10	2	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+487	ml_adjacent_GU_pad10	2	hairpin	5	10	4.499999999999999	4.499999999999999								
+487	ml_adjacent_GU_pad10	2	stack	13	22	-3.3000000000000003	-3.3000000000000003							14	21
+487	ml_adjacent_GU_pad10	2	stack	14	21	-3.3000000000000003	-3.3000000000000003							15	20
+487	ml_adjacent_GU_pad10	2	hairpin	15	20	4.499999999999999	4.499999999999999								
+489	ml_adjacent_GU_pad10	0	exterior_branch_terminal_AU_GU	2	23	0.5	0.5	3							
+489	ml_adjacent_GU_pad10	0	exterior_branch_neighbor	2	23	0.0	0.0	3	-1	-1	-1	-1			
+489	ml_adjacent_GU_pad10	0	MLclosing	2	23	9.3	9.3								
+489	ml_adjacent_GU_pad10	0	closing_terminal_AU_GU	2	23	0.5	0.5	4							
+489	ml_adjacent_GU_pad10	0	closing_MLintern	2	23	-0.8999999999999999	-0.8999999999999999	4							
+489	ml_adjacent_GU_pad10	0	closing_neighbor	2	23	0.0	0.0	4	-1	-1	-1	-1			
+489	ml_adjacent_GU_pad10	0	MLbase	2	23	-0.0	-0.0						0		
+489	ml_adjacent_GU_pad10	0	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+489	ml_adjacent_GU_pad10	0	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+489	ml_adjacent_GU_pad10	0	multiloop_branch_neighbor	3	12	0.0	0.0	2	-1	-1	-1	-1			
+489	ml_adjacent_GU_pad10	0	multiloop_branch_terminal_AU_GU	13	22	0.0	0.0	2							
+489	ml_adjacent_GU_pad10	0	multiloop_branch_MLintern	13	22	-0.8999999999999999	-0.8999999999999999	2							
+489	ml_adjacent_GU_pad10	0	multiloop_branch_neighbor	13	22	0.0	0.0	2	-1	-1	-1	-1			
+489	ml_adjacent_GU_pad10	0	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+489	ml_adjacent_GU_pad10	0	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+489	ml_adjacent_GU_pad10	0	hairpin	5	10	4.499999999999999	4.499999999999999								
+489	ml_adjacent_GU_pad10	0	stack	13	22	-3.3000000000000003	-3.3000000000000003							14	21
+489	ml_adjacent_GU_pad10	0	stack	14	21	-3.3000000000000003	-3.3000000000000003							15	20
+489	ml_adjacent_GU_pad10	0	hairpin	15	20	4.499999999999999	4.499999999999999								
+493	ml_adjacent_GU_pad11	2	exterior_branch_terminal_AU_GU	2	23	0.5	0.5	3							
+493	ml_adjacent_GU_pad11	2	exterior_branch_neighbor	2	23	-1.0	-1.0	3	1	1	1	1			
+493	ml_adjacent_GU_pad11	2	MLclosing	2	23	9.3	9.3								
+493	ml_adjacent_GU_pad11	2	closing_terminal_AU_GU	2	23	0.5	0.5	4							
+493	ml_adjacent_GU_pad11	2	closing_MLintern	2	23	-0.8999999999999999	-0.8999999999999999	4							
+493	ml_adjacent_GU_pad11	2	closing_neighbor	2	23	-1.0	-1.0	4	2	3	2	3			
+493	ml_adjacent_GU_pad11	2	MLbase	2	23	-0.0	-0.0						0		
+493	ml_adjacent_GU_pad11	2	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+493	ml_adjacent_GU_pad11	2	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+493	ml_adjacent_GU_pad11	2	multiloop_branch_neighbor	3	12	-1.5999999999999996	-1.5999999999999996	2	3	3	3	3			
+493	ml_adjacent_GU_pad11	2	multiloop_branch_terminal_AU_GU	13	22	0.0	0.0	2							
+493	ml_adjacent_GU_pad11	2	multiloop_branch_MLintern	13	22	-0.8999999999999999	-0.8999999999999999	2							
+493	ml_adjacent_GU_pad11	2	multiloop_branch_neighbor	13	22	-1.4	-1.4	2	2	4	2	4			
+493	ml_adjacent_GU_pad11	2	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+493	ml_adjacent_GU_pad11	2	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+493	ml_adjacent_GU_pad11	2	hairpin	5	10	4.499999999999999	4.499999999999999								
+493	ml_adjacent_GU_pad11	2	stack	13	22	-3.3000000000000003	-3.3000000000000003							14	21
+493	ml_adjacent_GU_pad11	2	stack	14	21	-3.3000000000000003	-3.3000000000000003							15	20
+493	ml_adjacent_GU_pad11	2	hairpin	15	20	4.499999999999999	4.499999999999999								
+495	ml_adjacent_GU_pad11	0	exterior_branch_terminal_AU_GU	2	23	0.5	0.5	3							
+495	ml_adjacent_GU_pad11	0	exterior_branch_neighbor	2	23	0.0	0.0	3	-1	-1	-1	-1			
+495	ml_adjacent_GU_pad11	0	MLclosing	2	23	9.3	9.3								
+495	ml_adjacent_GU_pad11	0	closing_terminal_AU_GU	2	23	0.5	0.5	4							
+495	ml_adjacent_GU_pad11	0	closing_MLintern	2	23	-0.8999999999999999	-0.8999999999999999	4							
+495	ml_adjacent_GU_pad11	0	closing_neighbor	2	23	0.0	0.0	4	-1	-1	-1	-1			
+495	ml_adjacent_GU_pad11	0	MLbase	2	23	-0.0	-0.0						0		
+495	ml_adjacent_GU_pad11	0	multiloop_branch_terminal_AU_GU	3	12	0.0	0.0	2							
+495	ml_adjacent_GU_pad11	0	multiloop_branch_MLintern	3	12	-0.8999999999999999	-0.8999999999999999	2							
+495	ml_adjacent_GU_pad11	0	multiloop_branch_neighbor	3	12	0.0	0.0	2	-1	-1	-1	-1			
+495	ml_adjacent_GU_pad11	0	multiloop_branch_terminal_AU_GU	13	22	0.0	0.0	2							
+495	ml_adjacent_GU_pad11	0	multiloop_branch_MLintern	13	22	-0.8999999999999999	-0.8999999999999999	2							
+495	ml_adjacent_GU_pad11	0	multiloop_branch_neighbor	13	22	0.0	0.0	2	-1	-1	-1	-1			
+495	ml_adjacent_GU_pad11	0	stack	3	12	-3.3000000000000003	-3.3000000000000003							4	11
+495	ml_adjacent_GU_pad11	0	stack	4	11	-3.3000000000000003	-3.3000000000000003							5	10
+495	ml_adjacent_GU_pad11	0	hairpin	5	10	4.499999999999999	4.499999999999999								
+495	ml_adjacent_GU_pad11	0	stack	13	22	-3.3000000000000003	-3.3000000000000003							14	21
+495	ml_adjacent_GU_pad11	0	stack	14	21	-3.3000000000000003	-3.3000000000000003							15	20
+495	ml_adjacent_GU_pad11	0	hairpin	15	20	4.499999999999999	4.499999999999999								
+499	hairpin_GC_pad00	2	exterior_branch_terminal_AU_GU	1	5	0.0	0.0	2							
+499	hairpin_GC_pad00	2	exterior_branch_neighbor	1	5	0.0	0.0	2	-1	-1	-1	-1			
+499	hairpin_GC_pad00	2	hairpin	1	5	5.4	5.4								
+501	hairpin_GC_pad00	0	exterior_branch_terminal_AU_GU	1	5	0.0	0.0	2							
+501	hairpin_GC_pad00	0	exterior_branch_neighbor	1	5	0.0	0.0	2	-1	-1	-1	-1			
+501	hairpin_GC_pad00	0	hairpin	1	5	5.4	5.4								
+503	hairpin_GC_pad01	2	exterior_branch_terminal_AU_GU	1	5	0.0	0.0	2							
+503	hairpin_GC_pad01	2	exterior_branch_neighbor	1	5	-1.7	-1.7	2	-1	1	-1	1			
+503	hairpin_GC_pad01	2	hairpin	1	5	5.4	5.4								
+505	hairpin_GC_pad01	0	exterior_branch_terminal_AU_GU	1	5	0.0	0.0	2							
+505	hairpin_GC_pad01	0	exterior_branch_neighbor	1	5	0.0	0.0	2	-1	-1	-1	-1			
+505	hairpin_GC_pad01	0	hairpin	1	5	5.4	5.4								
+507	hairpin_GC_pad10	2	exterior_branch_terminal_AU_GU	2	6	0.0	0.0	2							
+507	hairpin_GC_pad10	2	exterior_branch_neighbor	2	6	-0.20000000000000004	-0.20000000000000004	2	1	-1	1	-1			
+507	hairpin_GC_pad10	2	hairpin	2	6	5.4	5.4								
+509	hairpin_GC_pad10	0	exterior_branch_terminal_AU_GU	2	6	0.0	0.0	2							
+509	hairpin_GC_pad10	0	exterior_branch_neighbor	2	6	0.0	0.0	2	-1	-1	-1	-1			
+509	hairpin_GC_pad10	0	hairpin	2	6	5.4	5.4								
+511	hairpin_GC_pad11	2	exterior_branch_terminal_AU_GU	2	6	0.0	0.0	2							
+511	hairpin_GC_pad11	2	exterior_branch_neighbor	2	6	-1.5	-1.5	2	1	1	1	1			
+511	hairpin_GC_pad11	2	hairpin	2	6	5.4	5.4								
+513	hairpin_GC_pad11	0	exterior_branch_terminal_AU_GU	2	6	0.0	0.0	2							
+513	hairpin_GC_pad11	0	exterior_branch_neighbor	2	6	0.0	0.0	2	-1	-1	-1	-1			
+513	hairpin_GC_pad11	0	hairpin	2	6	5.4	5.4								
+515	hairpin_AU_pad00	2	exterior_branch_terminal_AU_GU	1	5	0.5	0.5	5							
+515	hairpin_AU_pad00	2	exterior_branch_neighbor	1	5	0.0	0.0	5	-1	-1	-1	-1			
+515	hairpin_AU_pad00	2	hairpin	1	5	5.9	5.9								
+517	hairpin_AU_pad00	0	exterior_branch_terminal_AU_GU	1	5	0.5	0.5	5							
+517	hairpin_AU_pad00	0	exterior_branch_neighbor	1	5	0.0	0.0	5	-1	-1	-1	-1			
+517	hairpin_AU_pad00	0	hairpin	1	5	5.9	5.9								
+519	hairpin_AU_pad01	2	exterior_branch_terminal_AU_GU	1	5	0.5	0.5	5							
+519	hairpin_AU_pad01	2	exterior_branch_neighbor	1	5	-0.7	-0.7	5	-1	1	-1	1			
+519	hairpin_AU_pad01	2	hairpin	1	5	5.9	5.9								
+521	hairpin_AU_pad01	0	exterior_branch_terminal_AU_GU	1	5	0.5	0.5	5							
+521	hairpin_AU_pad01	0	exterior_branch_neighbor	1	5	0.0	0.0	5	-1	-1	-1	-1			
+521	hairpin_AU_pad01	0	hairpin	1	5	5.9	5.9								
+523	hairpin_AU_pad10	2	exterior_branch_terminal_AU_GU	2	6	0.5	0.5	5							
+523	hairpin_AU_pad10	2	exterior_branch_neighbor	2	6	-0.30000000000000004	-0.30000000000000004	5	1	-1	1	-1			
+523	hairpin_AU_pad10	2	hairpin	2	6	5.9	5.9								
+525	hairpin_AU_pad10	0	exterior_branch_terminal_AU_GU	2	6	0.5	0.5	5							
+525	hairpin_AU_pad10	0	exterior_branch_neighbor	2	6	0.0	0.0	5	-1	-1	-1	-1			
+525	hairpin_AU_pad10	0	hairpin	2	6	5.9	5.9								
+527	hairpin_AU_pad11	2	exterior_branch_terminal_AU_GU	2	6	0.5	0.5	5							
+527	hairpin_AU_pad11	2	exterior_branch_neighbor	2	6	-1.0	-1.0	5	1	1	1	1			
+527	hairpin_AU_pad11	2	hairpin	2	6	5.9	5.9								
+529	hairpin_AU_pad11	0	exterior_branch_terminal_AU_GU	2	6	0.5	0.5	5							
+529	hairpin_AU_pad11	0	exterior_branch_neighbor	2	6	0.0	0.0	5	-1	-1	-1	-1			
+529	hairpin_AU_pad11	0	hairpin	2	6	5.9	5.9								
+531	hairpin_GU_pad00	2	exterior_branch_terminal_AU_GU	1	5	0.5	0.5	3							
+531	hairpin_GU_pad00	2	exterior_branch_neighbor	1	5	0.0	0.0	3	-1	-1	-1	-1			
+531	hairpin_GU_pad00	2	hairpin	1	5	5.9	5.9								
+533	hairpin_GU_pad00	0	exterior_branch_terminal_AU_GU	1	5	0.5	0.5	3							
+533	hairpin_GU_pad00	0	exterior_branch_neighbor	1	5	0.0	0.0	3	-1	-1	-1	-1			
+533	hairpin_GU_pad00	0	hairpin	1	5	5.9	5.9								
+535	hairpin_GU_pad01	2	exterior_branch_terminal_AU_GU	1	5	0.5	0.5	3							
+535	hairpin_GU_pad01	2	exterior_branch_neighbor	1	5	-0.7	-0.7	3	-1	1	-1	1			
+535	hairpin_GU_pad01	2	hairpin	1	5	5.9	5.9								
+537	hairpin_GU_pad01	0	exterior_branch_terminal_AU_GU	1	5	0.5	0.5	3							
+537	hairpin_GU_pad01	0	exterior_branch_neighbor	1	5	0.0	0.0	3	-1	-1	-1	-1			
+537	hairpin_GU_pad01	0	hairpin	1	5	5.9	5.9								
+539	hairpin_GU_pad10	2	exterior_branch_terminal_AU_GU	2	6	0.5	0.5	3							
+539	hairpin_GU_pad10	2	exterior_branch_neighbor	2	6	-0.30000000000000004	-0.30000000000000004	3	1	-1	1	-1			
+539	hairpin_GU_pad10	2	hairpin	2	6	5.9	5.9								
+541	hairpin_GU_pad10	0	exterior_branch_terminal_AU_GU	2	6	0.5	0.5	3							
+541	hairpin_GU_pad10	0	exterior_branch_neighbor	2	6	0.0	0.0	3	-1	-1	-1	-1			
+541	hairpin_GU_pad10	0	hairpin	2	6	5.9	5.9								
+543	hairpin_GU_pad11	2	exterior_branch_terminal_AU_GU	2	6	0.5	0.5	3							
+543	hairpin_GU_pad11	2	exterior_branch_neighbor	2	6	-1.0	-1.0	3	1	1	1	1			
+543	hairpin_GU_pad11	2	hairpin	2	6	5.9	5.9								
+545	hairpin_GU_pad11	0	exterior_branch_terminal_AU_GU	2	6	0.5	0.5	3							
+545	hairpin_GU_pad11	0	exterior_branch_neighbor	2	6	0.0	0.0	3	-1	-1	-1	-1			
+545	hairpin_GU_pad11	0	hairpin	2	6	5.9	5.9								

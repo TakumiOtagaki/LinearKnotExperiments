@@ -1,0 +1,35 @@
+{
+  "evaluations": 548,
+  "max_native_local_sum_vs_independent_pf": 5.684341886080802e-14,
+  "max_guarded_local_sum_vs_pinned": 5.684341886080802e-14,
+  "max_native_local_sum_vs_diagnostic": 5.684341886080802e-14,
+  "changed_by_boundary_guard": 45,
+  "max_abs_boundary_difference": 1.4999999999999991,
+  "native_eval_vs_pf_max": 0.016982420773231865,
+  "native_integer_eval_vs_pf_max": 0.016981657833786912,
+  "mfe_classification": {
+    "pinned": {
+      "same_score_tie": 27,
+      "same_structure": 310
+    },
+    "inner_neighbors_diagnostic": {
+      "same_score_tie": 27,
+      "same_structure": 310
+    }
+  },
+  "max_mfe_vs_its_fixed_structure_evaluation": 0.0,
+  "source_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "environment": {
+    "python_version": "3.9.25 (main, Mar 26 2026, 00:00:00) \n[GCC 11.5.0 20240719 (Red Hat 11.5.0-11)]",
+    "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+    "vienna_version": "2.7.2",
+    "vienna_native_extension": "/home/3/ub07263/.local/lib/python3.9/site-packages/RNA/_RNA.cpython-39-x86_64-linux-gnu.so",
+    "vienna_native_extension_sha256": "050c6f45a76c61936750c6e2a77c85de15eba87d0e901d335498390f8063f6e6"
+  },
+  "input_hashes": {
+    "inputs.jsonl": "4a1509190610acea67d4c1905423c37c66fe5f37641885561c408d0396b196e9",
+    "ensemble_metrics.tsv": "87a0d6f8bcd9aa04b9f266821e07080389d3df203dc141bb95a730d443604b7f",
+    "structure_metrics.tsv": "c25724bd86cf70d35bca811aa9808e54c1330efacd3640eb083c014a69c2c80f"
+  },
+  "script_sha256": "474e7e107c965e31542e7e3d5ce9c412758ff120ebf66093aa3f7afcb17c5346"
+}

@@ -1,0 +1,275 @@
+[
+  {
+    "row": 35,
+    "sequence": "GGUGCGCAUGGAGAACUCGC",
+    "id": "random_010_n20",
+    "group": "random",
+    "length": "20",
+    "structure": "...(((...(.....).)))",
+    "scaffold": "....................",
+    "roles": "inner_neighbors_diagnostic_mfe,pinned_mfe,vienna_boltzmann_sample,vienna_mfe",
+    "dangles": "2",
+    "boundary_multiloops": "[]",
+    "reachable": "True",
+    "pinned_energy": "-0.3169816578337879",
+    "diagnostic_energy": "-0.3169816578337879",
+    "delta_pinned_vs_vienna_pf": "-9.992007221626409e-16",
+    "delta_diagnostic_vs_vienna_pf": "-9.992007221626409e-16",
+    "delta_pinned_vs_vienna_eval": "-0.016981645912858945",
+    "vienna_eval_energy": "-0.30000001192092896",
+    "vienna_structure_pf_energy": "-0.3169816578337869",
+    "vienna_structure_logz": "0.5143127904079341",
+    "vienna_structure_pf_float": "-0.31698164343833923",
+    "vienna_constraint_max_pair_error": "2.220446049250313e-16",
+    "terms": [
+      {
+        "term": "exterior_branch_terminal_AU_GU",
+        "i": 4,
+        "j": 20,
+        "native_pf_energy": 0.0,
+        "guarded_pf_energy": 0.0,
+        "pair_type": 2
+      },
+      {
+        "term": "exterior_branch_neighbor",
+        "i": 4,
+        "j": 20,
+        "native_pf_energy": -0.016981657833787276,
+        "guarded_pf_energy": -0.016981657833787276,
+        "pair_type": 2,
+        "neighbor5": 4,
+        "neighbor3": -1,
+        "guarded_neighbor5": 4,
+        "guarded_neighbor3": -1
+      },
+      {
+        "term": "stack",
+        "i": 4,
+        "j": 20,
+        "native_pf_energy": -3.4,
+        "guarded_pf_energy": -3.4,
+        "inner_i": 5,
+        "inner_j": 19
+      },
+      {
+        "term": "stack",
+        "i": 5,
+        "j": 19,
+        "native_pf_energy": -2.4,
+        "guarded_pf_energy": -2.4,
+        "inner_i": 6,
+        "inner_j": 18
+      },
+      {
+        "term": "bulge_or_internal",
+        "i": 6,
+        "j": 18,
+        "native_pf_energy": 2.3,
+        "guarded_pf_energy": 2.3,
+        "inner_i": 10,
+        "inner_j": 16
+      },
+      {
+        "term": "hairpin",
+        "i": 10,
+        "j": 16,
+        "native_pf_energy": 3.1999999999999993,
+        "guarded_pf_energy": 3.1999999999999993
+      }
+    ]
+  },
+  {
+    "row": 379,
+    "sequence": "GGGGAAAACCCGGGAAAACCCC",
+    "id": "ml_adjacent_GC_pad00",
+    "group": "constructed",
+    "length": "22",
+    "structure": "((((....)))(((....))))",
+    "scaffold": "......................",
+    "roles": "constructed_target",
+    "dangles": "2",
+    "boundary_multiloops": "[[1, 22]]",
+    "reachable": "True",
+    "pinned_energy": "-0.3000000000000006",
+    "diagnostic_energy": "-1.8000000000000016",
+    "delta_pinned_vs_vienna_pf": "1.5",
+    "delta_diagnostic_vs_vienna_pf": "-1.1102230246251565e-15",
+    "delta_pinned_vs_vienna_eval": "1.4999999523162835",
+    "vienna_eval_energy": "-1.7999999523162842",
+    "vienna_structure_pf_energy": "-1.8000000000000005",
+    "vienna_structure_logz": "2.920557072799829",
+    "vienna_structure_pf_float": "-1.7999999523162842",
+    "vienna_constraint_max_pair_error": "4.440892098500626e-16",
+    "terms": [
+      {
+        "term": "exterior_branch_terminal_AU_GU",
+        "i": 1,
+        "j": 22,
+        "native_pf_energy": 0.0,
+        "guarded_pf_energy": 0.0,
+        "pair_type": 2
+      },
+      {
+        "term": "exterior_branch_neighbor",
+        "i": 1,
+        "j": 22,
+        "native_pf_energy": 0.0,
+        "guarded_pf_energy": 0.0,
+        "pair_type": 2,
+        "neighbor5": -1,
+        "neighbor3": -1,
+        "guarded_neighbor5": -1,
+        "guarded_neighbor3": -1
+      },
+      {
+        "term": "MLclosing",
+        "i": 1,
+        "j": 22,
+        "native_pf_energy": 9.3,
+        "guarded_pf_energy": 9.3
+      },
+      {
+        "term": "closing_terminal_AU_GU",
+        "i": 1,
+        "j": 22,
+        "native_pf_energy": 0.0,
+        "guarded_pf_energy": 0.0,
+        "pair_type": 1
+      },
+      {
+        "term": "closing_MLintern",
+        "i": 1,
+        "j": 22,
+        "native_pf_energy": -0.8999999999999999,
+        "guarded_pf_energy": -0.8999999999999999,
+        "pair_type": 1
+      },
+      {
+        "term": "closing_neighbor",
+        "i": 1,
+        "j": 22,
+        "native_pf_energy": -1.5,
+        "guarded_pf_energy": 0.0,
+        "pair_type": 1,
+        "neighbor5": 2,
+        "neighbor3": 3,
+        "guarded_neighbor5": -1,
+        "guarded_neighbor3": -1
+      },
+      {
+        "term": "MLbase",
+        "i": 1,
+        "j": 22,
+        "native_pf_energy": -0.0,
+        "guarded_pf_energy": -0.0,
+        "unpaired": 0
+      },
+      {
+        "term": "multiloop_branch_terminal_AU_GU",
+        "i": 2,
+        "j": 11,
+        "native_pf_energy": 0.0,
+        "guarded_pf_energy": 0.0,
+        "pair_type": 2
+      },
+      {
+        "term": "multiloop_branch_MLintern",
+        "i": 2,
+        "j": 11,
+        "native_pf_energy": -0.8999999999999999,
+        "guarded_pf_energy": -0.8999999999999999,
+        "pair_type": 2
+      },
+      {
+        "term": "multiloop_branch_neighbor",
+        "i": 2,
+        "j": 11,
+        "native_pf_energy": -1.5999999999999996,
+        "guarded_pf_energy": -1.5999999999999996,
+        "pair_type": 2,
+        "neighbor5": 3,
+        "neighbor3": 3,
+        "guarded_neighbor5": 3,
+        "guarded_neighbor3": 3
+      },
+      {
+        "term": "multiloop_branch_terminal_AU_GU",
+        "i": 12,
+        "j": 21,
+        "native_pf_energy": 0.0,
+        "guarded_pf_energy": 0.0,
+        "pair_type": 2
+      },
+      {
+        "term": "multiloop_branch_MLintern",
+        "i": 12,
+        "j": 21,
+        "native_pf_energy": -0.8999999999999999,
+        "guarded_pf_energy": -0.8999999999999999,
+        "pair_type": 2
+      },
+      {
+        "term": "multiloop_branch_neighbor",
+        "i": 12,
+        "j": 21,
+        "native_pf_energy": -1.1,
+        "guarded_pf_energy": -1.1,
+        "pair_type": 2,
+        "neighbor5": 2,
+        "neighbor3": 2,
+        "guarded_neighbor5": 2,
+        "guarded_neighbor3": 2
+      },
+      {
+        "term": "stack",
+        "i": 2,
+        "j": 11,
+        "native_pf_energy": -3.3000000000000003,
+        "guarded_pf_energy": -3.3000000000000003,
+        "inner_i": 3,
+        "inner_j": 10
+      },
+      {
+        "term": "stack",
+        "i": 3,
+        "j": 10,
+        "native_pf_energy": -3.3000000000000003,
+        "guarded_pf_energy": -3.3000000000000003,
+        "inner_i": 4,
+        "inner_j": 9
+      },
+      {
+        "term": "hairpin",
+        "i": 4,
+        "j": 9,
+        "native_pf_energy": 4.499999999999999,
+        "guarded_pf_energy": 4.499999999999999
+      },
+      {
+        "term": "stack",
+        "i": 12,
+        "j": 21,
+        "native_pf_energy": -3.3000000000000003,
+        "guarded_pf_energy": -3.3000000000000003,
+        "inner_i": 13,
+        "inner_j": 20
+      },
+      {
+        "term": "stack",
+        "i": 13,
+        "j": 20,
+        "native_pf_energy": -3.3000000000000003,
+        "guarded_pf_energy": -3.3000000000000003,
+        "inner_i": 14,
+        "inner_j": 19
+      },
+      {
+        "term": "hairpin",
+        "i": 14,
+        "j": 19,
+        "native_pf_energy": 4.499999999999999,
+        "guarded_pf_energy": 4.499999999999999
+      }
+    ]
+  }
+]

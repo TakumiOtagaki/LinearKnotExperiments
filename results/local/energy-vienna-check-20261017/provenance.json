@@ -1,0 +1,67 @@
+{
+  "started_utc": "2026-10-16T17:17:09.179443+00:00",
+  "purpose": "development independent energy audit, not performance measurement",
+  "seed": 20261017,
+  "source": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d02d261c",
+  "build": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d02d261c",
+  "source_commit": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+  "vienna_version": "2.7.2",
+  "vienna_module": "/home/3/ub07263/.local/lib/python3.9/site-packages/RNA/__init__.py",
+  "command": [
+    "experiments/scripts/check_energy_vienna_20261017.py"
+  ],
+  "dependencies_sha256_before": {
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/scripts/check_energy_vienna_20261017.py": "168d399e3796998cd29b5fe10a7925b913f57592e6274e9d942f9317317a2917",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/scripts/energy_vienna_probe_20261017.cc": "8eea9f0121fa50ecc48b2a960f49ac20dcb9349b429a7efe40c12e4bca266b04",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d02d261c/src/scfg2/replay/w_final_exact_inside.hh": "23eec8ace865b45e43edfeba44ec7e9f40899b6820084b80e7933c2a567ff98e",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d02d261c/src/scfg2/weights/log_loops.hh": "d0a7463ec3411e540bc0a4368b073dc74b8aaa0005c9c052874ab536cb99b9aa",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d02d261c/src/ViennaRNA/params/params.c": "6e8f5f56316c62e39157fd7da3d575e74524d57d059d71555f95ba6e5987de0a",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d02d261c/libcparty_scfg2_exact.a": "8f9fce19d55399564888c148d32293a06fa90b58a339ddf0da568bab0b2f85da",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d02d261c/libRNA.a": "9e665feba40369ebf6159e4ff086ed7711da3b2579a95e02146efa32e4013470",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d02d261c/params/rna_Turner04.par": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/local/data-sources/bprna-local-clean-20261008/bpRNA_1m_90_filtered_clean.fa": "c76025522f1f9e174c25207595bc079e454deb656acbfd3a51de71c60c167bc5"
+  },
+  "model_details": "{ temperature: 37, dangles: 2, betaScale: 1, pf_smooth: 1, special_hp: 1, noLP: 0, noGU: 0, noGUclosure: 0, logML: 0, circ: 0, circ_penalty: 1, gquad: 0, uniq_ML: 1, energy_set: 0, backtrack: 1, backtrack_type: F, compute_bpp: 1, max_bp_span: -1, min_loop_size: 3, window_size: -1, oldAliEn: 0, ribo: 0, cv_fact: 1, nc_fact: 1, sfact: 1.07, salt: 1.021, saltMLLower: 6, saltMLUpper: 24, saltDPXInit: 99999, saltDPXInitFact: -45.324, helical_rise: 2.8, backbone_length: 6 }",
+  "limits": {
+    "threads": 1,
+    "child_address_space_gib": 2,
+    "child_cpu_seconds": 40,
+    "child_wall_seconds": 45
+  },
+  "diagnostic_header_replacement": {
+    "path": "scfg2/replay/w_final_exact_inside.hh",
+    "old": "si = j < owner_.length() ? owner_.encoded_base(j-1) : -1;\n        sj = i > 1 ? owner_.encoded_base(i+1) : -1;",
+    "new": "si = owner_.encoded_base(j-1);\n        sj = owner_.encoded_base(i+1);"
+  },
+  "warnings": [
+    "MFE in LinearCParty optimizes PF-smoothed weights; Vienna mfe/eval_structure use integer parameters.",
+    "Nonempty-scaffold partition functions are not compared: no public no-crossing-extension switch was identified."
+  ],
+  "diagnostic_header_sha256": "d38fd88623a04efc721ab3e7b8fe221d1501ffb1bf0df1632a3a7046cc1655e4",
+  "observer_binary_sha256": {
+    "pinned": "6bc5e6bdd1302fefbcacffcea329daac9855fcf9240ff41adf6f324d3124e092",
+    "inner_neighbors_diagnostic": "ee560cb3e9d484034c2f6eb1b6900b5f91ec204e41e1d2fa9e94766f32da3300"
+  },
+  "finished_utc": "2026-10-16T17:42:52.628672+00:00",
+  "dependencies_unchanged": true,
+  "dependencies_sha256_after": {
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/scripts/check_energy_vienna_20261017.py": "168d399e3796998cd29b5fe10a7925b913f57592e6274e9d942f9317317a2917",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/scripts/energy_vienna_probe_20261017.cc": "8eea9f0121fa50ecc48b2a960f49ac20dcb9349b429a7efe40c12e4bca266b04",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d02d261c/src/scfg2/replay/w_final_exact_inside.hh": "23eec8ace865b45e43edfeba44ec7e9f40899b6820084b80e7933c2a567ff98e",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d02d261c/src/scfg2/weights/log_loops.hh": "d0a7463ec3411e540bc0a4368b073dc74b8aaa0005c9c052874ab536cb99b9aa",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d02d261c/src/ViennaRNA/params/params.c": "6e8f5f56316c62e39157fd7da3d575e74524d57d059d71555f95ba6e5987de0a",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d02d261c/libcparty_scfg2_exact.a": "8f9fce19d55399564888c148d32293a06fa90b58a339ddf0da568bab0b2f85da",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d02d261c/libRNA.a": "9e665feba40369ebf6159e4ff086ed7711da3b2579a95e02146efa32e4013470",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d02d261c/params/rna_Turner04.par": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/local/data-sources/bprna-local-clean-20261008/bpRNA_1m_90_filtered_clean.fa": "c76025522f1f9e174c25207595bc079e454deb656acbfd3a51de71c60c167bc5"
+  },
+  "result_sha256": {
+    "README.md": "371bf42cbb7b9fc8cfa8d00f4ddfba0d70574f7af0f57ceb0bf744d83f0b2176",
+    "structure_metrics.tsv": "c25724bd86cf70d35bca811aa9808e54c1330efacd3640eb083c014a69c2c80f",
+    "summary.json": "49d560677372f2a3071c4d93945ecf6312f77b854dd1eb1f1709717b1a84c3cc",
+    "ensemble_metrics.tsv": "87a0d6f8bcd9aa04b9f266821e07080389d3df203dc141bb95a730d443604b7f",
+    "summary.tsv": "2c8cad5eb3b197ecc77f0ed07ad3a621b15b8d3e6a5aa1e0cbaf282d4b49d592",
+    "raw_outputs.tar.gz": "edd236dc3338073c6babf7c28c003a68b351509d68501c8a7893e08bb1b807e2",
+    "inputs.jsonl": "4a1509190610acea67d4c1905423c37c66fe5f37641885561c408d0396b196e9"
+  }
+}
