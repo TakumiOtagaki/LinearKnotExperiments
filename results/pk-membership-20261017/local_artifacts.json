@@ -1,0 +1,30 @@
+{
+  "raw.jsonl": {
+    "bytes": 10572807,
+    "sha256": "7483dbd9e88bd5e8850d978894f9c6992fb3efbfa11f9caee19670339a3596c1"
+  },
+  "inputs_and_build.tar.gz": {
+    "bytes": 65963,
+    "sha256": "de0cecb253131c7d3aef8ca31e806fab63a4e7847608d45fb163e4a7c5ecfc36"
+  },
+  "recovery_inputs_and_build.tar.gz": {
+    "bytes": 67328,
+    "sha256": "f1471c29108111cb88b447fb12e072ff588ba36f08b3b8116d66883f003a6e1c"
+  },
+  "rna.tsv": {
+    "bytes": 82317,
+    "sha256": "e507e5048ae8288b7d5f848b539a9093db468f67e21df06adc626846195a111b"
+  },
+  "pairs.tsv": {
+    "bytes": 180623,
+    "sha256": "724d411e11a914af44b594a99a27641051201ac01aaf4a6560810d7d503450da"
+  },
+  "energy_terms.tsv": {
+    "bytes": 141866,
+    "sha256": "e21fc007437d05f699682ecf22d6c1e230e85544f54b0780dd7425944740cc08"
+  },
+  "summary.json": {
+    "bytes": 29478,
+    "sha256": "4d737d42e9cc67ccf4aa1117f32af6a79b6b90f6a86be37e96dbc152f28e63ca"
+  }
+}

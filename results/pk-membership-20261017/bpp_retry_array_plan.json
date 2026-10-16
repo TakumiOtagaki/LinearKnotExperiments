@@ -1,0 +1,47 @@
+{
+  "status": "proposal_only_not_submitted",
+  "ids": [
+    "bpRNA_RFAM_12431"
+  ],
+  "resource": "cpu_4=1",
+  "h_rt": "00:30:00",
+  "array_tasks": 1,
+  "workers_per_task": 1,
+  "per_rna_timeout_seconds": 600,
+  "light_run_wall_budget_seconds": 900,
+  "task_output": "one JSONL and packed tar; scratch under node-local TMPDIR",
+  "remaining_singleton_tests": [
+    {
+      "id": "bpRNA_RFAM_12431",
+      "pair_index": 7,
+      "i": 14,
+      "j": 257,
+      "probability": 3.9259404761605295e-11,
+      "single_reasons": [
+        "light_run_time_limit"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_12431",
+      "pair_index": 8,
+      "i": 13,
+      "j": 258,
+      "probability": 3.880865302812374e-11,
+      "single_reasons": [
+        "light_run_time_limit"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_12431",
+      "pair_index": 9,
+      "i": 12,
+      "j": 259,
+      "probability": 3.759449496819549e-11,
+      "single_reasons": [
+        "light_run_time_limit"
+      ]
+    }
+  ],
+  "scheduling_estimate": "unmeasured proposal for outstanding singleton tests and fresh BPP verification; not a timing result",
+  "command_template": "python scripts/analyze_pk_membership.py --only-id ID --workers 1 --timeout 600 --budget-seconds 900 --out results/local/pk-membership-bpp-retry-ID"
+}

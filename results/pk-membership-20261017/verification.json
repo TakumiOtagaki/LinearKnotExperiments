@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "cohort_rnas": 200,
+  "reference_pairs": 983,
+  "probability_gt_half": 179,
+  "singletons_reachable": 980,
+  "singletons_unmeasured": 3,
+  "all_pairs_have_current_build_membership_evidence": true,
+  "all_saved_probabilities_identical_to_previous": true,
+  "independent_component_sum_max_error": 1.4210854715202004e-14,
+  "matched_verified_lock": "manifests/software-stage-timing-d02d261c-20261017.json",
+  "verified_files": {
+    "build/linear-cparty-d02d261c/libcparty_scfg2_exact.a": "8f9fce19d55399564888c148d32293a06fa90b58a339ddf0da568bab0b2f85da",
+    "build/linear-cparty-d02d261c/libRNA.a": "9e665feba40369ebf6159e4ff086ed7711da3b2579a95e02146efa32e4013470",
+    "build/linear-cparty-d02d261c/CMakeCache.txt": "eedabb20ea8450fb6fe29976788dbb380f5fc9194049f1e38b35691bf767732c"
+  },
+  "pinned_source_clean": true,
+  "manuscript_diff_empty": true,
+  "limitations": [
+    "3 singleton tests stopped by 60-second time limits",
+    "1 reported-target rejection remains unresolved",
+    "1 RNA retains previous-build BPP; current-build full-reference traceback proves membership"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "started_utc": "2026-10-16T17:23:50.749735+00:00",
+  "argv": [
+    "experiments/scripts/analyze_pk_membership.py",
+    "--recover-energy-only",
+    "--workers",
+    "1"
+  ],
+  "implementation_revision": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+  "experiment_revision": "a1b72e458ecb87e38ccfd7f6aba0a6a64e9cb33e",
+  "experiment_status": "?? scripts/analyze_e1_pk_stratified.py\n?? scripts/analyze_pk_membership.py\n?? scripts/check_energy_vienna_20261017.py\n?? scripts/energy_vienna_probe_20261017.cc\n?? scripts/make_e1_pk_stratified_table.py\n?? scripts/pk_membership_driver.cc\n?? scripts/report_pk_membership.py\n?? scripts/summarize_energy_vienna_20261017.py",
+  "source": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d02d261c",
+  "build": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d02d261c",
+  "parameter_file": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d02d261c/params/rna_Turner04.par",
+  "parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "cohort_sha256": "72789c6bc0ec420c57a6a70c2dd5fa679fcfd335c8e742f2bb131e9ec62bfca1",
+  "previous_results_sha256": "080625bda6697f91a1d13d2eb149e5c77cae0e96752e7022a154d9945aa36790",
+  "python_sha256": "bfe82936c670ed9c10f48b06e5c5a7c8f0dc840ddceff2e25305337db218fce4",
+  "cpp_sha256": "891494fd89fe8b0c814b81d3c5aed03c45eaaad7e27ccc751eff5b540d2f7e30",
+  "library_sha256": {
+    "libcparty_scfg2_exact.a": "8f9fce19d55399564888c148d32293a06fa90b58a339ddf0da568bab0b2f85da",
+    "libRNA.a": "9e665feba40369ebf6159e4ff086ed7711da3b2579a95e02146efa32e4013470"
+  },
+  "policy": "RequireWeakClosure",
+  "mode": "exact",
+  "dangles": 2,
+  "workers": 1,
+  "per_rna_timeout_seconds": 60,
+  "wall_budget_seconds": 600,
+  "local_caps": "exact grammar; no beam caps",
+  "build_argv": [
+    "/bin/c++",
+    "-std=c++17",
+    "-O2",
+    "-I/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-d02d261c/src",
+    "-I/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d02d261c/generated",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/scripts/pk_membership_driver.cc",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d02d261c/libcparty_scfg2_exact.a",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-d02d261c/libRNA.a",
+    "-o",
+    "/tmp/9034777.1.all.q/pk-membership-q28lt20r/driver"
+  ],
+  "build_returncode": 0,
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)\nCopyright (C) 2021 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+  "driver_sha256": "aa4681732de2cc3c933aebfd98ec9155a41a153ea21cda3c82b1dddf501ae70c",
+  "elapsed_seconds": 64.24964856007136,
+  "completed": 1,
+  "failed": 1,
+  "source_unchanged": true,
+  "libraries_unchanged": true,
+  "finished_utc": "2026-10-16T17:24:55.006225+00:00"
+}
