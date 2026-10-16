@@ -1,0 +1,95 @@
+[
+  {
+    "run": "e2-memory-breakdown-d02d261c-20261017",
+    "manifest_sha256": "fa52b5e9295dce1028bf9d068b8b2da669efd0260d28f321c0d238052f843fd4",
+    "planned_tasks": 4,
+    "task_status_counts": {
+      "success": 4
+    },
+    "status": "success",
+    "job_status_counts": {
+      "measured": {
+        "success": 35
+      },
+      "warmup": {}
+    },
+    "exceptions": [],
+    "missing_measured_jobs": 0
+  },
+  {
+    "run": "e2-parallel-impact-w1-d02d261c-20261017",
+    "manifest_sha256": "c391518b1f25458d54db7535cd0d4fd251b526918b5ca24778267b5873ec0ee1",
+    "planned_tasks": 1,
+    "task_status_counts": {
+      "success": 1
+    },
+    "status": "success",
+    "job_status_counts": {
+      "measured": {
+        "success": 27
+      },
+      "warmup": {
+        "success": 9
+      }
+    },
+    "exceptions": [],
+    "missing_measured_jobs": 0
+  },
+  {
+    "run": "e2-parallel-impact-w10-d02d261c-20261017",
+    "manifest_sha256": "18dab12e15a4e5e66a9983aef8e85a2989d64f791c105d10ba4de5aec0ff6619",
+    "planned_tasks": 1,
+    "task_status_counts": {
+      "success": 1
+    },
+    "status": "success",
+    "job_status_counts": {
+      "measured": {
+        "success": 27
+      },
+      "warmup": {
+        "success": 9
+      }
+    },
+    "exceptions": [],
+    "missing_measured_jobs": 0
+  },
+  {
+    "run": "e2-rnacentral-d02d261c-20261017",
+    "manifest_sha256": "e1a7be01ea7261479609a2cd855a23c77b21ea6dcd85ba604d30bf20a5cc0725",
+    "planned_tasks": 4,
+    "task_status_counts": {
+      "success": 4
+    },
+    "status": "success",
+    "job_status_counts": {
+      "measured": {
+        "success": 63
+      },
+      "warmup": {
+        "success": 21
+      }
+    },
+    "exceptions": [],
+    "missing_measured_jobs": 0
+  },
+  {
+    "run": "e2-synthetic-shapes-d02d261c-20261017",
+    "manifest_sha256": "52dd839eee0de93eaac87bd0fbf47136606fe778222a749f02b3406d54b73985",
+    "planned_tasks": 55,
+    "task_status_counts": {
+      "success": 55
+    },
+    "status": "success",
+    "job_status_counts": {
+      "measured": {
+        "success": 1404
+      },
+      "warmup": {
+        "success": 468
+      }
+    },
+    "exceptions": [],
+    "missing_measured_jobs": 0
+  }
+]

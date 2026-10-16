@@ -277,6 +277,74 @@ def memory_figure(data, base):
     return fig
 
 
+def concurrency_figure(data, base):
+    rows = base.read_tsv(data.paths["e2_metrics.tsv"])
+    pairs = [r for r in base.read_tsv(data.paths["e2_comparisons.tsv"])
+             if r["kind"] in ("parallel_w10_over_w1", "production_over_w1")]
+    base.require(len(pairs) == 18, "Expected three RNAs, three programs and two concurrency comparisons")
+    provenance = json.loads(data.paths["e2_summary.json"].read_text())["provenance"]["runs"]
+    base.require(max(t["observed_max_active_processes"] for t in provenance["parallel_w10"]["tasks"]) == 9,
+                 "Refresh the concurrency caption for the observed process count")
+    for label, workers in (("parallel_w1", 1), ("parallel_w10", 10)):
+        base.require(provenance[label]["signature"]["commit"] == data.e2_commit,
+                     "Concurrency/production source revisions differ")
+        selected = [r for r in rows if r["run"] == label]
+        base.require(len(selected) == 9 and all(int(r["workers"]) == workers for r in selected),
+                     "Concurrency cohort/worker mismatch")
+    lookup = {(r["run"], r["name"], r["program"]): r for r in rows}
+    base.require(len(lookup) == len(rows), "Duplicate concurrency source row")
+    for pair in pairs:
+        a, b = [lookup[(pair["run_" + side], pair["name_" + side], pair["program"])]
+                for side in ("a", "b")]
+        base.require(pair["name_a"] == pair["name_b"] and a["n"] == b["n"],
+                     "Concurrency input mismatch")
+        for metric in ("wall_seconds", "rss_gib"):
+            for row in (a, b):
+                repetitions = json.loads(row[metric + "_repetitions"])
+                base.require(len(repetitions) == 3, "Concurrency repetition mismatch")
+                base.close(np.median(repetitions), base.value(row, metric + "_median"),
+                           "Concurrency replicate median")
+            numerator, denominator = (base.value(r, metric + "_median") for r in (b, a))
+            base.close(numerator / denominator, base.value(pair, metric + "_ratio"),
+                       "Concurrency ratio")
+            data.audit.append(dict(panel="SI_parallel", comparison=pair["kind"],
+                                   program=pair["program"], name=a["name"], length=int(a["n"]),
+                                   metric=metric, numerator=numerator, denominator=denominator,
+                                   value=numerator / denominator))
+    data.checks["e2_concurrency_ratios_checked"] = 2 * len(pairs)
+    fig = plt.figure(figsize=(165 * MM, 72 * MM))
+    for col, metric in enumerate(("wall_seconds", "rss_gib")):
+        ax = base.mm_axes(fig, 17 + 82 * col, 23, 62, 37)
+        for i, program in enumerate(base.PROGRAMS):
+            for kind, filled in (("parallel_w10_over_w1", True), ("production_over_w1", False)):
+                group = [r for r in pairs if r["program"] == program and r["kind"] == kind]
+                ax.plot([float(r["n_a"]) / 1000 for r in group],
+                        [base.value(r, metric + "_ratio") for r in group],
+                        ls="none", marker=("o", "s", "^")[i],
+                        markersize=(4.5, 5.5, 3.5)[i], color=PROGRAM_COLORS[i],
+                        markerfacecolor=PROGRAM_COLORS[i] if filled else "white",
+                        markeredgewidth=.8, zorder=2 + i)
+        values = [base.value(r, metric + "_ratio") for r in pairs] + [1]
+        span = max(values) - min(values)
+        padding = max(.0005, .15 * span)
+        ax.set_ylim(min(values) - padding, max(values) + padding)
+        ax.set_xlim(4.5, 7.3)
+        ax.set_xticks([4.793, 5.482, 6.990], ["4.793", "5.482", "6.990"])
+        ax.set_xlabel("RNA length (kb)")
+        ax.set_ylabel("Time ratio to w1" if col == 0 else "RSS ratio to w1")
+        ax.axhline(1, color=".5", lw=.7, ls=":")
+        base.clean(ax)
+        panel(fig, "AB"[col], 1 + 82 * col, 66)
+    legend_mm(fig, [Line2D([], [], marker=m, ls="none", color=c, label=p)
+                    for m, c, p in zip(("o", "s", "^"), PROGRAM_COLORS, base.PROGRAMS)],
+              83, 12, 3)
+    legend_mm(fig, [Line2D([], [], marker="o", ls="none", color=".3", label=label,
+                           markerfacecolor=".3" if filled else "white")
+                    for label, filled in (("w10/w1", True), ("Main/w1", False))],
+              83, 4, 2)
+    return fig
+
+
 def accessibility_detail(data, base):
     fig = plt.figure(figsize=(165 * MM, 137 * MM))
     for row, metric in enumerate(base.ACCESS):
@@ -553,6 +621,21 @@ The figure shows 105 of the 156 inputs: seven series, five shared lengths and th
 The remaining 51 inputs are additional branch-depth controls.
 Each nonempty G contains floor(0.15n) pairs, where n is sequence length; sequences have 50% GC content.
 The arc sketches show the saved 250-nt scaffolds on a common coordinate scale.
+
+## Additional SI — figure3_parallel_impact_si.pdf
+
+**Concurrent and single-process measurements.**
+A/Bは三つのRNAについて、各入力の三測定の中央値を単独実行w1の中央値で割った時間/RSS比を示す。
+塗った記号はw10/w1、白抜き記号は本文の測定/w1を示す。
+w10は最大十プロセスを許可し、観測された同時実行の最大数は九だった。
+各設定は同じ資源型の異なるホストで実行し、点線は比1を示す。
+これらの比で他の測定を補正しない。
+
+A and B show time and RSS ratios for three RNAs, dividing each input's median of three measurements by its one-process (w1) median.
+Filled symbols show w10/w1; open symbols show Main/w1.
+The w10 setting allowed ten processes and reached nine concurrent processes.
+Settings used different hosts of the same resource type; dotted lines mark a ratio of one.
+These ratios do not correct the other measurements.
 """
     captions = captions.replace("GROUP_COUNTS", "RNA counts by length group are " + group_counts + ".")
     if data.figure3_only:
@@ -599,10 +682,10 @@ All logarithmic ticks use ordinary decimal digits.
 
 `caption.md` contains paired Japanese/English caption drafts, one sentence per line.
 `plot_data.tsv` retains all checked E1 quantiles (including quartiles), threshold counts, E2 summaries and the exact numerator/denominator of every ratio.
-`evaluation_counts.tsv` records each accessibility domain, including excluded RNAs.
+When E1 is rendered, `evaluation_counts.tsv` records each accessibility domain, including excluded RNAs.
 `validation.json` records source checks, geometry checks and PDF font sizes.
 `manifest.json` records source/script/output hashes.
-PNG visual checks and the historical-layout regression are recorded in `review_report.md` after inspection.
+PNG visual checks and manuscript integration are recorded in `review_report.json` after inspection.
 
 ## Review mapping and choices
 
@@ -655,7 +738,7 @@ If the manuscript retains a different range from medians of seed-wise ratios, up
 Run from the paper repository:
 
 ```bash
-PYTHONDONTWRITEBYTECODE=1 python3 experiments/scripts/make_figures.py --review-layout --e2-version {data.e2_commit[:8]} --out {os.path.relpath(out,base.ROOT.parent)}
+PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR="$TMPDIR/e2-figure-mpl" python3 experiments/scripts/make_figures.py --review-layout {"--figure3-only " if data.figure3_only else ""}--e2-version {data.e2_commit[:8]} --out {os.path.relpath(out,base.ROOT.parent)}
 ```
 
 `--e2-version febd2bc1` selects `results/local/e2-febd2bc1-20261016`.
@@ -677,9 +760,9 @@ The command below produces the same aggregate schema as the febd2bc1 input:
 for cohort in rnacentral synthetic-shapes memory-breakdown parallel-impact-w1 parallel-impact-w10
 do
   PYTHONDONTWRITEBYTECODE=1 python3 experiments/scripts/aggregate_array.py \\
-    --plan experiments/results/runs/e2-${{cohort}}-d02d261c-20261017/array_plan.json
+    --plan "$PWD/experiments/results/runs/e2-${{cohort}}-d02d261c-20261017/array_plan.json"
 done
-PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR=/tmp/fig23-e2-mpl python3 experiments/scripts/analyze_e0_e2_runs.py \\
+PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR="$TMPDIR/e2-figure-mpl" python3 experiments/scripts/analyze_e0_e2_runs.py \\
   --synthetic-run experiments/results/runs/e2-synthetic-shapes-d02d261c-20261017 \\
   --rna-run experiments/results/runs/e2-rnacentral-d02d261c-20261017 \\
   --previous-synthetic-run experiments/results/runs/e2-synthetic-shapes-febd2bc1-20261016 \\
@@ -691,7 +774,7 @@ PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR=/tmp/fig23-e2-mpl python3 experiments/scr
   --workers 10 --revision d02d261c --previous-workers 10 --previous-revision febd2bc1 \\
   --previous-resource cpu_40=1 --skip-cap30-history \\
   --out experiments/results/local/e2-d02d261c-20261017
-PYTHONDONTWRITEBYTECODE=1 python3 experiments/scripts/make_figures.py --review-layout --e2-version d02d261c --out experiments/results/figures/main_20261017/d02d261c
+PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR="$TMPDIR/e2-figure-mpl" python3 experiments/scripts/make_figures.py --review-layout --figure3-only --e2-version d02d261c --out experiments/results/figures/main_d02d261c_20261017
 ```
 
 Remove the temporary Matplotlib cache after analysis.
@@ -713,7 +796,8 @@ def render_review(args, data, base):
                         (accessibility_detail, "figure2_accessibility_si", 165)))
     figures.extend(((resource_figure, "figure3_main", 178),
                     (memory_figure, "figure3_mode_memory_si", 165),
-                    (lambda d, b: synthetic_detail(d, b, designs), "figure3_synthetic_all_cli_si", 165)))
+                    (lambda d, b: synthetic_detail(d, b, designs), "figure3_synthetic_all_cli_si", 165),
+                    (concurrency_figure, "figure3_parallel_impact_si", 165)))
     for draw, name, width in figures:
         base.save(draw(data, base), name, out, width, records, check_text_overlap=True)
         print(f"Rendered {name}", flush=True)

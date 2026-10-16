@@ -1,0 +1,114 @@
+{
+  "all_passed": true,
+  "checks": {
+    "e2_replicate_scalars_checked": 2934,
+    "e2_feature_identity_fields_checked": 147,
+    "e2_current_metric_rows": 489,
+    "e2_current_stage_rows": 28,
+    "e2_concurrency_ratios_checked": 36
+  },
+  "source_files_unchanged": true,
+  "text_within_pages": true,
+  "text_without_overlap": true,
+  "plotted_points_within_axis_limits": true,
+  "minimum_normal_font_pt": 7,
+  "pdf_text_checks": {
+    "figure3_main.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 57,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    },
+    "figure3_mode_memory_si.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 7.0,
+      "spans": 26,
+      "sizes_pt": [
+        7.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    },
+    "figure3_synthetic_all_cli_si.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 98,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    },
+    "figure3_parallel_impact_si.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 30,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    }
+  },
+  "outputs": [
+    {
+      "file": "figure3_main.pdf",
+      "width_mm": 178,
+      "height_mm": 55.00000000000001,
+      "bytes": 28610,
+      "sha256": "6319b8dba61854165ae889fcb126ad88ccf6c3d9e2646749a0b6e5d5405f7abc"
+    },
+    {
+      "file": "figure3_main.png",
+      "width_mm": 178,
+      "height_mm": 55.00000000000001,
+      "bytes": 134276,
+      "sha256": "b67de6b1ae0fe0323f6744f60a93f62f349b043c70dc53dd1bb0235eedadd792"
+    },
+    {
+      "file": "figure3_mode_memory_si.pdf",
+      "width_mm": 165,
+      "height_mm": 65.0,
+      "bytes": 21476,
+      "sha256": "35cea63e6b08f823ce3b77578bbff683bc0ef690f28be2bd3e9484189dfa01bb"
+    },
+    {
+      "file": "figure3_mode_memory_si.png",
+      "width_mm": 165,
+      "height_mm": 65.0,
+      "bytes": 74899,
+      "sha256": "c1b8908755a8b8556566a16cd0eb2f053d622e7436c371ec29d53cb257bfb440"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.pdf",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 60798,
+      "sha256": "5c0089e769ab94cee34fae3eadfc71a9f6470ea9ea36b31c326d8ba2948979f5"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.png",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 455005,
+      "sha256": "5f30eb14415cb4dd257235db2e501adb6ab1be162a0e019399f7de19e767760b"
+    },
+    {
+      "file": "figure3_parallel_impact_si.pdf",
+      "width_mm": 165,
+      "height_mm": 72.0,
+      "bytes": 21888,
+      "sha256": "8b2a777fc1c0ff5540c81c0aa714fec3a4418a43ac93a4c38ce792bd52706edf"
+    },
+    {
+      "file": "figure3_parallel_impact_si.png",
+      "width_mm": 165,
+      "height_mm": 72.0,
+      "bytes": 81945,
+      "sha256": "4a2ecf0a3ec48c3c38f87c601cc790cd2ffb007abaf8aa530a32813e41dbdd06"
+    }
+  ]
+}

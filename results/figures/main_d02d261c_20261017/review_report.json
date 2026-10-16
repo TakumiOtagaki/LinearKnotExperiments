@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "checked_utc": "2026-10-16T17:58:22.329649+00:00",
+  "e2_revision": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+  "png_visual_checks": {
+    "figure3_main.png": {
+      "inspected": true,
+      "labels_and_legends_readable": true,
+      "annotations_and_points_visible": true,
+      "sha256": "b67de6b1ae0fe0323f6744f60a93f62f349b043c70dc53dd1bb0235eedadd792"
+    },
+    "figure3_mode_memory_si.png": {
+      "inspected": true,
+      "labels_and_legends_readable": true,
+      "annotations_and_points_visible": true,
+      "sha256": "c1b8908755a8b8556566a16cd0eb2f053d622e7436c371ec29d53cb257bfb440"
+    },
+    "figure3_synthetic_all_cli_si.png": {
+      "inspected": true,
+      "labels_and_legends_readable": true,
+      "annotations_and_points_visible": true,
+      "sha256": "5f30eb14415cb4dd257235db2e501adb6ab1be162a0e019399f7de19e767760b"
+    },
+    "figure3_parallel_impact_si.png": {
+      "inspected": true,
+      "labels_and_legends_readable": true,
+      "annotations_and_points_visible": true,
+      "sha256": "4a2ecf0a3ec48c3c38f87c601cc790cd2ffb007abaf8aa530a32813e41dbdd06"
+    }
+  },
+  "numeric_sources": {
+    "analysis_validation_sha256": "f7f69c6b0a5320422259829ecb0e90efa8b57e361ad6e4ed51022800f21444a1",
+    "replacement_values_sha256": "a7a587e16152aeb957e3460430c59634276c6bf7f5bce459ae8b7af322239e1b",
+    "run_status_sha256": "6b921e24cf5aaba1d063314605e9761e68c7280f66cca6184f752266f22c92c0",
+    "cli_artifacts_verified": 21248,
+    "memory_artifacts_verified": 350
+  },
+  "manuscript_pdfs": {
+    "main": {
+      "path": "manuscript/latex/build/main.pdf",
+      "pages": 8,
+      "sha256": "52e2d52c3fbfef407f8f68f29d4668e1ff85556478e5446a32b8070e4c205a6c"
+    },
+    "supplementary": {
+      "path": "manuscript/latex/build/supplementary.pdf",
+      "pages": 28,
+      "sha256": "3ba13413d4ebfc898811ba0ee14a7bac75e12c410ed137c02950927fbbc5fd50"
+    },
+    "main_diff": {
+      "path": "manuscript/latex/build/main_diff.pdf",
+      "pages": 9,
+      "sha256": "b15fc7da5303ae48fb11711687175ea0f559c80e8b8d5bc5f88a0253f0d0adcf"
+    },
+    "supplementary_diff": {
+      "path": "manuscript/latex/build/supplementary_diff.pdf",
+      "pages": 28,
+      "sha256": "c50c2e314df3a7673c3c184bd18e4714fa5b8153330c664d057fca8fdba636ee"
+    }
+  },
+  "normal_pdf_visual_checks": {
+    "main_resource_page": 7,
+    "si_resource_pages": [
+      20,
+      21
+    ]
+  },
+  "local_comparison": {
+    "generator": "Local line and table-cell red/blue comparison; not the latexdiff executable",
+    "reason": "latexdiff is not installed and network DNS is unavailable",
+    "sources_archive": "manuscript/latex/build/review_e2_d02d261c_sources.tar",
+    "sha256": "66397e80c5a2d76cea435f349ae35234c90b99cea214a1f6c85e25201263a563",
+    "inspected_pages": {
+      "main_diff": 7,
+      "supplementary_diff": 20
+    }
+  },
+  "neat1_results_unchanged": true,
+  "preexisting_undefined_citation": "PRISM_TODO",
+  "tar_extractions_to_shared_storage": 0,
+  "all_manifest_hashes_match": true
+}

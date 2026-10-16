@@ -1,0 +1,90 @@
+{
+  "metrics_rows_recomputed": 996,
+  "comparisons_recomputed": 1122,
+  "slopes_recomputed": 216,
+  "expected_revisions": {
+    "current": "d02d261c",
+    "previous": "febd2bc1"
+  },
+  "e0_rows_recomputed": 0,
+  "memory_scalar_checks": 5024,
+  "prediction_checks": 3912,
+  "grouped_cv_scalar_checks": 18,
+  "test_cases": 114,
+  "tests_passed": 105,
+  "tests_skipped": 9,
+  "test_log": "test_consistency_validation_needs_no_exact_reference (test_accuracy.AccuracyTests) ... ok\ntest_failed_jobs_and_missing_reference_do_not_become_zero_error (test_accuracy.AccuracyTests) ... ok\ntest_free_base_metrics_and_joint_windows (test_accuracy.AccuracyTests) ... ok\ntest_zero_probability_and_incomplete_artifacts_are_distinct (test_accuracy.AccuracyTests) ... ok\ntest_reproducible_matched_sequences_and_immutable_outputs (test_accuracy.PilotTests) ... ok\ntest_dry_run_freezes_inputs_lock_and_plan_without_execution (test_array.ArrayTests) ... ok\ntest_environment_task_execution_resume_and_partial_aggregation (test_array.ArrayTests) ... ok\ntest_formal_requires_array_allocation_and_verified_build (test_array.ArrayTests) ... ok\ntest_packing_estimates_and_complete_matched_matrices (test_array.ArrayTests) ... ok\ntest_parallel_accuracy_respects_worker_bound_order_and_resume (test_array.ArrayTests) ... ok\ntest_parallel_timing_opt_in_is_validated_and_saved_at_execution (test_array.ArrayTests) ... ok\ntest_resource_memory_and_wall_time_guards (test_array.ArrayTests) ... ok\ntest_sigterm_records_interruption_and_stops_the_cli_group (test_array.ArrayTests) ... ok\ntest_startup_failure_is_a_failed_task_with_missing_observations (test_array.ArrayTests) ... ok\ntest_task_index_locks_and_rejected_dependency_resume (test_array.ArrayTests) ... error: cannot resume: config differs from run.json\nok\ntest_scaffold_keeps_stacked_pairs_and_rejects_crossing_candidates (test_biological_inputs.BiologicalInputTests) ... ok\ntest_selection_ignores_file_order_and_rejects_ambiguous_records (test_biological_inputs.BiologicalInputTests) ... ok\ntest_subset_retry_keeps_scaffold_settings_and_records_extended_budget (test_biological_inputs.BiologicalInputTests) ... first: success\nok\ntest_negative_difference_ratio_above_one_and_no_eligible_windows (test_bprna_long.LongAnalysisTests) ... ok\ntest_packed_reference_and_nonmonotonicity_without_extraction (test_bprna_long.LongAnalysisTests) ... array 1/1 tasks; 1 RNA; 0.1s\nok\ntest_partial_rank_correlation_handles_length_and_constants (test_bprna_long.LongAnalysisTests) ... ok\ntest_pilot_selects_distinct_challenges_and_near_length_control (test_bprna_long.LongAnalysisTests) ... ok\ntest_reject_modified_raw_data_and_feature_join (test_bprna_long.LongAnalysisTests) ... ok\ntest_reject_wrong_cap_and_missing_condition (test_bprna_long.LongAnalysisTests) ... ok\ntest_thresholds_signed_absolute_strict_and_empty_bins (test_bprna_long.LongAnalysisTests) ... ok\ntest_capb_extend_alias_pairing_resources_and_adopted_monotonicity (test_bprna_short.ShortAnalysisTests) ... task 1/1 nt50_99/1: 1 RNA, 0.1s\ncapb task 1/1 nt50_99/1: 1 RNA, 0.1s\nok\ntest_capb_rejects_changed_cohort_and_model (test_bprna_short.ShortAnalysisTests) ... task 1/1 nt50_99/1: 1 RNA, 0.1s\nok\ntest_capb_rejects_wrong_cap_arguments (test_bprna_short.ShortAnalysisTests) ... ok\ntest_crossing_geometry_and_monotonic_tolerance (test_bprna_short.ShortAnalysisTests) ... ok\ntest_exact_replacement_rejects_success_input_and_binary_changes (test_bprna_short.ShortAnalysisTests) ... ok\ntest_packed_rerun_and_summary_keep_original_failure_and_na (test_bprna_short.ShortAnalysisTests) ... task 1/1 nt50_99/1: 1 RNA, 0.1s\nok\ntest_rna_quantiles_exclude_na_without_excluding_zero (test_bprna_short.ShortAnalysisTests) ... ok\ntest_bad_policy_and_malformed_metadata_are_artifact_errors (test_e0.E0AnalysisTests) ... ok\ntest_both_absolute_roundoff_limits_are_required (test_e0.E0AnalysisTests) ... ok\ntest_changed_input_running_and_duplicate_jobs_are_rejected (test_e0.E0AnalysisTests) ... ok\ntest_pf_only_parity_and_closure_counts_keep_failed_inputs (test_e0.E0AnalysisTests) ... ok\ntest_restriction_direction_violation_is_counted (test_e0.E0AnalysisTests) ... ok\ntest_zero_pf_values_and_nonfinite_rejection (test_e0.E0AnalysisTests) ... ok\ntest_e0_cohorts_and_either_tolerance_counts (test_e0_e2_runs.E0E2RunTests) ... ok\ntest_history_matches_by_identity_and_rejects_changed_scaffold (test_e0_e2_runs.E0E2RunTests) ... ok\ntest_memory_pairs_match_stage_identity_and_preserve_probe_ratios (test_e0_e2_runs.E0E2RunTests) ... ok\ntest_memory_validator_checks_release_pin_after_family_counters (test_e0_e2_runs.E0E2RunTests) ... ok\ntest_slopes_keep_each_seed_and_series_separate (test_e0_e2_runs.E0E2RunTests) ... ok\ntest_complete_matrix_packs_with_cpu16_cpu40_and_inode_gate (test_e0_fixed.FixedE0PlanTests) ... ok\ntest_former_128gib_cap_is_rejected_on_cpu40 (test_e0_fixed.FixedE0PlanTests) ... ok\ntest_same_304_inputs_plus_completed_three_base_hairpin_witness (test_e0_fixed.FixedE0PlanTests) ... ok\ntest_old_missing_reordered_and_wrong_base_oracles_are_rejected (test_e0_fixed.FixedOracleTests) ... ok\ntest_wrong_or_dirty_source_is_rejected_before_build_output (test_e0_fixed.FixedOracleTests) ... ok\ntest_both_new_values_change_and_each_version_keeps_parity (test_e0_fixed.WipRegressionTests) ... ok\ntest_unchanged_one_side_wrong_direction_or_parity_failure_is_rejected (test_e0_fixed.WipRegressionTests) ... ok\ntest_long_uses_400_and_rejects_200_reference (test_e1_production.ProductionTests) ... beam 1/1 tasks; 1 RNA; 0.1s\nok\ntest_options_and_cross_revision_guard (test_e1_production.ProductionTests) ... ok\ntest_split_exact_ignores_old_exact_and_keeps_signed_and_zero_counts (test_e1_production.ProductionTests) ... exact 1/1 tasks; 0.1s\nbeam 1/1 tasks; 1 RNA; 0.1s\nok\ntest_summary_only_regenerates_tables_and_preserves_empty_domains (test_e1_production.ProductionTests) ... beam 1/1 tasks; 1 RNA; 0.1s\nok\ntest_distribution (test_e2_synthetic.E2SyntheticTests) ... ok\ntest_exact_power_law_and_contribution_identity (test_e2_synthetic.E2SyntheticTests) ... ok\ntest_group_validation_refits_without_geometry_leakage (test_e2_synthetic.E2SyntheticTests) ... ok\ntest_packed_scalar_audit_and_tampering (test_e2_synthetic.E2SyntheticTests) ... ok\ntest_reject_invalid_repetitions (test_e2_synthetic.E2SyntheticTests) ... ok\ntest_repetition_ranges_units_and_order (test_e2_synthetic.E2SyntheticTests) ... ok\ntest_revision_pins_reject_other_releases_and_invalid_prefixes (test_e2_synthetic.E2SyntheticTests) ... ok\ntest_ridge_constant_and_correlated_predictors (test_e2_synthetic.E2SyntheticTests) ... ok\ntest_unexecuted_unselected_planner_placeholders (test_e2_synthetic.E2SyntheticTests) ... ok\ntest_union_tsv_preserves_missing_and_structured_values (test_e2_synthetic.E2SyntheticTests) ... ok\ntest_full_g_array_resume_and_verified_cohort_resolution (test_full_bprna.CohortAndScaffoldTests) ... ok\ntest_incomplete_g_never_publishes_a_reduced_dataset (test_full_bprna.CohortAndScaffoldTests) ... ok\ntest_legacy_scaffold_archive_streams_into_one_dataset_tar (test_full_bprna.CohortAndScaffoldTests) ... ok\ntest_scaffold_quota_refusal_creates_no_plan_files (test_full_bprna.CohortAndScaffoldTests) ... ok\ntest_only_pf_quantities_are_compared (test_full_bprna.E0ObservationTests) ... ok\ntest_oracle_reverse_derivative_against_independent_two_structure_ensemble (test_full_bprna.E0ObservationTests) ... ok\ntest_compact_schedule_and_tier_limits (test_full_bprna.FullPlanTests) ... ok\ntest_deferred_scaffold_plan_never_runs_dummy_dots (test_full_bprna.FullPlanTests) ... ok\ntest_exact_boundary_and_calibrated_mode_cost (test_full_bprna.FullPlanTests) ... ok\ntest_increasing_beam_checkpointed_resume_keeps_completed_failures (test_full_bprna.FullPlanTests) ... ok\ntest_long_rnas_use_each_cap_regime_and_largest_planned_width (test_full_bprna.LongSensitivityTests) ... ok\ntest_numeric_differences_missing_lines_and_only_elapsed_is_removed (test_release_rerun.ReleaseComparisonTests) ... ok\ntest_three_clis_split_exact_reference_failure_and_scratch_cleanup (test_release_rerun.ReleaseComparisonTests) ... ok\ntest_existing_release_is_read_only_and_stale_build_is_rejected (test_release_rerun.ReleasePreparationTests) ... ok\ntest_new_release_stage_order_suite_environment_and_idempotence (test_release_rerun.ReleasePreparationTests) ... ok\ntest_temporary_build_link_cleanup_and_conflicting_link_preserved (test_release_rerun.ReleasePreparationTests) ... ok\ntest_memory_oversubscription_and_invalid_settings_are_refused_before_writing (test_release_rerun.RerunConfigTests) ... ok\ntest_templates_keep_scientific_settings_and_separate_stage_lock (test_release_rerun.RerunConfigTests) ... ok\ntest_failures_timeouts_and_warmups_remain_visible (test_runner.RunnerTests) ... ok\ntest_default_keeps_fixed_nested_order (test_runner_resume.OrderTests) ... ok\ntest_random_order_requires_an_integer_seed (test_runner_resume.OrderTests) ... ok\ntest_seeded_repetition_blocks_and_first_measurement_warmups (test_runner_resume.OrderTests) ... ok\ntest_dependency_mismatches_refuse_without_modifying_the_run (test_runner_resume.ResumeTests) ... ok\ntest_interrupted_summary_keeps_jobs_and_marks_unchecked_fields_unknown (test_runner_resume.ResumeTests) ... ok\ntest_legacy_fixed_manifest_resumes_without_order_or_finalization_fields (test_runner_resume.ResumeTests) ... ok\ntest_resumes_only_missing_results_and_recovers_unlisted_results (test_runner_resume.ResumeTests) ... ok\ntest_cap_boundaries_and_packed_reproducibility (test_scaffold_features.ScaffoldFeatureTests) ... ok\ntest_direct_free_in_branching_loop_is_not_path_entry (test_scaffold_features.ScaffoldFeatureTests) ... ok\ntest_errors (test_scaffold_features.ScaffoldFeatureTests) ... ok\ntest_independent_small_pair_oracles (test_scaffold_features.ScaffoldFeatureTests) ... ok\ntest_synthetic_matrix_and_feature_controls (test_scaffold_features.ScaffoldFeatureTests) ... ok\ntest_binary_parameter_and_source_changes_are_rejected (test_software_lock.SoftwareLockTests) ... ok\ntest_child_receives_address_space_limit (test_software_lock.SoftwareLockTests) ... ok\ntest_all_stages_match_clis_and_shared_session (test_stage_timing.StageTimingTests) ... skipped 'E2 aggregation: exclude RNA CLI stage timing tests; validate saved artifacts only'\ntest_build_rejects_mismatched_e0_archive_before_creating_files (test_stage_timing.StageTimingTests) ... skipped 'E2 aggregation: exclude RNA CLI stage timing tests; validate saved artifacts only'\ntest_build_rejects_unverified_dependency_before_creating_files (test_stage_timing.StageTimingTests) ... skipped 'E2 aggregation: exclude RNA CLI stage timing tests; validate saved artifacts only'\ntest_existing_array_runner_packs_json_and_resumes_without_jobs (test_stage_timing.StageTimingTests) ... skipped 'E2 aggregation: exclude RNA CLI stage timing tests; validate saved artifacts only'\ntest_invalid_options_and_api_errors_are_strict_json (test_stage_timing.StageTimingTests) ... skipped 'E2 aggregation: exclude RNA CLI stage timing tests; validate saved artifacts only'\ntest_isolated_stages_ranking_and_complete_work_match_cli (test_stage_timing.StageTimingTests) ... skipped 'E2 aggregation: exclude RNA CLI stage timing tests; validate saved artifacts only'\ntest_one_record_normalization_json_escaping_and_isolated_stage (test_stage_timing.StageTimingTests) ... skipped 'E2 aggregation: exclude RNA CLI stage timing tests; validate saved artifacts only'\ntest_unreachable_root_keeps_all_stage_timings_and_api_errors (test_stage_timing.StageTimingTests) ... skipped 'E2 aggregation: exclude RNA CLI stage timing tests; validate saved artifacts only'\ntest_zero_samples_and_windows_longer_than_sequence (test_stage_timing.StageTimingTests) ... skipped 'E2 aggregation: exclude RNA CLI stage timing tests; validate saved artifacts only'\ntest_accuracy_bpp_context_accessibility_match_legacy_and_archive (test_task_storage.PackedParityTests) ... ok\ntest_archived_array_recovers_markers_and_missing_jobs_without_extraction (test_task_storage.PackedParityTests) ... ok\ntest_e0_values_counts_and_failed_denominators_match_legacy_and_archive (test_task_storage.PackedParityTests) ... ok\ntest_plan_refusal_precedes_writes_and_estimate_creates_one_file (test_task_storage.PackedParityTests) ... ok\ntest_shared_write_failure_stops_workers_and_keeps_jobs_pending (test_task_storage.PackedParityTests) ... error: Disk quota exceeded\nok\ntest_durable_commit_torn_checkpoint_orphan_tar_and_hashes (test_task_storage.StorageTests) ... ok\ntest_local_scratch_is_required_and_cleaned (test_task_storage.StorageTests) ... ok\ntest_quota_parser_fallback_fraction_and_conservative_cap (test_task_storage.StorageTests) ... ok\n\n----------------------------------------------------------------------\nRan 114 tests in 24.978s\n\nOK (skipped=9)\n",
+  "test_log_sha256": "decbd9525f181075c0db00bd3a08aa646688421ee3b709125b3236d24766c797",
+  "validator_sha256": "56d3572f3b2f1db570bdc65b600b529b4ee9d5a2645a295fce2273e2d0f9ada0",
+  "metrics_by_run": {
+    "synthetic_current": 468,
+    "rnacentral_current": 21,
+    "rnacentral_previous": 21,
+    "synthetic_previous": 468,
+    "parallel_w1": 9,
+    "parallel_w10": 9
+  },
+  "outputs": {
+    "experiments/results/local/e2-d02d261c-20261017/metrics.tsv": {
+      "bytes": 1246320,
+      "sha256": "ec5353edfaadbba1ccfb676b217f5afd09e5b2d1fc2d022fac90f4e6ccd410df"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/comparisons.tsv": {
+      "bytes": 2031002,
+      "sha256": "aee3aec54a95b834a92e32dfae94a0b2d976d07ba1b0754b18c673c368aad462"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/memory_summary.json": {
+      "bytes": 5039,
+      "sha256": "5118184072c81fa9a25422a1ecfa26e503b87150b8d92508b451efa1609f94e1"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/rnacentral_time_rss.png": {
+      "bytes": 122969,
+      "sha256": "c5a9a9683971d4491393dde155f6c477ffac0ef8d7bfa7cbcd7fdbd7f1ff8d97"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/memory_metrics.tsv": {
+      "bytes": 44177,
+      "sha256": "adea6a83ddd8415dec8f938e5aac1664945abd005f216d0b7e90980d4eae58d8"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/memory_stages.png": {
+      "bytes": 164715,
+      "sha256": "227ffcd4803e175fca1ec44e41dd8d6721f3d5d61ac915e1934e0ddb695555e0"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/run_status.json": {
+      "bytes": 2181,
+      "sha256": "6b921e24cf5aaba1d063314605e9761e68c7280f66cca6184f752266f22c92c0"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/memory_families.tsv": {
+      "bytes": 66779,
+      "sha256": "1813d5daa031e21c460f5a6e7a848ac12fa37782194c696bdd6a2805e2f41cc5"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/feature_resources.png": {
+      "bytes": 158120,
+      "sha256": "2166aff39703170b616809f3ea88b84a6a0424cd634068f0401f3865e5efc53e"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/summary.json": {
+      "bytes": 618941,
+      "sha256": "c5e67403c8b78bdda11e4f290db5f0128bebe1bad03c066e5a4e8c88231da6cd"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/replacement_values.tsv": {
+      "bytes": 15360,
+      "sha256": "a7a587e16152aeb957e3460430c59634276c6bf7f5bce459ae8b7af322239e1b"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/scaling_time.png": {
+      "bytes": 485568,
+      "sha256": "db34f3550f386e3e772f3505c487f7ce66705b108b5958cc7366782517f94ab2"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/scaling_rss.png": {
+      "bytes": 382426,
+      "sha256": "1ed35e901271085ba8734d0c1a363d96597c7cbfd11f1b2b815e6b9283f6fd2d"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/slopes.tsv": {
+      "bytes": 27917,
+      "sha256": "31b622b81047f6a6d2f4be26092810316d5713e9db121194eacf9a136cacf6e5"
+    },
+    "experiments/results/local/e2-d02d261c-20261017/memory_comparisons.tsv": {
+      "bytes": 9241,
+      "sha256": "e6b4bdc3bd573f26890318fc48685bb9869646d41917c1940f1ef50c358140d0"
+    }
+  },
+  "tar_extractions_to_filesystem": 0
+}

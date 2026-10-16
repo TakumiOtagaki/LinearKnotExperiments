@@ -1,0 +1,93 @@
+{
+  "provenance": {
+    "current": {
+      "path": "experiments/results/runs/e2-memory-breakdown-d02d261c-20261017",
+      "manifest_sha256": "fa52b5e9295dce1028bf9d068b8b2da669efd0260d28f321c0d238052f843fd4",
+      "processes": 35,
+      "raw_artifacts_verified": 175,
+      "tasks": [
+        {
+          "task": "tasks/rna_4_8kb/000001",
+          "hostname": "r5n4",
+          "task_manifest_sha256": "284f559ae4730d8cdcb6318a72d9388b778177dfb43a8596d806bf6d99e90ed8",
+          "checkpoint_sha256": "dc441d98f02a77e12918e19a26f98fd7a8615b92e8ace312ce16d60223a441b5",
+          "source_revision": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+          "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+        },
+        {
+          "task": "tasks/rna_8_20kb/000001",
+          "hostname": "r14n4",
+          "task_manifest_sha256": "b5c255597df2de62360dcecb78ef8094f49860a7b488930b6e8dfa63e3daa801",
+          "checkpoint_sha256": "d2ca37e3ad3074334342f892f25e6c0ba725a861d771704ab84b8d503fe9e064",
+          "source_revision": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+          "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+        },
+        {
+          "task": "tasks/rna_20_30kb/000001",
+          "hostname": "r14n5",
+          "task_manifest_sha256": "4b9d1506fb16fae4ed961504bd0a72b3d4b7d11ca9e12822be842c068604eea3",
+          "checkpoint_sha256": "e4575ade3123249d27441e358ddf25f75c72bdcab6c4df96f69a721ef231496e",
+          "source_revision": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+          "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+        },
+        {
+          "task": "tasks/rna_20_30kb/000002",
+          "hostname": "r16n9",
+          "task_manifest_sha256": "ad51f89c231712bd3e2fcafce48f1836465313b149b44f526b62622105b2706f",
+          "checkpoint_sha256": "943ac449ee70960cb028a6a441a4d5adc33206ab9f023bd0b9fba8f8c6264bfb",
+          "source_revision": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+          "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+        }
+      ]
+    },
+    "previous": {
+      "path": "experiments/results/runs/e2-memory-breakdown-febd2bc1-20261016",
+      "manifest_sha256": "1a78db4c2e88c34efbb8ab885c618e524f0f411f6dfeb9e7ed1acb76c57e2e28",
+      "processes": 35,
+      "raw_artifacts_verified": 175,
+      "tasks": [
+        {
+          "task": "tasks/rna_4_8kb/000001",
+          "hostname": "r14n5",
+          "task_manifest_sha256": "eb670e36a14900eb679a073e9f4b4db6eea8ca4adfebf1b13302b0a311222826",
+          "checkpoint_sha256": "df224bd80026ff66905b8eaeaca53b315af294104a653bb69d83ce4279c56680",
+          "source_revision": "febd2bc1fecfa6619a86b19a7382e3fc4a3746af",
+          "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+        },
+        {
+          "task": "tasks/rna_8_20kb/000001",
+          "hostname": "r22n4",
+          "task_manifest_sha256": "4ce795d362a69954890b78a4d9c020471fd6271b2e37a7e1e19a8356aeb34b52",
+          "checkpoint_sha256": "2904a83a1253937a0ce89fd0c29f4b61c4204f8e48c65eca148c325c226eb617",
+          "source_revision": "febd2bc1fecfa6619a86b19a7382e3fc4a3746af",
+          "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+        },
+        {
+          "task": "tasks/rna_20_30kb/000001",
+          "hostname": "r3n10",
+          "task_manifest_sha256": "6e4a015a1a8b12fee2ed610851984b9c121873b16bc5b3bfd38a90785d342a0c",
+          "checkpoint_sha256": "d334099e141a78cd2bb69a8dc69c23e5fe87356ab7f0d5d93fb0af7ee15504a7",
+          "source_revision": "febd2bc1fecfa6619a86b19a7382e3fc4a3746af",
+          "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+        },
+        {
+          "task": "tasks/rna_20_30kb/000002",
+          "hostname": "r17n7",
+          "task_manifest_sha256": "716d8817b7d95351fab763b34461fa3e37eae97697eed1722b35cbecb1875def",
+          "checkpoint_sha256": "146ede5b55f095b066526c1d1bdb132fba92af2ffbb9fd5a0db4f5a00307fb36",
+          "source_revision": "febd2bc1fecfa6619a86b19a7382e3fc4a3746af",
+          "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+        }
+      ]
+    }
+  },
+  "expected_revisions": {
+    "current": "d02d261c",
+    "previous": "febd2bc1"
+  },
+  "rss_source": "GNU time peak RSS; driver VmHWM retained separately",
+  "counter_scope": "Cumulative main-forward work, including family counts; excludes forcing/pilot/outer. Not allocation bytes or simultaneous live counts. Profile work is unavailable, recorded as NA.",
+  "script_sha256": "4a366c935e26f3c8a1b4dd41c9a81f5abdc6599ca7b516fa15ef4f5364485818",
+  "caveat": "Fresh separate processes, one measurement/stage; version, worker count, host and date differ. Stage RSS differences are not additive memory components.",
+  "tar_extractions_to_filesystem": 0
+}
