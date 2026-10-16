@@ -1,0 +1,69 @@
+{
+  "all_passed": true,
+  "checks": {
+    "e1_quantile_scalars_checked": 1750,
+    "e1_summaries_checked": 350,
+    "e1_short_rows": 98500,
+    "e1_long_rows": 8628,
+    "e2_replicate_scalars_checked": 2934,
+    "e2_feature_identity_fields_checked": 147,
+    "e2_current_metric_rows": 489,
+    "e2_current_stage_rows": 28
+  },
+  "source_files_unchanged": true,
+  "text_within_pages": true,
+  "plotted_points_within_axis_limits": true,
+  "outputs": [
+    {
+      "file": "figure2_main.pdf",
+      "width_mm": 183,
+      "height_mm": 92.0,
+      "bytes": 56163,
+      "sha256": "03c9452d2b95311f80a58e8499da26f5e30be57bc03a40ae99e249a2252b0fa3"
+    },
+    {
+      "file": "figure2_main.png",
+      "width_mm": 183,
+      "height_mm": 92.0,
+      "bytes": 280920,
+      "sha256": "2d7e575a9ba256310fcb3db6d3439d2d1828aa3eb452587f0e01aad49f6e4188"
+    },
+    {
+      "file": "figure2_d_si.pdf",
+      "width_mm": 183,
+      "height_mm": 55.00000000000001,
+      "bytes": 16246,
+      "sha256": "11a374d416345004e253d8dc5383b337f04c897aeaaab442d4ca1aa2739f9d48"
+    },
+    {
+      "file": "figure2_d_si.png",
+      "width_mm": 183,
+      "height_mm": 55.00000000000001,
+      "bytes": 135043,
+      "sha256": "8245d1ef8a6324236ed20fa8a2d2afdd832ed915b7ac78843ff201e08bd37607"
+    },
+    {
+      "file": "figure3_main.pdf",
+      "width_mm": 183,
+      "height_mm": 55.00000000000001,
+      "bytes": 35830,
+      "sha256": "9a3dfb08d5ed3c37e55700fe292d9f1744861ddb84197eaa95f9fef68717bbc5"
+    },
+    {
+      "file": "figure3_main.png",
+      "width_mm": 183,
+      "height_mm": 55.00000000000001,
+      "bytes": 170603,
+      "sha256": "5b8b75576649e0af80cb2caf7351d95600d5e8a7a2e97d498eb3b987999c9d80"
+    }
+  ],
+  "quantile_method": "NumPy quantile(method='linear'), equal weight per evaluable RNA",
+  "font_pt": {
+    "labels": 7,
+    "ticks": 7,
+    "legends": 7,
+    "headings": "7\u20138"
+  },
+  "text_without_overlap": true,
+  "minimum_font_pt": 7
+}

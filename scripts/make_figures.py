@@ -429,6 +429,72 @@ def figure2(data, width, option):
     return fig
 
 
+def compact_style():
+    """Use legible type at the final 183-mm manuscript width."""
+    plt.rcParams.update({
+        "font.size": 7, "axes.titlesize": 8, "axes.labelsize": 7,
+        "xtick.labelsize": 7, "ytick.labelsize": 7, "legend.fontsize": 7,
+        "lines.linewidth": .8, "lines.markersize": 2.6,
+        "axes.labelpad": 2, "xtick.major.pad": 2, "ytick.major.pad": 2,
+    })
+
+
+def mm_axes(fig, left, bottom, width, height):
+    """Place an axis in millimetres without changing the PDF page size."""
+    return fig.add_axes((left / (fig.get_figwidth() / MM),
+                         bottom / (fig.get_figheight() / MM),
+                         width / (fig.get_figwidth() / MM),
+                         height / (fig.get_figheight() / MM)))
+
+
+def compact_legend(fig, legend_handles, x, y, columns):
+    return fig.legend(handles=legend_handles, loc="center", bbox_to_anchor=(x, y),
+                      ncol=columns, frameon=False, handlelength=1.2,
+                      handletextpad=.4, columnspacing=.65, labelspacing=.35,
+                      borderaxespad=0, markerscale=.7)
+
+
+def figure2_main(data):
+    fig = plt.figure(figsize=(183 * MM, 92 * MM))
+    for col, cohort in enumerate(COHORTS):
+        left = (15, 108)[col]
+        center = (left + 35.5) / 183
+        fig.text(center, 89 / 92, REF_LABEL[cohort], ha="center", fontsize=8,
+                 fontweight="bold")
+        ax = mm_axes(fig, left, 66, 71, 16)
+        plot_distribution(ax, data, cohort)
+        ax.set_xlabel("")
+        ax.set_title("A  Free-energy difference by RNA length (nt)", loc="left", pad=4,
+                     fontsize=7)
+        ax = mm_axes(fig, left, 36, 71, 13)
+        plot_tv(ax, data, cohort)
+        ax.set_title("B  BPP (solid) / loop profiles (dashed)", loc="left", pad=4,
+                     fontsize=7)
+        ax.set_yticks([0, .2, .4])
+        length_handles = handles([bin_label(t) for t in COHORTS[cohort]])
+        for handle in length_handles:
+            handle.set_linestyle("-")
+        compact_legend(fig, length_handles, center, 25.5 / 92, 4)
+        ax = mm_axes(fig, left, 10, 71, 10)
+        plot_access(ax, data, cohort)
+        ax.set_title("C  Window accessibility", loc="left", pad=4, fontsize=7)
+        ax.set_yticks([0, .1, .2])
+    compact_legend(fig, handles([f"b={b}" for b in BEAMS["long"]]), .53, 55.5 / 92, 6)
+    return fig
+
+
+def figure2_d_si(data):
+    fig = plt.figure(figsize=(183 * MM, 55 * MM))
+    for col, cohort in enumerate(COHORTS):
+        left = (15, 108)[col]
+        ax = mm_axes(fig, left, 15, 71, 31)
+        plot_threshold(ax, data, cohort, "d1")
+        ax.set_title(REF_LABEL[cohort], loc="left", fontsize=8, pad=5)
+        compact_legend(fig, handles([bin_label(t) for t in COHORTS[cohort]]),
+                       (left + 35.5) / 183, 3 / 55, 4)
+    return fig
+
+
 def plot_rna(ax, data, metric, annotated):
     for i, program in enumerate(PROGRAMS):
         rows = sorted([r for r in data.rna if r["program"] == program], key=lambda r: int(r["n"]))
@@ -548,6 +614,28 @@ def figure3(data, width, annotated):
     return fig
 
 
+def figure3_main(data):
+    fig = plt.figure(figsize=(183 * MM, 55 * MM))
+    for left, metric, title in ((13, "wall_seconds", "A  RNAcentral: time"),
+                                 (59, "rss_gib", "B  RNAcentral: peak RSS")):
+        ax = mm_axes(fig, left, 21, 31, 20)
+        plot_rna(ax, data, metric, False)
+        ax.set_xticks([5, 15, 25])
+        ax.set_yticks([0, 500, 1000] if metric == "wall_seconds" else [0, 2, 4])
+        ax.set_title(title, loc="left", pad=5, fontsize=7)
+    for left, metric, title in ((108, "wall_seconds", "Wall time"),
+                                 (151, "rss_gib", "Peak RSS")):
+        ax = mm_axes(fig, left, 21, 28, 20)
+        plot_synthetic(ax, data, "LinearCParty", metric)
+        ax.set_xticks([250, 1000, 4000], ["250", "1,000", "4,000"])
+        ax.set_title(title, loc="left", pad=5, fontsize=7)
+    fig.text(143.5 / 183, 51 / 55, "C  Synthetic controls: LinearCParty", ha="center",
+             fontsize=7, fontweight="bold")
+    compact_legend(fig, handles(PROGRAMS), 50 / 183, 6.5 / 55, 1)
+    compact_legend(fig, handles(SERIES_LABELS), 141 / 183, 6.5 / 55, 2)
+    return fig
+
+
 def stage_panel(bottom, data, narrow, prefix=""):
     grid = bottom.add_gridspec(2, 1, height_ratios=(1, .27 if narrow else .13))
     ax = bottom.add_subplot(grid[0, 0])
@@ -593,7 +681,7 @@ def synthetic_detail(data, width):
     return fig
 
 
-def save(fig, name, out, width, records):
+def save(fig, name, out, width, records, check_text_overlap=False):
     # Resolve layout before checking visible text against the physical page.
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
@@ -613,14 +701,26 @@ def save(fig, name, out, width, records):
                     finite = points[np.isfinite(points)]
                     require(np.all((finite >= low - 1e-9) & (finite <= high + 1e-9)),
                             f"Plotted data outside axis limits in {name}: {finite}, {limits}")
+    text_boxes = []
     for text in fig.findobj(match=Text):
         if not text.get_visible() or not text.get_text() or id(text) in unused_tick_labels:
             continue
         box = text.get_window_extent(renderer)
+        if check_text_overlap and box.width and box.height:
+            require(text.get_fontsize() >= 7, f"Text below 7 pt in {name}: {text.get_text()}")
+            text_boxes.append((text.get_text(), box))
         if box.width and box.height and (box.x0 < -1 or box.y0 < -1 or
                                         box.x1 > fig.bbox.width + 1 or box.y1 > fig.bbox.height + 1):
             overflow.append(text.get_text())
     require(not overflow, f"Text outside page in {name}: {overflow}")
+    if check_text_overlap:
+        overlaps = []
+        for i, (label, box) in enumerate(text_boxes):
+            for other, second in text_boxes[i + 1:]:
+                if (min(box.x1, second.x1) - max(box.x0, second.x0) > .8 and
+                        min(box.y1, second.y1) - max(box.y0, second.y0) > .8):
+                    overlaps.append((label, other))
+        require(not overlaps, f"Overlapping text in {name}: {overlaps}")
     for extension in ("pdf", "png"):
         path = out / f"{name}.{extension}"
         # Do not use bbox_inches='tight': preserve exactly 89/183 mm page width.
@@ -934,6 +1034,66 @@ The script neither runs RNA CLIs/scheduler jobs nor executes or changes the exte
     (out / "captions.md").write_text(text, encoding="utf-8")
 
 
+def write_main_captions(data, out):
+    sources = "\n".join(f"| {key} | `{os.path.relpath(path, out)}` | {data.hashes[key]} |"
+                        for key, path in data.paths.items())
+    text = f"""# Compact manuscript Figures 2 and 3
+
+本文用の図は183 mm幅で、Figure 2は92 mm高、Figure 3は55 mm高とする。
+Figure 2のDは55 mm高の独立したSI図に移す。
+文字は原寸で7 pt以上とし、凡例はプロットの外に置く。
+
+The manuscript figures are 183 mm wide: Figure 2 is 92 mm high and Figure 3 is 55 mm high.
+The separate Figure 2 D for the Supplementary Information is 55 mm high.
+All text is at least 7 pt at this width; legends sit outside the plots.
+
+## Figure 2
+
+左は400 nt未満のexact参照、右は400 nt以上の幅400参照を使う。
+Aは符号付き自由エネルギー差、BはBPPとloop profileのTV、Cはaccessibilityの平均絶対誤差を示す。
+分布・分位点・評価域は既存の図と同じである。
+色分けの対象はA/Cではbeam幅、Bでは長さ群である。
+
+Left panels use exact references below 400 nt; right panels use width 400 for longer RNAs.
+A shows signed free-energy differences; B shows total variation distances for BPPs and loop profiles; C shows mean absolute accessibility differences.
+The distributions, quantiles, and evaluation domains match the existing figure.
+Colors identify beam widths in A/C and length groups in B.
+
+## Figure 3
+
+A/Bは実配列の時間とpeak RSS、Cの2枚はLinearCPartyの合成対照の時間とpeak RSSを示す。
+集計は{data.e2_commit[:8]}を使い、既存の図と同じ中央値と全範囲を描く。
+
+A/B show time and peak RSS for real sequences; the two plots in C show time and peak RSS for the LinearCParty synthetic controls.
+The source revision is {data.e2_commit[:8]}; medians and full ranges match the existing figure.
+
+## Supplementary Figure: fraction above the free-energy threshold
+
+符号付き差ΔFが0.01 kcal/molを超えるRNAの割合を示す。
+左は400 nt未満のexact参照、右は400 nt以上の幅400参照を使い、色と記号は長さ群を示す。
+閾値は表示のための選択である。
+
+Fraction of RNAs with a signed free-energy difference ΔF above 0.01 kcal/mol.
+The reference is exact below 400 nt and width 400 for longer inputs; colors and symbols identify length groups.
+The threshold is a display choice.
+
+## Sources
+
+| Input | Path relative to this directory | SHA-256 |
+|---|---|---|
+{sources}
+
+## Regeneration
+
+From the paper repository (the default layouts and existing output directories are unchanged):
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 experiments/scripts/make_figures.py --main-compact --e2 experiments/results/local/e2-febd2bc1-20261016 --e2-revision febd2bc1 --out experiments/results/figures/main_20261016
+```
+"""
+    (out / "captions.md").write_text(text, encoding="utf-8")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--e1-short", type=Path, default=ROOT / "results/local/e1-bprna-short-d21618c5-20261016")
@@ -943,10 +1103,17 @@ def main():
     parser.add_argument("--figure3-only", action="store_true", help="Read and render only E2 figures")
     parser.add_argument("--figure3-panels", choices=("abc", "abcd"), default="abcd",
                         help="Use abc for the manuscript; abcd preserves the historical layout")
+    parser.add_argument("--main-compact", action="store_true",
+                        help="Render 183-mm main Figures 2 (92 mm) and 3 (55 mm), plus separate SI panel 2D")
     parser.add_argument("--g-features", type=Path,
                         default=ROOT / "results/local/e2-e2cecbb4-g-features-20261016/rnacentral_g_features.tsv")
-    parser.add_argument("--out", type=Path, default=ROOT / "results/figures/draft_20261016")
+    parser.add_argument("--out", type=Path,
+                        help="Output directory; defaults to main_20261016 with --main-compact, otherwise draft_20261016")
     args = parser.parse_args()
+    if args.main_compact:
+        args.figure3_panels = "abc"
+    if args.out is None:
+        args.out = ROOT / "results/figures" / ("main_20261016" if args.main_compact else "draft_20261016")
     args.out = args.out.resolve()
     for directory in (args.e1_short, args.e1_long, args.e2, args.g_features.parent):
         directory = directory.resolve()
@@ -962,7 +1129,13 @@ def main():
     args.out.mkdir(parents=True, exist_ok=True)
     style()
     records = []
-    for width in (183, 89):
+    if args.main_compact:
+        compact_style()
+        if not args.figure3_only:
+            save(figure2_main(data), "figure2_main", args.out, 183, records, check_text_overlap=True)
+            save(figure2_d_si(data), "figure2_d_si", args.out, 183, records, check_text_overlap=True)
+        save(figure3_main(data), "figure3_main", args.out, 183, records, check_text_overlap=True)
+    for width in (() if args.main_compact else (183, 89)):
         for option in (() if args.figure3_only else ("d1", "d2")):
             save(figure2(data, width, option), f"figure2_{option}_{width}mm", args.out, width, records)
         for annotated in (False, True):
@@ -973,13 +1146,19 @@ def main():
             save(stage_detail(data, width), f"figure3_mode_memory_{width}mm", args.out, width, records)
         print(f"Rendered {width} mm drafts", flush=True)
     write_audit(data, args.out)
-    write_captions(data, args.out)
+    if args.main_compact:
+        write_main_captions(data, args.out)
+    else:
+        write_captions(data, args.out)
     for key, path in data.paths.items():
         require(digest(path) == data.hashes[key], f"Source file changed: {path}")
     validation = dict(all_passed=True, checks=dict(data.checks), source_files_unchanged=True,
                       text_within_pages=True, plotted_points_within_axis_limits=True, outputs=records,
                       quantile_method="NumPy quantile(method='linear'), equal weight per evaluable RNA",
                       font_pt=dict(labels=8.5, ticks=8, legends=8, annotations=8, headings=9))
+    if args.main_compact:
+        validation.update(text_without_overlap=True, minimum_font_pt=7,
+                          font_pt=dict(labels=7, ticks=7, legends=7, headings="7–8"))
     (args.out / "validation.json").write_text(json.dumps(validation, indent=2) + "\n")
     manifest = dict(script_sha256=digest(Path(__file__)), numpy=np.__version__, matplotlib=matplotlib.__version__,
                     e2_revision=data.e2_commit, figure3_panels=args.figure3_panels,
@@ -987,6 +1166,8 @@ def main():
                              for k, p in data.paths.items()}, outputs=records,
                     derived_files={name: digest(args.out / name) for name in
                                    ("captions.md", "plot_data.tsv", "validation.json")})
+    if args.main_compact:
+        manifest["layout"] = "main-compact"
     (args.out / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     print(json.dumps(dict(figures=len(records), checks=dict(data.checks), out=str(args.out)), indent=2))
 
