@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "dataset": "SARS-CoV-2 reference genome for E3",
+  "accession": "NC_045512.2",
+  "source_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nuccore&id=NC_045512.2&rettype=fasta&retmode=text",
+  "retrieved_utc": "2026-10-16T07:30:00Z",
+  "fasta_sha256": "0891c00cc2d503f58e0c600ce5ee64e9c64b939525c70d5486bc46cbc7cb073e",
+  "length": 29903,
+  "sequence_sha256": "d221b74def202fe4a77e14ce8695bfa5cbc7d5056ce4c8a98dafee8c2e0ab344",
+  "scaffold_method": "LinearPartition-V b=200 dangles 2, p >= 0.7, helices >= 2 pairs (same as E1/E2/NEAT1)",
+  "scaffold_pairs": 7029,
+  "scaffold_sha256": "2aacd26cb8315f2c6f7b81c8ffd7b21a7459eb57f355d17df82aacf8a24b9f47",
+  "linearpartition_commit": "b450fb3e63189073b68d385589035f992080aa3a",
+  "linearpartition_seconds": 189.2,
+  "records": [
+    "SARS_CoV_2.txt",
+    "SARS_CoV_2_emptyG.txt"
+  ],
+  "notes": "frameshift slippery site UUUAAAC at nt 13462"
+}
