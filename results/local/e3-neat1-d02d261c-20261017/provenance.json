@@ -1,0 +1,2379 @@
+{
+  "inputs": [
+    {
+      "path": "data/neat1-20261016/NEAT1_1.txt",
+      "sha256": "113ccf81eff2e9f2992f05bacb7eb220c6294675b9b5957c58e43794e147dbf8",
+      "length": 3756,
+      "scaffold_pairs": 727
+    },
+    {
+      "path": "data/neat1-20261016/NEAT1_2.txt",
+      "sha256": "97238dd464ca55d37f146ce1b84d8a0ff1a3197b82f273de5c9ded933f1232c8",
+      "length": 22743,
+      "scaffold_pairs": 4161
+    },
+    {
+      "path": "data/neat1-variants-20261016/NEAT1_1_emptyG.txt",
+      "sha256": "44ed367ed1805fe7520dba08d42e2d4b92ede854da3b8357c58973cab68065da",
+      "length": 3756,
+      "scaffold_pairs": 0
+    },
+    {
+      "path": "data/neat1-variants-20261016/NEAT1_1_p05.txt",
+      "sha256": "3e92fab91d95e9bda72993829343fe624ab80b1d9a83dce164011a608d2319ab",
+      "length": 3756,
+      "scaffold_pairs": 986
+    },
+    {
+      "path": "data/neat1-variants-20261016/NEAT1_1_p09.txt",
+      "sha256": "59a5b6d270d2e7bf0b483f8c4c494a50ede7308ffe13054df65c96f2d2407fe9",
+      "length": 3756,
+      "scaffold_pairs": 491
+    },
+    {
+      "path": "data/neat1-variants-20261016/NEAT1_2_emptyG.txt",
+      "sha256": "5a1a3d4d7ed5b89316c19aebc17b4e6cbd421dd941d1584ba254ca07fb71173d",
+      "length": 22743,
+      "scaffold_pairs": 0
+    }
+  ],
+  "checkpoints": [
+    {
+      "path": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_results.jsonl",
+      "sha256": "5526185a5b110958fb0de62d8cfef0379f732239fb13a753df3f33fe2fab7fa9",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r5n9",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "820a958b22945e2a4e75de9d186b07b8d01210ce1d30699e75134e95ea746a03"
+    },
+    {
+      "path": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_results.jsonl",
+      "sha256": "248c3233338e3dbe981b2f50f7323cb354023421246a19f8507005139b03bf49",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r6n10",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "820a958b22945e2a4e75de9d186b07b8d01210ce1d30699e75134e95ea746a03"
+    },
+    {
+      "path": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_results.jsonl",
+      "sha256": "5872c0b98ef663601cb912f67c492147e299b26e4432a434f19acef43fa47b7d",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r22n3",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "820a958b22945e2a4e75de9d186b07b8d01210ce1d30699e75134e95ea746a03"
+    },
+    {
+      "path": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_results.jsonl",
+      "sha256": "89869e8fe73a1b7e7cb6fa0520e719e4c2dd98939b20b2d6d3f255dca7f7f62f",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r13n10",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "820a958b22945e2a4e75de9d186b07b8d01210ce1d30699e75134e95ea746a03"
+    },
+    {
+      "path": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_results.jsonl",
+      "sha256": "31bafca514bb7f76c5c7025dd79e9d58d06fcd3093c168aafc3fe0de06956c66",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r22n6",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "820a958b22945e2a4e75de9d186b07b8d01210ce1d30699e75134e95ea746a03"
+    },
+    {
+      "path": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_results.jsonl",
+      "sha256": "e1a50c5efa8920e36263c40156bdc0c7705975dd4c61082c493df149c4c9ba9c",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r19n1",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "820a958b22945e2a4e75de9d186b07b8d01210ce1d30699e75134e95ea746a03"
+    },
+    {
+      "path": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_results.jsonl",
+      "sha256": "ad7954fbdcfb4a5e8fc307e55c166b568d519e54ce98f9faad5141d3bdb4e4f7",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r16n8",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "820a958b22945e2a4e75de9d186b07b8d01210ce1d30699e75134e95ea746a03"
+    },
+    {
+      "path": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_results.jsonl",
+      "sha256": "25f0226b7862bf23e73a3d18556d9f59dbbaed780910bf0c13891ccf7e22280a",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r17n6",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "820a958b22945e2a4e75de9d186b07b8d01210ce1d30699e75134e95ea746a03"
+    },
+    {
+      "path": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_results.jsonl",
+      "sha256": "3d279c016d3b58e850501345f2540db506b2bc2021bc7bdc1705173b364f8ba1",
+      "jobs": 1,
+      "status": "success",
+      "workers": 2,
+      "host": {
+        "hostname": "r15n10",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "820a958b22945e2a4e75de9d186b07b8d01210ce1d30699e75134e95ea746a03"
+    },
+    {
+      "path": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_results.jsonl",
+      "sha256": "d67e4ca1be021d4807a9a73d436d36763c2ecdc68521f655f561b987a3b242d6",
+      "jobs": 2,
+      "status": "success",
+      "workers": 2,
+      "host": {
+        "hostname": "r5n5",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "e2cecbb47edeecf6958d1d1e8d002b8ca3b78740",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "820a958b22945e2a4e75de9d186b07b8d01210ce1d30699e75134e95ea746a03"
+    },
+    {
+      "path": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_results.jsonl",
+      "sha256": "f8c91d7f7938f23c1dd3d763b6b81b9695492e24ee9bf0ead7ae4f3cd83c5756",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r15n4",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "894e7d011430ad2e23495ea4771bb241ea552772ece1d94295ba98f3b5501131"
+    },
+    {
+      "path": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_results.jsonl",
+      "sha256": "2f7415c2063124a2e59fd861ae5c1cbafa1750cbc1a59917862dd2c2e28fb2b8",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r21n2",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "894e7d011430ad2e23495ea4771bb241ea552772ece1d94295ba98f3b5501131"
+    },
+    {
+      "path": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_results.jsonl",
+      "sha256": "ea169ae46472e8df234c86096e3ba992ae0a2ee674c530299bb7bca5828a99d8",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r6n5",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "894e7d011430ad2e23495ea4771bb241ea552772ece1d94295ba98f3b5501131"
+    },
+    {
+      "path": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_results.jsonl",
+      "sha256": "004efb6356511fdcf7343a5a53e04b650d53d9c3868f84e01bb8866285733083",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r20n11",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "894e7d011430ad2e23495ea4771bb241ea552772ece1d94295ba98f3b5501131"
+    },
+    {
+      "path": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_results.jsonl",
+      "sha256": "35f67876d773c033d3c5817d86eb5ba0bccd37d6d4f326ba5be630af22bdf73e",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r8n10",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "894e7d011430ad2e23495ea4771bb241ea552772ece1d94295ba98f3b5501131"
+    },
+    {
+      "path": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_results.jsonl",
+      "sha256": "5657ef9c941fc6b1000af620640248656d981eb5f30e5e2d67e4aa9d00cf11c2",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r22n4",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "894e7d011430ad2e23495ea4771bb241ea552772ece1d94295ba98f3b5501131"
+    },
+    {
+      "path": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_results.jsonl",
+      "sha256": "101fa2653c2d3738e0f73cd3a9e04d2fbb6d42238bc19bdd4982d6d9fd574f28",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r21n4",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "894e7d011430ad2e23495ea4771bb241ea552772ece1d94295ba98f3b5501131"
+    },
+    {
+      "path": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_results.jsonl",
+      "sha256": "0c0a4f14d3ba50a8eba4783d852d8a869b71e70df3832331a8a6ab4d1994c484",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r19n1",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "894e7d011430ad2e23495ea4771bb241ea552772ece1d94295ba98f3b5501131"
+    },
+    {
+      "path": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_long/000001/run/task_results.jsonl",
+      "sha256": "ba5ccdcacea26cdcdf24fc6746f510c70f9cb02d7fd43bbcff0b9bcc6e698bc0",
+      "jobs": 1,
+      "status": "success",
+      "workers": 2,
+      "host": {
+        "hostname": "r14n5",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "894e7d011430ad2e23495ea4771bb241ea552772ece1d94295ba98f3b5501131"
+    },
+    {
+      "path": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_short/000001/run/task_results.jsonl",
+      "sha256": "7d2e0f07a9993508dd4ee7adf032808d1dfa205e9d979b2d6e417568ec0cb7a4",
+      "jobs": 2,
+      "status": "success",
+      "workers": 2,
+      "host": {
+        "hostname": "r3n1",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "894e7d011430ad2e23495ea4771bb241ea552772ece1d94295ba98f3b5501131"
+    },
+    {
+      "path": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_results.jsonl",
+      "sha256": "4448742a3761b97a5dac8ae892d09b3bb29af4b08e267085e67e558c7ab3a70b",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r3n8",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "894e7d011430ad2e23495ea4771bb241ea552772ece1d94295ba98f3b5501131"
+    },
+    {
+      "path": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_results.jsonl",
+      "sha256": "317ba855500864b564806c24377ad359d7d62ad7c76e43b2d23db16bbcc11418",
+      "jobs": 3,
+      "status": "success",
+      "workers": 3,
+      "host": {
+        "hostname": "r8n3",
+        "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+        "python": "3.9.25",
+        "cpu_count": 384
+      },
+      "software_before": {
+        "commit": "d02d261c3a07e7308a3a3d37543d040adfd0f86e",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "software_lock_sha256": "894e7d011430ad2e23495ea4771bb241ea552772ece1d94295ba98f3b5501131"
+    }
+  ],
+  "artifacts": [
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/command.json",
+      "bytes": 562,
+      "sha256": "76abb205cc7dce886cb2f664499d5648a7a5a3c8fbbe6dee1d701e6920bfbb86"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/stdout.txt",
+      "bytes": 68294,
+      "sha256": "3df7e467b84da323627381a587e617c19385c8a0f8f6476ee738fd7578b988db"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "f989b4ec3fc9c2bf6609bc445231764c05a0d6950edc39abd2971a492039f42b"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/bpp.tsv",
+      "bytes": 899348,
+      "sha256": "95f6ca5e2b5a4a74884438d28be13cd98be34e756503fde6888e9d73989ab172"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/result.json",
+      "bytes": 963,
+      "sha256": "d789edb051bf8e5c7070f5c5f4261875e7a3f536a0c546d8313454211d77da6d"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/command.json",
+      "bytes": 562,
+      "sha256": "1a0b119072df2af3ce724041626403c11e2bf7cd3f04b5b87d3ad34d30d770b5"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/stdout.txt",
+      "bytes": 68294,
+      "sha256": "65abefde0171cfa126cd0c93fd99b6eabec599e9936b3e30f943ce47d44fff12"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "674cf34b6fe848e2180e6446d267ead3ffd88c613ed08ef72903d4bb928ae386"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/bpp.tsv",
+      "bytes": 946739,
+      "sha256": "7802f1d08f07ca3a97fbbc6c6ac4f09d341a6e62e054ec7d8404f160e5b7a2d3"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/result.json",
+      "bytes": 964,
+      "sha256": "d477e5c50a47b9e3892dda0f2f8a4021671b180d79c1ac2cbd5e8481114ff6ea"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/command.json",
+      "bytes": 562,
+      "sha256": "22d2c2a559190216d3185964941d7f3b6059322d73ea5ad430ee92c0e18eff86"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/stdout.txt",
+      "bytes": 68294,
+      "sha256": "267f8b8bfdd30efdc0502f2267a855992e7df73080e3019395ef73443fdb9b76"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/time.tsv",
+      "bytes": 17,
+      "sha256": "26742401e87e629235bed170f0ed4e5e5711fbc8a6cf9a9a08717ca29bcf40f3"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/bpp.tsv",
+      "bytes": 991512,
+      "sha256": "021866505a692f6aa52f5a96eeac9621a2365120401b07ab5c7056f434b195bf"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/result.json",
+      "bytes": 965,
+      "sha256": "0f86f021f4acf25ebefedf58f36e87e16dd412df417d67026798fde5d8869064"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/command.json",
+      "bytes": 562,
+      "sha256": "064d736fd00b1b82060eeee4f487c20d3163130aa8adf62879e7a4d3fa396263"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/stdout.txt",
+      "bytes": 11333,
+      "sha256": "3d40920cfd205da4f13fbbfc9c0aa73635bca4c428fddf3515316004a1244745"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/time.tsv",
+      "bytes": 14,
+      "sha256": "a20ade7653a2438016ac9055105d0c29195b5122ddd79bb9359d12a51e9b331e"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/bpp.tsv",
+      "bytes": 134764,
+      "sha256": "525c168e4fa6872d57113a471fdfe9f8268affa57f2b51dbef53c9a7f0d9ae7d"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/result.json",
+      "bytes": 963,
+      "sha256": "1d5769e2004999eed6d93266167c9ee0ad992ef60095d9868b6fbf160b6d91b0"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/command.json",
+      "bytes": 562,
+      "sha256": "d1c6c3fd1769172fc61d2601c086d44703ea1f6694cd792d8251ad8f1002aa54"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/stdout.txt",
+      "bytes": 11333,
+      "sha256": "3e4e1d65ed62a5b32d9c747310a8146379358f3daa3ec9ac337eae893c6dbfa5"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "534171415d0ef704f25f56c17964f1599ad47acb745a604d1532d18612a75a15"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/bpp.tsv",
+      "bytes": 139797,
+      "sha256": "c30cc79a53fb1a7778ae8fbe9d332afd2f1db81a0df598b8fffeb95da7054266"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/result.json",
+      "bytes": 963,
+      "sha256": "a986424da4ebf0177ae03da10a34536794543fe0cb08a5b989ea2efa4bcc8203"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/command.json",
+      "bytes": 562,
+      "sha256": "16832d18cc11422a151f5cdc9c2327e57074bb6cd301c0cfbe560d128df02036"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/stdout.txt",
+      "bytes": 11333,
+      "sha256": "44d483ae680f62c0e2774d7819844de4148bea7c283d25291d2820fe461dc3b2"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "b31d50401fa7ae1e63d2e725d30771219a1c9d35a5fc28e9bdefae7000d73aaa"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/bpp.tsv",
+      "bytes": 145668,
+      "sha256": "e55c5f47ee941fe85b354fc4d2baeca0ca5b4083523b1c5dd849278ddb3da58a"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/result.json",
+      "bytes": 962,
+      "sha256": "a815f3e6f387eb16ca4be859abb50226f6f4a38ea67563ceb85d7ff88bd15b86"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/command.json",
+      "bytes": 417,
+      "sha256": "5e584388bfd5f3a9eb597ac3130b739c9f311aa0c74bb03f10407ef623827bee"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+      "bytes": 2833953,
+      "sha256": "61f5e7e73fb0bf8199ec22d994dbae678ef28dd29af2be50030fc7622b7f426c"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "ab9249c1c4fa820b88ffe4cccb32c5c817faa538b1482568220d8b6bc6472c33"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/result.json",
+      "bytes": 818,
+      "sha256": "dd6c733c5caa32a91e18188f6a38157f37326fa5b1a64b57a64b08dde340dec2"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/command.json",
+      "bytes": 417,
+      "sha256": "02a20ed6e2a6c916c54ba57c5c4824da7be18eeb17f93c5fd37044bc272cec21"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+      "bytes": 2523575,
+      "sha256": "2a528f7fd8af4fbf84e2b269b27d605d0d512bda0062f044f7b8afdcf6ffb017"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "490a239975d592411bb872e915cc746ce8da572f83a199c44a58220eb4410a66"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/result.json",
+      "bytes": 820,
+      "sha256": "a6b70b50616d2b9f346a64b165bbc33b539f095d68f2310feecf50373db88981"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/command.json",
+      "bytes": 417,
+      "sha256": "b0ece0b914258debc4f82de4e091d35d510f91407426c300dcacc1e145af3f06"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/stdout.txt",
+      "bytes": 2247576,
+      "sha256": "e720434a75a3b9ae6d2fe82d012e96583315ffb853700fddc431d6104d57b8da"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "cc2e7e96ef879b4ac0fd12489bbef612a39607d96731bccf14f62ad1006cb5a9"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/result.json",
+      "bytes": 820,
+      "sha256": "2c27ab8bb58404333763dbaa95af833540c938828f60a23cef412d33314e5c49"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/command.json",
+      "bytes": 417,
+      "sha256": "97f98a05f4e8c1282ae46ef3b0399458423a1bbd3a010c32520b682f546b6c50"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+      "bytes": 383754,
+      "sha256": "dbba194d91df8f9a20086916e0a5506cd8e1d129f035f91e65184b4a2c61624f"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/time.tsv",
+      "bytes": 13,
+      "sha256": "6b8c2d67758ed7b0a276e1d36d8bf5ec54adcd1c4d64aa14a3052ec5565e1cde"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/result.json",
+      "bytes": 816,
+      "sha256": "98dacd81d71adf498246b5cb2cc8a61896395eaec1095bbd3ca7a3c404bf648e"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/command.json",
+      "bytes": 417,
+      "sha256": "787c6bb836de707376ae1b8a42f8b5ce4e5fb85f1bcd5e9d516592f90216739a"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+      "bytes": 440063,
+      "sha256": "c5166e76298c33ce21f4759d480b28d612a920450d6b585c350e7c6c968b155a"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/time.tsv",
+      "bytes": 14,
+      "sha256": "44980fc325f2210a7ac067ea2631dc855ba444e4126241f0e5ce65c3de886f84"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/result.json",
+      "bytes": 817,
+      "sha256": "55ccbb4237d675e18a8a8003b52da295f54d6b7b9a407985797d051da11889fb"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/command.json",
+      "bytes": 417,
+      "sha256": "c27ba079a51a3e0b4e5f3fd390f695ff72c48d87aca818237b9e04cc4dc84c10"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/stdout.txt",
+      "bytes": 439094,
+      "sha256": "e59433a5671ea874478041dd670c0879e5a66cc8e61a82b9cf317559c7b47ef7"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "d6bc47cd853b8381a73ca6203242173bc7f0ab592a8211032df862d59a8b9c23"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/result.json",
+      "bytes": 819,
+      "sha256": "be929fd40b252a55037c169f658431d21fa33e7b5127597c4c1c690933a79bb3"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 480,
+      "sha256": "9de84cafcf216a090726760d05d87f61105ae40530d48c78418ceccda014c8fa"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 2233098,
+      "sha256": "647d52cb8266c650e22a4202bd220a8dcb75f694e59c8c933cbd86e7a4eec58e"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "df5bf4ffc0ee6134b56d5fbed596d8c3b6a75e5cd7933f5b64bc78ced6893dfa"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 887,
+      "sha256": "6eb681661a382592133696723a44c93d6c5d99569991d2faa3183a6d0d88ce74"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 480,
+      "sha256": "c8537f01709506a767c1f5b807c4ceee58c561a9be0c20109db33e1af9bfaf13"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 2200252,
+      "sha256": "0a33f79818c7514d8dc6c911aa4c178c1115b92223810bc4e32229092a8eca88"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "be660afb20b7916aae48bb22afd9958fa0096b5093ba63192605a1ae5c156b1b"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 889,
+      "sha256": "d4a464f5175c73ff1ddf02d6a0b6bc1ed18fc4680353c7bec4e84720caaf6d04"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 480,
+      "sha256": "9563c487fe5248e1a7008ced42b090c325e44bac8d768d206a527117b252029b"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 2081717,
+      "sha256": "6db96196b13a2088559d7d1793176e3fbda02e046be6a1cf39440b0e26151f14"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "2c2b341e531f462746a95ca0f6bae98f987b6376351c4e39af7db61ef3c0d48b"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 889,
+      "sha256": "461614af6756a5fdd949ceaf7033ba4e7d8746b1a327de9afa319cd647f16d20"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 480,
+      "sha256": "048d92b844100063ed86d3f15cc2a601627b6efed51b494770814dfed958d0ff"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 320129,
+      "sha256": "5b0f8214b1ab342f523e6ac1144b64b172e1d6f4cd811a6d1622d03f52560023"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 13,
+      "sha256": "0dafd636a26844e1ab11d57f0fda71508999a413ec50102ac8812ca0668594a0"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 885,
+      "sha256": "04878763141b63b149795edb1ee668c122a6bb57bcd4e9c421aabfdf81fa99e2"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 480,
+      "sha256": "f66ba00e6cde1a060990c3081bb35cf2dbb0067c26d14b51b231e2a046205555"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 333190,
+      "sha256": "b97e815b71be630d3ca3f10877713502b4cdbd675e9ef0622356da9e8de20290"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 14,
+      "sha256": "e8c8616edc3f64c33dc726386e835aa0be06eceb080a016dcc38fd4b185d95c7"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 886,
+      "sha256": "9c4e6ef545c1739c51f7535f15df475fe19d153bd7afcd60d7a9db4d6e820626"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 480,
+      "sha256": "65d0a9e7c18e453772ca3b994eb2bb6919359f9f53da445a2004beb16b52d525"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 335346,
+      "sha256": "5331efaadd186fc0417e13d7af4c9e8dda417835f2074b18ca2fdd6368ab1c78"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "7a52ea47699f4be1e67876473c62c1e8f63f13c5cef16b77f6c0ae490c278ed6"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 887,
+      "sha256": "0042d06ed57514e6a3d95b3d36556b6d2b2c3bd52abdec9e31c2b5649a178ffe"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/command.json",
+      "bytes": 454,
+      "sha256": "d4f11473b2de2b13b493a468e7e12f8c2c420a7ae3cba9839ab0640e2a99d854"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/stdout.txt",
+      "bytes": 68275,
+      "sha256": "322af8fbd3273ba92473f36221ae1cfff8bc14042c06129e815b3d4147f90c72"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/stderr.txt",
+      "bytes": 206,
+      "sha256": "1fb93c280d59e5f2f58121cb0a57e8ebd2430e6c6e03faec6cc8441dd0f09f1e"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "e0422e6a74663677f71dd578a915b063e16d7b033df6ffeb21e89bbe54f6a82e"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/result.json",
+      "bytes": 855,
+      "sha256": "1f419fb0a93321e10b2b9156474f4ef6b1c987329774b834ded825eb4a122dd3"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/command.json",
+      "bytes": 454,
+      "sha256": "7fb3b98ead638cd552126418f83f30f8e8068e0fdc1b9b8a9e680ef782ae14c8"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/stdout.txt",
+      "bytes": 68275,
+      "sha256": "1ddf70c0de8cd04450a6474e6e3b437b2bc41a146e1387b2cb55f35d77dfba0b"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/stderr.txt",
+      "bytes": 198,
+      "sha256": "61fed5ed6687a98ad05ea2b2c833510e99ec379338e2c928afa6c2171717858f"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "8481700c078d944ac3cc46160813339e6fd91bf533eded423927e08123c2d859"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/result.json",
+      "bytes": 854,
+      "sha256": "753f4a19a81a7ca09dadecb2daea92657587dad970fcffa5ee4e72c0b53c59f9"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/command.json",
+      "bytes": 454,
+      "sha256": "5a2d413533a83563e596a9a24dc505b91d9b2bd3cae18219db3012482f9b9b49"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/stdout.txt",
+      "bytes": 68275,
+      "sha256": "aae9b3301c27c47b4c133b94d5e32960d66d342b20a32e6d9c6431b7d52b4431"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/stderr.txt",
+      "bytes": 207,
+      "sha256": "ef9f4620ac9a7b32c5b13479ee032b3f9fed53f035ba5302a116d2f2e018ea03"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/time.tsv",
+      "bytes": 17,
+      "sha256": "b3ea76f5434fe288d8758743e80b0eda2435a559fc5b0ea013f1cdd74bd0782b"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/result.json",
+      "bytes": 855,
+      "sha256": "06015248e01770f2590943051624b7dfc11d5b51025855d6b0fe09d86b7729ad"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/command.json",
+      "bytes": 454,
+      "sha256": "d0b2ccff36d632c9ff7e2b885de987efa3f9b235c9845bd4ca983fd3b78e316e"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/stdout.txt",
+      "bytes": 11314,
+      "sha256": "e5ad338c323ef4e5d63c652c1c8c56c0fc845a00179729247e2451df3a16f4bf"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/stderr.txt",
+      "bytes": 203,
+      "sha256": "a23be87374e16a9c9c5cd9bf96110b33ac4bfdb82e57fedd55ebfdfeca5257a2"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/time.tsv",
+      "bytes": 14,
+      "sha256": "eb31218cdc5d36ec75c286a59b8f5dbd19a84218f7b8a807a869b92a439aad8b"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/result.json",
+      "bytes": 853,
+      "sha256": "677aff78d7c9d897ad17ca33ffcfe9961c06dcd123237b29c33ac5945bb76049"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/command.json",
+      "bytes": 454,
+      "sha256": "78f5c54baf0f05f3ad8ea26f97c1e7cb038498007182e1f98fdb3f1690ef607e"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/stdout.txt",
+      "bytes": 11314,
+      "sha256": "ab779c5dc5e718bfaf68ddedf607c1680fc5aee94709b54584079f13c36e576f"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/stderr.txt",
+      "bytes": 198,
+      "sha256": "b73bf6e4ca0a5e9055113b631bab224c86ac7b9cded52593b3586426c46e7104"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "bed2a3cc05ebf1f461ccc0036bc90a77e56b9e8df4e23e2ac183e023a9b705e1"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/result.json",
+      "bytes": 853,
+      "sha256": "d3db8a8ba89e4e50a3823c3318b12c26a285cf839ad8207938e39de3bb6d6ba2"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/command.json",
+      "bytes": 454,
+      "sha256": "be925ad4cec3e184b04e8a7fdc68e2ea012e369e1f7454087ef7a87391cf5ef8"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/stdout.txt",
+      "bytes": 11314,
+      "sha256": "f3db16eae98c4d7fde3e5537571f600b17244f7b6c29ed2d7498afd63a7fd5e5"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/stderr.txt",
+      "bytes": 203,
+      "sha256": "8b1b36d5dd9c2f041066c810b196a5961111e7323385ab366bc3bf7989d42035"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "2c89559ce6306b8c4512a0e896b05201bf73446b7351c709a38a813f36b23ed4"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/result.json",
+      "bytes": 853,
+      "sha256": "143e17fcaefad870e9607f05fcf929306076be5c97607683763b53c6c9449d80"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/command.json",
+      "bytes": 493,
+      "sha256": "be6a4fdae6309b525d4a9aa0ac8b06607fb2792776623f2bd10840ea8b05e49a"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/stdout.txt",
+      "bytes": 22768754,
+      "sha256": "dc1c08f684a122c27680805024fbbcfa48ecd35950e7104e6b877c3c9a20cea1"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "641379f254e7635fecc48945d1a2278b36011966d3b8e4e3b65217a1b7b87ff2"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/result.json",
+      "bytes": 903,
+      "sha256": "03e8d757d49371eb216e07c402ae531b9d7a366a9162960c66bbab53db4d8c21"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/command.json",
+      "bytes": 493,
+      "sha256": "9e686e325e92dfc4d01a3d89d619f4578c4bf3336ccc9b109741cf64217efb35"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/stdout.txt",
+      "bytes": 3762767,
+      "sha256": "940c9c4f873fae4e078d14478c284e25950adb213352e6e0b987f599f043d2c8"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "54d81c6c8c5d58a741a64c8113b7f3fd6bd178e9504560549a1dc4329b5e40c9"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/result.json",
+      "bytes": 903,
+      "sha256": "5c28ddc674c6ba75a568b05867aa2ca5ed9293215b1fb584605119db16ef1bd2"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/command.json",
+      "bytes": 493,
+      "sha256": "28694e6a80f2428a32902b5d0cd2cb847ec6833824db483bb59057788db2d78c"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/stdout.txt",
+      "bytes": 3762767,
+      "sha256": "6b55445dbc98fb7300b0f50fbd30c2c08bce2d781c8a13c54c9047297fbfffac"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "ae482ee690b0073f2c4065879d6d77c8d7f2b28e1cb371d9145f39e907adaa64"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-e2cecbb4-20261016/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/result.json",
+      "bytes": 903,
+      "sha256": "d68a735a2c8e4bb18e8ddf2ea92013dfcbcf3ab964cabec4092951b4d60b817c"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/command.json",
+      "bytes": 562,
+      "sha256": "8d2ea298a5b0ea060acf2695a145431de64ec13a52a039c843f7cdf504885558"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/stdout.txt",
+      "bytes": 68294,
+      "sha256": "3df7e467b84da323627381a587e617c19385c8a0f8f6476ee738fd7578b988db"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "306ebb131cadc10aca2f21299ec40d42d1be51a75c7e473bef51d4c1fabbb118"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/bpp.tsv",
+      "bytes": 899348,
+      "sha256": "95f6ca5e2b5a4a74884438d28be13cd98be34e756503fde6888e9d73989ab172"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/result.json",
+      "bytes": 963,
+      "sha256": "1553214ea131dbccd38db7514adb9e77c5c004f0b803cf2a0adb1a8fd0a73cb8"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/command.json",
+      "bytes": 562,
+      "sha256": "8fb2b48938c42c8e6597f4934b234f8eb5db5316550a0ceaa2ac3b28df2b27af"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/stdout.txt",
+      "bytes": 68294,
+      "sha256": "65abefde0171cfa126cd0c93fd99b6eabec599e9936b3e30f943ce47d44fff12"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "8d6331b1b77590015b832af0df9471f6f34c1b69966fffb90c8341dee91ee549"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/bpp.tsv",
+      "bytes": 946739,
+      "sha256": "7802f1d08f07ca3a97fbbc6c6ac4f09d341a6e62e054ec7d8404f160e5b7a2d3"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/result.json",
+      "bytes": 964,
+      "sha256": "d92d2e1778429b6fd8ee8a9e2ee9a1790af0ade4e895a787944070080deb3cd8"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/command.json",
+      "bytes": 562,
+      "sha256": "a2cf3eaba2ab87da2be2fc12bbadff88336a30973e8ec6de93378e6c5072465e"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/stdout.txt",
+      "bytes": 68294,
+      "sha256": "267f8b8bfdd30efdc0502f2267a855992e7df73080e3019395ef73443fdb9b76"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "3381169adecb0f8c5c41db571cbdca176fa060136a513072023cc0ef4d542387"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/bpp.tsv",
+      "bytes": 991512,
+      "sha256": "021866505a692f6aa52f5a96eeac9621a2365120401b07ab5c7056f434b195bf"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/result.json",
+      "bytes": 964,
+      "sha256": "5b933361008a6689aa2171c791493275057726f588b07cb5d622c0c7069ebb52"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/command.json",
+      "bytes": 562,
+      "sha256": "cd4ce851d13f5e59219b51859979185f346ac6cd0414a6ec165785d96340dedb"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/stdout.txt",
+      "bytes": 11333,
+      "sha256": "3d40920cfd205da4f13fbbfc9c0aa73635bca4c428fddf3515316004a1244745"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/time.tsv",
+      "bytes": 13,
+      "sha256": "1c08b95c4c4e9248039b4f1cb00cfb11066628b40a8d8744c637992572290699"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/bpp.tsv",
+      "bytes": 134764,
+      "sha256": "525c168e4fa6872d57113a471fdfe9f8268affa57f2b51dbef53c9a7f0d9ae7d"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/result.json",
+      "bytes": 960,
+      "sha256": "a5b1a7968e175e7230a03c1d50b9a3cb0322793ce30d132f6e79093af0202307"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/command.json",
+      "bytes": 562,
+      "sha256": "bcca8c6b353e731a4304bcf41d39ce7554a89f790abe724d05257ceb2d3c0cae"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/stdout.txt",
+      "bytes": 11333,
+      "sha256": "3e4e1d65ed62a5b32d9c747310a8146379358f3daa3ec9ac337eae893c6dbfa5"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/time.tsv",
+      "bytes": 14,
+      "sha256": "95f8fc3b6fbc06bd2615f560c2dadefaa515db25d7cff1476e64d4008c301226"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/bpp.tsv",
+      "bytes": 139797,
+      "sha256": "c30cc79a53fb1a7778ae8fbe9d332afd2f1db81a0df598b8fffeb95da7054266"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/result.json",
+      "bytes": 963,
+      "sha256": "8ed4d8e452910c3166ff5dac10753d1099869f7cb3f167afd3c039e61dc9d130"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/command.json",
+      "bytes": 562,
+      "sha256": "d40844e616faee678b2d12cbd682c5bb10dd0706709301e2d16e0c7308536e11"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/stdout.txt",
+      "bytes": 11333,
+      "sha256": "44d483ae680f62c0e2774d7819844de4148bea7c283d25291d2820fe461dc3b2"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "d601cb8510f8096d200a2a8ac7481c1621339d3d422cca593991d673ba305f8c"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/bpp.tsv",
+      "bytes": 145668,
+      "sha256": "e55c5f47ee941fe85b354fc4d2baeca0ca5b4083523b1c5dd849278ddb3da58a"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/result.json",
+      "bytes": 963,
+      "sha256": "85782a5c27056f3731e60cd470c3a6dead5b8217a2d48b528d8a51bd4256de2e"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/command.json",
+      "bytes": 417,
+      "sha256": "664d415d21320b08b4ebf1e7354f43d126bf47c50d056e7a896a085209ee2212"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+      "bytes": 2833953,
+      "sha256": "61f5e7e73fb0bf8199ec22d994dbae678ef28dd29af2be50030fc7622b7f426c"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "2d7ccbbddf880cd71c0542911dd85a9acd99928439747f4a5763ab6bc7db29c6"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/result.json",
+      "bytes": 819,
+      "sha256": "3eff2d1fd4384c894283bdcb6d3bd05f87e5fc6e6be56a42013b70d74ee6b09e"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/command.json",
+      "bytes": 417,
+      "sha256": "858f66aab902d0a8fdaf2e2ab15e6260aaa555e7b231be820d063de9bac6fbe6"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+      "bytes": 2523575,
+      "sha256": "2a528f7fd8af4fbf84e2b269b27d605d0d512bda0062f044f7b8afdcf6ffb017"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "2ef997832dc5f8a82de2b6c05b18592a5a4a51ef42ea129e07d24c31ab7f6d72"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/result.json",
+      "bytes": 819,
+      "sha256": "2c380c3d78a17445d6ef141a7e4634a1e42891e4cb5be67775aeab48e60abeff"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/command.json",
+      "bytes": 417,
+      "sha256": "8e0441725145792dfb00e6143a86dfc966a9132e74bb9e299b240894e2cedf20"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/stdout.txt",
+      "bytes": 2247576,
+      "sha256": "e720434a75a3b9ae6d2fe82d012e96583315ffb853700fddc431d6104d57b8da"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "e1f779e22f9b07270d7d538e146884638445c7a2f7f10372979e752ed58b486d"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/result.json",
+      "bytes": 819,
+      "sha256": "259601d18eda0ce845001e56c82a82ca7a08530c69f101efb6975ba3ee770996"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/command.json",
+      "bytes": 417,
+      "sha256": "3c554123a40cdcb26405edcde6a63771b5b6058a983475af6fa704046b245265"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+      "bytes": 383754,
+      "sha256": "dbba194d91df8f9a20086916e0a5506cd8e1d129f035f91e65184b4a2c61624f"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/time.tsv",
+      "bytes": 13,
+      "sha256": "a401943142bb321d81433ccf6db7aaad5afa8016e3db78b3cb66ffd6798b73f6"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/result.json",
+      "bytes": 816,
+      "sha256": "a234ff0c97e9d52ee806a757aacc5b23e673e46484c0d4d00f096c24d817f046"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/command.json",
+      "bytes": 417,
+      "sha256": "c5ef606188ddc49c85d986c9b185cc342b496649a928e5a0c2f14512c175d1ff"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+      "bytes": 440063,
+      "sha256": "c5166e76298c33ce21f4759d480b28d612a920450d6b585c350e7c6c968b155a"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/time.tsv",
+      "bytes": 14,
+      "sha256": "ad7ac6a94cca416ca0194f7ba696325c34ad575edf12ed1e830165f330ddecdd"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/result.json",
+      "bytes": 816,
+      "sha256": "cd3390bbfff064b4320f8bdc886fa253c8f8d62ea82a3593d8dc1309024a5220"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/command.json",
+      "bytes": 417,
+      "sha256": "c258da8f5c2f64b6c8256b1c9e02b45b983af37951febfa02f2a231bf5f951da"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/stdout.txt",
+      "bytes": 439094,
+      "sha256": "e59433a5671ea874478041dd670c0879e5a66cc8e61a82b9cf317559c7b47ef7"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "e6c8089e6a485028ca15a0c2f268820c7f95d1591c73ae08014f1009f3331057"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/result.json",
+      "bytes": 818,
+      "sha256": "27b5c259780f53c0d6f4d2db5a1564b67162713aa372f27c0778709bf291513e"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 480,
+      "sha256": "9f58736be6db460c07bec74c58576c90d926084844a5184adca3d75c0c8f48a6"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 2233098,
+      "sha256": "d3b8610c11217eb4733fb04f711b005da2d299d704999bcbe0857162d5dd380b"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "6ac341b8800098b42487a62b5de456398048f45994528773e4721e34acca40a7"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 888,
+      "sha256": "1919b0d7b19f33a384630164735bb72d7460c8610bf2c4f3049e0e5d43532f93"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 480,
+      "sha256": "ba86ad5f9fd14f9af32ff2333fad274d16222f656d36d3f1b094ee1d62bb5ecf"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 2200252,
+      "sha256": "684acd1ead2cb18c6f387ac91a5b26a7498bec33e78b93678ec7758ed505c775"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "e7a5f0bff441b3143bac3898ebec6a9fc62c294563baf6eed67665b45de1ec23"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 889,
+      "sha256": "f9c583d73d19449f0d023d846b778b5a0391062b76868ebb4089c799f561bb8d"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 480,
+      "sha256": "d2e51d992d38da7dcf65d9f1d9e595c68dd8fa3b9ca5d8fa8166eda905ed5f4f"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 2081717,
+      "sha256": "2b2677547cf899de5bcc6f95f999cc9087bed0c86d5650badfb7a8736aea64a5"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "dcabb41ef5184d1b1c1beeb51a239da70584cd585e3547b249d1cdf1a18914f5"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 888,
+      "sha256": "abf13360b366761c434a091662a1d097a9af04b6c2d576bebb77cefcac3fa84b"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 480,
+      "sha256": "1889215bf85749f9380e7977cfa945711adf2fcf5be795bbed4fbfff3bfffaca"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 320129,
+      "sha256": "3c5248232283ab9f8a279bb34bfcdaf4436813bb566d1d47aa604c6582225eb3"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 13,
+      "sha256": "cfbd3330979199c3aead61648f49ec7db14268ec265f3940a955ecaba27e2531"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 885,
+      "sha256": "4140b0a40200ca41f72a8594b29360768818a061a65c42a54265f86737f5aabc"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 480,
+      "sha256": "03d20ac7e421de9d17573abd6f3ff823d02aaf5668d53814089817e841812cae"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 333190,
+      "sha256": "3b7dd8f1de00bad36f0b90c1eb7f299ffd53adfe174a2cb32fc1b615c2706b03"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 14,
+      "sha256": "805417cb7900ca7f019780aca2e268cba116c3fda0f183c4f50037c0dc59e66a"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 887,
+      "sha256": "73c977621bf8b82e337297f0a9623dc37fd11f2aa5961b0b7c8ee9850f41b8c8"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 480,
+      "sha256": "53e048ad8848643e9b5a5a80ddfc02afdc5c5b7213c3eeb7c879227934eae742"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 335346,
+      "sha256": "a88f6e5309f4ef09cdb49252220ee27cd71ed22ce43124035ca69a9a89bbab1a"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "b49edae638bb3739902e33e610a77c7c6e2c7e4029126a1ce1e13cecee7c2460"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 888,
+      "sha256": "e22f777b527e589b4c327fd49680de50f7b5de4725e36f46026b3db84554efcd"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/command.json",
+      "bytes": 454,
+      "sha256": "3a9dda8f22db83690fc96aedf96d10308a9c49ff9bde47cf512db7c93dd0506c"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/stdout.txt",
+      "bytes": 68275,
+      "sha256": "322af8fbd3273ba92473f36221ae1cfff8bc14042c06129e815b3d4147f90c72"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/stderr.txt",
+      "bytes": 206,
+      "sha256": "3a643563bb02e662a881bb106a83b27bd48a7077798581d214157f371d307b52"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "b22f2621544c8abb1df5f895516db83be9c524f25e55af4d23e7b63611017544"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/result.json",
+      "bytes": 852,
+      "sha256": "6404e185114c2956b2523e53f55c9d570d2403bfad0600bb2e5b5844dda23c2a"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/command.json",
+      "bytes": 454,
+      "sha256": "4b0b3a3d23bf3b2bee0e5a7ae695579a27c9f375a9d7d94a05bdd3af4680ddb7"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/stdout.txt",
+      "bytes": 68275,
+      "sha256": "1ddf70c0de8cd04450a6474e6e3b437b2bc41a146e1387b2cb55f35d77dfba0b"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/stderr.txt",
+      "bytes": 202,
+      "sha256": "29cb7ab2e42046f995c96d5e9141cc7ab1d92e41a43f8b020391dbc759ba4841"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "1c9c6f26c3f690602ee347f57aa904c9a83e236bd6022ce0f7e22a2e41a938a4"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/result.json",
+      "bytes": 854,
+      "sha256": "7136ebd4d1793ad61116b8ca310fa866bd19b363b27d2e5ae653837caaa82a15"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/command.json",
+      "bytes": 454,
+      "sha256": "9e2fe69d27f93ee6abedf89e56a1077f5815bfe2fc9fd63e8b396155cd27ee72"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/stdout.txt",
+      "bytes": 68275,
+      "sha256": "aae9b3301c27c47b4c133b94d5e32960d66d342b20a32e6d9c6431b7d52b4431"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/stderr.txt",
+      "bytes": 207,
+      "sha256": "de77b7506e1489b2b1526b531b598614b2e3070daff2dd8504898e559e3733dd"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/time.tsv",
+      "bytes": 17,
+      "sha256": "25fd4b4eab35c6f304b0ef7c80db2198265ed0192223e0fa7ecc33a0e336477b"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/result.json",
+      "bytes": 855,
+      "sha256": "5f64ae2d9fa60cb8956858e4e71bc1a158a1b3e5a04d0610a3f7ee0985cb624e"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/command.json",
+      "bytes": 454,
+      "sha256": "c007ea74b2e09939db73c53ceeadd6073a54148119b4b57132089b3749d99fad"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/stdout.txt",
+      "bytes": 11314,
+      "sha256": "e5ad338c323ef4e5d63c652c1c8c56c0fc845a00179729247e2451df3a16f4bf"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/stderr.txt",
+      "bytes": 197,
+      "sha256": "ffbc9311a341549af6043c91d095234a9679f4c4a062f3e48a04bf5ae05a3e42"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/time.tsv",
+      "bytes": 14,
+      "sha256": "a0803787046b182f97e7c533e36c6577acc6cb5927cc72344a38f3973155b013"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/result.json",
+      "bytes": 853,
+      "sha256": "676bd36f5ae432fd3efa0221889b806c3639c984ca86c6b7185f88293218736b"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/command.json",
+      "bytes": 454,
+      "sha256": "b3d89daccdf5ebafb471fbb63a0f073631acb100626748849e7983dc712a6add"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/stdout.txt",
+      "bytes": 11314,
+      "sha256": "ab779c5dc5e718bfaf68ddedf607c1680fc5aee94709b54584079f13c36e576f"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/stderr.txt",
+      "bytes": 203,
+      "sha256": "b7290de7220914a1cab22e729f1cef24225ccea4ec530dd2440c23432715f1b2"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/time.tsv",
+      "bytes": 14,
+      "sha256": "3b442c74054eecec894f7f40d87040121d67ef4c3923ca1033ebca03dac64912"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/result.json",
+      "bytes": 851,
+      "sha256": "356e76db94cf4b120137ac09384404c699aec140a8ac5c811d9453afbc4abe65"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/command.json",
+      "bytes": 454,
+      "sha256": "80c4fe6f384731a8a7fac8bc65c6fb93e54a3dc434be2cade72154d027146061"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/stdout.txt",
+      "bytes": 11314,
+      "sha256": "f3db16eae98c4d7fde3e5537571f600b17244f7b6c29ed2d7498afd63a7fd5e5"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/stderr.txt",
+      "bytes": 198,
+      "sha256": "fc51a2b1adaf5b49a04d300c02f103bbb7d13572836097f18796951dc09b51e2"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "9f68e999e67f33c27d9d3a04db0a289c7ccdb4bd8c5da43ad009de0041511e92"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/result.json",
+      "bytes": 853,
+      "sha256": "95b72d0b9e87faff97b53e1bbeb0ff982e773d031f159e08afab856c1b585813"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/command.json",
+      "bytes": 493,
+      "sha256": "ecbc3d59f54f7c1dbe00f54d087890365bf0c239b4a0078df1dbcd70ec2e1343"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/stdout.txt",
+      "bytes": 22768754,
+      "sha256": "dc1c08f684a122c27680805024fbbcfa48ecd35950e7104e6b877c3c9a20cea1"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "a0a00dceef4f103e3b4f8becd2a4f89b4234f0ec5132f653e92f3882be14ed64"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/result.json",
+      "bytes": 904,
+      "sha256": "a22a0c5493bca75b84abf9d974f77f20aac814fcf9aef962eb9f10471c687dc6"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/command.json",
+      "bytes": 493,
+      "sha256": "d4e3d815ac092007420961e84412f6571b3d3547c4afed95a241402ff79ad0a8"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/stdout.txt",
+      "bytes": 3762767,
+      "sha256": "940c9c4f873fae4e078d14478c284e25950adb213352e6e0b987f599f043d2c8"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/time.tsv",
+      "bytes": 14,
+      "sha256": "850757950b701ea76b5182f73be49641735405b481b6a82278646a5859d89143"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/result.json",
+      "bytes": 901,
+      "sha256": "6c8b90f76c57ca647b123e76530408770ca43f028525f20919b731661c317313"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/command.json",
+      "bytes": 493,
+      "sha256": "79feab0c578cf6daf2a1064679c212c32b8f71b69dc5d025bb184659895e6f0c"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/stdout.txt",
+      "bytes": 3762767,
+      "sha256": "6b55445dbc98fb7300b0f50fbd30c2c08bce2d781c8a13c54c9047297fbfffac"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "b05739e244e06c6ca29914bd390b1d046e3ba71b38d2c9f4ef360a952d588ac8"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/result.json",
+      "bytes": 903,
+      "sha256": "9d099a0708aa6860cf25f56967a883de81bcfeeab32b4c0f92d71d1c2d7b1c6a"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 497,
+      "sha256": "91d47cd324a2b0835a644c26221a032985cdc6fc2cfc61f847de481b52747dfe"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 11427470,
+      "sha256": "669c49cf07903d38794415e194bdd0364bfedd62c3d8af95653b5b3ca66b7460"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "6345aa8baea77484ffbf00a71b37220be76094927a45a5fb055c54d7e38d170d"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 904,
+      "sha256": "fdeed00cf71cf01d66427bdb3f0c5176b0a06faae81b1e8339388abf66fbda9d"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 497,
+      "sha256": "32b00e2644d6023a0309edd44ee771b8d1f47685ebc93b8e8c6f9f4eb1b4f3cf"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 11558029,
+      "sha256": "caba4609404486b8262807e6b3421b0951a424515f7c5153ab7d14429b7efa3f"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "cfc33920ff392fab603bcb31b13c9437c63ff84cb93bf93a474472aac5092ad8"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 906,
+      "sha256": "33476d7e70ecde7266c1c1df76bd619ecbf9d6b7a734e64514928926eb9fe075"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 497,
+      "sha256": "64ab9922fa78fb3f72f1559049d909ec382c82508d6c7fad3a1bfe60f2bc79a0"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 10456196,
+      "sha256": "8063a81ed981ebe5e682a518b61b5fac857c952a0802410542074a6bc5564d08"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 16,
+      "sha256": "a0957ce5b5964880cda3fbdc9901595ea2173e345c36691e056fc060b3bfcd43"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 906,
+      "sha256": "2951a3e4de02fd4c40d4070e527d3236574302e13156c6dac4d73ac2163a3f1f"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 497,
+      "sha256": "c819956f71034ec3edcd2ac0e8dee2d7eeab5331863d9264cc3c4ba8e1ea0837"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 1865988,
+      "sha256": "6d2ddcd0f835b82c907453872c422ac3f255963bf40a1963d4fb09708b2718f0"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 13,
+      "sha256": "ef3edb0f98a292480683c6146dbb756c8c20794f1964def7a0c0841f0e5cbefb"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 903,
+      "sha256": "9758b1e3503a14c12a929155bf209e183c7f371b73c56d0267018bb981f26847"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 497,
+      "sha256": "cdb37c946d4f9451c0095bf560af33f7b481bbfc7c317d88caaad80f82448411"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 1713859,
+      "sha256": "1a39099867ee5ccdd9195e06d00039c756b36239523d63a0c681cfb3e877af63"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 14,
+      "sha256": "3a734e45fd04bee39fdffc51e71f7d8199226e88d523726649ce653cafe2bbb7"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 904,
+      "sha256": "a8bcab7525adbbb84511c516218a7d3ae4434747cad34cd9f052cea59663973c"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/command.json",
+      "bytes": 497,
+      "sha256": "4f1f665003155f5b9d4ba0bc95e6849bbd64a694b62b0d1e0b039d3210acd355"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/stdout.txt",
+      "bytes": 1757835,
+      "sha256": "707208a0285d735b436e2d915b77cf25a7997f040850d956a375d6fe293015e4"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/time.tsv",
+      "bytes": 15,
+      "sha256": "76e9f64c9efc55db911af0809b5167008b9c33eabf28859f7ed051ac09559404"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-byloop-d02d261c-20261017/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/result.json",
+      "bytes": 905,
+      "sha256": "6eef9c89b7db18b693eae6b8b64a61d1010c23957573d20bf5767dd5c3ae47a2"
+    }
+  ],
+  "script_sha256": "23a4f8832fceb0d77a196cf11db466cd8422143236186205aa5afb997dce19e5"
+}

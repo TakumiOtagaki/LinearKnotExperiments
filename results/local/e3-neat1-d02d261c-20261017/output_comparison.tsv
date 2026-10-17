@@ -1,0 +1,28 @@
+iso	beam	analysis	stdout_byte_equal	max_abs_difference	old_rows	new_rows	bpp_byte_equal	omitted_zero_rows	bpp_numeric_equal	stdout_equal_except_elapsed	structure_equal	sample_count	structures_equal_in_order	seed
+NEAT1_1	100	bpp	True	0.0	4859	4859	True	0	True					
+NEAT1_1	100	capr	True	0.0						True				
+NEAT1_1	100	mea	True	0.0							True			
+NEAT1_1	100	raccess	False	0.0						True				
+NEAT1_1	100	sampling	True	0.0								1000	True	20261016
+NEAT1_1	200	bpp	True	0.0	5018	5018	True	0	True					
+NEAT1_1	200	capr	True	0.0						True				
+NEAT1_1	200	mea	True	0.0							True			
+NEAT1_1	200	raccess	False	0.0						True				
+NEAT1_1	200	sampling	True	0.0								1000	True	20261016
+NEAT1_1	400	bpp	True	0.0	5209	5209	True	0	True					
+NEAT1_1	400	capr	True	0.0						True				
+NEAT1_1	400	mea	True	0.0							True			
+NEAT1_1	400	raccess	False	0.0						True				
+NEAT1_2	100	bpp	True	0.0	30395	30395	True	0	True					
+NEAT1_2	100	capr	True	0.0						True				
+NEAT1_2	100	mea	True	0.0							True			
+NEAT1_2	100	raccess	False	0.0						True				
+NEAT1_2	100	sampling	True	0.0								1000	True	20261016
+NEAT1_2	200	bpp	True	0.0	31884	31884	True	0	True					
+NEAT1_2	200	capr	True	0.0						True				
+NEAT1_2	200	mea	True	0.0							True			
+NEAT1_2	200	raccess	False	0.0						True				
+NEAT1_2	400	bpp	True	0.0	33234	33234	True	0	True					
+NEAT1_2	400	capr	True	0.0						True				
+NEAT1_2	400	mea	True	0.0							True			
+NEAT1_2	400	raccess	False	0.0						True				
