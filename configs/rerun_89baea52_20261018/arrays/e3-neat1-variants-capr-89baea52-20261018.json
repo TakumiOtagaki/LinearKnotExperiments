@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "measurement": "accuracy",
+  "seed": 20261012,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1
+  },
+  "tiers": [
+    {
+      "name": "neat1_short",
+      "min_length": 1,
+      "max_length": 8191,
+      "resource": "cpu_40",
+      "h_rt": "24:00:00",
+      "target_seconds": 60479,
+      "max_inputs_per_task": 1,
+      "workers": 3,
+      "memory_budget_mib": 87738,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "timeout_seconds": 72000,
+        "memory_limit_mib": 20480
+      },
+      "cost_model": {
+        "basis": "E2 e2cecbb4 b=100 ~0.05 s/nt per CLI; b=200/400 assumed ~4x/~20x (b^2 log b); mean ~0.5 s/nt per condition; envelope only",
+        "seconds_per_nt_condition": 0.5,
+        "seconds_constant_per_condition": 30,
+        "safety_factor": 1.0,
+        "memory_base_mib": 20480,
+        "mib_per_nt": 0
+      }
+    },
+    {
+      "name": "neat1_long",
+      "min_length": 8192,
+      "max_length": 40000,
+      "resource": "cpu_40",
+      "h_rt": "24:00:00",
+      "target_seconds": 60479,
+      "max_inputs_per_task": 1,
+      "workers": 3,
+      "memory_budget_mib": 87738,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "timeout_seconds": 72000,
+        "memory_limit_mib": 20480
+      },
+      "cost_model": {
+        "basis": "E2 e2cecbb4 b=100 ~0.05 s/nt per CLI; b=200/400 assumed ~4x/~20x (b^2 log b); mean ~0.5 s/nt per condition; envelope only",
+        "seconds_per_nt_condition": 0.5,
+        "seconds_constant_per_condition": 30,
+        "safety_factor": 1.0,
+        "memory_base_mib": 20480,
+        "mib_per_nt": 0
+      }
+    }
+  ],
+  "note": "E3 NEAT1 on e2cecbb4, cpu_40; envelope cost model from E2 (b=100) scaled by b^2 log b.",
+  "compact_plan": true,
+  "max_concurrent_tasks": 30
+}

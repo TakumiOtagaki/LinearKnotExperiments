@@ -12,6 +12,7 @@ import csv
 import gc
 import json
 import math
+import os
 from pathlib import Path
 import pickle
 import re
@@ -77,6 +78,16 @@ def check_reference_plans(beam, exact):
         raise ValueError("beam/exact energy parameters differ")
     if sources[0] == sources[1] and accuracy.model_signature(beam) != accuracy.model_signature(exact):
         raise ValueError("same-source beam/exact binaries differ")
+
+
+def check_exact_modes(beam, exact):
+    """Allow exact from the same frozen matrix without measuring it twice."""
+    names = [m["name"] for m in exact["config"]["modes"]]
+    if names == ["exact"]:
+        return
+    if (beam["output_dir"] != exact["output_dir"] or beam != exact or
+            names.count("exact") != 1):
+        raise ValueError("exact reference must be exact-only or the identical combined plan")
 
 
 def check_command(job, config):
@@ -176,8 +187,9 @@ def write_metrics(run, exact_run, reference_mode, output):
     if exact_run:
         exact_plan = load_plan(exact_run)
         check_reference_plans(plan, exact_plan)
+        check_exact_modes(plan, exact_plan)
         exact_tasks, exact_hashes = cohort(exact_plan, tiers)
-        if hashes != exact_hashes or [m["name"] for m in exact_plan["config"]["modes"]] != ["exact"]:
+        if hashes != exact_hashes:
             raise ValueError("exact run must contain the identical S/G cohort and only exact")
     kind = "exact_error" if exact_run else "beam_width_sensitivity"
     provenance = {"schema_version": 1, "generated_utc": now(), "comparison_kind": kind,
@@ -195,7 +207,7 @@ def write_metrics(run, exact_run, reference_mode, output):
             "scope": "author-verified 14 RNA; beam b20/b200 identical; exact numeric difference <=2.2e-13"}
     output.mkdir(parents=True, exist_ok=False)
     seen = set()
-    with tempfile.TemporaryDirectory(prefix="e1-production-", dir="/tmp") as scratch:
+    with tempfile.TemporaryDirectory(prefix="e1-production-", dir=os.environ.get("TMPDIR", "/tmp")) as scratch:
         db = sqlite3.connect(str(Path(scratch) / "exact.sqlite"))
         try:
             db.execute("CREATE TABLE refs (name TEXT PRIMARY KEY, hash TEXT, record BLOB, parsed BLOB)")

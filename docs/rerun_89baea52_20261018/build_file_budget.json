@@ -1,0 +1,17 @@
+{
+  "estimated_shared_entries": 1500,
+  "basis": "Existing five-patch oracle has 431 entries; allow 1500 for independent six-patch build, E0/stage observers, locks and patch documentation.",
+  "project": 102571,
+  "filesystem": "/gs/bs",
+  "quota": {
+    "used_files": 21545738,
+    "limit_files": 28000000,
+    "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9522841636  14680064000 14680064000       - 21545738  28000000 28000000       -"
+  },
+  "hard_file_limit": 24000000,
+  "remaining_files": 2454262,
+  "remaining_source": "lfs quota (with configured conservative hard limit)",
+  "max_remaining_fraction": 0.1,
+  "allowed_entries": 245426,
+  "accepted": true
+}

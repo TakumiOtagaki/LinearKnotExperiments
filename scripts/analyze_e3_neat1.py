@@ -103,11 +103,11 @@ def read_inputs(provenance):
     return inputs
 
 
-def read_runs(inputs, provenance, inventory):
+def read_runs(inputs, provenance, inventory, run_suffix='e2cecbb4-20261016'):
     """Snapshot complete JSONL lines, then stream only their committed tar members."""
     saved = {}
-    for run in sorted((ROOT / 'results/runs').glob('e3-neat1-*-e2cecbb4-20261016')):
-        kind = run.name.replace('e3-neat1-', '').replace('variants-', '').split('-e2')[0]
+    for run in sorted((ROOT / 'results/runs').glob('e3-neat1-*-'+run_suffix)):
+        kind = run.name.removeprefix('e3-neat1-').removeprefix('variants-').removesuffix('-'+run_suffix)
         if kind not in PROGRAMS:
             continue
         for task in sorted(run.glob('tasks/*/*')):

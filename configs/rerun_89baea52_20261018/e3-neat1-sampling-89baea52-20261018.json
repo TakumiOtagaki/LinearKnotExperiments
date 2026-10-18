@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "name": "e3-neat1-sampling-89baea52-20261018",
+  "purpose": "formal",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "temperature_source": "CLI/API default; verify RT metadata",
+    "build_revision_verified": true
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 72000,
+  "warmups": 0,
+  "repetitions": 1,
+  "inputs": [
+    {
+      "name": "NEAT1_1",
+      "path": "data/neat1-20261016/NEAT1_1.txt"
+    },
+    {
+      "name": "NEAT1_2",
+      "path": "data/neat1-20261016/NEAT1_2.txt"
+    }
+  ],
+  "modes": [
+    {
+      "name": "beam100_outer",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ]
+    },
+    {
+      "name": "beam200_outer",
+      "args": [
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ],
+      "length_range": {
+        "min_length": 1,
+        "max_length": 8191
+      }
+    }
+  ],
+  "programs": [
+    {
+      "name": "LinearPKSampling",
+      "args": [
+        "-k",
+        "1000",
+        "--seed",
+        "20261016",
+        "--unique"
+      ]
+    }
+  ],
+  "analysis": {
+    "purpose": "E3 NEAT1 analysis",
+    "scope": "Remeasurement on d02d261c (2026-10-17): one run per condition; outputs checked against e2cecbb4; timing/RSS for the SI table."
+  },
+  "software_lock": "manifests/software-pilot-89baea52.json",
+  "memory_limit_mib": 40960,
+  "order": {
+    "kind": "blocked_random",
+    "seed": 20261012
+  },
+  "input_manifest": "data/neat1-20261016/manifest.json",
+  "rerun_preparation": {
+    "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+    "template": "configs/e3_neat1_d02d261c_20261017/e3_neat1_sampling_d02d261c_20261017.json"
+  }
+}

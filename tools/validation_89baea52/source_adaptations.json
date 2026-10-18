@@ -1,0 +1,69 @@
+{
+  "purpose": "Reuse frozen inputs and checks on 89baea52; change pins, output paths, retired runtime-owner API and dead grammar aliases only. Preserve counting, context ownership, numerical tolerances and statistical criteria.",
+  "files": {
+    "experiments/tools/validation_89baea52/enumeration/run.py": {
+      "origin": "textbook/examples/verify_d9804df6/run.py",
+      "origin_sha256": "7d50e26749f1188fa01e59f41c3344c9dc6e6f32c1e21ed775a7f9fd30786245",
+      "sha256": "a59bdead671f00d2677575f16fbe53e3866353fc93aded0a6eaa336892dab636"
+    },
+    "experiments/tools/validation_89baea52/enumeration/enumerate.cc": {
+      "origin": "textbook/examples/verify_d9804df6/enumerate.cc",
+      "origin_sha256": "29bced6cb24b1fab9d9fca166442517651c4a112f3168a4e2994fc6233fe33f7",
+      "sha256": "039a21508af6971b6f122fd4bd2cbe086043b518b2e08e2470744b2e2dd5e102"
+    },
+    "experiments/tools/validation_89baea52/enumeration/validate.py": {
+      "origin": "textbook/examples/verify_d9804df6/validate.py",
+      "origin_sha256": "48456699ca387e7684bac88a257018ac63c74ff6bac37bc70a3deff573188787",
+      "sha256": "0b60a5d98ff44468dfa9bc77f3fe28d142967b15e2acbe6826aa7c91901ab0b9"
+    },
+    "experiments/tools/validation_89baea52/decoding/run.py": {
+      "origin": "textbook/examples/verify_e2cecbb4_decoding/run.py",
+      "origin_sha256": "f2e9355a2d8ea0cb29185897cb3dd5361dbbdd74338702b2a3f60d2fa4538599",
+      "sha256": "673d351cdbaa5c576b158d3b523dce1f8ed830f2df5b7740d97dfae69de3f393"
+    },
+    "experiments/tools/validation_89baea52/decoding/probe.cc": {
+      "origin": "textbook/examples/verify_e2cecbb4_decoding/probe.cc",
+      "origin_sha256": "95e4ab5f17648fdfd7815c56ae4ac66070ff9ad6626ed67f68c2c3bcfedf9189",
+      "sha256": "b3c224856c2ff2048b05403bbe16a109e52693bff29b87e33de7973f3c965d8d"
+    },
+    "experiments/tools/validation_89baea52/decoding/analyze.py": {
+      "origin": "textbook/examples/verify_e2cecbb4_decoding/analyze.py",
+      "origin_sha256": "d1326bb9d7c56b74ac9846103642247a218f02caa93f06f2fa328b0c1dbd19ca",
+      "sha256": "d1326bb9d7c56b74ac9846103642247a218f02caa93f06f2fa328b0c1dbd19ca"
+    },
+    "experiments/tools/validation_89baea52/decoding/validate.py": {
+      "origin": "textbook/examples/verify_e2cecbb4_decoding/validate.py",
+      "origin_sha256": "2e600faf0faf891b2e973008eb7f96d3bf74c1bfe287080c2cd679124d13e409",
+      "sha256": "204cbcecc6e95e6d0e6768198d592dc5b61f82f379d34a3656d849c2bb1e9054"
+    }
+  },
+  "api_adaptations": [
+    "W_final_pf observation owner -> weights::RuntimeSnapshot with dangles=2 and diagnostics disabled.",
+    "Removed VP_DIRECT/VP_CLOSED references; fixed grammar has 15 nonterminals and WMBP_DIRECT_VP directly uses canonical VP. Removed the obsolete child alias rewrite.",
+    "E0 scalar RT loader now takes runtime_pf_parameters(2); old second argument was removed upstream.",
+    "All result directories are fresh paths under experiments/results/local, not textbook/examples. Transient source/binaries/logs use TMPDIR; the enumeration runner removes its temporary directory at exit.",
+    "Copied the four historical aggregate inputs/checking sources byte-for-byte into baseline_15aa7742, so the experiments repository does not depend on the private paper checkout."
+  ],
+  "frozen_baseline": {
+    "inputs/cases.json": {
+      "sha256": "d00ca2d70611adbaa0dece14cceee4b6d6d4dc2025969c475cbcecc587a06b49",
+      "bytes": 90809,
+      "origin": "textbook/examples/verify_15aa7742/inputs/cases.json"
+    },
+    "report.json": {
+      "sha256": "045e99c076181b6a25c6f739664d9d81ffded10dfc5a1448d1fd4e53d60127be",
+      "bytes": 1144970,
+      "origin": "textbook/examples/verify_15aa7742/report.json"
+    },
+    "summary.json": {
+      "sha256": "2a82f57f9e1ab0c4fe1dfaa0100eea77d47a26cec069dea77bffacd2ae1faffa",
+      "bytes": 88505,
+      "origin": "textbook/examples/verify_15aa7742/summary.json"
+    },
+    "enumerate.cc": {
+      "sha256": "54a135d8a7b9d07b221c46f2318e26f13ea85d9a26dd079848236369b873126c",
+      "bytes": 11863,
+      "origin": "textbook/examples/verify_15aa7742/enumerate.cc"
+    }
+  }
+}

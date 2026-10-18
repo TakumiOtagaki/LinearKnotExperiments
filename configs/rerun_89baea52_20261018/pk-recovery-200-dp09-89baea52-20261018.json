@@ -1,0 +1,1254 @@
+{
+  "schema_version": 1,
+  "name": "pk-recovery-200-dp09-89baea52-20261018",
+  "purpose": "formal",
+  "software_lock": "manifests/software-pilot-89baea52-dp09.json",
+  "energy_parameter_file": "params/rna_DirksPierce09.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "build_revision_verified": true
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 1800,
+  "memory_limit_mib": 8192,
+  "warmups": 0,
+  "repetitions": 1,
+  "order": {
+    "kind": "blocked_random",
+    "seed": 20261017
+  },
+  "inputs": [
+    {
+      "name": "bpRNA_RNP_111",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RNP_111.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RNP_111.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_30899",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_30899.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_30899.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29236",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29236.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29236.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31073",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31073.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31073.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35494",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35494.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35494.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35566",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35566.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35566.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_23425",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_23425.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_23425.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_23362",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_23362.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_23362.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29713",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29713.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29713.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29240",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29240.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29240.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_27796",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_27796.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_27796.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29306",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29306.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29306.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34857",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34857.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34857.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_12431",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_12431.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_12431.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_23443",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_23443.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_23443.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34379",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34379.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34379.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29738",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29738.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29738.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29243",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29243.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29243.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34861",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34861.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34861.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_30942",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_30942.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_30942.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31459",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31459.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31459.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29680",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29680.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29680.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29242",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29242.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29242.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34891",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34891.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34891.txt"
+    },
+    {
+      "name": "bpRNA_CRW_1328",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_CRW_1328.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_CRW_1328.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29239",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29239.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29239.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29155",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29155.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29155.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_30909",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_30909.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_30909.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31431",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31431.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31431.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29558",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29558.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29558.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34311",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34311.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34311.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_4759",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_4759.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_4759.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33321",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33321.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33321.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_4763",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_4763.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_4763.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31341",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31341.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31341.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29587",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29587.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29587.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_18265",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_18265.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_18265.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_23441",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_23441.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_23441.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_13039",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_13039.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_13039.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_4730",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_4730.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_4730.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31062",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31062.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31062.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_12484",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_12484.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_12484.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_10636",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_10636.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_10636.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34882",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34882.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34882.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33258",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33258.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33258.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_30955",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_30955.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_30955.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_11190",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_11190.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_11190.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35634",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35634.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35634.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_23361",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_23361.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_23361.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_12429",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_12429.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_12429.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31077",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31077.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31077.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35510",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35510.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35510.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_11248",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_11248.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_11248.txt"
+    },
+    {
+      "name": "bpRNA_tmRNA_144",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_tmRNA_144.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_tmRNA_144.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29641",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29641.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29641.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33330",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33330.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33330.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34314",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34314.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34314.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33358",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33358.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33358.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31060",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31060.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31060.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_6444",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_6444.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_6444.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_7590",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_7590.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_7590.txt"
+    },
+    {
+      "name": "bpRNA_RNP_352",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RNP_352.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RNP_352.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35482",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35482.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35482.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_23433",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_23433.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_23433.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_14668",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_14668.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_14668.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34309",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34309.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34309.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_15606",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_15606.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_15606.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29310",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29310.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29310.txt"
+    },
+    {
+      "name": "bpRNA_RNP_332",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RNP_332.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RNP_332.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_23364",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_23364.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_23364.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31191",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31191.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31191.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34834",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34834.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34834.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35542",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35542.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35542.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31457",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31457.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31457.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31241",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31241.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31241.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33237",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33237.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33237.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34336",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34336.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34336.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35538",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35538.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35538.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_5089",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_5089.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_5089.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_27774",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_27774.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_27774.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_27790",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_27790.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_27790.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34877",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34877.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34877.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_30970",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_30970.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_30970.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_4768",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_4768.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_4768.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31397",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31397.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31397.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29433",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29433.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29433.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33368",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33368.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33368.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_27859",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_27859.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_27859.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31350",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31350.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31350.txt"
+    },
+    {
+      "name": "bpRNA_RNP_31",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RNP_31.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RNP_31.txt"
+    },
+    {
+      "name": "bpRNA_PDB_345",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_PDB_345.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_PDB_345.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_23446",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_23446.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_23446.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_23405",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_23405.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_23405.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_11246",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_11246.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_11246.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31327",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31327.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31327.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_7580",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_7580.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_7580.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34366",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34366.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34366.txt"
+    },
+    {
+      "name": "bpRNA_CRW_54578",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_CRW_54578.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_CRW_54578.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29763",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29763.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29763.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34389",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34389.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34389.txt"
+    },
+    {
+      "name": "bpRNA_RNP_30",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RNP_30.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RNP_30.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35519",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35519.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35519.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_27751",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_27751.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_27751.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34854",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34854.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34854.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29286",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29286.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29286.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31041",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31041.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31041.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33274",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33274.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33274.txt"
+    },
+    {
+      "name": "bpRNA_CRW_10337",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_CRW_10337.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_CRW_10337.txt"
+    },
+    {
+      "name": "bpRNA_PDB_379",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_PDB_379.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_PDB_379.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31442",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31442.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31442.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31300",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31300.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31300.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34685",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34685.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34685.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_4735",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_4735.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_4735.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_30914",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_30914.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_30914.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33260",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33260.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33260.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31074",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31074.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31074.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31213",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31213.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31213.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_23439",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_23439.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_23439.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34831",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34831.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34831.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_5077",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_5077.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_5077.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_7560",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_7560.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_7560.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29552",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29552.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29552.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35565",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35565.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35565.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31140",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31140.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31140.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31352",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31352.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31352.txt"
+    },
+    {
+      "name": "bpRNA_RNP_345",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RNP_345.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RNP_345.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_12434",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_12434.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_12434.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_30956",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_30956.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_30956.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_27882",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_27882.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_27882.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_4740",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_4740.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_4740.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33235",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33235.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33235.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_30960",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_30960.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_30960.txt"
+    },
+    {
+      "name": "bpRNA_RNP_269",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RNP_269.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RNP_269.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35497",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35497.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35497.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35487",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35487.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35487.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29321",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29321.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29321.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34373",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34373.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34373.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_30972",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_30972.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_30972.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29172",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29172.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29172.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35534",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35534.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35534.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_2339",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_2339.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_2339.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35475",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35475.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35475.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33319",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33319.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33319.txt"
+    },
+    {
+      "name": "bpRNA_PDB_598",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_PDB_598.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_PDB_598.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_10657",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_10657.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_10657.txt"
+    },
+    {
+      "name": "bpRNA_CRW_54546",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_CRW_54546.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_CRW_54546.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_7554",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_7554.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_7554.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_27761",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_27761.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_27761.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_2271",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_2271.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_2271.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34328",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34328.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34328.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33233",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33233.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33233.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31360",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31360.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31360.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_27780",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_27780.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_27780.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_7572",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_7572.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_7572.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_12439",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_12439.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_12439.txt"
+    },
+    {
+      "name": "bpRNA_RNP_150",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RNP_150.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RNP_150.txt"
+    },
+    {
+      "name": "bpRNA_PDB_591",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_PDB_591.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_PDB_591.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29411",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29411.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29411.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29145",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29145.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29145.txt"
+    },
+    {
+      "name": "bpRNA_RNP_24",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RNP_24.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RNP_24.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31432",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31432.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31432.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33281",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33281.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33281.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_5083",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_5083.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_5083.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29609",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29609.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29609.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34892",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34892.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34892.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31071",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31071.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31071.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_4739",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_4739.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_4739.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35216",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35216.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35216.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33327",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33327.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33327.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33279",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33279.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33279.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31305",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31305.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31305.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31154",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31154.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31154.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35551",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35551.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35551.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_4731",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_4731.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_4731.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35539",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35539.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35539.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_15656",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_15656.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_15656.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_27865",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_27865.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_27865.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31099",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31099.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31099.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_30959",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_30959.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_30959.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31106",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31106.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31106.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33223",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33223.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33223.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31032",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31032.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31032.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29570",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29570.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29570.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_30964",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_30964.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_30964.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_29246",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_29246.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_29246.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33376",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33376.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33376.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35554",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35554.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35554.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_27757",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_27757.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_27757.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_4615",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_4615.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_4615.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_34342",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_34342.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_34342.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_23376",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_23376.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_23376.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33363",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33363.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33363.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35504",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35504.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35504.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_27868",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_27868.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_27868.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_35558",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_35558.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_35558.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_7581",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_7581.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_7581.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_30935",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_30935.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_30935.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_33231",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_33231.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_33231.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31065",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31065.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31065.txt"
+    },
+    {
+      "name": "bpRNA_RFAM_31092",
+      "path": "data/rerun-89baea52-20261018/pk200/bpRNA_RFAM_31092.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "pk200/bpRNA_RFAM_31092.txt"
+    }
+  ],
+  "modes": [
+    {
+      "name": "exact",
+      "args": [
+        "--exact"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "name": "LinearCParty",
+      "args": [
+        "--bpp-cutoff",
+        "0"
+      ],
+      "outputs": [
+        {
+          "name": "bpp.tsv",
+          "flag": "--bpp"
+        }
+      ]
+    }
+  ],
+  "rerun_preparation": {
+    "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+    "template": null
+  }
+}

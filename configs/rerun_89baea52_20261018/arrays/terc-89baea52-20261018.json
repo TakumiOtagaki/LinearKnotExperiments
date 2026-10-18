@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "measurement": "accuracy",
+  "seed": 20261017,
+  "compact_plan": true,
+  "max_concurrent_tasks": 30,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1
+  },
+  "tiers": [
+    {
+      "name": "terc",
+      "min_length": 1,
+      "max_length": 400,
+      "resource": "cpu_16",
+      "h_rt": "04:00:00",
+      "target_seconds": 10000,
+      "max_inputs_per_task": 1,
+      "workers": 1,
+      "memory_budget_mib": 35045,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "memory_limit_mib": 8192,
+        "timeout_seconds": 1800
+      },
+      "cost_model": {
+        "seconds_constant_per_condition": 120,
+        "seconds_per_nt_condition": 1e-09,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 0,
+        "safety_factor": 1,
+        "basis": "Conservative scheduling allowance; no new-release pilot or assumed parallel speedup."
+      }
+    }
+  ]
+}

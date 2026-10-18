@@ -1,0 +1,211 @@
+{
+  "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "created_utc": "2026-10-18T12:09:40.427663+00:00",
+  "variants": [
+    {
+      "name": "e0-bprna-legacy-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e0-bprna-legacy-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/e0-bprna-legacy-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/e0-observers-89baea52-800e95a-6patches",
+      "execution": "array"
+    },
+    {
+      "name": "e1-bprna-short-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e1-bprna-short-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/e1-bprna-short-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "e1-bprna-long-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e1-bprna-long-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/e1-bprna-long-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "e2-rnacentral-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e2/e2_rnacentral_89baea52_20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/e2/arrays/e2_rnacentral_89baea52_20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "memory_cap_envelope_mib": 82944,
+      "execution": "array"
+    },
+    {
+      "name": "e2-synthetic-shapes-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e2/e2_synthetic_shapes_89baea52_20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/e2/arrays/e2_synthetic_shapes_89baea52_20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "memory_cap_envelope_mib": 82944,
+      "execution": "array"
+    },
+    {
+      "name": "e2-memory-breakdown-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e2/e2_memory_breakdown_89baea52_20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/e2/arrays/e2_memory_breakdown_89baea52_20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/stage-timing-89baea52",
+      "memory_cap_envelope_mib": 82944,
+      "execution": "array"
+    },
+    {
+      "name": "e2-parallel-impact-w1-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e2/e2_parallel_impact_w1_89baea52_20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/e2/arrays/e2_parallel_impact_w1_89baea52_20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "memory_cap_envelope_mib": 9216,
+      "execution": "array"
+    },
+    {
+      "name": "e2-parallel-impact-w10-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e2/e2_parallel_impact_w10_89baea52_20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/e2/arrays/e2_parallel_impact_w10_89baea52_20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "memory_cap_envelope_mib": 82944,
+      "execution": "array"
+    },
+    {
+      "name": "e3-neat1-bpp-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e3-neat1-bpp-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/e3-neat1-bpp-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "e3-neat1-capr-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e3-neat1-capr-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/e3-neat1-capr-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "e3-neat1-mea-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e3-neat1-mea-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/e3-neat1-mea-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "e3-neat1-raccess-byloop-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e3-neat1-raccess-byloop-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/e3-neat1-raccess-byloop-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "e3-neat1-raccess-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e3-neat1-raccess-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/e3-neat1-raccess-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "e3-neat1-sampling-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e3-neat1-sampling-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/e3-neat1-sampling-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "e3-neat1-variants-bpp-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e3-neat1-variants-bpp-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/e3-neat1-variants-bpp-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "e3-neat1-variants-capr-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e3-neat1-variants-capr-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/e3-neat1-variants-capr-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "e3-neat1-variants-raccess-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/e3-neat1-variants-raccess-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/e3-neat1-variants-raccess-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "pk-recovery-200-turner04-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/pk-recovery-200-turner04-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/pk-recovery-200-turner04-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "pk-recovery-200-dp09-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/pk-recovery-200-dp09-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/pk-recovery-200-dp09-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "pk-recovery-80-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/pk-recovery-80-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/pk-recovery-80-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "pk-recovery-rrna-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/pk-recovery-rrna-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/pk-recovery-rrna-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "array"
+    },
+    {
+      "name": "terc-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/terc-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/terc-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "local"
+    },
+    {
+      "name": "terc-byloop-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/terc-byloop-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/terc-byloop-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "local"
+    },
+    {
+      "name": "figure1-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/figure1-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/figure1-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "execution": "local"
+    },
+    {
+      "name": "pk-membership-89baea52-20261018",
+      "config": "configs/rerun_89baea52_20261018/pk-membership-89baea52-20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/arrays/pk-membership-89baea52-20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/membership-89baea52",
+      "execution": "array"
+    }
+  ]
+}

@@ -257,7 +257,8 @@ def write_tsv(path, rows):
                          for k, v in row.items()} for row in rows)
 
 
-def aggregate(preps, records, old_results, out):
+def aggregate(preps, records, old_results, out, revision="d02d261c",
+              previous_probability_source="previous_febd2bc1_exact"):
     old = {r["id"]: r for r in old_results if r["par"] == "turner04"}
     by_id = {r["id"]: salvage_partial_record(r) for r in records}
     rna_rows, pair_rows, term_rows = [], [], []
@@ -287,7 +288,7 @@ def aggregate(preps, records, old_results, out):
                "mfe_square_pairs": len(mfe_square), "mfe_pk_overlap": len(mfe_pairs & set(pk)),
                "mfe_square_pk_overlap": len(mfe_square & set(pk)),
                "log_z": result["log_z"], "rt_kcal": result["rt_kcal"],
-               "probability_source": "previous_febd2bc1_exact" if recovered else "d02d261c_exact"}
+               "probability_source": previous_probability_source if recovered else revision+"_exact"}
         for label in ("full", "filtered", "reported", "scaffold"):
             ev = get_eval(raw, label)
             status, reasons = diagnostics(prepared, label, raw)
@@ -328,9 +329,9 @@ def aggregate(preps, records, old_results, out):
             stem = next(c for c in components if p in c)
             full_ev = get_eval(raw, "full")
             full_contains_pair = full_ev["reachable"] and p in set(map(tuple, full_ev["pairs"]))
-            evidence = ("d02d261c_positive_marginal" if not recovered and prob > 0 else
-                        "d02d261c_full_reference_trace" if full_contains_pair else
-                        "d02d261c_singleton_trace" if ev["reachable"] else "unresolved")
+            evidence = (revision+"_positive_marginal" if not recovered and prob > 0 else
+                        revision+"_full_reference_trace" if full_contains_pair else
+                        revision+"_singleton_trace" if ev["reachable"] else "unresolved")
             pair_rows.append({"id": r["id"], "pair_index": k, "i": p[0], "j": p[1],
                               "span": p[1]-p[0], "stack_pairs": len(stem),
                               "stack_median_span": st.median(j-i for i, j in stem),
@@ -359,9 +360,9 @@ def aggregate(preps, records, old_results, out):
                    "mfe_overlap": sum(x["mfe_pk_overlap"] for x in rna_rows),
                    "mfe_square_total": sum(x["mfe_square_pairs"] for x in rna_rows),
                    "mfe_square_overlap": sum(x["mfe_square_pk_overlap"] for x in rna_rows)}}
-    summary["validation"]["fresh_exact_bpp_rnas"] = sum(x["probability_source"] == "d02d261c_exact" for x in rna_rows)
-    summary["validation"]["previous_bpp_rnas"] = sum(x["probability_source"] != "d02d261c_exact" for x in rna_rows)
-    summary["validation"]["fresh_exact_bpp_pairs"] = sum(x["probability_source"] == "d02d261c_exact" for x in pair_rows)
+    summary["validation"]["fresh_exact_bpp_rnas"] = sum(x["probability_source"] == revision+"_exact" for x in rna_rows)
+    summary["validation"]["previous_bpp_rnas"] = sum(x["probability_source"] != revision+"_exact" for x in rna_rows)
+    summary["validation"]["fresh_exact_bpp_pairs"] = sum(x["probability_source"] == revision+"_exact" for x in pair_rows)
     summary["validation"]["aggregation_python_sha256"] = sha(__file__)
     summary["validation"]["partial_salvaged_rnas"] = sum(bool(r.get("partial_salvaged")) for r in by_id.values())
     summary["validation"]["timeout_attempts_preserved"] = sum(r.get("error") == "timeout" for r in records)

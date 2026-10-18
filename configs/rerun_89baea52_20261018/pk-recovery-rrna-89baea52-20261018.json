@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "name": "pk-recovery-rrna-89baea52-20261018",
+  "purpose": "formal",
+  "software_lock": "manifests/software-pilot-89baea52.json",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "build_revision_verified": true
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 7200,
+  "memory_limit_mib": 16384,
+  "warmups": 0,
+  "repetitions": 1,
+  "order": {
+    "kind": "blocked_random",
+    "seed": 20261017
+  },
+  "inputs": [
+    {
+      "name": "bpRNA_CRW_20565",
+      "path": "data/rerun-89baea52-20261018/rrna/bpRNA_CRW_20565.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "rrna/bpRNA_CRW_20565.txt"
+    },
+    {
+      "name": "bpRNA_CRW_54735",
+      "path": "data/rerun-89baea52-20261018/rrna/bpRNA_CRW_54735.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "rrna/bpRNA_CRW_54735.txt"
+    },
+    {
+      "name": "bpRNA_CRW_55337",
+      "path": "data/rerun-89baea52-20261018/rrna/bpRNA_CRW_55337.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "rrna/bpRNA_CRW_55337.txt"
+    }
+  ],
+  "modes": [
+    {
+      "name": "beam400_outer",
+      "args": [
+        "-b",
+        "400",
+        "--max-hairpin",
+        "400",
+        "--max-case3-depth",
+        "400",
+        "--ranking",
+        "outer"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "name": "LinearCParty",
+      "args": [
+        "--bpp-cutoff",
+        "0"
+      ],
+      "outputs": [
+        {
+          "name": "bpp.tsv",
+          "flag": "--bpp"
+        }
+      ]
+    },
+    {
+      "name": "LinearPKCapR",
+      "args": []
+    }
+  ],
+  "rerun_preparation": {
+    "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+    "template": null
+  }
+}

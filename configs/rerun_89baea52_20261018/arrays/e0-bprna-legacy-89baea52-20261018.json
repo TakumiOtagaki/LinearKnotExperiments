@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "measurement": "accuracy",
+  "seed": 20261011,
+  "tiers": [
+    {
+      "name": "nt1_49",
+      "min_length": 1,
+      "max_length": 49,
+      "resource": "cpu_16",
+      "h_rt": "08:00:00",
+      "target_seconds": 18000,
+      "memory_budget_mib": 32768,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "max_inputs_per_task": 50,
+      "job_limits": {
+        "memory_limit_mib": 4096,
+        "timeout_seconds": 600
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "Historical E0 upper envelope (E1 exact x10 time/x6 memory) retained conservatively for inside-only original-object oracle; no AD/outside/MFE/profile work; uncalibrated at bpRNA lengths, recalibrate on short tiers before full execution",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 1.0,
+            "seconds_coefficient": 4.858360511310758e-06,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.0012234317041658167,
+            "memory_exponent": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "nt50_99",
+      "min_length": 50,
+      "max_length": 99,
+      "resource": "cpu_16",
+      "h_rt": "08:00:00",
+      "target_seconds": 18000,
+      "memory_budget_mib": 32768,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "max_inputs_per_task": 50,
+      "job_limits": {
+        "memory_limit_mib": 4096,
+        "timeout_seconds": 600
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "Historical E0 upper envelope (E1 exact x10 time/x6 memory) retained conservatively for inside-only original-object oracle; no AD/outside/MFE/profile work; uncalibrated at bpRNA lengths, recalibrate on short tiers before full execution",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 1.0,
+            "seconds_coefficient": 6.01051840721262e-07,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 9.000000000000001e-08,
+            "memory_exponent": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "nt100_199",
+      "min_length": 100,
+      "max_length": 199,
+      "resource": "cpu_16",
+      "h_rt": "08:00:00",
+      "target_seconds": 18000,
+      "memory_budget_mib": 32768,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "max_inputs_per_task": 50,
+      "job_limits": {
+        "memory_limit_mib": 8192,
+        "timeout_seconds": 600
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "Historical E0 upper envelope (E1 exact x10 time/x6 memory) retained conservatively for inside-only original-object oracle; no AD/outside/MFE/profile work; uncalibrated at bpRNA lengths, recalibrate on short tiers before full execution",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 1.0,
+            "seconds_coefficient": 2.7826474107465842e-06,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.000988255937147821,
+            "memory_exponent": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "nt200_299",
+      "min_length": 200,
+      "max_length": 299,
+      "resource": "cpu_40",
+      "h_rt": "08:00:00",
+      "target_seconds": 18000,
+      "memory_budget_mib": 81920,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "max_inputs_per_task": 10,
+      "job_limits": {
+        "memory_limit_mib": 32768,
+        "timeout_seconds": 600
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "Historical E0 upper envelope (E1 exact x10 time/x6 memory) retained conservatively for inside-only original-object oracle; no AD/outside/MFE/profile work; uncalibrated at bpRNA lengths, recalibrate on short tiers before full execution",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 1.0,
+            "seconds_coefficient": 2.4875006172572692e-06,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.0005449075213152327,
+            "memory_exponent": 3
+          }
+        }
+      }
+    },
+    {
+      "name": "nt300_399",
+      "min_length": 300,
+      "max_length": 399,
+      "resource": "cpu_40",
+      "h_rt": "08:00:00",
+      "target_seconds": 18000,
+      "memory_budget_mib": 81920,
+      "task_overhead_mib": 512,
+      "workers": 1,
+      "max_inputs_per_task": 10,
+      "job_limits": {
+        "memory_limit_mib": 80000,
+        "timeout_seconds": 600
+      },
+      "order_kind": "blocked_random",
+      "cost_model": {
+        "basis": "Historical E0 upper envelope (E1 exact x10 time/x6 memory) retained conservatively for inside-only original-object oracle; no AD/outside/MFE/profile work; uncalibrated at bpRNA lengths, recalibrate on short tiers before full execution",
+        "seconds_per_nt_condition": 1,
+        "mib_per_nt": 0,
+        "safety_factor": 1.5,
+        "per_mode": {
+          "exact": {
+            "constant_seconds": 1.0,
+            "seconds_coefficient": 4.858360511310758e-06,
+            "length_exponent": 3,
+            "memory_base_mib": 128,
+            "memory_coefficient": 0.0012234317041658167,
+            "memory_exponent": 3
+          }
+        }
+      }
+    }
+  ],
+  "compact_plan": true,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1,
+    "fallback_remaining_files": 800000,
+    "fallback_basis": "Conservative fallback below the 2026-10-14 live snapshot; verify before submission"
+  },
+  "note": "E0 PF-only d21618c5 / five-patch oracle. Same 304 inputs plus WIP29; cpu_16 through 199 nt, cpu_40 for 200-399 nt; one process; historical cost envelope remains uncalibrated.",
+  "max_concurrent_tasks": 30
+}

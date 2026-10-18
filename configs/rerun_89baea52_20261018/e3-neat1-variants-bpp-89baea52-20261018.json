@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "name": "e3-neat1-variants-bpp-89baea52-20261018",
+  "purpose": "formal",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "temperature_source": "CLI/API default; verify RT metadata",
+    "build_revision_verified": true
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 72000,
+  "warmups": 0,
+  "repetitions": 1,
+  "inputs": [
+    {
+      "name": "NEAT1_1_emptyG",
+      "path": "data/neat1-variants-20261016/NEAT1_1_emptyG.txt"
+    },
+    {
+      "name": "NEAT1_1_p05",
+      "path": "data/neat1-variants-20261016/NEAT1_1_p05.txt"
+    },
+    {
+      "name": "NEAT1_1_p09",
+      "path": "data/neat1-variants-20261016/NEAT1_1_p09.txt"
+    },
+    {
+      "name": "NEAT1_2_emptyG",
+      "path": "data/neat1-variants-20261016/NEAT1_2_emptyG.txt"
+    }
+  ],
+  "modes": [
+    {
+      "name": "beam100_outer",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ]
+    },
+    {
+      "name": "beam200_outer",
+      "args": [
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "name": "LinearCParty",
+      "args": [
+        "--bpp-cutoff",
+        "0.001"
+      ],
+      "outputs": [
+        {
+          "name": "bpp.tsv",
+          "flag": "--bpp"
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "purpose": "E3 baseline (empty G) and E4 scaffold threshold sensitivity for NEAT1",
+    "scope": "One run per condition; outputs for the E3 case study. Timing/RSS are recorded but not compared."
+  },
+  "software_lock": "manifests/software-pilot-89baea52.json",
+  "memory_limit_mib": 20480,
+  "order": {
+    "kind": "blocked_random",
+    "seed": 20261012
+  },
+  "input_manifest": "data/neat1-variants-20261016/manifest.json",
+  "rerun_preparation": {
+    "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+    "template": "configs/e3_neat1_variants_bpp_e2cecbb4_20261016.json"
+  }
+}

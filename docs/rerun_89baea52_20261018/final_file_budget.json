@@ -1,0 +1,18 @@
+{
+  "estimated_shared_entries": 15168,
+  "basis": "13,168 packed matrix entries, 200 custom validation entries, 300 config/document/analysis allowance, 1,500 oracle/observer build allowance",
+  "project": 102571,
+  "filesystem": "/gs/bs",
+  "quota": {
+    "used_files": 21551661,
+    "limit_files": 28000000,
+    "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9532018828  14680064000 14680064000       - 21551661  28000000 28000000       -"
+  },
+  "hard_file_limit": 24000000,
+  "remaining_files": 2448339,
+  "remaining_source": "lfs quota (with configured conservative hard limit)",
+  "max_remaining_fraction": 0.1,
+  "allowed_entries": 244833,
+  "accepted": true,
+  "additional_execution_analysis_allowance_after_plan": 9352
+}

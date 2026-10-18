@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "name": "terc-89baea52-20261018",
+  "purpose": "development",
+  "software_lock": "manifests/software-examples-89baea52-20261018.json",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "build_revision_verified": true
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 1800,
+  "memory_limit_mib": 8192,
+  "warmups": 0,
+  "repetitions": 1,
+  "order": {
+    "kind": "blocked_random",
+    "seed": 20261017
+  },
+  "inputs": [
+    {
+      "name": "rat_TERC_bpRNA_RFAM_4317",
+      "path": "data/rerun-89baea52-20261018/terc/rat_TERC_bpRNA_RFAM_4317.txt",
+      "input_archive": "data/rerun-89baea52-20261018/inputs.tar",
+      "input_member": "terc/rat_TERC_bpRNA_RFAM_4317.txt"
+    }
+  ],
+  "modes": [
+    {
+      "name": "exact",
+      "args": [
+        "--exact"
+      ]
+    },
+    {
+      "name": "beam200_outer",
+      "args": [
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "name": "LinearCParty",
+      "args": [
+        "--bpp-cutoff",
+        "0"
+      ],
+      "outputs": [
+        {
+          "name": "bpp.tsv",
+          "flag": "--bpp"
+        }
+      ]
+    },
+    {
+      "name": "LinearPKCapR",
+      "args": []
+    },
+    {
+      "name": "LinearPKRaccess",
+      "args": [
+        "--access-len",
+        "1,4,8",
+        "--probability"
+      ]
+    },
+    {
+      "name": "LinearPKSampling",
+      "args": [
+        "-k",
+        "1000",
+        "--seed",
+        "20261017",
+        "--unique"
+      ]
+    },
+    {
+      "name": "LinearPKMEA",
+      "args": [
+        "--gamma",
+        "1"
+      ]
+    },
+    {
+      "name": "LinearPKSubopt",
+      "args": [
+        "-k",
+        "5"
+      ]
+    }
+  ],
+  "rerun_preparation": {
+    "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+    "template": null
+  },
+  "analysis": {
+    "scope": "Small example predictions on the certified release; local execution is allowed; no formal performance measurement."
+  }
+}

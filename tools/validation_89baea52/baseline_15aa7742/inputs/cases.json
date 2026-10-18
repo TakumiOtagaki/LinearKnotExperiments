@@ -1,0 +1,4376 @@
+[
+  {
+    "id": "closure14",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "(.(......)...)",
+    "family": "witness"
+  },
+  {
+    "id": "random000",
+    "sequence": "AGGAUACCUGCUUCC",
+    "scaffold": "...............",
+    "family": "random"
+  },
+  {
+    "id": "random001",
+    "sequence": "AUGAUGACACGAUAAG",
+    "scaffold": ".(.........)....",
+    "family": "random"
+  },
+  {
+    "id": "random002",
+    "sequence": "UAGGCGCCACCCAA",
+    "scaffold": "...(.(....))..",
+    "family": "random"
+  },
+  {
+    "id": "random003",
+    "sequence": "AAGCUGG",
+    "scaffold": "(...)..",
+    "family": "random"
+  },
+  {
+    "id": "random004",
+    "sequence": "CUCUUGGGGCAA",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random005",
+    "sequence": "GUGUUUCUUGGUUCUG",
+    "scaffold": "(...)(...(...).)",
+    "family": "random"
+  },
+  {
+    "id": "random006",
+    "sequence": "UCAGCCUUGAAUUCA",
+    "scaffold": ".(......)......",
+    "family": "random"
+  },
+  {
+    "id": "random007",
+    "sequence": "GGUGCUGUCGCG",
+    "scaffold": "(...)..(...)",
+    "family": "random"
+  },
+  {
+    "id": "random008",
+    "sequence": "GUCACGUUCGUGCCGG",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random009",
+    "sequence": "UACAGACUUCUC",
+    "scaffold": ".(........).",
+    "family": "random"
+  },
+  {
+    "id": "random010",
+    "sequence": "AAUGAGCUCUGCUC",
+    "scaffold": "...(...)......",
+    "family": "random"
+  },
+  {
+    "id": "random011",
+    "sequence": "CCCCC",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random012",
+    "sequence": "ACAUAGGCGCGA",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random013",
+    "sequence": "CGCCC",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random014",
+    "sequence": "GAUAUUUAAUGUGCC",
+    "scaffold": ".(...)((...))..",
+    "family": "random"
+  },
+  {
+    "id": "random015",
+    "sequence": "AACGCUAU",
+    "scaffold": "...(...)",
+    "family": "random"
+  },
+  {
+    "id": "random016",
+    "sequence": "CUUAGACUCCCAGGA",
+    "scaffold": "...............",
+    "family": "random"
+  },
+  {
+    "id": "random017",
+    "sequence": "UGUCGA",
+    "scaffold": "(....)",
+    "family": "random"
+  },
+  {
+    "id": "random018",
+    "sequence": "ACAGUU",
+    "scaffold": "......",
+    "family": "random"
+  },
+  {
+    "id": "random019",
+    "sequence": "CGGCCUCU",
+    "scaffold": "........",
+    "family": "random"
+  },
+  {
+    "id": "random020",
+    "sequence": "CCAAGGGCAG",
+    "scaffold": "..........",
+    "family": "random"
+  },
+  {
+    "id": "random021",
+    "sequence": "ACUAGUG",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random022",
+    "sequence": "UACAA",
+    "scaffold": "(...)",
+    "family": "random"
+  },
+  {
+    "id": "random023",
+    "sequence": "UUAUCUCCCCCAUA",
+    "scaffold": ".....(.....)..",
+    "family": "random"
+  },
+  {
+    "id": "random024",
+    "sequence": "UUCCCGGUGGGGCAGA",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random025",
+    "sequence": "ACUCU",
+    "scaffold": "(...)",
+    "family": "random"
+  },
+  {
+    "id": "random026",
+    "sequence": "GACCGACCA",
+    "scaffold": "(......).",
+    "family": "random"
+  },
+  {
+    "id": "random027",
+    "sequence": "UCGCAACCCAGGCUGC",
+    "scaffold": ".((...).......).",
+    "family": "random"
+  },
+  {
+    "id": "random028",
+    "sequence": "CGGGCUAGAU",
+    "scaffold": "..........",
+    "family": "random"
+  },
+  {
+    "id": "random029",
+    "sequence": "AUUAAGGACAACC",
+    "scaffold": "..(....).....",
+    "family": "random"
+  },
+  {
+    "id": "random030",
+    "sequence": "CAAGGCAAUCACUUAA",
+    "scaffold": "...(....).......",
+    "family": "random"
+  },
+  {
+    "id": "random031",
+    "sequence": "GCGAUGUACCCAUGA",
+    "scaffold": "(.........)....",
+    "family": "random"
+  },
+  {
+    "id": "random032",
+    "sequence": "CUCGUGCGAAUAGAA",
+    "scaffold": "...............",
+    "family": "random"
+  },
+  {
+    "id": "random033",
+    "sequence": "AUAGGCAC",
+    "scaffold": ".(....).",
+    "family": "random"
+  },
+  {
+    "id": "random034",
+    "sequence": "AUAAGUUUGG",
+    "scaffold": "...(...)..",
+    "family": "random"
+  },
+  {
+    "id": "random035",
+    "sequence": "UGACC",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random036",
+    "sequence": "UAUUCCGAGGUCAU",
+    "scaffold": "..............",
+    "family": "random"
+  },
+  {
+    "id": "random037",
+    "sequence": "GAAUCAGGGCA",
+    "scaffold": "(........).",
+    "family": "random"
+  },
+  {
+    "id": "random038",
+    "sequence": "CCUGC",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random039",
+    "sequence": "CGUUGACUGGCUC",
+    "scaffold": ".(.(....).)..",
+    "family": "random"
+  },
+  {
+    "id": "random040",
+    "sequence": "GCUGAGCUGCCCUG",
+    "scaffold": "..............",
+    "family": "random"
+  },
+  {
+    "id": "random041",
+    "sequence": "UCGCUGCCAUUCA",
+    "scaffold": ".....(....)..",
+    "family": "random"
+  },
+  {
+    "id": "random042",
+    "sequence": "UCUCUAAAU",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random043",
+    "sequence": "UCGCAGGUG",
+    "scaffold": ".(....)..",
+    "family": "random"
+  },
+  {
+    "id": "random044",
+    "sequence": "UAAGAAGU",
+    "scaffold": "........",
+    "family": "random"
+  },
+  {
+    "id": "random045",
+    "sequence": "CAGCGCUGAGAUCC",
+    "scaffold": "(..(...).)....",
+    "family": "random"
+  },
+  {
+    "id": "random046",
+    "sequence": "CAUGUCU",
+    "scaffold": ".(....)",
+    "family": "random"
+  },
+  {
+    "id": "random047",
+    "sequence": "AGCUCAACCAU",
+    "scaffold": "...(.....).",
+    "family": "random"
+  },
+  {
+    "id": "random048",
+    "sequence": "UCCUCAAUUAGA",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random049",
+    "sequence": "UACAAU",
+    "scaffold": ".(...)",
+    "family": "random"
+  },
+  {
+    "id": "random050",
+    "sequence": "GAUUCACCUUAGC",
+    "scaffold": "(...)..(...).",
+    "family": "random"
+  },
+  {
+    "id": "random051",
+    "sequence": "UUACCGGU",
+    "scaffold": "........",
+    "family": "random"
+  },
+  {
+    "id": "random052",
+    "sequence": "CUACG",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random053",
+    "sequence": "AGGCUGAG",
+    "scaffold": "(...)...",
+    "family": "random"
+  },
+  {
+    "id": "random054",
+    "sequence": "GGAGUA",
+    "scaffold": "(...).",
+    "family": "random"
+  },
+  {
+    "id": "random055",
+    "sequence": "UGCUAAAGAUCACG",
+    "scaffold": "...(...).(...)",
+    "family": "random"
+  },
+  {
+    "id": "random056",
+    "sequence": "AGUAUGAGGGG",
+    "scaffold": "...........",
+    "family": "random"
+  },
+  {
+    "id": "random057",
+    "sequence": "CGGGGUAG",
+    "scaffold": "(...)...",
+    "family": "random"
+  },
+  {
+    "id": "random058",
+    "sequence": "UGCACUGCGCUGGGUU",
+    "scaffold": "..(....(...))...",
+    "family": "random"
+  },
+  {
+    "id": "random059",
+    "sequence": "CAGUUCUUAAAUGUC",
+    "scaffold": ".(.....).(...).",
+    "family": "random"
+  },
+  {
+    "id": "random060",
+    "sequence": "AGUUCUGAUUAGAGG",
+    "scaffold": "...............",
+    "family": "random"
+  },
+  {
+    "id": "random061",
+    "sequence": "CCUUAUCAG",
+    "scaffold": "..((...))",
+    "family": "random"
+  },
+  {
+    "id": "random062",
+    "sequence": "UCCCUUCAUGAUG",
+    "scaffold": "....(..(...))",
+    "family": "random"
+  },
+  {
+    "id": "random063",
+    "sequence": "GGACC",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random064",
+    "sequence": "AAGGAUACGG",
+    "scaffold": "..........",
+    "family": "random"
+  },
+  {
+    "id": "random065",
+    "sequence": "GGCGACCCCCAG",
+    "scaffold": ".....(.....)",
+    "family": "random"
+  },
+  {
+    "id": "random066",
+    "sequence": "CAUCGUCGCCUAAUC",
+    "scaffold": "..(.(...)..)...",
+    "family": "random"
+  },
+  {
+    "id": "random067",
+    "sequence": "AAUUUGUAUGA",
+    "scaffold": "(.......)..",
+    "family": "random"
+  },
+  {
+    "id": "random068",
+    "sequence": "ACGGGUC",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random069",
+    "sequence": "AAGGAGGUAG",
+    "scaffold": "..(....)..",
+    "family": "random"
+  },
+  {
+    "id": "random070",
+    "sequence": "UUUAUGCCG",
+    "scaffold": ".(...)...",
+    "family": "random"
+  },
+  {
+    "id": "random071",
+    "sequence": "UGAGGA",
+    "scaffold": "(...).",
+    "family": "random"
+  },
+  {
+    "id": "random072",
+    "sequence": "GUGGCAAGGUGUAAUC",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random073",
+    "sequence": "GGGAAUGU",
+    "scaffold": "...(...)",
+    "family": "random"
+  },
+  {
+    "id": "random074",
+    "sequence": "CACCCUGGGCAACCGG",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random075",
+    "sequence": "UUGAU",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random076",
+    "sequence": "CGAGACC",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random077",
+    "sequence": "CCUCUAACACU",
+    "scaffold": "..(.....)..",
+    "family": "random"
+  },
+  {
+    "id": "random078",
+    "sequence": "CUGGGG",
+    "scaffold": "(...).",
+    "family": "random"
+  },
+  {
+    "id": "random079",
+    "sequence": "AUGGAG",
+    "scaffold": ".(...)",
+    "family": "random"
+  },
+  {
+    "id": "random080",
+    "sequence": "GAGAA",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random081",
+    "sequence": "UAGCUUCUGU",
+    "scaffold": "...(....).",
+    "family": "random"
+  },
+  {
+    "id": "random082",
+    "sequence": "GAUUAAAGUG",
+    "scaffold": "..(.(...))",
+    "family": "random"
+  },
+  {
+    "id": "random083",
+    "sequence": "UUACCGCUUACGCA",
+    "scaffold": "...(.(....))..",
+    "family": "random"
+  },
+  {
+    "id": "random084",
+    "sequence": "UCGCAC",
+    "scaffold": "......",
+    "family": "random"
+  },
+  {
+    "id": "random085",
+    "sequence": "UUGAGGAUUCAUCGGU",
+    "scaffold": "....(.(....)...)",
+    "family": "random"
+  },
+  {
+    "id": "random086",
+    "sequence": "ACCCGU",
+    "scaffold": "(....)",
+    "family": "random"
+  },
+  {
+    "id": "random087",
+    "sequence": "CUCUGGGACAUG",
+    "scaffold": ".((...))....",
+    "family": "random"
+  },
+  {
+    "id": "random088",
+    "sequence": "UGAGCCUCCUGG",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random089",
+    "sequence": "CGUCGCAAGGAU",
+    "scaffold": ".(...)(....)",
+    "family": "random"
+  },
+  {
+    "id": "random090",
+    "sequence": "UGACACC",
+    "scaffold": ".(....)",
+    "family": "random"
+  },
+  {
+    "id": "random091",
+    "sequence": "AAGAGUGAUACCUUCC",
+    "scaffold": "..(..(...).)....",
+    "family": "random"
+  },
+  {
+    "id": "random092",
+    "sequence": "UUGUGAUU",
+    "scaffold": "........",
+    "family": "random"
+  },
+  {
+    "id": "random093",
+    "sequence": "GGACAUGACGC",
+    "scaffold": ".(......)..",
+    "family": "random"
+  },
+  {
+    "id": "random094",
+    "sequence": "UCACCGCACAUGUGG",
+    "scaffold": "(....).(....)..",
+    "family": "random"
+  },
+  {
+    "id": "random095",
+    "sequence": "CCAUAUCUGGAGG",
+    "scaffold": "(....(....).)",
+    "family": "random"
+  },
+  {
+    "id": "random096",
+    "sequence": "AGAUAAA",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random097",
+    "sequence": "CGUGG",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random098",
+    "sequence": "AAAAGUAU",
+    "scaffold": ".(.....)",
+    "family": "random"
+  },
+  {
+    "id": "random099",
+    "sequence": "GUCCGAAAUAC",
+    "scaffold": "...........",
+    "family": "random"
+  },
+  {
+    "id": "random100",
+    "sequence": "GUAAACGCG",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random101",
+    "sequence": "GGUGACAUGCUCGC",
+    "scaffold": "..(.(.....).).",
+    "family": "random"
+  },
+  {
+    "id": "random102",
+    "sequence": "ACCCCAGCAGC",
+    "scaffold": "..(......).",
+    "family": "random"
+  },
+  {
+    "id": "random103",
+    "sequence": "UCGAACU",
+    "scaffold": "(...)..",
+    "family": "random"
+  },
+  {
+    "id": "random104",
+    "sequence": "GGACAUUGAUUU",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random105",
+    "sequence": "GACUUCAU",
+    "scaffold": "(...)...",
+    "family": "random"
+  },
+  {
+    "id": "random106",
+    "sequence": "CAACCUUAU",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random107",
+    "sequence": "AUGCUCCUCCGUGC",
+    "scaffold": "......(...)...",
+    "family": "random"
+  },
+  {
+    "id": "random108",
+    "sequence": "GGGAAAAGCAU",
+    "scaffold": "...........",
+    "family": "random"
+  },
+  {
+    "id": "random109",
+    "sequence": "GAGUAAGGAUGA",
+    "scaffold": "...(.(...)).",
+    "family": "random"
+  },
+  {
+    "id": "random110",
+    "sequence": "CCUCCAGG",
+    "scaffold": "(.(...))",
+    "family": "random"
+  },
+  {
+    "id": "random111",
+    "sequence": "GAGCCA",
+    "scaffold": "(...).",
+    "family": "random"
+  },
+  {
+    "id": "random112",
+    "sequence": "AGGACGCACG",
+    "scaffold": "..........",
+    "family": "random"
+  },
+  {
+    "id": "random113",
+    "sequence": "CCAGUAGUGAACA",
+    "scaffold": ".............",
+    "family": "random"
+  },
+  {
+    "id": "random114",
+    "sequence": "GUUUAGCCACCC",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random115",
+    "sequence": "AGCGAGUAGC",
+    "scaffold": "..(.....).",
+    "family": "random"
+  },
+  {
+    "id": "random116",
+    "sequence": "AUCGGUACGGGUCACG",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random117",
+    "sequence": "GAUGACGUGUUGC",
+    "scaffold": "...(...)(...)",
+    "family": "random"
+  },
+  {
+    "id": "random118",
+    "sequence": "UAAGCACU",
+    "scaffold": "(....)..",
+    "family": "random"
+  },
+  {
+    "id": "random119",
+    "sequence": "GACUUACCUGCCCAA",
+    "scaffold": "...............",
+    "family": "random"
+  },
+  {
+    "id": "random120",
+    "sequence": "UUAUGUGGUAAGUU",
+    "scaffold": "..............",
+    "family": "random"
+  },
+  {
+    "id": "random121",
+    "sequence": "GAUCCCUUUUCAC",
+    "scaffold": "..(........).",
+    "family": "random"
+  },
+  {
+    "id": "random122",
+    "sequence": "GCUAGA",
+    "scaffold": "......",
+    "family": "random"
+  },
+  {
+    "id": "random123",
+    "sequence": "UCACUGCA",
+    "scaffold": "((...).)",
+    "family": "random"
+  },
+  {
+    "id": "random124",
+    "sequence": "CUGCCUUC",
+    "scaffold": "........",
+    "family": "random"
+  },
+  {
+    "id": "random125",
+    "sequence": "UCCCACCCAGGG",
+    "scaffold": "(...).(....)",
+    "family": "random"
+  },
+  {
+    "id": "random126",
+    "sequence": "CCCUAU",
+    "scaffold": "......",
+    "family": "random"
+  },
+  {
+    "id": "random127",
+    "sequence": "AUAUAUAACC",
+    "scaffold": ".(....)...",
+    "family": "random"
+  },
+  {
+    "id": "random128",
+    "sequence": "CUGGGACAUGACGCCG",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random129",
+    "sequence": "GUGGCACUCAG",
+    "scaffold": "...........",
+    "family": "random"
+  },
+  {
+    "id": "random130",
+    "sequence": "CACGAUC",
+    "scaffold": ".(...).",
+    "family": "random"
+  },
+  {
+    "id": "random131",
+    "sequence": "CCUCAACGCACAUCGU",
+    "scaffold": ".....(......)...",
+    "family": "random"
+  },
+  {
+    "id": "random132",
+    "sequence": "CAUAAAGUCUUA",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random133",
+    "sequence": "CUUGCUUAAUCGAC",
+    "scaffold": "...(.....)....",
+    "family": "random"
+  },
+  {
+    "id": "random134",
+    "sequence": "ACACGU",
+    "scaffold": "(....)",
+    "family": "random"
+  },
+  {
+    "id": "random135",
+    "sequence": "GUCACCUAC",
+    "scaffold": ".(.....).",
+    "family": "random"
+  },
+  {
+    "id": "random136",
+    "sequence": "GUUAAGAAU",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random137",
+    "sequence": "AUAAAUGGCUC",
+    "scaffold": "((.....).).",
+    "family": "random"
+  },
+  {
+    "id": "random138",
+    "sequence": "UUUUAAUACCG",
+    "scaffold": "...(...)...",
+    "family": "random"
+  },
+  {
+    "id": "random139",
+    "sequence": "AUUAGA",
+    "scaffold": "......",
+    "family": "random"
+  },
+  {
+    "id": "random140",
+    "sequence": "GACAGUC",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random141",
+    "sequence": "UGUUUGC",
+    "scaffold": ".(....)",
+    "family": "random"
+  },
+  {
+    "id": "random142",
+    "sequence": "GACUAUAGGCCAA",
+    "scaffold": ".....(......)",
+    "family": "random"
+  },
+  {
+    "id": "random143",
+    "sequence": "GGUAAAAAU",
+    "scaffold": ".((...).)",
+    "family": "random"
+  },
+  {
+    "id": "random144",
+    "sequence": "GACUCGGCUUC",
+    "scaffold": "...........",
+    "family": "random"
+  },
+  {
+    "id": "random145",
+    "sequence": "GAGCGCC",
+    "scaffold": "..(...)",
+    "family": "random"
+  },
+  {
+    "id": "random146",
+    "sequence": "UGUGUUGAAUCGCCC",
+    "scaffold": "(.(...)).......",
+    "family": "random"
+  },
+  {
+    "id": "random147",
+    "sequence": "AAAUUGUAUGGGU",
+    "scaffold": "....(.(...)).",
+    "family": "random"
+  },
+  {
+    "id": "random148",
+    "sequence": "CUCAA",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random149",
+    "sequence": "GUCGCU",
+    "scaffold": "......",
+    "family": "random"
+  },
+  {
+    "id": "random150",
+    "sequence": "CAGUUUAGCGAU",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random151",
+    "sequence": "UCGAU",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random152",
+    "sequence": "AUAAAUGGCCAGGAGC",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random153",
+    "sequence": "ACGCACAAUCCUU",
+    "scaffold": "......((...))",
+    "family": "random"
+  },
+  {
+    "id": "random154",
+    "sequence": "AACUUUUCUUUGUU",
+    "scaffold": "..............",
+    "family": "random"
+  },
+  {
+    "id": "random155",
+    "sequence": "CGAUGUUCACGGUGA",
+    "scaffold": "...(..(...)..).",
+    "family": "random"
+  },
+  {
+    "id": "random156",
+    "sequence": "UCAUGCAGGUCGUA",
+    "scaffold": "..............",
+    "family": "random"
+  },
+  {
+    "id": "random157",
+    "sequence": "CGGCACGAAC",
+    "scaffold": ".(.......)",
+    "family": "random"
+  },
+  {
+    "id": "random158",
+    "sequence": "AAAUGUCCUA",
+    "scaffold": "....(...).",
+    "family": "random"
+  },
+  {
+    "id": "random159",
+    "sequence": "AAUCU",
+    "scaffold": "(...)",
+    "family": "random"
+  },
+  {
+    "id": "random160",
+    "sequence": "CGCUCUUAAGGCC",
+    "scaffold": ".............",
+    "family": "random"
+  },
+  {
+    "id": "random161",
+    "sequence": "GAUCAUUCAGGCGU",
+    "scaffold": "..............",
+    "family": "random"
+  },
+  {
+    "id": "random162",
+    "sequence": "UCCCAUUGC",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random163",
+    "sequence": "UAGCGCUCUGG",
+    "scaffold": "(...).(...)",
+    "family": "random"
+  },
+  {
+    "id": "random164",
+    "sequence": "ACUGGAU",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random165",
+    "sequence": "GAUCUGCUGCC",
+    "scaffold": "(...(...).)",
+    "family": "random"
+  },
+  {
+    "id": "random166",
+    "sequence": "GGCUGGUAGCCGC",
+    "scaffold": ".....(...)...",
+    "family": "random"
+  },
+  {
+    "id": "random167",
+    "sequence": "AUGCCGUUAAAGA",
+    "scaffold": ".(...)(...)..",
+    "family": "random"
+  },
+  {
+    "id": "random168",
+    "sequence": "CGCAUUUGUAUACGC",
+    "scaffold": "...............",
+    "family": "random"
+  },
+  {
+    "id": "random169",
+    "sequence": "GAUCUAUC",
+    "scaffold": "(...)...",
+    "family": "random"
+  },
+  {
+    "id": "random170",
+    "sequence": "AGGAGGUUCGG",
+    "scaffold": "...........",
+    "family": "random"
+  },
+  {
+    "id": "random171",
+    "sequence": "AUCAUAGUUCAAGUC",
+    "scaffold": "..(...)(...)...",
+    "family": "random"
+  },
+  {
+    "id": "random172",
+    "sequence": "UCUAAUAGGAU",
+    "scaffold": "...........",
+    "family": "random"
+  },
+  {
+    "id": "random173",
+    "sequence": "GAUCUUUGUUCG",
+    "scaffold": "(.(....)..).",
+    "family": "random"
+  },
+  {
+    "id": "random174",
+    "sequence": "UGACAU",
+    "scaffold": "(...).",
+    "family": "random"
+  },
+  {
+    "id": "random175",
+    "sequence": "AGUAGGC",
+    "scaffold": ".(....)",
+    "family": "random"
+  },
+  {
+    "id": "random176",
+    "sequence": "GAUUGC",
+    "scaffold": "......",
+    "family": "random"
+  },
+  {
+    "id": "random177",
+    "sequence": "CGGCA",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random178",
+    "sequence": "AGAAUG",
+    "scaffold": "(...).",
+    "family": "random"
+  },
+  {
+    "id": "random179",
+    "sequence": "UAUAC",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random180",
+    "sequence": "CUCAGGCUGC",
+    "scaffold": "..........",
+    "family": "random"
+  },
+  {
+    "id": "random181",
+    "sequence": "CAAAA",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random182",
+    "sequence": "CCUGCGUCG",
+    "scaffold": "....(...)",
+    "family": "random"
+  },
+  {
+    "id": "random183",
+    "sequence": "AACGCAUUGAAU",
+    "scaffold": "((....))....",
+    "family": "random"
+  },
+  {
+    "id": "random184",
+    "sequence": "UGUUGCAUGCAAGG",
+    "scaffold": "..............",
+    "family": "random"
+  },
+  {
+    "id": "random185",
+    "sequence": "GGCUCCUUCGUGC",
+    "scaffold": ".(...)(....).",
+    "family": "random"
+  },
+  {
+    "id": "random186",
+    "sequence": "GGAGUCUCCUC",
+    "scaffold": "((...)....)",
+    "family": "random"
+  },
+  {
+    "id": "random187",
+    "sequence": "AGUUAU",
+    "scaffold": ".(...)",
+    "family": "random"
+  },
+  {
+    "id": "random188",
+    "sequence": "AUGGUUACAACU",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random189",
+    "sequence": "CAUAUGGCUU",
+    "scaffold": ".....(...)",
+    "family": "random"
+  },
+  {
+    "id": "random190",
+    "sequence": "UCUGA",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random191",
+    "sequence": "CAAAGGCGU",
+    "scaffold": "..(.....)",
+    "family": "random"
+  },
+  {
+    "id": "random192",
+    "sequence": "GGAUGAC",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random193",
+    "sequence": "UGAACAGCAGAUUG",
+    "scaffold": "(....)(.....).",
+    "family": "random"
+  },
+  {
+    "id": "random194",
+    "sequence": "AUGACG",
+    "scaffold": "......",
+    "family": "random"
+  },
+  {
+    "id": "random195",
+    "sequence": "ACCGUGUACUCCUACG",
+    "scaffold": "....((......))..",
+    "family": "random"
+  },
+  {
+    "id": "random196",
+    "sequence": "UAUAAAACAG",
+    "scaffold": "..........",
+    "family": "random"
+  },
+  {
+    "id": "random197",
+    "sequence": "AACUG",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random198",
+    "sequence": "GUCCAGAGUAAU",
+    "scaffold": "((.....)...)",
+    "family": "random"
+  },
+  {
+    "id": "random199",
+    "sequence": "UACUAUCCCGGU",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random200",
+    "sequence": "AGAGCUUC",
+    "scaffold": "........",
+    "family": "random"
+  },
+  {
+    "id": "random201",
+    "sequence": "UUUGAAC",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random202",
+    "sequence": "ACGGACAAU",
+    "scaffold": "(.......)",
+    "family": "random"
+  },
+  {
+    "id": "random203",
+    "sequence": "AGUUCC",
+    "scaffold": ".(...)",
+    "family": "random"
+  },
+  {
+    "id": "random204",
+    "sequence": "GGUAGCCGCAAA",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random205",
+    "sequence": "UACACGUCUUCAC",
+    "scaffold": ".....((....))",
+    "family": "random"
+  },
+  {
+    "id": "random206",
+    "sequence": "CUAGCACCCACG",
+    "scaffold": "...(...)....",
+    "family": "random"
+  },
+  {
+    "id": "random207",
+    "sequence": "GUUGAUUAUGUGCACC",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random208",
+    "sequence": "UAUUACGUG",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random209",
+    "sequence": "UUGAGUGCAUGAG",
+    "scaffold": "..(......)...",
+    "family": "random"
+  },
+  {
+    "id": "random210",
+    "sequence": "CAUUGAGCUUAUUUUU",
+    "scaffold": "(...)(.......)..",
+    "family": "random"
+  },
+  {
+    "id": "random211",
+    "sequence": "GGCCGUGUG",
+    "scaffold": "(....)...",
+    "family": "random"
+  },
+  {
+    "id": "random212",
+    "sequence": "CCACAG",
+    "scaffold": "......",
+    "family": "random"
+  },
+  {
+    "id": "random213",
+    "sequence": "GGGGUUUGGUGGA",
+    "scaffold": "(.(...)..)...",
+    "family": "random"
+  },
+  {
+    "id": "random214",
+    "sequence": "AGGGGUUAGGAGGAU",
+    "scaffold": ".(...((...)..))",
+    "family": "random"
+  },
+  {
+    "id": "random215",
+    "sequence": "CAUUAGUCUGAGGA",
+    "scaffold": "...(..(...))..",
+    "family": "random"
+  },
+  {
+    "id": "random216",
+    "sequence": "UGACUGC",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random217",
+    "sequence": "GCUUUGUGUGCC",
+    "scaffold": "(...(....).)",
+    "family": "random"
+  },
+  {
+    "id": "random218",
+    "sequence": "UAGCGCUUUCACAAA",
+    "scaffold": ".(....).(....).",
+    "family": "random"
+  },
+  {
+    "id": "random219",
+    "sequence": "CAGCUA",
+    "scaffold": "......",
+    "family": "random"
+  },
+  {
+    "id": "random220",
+    "sequence": "AGUAGCUGCCCC",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random221",
+    "sequence": "CCCAGGCAGGAGG",
+    "scaffold": "(.(.....)..).",
+    "family": "random"
+  },
+  {
+    "id": "random222",
+    "sequence": "GUGGACAUAGUUUA",
+    "scaffold": "..((...)..)...",
+    "family": "random"
+  },
+  {
+    "id": "random223",
+    "sequence": "CUUCGCGCGCA",
+    "scaffold": "..(.......)",
+    "family": "random"
+  },
+  {
+    "id": "random224",
+    "sequence": "UAGGAAU",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random225",
+    "sequence": "AUUGU",
+    "scaffold": "(...)",
+    "family": "random"
+  },
+  {
+    "id": "random226",
+    "sequence": "CAGGGAUAGGGACCAC",
+    "scaffold": "..(.........)...",
+    "family": "random"
+  },
+  {
+    "id": "random227",
+    "sequence": "UCUCG",
+    "scaffold": "(...)",
+    "family": "random"
+  },
+  {
+    "id": "random228",
+    "sequence": "CAAGCGGUUCUUCGGA",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random229",
+    "sequence": "GAGGAAAUGUCUACG",
+    "scaffold": ".((....).)(...)",
+    "family": "random"
+  },
+  {
+    "id": "random230",
+    "sequence": "CAUGUAUCUCUG",
+    "scaffold": "...(......).",
+    "family": "random"
+  },
+  {
+    "id": "random231",
+    "sequence": "AGGAA",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random232",
+    "sequence": "ACCCUCAAC",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random233",
+    "sequence": "CCACCAAGCUUG",
+    "scaffold": ".(.....)....",
+    "family": "random"
+  },
+  {
+    "id": "random234",
+    "sequence": "CGCUCUAGAUU",
+    "scaffold": "...(...)...",
+    "family": "random"
+  },
+  {
+    "id": "random235",
+    "sequence": "CAUACUACG",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random236",
+    "sequence": "GGAGGCUGG",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random237",
+    "sequence": "AUGCAGGGC",
+    "scaffold": ".(.....).",
+    "family": "random"
+  },
+  {
+    "id": "random238",
+    "sequence": "GAAGCCGGUA",
+    "scaffold": "(....)....",
+    "family": "random"
+  },
+  {
+    "id": "random239",
+    "sequence": "UCUUGGCCGGGAGCCU",
+    "scaffold": ".(...)..((...)).",
+    "family": "random"
+  },
+  {
+    "id": "random240",
+    "sequence": "CACGCCCAACAG",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random241",
+    "sequence": "GCCACCAACUGGGG",
+    "scaffold": "..............",
+    "family": "random"
+  },
+  {
+    "id": "random242",
+    "sequence": "ACCGAGAUUUAU",
+    "scaffold": "((...)..)...",
+    "family": "random"
+  },
+  {
+    "id": "random243",
+    "sequence": "GUUGUUUGAG",
+    "scaffold": "..(.(...))",
+    "family": "random"
+  },
+  {
+    "id": "random244",
+    "sequence": "UAGUCACCCCAUU",
+    "scaffold": ".............",
+    "family": "random"
+  },
+  {
+    "id": "random245",
+    "sequence": "UACUAAAACCGAACG",
+    "scaffold": "(....)...(....)",
+    "family": "random"
+  },
+  {
+    "id": "random246",
+    "sequence": "UCAUGAAC",
+    "scaffold": "(...)...",
+    "family": "random"
+  },
+  {
+    "id": "random247",
+    "sequence": "AUAGAUGA",
+    "scaffold": "........",
+    "family": "random"
+  },
+  {
+    "id": "random248",
+    "sequence": "CGAGAGAAUUGGUGU",
+    "scaffold": "...............",
+    "family": "random"
+  },
+  {
+    "id": "random249",
+    "sequence": "UACUGUUUCUUUC",
+    "scaffold": "....(...)....",
+    "family": "random"
+  },
+  {
+    "id": "random250",
+    "sequence": "UUCACGCUU",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random251",
+    "sequence": "UUUCCCUA",
+    "scaffold": "(......)",
+    "family": "random"
+  },
+  {
+    "id": "random252",
+    "sequence": "UGUAUGAUCAUAA",
+    "scaffold": ".............",
+    "family": "random"
+  },
+  {
+    "id": "random253",
+    "sequence": "GGUUUGGUA",
+    "scaffold": "(...)....",
+    "family": "random"
+  },
+  {
+    "id": "random254",
+    "sequence": "CCCUGG",
+    "scaffold": ".(...)",
+    "family": "random"
+  },
+  {
+    "id": "random255",
+    "sequence": "AGGUACGUGUUGG",
+    "scaffold": ".(...).(....)",
+    "family": "random"
+  },
+  {
+    "id": "random256",
+    "sequence": "UUAAGCGUUGACCA",
+    "scaffold": "..............",
+    "family": "random"
+  },
+  {
+    "id": "random257",
+    "sequence": "UCAGU",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random258",
+    "sequence": "UUUCCCGACCUCCCA",
+    "scaffold": ".(....)...(...)",
+    "family": "random"
+  },
+  {
+    "id": "random259",
+    "sequence": "CUGGACU",
+    "scaffold": "..(...)",
+    "family": "random"
+  },
+  {
+    "id": "random260",
+    "sequence": "UUACUAUUCACU",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random261",
+    "sequence": "GGGCCACUCU",
+    "scaffold": "(((...)).)",
+    "family": "random"
+  },
+  {
+    "id": "random262",
+    "sequence": "AAAUA",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random263",
+    "sequence": "AUCACACGUACUCAGG",
+    "scaffold": ".(...)..........",
+    "family": "random"
+  },
+  {
+    "id": "random264",
+    "sequence": "UAAUUG",
+    "scaffold": "......",
+    "family": "random"
+  },
+  {
+    "id": "random265",
+    "sequence": "CCCGGC",
+    "scaffold": "(...).",
+    "family": "random"
+  },
+  {
+    "id": "random266",
+    "sequence": "AACCCAAAA",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random267",
+    "sequence": "CGUACGAGUCCU",
+    "scaffold": ".....(...)..",
+    "family": "random"
+  },
+  {
+    "id": "random268",
+    "sequence": "UGUUUU",
+    "scaffold": "......",
+    "family": "random"
+  },
+  {
+    "id": "random269",
+    "sequence": "CACUA",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random270",
+    "sequence": "GAGGUCAGCGACAUU",
+    "scaffold": "(......(...).).",
+    "family": "random"
+  },
+  {
+    "id": "random271",
+    "sequence": "UGCCAUU",
+    "scaffold": ".(....)",
+    "family": "random"
+  },
+  {
+    "id": "random272",
+    "sequence": "CUCUAUG",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random273",
+    "sequence": "ACUAUAGGUAUUGGA",
+    "scaffold": ".(....).(.....)",
+    "family": "random"
+  },
+  {
+    "id": "random274",
+    "sequence": "UACAAGCCA",
+    "scaffold": "(.......)",
+    "family": "random"
+  },
+  {
+    "id": "random275",
+    "sequence": "UACUUUAACACAAGAU",
+    "scaffold": ".....(..(....)).",
+    "family": "random"
+  },
+  {
+    "id": "random276",
+    "sequence": "UCUUUAUACUU",
+    "scaffold": "...........",
+    "family": "random"
+  },
+  {
+    "id": "random277",
+    "sequence": "AGGUCGUCGGGGCG",
+    "scaffold": "(.....)(...)..",
+    "family": "random"
+  },
+  {
+    "id": "random278",
+    "sequence": "GGUGGUUAGUGAUAA",
+    "scaffold": "....(.......)..",
+    "family": "random"
+  },
+  {
+    "id": "random279",
+    "sequence": "CAGUGUACAC",
+    "scaffold": ".(...)....",
+    "family": "random"
+  },
+  {
+    "id": "random280",
+    "sequence": "GCAUGGACCG",
+    "scaffold": "..........",
+    "family": "random"
+  },
+  {
+    "id": "random281",
+    "sequence": "UGGAAGCGGAUCU",
+    "scaffold": ".(....)(...).",
+    "family": "random"
+  },
+  {
+    "id": "random282",
+    "sequence": "UGGGCUAGCGC",
+    "scaffold": ".(...(...))",
+    "family": "random"
+  },
+  {
+    "id": "random283",
+    "sequence": "GUUGGCAUACGA",
+    "scaffold": "(......)....",
+    "family": "random"
+  },
+  {
+    "id": "random284",
+    "sequence": "AUCGUCAACUGAGGC",
+    "scaffold": "...............",
+    "family": "random"
+  },
+  {
+    "id": "random285",
+    "sequence": "AUGUGUUCCUUUUGC",
+    "scaffold": "(.....)(.....).",
+    "family": "random"
+  },
+  {
+    "id": "random286",
+    "sequence": "GUAGUGGGGGCG",
+    "scaffold": ".(......)...",
+    "family": "random"
+  },
+  {
+    "id": "random287",
+    "sequence": "UUUUUAGCUA",
+    "scaffold": "..........",
+    "family": "random"
+  },
+  {
+    "id": "random288",
+    "sequence": "AGCUGAAUCGCU",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random289",
+    "sequence": "UUAUAUUUAGU",
+    "scaffold": "....((...))",
+    "family": "random"
+  },
+  {
+    "id": "random290",
+    "sequence": "GCUCACAUUUUGUCUC",
+    "scaffold": "(...(....)..)...",
+    "family": "random"
+  },
+  {
+    "id": "random291",
+    "sequence": "CUAGA",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random292",
+    "sequence": "AUAGCAUU",
+    "scaffold": "........",
+    "family": "random"
+  },
+  {
+    "id": "random293",
+    "sequence": "CUUGGUACUUUUG",
+    "scaffold": "(...)((....))",
+    "family": "random"
+  },
+  {
+    "id": "random294",
+    "sequence": "CCAAGCACCCGGGACU",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random295",
+    "sequence": "GAAAU",
+    "scaffold": "(...)",
+    "family": "random"
+  },
+  {
+    "id": "random296",
+    "sequence": "CCACCACA",
+    "scaffold": "........",
+    "family": "random"
+  },
+  {
+    "id": "random297",
+    "sequence": "CGAUUGUCCACCUAUU",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random298",
+    "sequence": "CAAUCGC",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random299",
+    "sequence": "GCAUAUGCUCAACCC",
+    "scaffold": "(....)(......).",
+    "family": "random"
+  },
+  {
+    "id": "random300",
+    "sequence": "CUAGUUGGCCACU",
+    "scaffold": ".............",
+    "family": "random"
+  },
+  {
+    "id": "random301",
+    "sequence": "AAUGGUCGCACAUC",
+    "scaffold": ".((.(...)..)).",
+    "family": "random"
+  },
+  {
+    "id": "random302",
+    "sequence": "ACUUACACAG",
+    "scaffold": "...(.....)",
+    "family": "random"
+  },
+  {
+    "id": "random303",
+    "sequence": "ACGUUCACAUC",
+    "scaffold": "(...)......",
+    "family": "random"
+  },
+  {
+    "id": "random304",
+    "sequence": "GUUUACUAGUAGGUAC",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random305",
+    "sequence": "ACUUAUCGC",
+    "scaffold": "..(....).",
+    "family": "random"
+  },
+  {
+    "id": "random306",
+    "sequence": "CCCAUUGA",
+    "scaffold": "..(...).",
+    "family": "random"
+  },
+  {
+    "id": "random307",
+    "sequence": "AAAUGCGGGAGCCG",
+    "scaffold": "......((...)).",
+    "family": "random"
+  },
+  {
+    "id": "random308",
+    "sequence": "UCGUC",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random309",
+    "sequence": "GGCGCC",
+    "scaffold": ".(...)",
+    "family": "random"
+  },
+  {
+    "id": "random310",
+    "sequence": "UAUCAUUG",
+    "scaffold": "((...).)",
+    "family": "random"
+  },
+  {
+    "id": "random311",
+    "sequence": "CUUGUGAAUUGUG",
+    "scaffold": "...(.(...).).",
+    "family": "random"
+  },
+  {
+    "id": "random312",
+    "sequence": "AUUUUCACCAGGUA",
+    "scaffold": "..............",
+    "family": "random"
+  },
+  {
+    "id": "random313",
+    "sequence": "GUACUAAUCCUA",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random314",
+    "sequence": "GUAUUGUCCCUC",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random315",
+    "sequence": "GUUAU",
+    "scaffold": "(...)",
+    "family": "random"
+  },
+  {
+    "id": "random316",
+    "sequence": "GCAAC",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random317",
+    "sequence": "CGAAUGU",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random318",
+    "sequence": "GGAGAGAU",
+    "scaffold": "........",
+    "family": "random"
+  },
+  {
+    "id": "random319",
+    "sequence": "CGAGAUUAU",
+    "scaffold": ".(....)..",
+    "family": "random"
+  },
+  {
+    "id": "random320",
+    "sequence": "CACAUGACUUGUGCGA",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random321",
+    "sequence": "ACUGUGU",
+    "scaffold": ".(...).",
+    "family": "random"
+  },
+  {
+    "id": "random322",
+    "sequence": "GUGACAUACACUA",
+    "scaffold": ".(...)(.....)",
+    "family": "random"
+  },
+  {
+    "id": "random323",
+    "sequence": "CGUGCUACUCUUGCA",
+    "scaffold": "...(...)..(...)",
+    "family": "random"
+  },
+  {
+    "id": "random324",
+    "sequence": "UCCACUCG",
+    "scaffold": "........",
+    "family": "random"
+  },
+  {
+    "id": "random325",
+    "sequence": "ACACUAA",
+    "scaffold": "(...)..",
+    "family": "random"
+  },
+  {
+    "id": "random326",
+    "sequence": "CCUGUUA",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random327",
+    "sequence": "GCAAUUUGGAAAC",
+    "scaffold": "(.....).(...)",
+    "family": "random"
+  },
+  {
+    "id": "random328",
+    "sequence": "GCCCUGCUACA",
+    "scaffold": "...........",
+    "family": "random"
+  },
+  {
+    "id": "random329",
+    "sequence": "AGUAGUUGC",
+    "scaffold": "..(....).",
+    "family": "random"
+  },
+  {
+    "id": "random330",
+    "sequence": "CGGGUACAGC",
+    "scaffold": ".((...)..)",
+    "family": "random"
+  },
+  {
+    "id": "random331",
+    "sequence": "CAGUUU",
+    "scaffold": ".(...)",
+    "family": "random"
+  },
+  {
+    "id": "random332",
+    "sequence": "GGGCAACA",
+    "scaffold": "........",
+    "family": "random"
+  },
+  {
+    "id": "random333",
+    "sequence": "UCCACCUA",
+    "scaffold": "(......)",
+    "family": "random"
+  },
+  {
+    "id": "random334",
+    "sequence": "GGCACCAGCC",
+    "scaffold": "(.(....).)",
+    "family": "random"
+  },
+  {
+    "id": "random335",
+    "sequence": "GCCUUUAGUGGC",
+    "scaffold": "(....)......",
+    "family": "random"
+  },
+  {
+    "id": "random336",
+    "sequence": "ACGGAUCUGUUCCUA",
+    "scaffold": "...............",
+    "family": "random"
+  },
+  {
+    "id": "random337",
+    "sequence": "CUGAC",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random338",
+    "sequence": "CCCAACCCUCC",
+    "scaffold": "....(...)..",
+    "family": "random"
+  },
+  {
+    "id": "random339",
+    "sequence": "ACACA",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random340",
+    "sequence": "GGAACGGACU",
+    "scaffold": "..........",
+    "family": "random"
+  },
+  {
+    "id": "random341",
+    "sequence": "GGUAUUUC",
+    "scaffold": ".(.....)",
+    "family": "random"
+  },
+  {
+    "id": "random342",
+    "sequence": "UGAUCGUCCUG",
+    "scaffold": "...(.(...))",
+    "family": "random"
+  },
+  {
+    "id": "random343",
+    "sequence": "UGUGCCCGG",
+    "scaffold": ".(....)..",
+    "family": "random"
+  },
+  {
+    "id": "random344",
+    "sequence": "AAAUACGGG",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random345",
+    "sequence": "GUACCAC",
+    "scaffold": "(...)..",
+    "family": "random"
+  },
+  {
+    "id": "random346",
+    "sequence": "CACCU",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random347",
+    "sequence": "AUUCACAU",
+    "scaffold": "(......)",
+    "family": "random"
+  },
+  {
+    "id": "random348",
+    "sequence": "GUUUAGUAUCCUGGGA",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random349",
+    "sequence": "AGACAAUCA",
+    "scaffold": ".(....)..",
+    "family": "random"
+  },
+  {
+    "id": "random350",
+    "sequence": "UUCCCACCGCGCG",
+    "scaffold": ".(......)....",
+    "family": "random"
+  },
+  {
+    "id": "random351",
+    "sequence": "CAUCCUG",
+    "scaffold": ".(...).",
+    "family": "random"
+  },
+  {
+    "id": "random352",
+    "sequence": "UCUGGAACG",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random353",
+    "sequence": "AUUCUCG",
+    "scaffold": "..(...)",
+    "family": "random"
+  },
+  {
+    "id": "random354",
+    "sequence": "CUGCAUC",
+    "scaffold": "..(...)",
+    "family": "random"
+  },
+  {
+    "id": "random355",
+    "sequence": "CACCUCAGGGCACG",
+    "scaffold": "(......)(...).",
+    "family": "random"
+  },
+  {
+    "id": "random356",
+    "sequence": "GCUCCUAUU",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random357",
+    "sequence": "AUCUCAUAGCA",
+    "scaffold": "....(...)..",
+    "family": "random"
+  },
+  {
+    "id": "random358",
+    "sequence": "CAGCACCCCACCUGC",
+    "scaffold": "...............",
+    "family": "random"
+  },
+  {
+    "id": "random359",
+    "sequence": "GAUAUCGAG",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random360",
+    "sequence": "GGGCUCGCUUGUAAGA",
+    "scaffold": "................",
+    "family": "random"
+  },
+  {
+    "id": "random361",
+    "sequence": "UUAUUAGCCGGGCAAG",
+    "scaffold": "(..((....))..)..",
+    "family": "random"
+  },
+  {
+    "id": "random362",
+    "sequence": "CAUUAAUACA",
+    "scaffold": "..(....)..",
+    "family": "random"
+  },
+  {
+    "id": "random363",
+    "sequence": "AUCAU",
+    "scaffold": "(...)",
+    "family": "random"
+  },
+  {
+    "id": "random364",
+    "sequence": "AAAAAAU",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random365",
+    "sequence": "UUCCGGUGACGU",
+    "scaffold": "............",
+    "family": "random"
+  },
+  {
+    "id": "random366",
+    "sequence": "CUGCCAAUC",
+    "scaffold": ".........",
+    "family": "random"
+  },
+  {
+    "id": "random367",
+    "sequence": "UCUGAAGCUCAAGGUC",
+    "scaffold": "...(...(....)..)",
+    "family": "random"
+  },
+  {
+    "id": "random368",
+    "sequence": "GUGAACA",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random369",
+    "sequence": "CUGAAGUUGAAGGGU",
+    "scaffold": ".(...).(....)..",
+    "family": "random"
+  },
+  {
+    "id": "random370",
+    "sequence": "UGCCCU",
+    "scaffold": ".(...)",
+    "family": "random"
+  },
+  {
+    "id": "random371",
+    "sequence": "CUAGAACUGACCCAA",
+    "scaffold": "...............",
+    "family": "random"
+  },
+  {
+    "id": "random372",
+    "sequence": "GCCAGUCCGAUGCG",
+    "scaffold": "..............",
+    "family": "random"
+  },
+  {
+    "id": "random373",
+    "sequence": "UCUAGAC",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random374",
+    "sequence": "CGCCA",
+    "scaffold": ".....",
+    "family": "random"
+  },
+  {
+    "id": "random375",
+    "sequence": "UGAGAG",
+    "scaffold": "(...).",
+    "family": "random"
+  },
+  {
+    "id": "random376",
+    "sequence": "CAAUCGC",
+    "scaffold": ".......",
+    "family": "random"
+  },
+  {
+    "id": "random377",
+    "sequence": "AAGAAACU",
+    "scaffold": "...(...)",
+    "family": "random"
+  },
+  {
+    "id": "random378",
+    "sequence": "UUUGACCA",
+    "scaffold": "(......)",
+    "family": "random"
+  },
+  {
+    "id": "random379",
+    "sequence": "AGUAGGU",
+    "scaffold": ".(....)",
+    "family": "random"
+  },
+  {
+    "id": "random380",
+    "sequence": "CCGUUAUUGGCCG",
+    "scaffold": ".............",
+    "family": "random"
+  },
+  {
+    "id": "random381",
+    "sequence": "AGCGGUAACCAACGA",
+    "scaffold": ".(......)......",
+    "family": "random"
+  },
+  {
+    "id": "random382",
+    "sequence": "GCUCACAAUCACA",
+    "scaffold": "....(...)....",
+    "family": "random"
+  },
+  {
+    "id": "random383",
+    "sequence": "UCGGG",
+    "scaffold": "(...)",
+    "family": "random"
+  },
+  {
+    "id": "random384",
+    "sequence": "UAUAGC",
+    "scaffold": "......",
+    "family": "random"
+  },
+  {
+    "id": "random385",
+    "sequence": "UGGCGAAGCUGCCCA",
+    "scaffold": "..(..(...)...).",
+    "family": "random"
+  },
+  {
+    "id": "random386",
+    "sequence": "GUAUU",
+    "scaffold": "(...)",
+    "family": "random"
+  },
+  {
+    "id": "random387",
+    "sequence": "AUGGCCAUGUAUCGUA",
+    "scaffold": "..(((...))..)...",
+    "family": "random"
+  },
+  {
+    "id": "random388",
+    "sequence": "GGUAGCUCGUUGUG",
+    "scaffold": "..............",
+    "family": "random"
+  },
+  {
+    "id": "random389",
+    "sequence": "AAACGGUGCUCG",
+    "scaffold": "....(....)..",
+    "family": "random"
+  },
+  {
+    "id": "random390",
+    "sequence": "AGCUAUAAACAGAA",
+    "scaffold": "(....)........",
+    "family": "random"
+  },
+  {
+    "id": "random391",
+    "sequence": "UUGAA",
+    "scaffold": "(...)",
+    "family": "random"
+  },
+  {
+    "id": "random392",
+    "sequence": "UCUCUUGUGACGUAC",
+    "scaffold": "...............",
+    "family": "random"
+  },
+  {
+    "id": "random393",
+    "sequence": "UUUACAUCCUGUC",
+    "scaffold": "(....)(...)..",
+    "family": "random"
+  },
+  {
+    "id": "random394",
+    "sequence": "CCCAG",
+    "scaffold": "(...)",
+    "family": "random"
+  },
+  {
+    "id": "random395",
+    "sequence": "UAGUGAAU",
+    "scaffold": "..(....)",
+    "family": "random"
+  },
+  {
+    "id": "random396",
+    "sequence": "CCCACUGAAGACAUU",
+    "scaffold": "...............",
+    "family": "random"
+  },
+  {
+    "id": "random397",
+    "sequence": "ACUCUGUCGU",
+    "scaffold": "((...))...",
+    "family": "random"
+  },
+  {
+    "id": "random398",
+    "sequence": "AUCUUUCAGUC",
+    "scaffold": ".(.....)...",
+    "family": "random"
+  },
+  {
+    "id": "random399",
+    "sequence": "UGCCGGCACU",
+    "scaffold": "....(...).",
+    "family": "random"
+  },
+  {
+    "id": "pk000",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "(....)(....)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk001",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "....(....)....",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk002",
+    "sequence": "GCGCGCGCGCGCGCGC",
+    "scaffold": "(....)(....)....",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk003",
+    "sequence": "GUGUGUGUGUGUGUGUGU",
+    "scaffold": "..................",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk004",
+    "sequence": "GCGCGCGCGCGCGCGCGCGC",
+    "scaffold": "..((....))..(....)..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk005",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "(..(....))..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk006",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "(............)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk007",
+    "sequence": "GUGUGUGUGUGUGUGU",
+    "scaffold": ".....((....))...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk008",
+    "sequence": "GCGCGCGCGCGCGCGCGC",
+    "scaffold": "..(....).(....)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk009",
+    "sequence": "GUGUGUGUGUGUGUGUGUGU",
+    "scaffold": "..(((....))(....))..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk010",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": ".....(....).",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk011",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "(....)(....)..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk012",
+    "sequence": "GCGCGCGCGCGCGCGC",
+    "scaffold": ".(....)(....)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk013",
+    "sequence": "GUGUGUGUGUGUGUGUGU",
+    "scaffold": "(....)...(....)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk014",
+    "sequence": "GCGCGCGCGCGCGCGCGCGC",
+    "scaffold": "(....)(....)..(....)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk015",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "..(........)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk016",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "(....).(....).",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk017",
+    "sequence": "GUGUGUGUGUGUGUGU",
+    "scaffold": ".(..(....)....).",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk018",
+    "sequence": "GCGCGCGCGCGCGCGCGC",
+    "scaffold": "(....)(....)(....)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk019",
+    "sequence": "GUGUGUGUGUGUGUGUGUGU",
+    "scaffold": ".(....)(....).(....)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk020",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "............",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk021",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "(....).(....).",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk022",
+    "sequence": "GCGCGCGCGCGCGCGC",
+    "scaffold": "(....)((....))..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk023",
+    "sequence": "GUGUGUGUGUGUGUGUGU",
+    "scaffold": "...(..(....)..)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk024",
+    "sequence": "GCGCGCGCGCGCGCGCGCGC",
+    "scaffold": "...........(....)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk025",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "............",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk026",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "...((....))...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk027",
+    "sequence": "GUGUGUGUGUGUGUGU",
+    "scaffold": "..(..(.(....).))",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk028",
+    "sequence": "GCGCGCGCGCGCGCGCGC",
+    "scaffold": "...(....).(....)..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk029",
+    "sequence": "GUGUGUGUGUGUGUGUGUGU",
+    "scaffold": "(....)(.(....)...)..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk030",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "..((....))..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk031",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "((....))(....)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk032",
+    "sequence": "GCGCGCGCGCGCGCGC",
+    "scaffold": ".(....).(....)..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk033",
+    "sequence": "GUGUGUGUGUGUGUGUGU",
+    "scaffold": "...((....)..).....",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk034",
+    "sequence": "GCGCGCGCGCGCGCGCGCGC",
+    "scaffold": "(....)...(....).....",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk035",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "............",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk036",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": ".....(....)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk037",
+    "sequence": "GUGUGUGUGUGUGUGU",
+    "scaffold": "..((....))(....)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk038",
+    "sequence": "GCGCGCGCGCGCGCGCGC",
+    "scaffold": ".(....)(....).....",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk039",
+    "sequence": "GUGUGUGUGUGUGUGUGUGU",
+    "scaffold": "..(....(....))(....)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk040",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": ".(.(....).).",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk041",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "....(..(....))",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk042",
+    "sequence": "GCGCGCGCGCGCGCGC",
+    "scaffold": "(....)...(....).",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk043",
+    "sequence": "GUGUGUGUGUGUGUGUGU",
+    "scaffold": "((....))((....))..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk044",
+    "sequence": "GCGCGCGCGCGCGCGCGCGC",
+    "scaffold": "....................",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk045",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": ".....(....).",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk046",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "..............",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk047",
+    "sequence": "GUGUGUGUGUGUGUGU",
+    "scaffold": ".(....)..(....).",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk048",
+    "sequence": "GCGCGCGCGCGCGCGCGC",
+    "scaffold": "..................",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk049",
+    "sequence": "GUGUGUGUGUGUGUGUGUGU",
+    "scaffold": "...((....))(....)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk050",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "...(....)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk051",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "..(....)(....)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk052",
+    "sequence": "GCGCGCGCGCGCGCGC",
+    "scaffold": "(......)((....))",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk053",
+    "sequence": "GUGUGUGUGUGUGUGUGU",
+    "scaffold": "((.(....)...))....",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk054",
+    "sequence": "GCGCGCGCGCGCGCGCGCGC",
+    "scaffold": "...((....))(....)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk055",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": ".((....))...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk056",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": ".(....(....)).",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk057",
+    "sequence": "GUGUGUGUGUGUGUGU",
+    "scaffold": "...((....)).....",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk058",
+    "sequence": "GCGCGCGCGCGCGCGCGC",
+    "scaffold": ".(............)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk059",
+    "sequence": "GUGUGUGUGUGUGUGUGUGU",
+    "scaffold": ".....(....).........",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk060",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "............",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk061",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": ".(.(....).)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk062",
+    "sequence": "GCGCGCGCGCGCGCGC",
+    "scaffold": "....(...(....).)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk063",
+    "sequence": "GUGUGUGUGUGUGUGUGU",
+    "scaffold": ".(....)....(....).",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk064",
+    "sequence": "GCGCGCGCGCGCGCGCGCGC",
+    "scaffold": "....................",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk065",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": ".....(....).",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk066",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": ".(((....)))...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk067",
+    "sequence": "GUGUGUGUGUGUGUGU",
+    "scaffold": ".(((....))).....",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk068",
+    "sequence": "GCGCGCGCGCGCGCGCGC",
+    "scaffold": "..................",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk069",
+    "sequence": "GUGUGUGUGUGUGUGUGUGU",
+    "scaffold": "((....))(.(....).)..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk070",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "............",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk071",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "...(..(....)).",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk072",
+    "sequence": "GCGCGCGCGCGCGCGC",
+    "scaffold": "..((....)..)....",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk073",
+    "sequence": "GUGUGUGUGUGUGUGUGU",
+    "scaffold": "(....)(.(....)...)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk074",
+    "sequence": "GCGCGCGCGCGCGCGCGCGC",
+    "scaffold": "(....).(......).....",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk075",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": ".....(....).",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk076",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "...((....))...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk077",
+    "sequence": "GUGUGUGUGUGUGUGU",
+    "scaffold": ".....((....))...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk078",
+    "sequence": "GCGCGCGCGCGCGCGCGC",
+    "scaffold": ".....(....).......",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk079",
+    "sequence": "GUGUGUGUGUGUGUGUGUGU",
+    "scaffold": "(....(..(....))..)..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk080",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "..(..(....))",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk081",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "(((....)..))..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk082",
+    "sequence": "GCGCGCGCGCGCGCGC",
+    "scaffold": "(...(....)...)..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk083",
+    "sequence": "GUGUGUGUGUGUGUGUGU",
+    "scaffold": "(....).(....).....",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk084",
+    "sequence": "GCGCGCGCGCGCGCGCGCGC",
+    "scaffold": "...((....)).((....))",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk085",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "...(....)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk086",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "...((....))...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk087",
+    "sequence": "GUGUGUGUGUGUGUGU",
+    "scaffold": "..(..........)..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk088",
+    "sequence": "GCGCGCGCGCGCGCGCGC",
+    "scaffold": "..................",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk089",
+    "sequence": "GUGUGUGUGUGUGUGUGUGU",
+    "scaffold": "..((....))....(....)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk090",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "....((....))",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk091",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "..............",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk092",
+    "sequence": "GCGCGCGCGCGCGCGC",
+    "scaffold": "....(((....)))..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk093",
+    "sequence": "GUGUGUGUGUGUGUGUGU",
+    "scaffold": "(..(.(....).)....)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk094",
+    "sequence": "GCGCGCGCGCGCGCGCGCGC",
+    "scaffold": "(....)(((....))....)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk095",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "...(....)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk096",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "..(........)..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk097",
+    "sequence": "GUGUGUGUGUGUGUGU",
+    "scaffold": ".......(....)...",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk098",
+    "sequence": "GCGCGCGCGCGCGCGCGC",
+    "scaffold": "(....)(....)(....)",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "pk099",
+    "sequence": "GUGUGUGUGUGUGUGUGUGU",
+    "scaffold": "((....))..((....))..",
+    "family": "pk_enriched"
+  },
+  {
+    "id": "grid8_0_1_6",
+    "sequence": "GCGCGCGC",
+    "scaffold": "(....)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid8_0_1_8",
+    "sequence": "GCGCGCGC",
+    "scaffold": "(......)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid8_0_2_7",
+    "sequence": "GCGCGCGC",
+    "scaffold": ".(....).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid8_0_3_8",
+    "sequence": "GCGCGCGC",
+    "scaffold": "..(....)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid8_1_1_6",
+    "sequence": "GUGUGUGU",
+    "scaffold": "(....)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid8_1_1_8",
+    "sequence": "GUGUGUGU",
+    "scaffold": "(......)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid8_1_2_7",
+    "sequence": "GUGUGUGU",
+    "scaffold": ".(....).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid8_1_3_8",
+    "sequence": "GUGUGUGU",
+    "scaffold": "..(....)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_0_1_6",
+    "sequence": "GCGCGCGCGC",
+    "scaffold": "(....)....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_0_1_8",
+    "sequence": "GCGCGCGCGC",
+    "scaffold": "(......)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_0_1_10",
+    "sequence": "GCGCGCGCGC",
+    "scaffold": "(........)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_0_2_7",
+    "sequence": "GCGCGCGCGC",
+    "scaffold": ".(....)...",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_0_2_9",
+    "sequence": "GCGCGCGCGC",
+    "scaffold": ".(......).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_0_3_8",
+    "sequence": "GCGCGCGCGC",
+    "scaffold": "..(....)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_0_3_10",
+    "sequence": "GCGCGCGCGC",
+    "scaffold": "..(......)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_0_4_9",
+    "sequence": "GCGCGCGCGC",
+    "scaffold": "...(....).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_0_5_10",
+    "sequence": "GCGCGCGCGC",
+    "scaffold": "....(....)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_1_1_6",
+    "sequence": "GUGUGUGUGU",
+    "scaffold": "(....)....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_1_1_8",
+    "sequence": "GUGUGUGUGU",
+    "scaffold": "(......)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_1_1_10",
+    "sequence": "GUGUGUGUGU",
+    "scaffold": "(........)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_1_2_7",
+    "sequence": "GUGUGUGUGU",
+    "scaffold": ".(....)...",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_1_2_9",
+    "sequence": "GUGUGUGUGU",
+    "scaffold": ".(......).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_1_3_8",
+    "sequence": "GUGUGUGUGU",
+    "scaffold": "..(....)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_1_3_10",
+    "sequence": "GUGUGUGUGU",
+    "scaffold": "..(......)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_1_4_9",
+    "sequence": "GUGUGUGUGU",
+    "scaffold": "...(....).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid10_1_5_10",
+    "sequence": "GUGUGUGUGU",
+    "scaffold": "....(....)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_1_6",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "(....)......",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_1_8",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "(......)....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_1_10",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "(........)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_1_12",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "(..........)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_2_7",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": ".(....).....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_2_9",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": ".(......)...",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_2_11",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": ".(........).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_3_8",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "..(....)....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_3_10",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "..(......)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_3_12",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "..(........)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_4_9",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "...(....)...",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_4_11",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "...(......).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_5_10",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "....(....)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_5_12",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "....(......)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_6_11",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": ".....(....).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_0_7_12",
+    "sequence": "GCGCGCGCGCGC",
+    "scaffold": "......(....)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_1_6",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "(....)......",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_1_8",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "(......)....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_1_10",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "(........)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_1_12",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "(..........)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_2_7",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": ".(....).....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_2_9",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": ".(......)...",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_2_11",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": ".(........).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_3_8",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "..(....)....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_3_10",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "..(......)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_3_12",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "..(........)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_4_9",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "...(....)...",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_4_11",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "...(......).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_5_10",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "....(....)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_5_12",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "....(......)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_6_11",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": ".....(....).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid12_1_7_12",
+    "sequence": "GUGUGUGUGUGU",
+    "scaffold": "......(....)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_1_6",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "(....)........",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_1_8",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "(......)......",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_1_10",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "(........)....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_1_12",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "(..........)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_1_14",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "(............)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_2_7",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": ".(....).......",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_2_9",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": ".(......).....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_2_11",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": ".(........)...",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_2_13",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": ".(..........).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_3_8",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "..(....)......",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_3_10",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "..(......)....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_3_12",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "..(........)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_3_14",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "..(..........)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_4_9",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "...(....).....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_4_11",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "...(......)...",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_4_13",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "...(........).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_5_10",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "....(....)....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_5_12",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "....(......)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_5_14",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "....(........)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_6_11",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": ".....(....)...",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_6_13",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": ".....(......).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_7_12",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "......(....)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_7_14",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "......(......)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_8_13",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": ".......(....).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_0_9_14",
+    "sequence": "GCGCGCGCGCGCGC",
+    "scaffold": "........(....)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_1_6",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "(....)........",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_1_8",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "(......)......",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_1_10",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "(........)....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_1_12",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "(..........)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_1_14",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "(............)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_2_7",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": ".(....).......",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_2_9",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": ".(......).....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_2_11",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": ".(........)...",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_2_13",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": ".(..........).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_3_8",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "..(....)......",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_3_10",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "..(......)....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_3_12",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "..(........)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_3_14",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "..(..........)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_4_9",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "...(....).....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_4_11",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "...(......)...",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_4_13",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "...(........).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_5_10",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "....(....)....",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_5_12",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "....(......)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_5_14",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "....(........)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_6_11",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": ".....(....)...",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_6_13",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": ".....(......).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_7_12",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "......(....)..",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_7_14",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "......(......)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_8_13",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": ".......(....).",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "grid14_1_9_14",
+    "sequence": "GUGUGUGUGUGUGU",
+    "scaffold": "........(....)",
+    "family": "single_pair_grid"
+  },
+  {
+    "id": "fresh000",
+    "sequence": "CCAGCAGCUGGCAUGCU",
+    "scaffold": ".................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh001",
+    "sequence": "ACGGGCAUGUGAAUACGA",
+    "scaffold": ".......(........).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh002",
+    "sequence": "CACGUACAAGUAUCAAAGU",
+    "scaffold": ".............(...).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh003",
+    "sequence": "AUUGUAAAGUACUUCGUGUA",
+    "scaffold": "....................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh004",
+    "sequence": "CCUGGUAACGAAAAAAU",
+    "scaffold": "....(...........)",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh005",
+    "sequence": "CUUUUGCCCGCAGCGAGA",
+    "scaffold": ".......(........).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh006",
+    "sequence": "CGUAAGAAAAACCAAGGCG",
+    "scaffold": "...................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh007",
+    "sequence": "UCAGCGCGGCGCAAAAAGUG",
+    "scaffold": "...........(.....)..",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh008",
+    "sequence": "CGAUGGGAGCUCACUCA",
+    "scaffold": ".....(....)......",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh009",
+    "sequence": "CCAGGUUGGCAUCGACCC",
+    "scaffold": "..................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh010",
+    "sequence": "AUUCGACGGGGGAUCUCGG",
+    "scaffold": "...........(....)..",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh011",
+    "sequence": "CUUAGACGGGUCGUUCGGAU",
+    "scaffold": ".......(.....)......",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh012",
+    "sequence": "AUGUCCAGGUCCAGGGC",
+    "scaffold": ".................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh013",
+    "sequence": "AAUUAAGCCGAGGACCUU",
+    "scaffold": "............(...).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh014",
+    "sequence": "UACGUCAGGAACCUCAGGG",
+    "scaffold": "...(..........)....",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh015",
+    "sequence": "CCGAGUACAGUGGCCGGUCC",
+    "scaffold": "....................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh016",
+    "sequence": "CACAACAGUCGCUGAAU",
+    "scaffold": "......(.....)....",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh017",
+    "sequence": "CAAGUGGCCACGUUACUG",
+    "scaffold": "(....)............",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh018",
+    "sequence": "GGCCUUAUCGGCCGACGGA",
+    "scaffold": "...................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh019",
+    "sequence": "AUCGCUUCGGGGCAUGCGGA",
+    "scaffold": "..(..............)..",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh020",
+    "sequence": "GAAGGGAUCAAGUUGCC",
+    "scaffold": ".....(.......)...",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh021",
+    "sequence": "CCGGGGCGAAGUCGUCGG",
+    "scaffold": "..................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh022",
+    "sequence": "AAGAGAUACGGUCCACAGC",
+    "scaffold": "..(...)............",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh023",
+    "sequence": "CACUCAAUUAACCCACUGCG",
+    "scaffold": ".(.....)............",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh024",
+    "sequence": "UUUUCCCUCGUCAGCAG",
+    "scaffold": ".................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh025",
+    "sequence": "CAAUUAAGCCAAACCUUU",
+    "scaffold": "...(.......)......",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh026",
+    "sequence": "AUGUAGGGACGGGUCGGUU",
+    "scaffold": "......(..........).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh027",
+    "sequence": "CUCAGAACACUUUGGGAUUG",
+    "scaffold": "....................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh028",
+    "sequence": "CAAUUUCGGGCACGCUG",
+    "scaffold": ".....(...).......",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh029",
+    "sequence": "UACAUGCCCCUGCGAAAC",
+    "scaffold": ".........(...)....",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh030",
+    "sequence": "GGUAUCAGUUUUUAACGAA",
+    "scaffold": "...................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh031",
+    "sequence": "AUCUACUGUGUUAUAUAGGC",
+    "scaffold": ".......(.....)......",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh032",
+    "sequence": "ACAUCUUAGUAGACCCC",
+    "scaffold": "(.....)..........",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh033",
+    "sequence": "AGCGCUUCAAUGGGUGCC",
+    "scaffold": "..................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh034",
+    "sequence": "AGUCCUGUUUUGGCCGGUC",
+    "scaffold": "......(......).....",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh035",
+    "sequence": "CUCCUGUCCUAGAAUCAUUC",
+    "scaffold": ".....(............).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh036",
+    "sequence": "UAGACCGGGUUUGGACC",
+    "scaffold": ".................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh037",
+    "sequence": "AAGCCAUCUCGUGUUGUG",
+    "scaffold": "..(......)........",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh038",
+    "sequence": "AUCCGGCUCAAUGAACAUA",
+    "scaffold": "....(............).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh039",
+    "sequence": "CAUCCCACAUGGAGGACCCA",
+    "scaffold": "....................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh040",
+    "sequence": "AAACCUUUAUCGCGUUC",
+    "scaffold": "........(.....)..",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh041",
+    "sequence": "GUACGACCUCCCCUUUGC",
+    "scaffold": "...(............).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh042",
+    "sequence": "GUACUAUUAAUUCUGUUAU",
+    "scaffold": "...................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh043",
+    "sequence": "AAGUACUCCGCAUUUAAGCC",
+    "scaffold": "..(................)",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh044",
+    "sequence": "CUUCGAGCCGUGAGGCA",
+    "scaffold": "(..........).....",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh045",
+    "sequence": "GGAUCUCGAGGUUACAUC",
+    "scaffold": "..................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh046",
+    "sequence": "AUCCUACAGUCACCGCGUA",
+    "scaffold": ".......(.........).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh047",
+    "sequence": "UGCUGUAAUUCCCUGCGCGC",
+    "scaffold": ".....(............).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh048",
+    "sequence": "UCUAUAAGGGCGAGUCG",
+    "scaffold": ".................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh049",
+    "sequence": "CCCCAUCCGUGAUUCAUU",
+    "scaffold": "..(.....).........",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh050",
+    "sequence": "UCAUUGCGUGCGUGCUCUU",
+    "scaffold": ".......(..........)",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh051",
+    "sequence": "ACCGUCGUUCAAGGCUCGGG",
+    "scaffold": "....................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh052",
+    "sequence": "UCUCGAGAACGACCAAC",
+    "scaffold": "(.......)........",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh053",
+    "sequence": "AUGAGAAUCCGAGCCUAC",
+    "scaffold": "...(...)..........",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh054",
+    "sequence": "AGUUGCUAGACUCAGAACG",
+    "scaffold": "...................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh055",
+    "sequence": "CAAGCGCCUCACUUCUACAA",
+    "scaffold": "............(.....).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh056",
+    "sequence": "UAGUCUUCACUCCCGUC",
+    "scaffold": "..(.......)......",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh057",
+    "sequence": "UCUCAAGCCGGCGUGGUC",
+    "scaffold": "..................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh058",
+    "sequence": "AUCAACGUGCGGUUGUUUU",
+    "scaffold": "(............).....",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh059",
+    "sequence": "CUGCCGAUGCGUCCAUCGAG",
+    "scaffold": ".(....).............",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh060",
+    "sequence": "CCGGGGGUCAAAUGAUG",
+    "scaffold": ".................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh061",
+    "sequence": "GAUUUAAGGGCACCACGC",
+    "scaffold": "..(...........)...",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh062",
+    "sequence": "GUAGUCUUCGAUCGGCCUA",
+    "scaffold": ".......(..........)",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh063",
+    "sequence": "ACGCAACACCAUCGGAGGCU",
+    "scaffold": "....................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh064",
+    "sequence": "CGGAGGUGAGAAGCCUA",
+    "scaffold": "..(...........)..",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh065",
+    "sequence": "UAGUCCUAAGUGGGUGCG",
+    "scaffold": "..(...........)...",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh066",
+    "sequence": "UCUUGCUUAGUCUGUACAU",
+    "scaffold": "...................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh067",
+    "sequence": "GAUCAUAGGUCUUGAAAAUC",
+    "scaffold": "....(......)........",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh068",
+    "sequence": "AAAUACUUAAACUAAGU",
+    "scaffold": "......(........).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh069",
+    "sequence": "CUCAGCACACACGUCCGA",
+    "scaffold": "..................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh070",
+    "sequence": "UAAGAGACGUUAACCUUCU",
+    "scaffold": "(...........)......",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh071",
+    "sequence": "CCGUCGUUCGGGCUGAGCCA",
+    "scaffold": "..(.........).......",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh072",
+    "sequence": "GACAGAUGACGACAUAA",
+    "scaffold": ".................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh073",
+    "sequence": "GAAACUUGUCUGAUUGAU",
+    "scaffold": "...(......).......",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh074",
+    "sequence": "AGGCAUUGUGCUGAGUGGG",
+    "scaffold": "..(............)...",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh075",
+    "sequence": "AAAAAAACCAGACUUAUCCC",
+    "scaffold": "....................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh076",
+    "sequence": "AUAGGCAGGUAUCUAUG",
+    "scaffold": "...........(....)",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh077",
+    "sequence": "CCCUGCGGCGUAAACGUC",
+    "scaffold": ".(.......)........",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh078",
+    "sequence": "CUAUAUGUACUUGCCACAA",
+    "scaffold": "...................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh079",
+    "sequence": "GAUAACUUUUUCCUACCAUG",
+    "scaffold": ".(......)...........",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh080",
+    "sequence": "CCCCUCAGUCACCGCCG",
+    "scaffold": ".........(......)",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh081",
+    "sequence": "UAACCAAAAACUUGAUCC",
+    "scaffold": "..................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh082",
+    "sequence": "UAACUCCACAACCAUCUGA",
+    "scaffold": ".........(......)..",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh083",
+    "sequence": "AUCCCUGCGCACGGAAGUGG",
+    "scaffold": "....(.............).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh084",
+    "sequence": "CACAGCCAGUAGAUUAG",
+    "scaffold": ".................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh085",
+    "sequence": "GUAUGGGACUGUCGCCCG",
+    "scaffold": "....(...).........",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh086",
+    "sequence": "GGUAUAAGUGCGCUGAAUC",
+    "scaffold": "....(..........)...",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh087",
+    "sequence": "UGAACGUGCAACUAAAAUCG",
+    "scaffold": "....................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh088",
+    "sequence": "AGGAAAGUCCUAAAUGC",
+    "scaffold": ".........(.....).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh089",
+    "sequence": "CGGUCGUAAAAAACUUGG",
+    "scaffold": ".....(.........)..",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh090",
+    "sequence": "UACUCGCAUGAAAAGAGUC",
+    "scaffold": "...................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh091",
+    "sequence": "CUGAGGAGUUGGCUCCGGCG",
+    "scaffold": ".(.....)............",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh092",
+    "sequence": "CUUGCACAAGGGCCAUA",
+    "scaffold": "(..........).....",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh093",
+    "sequence": "CCAAUCUAUGUAGAUGGA",
+    "scaffold": "..................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh094",
+    "sequence": "GCCCCACGACUAUUGACCG",
+    "scaffold": ".........(....)....",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh095",
+    "sequence": "UCGUUAUAGACUAUUGAGGC",
+    "scaffold": "......(..........)..",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh096",
+    "sequence": "GCCAAGGAAGAAAUCCA",
+    "scaffold": ".................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh097",
+    "sequence": "GGUCGUCACUGCUAACCA",
+    "scaffold": ".(...)............",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh098",
+    "sequence": "AAACCCAAUUUGUGAGAAU",
+    "scaffold": "...(...........)...",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh099",
+    "sequence": "GUUUCGCGAUAGGUACAACU",
+    "scaffold": "....................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh100",
+    "sequence": "AUGUAGUGCAUCCGUUG",
+    "scaffold": "...........(....)",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh101",
+    "sequence": "AUAGGCAGUGCAGAGGGA",
+    "scaffold": "........(...).....",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh102",
+    "sequence": "ACGUGCAUGCACAUUAUGA",
+    "scaffold": "...................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh103",
+    "sequence": "CUGCGGCGGAUGGAGGUACU",
+    "scaffold": "(.............).....",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh104",
+    "sequence": "UGGUUAUCAGAGCCGAG",
+    "scaffold": "..(....).........",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh105",
+    "sequence": "UAUAUGCUUUAGAAGCAG",
+    "scaffold": "..................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh106",
+    "sequence": "GGGUUUAGACCCGACAUGC",
+    "scaffold": "..(........).......",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh107",
+    "sequence": "CUUACGGCCAACCAAGUAUG",
+    "scaffold": ".(...............)..",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh108",
+    "sequence": "CCCAACUAGCCACCUGC",
+    "scaffold": ".................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh109",
+    "sequence": "GAACUGCAAGCAUGCGGU",
+    "scaffold": "...(...........)..",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh110",
+    "sequence": "UCCAUGGGUAUCACCUUAC",
+    "scaffold": "........(........).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh111",
+    "sequence": "UCCUUCCGCGAACGCAGCUU",
+    "scaffold": "....................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh112",
+    "sequence": "CAUGACCUGAAUAUUGA",
+    "scaffold": "...(.........)...",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh113",
+    "sequence": "CCAGCUGCUCCGUAACAC",
+    "scaffold": "(..........)......",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh114",
+    "sequence": "GAACUCGGCGCAUAAACGU",
+    "scaffold": "...................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh115",
+    "sequence": "UACCCUAGAGUACUGGGAUG",
+    "scaffold": "....(..............)",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh116",
+    "sequence": "GCGGGAGCGGUAUAGCC",
+    "scaffold": ".........(.....).",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh117",
+    "sequence": "AGACAACGCAAACGGGAG",
+    "scaffold": "..................",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh118",
+    "sequence": "CUGCUGUCCUGGCCUGACU",
+    "scaffold": ".....(......)......",
+    "family": "fresh_random_17_20"
+  },
+  {
+    "id": "fresh119",
+    "sequence": "UCAUUUUAUCUGGAUAUUUA",
+    "scaffold": ".....(......).......",
+    "family": "fresh_random_17_20"
+  }
+]

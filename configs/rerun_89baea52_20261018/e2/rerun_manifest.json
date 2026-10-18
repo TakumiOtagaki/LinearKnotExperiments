@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-18T12:09:40.347155+00:00",
+  "settings": {
+    "revision": "89baea52",
+    "date": "20261018",
+    "software_root": "deps/LinearCParty-89baea52",
+    "build_dir": "build/linear-cparty-89baea52",
+    "software_lock": "manifests/software-pilot-89baea52.json",
+    "stage_build_dir": "build/stage-timing-89baea52",
+    "stage_software_lock": "manifests/software-stage-timing-89baea52-20261018.json",
+    "resource": "cpu_40",
+    "workers": 10,
+    "memory_limit_mib": 8192,
+    "task_overhead_mib": 1024,
+    "h_rt": "12:00:00",
+    "max_inputs_per_task": 1024,
+    "parallel_slowdown_factor": 1.5,
+    "parallel_check_h_rt": "12:00:00",
+    "note": "All E2 measurements rerun after the ordinary multiloop closing correction; same cpu_40/10 workers/8192 MiB as d02d261c.",
+    "templates": [
+      "e2_rnacentral_d21618c5_20261014",
+      "e2_synthetic_shapes_d21618c5_20261014",
+      "e2_memory_breakdown_d21618c5_20261016"
+    ]
+  },
+  "dry_run": false,
+  "estimate_only": false,
+  "variants": [
+    {
+      "name": "e2_rnacentral_89baea52_20261018",
+      "config": "configs/rerun_89baea52_20261018/e2/e2_rnacentral_89baea52_20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/e2/arrays/e2_rnacentral_89baea52_20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "memory_cap_envelope_mib": 82944
+    },
+    {
+      "name": "e2_synthetic_shapes_89baea52_20261018",
+      "config": "configs/rerun_89baea52_20261018/e2/e2_synthetic_shapes_89baea52_20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/e2/arrays/e2_synthetic_shapes_89baea52_20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "memory_cap_envelope_mib": 82944
+    },
+    {
+      "name": "e2_memory_breakdown_89baea52_20261018",
+      "config": "configs/rerun_89baea52_20261018/e2/e2_memory_breakdown_89baea52_20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/e2/arrays/e2_memory_breakdown_89baea52_20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/stage-timing-89baea52",
+      "memory_cap_envelope_mib": 82944
+    },
+    {
+      "name": "e2_parallel_impact_w1_89baea52_20261018",
+      "config": "configs/rerun_89baea52_20261018/e2/e2_parallel_impact_w1_89baea52_20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/e2/arrays/e2_parallel_impact_w1_89baea52_20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "memory_cap_envelope_mib": 9216
+    },
+    {
+      "name": "e2_parallel_impact_w10_89baea52_20261018",
+      "config": "configs/rerun_89baea52_20261018/e2/e2_parallel_impact_w10_89baea52_20261018.json",
+      "array_config": "configs/rerun_89baea52_20261018/e2/arrays/e2_parallel_impact_w10_89baea52_20261018.json",
+      "software_root": "deps/LinearCParty-89baea52",
+      "build_dir": "build/linear-cparty-89baea52",
+      "memory_cap_envelope_mib": 82944
+    }
+  ]
+}

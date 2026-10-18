@@ -165,10 +165,11 @@ def analyze(args):
     started = time.monotonic()
     beam_plan, exact_plan = [production.load_plan(p) for p in (args.beam_run, args.exact_run)]
     production.check_reference_plans(beam_plan, exact_plan)
+    production.check_exact_modes(beam_plan, exact_plan)
     beam_tasks, hashes = production.cohort(beam_plan, production.SHORT)
     exact_tasks, exact_hashes = production.cohort(exact_plan, production.SHORT)
     modes = [f"beam{b}_outer" for b in BEAMS]
-    if hashes != exact_hashes or [m["name"] for m in exact_plan["config"]["modes"]] != ["exact"]:
+    if hashes != exact_hashes:
         raise ValueError("exact cohort or reference mode mismatch")
     if {m["name"] for m in beam_plan["config"]["modes"]} != set(modes + ["exact"]):
         raise ValueError("unexpected beam conditions")

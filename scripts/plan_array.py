@@ -246,7 +246,7 @@ def script_text(plan, tier, count):
               ': "${SGE_TASK_ID:?Run as an SGE array task}"',
               ': "${JOB_ID:?Missing scheduler allocation}"',
               "cd " + shlex.quote(str(ROOT)),
-              "export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1",
+              "export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1",
               '# Optional first argument: --resume (submit only the interrupted task range).',
               'exec "${LCP_PYTHON:-python3}" scripts/run_array_task.py \\',
               "  --plan " + shlex.quote(str(output / "array_plan.json")) + " \\",

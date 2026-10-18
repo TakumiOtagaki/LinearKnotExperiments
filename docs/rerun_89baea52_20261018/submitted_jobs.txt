@@ -1,0 +1,52 @@
+9052462 jobs/e0-bprna-legacy-89baea52-20261018/nt1_49.sh
+9052463 jobs/e0-bprna-legacy-89baea52-20261018/nt50_99.sh
+9052464 jobs/e0-bprna-legacy-89baea52-20261018/nt100_199.sh
+9052465 jobs/e0-bprna-legacy-89baea52-20261018/nt200_299.sh
+9052466 jobs/e0-bprna-legacy-89baea52-20261018/nt300_399.sh
+9052467 jobs/pk-recovery-200-turner04-89baea52-20261018/pk200.sh
+9052468 jobs/pk-recovery-200-dp09-89baea52-20261018/pk200.sh
+9052469 jobs/pk-recovery-80-89baea52-20261018/pk80.sh
+9052471 jobs/pk-recovery-rrna-89baea52-20261018/rrna.sh
+9052472 jobs/pk-membership-89baea52-20261018/membership.sh
+9052473 jobs/e0-validation-89baea52-20261018/enumeration.sh
+9052474 jobs/e0-validation-89baea52-20261018/decoding.sh
+9052475 jobs/e0-validation-89baea52-20261018/byloop.sh
+9052476 jobs/e0-validation-89baea52-20261018/vienna.sh
+9052477 jobs/e0-validation-89baea52-20261018/linearspace.sh
+9052478 jobs/e2-rnacentral-89baea52-20261018/rna_4_8kb.sh
+9052479 jobs/e2-rnacentral-89baea52-20261018/rna_8_20kb.sh
+9052480 jobs/e2-rnacentral-89baea52-20261018/rna_20_30kb.sh
+9052481 jobs/e2-synthetic-shapes-89baea52-20261018/synthetic_n250.sh
+9052482 jobs/e2-synthetic-shapes-89baea52-20261018/synthetic_n500.sh
+9052483 jobs/e2-synthetic-shapes-89baea52-20261018/synthetic_n1000.sh
+9052484 jobs/e2-synthetic-shapes-89baea52-20261018/synthetic_n2000.sh
+9052485 jobs/e2-synthetic-shapes-89baea52-20261018/synthetic_n4000.sh
+9052557 jobs/e2-memory-breakdown-89baea52-20261018/rna_4_8kb.sh h_rt=03:00:00
+9052559 jobs/e2-memory-breakdown-89baea52-20261018/rna_8_20kb.sh h_rt=03:00:00
+9052560 jobs/e2-memory-breakdown-89baea52-20261018/rna_20_30kb.sh h_rt=03:00:00
+9052562 jobs/e2-parallel-impact-w1-89baea52-20261018/parallel_impact.sh h_rt=03:00:00
+9052563 jobs/e2-parallel-impact-w10-89baea52-20261018/parallel_impact.sh h_rt=03:00:00
+9052565 jobs/e1-bprna-short-89baea52-20261018/nt50_99.sh h_rt=02:00:00
+9052566 jobs/e1-bprna-short-89baea52-20261018/nt100_199.sh h_rt=02:00:00
+9052567 jobs/e1-bprna-short-89baea52-20261018/nt200_299.sh h_rt=03:00:00
+9052568 jobs/e1-bprna-short-89baea52-20261018/nt300_399.sh h_rt=03:00:00
+# E1 long (9052515-9052517) withdrawn before start: group TSUBAME points exhausted (nt3200_4381 rejected). To be resubmitted with reduced h_rt after author decision.
+9052539 jobs/e3-neat1-bpp-89baea52-20261018/neat1_short.sh h_rt=02:00:00
+9052540 jobs/e3-neat1-bpp-89baea52-20261018/neat1_long.sh h_rt=06:00:00
+9052541 jobs/e3-neat1-capr-89baea52-20261018/neat1_short.sh h_rt=02:00:00
+9052542 jobs/e3-neat1-capr-89baea52-20261018/neat1_long.sh h_rt=06:00:00
+9052543 jobs/e3-neat1-mea-89baea52-20261018/neat1_short.sh h_rt=02:00:00
+9052544 jobs/e3-neat1-mea-89baea52-20261018/neat1_long.sh h_rt=06:00:00
+9052545 jobs/e3-neat1-raccess-byloop-89baea52-20261018/neat1_short.sh h_rt=02:00:00
+9052546 jobs/e3-neat1-raccess-byloop-89baea52-20261018/neat1_long.sh h_rt=06:00:00
+9052547 jobs/e3-neat1-raccess-89baea52-20261018/neat1_short.sh h_rt=02:00:00
+9052548 jobs/e3-neat1-raccess-89baea52-20261018/neat1_long.sh h_rt=06:00:00
+9052549 jobs/e3-neat1-sampling-89baea52-20261018/neat1_short.sh h_rt=02:00:00
+9052550 jobs/e3-neat1-sampling-89baea52-20261018/neat1_long.sh h_rt=06:00:00
+9052551 jobs/e3-neat1-variants-bpp-89baea52-20261018/neat1_short.sh h_rt=02:00:00
+9052552 jobs/e3-neat1-variants-bpp-89baea52-20261018/neat1_long.sh h_rt=06:00:00
+9052553 jobs/e3-neat1-variants-capr-89baea52-20261018/neat1_short.sh h_rt=02:00:00
+9052554 jobs/e3-neat1-variants-capr-89baea52-20261018/neat1_long.sh h_rt=06:00:00
+9052555 jobs/e3-neat1-variants-raccess-89baea52-20261018/neat1_short.sh h_rt=02:00:00
+9052556 jobs/e3-neat1-variants-raccess-89baea52-20261018/neat1_long.sh h_rt=06:00:00
+# E3 arrays resubmitted with h_rt 2h (short) / 6h (long) instead of 24h to reduce reserved points.

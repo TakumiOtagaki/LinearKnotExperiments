@@ -1,0 +1,271 @@
+{
+  "plans": [
+    {
+      "name": "e0-bprna-legacy-89baea52-20261018",
+      "tasks": 21,
+      "planned_cli_jobs": 915,
+      "estimated_shared_entries": 297,
+      "sequential_hours": 24.114143712328673,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e1-bprna-short-89baea52-20261018",
+      "tasks": 106,
+      "planned_cli_jobs": 369375,
+      "estimated_shared_entries": 1400,
+      "sequential_hours": 146.09541411199086,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e1-bprna-long-89baea52-20261018",
+      "tasks": 694,
+      "planned_cli_jobs": 25884,
+      "estimated_shared_entries": 9044,
+      "sequential_hours": 3493.897912255042,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e2-rnacentral-89baea52-20261018",
+      "tasks": 4,
+      "planned_cli_jobs": 84,
+      "estimated_shared_entries": 72,
+      "sequential_hours": 16.86965,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e2-synthetic-shapes-89baea52-20261018",
+      "tasks": 55,
+      "planned_cli_jobs": 1872,
+      "estimated_shared_entries": 739,
+      "sequential_hours": 275.5125,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e2-memory-breakdown-89baea52-20261018",
+      "tasks": 4,
+      "planned_cli_jobs": 35,
+      "estimated_shared_entries": 72,
+      "sequential_hours": 23.643325,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e2-parallel-impact-w1-89baea52-20261018",
+      "tasks": 1,
+      "planned_cli_jobs": 36,
+      "estimated_shared_entries": 29,
+      "sequential_hours": 3.1713750000000003,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e2-parallel-impact-w10-89baea52-20261018",
+      "tasks": 1,
+      "planned_cli_jobs": 36,
+      "estimated_shared_entries": 29,
+      "sequential_hours": 3.1713750000000003,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e3-neat1-bpp-89baea52-20261018",
+      "tasks": 2,
+      "planned_cli_jobs": 6,
+      "estimated_shared_entries": 44,
+      "sequential_hours": 11.09125,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e3-neat1-capr-89baea52-20261018",
+      "tasks": 2,
+      "planned_cli_jobs": 6,
+      "estimated_shared_entries": 44,
+      "sequential_hours": 11.09125,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e3-neat1-mea-89baea52-20261018",
+      "tasks": 2,
+      "planned_cli_jobs": 6,
+      "estimated_shared_entries": 44,
+      "sequential_hours": 11.09125,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e3-neat1-raccess-byloop-89baea52-20261018",
+      "tasks": 2,
+      "planned_cli_jobs": 6,
+      "estimated_shared_entries": 44,
+      "sequential_hours": 11.09125,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e3-neat1-raccess-89baea52-20261018",
+      "tasks": 2,
+      "planned_cli_jobs": 6,
+      "estimated_shared_entries": 44,
+      "sequential_hours": 11.09125,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e3-neat1-sampling-89baea52-20261018",
+      "tasks": 2,
+      "planned_cli_jobs": 3,
+      "estimated_shared_entries": 44,
+      "sequential_hours": 1.7058333333333333,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e3-neat1-variants-bpp-89baea52-20261018",
+      "tasks": 2,
+      "planned_cli_jobs": 8,
+      "estimated_shared_entries": 44,
+      "sequential_hours": 9.514166666666666,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e3-neat1-variants-capr-89baea52-20261018",
+      "tasks": 2,
+      "planned_cli_jobs": 8,
+      "estimated_shared_entries": 44,
+      "sequential_hours": 9.514166666666666,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "e3-neat1-variants-raccess-89baea52-20261018",
+      "tasks": 2,
+      "planned_cli_jobs": 8,
+      "estimated_shared_entries": 44,
+      "sequential_hours": 9.514166666666666,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "pk-recovery-200-turner04-89baea52-20261018",
+      "tasks": 20,
+      "planned_cli_jobs": 200,
+      "estimated_shared_entries": 276,
+      "sequential_hours": 33.333333340549714,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "pk-recovery-200-dp09-89baea52-20261018",
+      "tasks": 20,
+      "planned_cli_jobs": 200,
+      "estimated_shared_entries": 276,
+      "sequential_hours": 33.333333340549714,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "pk-recovery-80-89baea52-20261018",
+      "tasks": 8,
+      "planned_cli_jobs": 80,
+      "estimated_shared_entries": 120,
+      "sequential_hours": 13.333333341876388,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "pk-recovery-rrna-89baea52-20261018",
+      "tasks": 3,
+      "planned_cli_jobs": 6,
+      "estimated_shared_entries": 55,
+      "sequential_hours": 6.00000000412889,
+      "execution": "array",
+      "purpose": "formal"
+    },
+    {
+      "name": "terc-89baea52-20261018",
+      "tasks": 1,
+      "planned_cli_jobs": 12,
+      "estimated_shared_entries": 29,
+      "sequential_hours": 0.40000000129333335,
+      "execution": "local",
+      "purpose": "development"
+    },
+    {
+      "name": "terc-byloop-89baea52-20261018",
+      "tasks": 1,
+      "planned_cli_jobs": 2,
+      "estimated_shared_entries": 29,
+      "sequential_hours": 0.06666666688222223,
+      "execution": "local",
+      "purpose": "development"
+    },
+    {
+      "name": "figure1-89baea52-20261018",
+      "tasks": 1,
+      "planned_cli_jobs": 6,
+      "estimated_shared_entries": 29,
+      "sequential_hours": 0.200000000105,
+      "execution": "local",
+      "purpose": "development"
+    },
+    {
+      "name": "pk-membership-89baea52-20261018",
+      "tasks": 20,
+      "planned_cli_jobs": 200,
+      "estimated_shared_entries": 276,
+      "sequential_hours": 50.00000000721639,
+      "execution": "array",
+      "purpose": "formal"
+    }
+  ],
+  "plan_count": 25,
+  "scripts": 57,
+  "array_scripts": 54,
+  "local_scripts": 3,
+  "tasks": 983,
+  "array_tasks": 980,
+  "local_tasks": 3,
+  "cli_jobs": 399000,
+  "all_tasks_not_started": true,
+  "all_live_dependencies_verified": true,
+  "all_scripts_bash_syntax_ok": true,
+  "e1_science_and_resources_unchanged": true,
+  "matrix_file_budget": 13168,
+  "current_array_plan_entries": 4316,
+  "extra_validation_file_allowance": 200,
+  "configuration_documentation_allowance": 300,
+  "sequential_hours": 4210.946945115298,
+  "requested_task_hours": 9252.0,
+  "max_estimated_task_hours": 10.983261396724508,
+  "cxx_syntax_checks": {
+    "enumeration": "",
+    "decoding": "",
+    "vienna": "",
+    "byloop": ""
+  },
+  "tests": {
+    "run": 40,
+    "passed": 31,
+    "skipped": 9,
+    "reason": "Actual RNA CLI stage tests deferred during preparation"
+  },
+  "dependency_gate": "scfg2_scfg_dependency_gate=ok\n",
+  "regular_matrix_tasks": 978,
+  "standalone_validation_tasks_not_run": true,
+  "versioned_runner_imports_and_fingerprints_passed": true,
+  "baseline_inputs_frozen_in_experiments": true,
+  "final_runner_and_analysis_module_imports_passed": true,
+  "report_writer_path_error_fixed_and_rechecked": true,
+  "raw_preparation_logs_sha256": "af5607b384e08baf46b84111c9708f04bc5d48087b6ae4dabe23faf2248fd82c",
+  "historical_timing_metadata_tiers": 44,
+  "historical_timing_known_task_hours": 598.3026432813887,
+  "historical_timing_unknown_attempt_endpoints": 0
+}

@@ -1,0 +1,2938 @@
+{
+  "cases": 729,
+  "unique_inputs": 706,
+  "families": {
+    "witness": 1,
+    "random": 400,
+    "pk_enriched": 100,
+    "single_pair_grid": 108,
+    "fresh_random_17_20": 120
+  },
+  "lengths": {
+    "5": 39,
+    "6": 32,
+    "7": 35,
+    "8": 41,
+    "9": 34,
+    "10": 46,
+    "11": 29,
+    "12": 90,
+    "13": 34,
+    "14": 100,
+    "15": 36,
+    "16": 53,
+    "17": 30,
+    "18": 50,
+    "19": 30,
+    "20": 50
+  },
+  "totals": {
+    "structures": 156162,
+    "derivations": 156162,
+    "crossing_structures": 59850,
+    "candidate_superset": 164790,
+    "candidate_rejected": 8628,
+    "allowed_absent": 0,
+    "ambiguous": 0,
+    "ownership_bad": 0,
+    "context_ambiguous": 0
+  },
+  "max_structures": 6425.0,
+  "max_derivation_count": 1.0,
+  "maxima": {
+    "logZ_error": 2.842170943040401e-14,
+    "grouping_logZ_error": 2.842170943040401e-14,
+    "energy_error": 1.4210854715202004e-14,
+    "bpp_error": 2.5757174171303632e-14,
+    "unpaired_error": 2.9531932455029164e-14,
+    "context_error": 2.886579864025407e-14,
+    "access_error": 2.919886554764162e-14
+  },
+  "beam_maxima": {
+    "logZ": 1.4210854715202004e-14,
+    "pair": 1.1546319456101628e-14,
+    "unpaired": 1.1879386363489175e-14,
+    "context": 1.0325074129013956e-14,
+    "access": 1.0547118733938987e-14
+  },
+  "differential_cases": 730,
+  "differential_exact": {
+    "pair": 0.0,
+    "unpaired": 0.0,
+    "context": 0.0,
+    "access": 0.0,
+    "logZ": 0.0,
+    "mfe": 0.0
+  },
+  "differential_beam": {
+    "pair": 0.0,
+    "unpaired": 0.0,
+    "context": 0.0,
+    "access": 0.0,
+    "logZ": 0.0
+  },
+  "events45": [
+    {
+      "version": "old",
+      "backend": "exact",
+      "base7_q": 0.9999991401176439,
+      "base7_access": 0.9999991401176435,
+      "q_access": 1.9984014443252818e-15,
+      "q_nonstem": 2.4424906541753444e-15,
+      "stem_incident_pairs": 2.423693299009877e-15,
+      "q_paircomplement": 0.0
+    },
+    {
+      "version": "old",
+      "backend": "beam",
+      "base7_q": 0.9999991401176432,
+      "base7_access": 0.9999991401176517,
+      "q_access": 8.43769498715119e-15,
+      "q_nonstem": 8.43769498715119e-15,
+      "stem_incident_pairs": 8.426213137913802e-15,
+      "q_paircomplement": 0.0
+    },
+    {
+      "version": "new",
+      "backend": "exact",
+      "base7_q": 0.9999991401176439,
+      "base7_access": 0.9999991401176435,
+      "q_access": 1.9984014443252818e-15,
+      "q_nonstem": 2.4424906541753444e-15,
+      "stem_incident_pairs": 2.423693299009877e-15,
+      "q_paircomplement": 0.0
+    },
+    {
+      "version": "new",
+      "backend": "beam",
+      "base7_q": 0.9999991401176432,
+      "base7_access": 0.9999991401176517,
+      "q_access": 8.43769498715119e-15,
+      "q_nonstem": 8.43769498715119e-15,
+      "stem_incident_pairs": 8.426213137913802e-15,
+      "q_paircomplement": 0.0
+    },
+    {
+      "version": "legacy",
+      "backend": "exact",
+      "base7_q": 0.9999991401178444,
+      "base7_access": 0.9999989074400666,
+      "q_access": 2.326777778227651e-07,
+      "q_nonstem": 2.326777778227651e-07,
+      "stem_incident_pairs": 2.326777778444264e-07,
+      "q_paircomplement": 0.0
+    },
+    {
+      "version": "legacy",
+      "backend": "beam",
+      "base7_q": 0.9999991401178437,
+      "base7_access": 0.9999989074400676,
+      "q_access": 2.3267777671254208e-07,
+      "q_nonstem": 2.3267777671254208e-07,
+      "stem_incident_pairs": 2.3267777669711663e-07,
+      "q_paircomplement": 0.0
+    }
+  ],
+  "topology_pkfree_structures_checked": 96312,
+  "topology_pkfree_mismatches": [],
+  "pseudoloop_positions_checked": 307597,
+  "pseudoloop_outside_crossing_span": [],
+  "emitted_label_occurrences": {
+    "-": 1073016,
+    "I": 205190,
+    "H": 653201,
+    "M": 59798,
+    "P": 307597,
+    "B": 200863,
+    "E": 391728
+  },
+  "scaffold_boundaries": [
+    {
+      "index": 0,
+      "input": "[[[...]]]",
+      "58a2b796": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "sample": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "input": "{{{...}}}",
+      "58a2b796": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "sample": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "input": "<<<...>>>",
+      "58a2b796": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "sample": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "input": "([.....)]",
+      "58a2b796": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "sample": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        }
+      }
+    },
+    {
+      "index": 4,
+      "input": "?...?....",
+      "58a2b796": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "sample": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        }
+      }
+    },
+    {
+      "index": 5,
+      "input": "(((...)).",
+      "58a2b796": {
+        "inside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "input": ").......(",
+      "58a2b796": {
+        "inside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "input": "(........",
+      "58a2b796": {
+        "inside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "input": "........)",
+      "58a2b796": {
+        "inside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold"
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unbalanced scaffold round brackets"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "input": "....+....",
+      "58a2b796": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "sample": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_sample": {
+          "ok": true,
+          "error": ""
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_mea": {
+          "ok": true,
+          "error": ""
+        },
+        "centroid": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_centroid": {
+          "ok": true,
+          "error": ""
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "input": ".... ....",
+      "58a2b796": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "sample": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_sample": {
+          "ok": true,
+          "error": ""
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_mea": {
+          "ok": true,
+          "error": ""
+        },
+        "centroid": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_centroid": {
+          "ok": true,
+          "error": ""
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "unsupported scaffold symbol: use round brackets '()' for a noncrossing scaffold, '.'/'_' for free bases, or 'x'/'X' for forced unpaired bases"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "input": ".........\n",
+      "58a2b796": {
+        "inside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "outside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "sample": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "mea": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "outside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "sample": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "mea": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        }
+      }
+    },
+    {
+      "index": 12,
+      "input": "........",
+      "58a2b796": {
+        "inside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "outside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "sample": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "mea": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "outside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "sample": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "mea": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        }
+      }
+    },
+    {
+      "index": 13,
+      "input": "",
+      "58a2b796": {
+        "inside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "outside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "sample": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "mea": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "outside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_inside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_outside": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "sample": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "profiles": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_profiles": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "mea": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "scaffold structure length differs from sequence length"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "input": "(((...)))",
+      "58a2b796": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "sample": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_sample": {
+          "ok": true,
+          "error": ""
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_mea": {
+          "ok": true,
+          "error": ""
+        },
+        "centroid": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_centroid": {
+          "ok": true,
+          "error": ""
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "sample": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_sample": {
+          "ok": true,
+          "error": ""
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_mea": {
+          "ok": true,
+          "error": ""
+        },
+        "centroid": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_centroid": {
+          "ok": true,
+          "error": ""
+        }
+      }
+    },
+    {
+      "index": 15,
+      "input": ".........",
+      "58a2b796": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "sample": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_sample": {
+          "ok": true,
+          "error": ""
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_mea": {
+          "ok": true,
+          "error": ""
+        },
+        "centroid": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_centroid": {
+          "ok": true,
+          "error": ""
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "sample": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_sample": {
+          "ok": true,
+          "error": ""
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_mea": {
+          "ok": true,
+          "error": ""
+        },
+        "centroid": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_centroid": {
+          "ok": true,
+          "error": ""
+        }
+      }
+    },
+    {
+      "index": 16,
+      "input": "_________",
+      "58a2b796": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "sample": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_sample": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_mea": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "centroid": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        },
+        "beam_centroid": {
+          "ok": false,
+          "error": "scaffold and generated structures reuse one endpoint"
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "sample": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_sample": {
+          "ok": true,
+          "error": ""
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_mea": {
+          "ok": true,
+          "error": ""
+        },
+        "centroid": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_centroid": {
+          "ok": true,
+          "error": ""
+        }
+      }
+    },
+    {
+      "index": 17,
+      "input": "xx_____XX",
+      "58a2b796": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "sample": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_sample": {
+          "ok": true,
+          "error": ""
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_mea": {
+          "ok": true,
+          "error": ""
+        },
+        "centroid": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_centroid": {
+          "ok": true,
+          "error": ""
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "sample": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_sample": {
+          "ok": true,
+          "error": ""
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_mea": {
+          "ok": true,
+          "error": ""
+        },
+        "centroid": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_centroid": {
+          "ok": true,
+          "error": ""
+        }
+      }
+    },
+    {
+      "index": 18,
+      "input": "XX_____xx",
+      "58a2b796": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "sample": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_sample": {
+          "ok": true,
+          "error": ""
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_mea": {
+          "ok": true,
+          "error": ""
+        },
+        "centroid": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_centroid": {
+          "ok": true,
+          "error": ""
+        }
+      },
+      "15aa7742": {
+        "inside": {
+          "ok": true,
+          "error": ""
+        },
+        "outside": {
+          "ok": true,
+          "error": ""
+        },
+        "viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_inside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_outside": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_viterbi": {
+          "ok": true,
+          "error": ""
+        },
+        "sample": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_sample": {
+          "ok": true,
+          "error": ""
+        },
+        "profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_profiles": {
+          "ok": true,
+          "error": ""
+        },
+        "mea": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_mea": {
+          "ok": true,
+          "error": ""
+        },
+        "centroid": {
+          "ok": true,
+          "error": ""
+        },
+        "beam_centroid": {
+          "ok": true,
+          "error": ""
+        }
+      }
+    }
+  ],
+  "parameters": [
+    {
+      "version": "58a2b796",
+      "alternate_energy_changes": {
+        "inside": 0.0,
+        "outside": 0.0,
+        "viterbi": 0.0,
+        "beam_inside": 0.0,
+        "beam_outside": 0.0,
+        "beam_viterbi": 0.0,
+        "sample": 0.0,
+        "beam_sample": 0.0,
+        "profiles": 0.0,
+        "beam_profiles": 0.0,
+        "mea": 0.0,
+        "beam_mea": 0.0,
+        "centroid": 0.0,
+        "beam_centroid": 0.0
+      },
+      "bad_selections_all_rejected": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "version": "15aa7742",
+      "alternate_energy_changes": {
+        "inside": 10.0,
+        "outside": 10.0,
+        "viterbi": 10.0,
+        "beam_inside": 10.0,
+        "beam_outside": 10.0,
+        "beam_viterbi": 10.0,
+        "sample": 10.0,
+        "beam_sample": 10.0,
+        "profiles": 10.0,
+        "beam_profiles": 10.0,
+        "mea": 10.0,
+        "beam_mea": 10.0,
+        "centroid": 10.0,
+        "beam_centroid": 10.0
+      },
+      "bad_selections_all_rejected": [
+        true,
+        true,
+        true,
+        false
+      ]
+    }
+  ],
+  "spelling": [
+    {
+      "version": "58a2b796",
+      "reference_free_energy": 3.7,
+      "comparisons": [
+        {
+          "index": 1,
+          "free_energy": 4.6,
+          "exact": {
+            "pair": 0.0,
+            "unpaired": 0.0,
+            "context": 0.0,
+            "access": 0.0,
+            "logZ": 1.4602785363999136,
+            "mfe": 0.8999999999999995
+          },
+          "beam": {
+            "pair": 0.0,
+            "unpaired": 0.0,
+            "context": 0.0,
+            "access": 0.0,
+            "logZ": 1.4602785363999136
+          }
+        },
+        {
+          "index": 2,
+          "free_energy": 4.6,
+          "exact": {
+            "pair": 0.0,
+            "unpaired": 0.0,
+            "context": 0.0,
+            "access": 0.0,
+            "logZ": 1.4602785363999136,
+            "mfe": 0.8999999999999995
+          },
+          "beam": {
+            "pair": 0.0,
+            "unpaired": 0.0,
+            "context": 0.0,
+            "access": 0.0,
+            "logZ": 1.4602785363999136
+          }
+        },
+        {
+          "index": 3,
+          "free_energy": 4.6,
+          "exact": {
+            "pair": 0.0,
+            "unpaired": 0.0,
+            "context": 0.0,
+            "access": 0.0,
+            "logZ": 1.4602785363999136,
+            "mfe": 0.8999999999999995
+          },
+          "beam": {
+            "pair": 0.0,
+            "unpaired": 0.0,
+            "context": 0.0,
+            "access": 0.0,
+            "logZ": 1.4602785363999136
+          }
+        }
+      ]
+    },
+    {
+      "version": "15aa7742",
+      "reference_free_energy": 3.7,
+      "comparisons": [
+        {
+          "index": 1,
+          "free_energy": 3.7,
+          "exact": {
+            "pair": 0.0,
+            "unpaired": 0.0,
+            "context": 0.0,
+            "access": 0.0,
+            "logZ": 0.0,
+            "mfe": 0.0
+          },
+          "beam": {
+            "pair": 0.0,
+            "unpaired": 0.0,
+            "context": 0.0,
+            "access": 0.0,
+            "logZ": 0.0
+          }
+        },
+        {
+          "index": 2,
+          "free_energy": 3.7,
+          "exact": {
+            "pair": 0.0,
+            "unpaired": 0.0,
+            "context": 0.0,
+            "access": 0.0,
+            "logZ": 0.0,
+            "mfe": 0.0
+          },
+          "beam": {
+            "pair": 0.0,
+            "unpaired": 0.0,
+            "context": 0.0,
+            "access": 0.0,
+            "logZ": 0.0
+          }
+        },
+        {
+          "index": 3,
+          "free_energy": 3.7,
+          "exact": {
+            "pair": 0.0,
+            "unpaired": 0.0,
+            "context": 0.0,
+            "access": 0.0,
+            "logZ": 0.0,
+            "mfe": 0.0
+          },
+          "beam": {
+            "pair": 0.0,
+            "unpaired": 0.0,
+            "context": 0.0,
+            "access": 0.0,
+            "logZ": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "version": "58a2b796",
+      "outputs": [
+        "eval\t1\t1\t0.89999999999999969\t((.....))\t\nexact_probability\t1\t-4.0874759755751962\t\nbeam_probability\t1\t1\t-4.087475975575197\t\ntarget_pair\t1\t9\ntarget_pair\t2\t8\n",
+        "eval\t1\t0\tnan\t.........\t\nexact_probability\t1\t-inf\t\nbeam_probability\t1\t0\t-inf\t\ntarget_pair\t8\t2\ntarget_pair\t9\t1\n",
+        "eval\t0\t0\tnan\t\ttarget base pair is outside the 1-based sequence domain\nexact_probability\t0\t-inf\ttarget base pair is outside the 1-based sequence domain\nbeam_probability\t0\t0\t-inf\ttarget base pair is outside the 1-based sequence domain\n",
+        "eval\t0\t0\tnan\t\ttarget base pair is outside the 1-based sequence domain\nexact_probability\t0\t-inf\ttarget base pair is outside the 1-based sequence domain\nbeam_probability\t0\t0\t-inf\ttarget base pair is outside the 1-based sequence domain\n",
+        "eval\t0\t0\tnan\t\ttarget base pair is outside the 1-based sequence domain\nexact_probability\t0\t-inf\ttarget base pair is outside the 1-based sequence domain\nbeam_probability\t0\t0\t-inf\ttarget base pair is outside the 1-based sequence domain\n",
+        "eval\t0\t0\tnan\t\ttarget base-pair map uses one endpoint more than once\nexact_probability\t0\t-inf\ttarget base-pair map uses one endpoint more than once\nbeam_probability\t0\t0\t-inf\ttarget base-pair map uses one endpoint more than once\n",
+        "eval\t0\t0\tnan\t\ttarget base-pair map uses one endpoint more than once\nexact_probability\t0\t-inf\ttarget base-pair map uses one endpoint more than once\nbeam_probability\t0\t0\t-inf\ttarget base-pair map uses one endpoint more than once\n",
+        "eval\t0\t0\tnan\t\ttarget base-pair map uses one endpoint more than once\nexact_probability\t0\t-inf\ttarget base-pair map uses one endpoint more than once\nbeam_probability\t0\t0\t-inf\ttarget base-pair map uses one endpoint more than once\n"
+      ]
+    },
+    {
+      "version": "15aa7742",
+      "outputs": [
+        "eval\t1\t1\t0.89999999999999969\t((.....))\t\nexact_probability\t1\t-4.0874759755751962\t\nbeam_probability\t1\t1\t-4.087475975575197\t\ntarget_pair\t1\t9\ntarget_pair\t2\t8\n",
+        "eval\t1\t1\t0.89999999999999969\t((.....))\t\nexact_probability\t1\t-4.0874759755751962\t\nbeam_probability\t1\t1\t-4.087475975575197\t\ntarget_pair\t1\t9\ntarget_pair\t2\t8\n",
+        "eval\t0\t0\tnan\t\ttarget base pair is outside the 1-based sequence domain\nexact_probability\t0\t-inf\ttarget base pair is outside the 1-based sequence domain\nbeam_probability\t0\t0\t-inf\ttarget base pair is outside the 1-based sequence domain\n",
+        "eval\t0\t0\tnan\t\ttarget base pair is outside the 1-based sequence domain\nexact_probability\t0\t-inf\ttarget base pair is outside the 1-based sequence domain\nbeam_probability\t0\t0\t-inf\ttarget base pair is outside the 1-based sequence domain\n",
+        "eval\t0\t0\tnan\t\ttarget base pair is outside the 1-based sequence domain\nexact_probability\t0\t-inf\ttarget base pair is outside the 1-based sequence domain\nbeam_probability\t0\t0\t-inf\ttarget base pair is outside the 1-based sequence domain\n",
+        "eval\t0\t0\tnan\t\ttarget base-pair map uses one endpoint more than once\nexact_probability\t0\t-inf\ttarget base-pair map uses one endpoint more than once\nbeam_probability\t0\t0\t-inf\ttarget base-pair map uses one endpoint more than once\n",
+        "eval\t0\t0\tnan\t\ttarget base-pair map uses one endpoint more than once\nexact_probability\t0\t-inf\ttarget base-pair map uses one endpoint more than once\nbeam_probability\t0\t0\t-inf\ttarget base-pair map uses one endpoint more than once\n",
+        "eval\t0\t0\tnan\t\ttarget base-pair map uses one endpoint more than once\nexact_probability\t0\t-inf\ttarget base-pair map uses one endpoint more than once\nbeam_probability\t0\t0\t-inf\ttarget base-pair map uses one endpoint more than once\n"
+      ]
+    }
+  ],
+  "memory1600": [
+    {
+      "label": "memory1600_0_58a2b796.time",
+      "elapsed_s": 4.88,
+      "peak_RSS_KiB": 253096
+    },
+    {
+      "label": "memory1600_1_15aa7742.time",
+      "elapsed_s": 4.81,
+      "peak_RSS_KiB": 252872
+    },
+    {
+      "label": "memory1600_2_15aa7742.time",
+      "elapsed_s": 4.79,
+      "peak_RSS_KiB": 253616
+    },
+    {
+      "label": "memory1600_3_58a2b796.time",
+      "elapsed_s": 4.78,
+      "peak_RSS_KiB": 253888
+    },
+    {
+      "label": "memory1600_4_58a2b796.time",
+      "elapsed_s": 4.8,
+      "peak_RSS_KiB": 252480
+    },
+    {
+      "label": "memory1600_5_15aa7742.time",
+      "elapsed_s": 4.78,
+      "peak_RSS_KiB": 253668
+    }
+  ],
+  "owner_memory": [
+    {
+      "label": "owners_15aa7742_0_1.time",
+      "elapsed_s": 0.0,
+      "peak_RSS_KiB": 3072
+    },
+    {
+      "label": "owners_15aa7742_0_128.time",
+      "elapsed_s": 0.66,
+      "peak_RSS_KiB": 3072
+    },
+    {
+      "label": "owners_15aa7742_1_1.time",
+      "elapsed_s": 0.0,
+      "peak_RSS_KiB": 3072
+    },
+    {
+      "label": "owners_15aa7742_1_512.time",
+      "elapsed_s": 2.48,
+      "peak_RSS_KiB": 3072
+    },
+    {
+      "label": "owners_58a2b796_0_1.time",
+      "elapsed_s": 0.0,
+      "peak_RSS_KiB": 3072
+    },
+    {
+      "label": "owners_58a2b796_0_128.time",
+      "elapsed_s": 0.09,
+      "peak_RSS_KiB": 55296
+    },
+    {
+      "label": "owners_58a2b796_1_1.time",
+      "elapsed_s": 0.0,
+      "peak_RSS_KiB": 3072
+    },
+    {
+      "label": "owners_58a2b796_1_512.time",
+      "elapsed_s": 0.05,
+      "peak_RSS_KiB": 6144
+    }
+  ],
+  "boundary_failures": [
+    "bad_parameters"
+  ],
+  "beam_mfe": {
+    "cases": 730,
+    "energy_error": 0.0,
+    "log_weight_error": 0.0,
+    "structure_changes": [],
+    "failed_calls": []
+  },
+  "main_runs": 2933,
+  "supplement_runs": 131,
+  "nonzero_exits": [
+    {
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/bin/enumerate",
+        "GCGCGCGCGCGCGCGCGCGC",
+        "...................."
+      ],
+      "exit_code": 124,
+      "elapsed_s": 25.009742638096213,
+      "output": "outputs/pk044_enum_initial_timeout.tsv"
+    },
+    {
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/bin/enumerate",
+        "GCGCGCGCGCGCGCGCGCGC",
+        "...................."
+      ],
+      "exit_code": 124,
+      "elapsed_s": 25.01033153012395,
+      "output": "outputs/pk064_enum_initial_timeout.tsv"
+    },
+    {
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/bin/enumerate",
+        "AUUGUAAAGUACUUCGUGUA",
+        "...................."
+      ],
+      "exit_code": 124,
+      "elapsed_s": 25.00968751963228,
+      "output": "outputs/fresh003_enum_initial_timeout.tsv"
+    },
+    {
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/bin/enumerate",
+        "CUCAGAACACUUUGGGAUUG",
+        "...................."
+      ],
+      "exit_code": 124,
+      "elapsed_s": 25.01126215979457,
+      "output": "outputs/fresh027_enum_initial_timeout.tsv"
+    },
+    {
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/bin/enumerate",
+        "ACCGUCGUUCAAGGCUCGGG",
+        "...................."
+      ],
+      "exit_code": 124,
+      "elapsed_s": 25.01013400685042,
+      "output": "outputs/fresh051_enum_initial_timeout.tsv"
+    },
+    {
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/bin/enumerate",
+        "GUUUCGCGAUAGGUACAACU",
+        "...................."
+      ],
+      "exit_code": 124,
+      "elapsed_s": 25.00867394497618,
+      "output": "outputs/fresh099_enum_initial_timeout.tsv"
+    },
+    {
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/bin/metrics_new",
+        "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAACC",
+        "(...............................(.....))",
+        "default",
+        "20"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 0.09813719522207975,
+      "output": "outputs/BE40_default.tsv"
+    },
+    {
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/bin/metrics_new",
+        "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAACC",
+        "(...............................(.....))",
+        "legacy",
+        "20"
+      ],
+      "exit_code": 1,
+      "elapsed_s": 0.09925471944734454,
+      "output": "outputs/BE40_legacy.tsv"
+    },
+    {
+      "label": "markers_58a2b796_1",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/bin/metrics_old",
+        "GGGAAACCC",
+        "_________",
+        "default",
+        "1000"
+      ],
+      "version": "58a2b796",
+      "exit_code": 1,
+      "elapsed_s": 0.009476433973759413,
+      "overrides": null,
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper",
+      "output": "outputs/markers_58a2b796_1.tsv"
+    },
+    {
+      "label": "cli_15aa7742_LinearCParty_bad",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-15aa7742/LinearCParty",
+        "--sequence",
+        "cuucgg",
+        "--scaffold",
+        "[....]"
+      ],
+      "version": "15aa7742",
+      "exit_code": 1,
+      "elapsed_s": 0.006256110966205597,
+      "overrides": {
+        "CPARTY_FIXED_ENERGY_PARAM_FILE": null
+      },
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/inputs",
+      "output": "outputs/cli_15aa7742_LinearCParty_bad.tsv"
+    },
+    {
+      "label": "cli_15aa7742_LinearPKCapR_bad",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-15aa7742/LinearPKCapR",
+        "--sequence",
+        "cuucgg",
+        "--scaffold",
+        "[....]"
+      ],
+      "version": "15aa7742",
+      "exit_code": 1,
+      "elapsed_s": 0.005884808022528887,
+      "overrides": {
+        "CPARTY_FIXED_ENERGY_PARAM_FILE": null
+      },
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/inputs",
+      "output": "outputs/cli_15aa7742_LinearPKCapR_bad.tsv"
+    },
+    {
+      "label": "cli_15aa7742_LinearPKRaccess_bad",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-15aa7742/LinearPKRaccess",
+        "--sequence",
+        "cuucgg",
+        "--scaffold",
+        "[....]",
+        "--access-len",
+        "1,3"
+      ],
+      "version": "15aa7742",
+      "exit_code": 1,
+      "elapsed_s": 0.0062704430893063545,
+      "overrides": {
+        "CPARTY_FIXED_ENERGY_PARAM_FILE": null
+      },
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/inputs",
+      "output": "outputs/cli_15aa7742_LinearPKRaccess_bad.tsv"
+    },
+    {
+      "label": "cli_15aa7742_LinearPKSampling_bad",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-15aa7742/LinearPKSampling",
+        "--sequence",
+        "cuucgg",
+        "--scaffold",
+        "[....]"
+      ],
+      "version": "15aa7742",
+      "exit_code": 1,
+      "elapsed_s": 0.005619344767183065,
+      "overrides": {
+        "CPARTY_FIXED_ENERGY_PARAM_FILE": null
+      },
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/inputs",
+      "output": "outputs/cli_15aa7742_LinearPKSampling_bad.tsv"
+    },
+    {
+      "label": "cli_15aa7742_LinearPKMEA_bad",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-15aa7742/LinearPKMEA",
+        "--sequence",
+        "cuucgg",
+        "--scaffold",
+        "[....]"
+      ],
+      "version": "15aa7742",
+      "exit_code": 1,
+      "elapsed_s": 0.005747840739786625,
+      "overrides": {
+        "CPARTY_FIXED_ENERGY_PARAM_FILE": null
+      },
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/inputs",
+      "output": "outputs/cli_15aa7742_LinearPKMEA_bad.tsv"
+    },
+    {
+      "label": "cli_15aa7742_LinearPKCentroid_bad",
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-15aa7742/LinearPKCentroid",
+        "--sequence",
+        "cuucgg",
+        "--scaffold",
+        "[....]"
+      ],
+      "version": "15aa7742",
+      "exit_code": 1,
+      "elapsed_s": 0.005457660183310509,
+      "overrides": {
+        "CPARTY_FIXED_ENERGY_PARAM_FILE": null
+      },
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/textbook/examples/verify_15aa7742/inputs",
+      "output": "outputs/cli_15aa7742_LinearPKCentroid_bad.tsv"
+    }
+  ],
+  "verification_failures": []
+}

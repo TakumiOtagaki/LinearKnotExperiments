@@ -1,0 +1,12 @@
+exact 1/1 tasks; 0.1s
+beam 1/1 tasks; 1 RNA; 0.1s
+.beam 1/1 tasks; 1 RNA; 0.1s
+..exact 1/1 tasks; 0.1s
+beam 1/1 tasks; 1 RNA; 0.1s
+.beam 1/1 tasks; 1 RNA; 0.1s
+..........error: cannot resume: config differs from run.json
+.................sssssssss
+----------------------------------------------------------------------
+Ran 40 tests in 15.827s
+
+OK (skipped=9)
