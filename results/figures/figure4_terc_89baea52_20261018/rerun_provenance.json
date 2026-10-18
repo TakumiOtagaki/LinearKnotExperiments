@@ -1,0 +1,26 @@
+{
+  "revision": "89baea52",
+  "raw_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/local/small-rerun-89baea52-20261018/terc_data.tar",
+  "raw_archive_sha256": "a1c435d40731167ef72b565d7f8396999df769b00d7b6d934e71d68fc0270f0d",
+  "renderer_sha256": "d8b561e48556a47f88cb36d12d68ac7dabe485bdd0f5ab406ce66afe0cb82341",
+  "data_sha256": {
+    "rec.json": "e4ef4d227a3e5b34f67ca1d05098ed6497ad75d8f7ef14055848e72cbb65aa3b",
+    "in.txt": "897919ac1bed916f670363299b4002971fb8479146127b75b0dae6508b21ce1b",
+    "b200.samp": "279be1231fd9577a87699a634f0f01ea8de1fae66b8109935ad81e505882376e",
+    "b200.mea": "1b21a44bfac79462b2a421cfbb1a2523939229d8fa517716957147545531f8d8",
+    "b200.lc.out": "66ea02fec80f18539c8e09849e6f775203edbb500a54aab5cf85a37f2be36ac3",
+    "b200.bpp.tsv": "1392eaf168d3421eda5ed55a3c44c162fc0a2fa178af771c1cf5a67a7eb2b7dc",
+    "exact.subopt": "4f9b551c96b5e6f51278eb8fd545611728fb8cfbce192599c9b49f26c736a716",
+    "b200.subopt": "4f9b551c96b5e6f51278eb8fd545611728fb8cfbce192599c9b49f26c736a716",
+    "exact.samp": "41ecd697f944ceae1aca785e7c6da927d92ffdc98ebf74dc5e3c0a325987c2b7",
+    "exact.capr": "80726a4f4bfbfaf8925b4ad5ba2dd345978f288a5c66c67ebb3d63172a4606af",
+    "b200.capr": "9c94caf82b31fb7317c15fc74ed8b7ab5d64773f4608c8c65f2632a2a2c302cd",
+    "exact.lc.out": "ddf4aa8c1208bfaa6514fe65fd3eb13aeaf78561796a0042310cb96b7cbb8a78",
+    "exact.bpp.tsv": "b4374f4e7856ad555fab7901f2142f6f4c16e78c93e9452aa92999a73a49aca8",
+    "exact.mea": "b50fde8247ae7ed9bc424de12835e4f9158462f4c6490b2b8120777faf5fd812",
+    "exact.racc": "9a80123f1be69ea83ae147681875eca5e7531f0b0c7bce3922e7b2ec04676b46",
+    "b200.racc": "5c4b9c0353217b2c95305a308135fba76f32f748300c92b31e29e8e25313abd9",
+    "README.md": "e63a57be678f171751466a494a9b7437407592485a9dd4e9151dbc2856f032d5"
+  },
+  "tar_extraction": "node-local TMPDIR only"
+}

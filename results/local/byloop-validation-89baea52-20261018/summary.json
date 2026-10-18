@@ -1,0 +1,235 @@
+{
+  "contexts": [
+    "Hairpin",
+    "Bulge",
+    "Internal",
+    "Multi",
+    "Exterior",
+    "PseudoLoop"
+  ],
+  "distinct_sequence_scaffold_inputs": 20,
+  "input_parameter_conditions": 21,
+  "length_range_nt": [
+    9,
+    29
+  ],
+  "requested_windows": [
+    "1",
+    "2",
+    "3",
+    "5",
+    "n",
+    "n+3",
+    "2 (duplicate)"
+  ],
+  "enumerated_groups_across_conditions": 320,
+  "crossing_groups_across_conditions": 183,
+  "positive_longer_window_counts": [
+    1835,
+    83,
+    55,
+    101,
+    669,
+    1179
+  ],
+  "pseudoloop_emission_boundary_windows": 1179,
+  "boundary_examples": [
+    {
+      "label": "wmb-witness",
+      "start": 5,
+      "length": 2,
+      "emitted": "----PPPPP--M--",
+      "emission_sources": [
+        "WI_BASE_SINGLE:5:5",
+        "WI_EXTEND_UNPAIRED:5:6"
+      ]
+    },
+    {
+      "label": "gallery",
+      "start": 6,
+      "length": 2,
+      "emitted": "-----PP--PP---",
+      "emission_sources": [
+        "WI_BASE_SINGLE:6:6",
+        "WI_EXTEND_UNPAIRED:6:7"
+      ]
+    },
+    {
+      "label": "wip-minimal-hairpin",
+      "start": 8,
+      "length": 2,
+      "emitted": "-P-HHH-PP-PP-PPPPPPPPP--PPPP-",
+      "emission_sources": [
+        "WIP_EXTEND_UNPAIRED:2:8",
+        "WIP_EXTEND_UNPAIRED:2:9"
+      ]
+    },
+    {
+      "label": "wip-minimal-hairpin-dp09",
+      "start": 8,
+      "length": 2,
+      "emitted": "-P-HHH-PP-PP-PPPPPPPPP--PPPP-",
+      "emission_sources": [
+        "WIP_EXTEND_UNPAIRED:2:8",
+        "WIP_EXTEND_UNPAIRED:2:9"
+      ]
+    },
+    {
+      "label": "random0 CCCUGUGGAGGAUUA ..(....)(....).",
+      "start": 12,
+      "length": 2,
+      "emitted": "---HHHH----PP-E",
+      "emission_sources": [
+        "WI_BASE_SINGLE:12:12",
+        "WI_EXTEND_UNPAIRED:12:13"
+      ]
+    },
+    {
+      "label": "random1 UUUUACGUGCGAAAUA (((........)))..",
+      "start": 6,
+      "length": 2,
+      "emitted": "-----PPPPPP-----",
+      "emission_sources": [
+        "WI_BASE_SINGLE:6:6",
+        "WI_EXTEND_UNPAIRED:6:7"
+      ]
+    },
+    {
+      "label": "random2 ACGCAGCGGUCAGU ((...(....).))",
+      "start": 7,
+      "length": 2,
+      "emitted": "----P-PP---M--",
+      "emission_sources": [
+        "WI_BASE_SINGLE:7:7",
+        "WI_EXTEND_UNPAIRED:7:8"
+      ]
+    },
+    {
+      "label": "random3 ACAGUGUUCUAUAU (.((....))...)",
+      "start": 7,
+      "length": 2,
+      "emitted": "-M----PP--P---",
+      "emission_sources": [
+        "WI_BASE_SINGLE:7:7",
+        "WI_EXTEND_UNPAIRED:7:8"
+      ]
+    },
+    {
+      "label": "random5 CGUGAAGCUCCAC .(((......)))",
+      "start": 5,
+      "length": 2,
+      "emitted": "----PP-PPP---",
+      "emission_sources": [
+        "WI_BASE_SINGLE:5:5",
+        "WI_EXTEND_UNPAIRED:5:6"
+      ]
+    },
+    {
+      "label": "random6 UAGAAUGUGUAUCCUA ((...(....)...))",
+      "start": 7,
+      "length": 2,
+      "emitted": "------PPP----B--",
+      "emission_sources": [
+        "WI_BASE_SINGLE:7:7",
+        "WI_EXTEND_UNPAIRED:7:8"
+      ]
+    },
+    {
+      "label": "random7 CAGCCUUUCCCACGA .(....).(....).",
+      "start": 10,
+      "length": 2,
+      "emitted": "E--BB--P-PP---E",
+      "emission_sources": [
+        "WI_BASE_SINGLE:10:10",
+        "WI_EXTEND_UNPAIRED:10:11"
+      ]
+    },
+    {
+      "label": "random8 GUUAAAUUGACCC ((.......))..",
+      "start": 3,
+      "length": 2,
+      "emitted": "--PPPPPP---P-",
+      "emission_sources": [
+        "WI_BASE_SINGLE:3:3",
+        "WI_EXTEND_UNPAIRED:3:4"
+      ]
+    },
+    {
+      "label": "random9 UUAUAAUGAUUA ..(.......).",
+      "start": 4,
+      "length": 2,
+      "emitted": "---PP-B-PP-E",
+      "emission_sources": [
+        "WI_BASE_SINGLE:4:4",
+        "WI_EXTEND_UNPAIRED:4:5"
+      ]
+    },
+    {
+      "label": "random10 ACUAAUCGUGUCACAC (....)...(.....)",
+      "start": 3,
+      "length": 2,
+      "emitted": "--PPP-P---PPPP--",
+      "emission_sources": [
+        "WI_BASE_SINGLE:3:3",
+        "WI_EXTEND_UNPAIRED:3:4"
+      ]
+    },
+    {
+      "label": "random11 UCCUAAUUUUGAGG .(((.......)))",
+      "start": 7,
+      "length": 2,
+      "emitted": "----P-PPPPP---",
+      "emission_sources": [
+        "WI_BASE_SINGLE:7:7",
+        "WI_EXTEND_UNPAIRED:7:8"
+      ]
+    }
+  ],
+  "comparisons": {
+    "exact_vs_enumeration": {
+      "conditions": 21,
+      "component_max_abs_error": [
+        4.3298697960381105e-15,
+        2.220446049250313e-16,
+        7.771561172376096e-16,
+        7.771561172376096e-16,
+        1.887379141862766e-15,
+        3.4416913763379853e-15
+      ],
+      "sum_max_abs_error": 2.220446049250313e-16,
+      "unit_max_abs_error": 1.1102230246251565e-16,
+      "min_component": -5.551115123125783e-17,
+      "max_component": 1.0000000000000018
+    },
+    "unpruned_vs_exact": {
+      "conditions": 21,
+      "component_max_abs_error": [
+        8.881784197001252e-16,
+        2.2551405187698492e-17,
+        8.881784197001252e-16,
+        7.573064690121713e-29,
+        8.881784197001252e-16,
+        3.4416913763379853e-15
+      ],
+      "sum_max_abs_error": 2.220446049250313e-16,
+      "unit_max_abs_error": 1.1102230246251565e-16,
+      "min_component": -1.2031933609157885e-16,
+      "max_component": 1.0000000000000009
+    },
+    "finite_vs_taped": {
+      "conditions": 252,
+      "component_max_abs_error": [
+        3.552713678800501e-15,
+        1.1102230246251565e-16,
+        3.3306690738754696e-16,
+        5.37667398159468e-24,
+        1.3322676295501878e-15,
+        2.55351295663786e-15
+      ],
+      "sum_max_abs_error": 2.220446049250313e-16,
+      "unit_max_abs_error": 3.3306690738754696e-16,
+      "min_component": -1.249000902703301e-16,
+      "max_component": 1.0000000000000036
+    }
+  }
+}

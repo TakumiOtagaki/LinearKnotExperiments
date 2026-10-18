@@ -1,0 +1,45 @@
+{
+  "started_utc": "2026-10-18T12:38:27.549298+00:00",
+  "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "commands": [
+    [
+      "/bin/python3",
+      "-B",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/validation_89baea52/enumeration/run.py"
+    ],
+    [
+      "/bin/python3",
+      "-B",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/validation_89baea52/enumeration/validate.py"
+    ]
+  ],
+  "controller_sha256": "bf5be5c5d898eb186ddabb51de60442ab8639e18faa5d15efb203f195f75ca0b",
+  "job_id": "9052473",
+  "sge_task_id": "1",
+  "status": "success",
+  "finished_utc": "2026-10-18T12:55:39.268200+00:00",
+  "results": [
+    {
+      "argv": [
+        "/bin/python3",
+        "-B",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/validation_89baea52/enumeration/run.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 1024.904778120108,
+      "stdout_sha256": "db373670407302178424ffb299c744467146cd343d8383fd6df8bd3ad87f4daf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/bin/python3",
+        "-B",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/validation_89baea52/enumeration/validate.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 6.73432384384796,
+      "stdout_sha256": "003c61b27d339cd347b11b6a7e1db2bfcdc856e845b25bb50fece110ace19441",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

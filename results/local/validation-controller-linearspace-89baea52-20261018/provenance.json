@@ -1,0 +1,25 @@
+{
+  "started_utc": "2026-10-18T12:38:37.647858+00:00",
+  "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "commands": [
+    [
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/scfg2_inside_pair_max_test"
+    ]
+  ],
+  "controller_sha256": "bf5be5c5d898eb186ddabb51de60442ab8639e18faa5d15efb203f195f75ca0b",
+  "job_id": "9052477",
+  "sge_task_id": "1",
+  "status": "success",
+  "finished_utc": "2026-10-18T12:38:40.348871+00:00",
+  "results": [
+    {
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/scfg2_inside_pair_max_test"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 2.622099382802844,
+      "stdout_sha256": "c2229c0e85919361c4a4d8aeba54c1c2653d21231b1128ea96f4d5423191d3b7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

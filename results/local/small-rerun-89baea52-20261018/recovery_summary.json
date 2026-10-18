@@ -1,0 +1,68 @@
+[
+  {
+    "cohort": "200",
+    "parameter": "turner04",
+    "rnas": 200,
+    "reference_pairs": 983,
+    "reference_pairs_gt_half": 179,
+    "rnas_mean_probability_gt_half": 34,
+    "mfe_square_pairs": 850,
+    "matched_square_pairs": 210,
+    "sensitivity": 0.2136317395727365,
+    "ppv": 0.24705882352941178,
+    "distance_groups": {
+      "median_span_le_100": {
+        "rnas": 174,
+        "rna_mean_probability": 0.18995349047469898
+      },
+      "median_span_gt_100": {
+        "rnas": 26,
+        "rna_mean_probability": 0.023508473965097674
+      }
+    }
+  },
+  {
+    "cohort": "200",
+    "parameter": "dp09",
+    "rnas": 200,
+    "reference_pairs": 983,
+    "reference_pairs_gt_half": 80,
+    "rnas_mean_probability_gt_half": 13,
+    "mfe_square_pairs": 413,
+    "matched_square_pairs": 110,
+    "sensitivity": 0.11190233977619532,
+    "ppv": 0.26634382566585957,
+    "distance_groups": {
+      "median_span_le_100": {
+        "rnas": 174,
+        "rna_mean_probability": 0.08843006194835334
+      },
+      "median_span_gt_100": {
+        "rnas": 26,
+        "rna_mean_probability": 0.00015225152283255807
+      }
+    }
+  },
+  {
+    "cohort": "80",
+    "parameter": "turner04",
+    "rnas": 80,
+    "reference_pairs": 811,
+    "reference_pairs_gt_half": 24,
+    "rnas_mean_probability_gt_half": 3,
+    "mfe_square_pairs": 301,
+    "matched_square_pairs": 40,
+    "sensitivity": 0.04932182490752158,
+    "ppv": 0.132890365448505,
+    "distance_groups": {
+      "median_span_le_100": {
+        "rnas": 37,
+        "rna_mean_probability": 0.08624785915308734
+      },
+      "median_span_gt_100": {
+        "rnas": 43,
+        "rna_mean_probability": 0.004884609609037331
+      }
+    }
+  }
+]

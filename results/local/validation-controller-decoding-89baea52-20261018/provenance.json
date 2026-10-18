@@ -1,0 +1,61 @@
+{
+  "started_utc": "2026-10-18T12:38:28.547929+00:00",
+  "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "commands": [
+    [
+      "/bin/python3",
+      "-B",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/validation_89baea52/decoding/run.py"
+    ],
+    [
+      "/bin/python3",
+      "-B",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/validation_89baea52/decoding/analyze.py"
+    ],
+    [
+      "/bin/python3",
+      "-B",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/validation_89baea52/decoding/validate.py"
+    ]
+  ],
+  "controller_sha256": "bf5be5c5d898eb186ddabb51de60442ab8639e18faa5d15efb203f195f75ca0b",
+  "job_id": "9052474",
+  "sge_task_id": "1",
+  "status": "success",
+  "finished_utc": "2026-10-18T12:58:21.468773+00:00",
+  "results": [
+    {
+      "argv": [
+        "/bin/python3",
+        "-B",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/validation_89baea52/decoding/run.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 1146.1693179407157,
+      "stdout_sha256": "76531cc0c9f7f7f46c4293385211ecd76066126241059343d5beb65da16fc3cc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/bin/python3",
+        "-B",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/validation_89baea52/decoding/analyze.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 27.163426630198956,
+      "stdout_sha256": "78bb966cb703e8b4689af4641a5483d60d74e1f6d07b46daaf1034acaa1ae739",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/bin/python3",
+        "-B",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/validation_89baea52/decoding/validate.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 19.483952717855573,
+      "stdout_sha256": "41c6439630440cb862a40eed2076199ebca7d47b71d253a46035632d0c3abceb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

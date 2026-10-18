@@ -1,0 +1,16 @@
+{
+  "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "total_draws": 1000,
+  "unique_structures": 9,
+  "shown_sample_counts": [
+    975,
+    6
+  ],
+  "other_draws": 19,
+  "visible_pairs_strict_p_gt_0_01": 18,
+  "pseudoloop_dominant_region": [
+    39,
+    51
+  ],
+  "context_sum_error": 2.220446049250313e-16
+}

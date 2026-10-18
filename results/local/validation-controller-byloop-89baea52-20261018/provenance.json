@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-10-18T12:38:35.836237+00:00",
+  "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "commands": [
+    [
+      "/bin/python3",
+      "-B",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/scripts/validate_byloop_89baea52.py"
+    ]
+  ],
+  "controller_sha256": "bf5be5c5d898eb186ddabb51de60442ab8639e18faa5d15efb203f195f75ca0b",
+  "job_id": "9052475",
+  "sge_task_id": "1",
+  "status": "success",
+  "finished_utc": "2026-10-18T12:39:12.528210+00:00",
+  "results": [
+    {
+      "argv": [
+        "/bin/python3",
+        "-B",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/scripts/validate_byloop_89baea52.py"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 36.616002378985286,
+      "stdout_sha256": "1387378a5f5c2e0801434e0067b3f86dfe1611a97d92b61d9d291e2aa6334413",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

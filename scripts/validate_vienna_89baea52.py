@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Remeasure 337 frozen inputs and 548 frozen targets against ViennaRNA."""
+import argparse
 import csv
 import json
 import os
@@ -15,12 +16,15 @@ from run_cli import digest, now, write_json
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--out", type=Path, default=ROOT / "results/local/energy-vienna-check-89baea52-20261018")
+    args = parser.parse_args()
     release_ready()
     for key in list(os.environ):
         if key.startswith("CPARTY_"):
             del os.environ[key]
     os.environ.update(OMP_NUM_THREADS="1", OPENBLAS_NUM_THREADS="1", MKL_NUM_THREADS="1", LC_ALL="C")
-    output = ROOT / "results/local/energy-vienna-check-89baea52-20261018"
+    output = args.out
     output.mkdir(parents=True, exist_ok=False)
     original = ROOT / "results/local/energy-vienna-check-20261017"
     inputs = [json.loads(line) for line in (original / "inputs.jsonl").read_text().splitlines()]
@@ -32,7 +36,7 @@ def main():
     RNA.params_load(str(param))
     RNA.init_rand(20261017)
     deps = [Path(__file__), Path(old.__file__), ROOT / "scripts/energy_vienna_public_89baea52.cc",
-            ROOT / "scripts/energy_vienna_probe_20261017.cc", original / "inputs.jsonl",
+            ROOT / "scripts/energy_vienna_internal_89baea52.cc", original / "inputs.jsonl",
             original / "structure_metrics.tsv", param, BUILD / "CMakeCache.txt",
             BUILD / "libcparty_scfg2_exact.a", BUILD / "libRNA.a"]
     hashes = {str(p.relative_to(ROOT)): digest(p) for p in deps}

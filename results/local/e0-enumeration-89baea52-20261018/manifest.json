@@ -1,0 +1,87 @@
+{
+  "started_utc": "2026-10-18T12:38:28.284372+00:00",
+  "node": "r5n9",
+  "scratch": "/tmp/9052473.1.all.q/verify-d9804df6-q0nsdpnv",
+  "before": {
+    "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+    "status": "",
+    "sha256": {
+      "manifests/software-pilot-89baea52.json": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99",
+      "deps/LinearCParty-89baea52/params/rna_Turner04.par": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "build/linear-cparty-89baea52/CMakeCache.txt": "5b0660aed3d70ea6c7a33c9589d3cde8e7d6a712f4da9daade2aebccf055a05c",
+      "tools/validation_89baea52/enumeration/enumerate.cc": "039a21508af6971b6f122fd4bd2cbe086043b518b2e08e2470744b2e2dd5e102",
+      "tools/validation_89baea52/enumeration/run.py": "a59bdead671f00d2677575f16fbe53e3866353fc93aded0a6eaa336892dab636",
+      "tools/validation_89baea52/baseline_15aa7742/enumerate.cc": "54a135d8a7b9d07b221c46f2318e26f13ea85d9a26dd079848236369b873126c",
+      "tools/validation_89baea52/baseline_15aa7742/inputs/cases.json": "d00ca2d70611adbaa0dece14cceee4b6d6d4dc2025969c475cbcecc587a06b49",
+      "tools/validation_89baea52/baseline_15aa7742/report.json": "045e99c076181b6a25c6f739664d9d81ffded10dfc5a1448d1fd4e53d60127be",
+      "tools/validation_89baea52/baseline_15aa7742/summary.json": "2a82f57f9e1ab0c4fe1dfaa0100eea77d47a26cec069dea77bffacd2ae1faffa",
+      "build/linear-cparty-89baea52/libRNA.a": "a4cfd6eac4441da25af7557f72729f86ff14b1b7b6b05042a29277f4d6f006d7",
+      "build/linear-cparty-89baea52/libcparty_scfg2_beam.a": "c2b9210566a971b0c84bebe545458253101b39dfe42ac12ab4f6560623146307",
+      "build/linear-cparty-89baea52/libcparty_scfg2_exact.a": "bf3a9365b3e5dfdaf81d23e753a91c2259938f5b2ef4506bfd4b63b512336f99",
+      "build/linear-cparty-89baea52/libcparty_scfg2_hotspot_proposal.a": "da6b7e801d6c4918876c53c751f9116841c45b5f646976d32cd71a31b133656b",
+      "build/linear-cparty-89baea52/libcparty_scfg2_hotspot_viterbi.a": "35461760a5039f9079de9fde9912e89b61d49badabbca4ea2cf88399253a6050",
+      "build/linear-cparty-89baea52/LinearCParty": "fcf7a9735e55f82488051a22204b77a83cb477002dd005551e42936a35b7e56c",
+      "build/linear-cparty-89baea52/LinearPKCapR": "f4388139247d3dd96e617b3865ddc014ba13309364f733d0cc98b98284a93b71",
+      "build/linear-cparty-89baea52/LinearPKRaccess": "f742eae39a648557db7e60949c1b9be4aea8fe6b5da7b1df5b8b70338bdf2517"
+    }
+  },
+  "environment_overrides": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "TMPDIR": "/tmp/9052473.1.all.q/verify-d9804df6-q0nsdpnv",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "CPARTY_PF_OVERRIDE_SCALE": "1",
+    "CPARTY_FIXED_ENERGY_PARAM_FILE": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52/params/rna_Turner04.par"
+  },
+  "execution": "serial",
+  "timeout_s": 180,
+  "scope": "enumeration and WIP-boundary ablation only",
+  "compile": {
+    "command": [
+      "g++",
+      "-O1",
+      "-std=c++17",
+      "-I/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52/src",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/validation_89baea52/enumeration/enumerate.cc",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/libcparty_scfg2_beam.a",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/libcparty_scfg2_exact.a",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/libRNA.a",
+      "-o",
+      "/tmp/9052473.1.all.q/verify-d9804df6-q0nsdpnv/enumerate"
+    ],
+    "returncode": 0
+  },
+  "binary_sha256": "aa86d8f5d96f45bc835e2d3bc8217a3bb125940e925bec9f6b3cab41a2c2935d",
+  "after": {
+    "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+    "status": "",
+    "sha256": {
+      "manifests/software-pilot-89baea52.json": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99",
+      "deps/LinearCParty-89baea52/params/rna_Turner04.par": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+      "build/linear-cparty-89baea52/CMakeCache.txt": "5b0660aed3d70ea6c7a33c9589d3cde8e7d6a712f4da9daade2aebccf055a05c",
+      "tools/validation_89baea52/enumeration/enumerate.cc": "039a21508af6971b6f122fd4bd2cbe086043b518b2e08e2470744b2e2dd5e102",
+      "tools/validation_89baea52/enumeration/run.py": "a59bdead671f00d2677575f16fbe53e3866353fc93aded0a6eaa336892dab636",
+      "tools/validation_89baea52/baseline_15aa7742/enumerate.cc": "54a135d8a7b9d07b221c46f2318e26f13ea85d9a26dd079848236369b873126c",
+      "tools/validation_89baea52/baseline_15aa7742/inputs/cases.json": "d00ca2d70611adbaa0dece14cceee4b6d6d4dc2025969c475cbcecc587a06b49",
+      "tools/validation_89baea52/baseline_15aa7742/report.json": "045e99c076181b6a25c6f739664d9d81ffded10dfc5a1448d1fd4e53d60127be",
+      "tools/validation_89baea52/baseline_15aa7742/summary.json": "2a82f57f9e1ab0c4fe1dfaa0100eea77d47a26cec069dea77bffacd2ae1faffa",
+      "build/linear-cparty-89baea52/libRNA.a": "a4cfd6eac4441da25af7557f72729f86ff14b1b7b6b05042a29277f4d6f006d7",
+      "build/linear-cparty-89baea52/libcparty_scfg2_beam.a": "c2b9210566a971b0c84bebe545458253101b39dfe42ac12ab4f6560623146307",
+      "build/linear-cparty-89baea52/libcparty_scfg2_exact.a": "bf3a9365b3e5dfdaf81d23e753a91c2259938f5b2ef4506bfd4b63b512336f99",
+      "build/linear-cparty-89baea52/libcparty_scfg2_hotspot_proposal.a": "da6b7e801d6c4918876c53c751f9116841c45b5f646976d32cd71a31b133656b",
+      "build/linear-cparty-89baea52/libcparty_scfg2_hotspot_viterbi.a": "35461760a5039f9079de9fde9912e89b61d49badabbca4ea2cf88399253a6050",
+      "build/linear-cparty-89baea52/LinearCParty": "fcf7a9735e55f82488051a22204b77a83cb477002dd005551e42936a35b7e56c",
+      "build/linear-cparty-89baea52/LinearPKCapR": "f4388139247d3dd96e617b3865ddc014ba13309364f733d0cc98b98284a93b71",
+      "build/linear-cparty-89baea52/LinearPKRaccess": "f742eae39a648557db7e60949c1b9be4aea8fe6b5da7b1df5b8b70338bdf2517"
+    }
+  },
+  "finished_utc": "2026-10-18T12:55:32.437738+00:00",
+  "processes": 1459,
+  "artifacts_sha256": {
+    "raw.tar.gz": "057b08028c9c931999031c2bf0814fcde36ae847eb1f53ac76fc712ec548d6df",
+    "runs.jsonl": "691a7a156a945e1e0e3cf12a8126c43e794d2f7a123c3238f748500ae0f69513",
+    "report.json": "29fda1ffc0f3a35f84228edf6d7d691537446c733b4d2ff137adf0d68fc4b97d",
+    "summary.json": "ec09423e3951f909fd18337b030ddd97f17c9c00814c9d1f4e510c9d1a5cbad5",
+    "counts_vs_15aa7742.tsv": "514a394ecb2254ba19c6db18694dc0f9d93a32517be4c2e6b191101def588df7"
+  }
+}

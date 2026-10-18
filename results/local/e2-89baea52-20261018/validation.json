@@ -1,0 +1,82 @@
+{
+  "metrics_rows_recomputed": 996,
+  "comparisons_recomputed": 1122,
+  "slopes_recomputed": 216,
+  "expected_revisions": {
+    "current": "89baea52",
+    "previous": "d02d261c"
+  },
+  "e0_rows_recomputed": 0,
+  "memory_scalar_checks": 4800,
+  "prediction_checks": 3912,
+  "grouped_cv_scalar_checks": 18,
+  "test_cases": 40,
+  "tests_passed": 31,
+  "tests_skipped": 9,
+  "test_log": "exact 1/1 tasks; 0.1s\nbeam 1/1 tasks; 1 RNA; 0.1s\n.beam 1/1 tasks; 1 RNA; 0.1s\n..exact 1/1 tasks; 0.1s\nbeam 1/1 tasks; 1 RNA; 0.1s\n.beam 1/1 tasks; 1 RNA; 0.1s\n..........error: cannot resume: config differs from run.json\n.................sssssssss\n----------------------------------------------------------------------\nRan 40 tests in 15.827s\n\nOK (skipped=9)\n",
+  "test_log_sha256": "956f4f1632d64bec5516cca0db4b9d7d8018ab44b7da014125cb22a1c7289908",
+  "validator_sha256": "56d3572f3b2f1db570bdc65b600b529b4ee9d5a2645a295fce2273e2d0f9ada0",
+  "metrics_by_run": {
+    "synthetic_current": 468,
+    "rnacentral_current": 21,
+    "rnacentral_previous": 21,
+    "synthetic_previous": 468,
+    "parallel_w1": 9,
+    "parallel_w10": 9
+  },
+  "outputs": {
+    "results/local/e2-89baea52-20261018/metrics.tsv": {
+      "bytes": 1245362,
+      "sha256": "973f5ef5e1b738b507ae9432b69141e10919fd10c77a608bac1f3d093ec2da76"
+    },
+    "results/local/e2-89baea52-20261018/comparisons.tsv": {
+      "bytes": 2029022,
+      "sha256": "5a542820c8ae62bf49fa57fc1b650ac6f8694e7853f2b740fb6cc743a2245c4e"
+    },
+    "results/local/e2-89baea52-20261018/memory_summary.json": {
+      "bytes": 5013,
+      "sha256": "524dc4b95e1874af34608678d83446ce86114de7f30a207ff1ca3b320883ebfb"
+    },
+    "results/local/e2-89baea52-20261018/rnacentral_time_rss.png": {
+      "bytes": 120997,
+      "sha256": "c68d4fd043f5219e8f2b385d15340a07e301360be1ef87d18a1ba6457216960a"
+    },
+    "results/local/e2-89baea52-20261018/memory_metrics.tsv": {
+      "bytes": 44148,
+      "sha256": "83d42a22071ad9aa2e8ddb1ad0c0c0b56ea4be8cf1ba4af6e186306e6a701c08"
+    },
+    "results/local/e2-89baea52-20261018/memory_stages.png": {
+      "bytes": 154113,
+      "sha256": "922a4f347dca07496cdad1787ffda3ab141453a2da97cf44ce700408ad06f697"
+    },
+    "results/local/e2-89baea52-20261018/memory_families.tsv": {
+      "bytes": 62604,
+      "sha256": "730dd45ed9870b891e0bacae68fc1aeb2e29ab8147154225afc50ba64dbe07b1"
+    },
+    "results/local/e2-89baea52-20261018/feature_resources.png": {
+      "bytes": 156747,
+      "sha256": "a0def89eb89001dffcbf92d0713dfa4109346b9bd704ffcf37440db62548ffb0"
+    },
+    "results/local/e2-89baea52-20261018/summary.json": {
+      "bytes": 618869,
+      "sha256": "e8fd6ff478090fa65913c073578c2ff4da8793d2fabe247ce27cbd97eebb3ef5"
+    },
+    "results/local/e2-89baea52-20261018/scaling_time.png": {
+      "bytes": 473531,
+      "sha256": "b8a3bd1c58112547f231dc0cc4c0078589fe7abba434c97f8a7cc5dbc307cbec"
+    },
+    "results/local/e2-89baea52-20261018/scaling_rss.png": {
+      "bytes": 381188,
+      "sha256": "07ee18fc48d539c1e1330a762a4c6256d6386b58064f8e11fa0d0121de171bd8"
+    },
+    "results/local/e2-89baea52-20261018/slopes.tsv": {
+      "bytes": 27921,
+      "sha256": "e8b9d5ffa8cb5da71afba452eb261785f0cd3b675405c0a78dd982d2d02179e8"
+    },
+    "results/local/e2-89baea52-20261018/memory_comparisons.tsv": {
+      "bytes": 8915,
+      "sha256": "9ba43e280156269b314d70221da3cb272c3d786c34a330ead9d498d2af445f10"
+    }
+  },
+  "tar_extractions_to_filesystem": 0
+}

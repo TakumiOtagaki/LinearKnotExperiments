@@ -1,0 +1,166 @@
+{
+  "frozen_inputs": 337,
+  "completed_ensembles": 337,
+  "bpp_coordinates": 2226060,
+  "frozen_structure_conditions": 548,
+  "completed_structure_conditions": 475,
+  "public_dangles2_conditions": 475,
+  "internal_dangles0_controls": 0,
+  "max_abs_logz_error": 1.4495071809506044e-12,
+  "max_abs_bpp_error": 1.245337166722038e-12,
+  "max_abs_fixed_pf_energy_error": 2.842170943040401e-14,
+  "max_abs_mfe_rescore_error": 2.842170943040401e-14,
+  "max_common_pf_mfe_gap": 7.105427357601002e-15,
+  "failures": [
+    {
+      "condition": "fixed/0301",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0305",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0309",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0313",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0317",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0321",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0325",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0329",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0333",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0337",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0341",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0345",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0349",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0353",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0357",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0361",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0365",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0369",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0373",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0377",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0381",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0385",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0389",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0393",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0397",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0399",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0401",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0403",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0405",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0407",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0409",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0411",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0413",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0415",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0417",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0419",
+      "status": "failed"
+    },
+    {
+      "condition": "fixed/0421",
+      "status": "failed"
+    }
+  ],
+  "tolerance": 1e-09,
+  "passed": false
+}

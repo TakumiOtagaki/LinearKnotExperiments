@@ -1,0 +1,32 @@
+{
+  "started_utc": "2026-10-18T12:38:36.685986+00:00",
+  "source": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52",
+  "build": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52",
+  "vienna_version": "2.7.2",
+  "dependencies_sha256_before": {
+    "scripts/validate_vienna_89baea52.py": "545c3c103003f4559d5ee2b93d2d68cbc3fb9adc1deec1f8a2477c8cdd49e6d9",
+    "scripts/check_energy_vienna_20261017.py": "168d399e3796998cd29b5fe10a7925b913f57592e6274e9d942f9317317a2917",
+    "scripts/energy_vienna_public_89baea52.cc": "542e7f08522865a68cd26dede767c2d61ce963d7a49a6699248fc981328c89c6",
+    "scripts/energy_vienna_probe_20261017.cc": "8eea9f0121fa50ecc48b2a960f49ac20dcb9349b429a7efe40c12e4bca266b04",
+    "results/local/energy-vienna-check-20261017/inputs.jsonl": "4a1509190610acea67d4c1905423c37c66fe5f37641885561c408d0396b196e9",
+    "results/local/energy-vienna-check-20261017/structure_metrics.tsv": "c25724bd86cf70d35bca811aa9808e54c1330efacd3640eb083c014a69c2c80f",
+    "deps/LinearCParty-89baea52/params/rna_Turner04.par": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+    "build/linear-cparty-89baea52/CMakeCache.txt": "5b0660aed3d70ea6c7a33c9589d3cde8e7d6a712f4da9daade2aebccf055a05c",
+    "build/linear-cparty-89baea52/libcparty_scfg2_exact.a": "bf3a9365b3e5dfdaf81d23e753a91c2259938f5b2ef4506bfd4b63b512336f99",
+    "build/linear-cparty-89baea52/libRNA.a": "a4cfd6eac4441da25af7557f72729f86ff14b1b7b6b05042a29277f4d6f006d7"
+  },
+  "scope": "dangles=2 public ExactSession; dangles=0 historical internal control; PF-smoothed fixed-target energy, all i<j BPP coordinates",
+  "historical_numbers_reused": false,
+  "frozen_inputs": 337,
+  "frozen_structure_conditions": 548,
+  "finished_utc": "2026-10-18T12:50:58.914698+00:00",
+  "dependencies_unchanged": true,
+  "outputs_sha256": {
+    "structure_metrics.tsv": "d4d0e7ac5a77fe4b7fded3e86fddfcb834e7e316782f047c99aa2bf781d2ac8f",
+    "runs.jsonl": "c583b2c557368b310ab44ebf35ab37c9a44b1ece45445fce5fc57cd606c6e965",
+    "summary.json": "e8c2abf35553ff39360e94a043efcf3d0a4a62838b2d0d4029595ce8fb71a6a7",
+    "ensemble_metrics.tsv": "eff566ee9e192f6c5e623b9e134f0d72173d87e11c48ec360bc107342d1d6e56",
+    "raw_outputs.tar.gz": "032800976b753d2224a93a25b5808e3cc591e82eac0e0f9fac69277a5361f403",
+    "mfe_comparison.tsv": "1f026efa8918f29db64407b9cb5128509393c486dfb99b1df6a8d8026c52f8a5"
+  }
+}

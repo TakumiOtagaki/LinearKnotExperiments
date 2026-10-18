@@ -1,0 +1,17 @@
+{
+  "frozen_inputs": 337,
+  "completed_ensembles": 337,
+  "bpp_coordinates": 2226060,
+  "frozen_structure_conditions": 548,
+  "completed_structure_conditions": 548,
+  "public_dangles2_conditions": 475,
+  "internal_dangles0_controls": 73,
+  "max_abs_logz_error": 1.4495071809506044e-12,
+  "max_abs_bpp_error": 1.245337166722038e-12,
+  "max_abs_fixed_pf_energy_error": 2.842170943040401e-14,
+  "max_abs_mfe_rescore_error": 2.842170943040401e-14,
+  "max_common_pf_mfe_gap": 7.105427357601002e-15,
+  "failures": [],
+  "tolerance": 1e-09,
+  "passed": true
+}

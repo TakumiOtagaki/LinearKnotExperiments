@@ -1,0 +1,2946 @@
+{
+  "created_utc": "2026-10-18T15:29:47.052490+00:00",
+  "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "inputs": [
+    {
+      "path": "data/neat1-20261016/NEAT1_1.txt",
+      "sha256": "113ccf81eff2e9f2992f05bacb7eb220c6294675b9b5957c58e43794e147dbf8",
+      "length": 3756,
+      "scaffold_pairs": 727
+    },
+    {
+      "path": "data/neat1-20261016/NEAT1_2.txt",
+      "sha256": "97238dd464ca55d37f146ce1b84d8a0ff1a3197b82f273de5c9ded933f1232c8",
+      "length": 22743,
+      "scaffold_pairs": 4161
+    },
+    {
+      "path": "data/neat1-variants-20261016/NEAT1_1_emptyG.txt",
+      "sha256": "44ed367ed1805fe7520dba08d42e2d4b92ede854da3b8357c58973cab68065da",
+      "length": 3756,
+      "scaffold_pairs": 0
+    },
+    {
+      "path": "data/neat1-variants-20261016/NEAT1_1_p05.txt",
+      "sha256": "3e92fab91d95e9bda72993829343fe624ab80b1d9a83dce164011a608d2319ab",
+      "length": 3756,
+      "scaffold_pairs": 986
+    },
+    {
+      "path": "data/neat1-variants-20261016/NEAT1_1_p09.txt",
+      "sha256": "59a5b6d270d2e7bf0b483f8c4c494a50ede7308ffe13054df65c96f2d2407fe9",
+      "length": 3756,
+      "scaffold_pairs": 491
+    },
+    {
+      "path": "data/neat1-variants-20261016/NEAT1_2_emptyG.txt",
+      "sha256": "5a1a3d4d7ed5b89316c19aebc17b4e6cbd421dd941d1584ba254ca07fb71173d",
+      "length": 22743,
+      "scaffold_pairs": 0
+    },
+    {
+      "path": "results/local/e3-neat1-linearpartition-20261016/NEAT1_1_b100_bpp.tsv",
+      "sha256": "f01e61497111972cd243b29713cc389401f7dc9bcd393b5ab8a80c62c2eb8071"
+    },
+    {
+      "path": "results/local/e3-neat1-linearpartition-20261016/NEAT1_1_b200_bpp.tsv",
+      "sha256": "a56b27920ee8139b1d9eed27c0b16fb18341abf1f24b4402feb77cb916630ee6"
+    },
+    {
+      "path": "results/local/e3-neat1-linearpartition-20261016/NEAT1_2_b100_bpp.tsv",
+      "sha256": "c9b3f957db07cbd604d8000c6ba37d8de08bfe10cdb7df69744195babeb1cacc"
+    },
+    {
+      "path": "results/local/e3-neat1-linearpartition-20261016/NEAT1_2_b200_bpp.tsv",
+      "sha256": "f134bfb6984bc5a0ba1af34777587ba4c6843566b35db171b26dd70b7941ebb7"
+    }
+  ],
+  "checkpoints": [
+    {
+      "path": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+      "snapshot_bytes": 12475,
+      "complete_bytes": 12475,
+      "sha256_complete_lines": "a404091397df30ba620bd7ad4c10e741c724638e33db6b24b7581095016f093f",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+      "snapshot_bytes": 12469,
+      "complete_bytes": 12469,
+      "sha256_complete_lines": "044d65c667b9073a83f6841b13c124127945e17f45e0af04c83f53670c6456e5",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+      "snapshot_bytes": 11642,
+      "complete_bytes": 11642,
+      "sha256_complete_lines": "c4a08dd9a3b11ce859987262fefbbf00f5af3cb8cfb09aacd3315904d4df9033",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+      "snapshot_bytes": 11630,
+      "complete_bytes": 11630,
+      "sha256_complete_lines": "983fd9422c299182271586cf2aa0265a24d8495a661f0b34d740ef6ea29b09ca",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+      "snapshot_bytes": 12305,
+      "complete_bytes": 12305,
+      "sha256_complete_lines": "e90fe61363799692c5a919298a5078ad6b11af7774f315b4c3e232adbfcaeb60",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+      "snapshot_bytes": 12287,
+      "complete_bytes": 12287,
+      "sha256_complete_lines": "ad1662c3aecf712fdb50c528bd807b2fdfecf2c2eb87620398e7555224ee0d65",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+      "snapshot_bytes": 12017,
+      "complete_bytes": 12017,
+      "sha256_complete_lines": "2f4614ceba8d58dda05933e9ac3554e03ee768bc3d8707b31c1d92f2b929db23",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+      "snapshot_bytes": 12011,
+      "complete_bytes": 12011,
+      "sha256_complete_lines": "96762bba4381d6cac40608a4f69545644e6359b53b6b48920643e57d51624dce",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+      "snapshot_bytes": 3968,
+      "complete_bytes": 3968,
+      "sha256_complete_lines": "263cde33e28c001bc8ac69b251227a57658949ea0cfb88cf98cfa2264575aecc",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+      "snapshot_bytes": 7928,
+      "complete_bytes": 7928,
+      "sha256_complete_lines": "445011188197d2ba477ee7c12358895ec4512dfb73b20094765fe857abfd4949",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+      "snapshot_bytes": 8475,
+      "complete_bytes": 8475,
+      "sha256_complete_lines": "a207afe679d981cc35af7e30783625bde248d3435368a2897499f240409ab92b",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+      "snapshot_bytes": 25269,
+      "complete_bytes": 25269,
+      "sha256_complete_lines": "6a703796ef84394e4b1778202010ecd0e2759b7362f8f61d85f889ef2341186e",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-variants-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+      "snapshot_bytes": 7891,
+      "complete_bytes": 7891,
+      "sha256_complete_lines": "9af3291f3561fdba425b6f675a9af0690d1058723bedfbe562d73a17c679684c",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-variants-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+      "snapshot_bytes": 23531,
+      "complete_bytes": 23531,
+      "sha256_complete_lines": "b1fd26558d70944f76f5e93620419cde8102bdffb0ce90c3408d7aee0fdc4ee8",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-variants-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+      "snapshot_bytes": 8137,
+      "complete_bytes": 8137,
+      "sha256_complete_lines": "7224ecae4658acc87c21c8f467189723af103f4f9c351d4a2c8e8396793834bf",
+      "ignored_partial_tail": 0
+    },
+    {
+      "path": "results/runs/e3-neat1-variants-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+      "snapshot_bytes": 24290,
+      "complete_bytes": 24290,
+      "sha256_complete_lines": "8d5c8d8b662012d77b0acf2a003faf0e2e384ea81849670d84b9e77a8a2ca2eb",
+      "ignored_partial_tail": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "c74e0915cf84bb194e52523fc699779b88d2d55ec54fe2f9f51e161138850b1c",
+      "bytes": 68294,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052540.1.all.q/lcp-task-aloptk9c/inputs/NEAT1_2.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052540.1.all.q/lcp-task-aloptk9c/jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:27:53.931998+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "4469f578abe9be6f3583c33473b959b0b45a01866d73a9a98b20df970078ef82",
+      "bytes": 899281,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052540.1.all.q/lcp-task-aloptk9c/inputs/NEAT1_2.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052540.1.all.q/lcp-task-aloptk9c/jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:27:53.931998+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "633089eda786a7b55552f36d6f4bf541ea3b51adf2961b5171e273ba7c3ebdad",
+      "bytes": 68294,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052540.1.all.q/lcp-task-aloptk9c/inputs/NEAT1_2.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052540.1.all.q/lcp-task-aloptk9c/jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:43:48.520454+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "d3b71a27c1890af64e9a115cefba8575f4832b27659cc28f5f1a724da9511122",
+      "bytes": 946825,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052540.1.all.q/lcp-task-aloptk9c/inputs/NEAT1_2.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052540.1.all.q/lcp-task-aloptk9c/jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:43:48.520454+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "1efa883ec889ed5b8cbf39bb500b8f9b458c4184de23c31a1ab483b4e91ad3c4",
+      "bytes": 68294,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052540.1.all.q/lcp-task-aloptk9c/inputs/NEAT1_2.txt",
+        "-b",
+        "400",
+        "--max-hairpin",
+        "400",
+        "--max-case3-depth",
+        "400",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052540.1.all.q/lcp-task-aloptk9c/jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T14:23:34.741805+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "805176763adc8e8c7b8c3bddfc45e44148b3af353290c677ff399e127bd40abc",
+      "bytes": 991742,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052540.1.all.q/lcp-task-aloptk9c/inputs/NEAT1_2.txt",
+        "-b",
+        "400",
+        "--max-hairpin",
+        "400",
+        "--max-case3-depth",
+        "400",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052540.1.all.q/lcp-task-aloptk9c/jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T14:23:34.741805+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "3d40920cfd205da4f13fbbfc9c0aa73635bca4c428fddf3515316004a1244745",
+      "bytes": 11333,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052539.1.all.q/lcp-task-sfjegp8k/inputs/NEAT1_1.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052539.1.all.q/lcp-task-sfjegp8k/jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:17:04.111618+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "525c168e4fa6872d57113a471fdfe9f8268affa57f2b51dbef53c9a7f0d9ae7d",
+      "bytes": 134764,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052539.1.all.q/lcp-task-sfjegp8k/inputs/NEAT1_1.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052539.1.all.q/lcp-task-sfjegp8k/jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:17:04.111618+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "3e4e1d65ed62a5b32d9c747310a8146379358f3daa3ec9ac337eae893c6dbfa5",
+      "bytes": 11333,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052539.1.all.q/lcp-task-sfjegp8k/inputs/NEAT1_1.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052539.1.all.q/lcp-task-sfjegp8k/jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:19:18.839778+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "c30cc79a53fb1a7778ae8fbe9d332afd2f1db81a0df598b8fffeb95da7054266",
+      "bytes": 139797,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052539.1.all.q/lcp-task-sfjegp8k/inputs/NEAT1_1.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052539.1.all.q/lcp-task-sfjegp8k/jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:19:18.839778+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "44d483ae680f62c0e2774d7819844de4148bea7c283d25291d2820fe461dc3b2",
+      "bytes": 11333,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052539.1.all.q/lcp-task-sfjegp8k/inputs/NEAT1_1.txt",
+        "-b",
+        "400",
+        "--max-hairpin",
+        "400",
+        "--max-case3-depth",
+        "400",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052539.1.all.q/lcp-task-sfjegp8k/jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:24:12.048423+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "e55c5f47ee941fe85b354fc4d2baeca0ca5b4083523b1c5dd849278ddb3da58a",
+      "bytes": 145668,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052539.1.all.q/lcp-task-sfjegp8k/inputs/NEAT1_1.txt",
+        "-b",
+        "400",
+        "--max-hairpin",
+        "400",
+        "--max-case3-depth",
+        "400",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052539.1.all.q/lcp-task-sfjegp8k/jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:24:12.048423+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "d1a9e8ff1d9b2200becb128d14ec8ee2573cfc8075c8064e6d881666de7a2c2b",
+      "bytes": 2480116,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052542.1.all.q/lcp-task-lvcvs64l/inputs/NEAT1_2.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T13:24:03.828727+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "2e15194ffae7299a4b015ff0f3f783e151b0f2e75a9b67e0bb61a58e5679d038",
+      "bytes": 2418641,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052542.1.all.q/lcp-task-lvcvs64l/inputs/NEAT1_2.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T13:34:39.214519+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "9234e4bb6b9b7cec9030e7967f330c8f0cb0617045a6a2445c7817a6e398eec5",
+      "bytes": 2413649,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052542.1.all.q/lcp-task-lvcvs64l/inputs/NEAT1_2.txt",
+        "-b",
+        "400",
+        "--max-hairpin",
+        "400",
+        "--max-case3-depth",
+        "400",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T13:58:41.205239+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "dbba194d91df8f9a20086916e0a5506cd8e1d129f035f91e65184b4a2c61624f",
+      "bytes": 383754,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052541.1.all.q/lcp-task-xtdfl4l4/inputs/NEAT1_1.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T13:17:37.019831+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "c5166e76298c33ce21f4759d480b28d612a920450d6b585c350e7c6c968b155a",
+      "bytes": 440063,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052541.1.all.q/lcp-task-xtdfl4l4/inputs/NEAT1_1.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T13:19:02.355074+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "5578ad3fca3132c2dc9b62cd10c8c7cdc7796355fd27783c702e1242bbeb788e",
+      "bytes": 439109,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052541.1.all.q/lcp-task-xtdfl4l4/inputs/NEAT1_1.txt",
+        "-b",
+        "400",
+        "--max-hairpin",
+        "400",
+        "--max-case3-depth",
+        "400",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T13:22:07.204724+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/stdout.txt",
+      "sha256": "a5b388c2e78f0485c056590ffaac206238b0b22e44d8994a5c517d25892a3ffd",
+      "bytes": 68275,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKMEA",
+        "-i",
+        "/tmp/9052544.1.all.q/lcp-task-21_vx8jl/inputs/NEAT1_2.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--gamma",
+        "1",
+        "--stats"
+      ],
+      "finished_utc": "2026-10-18T13:30:33.800416+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/stdout.txt",
+      "sha256": "957a4ce31f242f22b597c78276ca87b26f7bb97900a6455b29a2cc38c11ab619",
+      "bytes": 68275,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKMEA",
+        "-i",
+        "/tmp/9052544.1.all.q/lcp-task-21_vx8jl/inputs/NEAT1_2.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--gamma",
+        "1",
+        "--stats"
+      ],
+      "finished_utc": "2026-10-18T13:50:32.221202+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/stdout.txt",
+      "sha256": "8c27cfddde1d7ac8b0a51a0b5ea8f72c445d728fb052d428ef7afb175c026fa3",
+      "bytes": 68275,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKMEA",
+        "-i",
+        "/tmp/9052544.1.all.q/lcp-task-21_vx8jl/inputs/NEAT1_2.txt",
+        "-b",
+        "400",
+        "--max-hairpin",
+        "400",
+        "--max-case3-depth",
+        "400",
+        "--ranking",
+        "outer",
+        "--gamma",
+        "1",
+        "--stats"
+      ],
+      "finished_utc": "2026-10-18T14:37:06.070703+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/stdout.txt",
+      "sha256": "e5ad338c323ef4e5d63c652c1c8c56c0fc845a00179729247e2451df3a16f4bf",
+      "bytes": 11314,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKMEA",
+        "-i",
+        "/tmp/9052543.1.all.q/lcp-task-r5yygjaf/inputs/NEAT1_1.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--gamma",
+        "1",
+        "--stats"
+      ],
+      "finished_utc": "2026-10-18T13:19:28.649007+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/stdout.txt",
+      "sha256": "ab779c5dc5e718bfaf68ddedf607c1680fc5aee94709b54584079f13c36e576f",
+      "bytes": 11314,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKMEA",
+        "-i",
+        "/tmp/9052543.1.all.q/lcp-task-r5yygjaf/inputs/NEAT1_1.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--gamma",
+        "1",
+        "--stats"
+      ],
+      "finished_utc": "2026-10-18T13:22:11.459617+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/stdout.txt",
+      "sha256": "f3db16eae98c4d7fde3e5537571f600b17244f7b6c29ed2d7498afd63a7fd5e5",
+      "bytes": 11314,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKMEA",
+        "-i",
+        "/tmp/9052543.1.all.q/lcp-task-r5yygjaf/inputs/NEAT1_1.txt",
+        "-b",
+        "400",
+        "--max-hairpin",
+        "400",
+        "--max-case3-depth",
+        "400",
+        "--ranking",
+        "outer",
+        "--gamma",
+        "1",
+        "--stats"
+      ],
+      "finished_utc": "2026-10-18T13:28:14.608533+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "1a0c41d81ee14dd95e284e90aac945e77bfc5ba2d920c2a152ac38b3ad6dfb4d",
+      "bytes": 2238317,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052548.1.all.q/lcp-task-e0m761wo/inputs/NEAT1_2.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T13:26:53.609577+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "7eddbeba63e0580afa38a492320106ba2616fa49e422bda86e2d8f013a5addde",
+      "bytes": 2226067,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052548.1.all.q/lcp-task-e0m761wo/inputs/NEAT1_2.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T13:38:04.504175+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "45126a5088e84c5047ad80aa00c2e310b32a6a77b45fc06b08f44fc543fa7458",
+      "bytes": 2086716,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052548.1.all.q/lcp-task-e0m761wo/inputs/NEAT1_2.txt",
+        "-b",
+        "400",
+        "--max-hairpin",
+        "400",
+        "--max-case3-depth",
+        "400",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T14:03:23.446699+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "b223c829d995c15fe7a7c5bddc5e0fdd714cb14eaf715de12b6808a095d685ab",
+      "bytes": 320129,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052547.1.all.q/lcp-task-d_v2lu51/inputs/NEAT1_1.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T13:20:53.127185+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "ecb39ac8804e3e8ea2c7ca6a6a58cb77ba16d07e58baf8cf6145a287f022fa56",
+      "bytes": 333190,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052547.1.all.q/lcp-task-d_v2lu51/inputs/NEAT1_1.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T13:22:19.946378+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "10352a7273acf0cb9ddb273b1f5bf7a02d805168153002e33257d58715657cb5",
+      "bytes": 335346,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052547.1.all.q/lcp-task-d_v2lu51/inputs/NEAT1_1.txt",
+        "-b",
+        "400",
+        "--max-hairpin",
+        "400",
+        "--max-case3-depth",
+        "400",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T13:25:26.046306+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/stdout.txt",
+      "sha256": "00928b6b0a9159c4c73617f2fa581ad147ddde5bb0250c8cdf5465955ec9cc34",
+      "bytes": 22768754,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKSampling",
+        "-i",
+        "/tmp/9052550.1.all.q/lcp-task-aby88d4z/inputs/NEAT1_2.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "-k",
+        "1000",
+        "--seed",
+        "20261016",
+        "--unique"
+      ],
+      "finished_utc": "2026-10-18T13:29:52.303826+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/stdout.txt",
+      "sha256": "940c9c4f873fae4e078d14478c284e25950adb213352e6e0b987f599f043d2c8",
+      "bytes": 3762767,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKSampling",
+        "-i",
+        "/tmp/9052549.1.all.q/lcp-task-fp6cz6p4/inputs/NEAT1_1.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "-k",
+        "1000",
+        "--seed",
+        "20261016",
+        "--unique"
+      ],
+      "finished_utc": "2026-10-18T13:21:51.259870+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/stdout.txt",
+      "sha256": "6b55445dbc98fb7300b0f50fbd30c2c08bce2d781c8a13c54c9047297fbfffac",
+      "bytes": 3762767,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKSampling",
+        "-i",
+        "/tmp/9052549.1.all.q/lcp-task-fp6cz6p4/inputs/NEAT1_1.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "-k",
+        "1000",
+        "--seed",
+        "20261016",
+        "--unique"
+      ],
+      "finished_utc": "2026-10-18T13:23:35.254800+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2_emptyG-beam100_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "dd79bb447454fbf2764435fa54abe573e1968de0ceb85da65989167e4895b735",
+      "bytes": 68301,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052552.1.all.q/lcp-task-8fn1c10h/inputs/NEAT1_2_emptyG.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052552.1.all.q/lcp-task-8fn1c10h/jobs/NEAT1_2_emptyG-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:58:25.743007+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2_emptyG-beam100_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "22a2e69b2bcbd489315c6656f882ded4917c77e7e72545911734af5e030aa8d4",
+      "bytes": 1861121,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052552.1.all.q/lcp-task-8fn1c10h/inputs/NEAT1_2_emptyG.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052552.1.all.q/lcp-task-8fn1c10h/jobs/NEAT1_2_emptyG-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:58:25.743007+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "fa7837ea3adebbe9ee9ffeb339d02d6137a4bb2b4f71aaf1d5856891c49b63ec",
+      "bytes": 68301,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052552.1.all.q/lcp-task-8fn1c10h/inputs/NEAT1_2_emptyG.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052552.1.all.q/lcp-task-8fn1c10h/jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T15:29:38.467668+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "4bcb792981de20fad948d116b916966b77dbff210e47171b8925139965a67fd6",
+      "bytes": 1895114,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052552.1.all.q/lcp-task-8fn1c10h/inputs/NEAT1_2_emptyG.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052552.1.all.q/lcp-task-8fn1c10h/jobs/NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T15:29:38.467668+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p05-beam100_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "99d6916ed848a9b1bcb469d4a3f7f00fe0927a76eef2898ba54e6358f20b4980",
+      "bytes": 11337,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/inputs/NEAT1_1_p05.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/jobs/NEAT1_1_p05-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:23:00.269400+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p05-beam100_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "3b857ca1867f5f457d97de400823f51060776816bc5997a2b992a17ecf2d4f1a",
+      "bytes": 75777,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/inputs/NEAT1_1_p05.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/jobs/NEAT1_1_p05-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:23:00.269400+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p09-beam100_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "63ef4675daa64b69103f5c5b5971809cc971804d6474e66e445a685c73d119ed",
+      "bytes": 11337,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/inputs/NEAT1_1_p09.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/jobs/NEAT1_1_p09-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:25:12.909260+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p09-beam100_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "8f42fdb6e77bb6566d5be1503fe766a2a41e037e9fb4c9c39dcd8b059bb3d874",
+      "bytes": 181967,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/inputs/NEAT1_1_p09.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/jobs/NEAT1_1_p09-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:25:12.909260+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p09-beam200_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "f43495c3665377b12094e49e50d88124342a860bd002a13a3d7ac6904de98bda",
+      "bytes": 11337,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/inputs/NEAT1_1_p09.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/jobs/NEAT1_1_p09-beam200_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:28:19.449995+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p09-beam200_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "0036c147ea753e6506acc2f01f25eae458a078ecec85d02f9339188c230ebb7b",
+      "bytes": 185454,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/inputs/NEAT1_1_p09.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/jobs/NEAT1_1_p09-beam200_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:28:19.449995+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p05-beam200_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "438eb55babb95f48b1822eb1aa9aba0b0dc434bd22be37e308a6e5956e5fe6db",
+      "bytes": 11337,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/inputs/NEAT1_1_p05.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/jobs/NEAT1_1_p05-beam200_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:29:46.097700+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p05-beam200_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "fd424c864ff7003047d52e4be75b29b61eb53baaebbd84a30597b74c71802228",
+      "bytes": 77303,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/inputs/NEAT1_1_p05.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/jobs/NEAT1_1_p05-beam200_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:29:46.097700+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_emptyG-beam100_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "13120f4b47175a75baccc896e3ee999d44329824ca480675fcfbc435e685490e",
+      "bytes": 11340,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/inputs/NEAT1_1_emptyG.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/jobs/NEAT1_1_emptyG-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:30:02.240935+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_emptyG-beam100_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "82d6f3c1b4166cfac631a6890788841434247a83ecbb1a26960c501f07c2d297",
+      "bytes": 269472,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/inputs/NEAT1_1_emptyG.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/jobs/NEAT1_1_emptyG-beam100_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:30:02.240935+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_emptyG-beam200_outer-LinearCParty-rep0/stdout.txt",
+      "sha256": "df2b731511cfc4ce6ae5e54da83251af513e51d666ae29717c4550c40d1529b7",
+      "bytes": 11340,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/inputs/NEAT1_1_emptyG.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/jobs/NEAT1_1_emptyG-beam200_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:39:03.926380+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_emptyG-beam200_outer-LinearCParty-rep0/bpp.tsv",
+      "sha256": "b4d6c247dd9a61e551ea6dfa9027348c93f8d530619fde4ca39db0c53ed3a93c",
+      "bytes": 298375,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearCParty",
+        "-i",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/inputs/NEAT1_1_emptyG.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--bpp-cutoff",
+        "0.001",
+        "--bpp",
+        "/tmp/9052551.1.all.q/lcp-task-x41ctf2o/jobs/NEAT1_1_emptyG-beam200_outer-LinearCParty-rep0/bpp.tsv"
+      ],
+      "finished_utc": "2026-10-18T13:39:03.926380+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2_emptyG-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "88efe6f6296cc5fc25c99c7efe690674c919fda873617e26a405685d341407ae",
+      "bytes": 2979638,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052554.1.all.q/lcp-task-l5ldfpfu/inputs/NEAT1_2_emptyG.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T13:48:13.042452+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2_emptyG-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "9a96fc015876917e67b3e74c5d0b2971eb73b41198258b192992a5bf74c0e38c",
+      "bytes": 2998724,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052554.1.all.q/lcp-task-l5ldfpfu/inputs/NEAT1_2_emptyG.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T14:52:22.991036+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p05-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "7a5ce2f0f12dd1d186c33bcf2cd2a6282680b24b9faf179a14f06751e8bf83d4",
+      "bytes": 450929,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052553.1.all.q/lcp-task-vjghqusm/inputs/NEAT1_1_p05.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T13:24:51.124812+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p09-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "958db4879a8748d855edd2cc2712001016d9d11cba7cbcf5c3e7ee8932bcfac1",
+      "bytes": 472260,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052553.1.all.q/lcp-task-vjghqusm/inputs/NEAT1_1_p09.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T13:26:20.134287+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p09-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "fa63adcbd1b6805ce012167fec8acf4a4a7719a32df8d8484e117a60f90bd92f",
+      "bytes": 416338,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052553.1.all.q/lcp-task-vjghqusm/inputs/NEAT1_1_p09.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T13:28:28.614571+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p05-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "e102d060b671f3b3fb52eef9560ec66c82269160973435d25040bc9604ac57ec",
+      "bytes": 485140,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052553.1.all.q/lcp-task-vjghqusm/inputs/NEAT1_1_p05.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T13:29:23.424499+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_emptyG-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "e8f93a8418ee4a63e884857de8a1737f821656af0e2291bb5988414878c1ad8f",
+      "bytes": 494498,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052553.1.all.q/lcp-task-vjghqusm/inputs/NEAT1_1_emptyG.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T13:29:39.646378+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_emptyG-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+      "sha256": "d48e09903c3bd11b216e1b34d5a30abcf0ac37102db3107ddd651cfa2aa20992",
+      "bytes": 494709,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKCapR",
+        "-i",
+        "/tmp/9052553.1.all.q/lcp-task-vjghqusm/inputs/NEAT1_1_emptyG.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ],
+      "finished_utc": "2026-10-18T13:35:59.917147+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2_emptyG-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "b631dba967642ed17ad12be3ed11a3f6f85cb8cb7e7ce1fdc228b385c6207284",
+      "bytes": 2331091,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052556.1.all.q/lcp-task-3119ywnb/inputs/NEAT1_2_emptyG.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T13:49:57.157713+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_2_emptyG-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "d5ea3fff264300084a82e19e78e40aca0bfdfab2409b4434f5e3459261e036f2",
+      "bytes": 2331517,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052556.1.all.q/lcp-task-3119ywnb/inputs/NEAT1_2_emptyG.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T14:54:12.517138+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p05-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "90831fdf8d357578da4ee246abab8b110f9f5c94714006bfa570e56a3151ab82",
+      "bytes": 289810,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052555.1.all.q/lcp-task-cl_uz3ro/inputs/NEAT1_1_p05.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T13:26:08.810615+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p09-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "18ebeca37dc262fd954cb3906f8b1e7e999316788ec0f8f16bdbc550658d8952",
+      "bytes": 355495,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052555.1.all.q/lcp-task-cl_uz3ro/inputs/NEAT1_1_p09.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T13:27:35.886304+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p09-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "361a470dd697e5cc25ee7e7bad1474d483707c0150ffff538377c0a7b97a43ff",
+      "bytes": 356326,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052555.1.all.q/lcp-task-cl_uz3ro/inputs/NEAT1_1_p09.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T13:29:41.186884+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_p05-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "5289b0ba475ddd6975d281adc42ae7ac1e2fd84424bf03f6aea3a635ae3d7e12",
+      "bytes": 305934,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052555.1.all.q/lcp-task-cl_uz3ro/inputs/NEAT1_1_p05.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T13:30:35.341797+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_emptyG-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "31b53da10c3bad619dc63f92f1d0ed367058a8a39e9f79268def415105efc76b",
+      "bytes": 383585,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052555.1.all.q/lcp-task-cl_uz3ro/inputs/NEAT1_1_emptyG.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T13:30:52.834043+00:00"
+    },
+    {
+      "archive": "results/runs/e3-neat1-variants-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+      "member": "jobs/NEAT1_1_emptyG-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+      "sha256": "ae37c769d5bcb4ee5fa97812073403aae48c77998e805fb8276528127161a0b6",
+      "bytes": 383777,
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/LinearPKRaccess",
+        "-i",
+        "/tmp/9052555.1.all.q/lcp-task-cl_uz3ro/inputs/NEAT1_1_emptyG.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8,16",
+        "--probability"
+      ],
+      "finished_utc": "2026-10-18T13:36:51.595843+00:00"
+    }
+  ],
+  "script_sha256": "72572ffc0b9d0af721331871abbe980dc484a6ba000dce07a5a25f72d6aa4474",
+  "resource_audit": {
+    "checkpoints": [
+      {
+        "path": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+        "sha256": "a404091397df30ba620bd7ad4c10e741c724638e33db6b24b7581095016f093f",
+        "jobs": 3,
+        "status": "success",
+        "workers": 3,
+        "host": {
+          "hostname": "r7n11",
+          "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+          "python": "3.9.25",
+          "cpu_count": 384
+        },
+        "software_before": {
+          "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+        "software_lock_sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99"
+      },
+      {
+        "path": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+        "sha256": "044d65c667b9073a83f6841b13c124127945e17f45e0af04c83f53670c6456e5",
+        "jobs": 3,
+        "status": "success",
+        "workers": 3,
+        "host": {
+          "hostname": "r5n2",
+          "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+          "python": "3.9.25",
+          "cpu_count": 384
+        },
+        "software_before": {
+          "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+        "software_lock_sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99"
+      },
+      {
+        "path": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+        "sha256": "c4a08dd9a3b11ce859987262fefbbf00f5af3cb8cfb09aacd3315904d4df9033",
+        "jobs": 3,
+        "status": "success",
+        "workers": 3,
+        "host": {
+          "hostname": "r5n8",
+          "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+          "python": "3.9.25",
+          "cpu_count": 384
+        },
+        "software_before": {
+          "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+        "software_lock_sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99"
+      },
+      {
+        "path": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+        "sha256": "983fd9422c299182271586cf2aa0265a24d8495a661f0b34d740ef6ea29b09ca",
+        "jobs": 3,
+        "status": "success",
+        "workers": 3,
+        "host": {
+          "hostname": "r17n10",
+          "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+          "python": "3.9.25",
+          "cpu_count": 384
+        },
+        "software_before": {
+          "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+        "software_lock_sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99"
+      },
+      {
+        "path": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+        "sha256": "2f4614ceba8d58dda05933e9ac3554e03ee768bc3d8707b31c1d92f2b929db23",
+        "jobs": 3,
+        "status": "success",
+        "workers": 3,
+        "host": {
+          "hostname": "r12n4",
+          "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+          "python": "3.9.25",
+          "cpu_count": 384
+        },
+        "software_before": {
+          "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+        "software_lock_sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99"
+      },
+      {
+        "path": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+        "sha256": "96762bba4381d6cac40608a4f69545644e6359b53b6b48920643e57d51624dce",
+        "jobs": 3,
+        "status": "success",
+        "workers": 3,
+        "host": {
+          "hostname": "r5n8",
+          "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+          "python": "3.9.25",
+          "cpu_count": 384
+        },
+        "software_before": {
+          "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+        "software_lock_sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99"
+      },
+      {
+        "path": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+        "sha256": "e90fe61363799692c5a919298a5078ad6b11af7774f315b4c3e232adbfcaeb60",
+        "jobs": 3,
+        "status": "success",
+        "workers": 3,
+        "host": {
+          "hostname": "r17n8",
+          "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+          "python": "3.9.25",
+          "cpu_count": 384
+        },
+        "software_before": {
+          "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+        "software_lock_sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99"
+      },
+      {
+        "path": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+        "sha256": "ad1662c3aecf712fdb50c528bd807b2fdfecf2c2eb87620398e7555224ee0d65",
+        "jobs": 3,
+        "status": "success",
+        "workers": 3,
+        "host": {
+          "hostname": "r4n6",
+          "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+          "python": "3.9.25",
+          "cpu_count": 384
+        },
+        "software_before": {
+          "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+        "software_lock_sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99"
+      },
+      {
+        "path": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+        "sha256": "263cde33e28c001bc8ac69b251227a57658949ea0cfb88cf98cfa2264575aecc",
+        "jobs": 1,
+        "status": "success",
+        "workers": 2,
+        "host": {
+          "hostname": "r5n2",
+          "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+          "python": "3.9.25",
+          "cpu_count": 384
+        },
+        "software_before": {
+          "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+        "software_lock_sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99"
+      },
+      {
+        "path": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+        "sha256": "445011188197d2ba477ee7c12358895ec4512dfb73b20094765fe857abfd4949",
+        "jobs": 2,
+        "status": "success",
+        "workers": 2,
+        "host": {
+          "hostname": "r9n9",
+          "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+          "python": "3.9.25",
+          "cpu_count": 384
+        },
+        "software_before": {
+          "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+        "software_lock_sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99"
+      },
+      {
+        "path": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_results.jsonl",
+        "sha256": "5f63c0316e3b8d3b748f31591e023add0c3c913e8e8117e09b2c316b7f781b36",
+        "jobs": 3,
+        "status": "success",
+        "workers": 3,
+        "host": {
+          "hostname": "r17n1",
+          "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+          "python": "3.9.25",
+          "cpu_count": 384
+        },
+        "software_before": {
+          "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+        "software_lock_sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99"
+      },
+      {
+        "path": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_results.jsonl",
+        "sha256": "343f447336709a0457a4a2de1578dfc73cb9f7c8a2b7403eecaae192609c5b4c",
+        "jobs": 3,
+        "status": "success",
+        "workers": 3,
+        "host": {
+          "hostname": "r6n3",
+          "platform": "Linux-5.14.0-687.41.1.el9_8.x86_64-x86_64-with-glibc2.34",
+          "python": "3.9.25",
+          "cpu_count": 384
+        },
+        "software_before": {
+          "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+        "software_lock_sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99"
+      }
+    ],
+    "artifacts": [
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/command.json",
+        "bytes": 562,
+        "sha256": "288ba381bd2a17352e06f82b06b74f6103e15942d5b1559d84217660073c45d0"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/stdout.txt",
+        "bytes": 68294,
+        "sha256": "c74e0915cf84bb194e52523fc699779b88d2d55ec54fe2f9f51e161138850b1c"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/time.tsv",
+        "bytes": 15,
+        "sha256": "12ba0edc23241ba209edd959b21dc1df1059cf06fb37ec53de317a3f98990787"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/bpp.tsv",
+        "bytes": 899281,
+        "sha256": "4469f578abe9be6f3583c33473b959b0b45a01866d73a9a98b20df970078ef82"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearCParty-rep0/result.json",
+        "bytes": 963,
+        "sha256": "03fe81c70e648d9cf42876eb0349a70fa6714b0b73dc45ff800fc21c507e4f91"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/command.json",
+        "bytes": 562,
+        "sha256": "68941d5f82284596c4a768a8ca80bab24739a741dbb4b4b0226efa42da93e9e5"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/stdout.txt",
+        "bytes": 68294,
+        "sha256": "633089eda786a7b55552f36d6f4bf541ea3b51adf2961b5171e273ba7c3ebdad"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/time.tsv",
+        "bytes": 16,
+        "sha256": "441021ac0817efff4e22b16164ee9d1cf13a7b7c96545e645aaf1d70f5cd97c3"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/bpp.tsv",
+        "bytes": 946825,
+        "sha256": "d3b71a27c1890af64e9a115cefba8575f4832b27659cc28f5f1a724da9511122"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearCParty-rep0/result.json",
+        "bytes": 963,
+        "sha256": "bf03105bc0cea8ec5be34fd455f19b261dfadf2035f115acb6955b4390474352"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/command.json",
+        "bytes": 562,
+        "sha256": "d1ef409af04bf7c120590ee0ea2d6318efcc1c143fa68cf8daf8dc1468eaf9f4"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/stdout.txt",
+        "bytes": 68294,
+        "sha256": "1efa883ec889ed5b8cbf39bb500b8f9b458c4184de23c31a1ab483b4e91ad3c4"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/time.tsv",
+        "bytes": 16,
+        "sha256": "efe1b179344ed429eb0321042b83349a180bab13d6590e91a3431ed08ab7e33e"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/bpp.tsv",
+        "bytes": 991742,
+        "sha256": "805176763adc8e8c7b8c3bddfc45e44148b3af353290c677ff399e127bd40abc"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearCParty-rep0/result.json",
+        "bytes": 965,
+        "sha256": "1c61871730b0d09f7ade56e843b3d6dc27cf561eda49b94c4ffb673df336a662"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/command.json",
+        "bytes": 562,
+        "sha256": "c84459b882361e2ee946019238c26f2d1d7b79ae34af38e7255082517829b597"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/stdout.txt",
+        "bytes": 11333,
+        "sha256": "3d40920cfd205da4f13fbbfc9c0aa73635bca4c428fddf3515316004a1244745"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/time.tsv",
+        "bytes": 13,
+        "sha256": "9b022391e7be970182e98864172339e474db56fff641acf6611b640a0cf2b589"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/bpp.tsv",
+        "bytes": 134764,
+        "sha256": "525c168e4fa6872d57113a471fdfe9f8268affa57f2b51dbef53c9a7f0d9ae7d"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearCParty-rep0/result.json",
+        "bytes": 961,
+        "sha256": "107c7dd48efe4febf77fed1ca658366e354aab25ffc49291cb9339020b7288f5"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/command.json",
+        "bytes": 562,
+        "sha256": "13de9be547d9b14fa6ea68e6eb51cd5c714b29fc2d41e187b8a058ae638b0277"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/stdout.txt",
+        "bytes": 11333,
+        "sha256": "3e4e1d65ed62a5b32d9c747310a8146379358f3daa3ec9ac337eae893c6dbfa5"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/time.tsv",
+        "bytes": 14,
+        "sha256": "f8acaa86ae780c78d7bf1f6a478d9249caf2d937e6d8dffc8acb448b2c7214fa"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/bpp.tsv",
+        "bytes": 139797,
+        "sha256": "c30cc79a53fb1a7778ae8fbe9d332afd2f1db81a0df598b8fffeb95da7054266"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearCParty-rep0/result.json",
+        "bytes": 963,
+        "sha256": "581d8de37b5903c2526a4712ee0dc558fb1b926e25cc2a9a6a915f72f7774eca"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/command.json",
+        "bytes": 562,
+        "sha256": "4c045972a67446cb33407fad9a10fae6ba85ad2fbaced0562e12e6d15c6f328c"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/stdout.txt",
+        "bytes": 11333,
+        "sha256": "44d483ae680f62c0e2774d7819844de4148bea7c283d25291d2820fe461dc3b2"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/time.tsv",
+        "bytes": 15,
+        "sha256": "91cbb76d1858da96062f11d8dd46f70bed50b121172633df6491eec83cfbf521"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/bpp.tsv",
+        "bytes": 145668,
+        "sha256": "e55c5f47ee941fe85b354fc4d2baeca0ca5b4083523b1c5dd849278ddb3da58a"
+      },
+      {
+        "archive": "results/runs/e3-neat1-bpp-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearCParty-rep0/result.json",
+        "bytes": 963,
+        "sha256": "a7d761a7c41a45b8e0fe8286756218f825fd82d107758665f899ccd411d52629"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/command.json",
+        "bytes": 417,
+        "sha256": "e00d4ae957b58b2958b9fe96b4e783970c1e6c8e4d8cdc04d00c81e4dacbe9a1"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+        "bytes": 2480116,
+        "sha256": "d1a9e8ff1d9b2200becb128d14ec8ee2573cfc8075c8064e6d881666de7a2c2b"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/time.tsv",
+        "bytes": 15,
+        "sha256": "445b7d92783348d191ac93edf7f6d66b0ab6db7e05ca8f88f5d495fb6480af2c"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKCapR-rep0/result.json",
+        "bytes": 818,
+        "sha256": "49485121954e5029bddc14114571bd338b472d85e457ae96df5e914d6b02fe42"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/command.json",
+        "bytes": 417,
+        "sha256": "690e407ab8d1aa2467f087145e52db21021fa2a01678d3f3c6b768126a7a5686"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+        "bytes": 2418641,
+        "sha256": "2e15194ffae7299a4b015ff0f3f783e151b0f2e75a9b67e0bb61a58e5679d038"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/time.tsv",
+        "bytes": 16,
+        "sha256": "b475e7dc0123ab2d5aa09d084f3eaf44b1ef4ceca3a61ecf629dec67896ee1e8"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKCapR-rep0/result.json",
+        "bytes": 818,
+        "sha256": "fbdcc194b9b213c83f9c6758a7cbef99d9c12bf4f4bd542d73c442d0b7a7485d"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/command.json",
+        "bytes": 417,
+        "sha256": "2fa0bdc00790651448bd6a91de0ee4969fc6298897a7e7276f78c8f67c5a52a6"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/stdout.txt",
+        "bytes": 2413649,
+        "sha256": "9234e4bb6b9b7cec9030e7967f330c8f0cb0617045a6a2445c7817a6e398eec5"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/time.tsv",
+        "bytes": 16,
+        "sha256": "8a0e08b5c2db747c35b04de3d114444398cb0b40d881e786cb429df534f121d3"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKCapR-rep0/result.json",
+        "bytes": 820,
+        "sha256": "5b5bc6af8f9dfffd812d171f89a723e2ef02b781f6e9a5776b2f8a6bc610a4ca"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/command.json",
+        "bytes": 417,
+        "sha256": "4d4bd341391a3fb99ba60f4a9a57ca07dc7ff076846cb68273a738fd2b0d9367"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/stdout.txt",
+        "bytes": 383754,
+        "sha256": "dbba194d91df8f9a20086916e0a5506cd8e1d129f035f91e65184b4a2c61624f"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/time.tsv",
+        "bytes": 13,
+        "sha256": "f820b635eb12e37a604ce43d79777bdf5e9dcb1b0c5e1a21adb2612996a0e13f"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKCapR-rep0/result.json",
+        "bytes": 816,
+        "sha256": "4c5a96a76514e521310840e8096624cd307fc36dbbde94be4bc6a54539f05526"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/command.json",
+        "bytes": 417,
+        "sha256": "fa0b6c9f1e4ff4146d5130433257e8b45a8799a7f145dbfedac52eadb1fd0fc2"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/stdout.txt",
+        "bytes": 440063,
+        "sha256": "c5166e76298c33ce21f4759d480b28d612a920450d6b585c350e7c6c968b155a"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/time.tsv",
+        "bytes": 14,
+        "sha256": "14e8fbcaabd938e5155ace0910f01fbb347fb605a922b8ea5eb6df72b95ce9ce"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKCapR-rep0/result.json",
+        "bytes": 818,
+        "sha256": "61b60cad45bee497e1bc4c2aec5edf7dfdb537d3be9ca3c68074184d25845411"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/command.json",
+        "bytes": 417,
+        "sha256": "9f0c88f9c00a7c2d77df9998943b28014c88e6341e0f53da703071f93b98d0c0"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/stdout.txt",
+        "bytes": 439109,
+        "sha256": "5578ad3fca3132c2dc9b62cd10c8c7cdc7796355fd27783c702e1242bbeb788e"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/time.tsv",
+        "bytes": 15,
+        "sha256": "6f0162de3c37e3f451894f03f34efbb0b0e4c4c00e49696e16237d3a9d9eaf79"
+      },
+      {
+        "archive": "results/runs/e3-neat1-capr-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKCapR-rep0/result.json",
+        "bytes": 818,
+        "sha256": "e6c471d7f143235ab78258c7dc2ddb3e5f385a9f66bf6cea8dd7aab4afc68391"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/command.json",
+        "bytes": 480,
+        "sha256": "4b16e1b4a7d678470577138a219045d14dd37ed964c0e177a51590068219f461"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+        "bytes": 2238317,
+        "sha256": "1a0c41d81ee14dd95e284e90aac945e77bfc5ba2d920c2a152ac38b3ad6dfb4d"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/time.tsv",
+        "bytes": 15,
+        "sha256": "c9aed644513712a8c7b288fc7d1426a5aefd4c12f743edc76619af09a57dc934"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/result.json",
+        "bytes": 888,
+        "sha256": "b1e403e9a641b6b97c70db9c4c6800b7e9479ad8ed7ae7068860ac6748520e05"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/command.json",
+        "bytes": 480,
+        "sha256": "c4e3bb18321655b9148fb64640b49e53352680def99fe5f4b8c479630c842083"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+        "bytes": 2226067,
+        "sha256": "7eddbeba63e0580afa38a492320106ba2616fa49e422bda86e2d8f013a5addde"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/time.tsv",
+        "bytes": 16,
+        "sha256": "1bf04a27173716e3326477c23966bb01cfbd006ef5c92bb6d42f69423b20f861"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/result.json",
+        "bytes": 889,
+        "sha256": "19f723db74973c16b99f243fa95992b0b63a32d1fb5c876537b55439245cd8d2"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/command.json",
+        "bytes": 480,
+        "sha256": "3d1d746f948e310f35e4b8f037f72ebf71662e0da1fbd1bb2c68880f69a18ebb"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/stdout.txt",
+        "bytes": 2086716,
+        "sha256": "45126a5088e84c5047ad80aa00c2e310b32a6a77b45fc06b08f44fc543fa7458"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/time.tsv",
+        "bytes": 16,
+        "sha256": "ef958df4c5785ccff6fecc3d0f950f03648627b7f1dc60a64ea0ac8c0306f92b"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/result.json",
+        "bytes": 889,
+        "sha256": "d46deae0d8a3b8fe76fd00bdeb250c3281073c284911e471d2ef82598ce4fa85"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/command.json",
+        "bytes": 480,
+        "sha256": "315672a511c39830ab2435d08a4049159f98193016efc43999e0134b5364e289"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+        "bytes": 320129,
+        "sha256": "b223c829d995c15fe7a7c5bddc5e0fdd714cb14eaf715de12b6808a095d685ab"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/time.tsv",
+        "bytes": 13,
+        "sha256": "2499ac35264bb0f061f81e388feb448802a944a6d978a4c6dc199e43d21b7b13"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/result.json",
+        "bytes": 885,
+        "sha256": "bf15aebb60f5f7317e7361a10d487f1c5f5b74768c69acb918b243b8c2886d2f"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/command.json",
+        "bytes": 480,
+        "sha256": "c7f80105af37e22feea76777570ed808fa2fc9fc07e3634d315ac2d284a0c4f6"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+        "bytes": 333190,
+        "sha256": "ecb39ac8804e3e8ea2c7ca6a6a58cb77ba16d07e58baf8cf6145a287f022fa56"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/time.tsv",
+        "bytes": 14,
+        "sha256": "b8275c0d04436f5cf54618f225da111a66c7e621edd1774f86bedc477d3f2e34"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/result.json",
+        "bytes": 886,
+        "sha256": "deb20081343e0b3e1078d85101a48bfc7a9171e2adee5887c72170618c868967"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/command.json",
+        "bytes": 480,
+        "sha256": "00e79ab9b71995f7dfdcd886efcf46d0bb2d73e46dc50db0a6bc672f8705f593"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/stdout.txt",
+        "bytes": 335346,
+        "sha256": "10352a7273acf0cb9ddb273b1f5bf7a02d805168153002e33257d58715657cb5"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/time.tsv",
+        "bytes": 15,
+        "sha256": "bce4145b87c2d6960be7f98894928d497f7e64c76bd3dd4a7d643eec1b72c13f"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/result.json",
+        "bytes": 887,
+        "sha256": "7d2af7841327198edb1ac89d9c587d052469a08ef4f79c4f95c0979df3c19958"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/command.json",
+        "bytes": 454,
+        "sha256": "1a95cb96ba5016f575b805ccd3e286faf20ce6ad2ea4b4b11c16ea8c2718eeca"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/stdout.txt",
+        "bytes": 68275,
+        "sha256": "a5b388c2e78f0485c056590ffaac206238b0b22e44d8994a5c517d25892a3ffd"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/stderr.txt",
+        "bytes": 196,
+        "sha256": "6a867a4c8a4f2410434dc4f5344c19cbd0ab4c17536b1203b7444cb22bcf992b"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/time.tsv",
+        "bytes": 15,
+        "sha256": "b83ffe45e01980d1f462f05529432388dd047d29168f52713e8225a69edf407e"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKMEA-rep0/result.json",
+        "bytes": 853,
+        "sha256": "13fa6474aba0c537c3fe0b6375cbd25410af7afad4f8dead23399833cc7d2914"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/command.json",
+        "bytes": 454,
+        "sha256": "b454430728f686664d043ddbf246564b088ab9a794e050acd81e1fa57f9ba13e"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/stdout.txt",
+        "bytes": 68275,
+        "sha256": "957a4ce31f242f22b597c78276ca87b26f7bb97900a6455b29a2cc38c11ab619"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/stderr.txt",
+        "bytes": 205,
+        "sha256": "a00db8deef9d271893b9213438c507b775566da5bb48aa8bd0ec4e97ea595380"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/time.tsv",
+        "bytes": 16,
+        "sha256": "655ee5eead0b1677e304601077fa18ba97d6e7e71d114c97c9425b421dcf35e6"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKMEA-rep0/result.json",
+        "bytes": 855,
+        "sha256": "8ca748fda81cb73ca195b28fe75cee9d1310cedd3e591a74c8ab8fb788f7b182"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/command.json",
+        "bytes": 454,
+        "sha256": "180774d2c2b43ac2518ae9b4276290565c319bf4335fb44d8aa1525820135007"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/stdout.txt",
+        "bytes": 68275,
+        "sha256": "8c27cfddde1d7ac8b0a51a0b5ea8f72c445d728fb052d428ef7afb175c026fa3"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/stderr.txt",
+        "bytes": 207,
+        "sha256": "765acf01a4face2f1effbe65e648d738e2df3a1876df78aebfd19043bd42c5ca"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/time.tsv",
+        "bytes": 17,
+        "sha256": "87700131e4e650fa38c32c334ce9aeacca93b37ec6be2de2e4b27e36031a8b8a"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKMEA-rep0/result.json",
+        "bytes": 855,
+        "sha256": "439a3dc527e75e65b3bc36e1e61528f75c45185f2e8ab2df4cc55ebf8ebc043f"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/command.json",
+        "bytes": 454,
+        "sha256": "707a8168a3af0d0edba3f65cd8fe5009b3ecfd6c2eca2ec20b94f33e23d6b75d"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/stdout.txt",
+        "bytes": 11314,
+        "sha256": "e5ad338c323ef4e5d63c652c1c8c56c0fc845a00179729247e2451df3a16f4bf"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/stderr.txt",
+        "bytes": 202,
+        "sha256": "f8ab1baadb2c2ea48ce0defea988f3ae347dec46d4315dd1ff42810a57a2cf1b"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/time.tsv",
+        "bytes": 13,
+        "sha256": "a69741ed75d2b56f746ea6a3f8887ab994644939e7653a51d8490891e3672760"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKMEA-rep0/result.json",
+        "bytes": 851,
+        "sha256": "7ed1bcfe7cdbb880f228ca74dc2dd58fce06d0d16a18759e6f09945e9154cabf"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/command.json",
+        "bytes": 454,
+        "sha256": "24013a98e75b00701008fefe64f0ddf8dfc275bdd30af93790661bc79e4849ab"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/stdout.txt",
+        "bytes": 11314,
+        "sha256": "ab779c5dc5e718bfaf68ddedf607c1680fc5aee94709b54584079f13c36e576f"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/stderr.txt",
+        "bytes": 198,
+        "sha256": "ba1662303a4bd10dc6968a07a4f638c5abdfc44fceb25fb31f4a7eb0e449879d"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/time.tsv",
+        "bytes": 14,
+        "sha256": "0e02c0550b66d41938cc9d92912a793246f2284fc1ba9c539c9564d02d7af2a1"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKMEA-rep0/result.json",
+        "bytes": 853,
+        "sha256": "b95592618db941c675f1cba16f29945d941c42280598db7302ef17d6440f6f0f"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/command.json",
+        "bytes": 454,
+        "sha256": "f641661ef095d451aaf22fcbe4f8c60d70d79411f78a6e5e0a77bfc8b4896a1c"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/stdout.txt",
+        "bytes": 11314,
+        "sha256": "f3db16eae98c4d7fde3e5537571f600b17244f7b6c29ed2d7498afd63a7fd5e5"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/stderr.txt",
+        "bytes": 198,
+        "sha256": "666bd04939598128ea402a83dc701ef0958a756130d9c6522cbc8f42721466a2"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/time.tsv",
+        "bytes": 15,
+        "sha256": "66578c8a620e945324947f4e03c8477fbca72fa8c817b74ab2f289aff8bed5c2"
+      },
+      {
+        "archive": "results/runs/e3-neat1-mea-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKMEA-rep0/result.json",
+        "bytes": 853,
+        "sha256": "169cb5b77bcd693addabe202620e6f8e546fe4f39d75df10faeb4c341153fbff"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/command.json",
+        "bytes": 493,
+        "sha256": "0a5880d3ed790964a7d7752ac0eb81be29f8e5808c52f556b6c6e318523a1b0f"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/stdout.txt",
+        "bytes": 22768754,
+        "sha256": "00928b6b0a9159c4c73617f2fa581ad147ddde5bb0250c8cdf5465955ec9cc34"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/time.tsv",
+        "bytes": 16,
+        "sha256": "39df0a41c621994314453d39a8593414bbb5f31461340c34616bb4544b600aba"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKSampling-rep0/result.json",
+        "bytes": 903,
+        "sha256": "cc89f84ead53646314f71a4ae313d9970a86fbdbc002e37736062ad9dfdf98a5"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/command.json",
+        "bytes": 493,
+        "sha256": "92631f33c476cc218bfb45a4cb1b4a87fc104ed8856f284421e74cfedf30719b"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/stdout.txt",
+        "bytes": 3762767,
+        "sha256": "940c9c4f873fae4e078d14478c284e25950adb213352e6e0b987f599f043d2c8"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/time.tsv",
+        "bytes": 14,
+        "sha256": "51206acf653d712003bb33dd2f87260f307f74cda02c718ec086970b70e62a75"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKSampling-rep0/result.json",
+        "bytes": 901,
+        "sha256": "49b05ea115d112fecbcb013c2b95b6f5230caf220f3117fe0e642654f7547fbd"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/command.json",
+        "bytes": 493,
+        "sha256": "435f1243128f7046b2bf359c0fb6fa8f6594085711377dfcd2129fe3db838363"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/stdout.txt",
+        "bytes": 3762767,
+        "sha256": "6b55445dbc98fb7300b0f50fbd30c2c08bce2d781c8a13c54c9047297fbfffac"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/time.tsv",
+        "bytes": 15,
+        "sha256": "14a90ce8416296cff214644d50c5459b90e3d5506b8029643a3047d2f2721b1f"
+      },
+      {
+        "archive": "results/runs/e3-neat1-sampling-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKSampling-rep0/result.json",
+        "bytes": 903,
+        "sha256": "79d9d18bdf095523bc6b9d4f8a43f7dc3af72bcaf0c4d2ad1127cd8b5b72d72f"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/command.json",
+        "bytes": 497,
+        "sha256": "e80a1000f07d8b9d16e74c635b5da4f3017f87f9675cf570fd86cbce68f9d846"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+        "bytes": 10559898,
+        "sha256": "54a2fdc62cea3c917d916dfe8e3d6ee6986f0e23a2a7af45bf23a8d371bdbaa4"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/time.tsv",
+        "bytes": 15,
+        "sha256": "0317056c84e9cdb905af837aadd66ec62f9bf6f8d488f4e1b75c06bbcef9a79f"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam100_outer-LinearPKRaccess-rep0/result.json",
+        "bytes": 905,
+        "sha256": "641aa6eea5a3af0e33c8e2111bd650f5f5de2ae8f1c014f5c610ca75a59f6e71"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/command.json",
+        "bytes": 497,
+        "sha256": "c1d390d4fa3a1d5410a102f586bbc6b72501c91e3dd398d33ae1f5b6622df0c8"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+        "bytes": 10895105,
+        "sha256": "2c61d2d43e2cfe13c33d75b0cfc2e9ed4edc4ba5fce03207bdc5865513f939ed"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/time.tsv",
+        "bytes": 16,
+        "sha256": "66c5e2915cf10016e25e5aa728f8d27da5a4738ea1c4295b2e87194dc3ef0f86"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam200_outer-LinearPKRaccess-rep0/result.json",
+        "bytes": 906,
+        "sha256": "6598c33dcf7a0f1cc8fe947f0c81a304dd98af2b89ede2ce1e6dc88f6a0274c3"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/command.json",
+        "bytes": 497,
+        "sha256": "26b92bfc6646be9aa598dee088d0e5ae6355af50d3d5d9b5683eb168c67ad811"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/stdout.txt",
+        "bytes": 10257038,
+        "sha256": "f27cd2f8e74d1645608b497ff606d016c4ab4b51d8e7bf4dfe44776aaccbe16d"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/time.tsv",
+        "bytes": 16,
+        "sha256": "b8b492c6920584ebbf44db8f856085aec214d4147b8a86091b33f3bdf6df42ad"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_long/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_2-beam400_outer-LinearPKRaccess-rep0/result.json",
+        "bytes": 905,
+        "sha256": "a138a951879a6d613838dc12bfa487753c1de126ce1b6ca3b8dc18e93871e174"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/command.json",
+        "bytes": 497,
+        "sha256": "88ffa9321e902cc9705df23bdb83ff7ce32d139c4ef9f6bafb39947b8ee2ed6c"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/stdout.txt",
+        "bytes": 1865994,
+        "sha256": "0f2ac44d86db086a066c4f29df341d88e753ae79cc935c3ecb24d996443bf716"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/time.tsv",
+        "bytes": 13,
+        "sha256": "b1c309072b32bad9456339c62ad8a08fdaae49af3aaa3b38c512f7d7a9e0813e"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam100_outer-LinearPKRaccess-rep0/result.json",
+        "bytes": 902,
+        "sha256": "f8d59b8743b45976c5786019fac3b240d9123c7d2eae5631f91d06e423f53b60"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/command.json",
+        "bytes": 497,
+        "sha256": "0e5ccaf8326e2ec12a41a621c26d5aaa1e38dd2bd4a9841a17b7403f9df33700"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/stdout.txt",
+        "bytes": 1713859,
+        "sha256": "63c3ed41ffb609616226d5a992eafaee3dfd7b24abb2812f47fa0a1e7d0c535f"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/time.tsv",
+        "bytes": 14,
+        "sha256": "d0c1b4d01adcb310edfee3eaadb450bb161c7a74de2db9374c04ca63db92209d"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam200_outer-LinearPKRaccess-rep0/result.json",
+        "bytes": 902,
+        "sha256": "17ccd922b06f3d6697de5d7723d3e3f58a789be52e4fef62e3eda82950f38f3e"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/command.json",
+        "bytes": 497,
+        "sha256": "feef708d6a4eed509d499f9f413c0f9dbd23c058cca2144bc6b1d6e30288b0e3"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/stdout.txt",
+        "bytes": 1757862,
+        "sha256": "9f57bb1e75769ab84a634580bddfc02c5eefefae85981a0d4b31bfadbef3e4db"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/time.tsv",
+        "bytes": 15,
+        "sha256": "cce0a27696d70d6288f77ba151493e79931d4edf84bce8b5048655078bcc925e"
+      },
+      {
+        "archive": "results/runs/e3-neat1-raccess-byloop-89baea52-20261018/tasks/neat1_short/000001/run/task_outputs.tar",
+        "member": "jobs/NEAT1_1-beam400_outer-LinearPKRaccess-rep0/result.json",
+        "bytes": 905,
+        "sha256": "41fc7d89ed6d72c4f6852ede7561df90d090867809fdcf516a6ebc8e9501eb51"
+      }
+    ]
+  }
+}

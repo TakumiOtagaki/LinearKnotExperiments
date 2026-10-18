@@ -1,0 +1,77 @@
+{
+  "source_commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "source_status": "",
+  "script_sha256": "e665cd737f1d55fd001c85875c517c507ead480839587bc7d03042c674a6af42",
+  "file_sha256": {
+    "deps/LinearCParty-89baea52/test/scfg2_pk_profiles_oracle_test.cc": "830a77f0050595640e51ef07efb0e2a38aa3401a18732f733a24a5f8778e293c",
+    "deps/LinearCParty-89baea52/test/scfg2_pk_profiles_beam_test.cc": "48148c30a493fdc73a24b39e6f6d56a880353271f7f60f92fe8f459c283c20c5",
+    "deps/LinearCParty-89baea52/test/tools/test_linear_pk_raccess.py": "802ff132f82eb6bde3fda60df445c45b584076383112ba2c52dbb6cb47f20e97",
+    "deps/LinearCParty-89baea52/params/rna_Turner04.par": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+    "deps/LinearCParty-89baea52/params/rna_DirksPierce09.par": "46e750b6b9f09ebd59cf2f65b388668f4cc2cce6726f2f151c65b50e06a4f6d6",
+    "build/linear-cparty-89baea52/libcparty_scfg2_exact.a": "bf3a9365b3e5dfdaf81d23e753a91c2259938f5b2ef4506bfd4b63b512336f99",
+    "build/linear-cparty-89baea52/libRNA.a": "a4cfd6eac4441da25af7557f72729f86ff14b1b7b6b05042a29277f4d6f006d7",
+    "build/linear-cparty-89baea52/scfg2_pk_profiles_oracle_test": "d565211aa3ee57098ed69df80a6c3f43743bc29171f086d0e78b7a800e0eb06d",
+    "build/linear-cparty-89baea52/scfg2_pk_profiles_beam_test": "cf5e68ee6b39f6cdaf1c6a64cbd3f2d95cdb83f1c16a518bd255f9d328360b7d",
+    "build/linear-cparty-89baea52/LinearPKRaccess": "f742eae39a648557db7e60949c1b9be4aea8fe6b5da7b1df5b8b70338bdf2517",
+    "build/linear-cparty-89baea52/LinearPKCapR": "f4388139247d3dd96e617b3865ddc014ba13309364f733d0cc98b98284a93b71"
+  },
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+  "python": "3.9.25",
+  "commands": [
+    {
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/scfg2_pk_profiles_oracle_test"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52",
+      "name": "maintained_oracle",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/scfg2_pk_profiles_beam_test"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52",
+      "name": "maintained_beam",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "python3",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52/test/tools/test_linear_pk_raccess.py"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52",
+      "name": "maintained_cli",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/bin/c++",
+        "-O2",
+        "-std=gnu++17",
+        "-I/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52/src",
+        "-I/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52/test",
+        "-I/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/generated",
+        "/tmp/9052475.1.all.q/byloop-validation-3nymmjlq/probe.cc",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/libcparty_scfg2_exact.a",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/libRNA.a",
+        "-o",
+        "/tmp/9052475.1.all.q/byloop-validation-3nymmjlq/probe"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52",
+      "name": "compile",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/tmp/9052475.1.all.q/byloop-validation-3nymmjlq/probe"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52",
+      "name": "measured_oracle",
+      "returncode": 0
+    }
+  ],
+  "environment_override": {
+    "SCFG2_BUILD_DIR": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52"
+  },
+  "scope": "finite regression checks, not an independent grammar or energy-model validation"
+}

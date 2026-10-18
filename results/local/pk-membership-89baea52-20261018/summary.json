@@ -1,0 +1,1184 @@
+{
+  "rna_count": 200,
+  "reference_pair_count": 983,
+  "pair_groups": {
+    "all": {
+      "pairs": 983,
+      "p_gt_half": 179,
+      "fraction_gt_half": 0.18209562563580875,
+      "positive_marginal": 983,
+      "mean_probability": 0.17790153340807946
+    },
+    "single_reachable": {
+      "pairs": 983,
+      "p_gt_half": 179,
+      "fraction_gt_half": 0.18209562563580875,
+      "positive_marginal": 983,
+      "mean_probability": 0.17790153340807946
+    },
+    "single_rejected": {
+      "pairs": 0,
+      "p_gt_half": 0,
+      "fraction_gt_half": null,
+      "positive_marginal": 0,
+      "mean_probability": null
+    },
+    "single_unmeasured": {
+      "pairs": 0,
+      "p_gt_half": 0,
+      "fraction_gt_half": null,
+      "positive_marginal": 0,
+      "mean_probability": null
+    },
+    "full_reachable": {
+      "pairs": 828,
+      "p_gt_half": 150,
+      "fraction_gt_half": 0.18115942028985507,
+      "positive_marginal": 828,
+      "mean_probability": 0.1761652837581754
+    },
+    "full_rejected": {
+      "pairs": 155,
+      "p_gt_half": 29,
+      "fraction_gt_half": 0.1870967741935484,
+      "positive_marginal": 155,
+      "mean_probability": 0.18717646702176058
+    },
+    "full_unmeasured": {
+      "pairs": 0,
+      "p_gt_half": 0,
+      "fraction_gt_half": null,
+      "positive_marginal": 0,
+      "mean_probability": null
+    },
+    "reported_reachable": {
+      "pairs": 972,
+      "p_gt_half": 179,
+      "fraction_gt_half": 0.18415637860082304,
+      "positive_marginal": 972,
+      "mean_probability": 0.179901224155216
+    },
+    "reported_rejected": {
+      "pairs": 11,
+      "p_gt_half": 0,
+      "fraction_gt_half": 0.0,
+      "positive_marginal": 11,
+      "mean_probability": 0.001201587388379002
+    },
+    "reported_unmeasured": {
+      "pairs": 0,
+      "p_gt_half": 0,
+      "fraction_gt_half": null,
+      "positive_marginal": 0,
+      "mean_probability": null
+    },
+    "any_completion_supported": {
+      "pairs": 983,
+      "p_gt_half": 179,
+      "fraction_gt_half": 0.18209562563580875,
+      "positive_marginal": 983,
+      "mean_probability": 0.17790153340807946
+    },
+    "any_completion_unresolved": {
+      "pairs": 0,
+      "p_gt_half": 0,
+      "fraction_gt_half": null,
+      "positive_marginal": 0,
+      "mean_probability": null
+    }
+  },
+  "membership": {
+    "full": {
+      "reachable": 164,
+      "rejected": 36,
+      "reasons_nonexclusive": {
+        "completed_WMB_weak_closure": 1,
+        "extension_crossing": 22,
+        "minimum_pair_span": 14
+      }
+    },
+    "filtered": {
+      "reachable": 176,
+      "rejected": 24,
+      "reasons_nonexclusive": {
+        "completed_WMB_weak_closure": 1,
+        "constrained_DP_rejection_unresolved": 1,
+        "extension_crossing": 22
+      }
+    },
+    "reported": {
+      "reachable": 198,
+      "rejected": 2,
+      "reasons_nonexclusive": {
+        "completed_WMB_weak_closure": 1,
+        "constrained_DP_rejection_unresolved": 1
+      }
+    },
+    "scaffold": {
+      "reachable": 199,
+      "rejected": 1,
+      "reasons_nonexclusive": {
+        "V_internal_loop_MAXLOOP_30": 1
+      }
+    }
+  },
+  "energy_gaps": {
+    "full": {
+      "n": 164,
+      "min": 0.0,
+      "q25": 4.800250000000001,
+      "median": 11.039499999999999,
+      "q75": 20.211999999999996,
+      "max": 82.9762845488169,
+      "mean": 16.473932872412156,
+      "above_mfe_by_gt_1e_8": 159
+    },
+    "full_minus_scaffold": {
+      "n": 163,
+      "min": -15.17000000000001,
+      "q25": -4.4670000000000005,
+      "median": -0.6899999999999998,
+      "q75": 9.359499999999999,
+      "max": 28.619999999999997,
+      "mean": 2.1962023414591014
+    },
+    "filtered": {
+      "n": 176,
+      "min": 0.0,
+      "q25": 4.827250000000001,
+      "median": 11.513,
+      "q75": 22.46500000000001,
+      "max": 82.9762845488169,
+      "mean": 17.2864204038386
+    },
+    "reported": {
+      "n": 198,
+      "min": 0.0,
+      "q25": 5.5200000000000005,
+      "median": 13.010499999999997,
+      "q75": 21.490499999999997,
+      "max": 82.9762845488169,
+      "mean": 17.32637874280603,
+      "above_mfe_by_gt_1e_8": 193
+    },
+    "reported_minus_scaffold": {
+      "n": 197,
+      "min": -15.17000000000001,
+      "q25": -4.618999999999999,
+      "median": 0.14700000000000202,
+      "q75": 12.244,
+      "max": 28.619999999999997,
+      "mean": 2.88070061102269
+    },
+    "scaffold": {
+      "n": 199,
+      "min": 2.1000000000000085,
+      "q25": 6.9565,
+      "median": 11.336000000000002,
+      "q75": 19.041999999999998,
+      "max": 66.88828454881696,
+      "mean": 14.331904375397606
+    }
+  },
+  "distance_groups": {
+    "span_le_50": {
+      "pairs": 689,
+      "p_gt_half": 150,
+      "fraction_gt_half": 0.21770682148040638,
+      "positive_marginal": 689,
+      "mean_probability": 0.21455297967180653,
+      "rna_count": 144,
+      "rna_mean_probability": 0.19506299768531435,
+      "full_energy_gap": {
+        "n": 123,
+        "min": 0.0,
+        "q25": 4.285499999999999,
+        "median": 8.096000000000004,
+        "q75": 17.658500000000007,
+        "max": 54.894,
+        "mean": 13.526162601626016
+      },
+      "reported_energy_gap": {
+        "n": 142,
+        "min": 0.0,
+        "q25": 4.39725,
+        "median": 9.792999999999996,
+        "q75": 19.063000000000002,
+        "max": 54.894,
+        "mean": 13.846154929577466
+      },
+      "full_reachable_rnas": 123,
+      "single_reachable_pairs": 689
+    },
+    "span_51_100": {
+      "pairs": 143,
+      "p_gt_half": 25,
+      "fraction_gt_half": 0.17482517482517482,
+      "positive_marginal": 143,
+      "mean_probability": 0.17202131325443562,
+      "rna_count": 30,
+      "rna_mean_probability": 0.1654278558637451,
+      "full_energy_gap": {
+        "n": 21,
+        "min": 2.1000000000000014,
+        "q25": 10.176000000000005,
+        "median": 16.926999999999996,
+        "q75": 24.11000000000001,
+        "max": 50.770797747529755,
+        "mean": 19.034847511787135
+      },
+      "reported_energy_gap": {
+        "n": 30,
+        "min": 2.1000000000000014,
+        "q25": 12.454999999999998,
+        "median": 17.0375,
+        "q75": 23.16475,
+        "max": 50.770797747529755,
+        "mean": 18.86545992491766
+      },
+      "full_reachable_rnas": 21,
+      "single_reachable_pairs": 143
+    },
+    "span_gt_100": {
+      "pairs": 151,
+      "p_gt_half": 4,
+      "fraction_gt_half": 0.026490066225165563,
+      "positive_marginal": 151,
+      "mean_probability": 0.01623282484028553,
+      "rna_count": 26,
+      "rna_mean_probability": 0.023508473965097674,
+      "full_energy_gap": {
+        "n": 20,
+        "min": 9.506018342166215,
+        "q25": 12.602,
+        "median": 22.587500000000006,
+        "q75": 47.686999999999976,
+        "max": 82.9762845488169,
+        "mean": 31.913759666403195
+      },
+      "reported_energy_gap": {
+        "n": 26,
+        "min": 9.506018342166215,
+        "q25": 14.621499999999994,
+        "median": 37.073840473329014,
+        "q75": 47.73299999999996,
+        "max": 82.9762845488169,
+        "mean": 34.55789205107938
+      },
+      "full_reachable_rnas": 20,
+      "single_reachable_pairs": 151
+    }
+  },
+  "validation": {
+    "public_evaluator_recovers_mfe": 200,
+    "max_probability_delta_vs_previous_build": 0.0,
+    "mfe_overlap": 210,
+    "mfe_square_total": 850,
+    "mfe_square_overlap": 210,
+    "fresh_exact_bpp_rnas": 200,
+    "previous_bpp_rnas": 0,
+    "fresh_exact_bpp_pairs": 983,
+    "aggregation_python_sha256": "6170971024f636ea9c7bb87d84791ccf99d8f1c01d1b31020e1e72566c08635e",
+    "partial_salvaged_rnas": 0,
+    "timeout_attempts_preserved": 0,
+    "reachable_evaluations_audited": 1582,
+    "max_trace_sum_error": 1.3500311979441904e-13,
+    "max_energy_component_sum_error": 1.4210854715202004e-14,
+    "single_reachable_but_zero_marginal": 0,
+    "fresh_bpp_threshold_changes_vs_previous": 0
+  },
+  "incomplete_singleton_tests": [],
+  "any_completion_evidence": {
+    "89baea52_positive_marginal": 983
+  },
+  "single_rejection_reasons_nonexclusive": {},
+  "input_audit": {
+    "short_canonical_pairs": 18,
+    "rna_with_short_canonical": 14,
+    "other_bracket_pairs": 57,
+    "rna_with_other_brackets": 23,
+    "noncanonical_pairs_removed": 725
+  },
+  "spearman": {
+    "rna_median_span_vs_mean_probability": -0.32773234900509424,
+    "pair_span_vs_probability": -0.32777142195571723,
+    "full_rna_span_vs_energy_gap": 0.2640269192545938,
+    "reported_rna_span_vs_energy_gap": 0.2613996469694213
+  },
+  "paired_energy_terms": {
+    "full": {
+      "exterior": {
+        "reference": {
+          "n": 164,
+          "min": -2.76,
+          "q25": -1.38,
+          "median": -1.38,
+          "q75": 0.0,
+          "max": 0,
+          "mean": -0.9340243902439024
+        },
+        "mfe": {
+          "n": 164,
+          "min": -6.9,
+          "q25": -1.38,
+          "median": -1.38,
+          "q75": 0.0,
+          "max": 0,
+          "mean": -1.2790243902439022
+        },
+        "difference": {
+          "n": 164,
+          "min": -1.38,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 1.38,
+          "max": 5.5200000000000005,
+          "mean": 0.345
+        }
+      },
+      "in_multiloop": {
+        "reference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 10.07,
+          "max": 20.14,
+          "mean": 4.236768292682927
+        },
+        "mfe": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "difference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 10.07,
+          "max": 20.14,
+          "mean": 4.236768292682927
+        }
+      },
+      "in_pseudoloop": {
+        "reference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 15,
+          "mean": 0.36585365853658536
+        },
+        "mfe": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "difference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 15,
+          "mean": 0.36585365853658536
+        }
+      },
+      "band": {
+        "reference": {
+          "n": 164,
+          "min": 4.92,
+          "q25": 4.92,
+          "median": 4.92,
+          "q75": 4.92,
+          "max": 14.76,
+          "mean": 6.195
+        },
+        "mfe": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 4.92,
+          "q75": 4.92,
+          "max": 24.6,
+          "mean": 4.815
+        },
+        "difference": {
+          "n": 164,
+          "min": -19.68,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 4.92,
+          "max": 14.76,
+          "mean": 1.38
+        }
+      },
+      "unpaired": {
+        "reference": {
+          "n": 164,
+          "min": 0.3,
+          "q25": 0.66,
+          "median": 0.9,
+          "q75": 1.14,
+          "max": 4.38,
+          "mean": 1.0671951219512195
+        },
+        "mfe": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.42,
+          "q75": 0.78,
+          "max": 2.28,
+          "mean": 0.45365853658536587
+        },
+        "difference": {
+          "n": 164,
+          "min": -0.66,
+          "q25": 0.059999999999999984,
+          "median": 0.4200000000000002,
+          "q75": 0.735,
+          "max": 3.9,
+          "mean": 0.6135365853658536
+        }
+      },
+      "nested_region": {
+        "reference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.96,
+          "q75": 0.96,
+          "max": 4.8,
+          "mean": 0.7785365853658537
+        },
+        "mfe": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 2.88,
+          "mean": 0.2926829268292683
+        },
+        "difference": {
+          "n": 164,
+          "min": -2.88,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.96,
+          "max": 4.8,
+          "mean": 0.48585365853658535
+        }
+      },
+      "band_stack": {
+        "reference": {
+          "n": 164,
+          "min": -65.23699999999997,
+          "q25": -32.72975000000001,
+          "median": -24.386000000000003,
+          "q75": -15.908749999999998,
+          "max": -6.408000000000005,
+          "mean": -25.212506097560976
+        },
+        "mfe": {
+          "n": 164,
+          "min": -86.59700000000001,
+          "q25": -22.428,
+          "median": -12.104000000000001,
+          "q75": -6.661338147750939e-15,
+          "max": 8.526512829121202e-14,
+          "mean": -14.05440243902439
+        },
+        "difference": {
+          "n": 164,
+          "min": -55.625000000000085,
+          "q25": -28.302000000000003,
+          "median": -10.190499999999998,
+          "q75": 1.8689999999999984,
+          "max": 52.59899999999998,
+          "mean": -11.158103658536588
+        }
+      },
+      "band_internal": {
+        "reference": {
+          "n": 164,
+          "min": -1.0359999999999978,
+          "q25": 0.29600000000000115,
+          "median": 2.1829999999999874,
+          "q75": 3.718499999999994,
+          "max": 19.832000000000004,
+          "mean": 2.5543536585365882
+        },
+        "mfe": {
+          "n": 164,
+          "min": -1.0360000000000014,
+          "q25": 0.0,
+          "median": 1.4210854715202004e-14,
+          "q75": 1.9055000000000066,
+          "max": 21.607999999999997,
+          "mean": 1.3685487804878067
+        },
+        "difference": {
+          "n": 164,
+          "min": -12.06200000000004,
+          "q25": -1.1546319456101628e-14,
+          "median": 1.1470000000000002,
+          "q75": 3.034000000000008,
+          "max": 7.770000000000039,
+          "mean": 1.1858048780487813
+        }
+      },
+      "band_multiloop_closing": {
+        "reference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 3.41,
+          "max": 3.41,
+          "mean": 0.9564634146341464
+        },
+        "mfe": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 3.41,
+          "mean": 0.22871951219512196
+        },
+        "difference": {
+          "n": 164,
+          "min": -3.41,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 3.41,
+          "mean": 0.7277439024390244
+        }
+      },
+      "band_multiloop_branch": {
+        "reference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 1.68,
+          "max": 1.68,
+          "mean": 0.4712195121951219
+        },
+        "mfe": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 2.24,
+          "mean": 0.12292682926829268
+        },
+        "difference": {
+          "n": 164,
+          "min": -2.24,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 1.68,
+          "mean": 0.34829268292682924
+        }
+      },
+      "band_multiloop_unpaired": {
+        "reference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 1.32,
+          "max": 3.72,
+          "mean": 0.5041463414634146
+        },
+        "mfe": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 2.4,
+          "mean": 0.0775609756097561
+        },
+        "difference": {
+          "n": 164,
+          "min": -0.48,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 3.24,
+          "mean": 0.4265853658536585
+        }
+      },
+      "multiloop_closing": {
+        "reference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "mfe": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "difference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        }
+      },
+      "multiloop_branch": {
+        "reference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.03,
+          "max": 0.06,
+          "mean": 0.012621951219512194
+        },
+        "mfe": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "difference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.03,
+          "max": 0.06,
+          "mean": 0.012621951219512194
+        }
+      },
+      "multiloop_unpaired": {
+        "reference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "mfe": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "difference": {
+          "n": 164,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        }
+      },
+      "other_thermodynamic": {
+        "reference": {
+          "n": 164,
+          "min": -75.49999999999997,
+          "q25": -5.650000000000008,
+          "median": 8.881784197001252e-16,
+          "q75": 4.69999999999999,
+          "max": 33.599999999999994,
+          "mean": -3.9265122495390643
+        },
+        "mfe": {
+          "n": 164,
+          "min": -121.20000000000006,
+          "q25": -27.724999999999998,
+          "median": -13.75,
+          "q75": -2.3000000000000025,
+          "max": 7.900000000000003,
+          "mean": -21.43048780487805
+        },
+        "difference": {
+          "n": 164,
+          "min": -28.399999999999977,
+          "q25": 2.575000000000021,
+          "median": 16.599999999999987,
+          "q75": 29.549999999999994,
+          "max": 83.5882845488169,
+          "mean": 17.503975555338986
+        }
+      }
+    },
+    "reported": {
+      "exterior": {
+        "reference": {
+          "n": 198,
+          "min": -2.76,
+          "q25": -1.38,
+          "median": -1.38,
+          "q75": 0.0,
+          "max": 0,
+          "mean": -0.8781818181818181
+        },
+        "mfe": {
+          "n": 198,
+          "min": -6.9,
+          "q25": -1.38,
+          "median": -1.38,
+          "q75": 0.0,
+          "max": 0,
+          "mean": -1.2615151515151515
+        },
+        "difference": {
+          "n": 198,
+          "min": -1.38,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 1.38,
+          "max": 5.5200000000000005,
+          "mean": 0.3833333333333333
+        }
+      },
+      "in_multiloop": {
+        "reference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 10.07,
+          "max": 20.14,
+          "mean": 4.42469696969697
+        },
+        "mfe": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "difference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 10.07,
+          "max": 20.14,
+          "mean": 4.42469696969697
+        }
+      },
+      "in_pseudoloop": {
+        "reference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 15,
+          "mean": 0.30303030303030304
+        },
+        "mfe": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "difference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 15,
+          "mean": 0.30303030303030304
+        }
+      },
+      "band": {
+        "reference": {
+          "n": 198,
+          "min": 4.92,
+          "q25": 4.92,
+          "median": 4.92,
+          "q75": 4.92,
+          "max": 14.76,
+          "mean": 5.963636363636364
+        },
+        "mfe": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 4.92,
+          "q75": 4.92,
+          "max": 24.6,
+          "mean": 4.758484848484849
+        },
+        "difference": {
+          "n": 198,
+          "min": -19.68,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 4.92,
+          "max": 14.76,
+          "mean": 1.205151515151515
+        }
+      },
+      "unpaired": {
+        "reference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.66,
+          "median": 0.9,
+          "q75": 1.2,
+          "max": 5.1,
+          "mean": 1.1539393939393938
+        },
+        "mfe": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.42,
+          "q75": 0.78,
+          "max": 2.28,
+          "mean": 0.45484848484848484
+        },
+        "difference": {
+          "n": 198,
+          "min": -0.66,
+          "q25": 0.014999999999999986,
+          "median": 0.48,
+          "q75": 0.9,
+          "max": 5.1,
+          "mean": 0.6990909090909091
+        }
+      },
+      "nested_region": {
+        "reference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.96,
+          "q75": 0.96,
+          "max": 4.8,
+          "mean": 0.9212121212121211
+        },
+        "mfe": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.96,
+          "max": 2.88,
+          "mean": 0.33454545454545453
+        },
+        "difference": {
+          "n": 198,
+          "min": -2.88,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.96,
+          "max": 4.8,
+          "mean": 0.5866666666666667
+        }
+      },
+      "band_stack": {
+        "reference": {
+          "n": 198,
+          "min": -65.23699999999997,
+          "q25": -31.239,
+          "median": -22.739500000000003,
+          "q75": -14.418000000000001,
+          "max": -4.89499999999999,
+          "mean": -23.791318181818184
+        },
+        "mfe": {
+          "n": 198,
+          "min": -86.59700000000001,
+          "q25": -22.339000000000006,
+          "median": -13.127499999999998,
+          "q75": -7.105427357601002e-15,
+          "max": 8.526512829121202e-14,
+          "mean": -14.352373737373737
+        },
+        "difference": {
+          "n": 198,
+          "min": -55.625000000000085,
+          "q25": -25.58749999999998,
+          "median": -4.449999999999994,
+          "q75": 3.270750000000005,
+          "max": 52.59899999999998,
+          "mean": -9.438944444444447
+        }
+      },
+      "band_internal": {
+        "reference": {
+          "n": 198,
+          "min": -1.0359999999999978,
+          "q25": 0.2959999999999958,
+          "median": 1.85,
+          "q75": 3.6074999999999946,
+          "max": 19.832000000000004,
+          "mean": 2.3444545454545476
+        },
+        "mfe": {
+          "n": 198,
+          "min": -1.0360000000000014,
+          "q25": 0.0,
+          "median": 1.4210854715202004e-14,
+          "q75": 1.924000000000004,
+          "max": 21.607999999999997,
+          "mean": 1.4594444444444463
+        },
+        "difference": {
+          "n": 198,
+          "min": -12.06200000000004,
+          "q25": -0.2775000000000123,
+          "median": 0.4810000000000274,
+          "q75": 2.9600000000000035,
+          "max": 7.770000000000039,
+          "mean": 0.8850101010101012
+        }
+      },
+      "band_multiloop_closing": {
+        "reference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 2.5575,
+          "max": 3.41,
+          "mean": 0.8611111111111112
+        },
+        "mfe": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 3.41,
+          "mean": 0.2238888888888889
+        },
+        "difference": {
+          "n": 198,
+          "min": -3.41,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 3.41,
+          "mean": 0.6372222222222222
+        }
+      },
+      "band_multiloop_branch": {
+        "reference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 1.26,
+          "max": 1.68,
+          "mean": 0.42424242424242425
+        },
+        "mfe": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 2.24,
+          "mean": 0.11878787878787879
+        },
+        "difference": {
+          "n": 198,
+          "min": -2.24,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 1.68,
+          "mean": 0.3054545454545454
+        }
+      },
+      "band_multiloop_unpaired": {
+        "reference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.63,
+          "max": 3.72,
+          "mean": 0.44303030303030305
+        },
+        "mfe": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 2.4,
+          "mean": 0.07333333333333333
+        },
+        "difference": {
+          "n": 198,
+          "min": -0.6,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 3.24,
+          "mean": 0.3696969696969697
+        }
+      },
+      "multiloop_closing": {
+        "reference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "mfe": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "difference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        }
+      },
+      "multiloop_branch": {
+        "reference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.03,
+          "max": 0.06,
+          "mean": 0.013181818181818182
+        },
+        "mfe": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "difference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.03,
+          "max": 0.06,
+          "mean": 0.013181818181818182
+        }
+      },
+      "multiloop_unpaired": {
+        "reference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "mfe": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        },
+        "difference": {
+          "n": 198,
+          "min": 0,
+          "q25": 0.0,
+          "median": 0.0,
+          "q75": 0.0,
+          "max": 0,
+          "mean": 0
+        }
+      },
+      "other_thermodynamic": {
+        "reference": {
+          "n": 198,
+          "min": -75.49999999999997,
+          "q25": -8.275,
+          "median": -0.4000000000000128,
+          "q75": 3.150000000000002,
+          "max": 33.599999999999994,
+          "mean": -5.8941818632545795
+        },
+        "mfe": {
+          "n": 198,
+          "min": -121.20000000000006,
+          "q25": -28.35,
+          "median": -14.95,
+          "q75": -4.0499999999999945,
+          "max": 7.900000000000003,
+          "mean": -22.8469696969697
+        },
+        "difference": {
+          "n": 198,
+          "min": -28.399999999999977,
+          "q25": 2.4250000000000123,
+          "median": 12.349999999999994,
+          "q75": 29.47499999999999,
+          "max": 83.5882845488169,
+          "mean": 16.95278783371512
+        }
+      }
+    }
+  }
+}

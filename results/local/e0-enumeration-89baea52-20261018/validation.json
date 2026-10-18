@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "cases": 729,
+  "processes": 1459,
+  "structures": 156534,
+  "added_structures": 372,
+  "archive_members": 2921,
+  "independent_distribution_reaggregation": true,
+  "protected_hashes_match": true,
+  "validator_sha256": "0b60a5d98ff44468dfa9bc77f3fe28d142967b15e2acbe6826aa7c91901ab0b9"
+}

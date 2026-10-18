@@ -1,0 +1,308 @@
+[
+  {
+    "input": "bpRNA_CRW_20565",
+    "program": "LinearCParty",
+    "artifacts": {
+      "jobs/bpRNA_CRW_20565-beam400_outer-LinearCParty-rep0/command.json": {
+        "bytes": 582,
+        "sha256": "0cbd1753acd4287059e41c1aaef884ef49acf02d3030be3449b85d5e3b24dc19"
+      },
+      "jobs/bpRNA_CRW_20565-beam400_outer-LinearCParty-rep0/stdout.txt": {
+        "bytes": 4712,
+        "sha256": "17349285665d11697fe3e9b8fb84e42c99bb2bcc630b289a90d18444a9c91a9e"
+      },
+      "jobs/bpRNA_CRW_20565-beam400_outer-LinearCParty-rep0/stderr.txt": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "jobs/bpRNA_CRW_20565-beam400_outer-LinearCParty-rep0/time.tsv": {
+        "bytes": 13,
+        "sha256": "41227610322e655d2476e219c12c5c73417addda833fda7a4abcef38f45ce206"
+      },
+      "jobs/bpRNA_CRW_20565-beam400_outer-LinearCParty-rep0/bpp.tsv": {
+        "bytes": 2466712,
+        "sha256": "d17f5513f1bdd53666f8c0f83914c7c6325bec494191ff70402c5c2c027e03b2"
+      },
+      "jobs/bpRNA_CRW_20565-beam400_outer-LinearCParty-rep0/result.json": {
+        "bytes": 998,
+        "sha256": "f2fc9bc4f9b91dc923cda86f401fbdf0b53da46d04f85bf29fee9ec4e6ca60c7"
+      }
+    },
+    "status": "success",
+    "reference_pk_pairs": [
+      [
+        524,
+        541
+      ],
+      [
+        523,
+        542
+      ],
+      [
+        522,
+        543
+      ],
+      [
+        588,
+        875
+      ],
+      [
+        587,
+        876
+      ],
+      [
+        22,
+        926
+      ],
+      [
+        21,
+        927
+      ],
+      [
+        20,
+        928
+      ]
+    ],
+    "reference_probabilities": [
+      2.937861127520547e-10,
+      2.955222280903021e-10,
+      2.932779994347546e-10,
+      2.1028430054337034e-17,
+      2.2800366512317523e-17,
+      0.00045326084596248895,
+      0.0004529226715149469,
+      0.000386865734001687
+    ]
+  },
+  {
+    "input": "bpRNA_CRW_20565",
+    "program": "LinearPKCapR",
+    "artifacts": {
+      "jobs/bpRNA_CRW_20565-beam400_outer-LinearPKCapR-rep0/command.json": {
+        "bytes": 433,
+        "sha256": "2f3eb0e0b8cf621373f7254fe4d6ad2732e6c7a40a497930d667e988e6f98fed"
+      },
+      "jobs/bpRNA_CRW_20565-beam400_outer-LinearPKCapR-rep0/stdout.txt": {
+        "bytes": 129940,
+        "sha256": "c10f8b3706deb64ec983d2a2d955c4301d107bb2881074452b35e736924298e4"
+      },
+      "jobs/bpRNA_CRW_20565-beam400_outer-LinearPKCapR-rep0/stderr.txt": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "jobs/bpRNA_CRW_20565-beam400_outer-LinearPKCapR-rep0/time.tsv": {
+        "bytes": 13,
+        "sha256": "15eadf6cc9e99d70e73dfab6cb5780d24de5b6900d0fc05ddf24210890f20192"
+      },
+      "jobs/bpRNA_CRW_20565-beam400_outer-LinearPKCapR-rep0/result.json": {
+        "bytes": 849,
+        "sha256": "fab845b3e35f9b111d7b4cdc342ccafb17df844438092a2fd33be159032c171f"
+      }
+    },
+    "status": "success"
+  },
+  {
+    "input": "bpRNA_CRW_54735",
+    "program": "LinearCParty",
+    "artifacts": {
+      "jobs/bpRNA_CRW_54735-beam400_outer-LinearCParty-rep0/command.json": {
+        "bytes": 582,
+        "sha256": "41616984a25fa0883a8f40b5bd460bdd728da9ec7a6be2052d5f3f6e0c55da49"
+      },
+      "jobs/bpRNA_CRW_54735-beam400_outer-LinearCParty-rep0/stdout.txt": {
+        "bytes": 5078,
+        "sha256": "022e4617ba10975a35ea8122daee6f189d5a83d2801b9cfd65b026daed5b052e"
+      },
+      "jobs/bpRNA_CRW_54735-beam400_outer-LinearCParty-rep0/stderr.txt": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "jobs/bpRNA_CRW_54735-beam400_outer-LinearCParty-rep0/time.tsv": {
+        "bytes": 14,
+        "sha256": "cc417a8d47fbbec2415dd8ea4e9aa090e31944f9c2f3342458b946d1292f7751"
+      },
+      "jobs/bpRNA_CRW_54735-beam400_outer-LinearCParty-rep0/bpp.tsv": {
+        "bytes": 5164214,
+        "sha256": "eb9b11b0bb5dfc82205259dd63435d127d687bec2f1770b2eab41da74a695c27"
+      },
+      "jobs/bpRNA_CRW_54735-beam400_outer-LinearCParty-rep0/result.json": {
+        "bytes": 999,
+        "sha256": "e2af842f0a4eda8c0156287b9b752f5abb5c09a5d5242d5b2257b9bc8706e188"
+      }
+    },
+    "status": "success",
+    "reference_pk_pairs": [
+      [
+        44,
+        950
+      ],
+      [
+        43,
+        951
+      ],
+      [
+        42,
+        952
+      ]
+    ],
+    "reference_probabilities": [
+      4.7893445528273444e-05,
+      5.0148092797819005e-05,
+      4.6699929848513956e-05
+    ]
+  },
+  {
+    "input": "bpRNA_CRW_54735",
+    "program": "LinearPKCapR",
+    "artifacts": {
+      "jobs/bpRNA_CRW_54735-beam400_outer-LinearPKCapR-rep0/command.json": {
+        "bytes": 433,
+        "sha256": "6b79d06ea3511fee8d7de094b2f0ce37e34dca93a85048aa18aa134534faaab8"
+      },
+      "jobs/bpRNA_CRW_54735-beam400_outer-LinearPKCapR-rep0/stdout.txt": {
+        "bytes": 187145,
+        "sha256": "d631ec7457cb3c6007c77546811be03b74a8605266756efc43d56b4c4e3e4c97"
+      },
+      "jobs/bpRNA_CRW_54735-beam400_outer-LinearPKCapR-rep0/stderr.txt": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "jobs/bpRNA_CRW_54735-beam400_outer-LinearPKCapR-rep0/time.tsv": {
+        "bytes": 13,
+        "sha256": "4710e908cc606c63d769de406e86623fae254197bb635a8a6ad5037b367ebc2a"
+      },
+      "jobs/bpRNA_CRW_54735-beam400_outer-LinearPKCapR-rep0/result.json": {
+        "bytes": 848,
+        "sha256": "05d4c4220d4adfe1e637227cede8e7af0719f091620a10e1549a7becd400d443"
+      }
+    },
+    "status": "success"
+  },
+  {
+    "input": "bpRNA_CRW_55337",
+    "program": "LinearCParty",
+    "artifacts": {
+      "jobs/bpRNA_CRW_55337-beam400_outer-LinearCParty-rep0/command.json": {
+        "bytes": 582,
+        "sha256": "6fd11ca0ee5d213649abb79031ed5bf34af13fd25b0d45dfcf2ba77698e23511"
+      },
+      "jobs/bpRNA_CRW_55337-beam400_outer-LinearCParty-rep0/stdout.txt": {
+        "bytes": 12719,
+        "sha256": "181d5bcda3469d2b97e8a1c11befbca73e4419aa4a7e00c3961e785b888118ad"
+      },
+      "jobs/bpRNA_CRW_55337-beam400_outer-LinearCParty-rep0/stderr.txt": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "jobs/bpRNA_CRW_55337-beam400_outer-LinearCParty-rep0/time.tsv": {
+        "bytes": 16,
+        "sha256": "9b472d1f92b9b6fe10099e4c71c7533d7323cab77a9836f2790afd701148f08c"
+      },
+      "jobs/bpRNA_CRW_55337-beam400_outer-LinearCParty-rep0/bpp.tsv": {
+        "bytes": 29534363,
+        "sha256": "5d3e8c3dfafb860cbfde7112d06441883649c1b28c1f92cadf1511bee643ee6a"
+      },
+      "jobs/bpRNA_CRW_55337-beam400_outer-LinearCParty-rep0/result.json": {
+        "bytes": 1001,
+        "sha256": "35c9dd7ef52e6312cd61d795a9fd58aa9597e54fcf05043ac86a094778620bc3"
+      }
+    },
+    "status": "success",
+    "reference_pk_pairs": [
+      [
+        1336,
+        1468
+      ],
+      [
+        1335,
+        1469
+      ],
+      [
+        3232,
+        3417
+      ],
+      [
+        3422,
+        3478
+      ],
+      [
+        3421,
+        3479
+      ],
+      [
+        3420,
+        3480
+      ],
+      [
+        3418,
+        3482
+      ],
+      [
+        638,
+        3500
+      ],
+      [
+        637,
+        3501
+      ],
+      [
+        636,
+        3502
+      ],
+      [
+        635,
+        3503
+      ],
+      [
+        3077,
+        3109
+      ],
+      [
+        3452,
+        3519
+      ]
+    ],
+    "reference_probabilities": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      7.041755907753693e-49,
+      7.024751493984943e-49,
+      7.037723699172997e-49,
+      6.988166214483933e-49,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "input": "bpRNA_CRW_55337",
+    "program": "LinearPKCapR",
+    "artifacts": {
+      "jobs/bpRNA_CRW_55337-beam400_outer-LinearPKCapR-rep0/command.json": {
+        "bytes": 433,
+        "sha256": "5bd366664cc07835f2a96e51d81cbdbf728499aefb130f266f4c6dda45f17ad7"
+      },
+      "jobs/bpRNA_CRW_55337-beam400_outer-LinearPKCapR-rep0/stdout.txt": {
+        "bytes": 503188,
+        "sha256": "d9e975bbbf35fbddc763b6c600f838694aa66d906115407d9c21262d52bd32fc"
+      },
+      "jobs/bpRNA_CRW_55337-beam400_outer-LinearPKCapR-rep0/stderr.txt": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "jobs/bpRNA_CRW_55337-beam400_outer-LinearPKCapR-rep0/time.tsv": {
+        "bytes": 15,
+        "sha256": "323b70889cf7e3619b24c8f027026330e0ff571deffe8f82b453f364de3dbc15"
+      },
+      "jobs/bpRNA_CRW_55337-beam400_outer-LinearPKCapR-rep0/result.json": {
+        "bytes": 850,
+        "sha256": "336eb96270e21414482a18443a2dbee75df2222537b1d1b580f34844105a913c"
+      }
+    },
+    "status": "success"
+  }
+]

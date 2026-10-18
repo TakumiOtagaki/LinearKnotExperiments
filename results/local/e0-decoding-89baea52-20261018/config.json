@@ -1,0 +1,77 @@
+{
+  "version": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "cases_file": "tools/validation_89baea52/baseline_15aa7742/inputs/cases.json",
+  "sample_cases": [
+    {
+      "id": "closure14",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "(.(......)...)",
+      "family": "witness"
+    },
+    {
+      "id": "random000",
+      "sequence": "AGGAUACCUGCUUCC",
+      "scaffold": "...............",
+      "family": "random"
+    },
+    {
+      "id": "random001",
+      "sequence": "AUGAUGACACGAUAAG",
+      "scaffold": ".(.........)....",
+      "family": "random"
+    },
+    {
+      "id": "random004",
+      "sequence": "CUCUUGGGGCAA",
+      "scaffold": "............",
+      "family": "random"
+    },
+    {
+      "id": "random031",
+      "sequence": "GCGAUGUACCCAUGA",
+      "scaffold": "(.........)....",
+      "family": "random"
+    },
+    {
+      "id": "random263",
+      "sequence": "AUCACACGUACUCAGG",
+      "scaffold": ".(...)..........",
+      "family": "random"
+    }
+  ],
+  "sample_modes": [
+    "exact",
+    "beam1",
+    "beam3"
+  ],
+  "draws_per_condition": 200000,
+  "sample_base_seed": 202610160000,
+  "seed_rule": "base + 1000*mode_index + case_index",
+  "gamma": [
+    0.5,
+    1,
+    2
+  ],
+  "mfe_modes": [
+    "exact",
+    "beam1",
+    "beam3",
+    "beam20",
+    "beam100"
+  ],
+  "mea_modes": [
+    "exact",
+    "beam20",
+    "beam100"
+  ],
+  "ranking": "outer",
+  "outer_pilot_exponent": "2/3",
+  "max_hairpin": 30,
+  "max_case3_depth": 30,
+  "temperature_C": 37,
+  "dangles": 2,
+  "tolerance": 1e-09,
+  "family_alpha": 0.01,
+  "chi_square": "Pearson; theory-only pooling expected<5; Holm across 18 conditions",
+  "frequency_bound": "Hoeffding union bound over all theoretical structures in all conditions"
+}

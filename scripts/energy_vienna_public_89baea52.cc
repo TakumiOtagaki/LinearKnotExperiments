@@ -1,6 +1,6 @@
 // Fresh public-API observation at dangles=2; dangles=0 uses the retained control.
 #define main historical_internal_observer_main
-#include "energy_vienna_probe_20261017.cc"
+#include "energy_vienna_internal_89baea52.cc"
 #undef main
 #include "scfg2/api/exact.hh"
 

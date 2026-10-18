@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-10-18T12:38:35.836339+00:00",
+  "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "commands": [
+    [
+      "/bin/python3",
+      "-B",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/scripts/validate_vienna_89baea52.py"
+    ]
+  ],
+  "controller_sha256": "bf5be5c5d898eb186ddabb51de60442ab8639e18faa5d15efb203f195f75ca0b",
+  "job_id": "9052476",
+  "sge_task_id": "1",
+  "status": "failed",
+  "finished_utc": "2026-10-18T12:50:58.965393+00:00",
+  "results": [
+    {
+      "argv": [
+        "/bin/python3",
+        "-B",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/scripts/validate_vienna_89baea52.py"
+      ],
+      "returncode": 1,
+      "elapsed_seconds": 743.1216932139359,
+      "stdout_sha256": "e83ddfd48ccf4d38de091641405e1694205452feb4a659704c1f4a7a1a7b9f92",
+      "stderr_sha256": "d0a5d47664e2146601fb49fc1cc613ae03214ebc5a9bb667a08b51e09eae4ed1"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "layout": "review-20261017",
+  "e2_revision": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "scripts_sha256": {
+    "make_figures.py": "304b58d4fa7f5ac9028ac3cad183f0f6b463c484c220f2dcb87937a0309160f8",
+    "make_figures_review.py": "4b4041549077ee1e9c4f5abe189a33685c1bb832bdbbdf364be754a82ac0c53f"
+  },
+  "numpy": "2.0.2",
+  "matplotlib": "3.9.4",
+  "sources": {
+    "e2_metrics.tsv": {
+      "path": "../../local/e2-89baea52-20261018/metrics.tsv",
+      "sha256": "973f5ef5e1b738b507ae9432b69141e10919fd10c77a608bac1f3d093ec2da76"
+    },
+    "e2_comparisons.tsv": {
+      "path": "../../local/e2-89baea52-20261018/comparisons.tsv",
+      "sha256": "5a542820c8ae62bf49fa57fc1b650ac6f8694e7853f2b740fb6cc743a2245c4e"
+    },
+    "e2_memory_metrics.tsv": {
+      "path": "../../local/e2-89baea52-20261018/memory_metrics.tsv",
+      "sha256": "83d42a22071ad9aa2e8ddb1ad0c0c0b56ea4be8cf1ba4af6e186306e6a701c08"
+    },
+    "e2_summary.json": {
+      "path": "../../local/e2-89baea52-20261018/summary.json",
+      "sha256": "e8fd6ff478090fa65913c073578c2ff4da8793d2fabe247ce27cbd97eebb3ef5"
+    },
+    "g_features": {
+      "path": "../../local/e2-e2cecbb4-g-features-20261016/rnacentral_g_features.tsv",
+      "sha256": "856c1f56b79ef524038d1885540203ecdf9f037b5946592f0179e12032978c82"
+    },
+    "synthetic_designs": {
+      "path": "../../../data/e2-synthetic-shapes-20261012/inputs.jsonl",
+      "sha256": "acdab9208952bd2a53ce6a1cfce84f50e024dfcc707158ef1d949071027c8fbe"
+    }
+  },
+  "outputs": [
+    {
+      "file": "figure3_main.pdf",
+      "width_mm": 178,
+      "height_mm": 55.00000000000001,
+      "bytes": 28610,
+      "sha256": "53452e9cee35ffa66132fe65e8335fc6a12304d74fc0ee671244d2f7ea38ac32"
+    },
+    {
+      "file": "figure3_main.png",
+      "width_mm": 178,
+      "height_mm": 55.00000000000001,
+      "bytes": 134766,
+      "sha256": "4df5b0e65f99d789a6ba6e5e1ba5c442248176b551f783b4593b8c4021e33abf"
+    },
+    {
+      "file": "figure3_mode_memory_si.pdf",
+      "width_mm": 165,
+      "height_mm": 65.0,
+      "bytes": 21475,
+      "sha256": "d7e2201fbb68ae817fec81cf8453e90e7c8e1b095ee34258f21135fa25715881"
+    },
+    {
+      "file": "figure3_mode_memory_si.png",
+      "width_mm": 165,
+      "height_mm": 65.0,
+      "bytes": 74790,
+      "sha256": "13e5625c51a648349923fea0d26c53d795094ca79d61d8a4891f12f64940312e"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.pdf",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 60754,
+      "sha256": "3703d51a4a2db633a3ee2109eded687441d2d45bb8e3daeca3e922d6b6e7bded"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.png",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 449861,
+      "sha256": "b4fc08eb2400500530195b7ce7b939da45bafd6f559dc31058ae45bde62dee1a"
+    },
+    {
+      "file": "figure3_parallel_impact_si.pdf",
+      "width_mm": 165,
+      "height_mm": 72.0,
+      "bytes": 21964,
+      "sha256": "54cd05e02744374fe3c42aabc3cde0cb6ab78995741f73859908da84fbfa2cd3"
+    },
+    {
+      "file": "figure3_parallel_impact_si.png",
+      "width_mm": 165,
+      "height_mm": 72.0,
+      "bytes": 84579,
+      "sha256": "4406a94c726850333161375bef7d912b7bfbf568a9816372c07ebeb7c575e391"
+    }
+  ],
+  "derived_files": {
+    "caption.md": "a4fa10fa98d7cfda9806bb42deb323075a2f3bb1e8217d4a361aeaaeab8f227d",
+    "README.md": "a0209f645f1dfd255bcd1b6cef89d25e5421dbf4dace4241f44bf236da44624f",
+    "plot_data.tsv": "7e3e9a17bc60f77805064058a678c44fd32bac094c4ed84c1ae9f528310e782a",
+    "validation.json": "b6d553b69e4e6086159bac8e67361f0f850b72b8d50f799a5972dcae667dfa4c"
+  },
+  "render_wrapper_sha256": "d8b561e48556a47f88cb36d12d68ac7dabe485bdd0f5ab406ce66afe0cb82341"
+}

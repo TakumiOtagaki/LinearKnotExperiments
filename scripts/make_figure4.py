@@ -11,6 +11,7 @@ import gzip
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -124,7 +125,8 @@ def read_data(data, beam, region, focus_starts):
     for a in provenance['artifacts'] + extra:
         name = Path(a['member']).parent.name
         selected = any(name.startswith(f'{v}-beam{beam}_outer-') for v in ['NEAT1_2', 'NEAT1_2_emptyG'])
-        kind = a['archive'].split('/')[2].replace('e3-neat1-', '').replace('variants-', '').split('-e2')[0]
+        kind = re.sub(r'-[0-9a-f]{8}-\d{8}$', '', a['archive'].split('/')[2]
+                      .removeprefix('e3-neat1-').removeprefix('variants-'))
         selected = selected and kind in ('bpp', 'capr', 'raccess')
         selected |= kind == 'raccess' and any(
             name.startswith(f'{v}-beam{b}_outer-') for v, beams in access_beams.items() for b in beams)
@@ -697,6 +699,7 @@ def inspect_outputs(pdf, png):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--data', type=Path, default=ROOT / 'results/local/e3-neat1-20261016')
+    ap.add_argument('--revision', default='e2cecbb4')
     ap.add_argument('--out', type=Path, default=ROOT / 'results/figures/figure_s3_neat1_20261017')
     ap.add_argument('--beam', type=int, choices=(100, 200), default=200,
                     help='main beam width for panels B, C, and D (default: 200)')
@@ -710,6 +713,10 @@ def main():
     if not args.region[0] <= args.focus[0] <= args.focus[1] <= args.region[1] - WINDOW + 1:
         ap.error('--focus windows must fit entirely within --region')
     d = read_data(args.data.resolve(), args.beam, tuple(args.region), tuple(args.focus))
+    source_provenance = json.loads((args.data / 'provenance.json').read_text())
+    if args.revision != 'e2cecbb4':
+        assert source_provenance['release'].startswith(args.revision)
+        assert not d['supplemental_checkpoints'], 'New figures must use only the new analysis'
     args.out.mkdir(parents=True, exist_ok=True)
     fig = plt.figure(figsize=(WIDTH * MM, HEIGHT * MM))
     counts = draw(fig, d)
@@ -746,6 +753,19 @@ def main():
     (args.out / 'validation.json').write_text(json.dumps(validation, indent=2) + '\n')
     (args.out / 'caption.md').write_text(caption(d, counts))
     (args.out / 'README.md').write_text(source_note(d, counts))
+    if args.revision != 'e2cecbb4':
+        note = (args.out / 'README.md').read_text()
+        note = note.replace('The scientific outputs remain those of LinearCParty `e2cecbb4`, not the ongoing resource rerun.',
+                            f'All scientific outputs were recomputed with LinearCParty `{args.revision}`.')
+        note = note.replace('e3-neat1-20261016', args.data.name).replace('e2cecbb4-20261016', args.data.name.removeprefix('e3-neat1-'))
+        note = note.replace('figure_s3_neat1_20261017', args.out.name)
+        note = note.replace('python experiments/scripts/make_figure4.py --beam',
+                            f'python experiments/scripts/make_figure4.py --data experiments/{args.data.resolve().relative_to(ROOT)} --revision {args.revision} --beam')
+        note = note.replace('# Supplementary Figure S3: NEAT1 (2026-10-17)',
+                            f'# Supplementary Figure S3: NEAT1 ({args.revision})')
+        note = note.replace('the independent BPP table lacks empty-G b=200, covered by the named checkpoint above',
+                            'the new BPP table includes the empty-G b=200 output')
+        (args.out / 'README.md').write_text(note)
     with (args.out / 'focus_accessibility.tsv').open('w') as f:
         writer = csv.writer(f, delimiter='\t', lineterminator='\n')
         series = [('G0.7', 200), ('G0.7', 400), ('emptyG', 100), ('emptyG', 200)]
@@ -773,7 +793,7 @@ def main():
                     source_tables_and_inputs=d['sources'], streamed_artifacts=d['artifacts'],
                     supplemental_checkpoints=d['supplemental_checkpoints'],
                     script_sha256=sha(Path(__file__).read_bytes()), command=sys.argv,
-                    software_revision='e2cecbb4', coordinate_convention='one-based inclusive',
+                    software_revision=args.revision, coordinate_convention='one-based inclusive',
                     validation=dict(validation, smoothing=False, raw_archives_extracted=False,
                                     rna_cli_called=False))
     (args.out / 'provenance.json').write_text(json.dumps(metadata, indent=2) + '\n')

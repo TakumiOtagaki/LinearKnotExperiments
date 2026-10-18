@@ -536,9 +536,8 @@ def write_readme(out, data, stats, differences, validation, caption_words):
         "入力 in.txt と rec.json の配列・対集合を照合して確認する。表示する予測はすべて beam 幅200。", "",
         "## 入力・版・再生成", "",
         f"保存済みの入力・出力: `{relative(data)}`。",
-        "親ディレクトリの README は対象と条件、febedd98/README.md は --by-loop 出力の版の出典。",
-        "版は febedd98fe08175749bfa32daf5b3105bf9af193、software lock は manifests/software-pilot-febedd98.json。",
-        "元の全 CLI コマンド行と stderr は保存データにないため復元しない。",
+        "入力・出力の版と保存条件は、データの README と provenance.json の software lock に従う。",
+        (data / "README.md").read_text().strip(),
         "元図 results/figures/figure4_terc_20261017/ を変更せず、別ディレクトリへ出力する。", "",
         "実験 repo から次で再生成できる。", "", "```bash",
         f"python3 -B scripts/make_figure4_terc.py --data {relative(data)} --out {relative(out)}", "```", "",
@@ -621,6 +620,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--data", type=Path, default=DEFAULT_DATA)
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
+    ap.add_argument("--software-lock", type=Path, default=ROOT / "manifests/software-pilot-febedd98.json")
+    ap.add_argument("--identity-source", type=Path)
     args = ap.parse_args()
     data, out = args.data.resolve(), args.out.resolve()
     require(data != out and data not in out.parents, "Write figure artifacts outside the raw-data directory")
@@ -656,12 +657,13 @@ def main():
     write_readme(out, data, stats["b200"], differences, validation, caption_words)
     sources = [data / name for name in ("in.txt", "rec.json", "README.md")]
     sources += [data / f"{s}.{ext}" for s in settings for ext in ("bpp.tsv", "capr", "racc", "samp", "lc.out", "mea")]
-    sources += [data.parent / "README.md", ROOT / "manifests/software-pilot-febedd98.json"]
+    identity_source = args.identity_source or data.parent / "README.md"
+    sources += [identity_source, args.software_lock]
     lock = json.loads(sources[-1].read_text())
     provenance = dict(schema_version=1, generated_utc=datetime.now(timezone.utc).isoformat(),
         purpose="Figure 4 from existing rat Terc outputs", rna=dict(id=rec["id"], length=n,
         species="Rattus norvegicus", gene="Terc", refseq="NR_001567.1", rnacentral="URS00001ED027",
-        identity_source=relative(data.parent / "README.md")),
+        identity_source=relative(identity_source)),
         software=dict(source_commit=lock["source_commit"], lock=relative(sources[-1]),
                       association_source=relative(data / "README.md")),
         environment=dict(python=platform.python_version(), numpy=np.__version__, matplotlib=matplotlib.__version__),
@@ -677,7 +679,8 @@ def main():
             complete_stem_definition="every listed reference pair occurs; other pairs are allowed",
             sample_counts="multiplicity-weighted; do not treat each unique row as one draw",
             caption_exact_agreement_scope="probabilities near reference pseudoknot, positions 40–160",
-            raw_command_line_receipt="not present; settings taken from raw README and Raccess metadata"),
+            raw_command_line_receipt=("frozen packed-task JSONL and tar" if lock["source_commit"].startswith("89baea52")
+                                      else "settings taken from raw README and Raccess metadata")),
         raw_metadata={k: v["metadata"] for k, v in settings.items()},
         summaries=stats, beam_exact_comparison=differences,
         validation=dict(saved_output_consistency={k: v["validation"] for k, v in settings.items()}, figure=validation,

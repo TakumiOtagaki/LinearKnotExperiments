@@ -456,9 +456,12 @@ The script writes only five final files to the requested output directory.
 
 ## Inputs and implementation version
 
-All scientific values come from `{source}/`, saved for the 2026-10-16 Figure 1.
-The source README records `build/linear-cparty-febd2bc1`, exact mode, one thread, Turner 2004 parameters (`params/rna_Turner04.par`).
-It states that those outputs are identical to the versions adopted at that time; this figure revision does not independently test cross-version equivalence.
+All scientific values come from `{source}/`.
+The source README records the implementation version and saved-output conditions:
+
+{(data / 'README.md').read_text().strip()}
+
+This rendering makes no cross-version equality assumption.
 The source record originally came from `results/local/pk-recovery-bprna-20261016/pk_sel.json`.
 No saved input or old figure has been modified.
 

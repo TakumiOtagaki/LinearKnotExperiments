@@ -266,3 +266,38 @@ lfs quota -p 102571 /gs/bs
 export LCP_ARRAY_BUDGET=30  # 他のarrayに使う枠があれば減らす。
 bash experiments/docs/rerun_89baea52_20261018/cpu16/submit_e1_long_cpu16.sh
 ```
+
+## E1 を除く集計と図の差し替え（2026-10-18）
+
+`analyze_non_e1.sh` は上の `analyze.sh` から E1 short/long と E1 に依存する層別精度を除いたもの。
+完了した E0・E2・回復・到達可能性・小例を先に集計し、最後に NEAT1 の未完了 task を待つ。
+各 plan の全 task が success になってから集約する。
+新しい集計の出力先は元の `analyze.sh` と同じで、旧版の科学的測定値を代用しない。
+
+```bash
+bash docs/rerun_89baea52_20261018/analyze_non_e1.sh
+python3 -B scripts/render_non_e1_89baea52.py
+python3 -B scripts/audit_non_e1_89baea52.py
+```
+
+描画は `results/figures/` の `figure1_89baea52_20261018/`、
+`figure4_terc_89baea52_20261018/`、`main_89baea52_20261018/`、
+`figure_s3_neat1_89baea52_20261018/` に保存する。
+Terc と Figure 1 の tar は TMPDIR だけに展開し、図の再現用 manifest に tar と各入力の hash を記録する。
+E2 の図だけを先に描く場合も、新しい E2 集計と `--e2-revision 89baea52 --figure3-only` を指定する。
+
+ViennaRNA の初回照合では、本番の dangles=2 は完了したが、内部 dangles=0 対照 73 条件が観測プログラムの終了時に失敗した。
+原因は、別名の関数として呼び出した旧 `main` に明示的な `return 0` がなかったことだった。
+`energy_vienna_internal_89baea52.cc` にその return を加え、公開側の観測プログラムから参照するようにした。
+実装の固定ソースは変更していない。
+元の失敗した controller と `energy-vienna-check-89baea52-20261018/` を残し、次の別出力先で全条件を計算し直した。
+
+```bash
+python3 -B scripts/validate_vienna_89baea52.py \
+  --out results/local/energy-vienna-check-89baea52-repaired-20261018
+```
+
+修正後は337配列、2,226,060 BPP座標、548構造条件（公開dangles=2が475、内部dangles=0が73）すべて成功。
+最大絶対差は log Z が1.4495071809506044e-12、BPPが1.245337166722038e-12、
+単一構造のPFエネルギーとMFE再採点が2.842170943040401e-14 kcal/molだった。
+元の失敗を成功として書き換えていない。

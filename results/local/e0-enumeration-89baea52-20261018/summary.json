@@ -1,0 +1,232 @@
+{
+  "cases": 729,
+  "unique_inputs": 706,
+  "min_length": 5,
+  "max_length": 20,
+  "families": {
+    "witness": 1,
+    "random": 400,
+    "pk_enriched": 100,
+    "single_pair_grid": 108,
+    "fresh_random_17_20": 120
+  },
+  "totals": {
+    "structures": 156534,
+    "derivations": 156534,
+    "crossing_structures": 60222,
+    "candidate_superset": 164790,
+    "candidate_rejected": 8256,
+    "ambiguous": 0,
+    "context_ambiguous": 0,
+    "ownership_bad": 0,
+    "ownership_duplicate": 0,
+    "ownership_missing": 0,
+    "ownership_on_paired": 0,
+    "allowed_absent": 0,
+    "overflow": 0
+  },
+  "max_structures": 6425,
+  "max_derivation_count": 1,
+  "maxima": {
+    "logZ_error": 2.1316282072803006e-14,
+    "grouping_logZ_error": 2.1316282072803006e-14,
+    "energy_error": 1.4210854715202004e-14,
+    "bpp_error": 2.0761170560490427e-14,
+    "unpaired_error": 2.1213377734106975e-14,
+    "context_error": 2.142730437526552e-14,
+    "access_error": 2.1316282072803006e-14,
+    "context_error_S": 2.0827957414315534e-14,
+    "context_error_H": 2.0650148258027912e-14,
+    "context_error_B": 2.0539125955565396e-14,
+    "context_error_I": 2.142730437526552e-14,
+    "context_error_M": 1.6601845766184287e-19,
+    "context_error_E": 1.4876988529977098e-14,
+    "context_error_P": 1.554312234475219e-14,
+    "access_error_1": 2.1316282072803006e-14,
+    "access_error_2": 2.1316282072803006e-14,
+    "access_error_3": 2.1094237467877974e-14,
+    "access_error_5": 1.2878587085651816e-14
+  },
+  "maxima_cases": {
+    "logZ_error": [
+      "pk079"
+    ],
+    "grouping_logZ_error": [
+      "pk079"
+    ],
+    "energy_error": [
+      "pk008",
+      "pk012",
+      "pk023",
+      "pk028",
+      "pk032",
+      "pk033",
+      "pk038",
+      "pk049",
+      "pk054",
+      "pk063",
+      "pk093"
+    ],
+    "bpp_error": [
+      "pk044",
+      "pk064"
+    ],
+    "unpaired_error": [
+      "pk044",
+      "pk064"
+    ],
+    "context_error": [
+      "pk079"
+    ],
+    "access_error": [
+      "pk079"
+    ],
+    "context_error_S": [
+      "pk044",
+      "pk064"
+    ],
+    "context_error_H": [
+      "pk044",
+      "pk064"
+    ],
+    "context_error_B": [
+      "pk079"
+    ],
+    "context_error_I": [
+      "pk079"
+    ],
+    "context_error_M": [
+      "random027"
+    ],
+    "context_error_E": [
+      "pk059"
+    ],
+    "context_error_P": [
+      "pk079"
+    ],
+    "access_error_1": [
+      "pk079"
+    ],
+    "access_error_2": [
+      "pk079"
+    ],
+    "access_error_3": [
+      "pk079"
+    ],
+    "access_error_5": [
+      "pk059"
+    ]
+  },
+  "previous_totals": {
+    "structures": 156162,
+    "derivations": 156162,
+    "crossing_structures": 59850
+  },
+  "changed_inputs": 34,
+  "changed_unique_inputs": 34,
+  "all_pre_wip_counts_match_old": true,
+  "added_by_wip": 372,
+  "lost_by_current": 0,
+  "witnesses": {
+    "default": {
+      "values": {
+        "n": 14,
+        "structures": 27,
+        "derivations": 27,
+        "max_count": 1,
+        "ambiguous": 0,
+        "context_ambiguous": 0,
+        "ownership_bad": 0,
+        "ownership_duplicate": 0,
+        "ownership_missing": 0,
+        "ownership_on_paired": 0,
+        "overflow": 0,
+        "rt_kcal_mol": 0.6163207755,
+        "crossing_structures": 21,
+        "candidate_superset": 27,
+        "candidate_rejected": 0,
+        "allowed_absent": 0,
+        "exact_logZ": 0.0283263472559672,
+        "derivation_logZ": 0.02832634725596722,
+        "structure_logZ": 0.028326347255967166,
+        "logZ_error": 3.469446951953614e-17,
+        "grouping_logZ_error": 2.0816681711721685e-17,
+        "energy_error": 7.105427357601002e-15,
+        "bpp_error": 1.1102230246251565e-16,
+        "unpaired_error": 1.6696713456276768e-16,
+        "context_error": 1.8692235207739011e-16,
+        "access_error": 2.220446049250313e-16,
+        "context_error_S": 1.8692235207739011e-16,
+        "context_error_H": 1.1102230246251565e-16,
+        "context_error_B": 1.1102230246251565e-16,
+        "context_error_I": 8.673617379884035e-19,
+        "context_error_M": 4.0389678347315804e-28,
+        "context_error_E": 0,
+        "context_error_P": 8.56261180963095e-26,
+        "access_error_1": 2.220446049250313e-16,
+        "access_error_2": 1.1102230246251565e-16,
+        "access_error_3": 1.1102230246251565e-16,
+        "access_error_5": 3.0357660829594124e-18
+      },
+      "target": {
+        "count": 1,
+        "energy": 25.14,
+        "labels": "---PPP--P-PP--",
+        "best_log_weight": -40.790447116770935,
+        "worst_log_weight": -40.790447116770935
+      }
+    },
+    "legacy": {
+      "values": {
+        "n": 14,
+        "structures": 27,
+        "derivations": 28,
+        "max_count": 2,
+        "ambiguous": 1,
+        "context_ambiguous": 0,
+        "ownership_bad": 0,
+        "ownership_duplicate": 0,
+        "ownership_missing": 0,
+        "ownership_on_paired": 0,
+        "overflow": 0,
+        "rt_kcal_mol": 0.6163207755,
+        "crossing_structures": 21,
+        "candidate_superset": 27,
+        "candidate_rejected": 0,
+        "allowed_absent": 0,
+        "exact_logZ": 0.0283263472559672,
+        "derivation_logZ": 0.02832634725596722,
+        "structure_logZ": 0.028326347255967166,
+        "logZ_error": 3.469446951953614e-17,
+        "grouping_logZ_error": 2.0816681711721685e-17,
+        "energy_error": 7.105427357601002e-15,
+        "bpp_error": 1.1102230246251565e-16,
+        "unpaired_error": 1.6696713456276768e-16,
+        "context_error": 1.8692235207739011e-16,
+        "access_error": 2.220446049250313e-16,
+        "context_error_S": 1.8692235207739011e-16,
+        "context_error_H": 1.1102230246251565e-16,
+        "context_error_B": 1.1102230246251565e-16,
+        "context_error_I": 8.673617379884035e-19,
+        "context_error_M": 4.0389678347315804e-28,
+        "context_error_E": 0,
+        "context_error_P": 7.800054682433628e-24,
+        "access_error_1": 2.220446049250313e-16,
+        "access_error_2": 1.1102230246251565e-16,
+        "access_error_3": 1.1102230246251565e-16,
+        "access_error_5": 3.0357660829594124e-18
+      },
+      "target": {
+        "count": 2,
+        "energy": 25.14,
+        "labels": "---PPP--P-PP--",
+        "best_log_weight": -40.790447116770935,
+        "worst_log_weight": -53.186589359099095
+      }
+    }
+  },
+  "processes": 1459,
+  "failures": [],
+  "verification_complete": true,
+  "integrity_ok": true
+}

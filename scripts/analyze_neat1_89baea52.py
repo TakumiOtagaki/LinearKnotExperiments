@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Recompute NEAT1 predictions and by-loop checks; impose no old-output equality."""
+import argparse
 import json
 from pathlib import Path
 
@@ -11,7 +12,9 @@ from run_cli import digest, now
 
 
 def main():
-    out = ROOT / "results/local/e3-neat1-89baea52-20261018"
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--out", type=Path, default=ROOT / "results/local/e3-neat1-89baea52-20261018")
+    out = parser.parse_args().out.resolve()
     out.mkdir(exist_ok=False)
     provenance = dict(created_utc=now(), release=COMMIT, inputs=[], checkpoints=[], artifacts=[],
                       script_sha256=digest(Path(__file__)))
@@ -40,7 +43,16 @@ def main():
         start=i+1, width=w, accessibility=p) for k,g in sorted(saved.items())
         for w,values in g.get("access", {}).items() for i,p in enumerate(values)),
         ["iso", "method", "beam", "start", "width", "accessibility"])
-    new = audit.load("89baea52-20261018", inputs, provenance)
+    core.write_table(out / "bpp_pairs.tsv.gz", (dict(iso=k[0], method=k[1], beam=k[2],
+        i=i, j=j, probability=p, is_scaffold=int((i,j) in g["input"]["fixed"]),
+        crosses_G=int((i,j) in g.get("cross_pairs", {})))
+        for k,g in sorted(saved.items()) for (i,j),p in sorted(g.get("pairs", {}).items())),
+        ["iso", "method", "beam", "i", "j", "probability", "is_scaffold", "crosses_G"])
+    # Keep the plot's stdout/BPP records (which include saved commands)
+    # separate from the full resource audit, which also inventories other members.
+    resource_provenance = {"checkpoints": [], "artifacts": []}
+    new = audit.load("89baea52-20261018", inputs, resource_provenance)
+    provenance["resource_audit"] = resource_provenance
     resource_rows, components, focus, residuals = [], [], [], []
     for (iso, beam, kind), g in new.items():
         row = g["row"]
@@ -72,6 +84,17 @@ def main():
     validation.update(byloop=residuals, status="passed", probability_outputs_recomputed=True)
     core.write_json(out / "validation.json", validation)
     core.write_json(out / "provenance.json", provenance)
+    (out / "README.md").write_text(
+        "# NEAT1: fresh 89baea52 analysis\n\n"
+        "All 51 main/variant conditions and the six additional by-loop conditions were recomputed.\n"
+        "`inventory.tsv` preserves the condition count; `resources.tsv` gives all main/by-loop resource values.\n"
+        "Accessibility, profiles, BPPs, sampling summaries and distances use only the new saved outputs.\n"
+        "`validation.json` gives probability and by-loop checks.\n"
+        "`provenance.json` records input/checkpoint/artifact hashes and commands; "
+        "its separate `resource_audit` inventories the additional resource checks.\n"
+        "Raw tar members are streamed without extraction.\n\n"
+        "Reproduce with `python3 -B scripts/analyze_neat1_89baea52.py --out NEW_DIRECTORY`.\n"
+        "Render with `python3 -B scripts/render_non_e1_89baea52.py`.\n")
 
 
 if __name__ == "__main__":
