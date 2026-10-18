@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-18T12:14:41.730276+00:00",
+  "purpose": "formal",
+  "source_repository": "https://github.com/TakumiOtagaki/LinearCParty",
+  "source_commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "source_git_state": {
+    "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_tree": "ff9aaffc6edc6eacae2e3ccd515165f11c439309",
+  "build_revision_verified": true,
+  "verification_method": "External observation-only driver linked to certified release archives",
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++"
+  },
+  "configure_arguments": [
+    "-DBUILD_TESTING=ON",
+    "-DCMAKE_BUILD_TYPE=Release"
+  ],
+  "cmake_cache_sha256": "bdde8e7d8a2c1a0124b1fea3cc7436ab3608027b82fde58d94fe6c8566d70d4e",
+  "binaries": {
+    "E0Membership": "f8b6dfcb31457055f991fc4915296efdd0103ef2eedf1b016b58c1a5a307d036"
+  },
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "verification_results": [
+    {
+      "name": "scfg2_rules_core_exact_weight_test",
+      "returncode": 0,
+      "stdout": "scfg2_rules_core_exact_weight=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_exact_inside_oracle_test",
+      "returncode": 0,
+      "stdout": "scfg2_exact_inside_oracle=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_beam_api_test",
+      "returncode": 0,
+      "stdout": "scfg2_beam_api=ok\n",
+      "stderr": ""
+    }
+  ],
+  "required_suite": "test/tools/run_required_scfg2_tests.sh: required set ok; receipt /gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/manifests/release-preparation-89baea52.json",
+  "scientific_scope": "fixed implementation pilot, not independent proof of ensemble semantics",
+  "known_semantic_followup": "",
+  "extra_files": [
+    {
+      "path": "build/linear-cparty-89baea52/libcparty_scfg2_exact.a",
+      "sha256": "bf3a9365b3e5dfdaf81d23e753a91c2259938f5b2ef4506bfd4b63b512336f99"
+    },
+    {
+      "path": "build/linear-cparty-89baea52/libRNA.a",
+      "sha256": "a4cfd6eac4441da25af7557f72729f86ff14b1b7b6b05042a29277f4d6f006d7"
+    },
+    {
+      "path": "scripts/pk_membership_driver.cc",
+      "sha256": "891494fd89fe8b0c814b81d3c5aed03c45eaaad7e27ccc751eff5b540d2f7e30"
+    },
+    {
+      "path": "results/local/pk-recovery-bprna-20261016/pk_sel.json",
+      "sha256": "72789c6bc0ec420c57a6a70c2dd5fa679fcfd335c8e742f2bb131e9ec62bfca1"
+    },
+    {
+      "path": "build/membership-89baea52/membership_driver",
+      "sha256": "52d67aff56cc9dc902492ed6154b44ce3dd73ba8d48c797ddffff5aea26c783c"
+    },
+    {
+      "path": "build/membership-89baea52/build_provenance.json",
+      "sha256": "6b2c6af90d172923aed8e630ef03b25b6508d328bfbc0b6df6afbc786a1ca53c"
+    },
+    {
+      "path": "manifests/software-pilot-89baea52.json",
+      "sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99"
+    },
+    {
+      "path": "scripts/rerun_membership_cli.py",
+      "sha256": "5b56fa46ca542da55b41ab77da9ebe62f7ff1018ddd1d498282bd38bb9b05853"
+    },
+    {
+      "path": "scripts/analyze_pk_membership.py",
+      "sha256": "6170971024f636ea9c7bb87d84791ccf99d8f1c01d1b31020e1e72566c08635e"
+    },
+    {
+      "path": "scripts/rna_records.py",
+      "sha256": "a9521da62337f26d2d8f774a4c343cfb14118ba640f9ff4b8eaf340534d5acec"
+    },
+    {
+      "path": "scripts/build_membership_rerun_89baea52.py",
+      "sha256": "1a71742b6522b1f1398aad90dec189a44eb38ccdc8c95f2458c4544ca3984d8b"
+    }
+  ]
+}
