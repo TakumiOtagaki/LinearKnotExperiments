@@ -23,7 +23,7 @@ from pathlib import Path
 from rna_records import read_record
 from task_storage import FORMAT, ArchiveReader, MemoryFile
 from file_budget import check_budget, estimate_files
-from run_cli import (ROOT, digest, experiment_path, git_state, now,
+from run_cli import (ROOT, beam_width, digest, experiment_path, git_state, now,
                      mode_applies, plan_jobs, validate, verify_lock, write_json)
 
 
@@ -123,6 +123,18 @@ def validate_array(config, settings):
         overhead = positive(tier.get("task_overhead_mib", 256), "task_overhead_mib", zero=True)
         if workers * effective_config["memory_limit_mib"] + overhead > memory:
             raise ValueError("workers times per-job memory cap plus overhead exceeds memory budget")
+        packing = tier.get("parallel_packing")
+        if packing is not None:
+            if (packing.get("kind") != "beam_list_bound" or settings["measurement"] != "accuracy"
+                    or tier.get("order_kind") != "beam_ascending" or config.get("warmups", 0) != 0
+                    or config.get("repetitions", 1) != 1
+                    or len({beam_width(m) for m in config["modes"]}) != len(config["modes"])):
+                raise ValueError("beam_list_bound requires accuracy, distinct ascending beams, no warmups and one repetition")
+            if positive(packing.get("efficiency"), "parallel packing efficiency") > 1:
+                raise ValueError("parallel packing efficiency must be at most 1")
+            positive(packing.get("overhead_seconds"), "parallel packing overhead", zero=True)
+            if not packing.get("basis") or not tier.get("cost_model", {}).get("observed_inputs"):
+                raise ValueError("parallel packing needs a basis and observed_inputs")
         model = tier.get("cost_model", {})
         if not model.get("basis") or not isinstance(model["basis"], str):
             raise ValueError("cost_model.basis must explain the estimates")
@@ -146,8 +158,30 @@ def validate_array(config, settings):
             positive(fit.get("memory_exponent", 1), "memory_exponent")
 
 
-def estimate(length, config, tier):
+def estimate(length, config, tier, item=None):
     model = tier["cost_model"]
+    if "observed_inputs" in model:
+        observed = model["observed_inputs"].get(item["name"]) if item else None
+        if observed is None or observed.get("sha256") != item.get("sha256"):
+            raise ValueError("observed input timing missing or input hash differs")
+        modes = {m["name"] for m in config["modes"] if mode_applies(m, {"length": length})}
+        sums, maxima = observed["seconds_by_mode"], observed["max_seconds_by_mode"]
+        if set(sums) != modes or set(maxima) != modes:
+            raise ValueError("observed input timing must cover every applicable mode")
+        for mode in modes:
+            positive(sums[mode], "observed mode work")
+            positive(maxima[mode], "observed mode maximum")
+            if not maxima[mode] <= sums[mode] <= len(config["programs"]) * maxima[mode] + 1e-6:
+                raise ValueError("observed mode work and maximum are inconsistent")
+        memory = positive(observed["memory_mib"], "observed memory")
+        if memory > config["memory_limit_mib"]:
+            raise ValueError("estimated job memory exceeds its unchanged per-job cap")
+        safety = model.get("safety_factor", 1)
+        return {"estimated_seconds": sum(sums.values()) * safety,
+                "estimated_mode_work_seconds": {m: sums[m] * safety for m in sorted(modes)},
+                "estimated_mode_max_seconds": {m: maxima[m] * safety for m in sorted(modes)},
+                "estimated_mode_job_counts": {m: len(config["programs"]) for m in sorted(modes)},
+                "estimated_job_memory_mib": memory}
     conditions = len(config["programs"]) * (config.get("warmups", 0) + config.get("repetitions", 1))
     modes = [m for m in config["modes"] if mode_applies(m, {"length": length})]
     weighted = sum(model.get("mode_factors", {}).get(mode["name"], 1) for mode in modes)
@@ -169,11 +203,34 @@ def estimate(length, config, tier):
     return {"estimated_seconds": seconds, "estimated_job_memory_mib": memory}
 
 
+def batch_wall_seconds(items, tier):
+    """List-scheduling upper bound per beam, with explicit efficiency/overhead.
+
+    For work W, largest job L and w workers, any work-conserving list takes at
+    most W/w + (1-1/w)L. If all jobs fit at once, use L. Sum over the
+    runner's beam barriers.
+    Durations are scheduling estimates; this is not a runtime guarantee.
+    """
+    sequential = sum(i["estimated_seconds"] for i in items)
+    packing = tier.get("parallel_packing")
+    if packing is None:
+        return sequential
+    modes = {m for i in items for m in i["estimated_mode_max_seconds"]}
+    workers = tier.get("workers", 1)
+    bound = 0
+    for mode in sorted(modes):
+        work = sum(i["estimated_mode_work_seconds"].get(mode, 0) for i in items)
+        largest = max(i["estimated_mode_max_seconds"].get(mode, 0) for i in items)
+        jobs = sum(i["estimated_mode_job_counts"].get(mode, 0) for i in items)
+        bound += largest if jobs <= workers else work / workers + (1 - 1 / workers) * largest
+    return packing["overhead_seconds"] + bound / packing["efficiency"]
+
+
 def make_tasks(config, settings, inputs):
     """Greedy batches by estimated work, without splitting any RNA's matrix.
 
-    The summed sequential work is a conservative wall estimate even for accuracy
-    workers. It deliberately does not assume ideal parallel speedup.
+    Default packing uses sequential work. Explicit parallel_packing uses a
+    per-beam list-scheduling bound from observed input costs.
     """
     validate_array(config, settings)
     tasks = []
@@ -186,7 +243,7 @@ def make_tasks(config, settings, inputs):
         batches, batch = [], []
 
         def cost(items):
-            return (sum(i["estimated_seconds"] for i in items),
+            return (batch_wall_seconds(items, tier),
                     tier.get("task_overhead_mib", 256) + max(
                         (i["estimated_job_memory_mib"] for i in items), default=0) * tier.get("workers", 1))
 
@@ -196,7 +253,7 @@ def make_tasks(config, settings, inputs):
                 continue
             # Multiple supplied scaffolds for the same RNA must stay together.
             groups.setdefault(item.get("sequence_sha256", item["name"]), []).append(
-                {**item, **estimate(item["length"], effective_config, tier)})
+                {**item, **estimate(item["length"], effective_config, tier, item)})
         for group in groups.values():
             seconds, memory = cost(group)
             if seconds > tier["target_seconds"] or memory > tier["memory_budget_mib"]:
@@ -221,6 +278,9 @@ def make_tasks(config, settings, inputs):
                           "workers": tier.get("workers", 1), "cost_model": tier["cost_model"]})
             if "parallel_timing" in settings:
                 tasks[-1]["parallel_timing"] = copy.deepcopy(settings["parallel_timing"])
+            if "parallel_packing" in tier:
+                tasks[-1].update(estimated_sequential_seconds=sum(i["estimated_seconds"] for i in batch),
+                                 parallel_packing=copy.deepcopy(tier["parallel_packing"]))
     return tasks
 
 
@@ -311,7 +371,7 @@ def prepare(config_path, settings_path, output, jobs_dir, software=None, build=N
                   "dependencies_verified_at_planning": verified, "pending_scaffolds": pending,
                   "inputs": len(inputs), "tasks": len(tasks), "planned_jobs": planned_jobs,
                   "parallel_timing": settings.get("parallel_timing"),
-                  "estimated_sequential_seconds": sum(t["estimated_seconds"] for t in tasks),
+                  "estimated_sequential_seconds": sum(t.get("estimated_sequential_seconds", t["estimated_seconds"]) for t in tasks),
                   "max_estimated_task_seconds": max((t["estimated_seconds"] for t in tasks), default=0),
                   "file_budget": budget, "estimate_artifact_entries": 2,
                   "tiers": [{"tier": name, "tasks": sum(t["tier"] == name for t in tasks),

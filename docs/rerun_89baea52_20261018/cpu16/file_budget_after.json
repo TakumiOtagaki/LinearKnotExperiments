@@ -1,0 +1,24 @@
+{
+  "format": "task-jsonl-tar-v1",
+  "tasks": 60,
+  "nonempty_tiers": 4,
+  "entries_per_task": 13,
+  "fixed_entries": 22,
+  "estimated_shared_entries": 852,
+  "counts_directories": true,
+  "scheduler_log_attempts": 1,
+  "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+  "project": 102571,
+  "filesystem": "/gs/bs",
+  "quota": {
+    "used_files": 21554985,
+    "limit_files": 28000000,
+    "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9550811412  14680064000 14680064000       - 21554985  28000000 28000000       -"
+  },
+  "hard_file_limit": 24000000,
+  "remaining_files": 2445015,
+  "remaining_source": "lfs quota (with configured conservative hard limit)",
+  "max_remaining_fraction": 0.1,
+  "allowed_entries": 244501,
+  "accepted": true
+}

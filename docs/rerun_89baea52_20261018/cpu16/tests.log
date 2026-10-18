@@ -1,0 +1,45 @@
+### e1_long_cpu16_array_tests.log
+test_dry_run_freezes_inputs_lock_and_plan_without_execution (test_array.ArrayTests) ... ok
+test_environment_task_execution_resume_and_partial_aggregation (test_array.ArrayTests) ... ok
+test_formal_requires_array_allocation_and_verified_build (test_array.ArrayTests) ... ok
+test_packing_estimates_and_complete_matched_matrices (test_array.ArrayTests) ... ok
+test_parallel_accuracy_respects_worker_bound_order_and_resume (test_array.ArrayTests) ... ok
+test_parallel_timing_opt_in_is_validated_and_saved_at_execution (test_array.ArrayTests) ... ok
+test_resource_memory_and_wall_time_guards (test_array.ArrayTests) ... ok
+test_sigterm_records_interruption_and_stops_the_cli_group (test_array.ArrayTests) ... ok
+test_startup_failure_is_a_failed_task_with_missing_observations (test_array.ArrayTests) ... ok
+test_task_index_locks_and_rejected_dependency_resume (test_array.ArrayTests) ... error: cannot resume: config differs from run.json
+ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 11.745s
+
+OK
+
+### e1_long_cpu16_full_bprna_tests.log
+test_full_g_array_resume_and_verified_cohort_resolution (test_full_bprna.CohortAndScaffoldTests) ... ok
+test_incomplete_g_never_publishes_a_reduced_dataset (test_full_bprna.CohortAndScaffoldTests) ... ok
+test_legacy_scaffold_archive_streams_into_one_dataset_tar (test_full_bprna.CohortAndScaffoldTests) ... ok
+test_scaffold_quota_refusal_creates_no_plan_files (test_full_bprna.CohortAndScaffoldTests) ... ok
+test_only_pf_quantities_are_compared (test_full_bprna.E0ObservationTests) ... ok
+test_oracle_reverse_derivative_against_independent_two_structure_ensemble (test_full_bprna.E0ObservationTests) ... ok
+test_compact_schedule_and_tier_limits (test_full_bprna.FullPlanTests) ... ok
+test_deferred_scaffold_plan_never_runs_dummy_dots (test_full_bprna.FullPlanTests) ... ok
+test_exact_boundary_and_calibrated_mode_cost (test_full_bprna.FullPlanTests) ... ok
+test_increasing_beam_checkpointed_resume_keeps_completed_failures (test_full_bprna.FullPlanTests) ... ok
+test_long_rnas_use_each_cap_regime_and_largest_planned_width (test_full_bprna.LongSensitivityTests) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.808s
+
+OK
+
+### e1_long_cpu16_parallel_tests.log
+test_bound_covers_seeded_schedules_and_keeps_whole_matrices (test_parallel_packing.ParallelPackingTests) ... ok
+test_calibration_uses_cli_elapsed_and_limits_transfer_from_two_probes (test_parallel_packing.ParallelPackingTests) ... ok
+test_refuses_changed_inputs_incomplete_costs_and_unsupported_orders (test_parallel_packing.ParallelPackingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.003s
+
+OK

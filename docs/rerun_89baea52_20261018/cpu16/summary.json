@@ -1,0 +1,137 @@
+{
+  "name": "e1-bprna-long-89baea52-cpu16-20261018",
+  "tiers": [
+    {
+      "tier": "nt400_799",
+      "inputs": 584,
+      "tasks": 7,
+      "workers": 8,
+      "h_rt": "01:00:00",
+      "reserved_cpu16_hours": 7.0,
+      "max_predicted_task_hours": 0.6998793747539077,
+      "predicted_task_hours_sum": 4.816554063577532,
+      "predicted_sequential_cli_hours": 24.43712537448444,
+      "old_cpu40_tasks": 138,
+      "old_cpu40_h_rt": "06:00:00",
+      "old_reserved_cpu40_hours": 828.0,
+      "historical_cli_hours": 28.723645742627898,
+      "historical_task_wall_hours": 28.91943554916666
+    },
+    {
+      "tier": "nt800_1599",
+      "inputs": 423,
+      "tasks": 19,
+      "workers": 8,
+      "h_rt": "02:00:00",
+      "reserved_cpu16_hours": 38.0,
+      "max_predicted_task_hours": 1.3971405448257663,
+      "predicted_task_hours_sum": 24.614647656941962,
+      "predicted_sequential_cli_hours": 109.28117740321262,
+      "old_cpu40_tasks": 193,
+      "old_cpu40_h_rt": "08:00:00",
+      "old_reserved_cpu40_hours": 1544.0,
+      "historical_cli_hours": 139.04677080463458,
+      "historical_task_wall_hours": 139.27848839
+    },
+    {
+      "tier": "nt1600_3199",
+      "inputs": 340,
+      "tasks": 24,
+      "workers": 8,
+      "h_rt": "03:00:00",
+      "reserved_cpu16_hours": 72.0,
+      "max_predicted_task_hours": 2.0997177100523383,
+      "predicted_task_hours_sum": 47.47985683505371,
+      "predicted_sequential_cli_hours": 196.72744425789318,
+      "old_cpu40_tasks": 273,
+      "old_cpu40_h_rt": "12:00:00",
+      "old_reserved_cpu40_hours": 3276.0,
+      "historical_cli_hours": 252.35200835580096,
+      "historical_task_wall_hours": 252.613396662222
+    },
+    {
+      "tier": "nt3200_4381",
+      "inputs": 91,
+      "tasks": 10,
+      "workers": 8,
+      "h_rt": "04:00:00",
+      "reserved_cpu16_hours": 40.0,
+      "max_predicted_task_hours": 2.797513050175233,
+      "predicted_task_hours_sum": 24.37569796844974,
+      "predicted_sequential_cli_hours": 90.11442814771588,
+      "old_cpu40_tasks": 90,
+      "old_cpu40_h_rt": "16:00:00",
+      "old_reserved_cpu40_hours": 1440.0,
+      "historical_cli_hours": 115.90769247258635,
+      "historical_task_wall_hours": 115.99061890444443
+    }
+  ],
+  "old_run_before": {
+    "files": 2094,
+    "manifest_sha256": "094a9cc22eae040f78e5e9c8967a73e2e3f7ef7232780ecaffc3204cb891e7f3"
+  },
+  "old_run_after": {
+    "files": 2094,
+    "manifest_sha256": "094a9cc22eae040f78e5e9c8967a73e2e3f7ef7232780ecaffc3204cb891e7f3"
+  },
+  "old_run_and_scripts_unchanged": true,
+  "scientific_config_unchanged_except_name_and_memory_cap": true,
+  "input_roster_order_and_bytes_identical": true,
+  "plan_sha256": "0b8d6f8f7398f0f1f1feebbbb756a74af63b35a207a02783d8fe7efd74eec55d",
+  "cli_matrix_identity_verified": true,
+  "planned_cli_jobs": 25884,
+  "task_order_policy_and_seed_identical": true,
+  "all_tasks_unstarted": true,
+  "job_scripts": [
+    {
+      "tier": "nt400_799",
+      "tasks": 7,
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/e1-bprna-long-89baea52-cpu16-20261018/nt400_799.sh",
+      "sha256": "a25fbfbac06e1edfdaaab3702f6f708a4bfea3e8d9d8996f0f25db6bcd1cfe08"
+    },
+    {
+      "tier": "nt800_1599",
+      "tasks": 19,
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/e1-bprna-long-89baea52-cpu16-20261018/nt800_1599.sh",
+      "sha256": "a560f6121cb96307b1ae4b65eb959e3412c9dac1dc6281b33574d4f9d2ba49bc"
+    },
+    {
+      "tier": "nt1600_3199",
+      "tasks": 24,
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/e1-bprna-long-89baea52-cpu16-20261018/nt1600_3199.sh",
+      "sha256": "df467fec5e2862d7be504dee62547f9b96d9d679d0408d4e0460ae283941daa2"
+    },
+    {
+      "tier": "nt3200_4381",
+      "tasks": 10,
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/jobs/e1-bprna-long-89baea52-cpu16-20261018/nt3200_4381.sh",
+      "sha256": "9ffd6eddd1da2cb7c8ca1107ede1024d58f103b8fd0bbaa429860da1e1f26af3"
+    }
+  ],
+  "file_budget": {
+    "format": "task-jsonl-tar-v1",
+    "tasks": 60,
+    "nonempty_tiers": 4,
+    "entries_per_task": 13,
+    "fixed_entries": 22,
+    "estimated_shared_entries": 802,
+    "counts_directories": true,
+    "scheduler_log_attempts": 1,
+    "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "quota": {
+      "used_files": 21554624,
+      "limit_files": 28000000,
+      "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9549949112  14680064000 14680064000       - 21554624  28000000 28000000       -"
+    },
+    "hard_file_limit": 24000000,
+    "remaining_files": 2445376,
+    "remaining_source": "lfs quota (with configured conservative hard limit)",
+    "max_remaining_fraction": 0.1,
+    "allowed_entries": 244537,
+    "accepted": true
+  },
+  "submitted": false,
+  "git_commit_created": false
+}

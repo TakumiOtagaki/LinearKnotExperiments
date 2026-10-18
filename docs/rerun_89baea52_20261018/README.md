@@ -228,3 +228,41 @@ E0 observer、stage driver、所属observerを実際にlinkした。
 E1の科学条件とtier資源の一致、全planの入力hash・依存lock・未実行状態を確認した。
 この検証は新しい科学的な一致・精度・計算時間の測定を代替しない。
 原稿・図の数値と `../LinearCParty` は変更していない。
+
+
+## E1 long の cpu_16 再計画（2026-10-18、未投入）
+
+E1 long は h_rt 全体に対するポイント確保を減らすため、新run `e1-bprna-long-89baea52-cpu16-20261018` に再計画した。
+旧runと旧job scriptは変更せず、入力1,438本・全25,884条件・mode/program/要求出力・順序方針・seedを維持した。
+全区分を cpu_16、8 workers、4,096 MiB/process、task余裕1,024 MiBとし、cap合計33,792 MiBを35,095 MiBの予算内に収めた。
+4,381 nt・b=400のRaccessは4 GiB制限で完走（595.17秒、GNU time peak RSS 1.60 GiB）。
+BPPの180/600秒試行と3,995 ntのRaccessの900秒試行は時間で打ち切った。打ち切りはメモリ不足を示さず、BPPと3,995 nt入力の完走時の最大メモリは未確認である。
+試行はこの2入力に限り、全attemptの生出力を [pilots.tar](cpu16/pilots.tar) に保存した。
+
+[比較表と試行一覧](jobs.md#e1-long-cpu_16-再計画2026-10-18)、[較正](cpu16/calibration.json)、[計画と不変性検証](cpu16/summary.json) を参照。
+旧CLI実測536.03時間と完走試行の新旧比 0.516349 を使い、各job 0.5秒追加・仕事量1.5倍、並列効率80%の仮定、幅ごとの待ち合わせ、120秒/taskを含めた。
+並列効率は8 workerの実測値ではない。
+h_rt は1/2/3/4時間、全taskの見積もりは各h_rtの70%以内。
+**694 → 60 task、予約枠は旧cpu_40の7,088時間から新cpu_16の157時間。資源が異なるので、この時間比をポイント比とはしない。**
+新planと付帯資料の全期間inode枠は852 entriesで、[live quota gate](cpu16/file_budget_before.json) を通過した。
+
+新しいjob scriptは次の4個。
+
+- `jobs/e1-bprna-long-89baea52-cpu16-20261018/nt400_799.sh`
+- `jobs/e1-bprna-long-89baea52-cpu16-20261018/nt800_1599.sh`
+- `jobs/e1-bprna-long-89baea52-cpu16-20261018/nt1600_3199.sh`
+- `jobs/e1-bprna-long-89baea52-cpu16-20261018/nt3200_4381.sh`
+
+**この作業ではqsubもgit commitもしていない。以下は後で投入するためのコマンド。**
+既存の `submit_arrays.sh` と `qsub_commands_sequential.sh` は旧E1 longを参照するため、E1 longにそのまま使わない。
+新helperは4 arrayを `qsub -sync y` で順番に待ち、他arrayを除いた `LCP_ARRAY_BUDGET` を各arrayの `-tc` に渡す。
+既存 `analyze.sh` で新runを集計するときも、E1 longのplan指定をこの新runに置き換える。
+
+```bash
+cd /gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper
+: "${TSUBAME_GROUP:?Set the authorized accounting group}"
+export TSUBAME_GROUP
+lfs quota -p 102571 /gs/bs
+export LCP_ARRAY_BUDGET=30  # 他のarrayに使う枠があれば減らす。
+bash experiments/docs/rerun_89baea52_20261018/cpu16/submit_e1_long_cpu16.sh
+```

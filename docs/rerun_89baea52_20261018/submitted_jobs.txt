@@ -50,3 +50,7 @@
 9052555 jobs/e3-neat1-variants-raccess-89baea52-20261018/neat1_short.sh h_rt=02:00:00
 9052556 jobs/e3-neat1-variants-raccess-89baea52-20261018/neat1_long.sh h_rt=06:00:00
 # E3 arrays resubmitted with h_rt 2h (short) / 6h (long) instead of 24h to reduce reserved points.
+9052769 jobs/e1-bprna-long-89baea52-cpu16-20261018/nt1600_3199.sh
+9052770 jobs/e1-bprna-long-89baea52-cpu16-20261018/nt3200_4381.sh
+9052771 jobs/e1-bprna-long-89baea52-cpu16-20261018/nt400_799.sh
+9052772 jobs/e1-bprna-long-89baea52-cpu16-20261018/nt800_1599.sh

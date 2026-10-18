@@ -62,3 +62,38 @@
 | `jobs/e0-validation-89baea52-20261018/byloop.sh` | 1 | cpu_16=1 | 1 | 16384 | 02:00:00 | 0.250 | 0.250 | — | array |
 | `jobs/e0-validation-89baea52-20261018/vienna.sh` | 1 | cpu_16=1 | 1 | 16384 | 02:00:00 | 0.750 | 0.750 | — | array |
 | `jobs/e0-validation-89baea52-20261018/linearspace.sh` | 1 | cpu_16=1 | 1 | 16384 | 02:00:00 | 0.100 | 0.100 | — | array |
+
+
+## E1 long cpu_16 再計画（2026-10-18）
+
+旧表は保存済みcpu_40計画の記録として残す。比較元の実scriptのh_rtは6/8/12/16時間である。
+新runは `e1-bprna-long-89baea52-cpu16-20261018`。全区分8 workers、4,096 MiB RLIMIT_AS/process、33,792 MiBのcap合計。
+新taskのh_rtは最大4時間、推定wallは各h_rtの70%以内。以下の時間はallocation枠であり、異なる資源間のポイント換算ではない。
+
+| 区分 | 旧cpu_40 tasks | 旧h_rt | 旧予約h | 新cpu_16 tasks | 新h_rt | 新予約h | 新推定最長task h |
+|---|---:|---|---:|---:|---|---:|---:|
+| nt400_799 | 138 | 06:00:00 | 828 | 7 | 01:00:00 | 7 | 0.6999 |
+| nt800_1599 | 193 | 08:00:00 | 1,544 | 19 | 02:00:00 | 38 | 1.3971 |
+| nt1600_3199 | 273 | 12:00:00 | 3,276 | 24 | 03:00:00 | 72 | 2.0997 |
+| nt3200_4381 | 90 | 16:00:00 | 1,440 | 10 | 04:00:00 | 40 | 2.7975 |
+| 合計 | 694 | — | 7,088 | 60 | 最大4時間 | 157 | — |
+
+試行は開発用で、b=400、元configと同じ引数・出力要求、4 GiB address-space cap。最大2 CLIの試行が重なった。
+GNU timeのpeakと、timeout前の `/proc/PID/status` のVmHWMサンプルを区別する。
+sampledは打ち切りまでの観測最大であり、完走時のpeakではない。
+
+| 入力 | nt | program | 状態 | CLI経過秒 | RSS GiB |
+|---|---:|---|---|---:|---|
+| bpRNA_CRW_55322 | 4381 | LinearCParty | timeout | 180.00 | — |
+| bpRNA_CRW_55322 | 4381 | LinearCParty | timeout | 600.19 | 1.626 (sampled) |
+| bpRNA_CRW_55322 | 4381 | LinearPKRaccess | success | 595.17 | 1.598 (GNU) |
+| bpRNA_RFAM_43122 | 3995 | LinearPKRaccess | timeout | 900.10 | 1.721 (sampled) |
+
+メモリ失敗は観測していない。4,381 ntのRaccessは4 GiB以内で完走したが、打ち切ったBPPと3,995 nt入力の完走時のメモリは未確認。
+較正は旧runの694 JSONL / 25,884成功CLIの `elapsed_seconds` を同じinput/mode/programへ対応させた。
+完走試行の新旧比を転用し、少なくとも旧時間の0.5倍を残す。
+各jobに0.5秒を加え、全仕事量を1.5倍する。
+各幅の仕事量W、最長job Lに対し `W/8 + 7L/8`（8 job以下ならL）を足し、仮定した並列効率0.8で割り、120秒/taskを加える。
+8 workerのthroughputを測ったものではなく、新しいrunの実時間や全入力の4 GiB適合を保証する模型ではない。
+
+[較正と全旧JSONLのhash](cpu16/calibration.json)、[4 scriptsと旧run不変性](cpu16/summary.json)、[投入helper](cpu16/submit_e1_long_cpu16.sh)。
