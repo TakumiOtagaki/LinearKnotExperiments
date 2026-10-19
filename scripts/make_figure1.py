@@ -195,7 +195,8 @@ def make_figure(d):
             ax.add_patch(Arc(((i + j) / 2, 0), j - i, (j - i) * 0.9,
                              theta1=0, theta2=180, color=color,
                              alpha=probability, lw=width,
-                             ls=(0, (3, 1.6)) if crossing else "-"))
+                             ls=(0, (4, 2)) if crossing else
+                                (0, (1, 1)) if color == NEW_COLOR else "-"))
 
     def completed(ax, pairs):
         new_pairs = [p for p in pairs if p not in d["G"]]
@@ -298,7 +299,8 @@ def make_figure(d):
     for context in CONTEXTS:
         top = [a + b for a, b in zip(bottom, d["ctx"][context])]
         ax.fill_between(x, bottom + [bottom[-1]], top + [top[-1]], step="post",
-                        color=CONTEXT_COLORS[context], lw=0)
+                        facecolor=CONTEXT_COLORS[context], edgecolor=MUTED,
+                        hatch="/" if context == "Internal" else "", lw=0)
         bottom = top
     begin, end = d["pseudo_region"]
     center = (begin + end) / 2
@@ -309,7 +311,13 @@ def make_figure(d):
     for y, labels in ((32.4, CONTEXTS[:4]), (28.4, CONTEXTS[4:])):
         xpos = 12
         for label in labels:
-            canvas.add_patch(Rectangle((xpos, y - 2.0), 2, 2, color=CONTEXT_COLORS[label], lw=0))
+            canvas.add_patch(Rectangle((xpos, y - 2.0), 2, 2,
+                                       facecolor=CONTEXT_COLORS[label], edgecolor=MUTED,
+                                       hatch="/" if label == "Internal" else "", lw=0))
+            if label == "Internal":
+                # One sparse slash remains visible in this 2-mm key swatch.
+                canvas.plot([xpos + .2, xpos + 1.8], [y - 1.8, y - .2],
+                            color=MUTED, lw=.35)
             text(xpos + 2.8, y, label, 7)
             xpos += {"Stem": 15, "Hairpin": 18, "Bulge": 16, "Internal": 20,
                      "Multiloop": 23, "Exterior": 21, "PseudoLoop": 23}[label]
@@ -326,9 +334,18 @@ def make_figure(d):
     text(54.5, 4.8, "Position / start of window", 7, ha="center")
 
     text(111, 74, "Boltzmann samples", 7.5, weight="bold")
-    for (count, db), base in zip(d["shown"], (58.5, 43)):
-        text(111, base + 12, f"{count:,} draws", 7)
-        completed(arc_axis(111, base, 60, 9.7), pairs_from_db(db))
+    for k, ((count, db), base) in enumerate(zip(d["shown"], (58.5, 43))):
+        text(111, base + 12, f"Most frequent: {count:,} draws" if k == 0 else
+             f"With a new non-crossing pair: {count:,} draws", 7)
+        sample_ax = arc_axis(111, base, 60, 9.7)
+        sample_pairs = pairs_from_db(db)
+        completed(sample_ax, sample_pairs)
+        if k == 1:
+            i, j = next(p for p in sample_pairs if p not in d["G"] and
+                        not any(crosses(p, g) for g in d["G"]))
+            sample_ax.annotate("", xy=((i + j) / 2, (j - i) * .45),
+                               xytext=((i + j) / 2 + 5, (j - i) * .45 + 8),
+                               arrowprops=dict(arrowstyle="->", color=NEW_COLOR, lw=.8))
     other = d["total"] - sum(count for count, db in d["shown"])
     text(111, 39.8, f"Other draws: {other:,} of {d['total']:,}", 7)
     text(111, 32.5, "MEA structure", 7.5, weight="bold")
@@ -336,8 +353,8 @@ def make_figure(d):
     completed(arc_axis(111, 19, 60, 9.7), pairs_from_db(d["mea"]))
     # A compact pair key uses line styles as well as the common colors.
     for yy, label, color, style in ((15.5, "Scaffold G", G_COLOR, "-"),
-                                    (11.2, "New; no crossing", NEW_COLOR, "-"),
-                                    (6.9, "New; crosses G", CROSS_COLOR, (0, (3, 1.6)))):
+                                    (11.2, "New; no crossing", NEW_COLOR, (0, (1, 1))),
+                                    (6.9, "New; crosses G", CROSS_COLOR, (0, (4, 2)))):
         canvas.plot([111, 117], [yy - 1.1, yy - 1.1], color=color, lw=1, ls=style)
         text(119, yy, label, 7)
     return fig
@@ -383,29 +400,63 @@ def write_notes(data, out, d, report):
     other = d["total"] - shown
     windows = ", ".join(str(w) for w in sorted(d["acc"]))
     lo, hi = d["pseudo_region"]
-    caption = f"""Conditional ensemble analysis with LinearCParty.
+    caption = f"""**Figure 1. Conditional ensemble analysis with LinearCParty.**
+
+<!-- 日本語：Aのscaffold Gとextension G′は対合塩基を共有せず、それぞれは交差対を持たない。
+和集合がRを作る。
+括弧はband、すなわち外部の同じ対群と交差する入れ子対の極大群の範囲を示す。
+点線は二つのbandの範囲を通る。
+density-2制限では、交差で連結したband群のうち同じ位置を覆うbandは最大二つである。
+残りのloopと境界の制限はMethodsに示す。 -->
 **(A)** Scaffold G and extension G′ share no paired bases, and each has no crossing pairs.
 Their union forms R.
 The brackets mark bands: maximal groups of nested pairs that cross the same outside pairs.
 The dotted line passes through both band spans.
 The density-2 restriction allows at most two bands from any connected group of crossing bands to span one position.
 Methods give the remaining loop and boundary restrictions.
+
+<!-- 日本語：BはCPartyの分解を小さな組合せへ並べ替え、右端の順に候補を処理する。
+丸は保持候補、×は破棄候補を示す。
+高い点ほど順位が高い（図の例では右端ごとに{BEAM_DEMO}候補を保持）。
+順位はinside weightの対数に予備計算の周囲の重みの対数の推定値を足して決める。
+inside weightは部分構造のBoltzmann重みの和である。 -->
 **(B)** LinearCParty rearranges CParty's decomposition into smaller combinations and processes candidates by right endpoint.
 Circles mark retained candidates and crosses mark discarded candidates.
 Higher points have higher ranks ({BEAM_DEMO} retained per endpoint in this sketch).
 Ranking adds the log inside weight to an estimate of surrounding log weight from a preliminary run.
 Inside weight sums the Boltzmann weights of partial structures.
+
+<!-- 日本語：Cの青枠は一つの保持ensembleから得る対確率、七つのcontext確率、窓accessibility、Boltzmann標本、最大期待正確度（MEA）復元の五出力を含む。
+AとCは{d['rec']['id']}（{d['n']} nt）を使い、canonicalな入れ子の参照{len(d['G'])}対をGとする。
+Cはモデルのexact予測である。
+灰色実線はG、青色点線は新しい非交差対、橙色破線はGと交差する新しい対を示す。
+対の弧は確率{PAIR_CUTOFF:g}より大きいものを示し、高確率ほど濃くする。 -->
 **(C)** The blue frame contains five outputs from one retained ensemble: pair probabilities, seven context probabilities, window accessibility, Boltzmann samples, and maximum expected accuracy (MEA) decoding.
 A and C use {d['rec']['id']} ({d['n']} nt), with {len(d['G'])} canonical nested reference pairs as G.
 C shows exact model predictions.
-Solid grey, solid blue, and dashed orange arcs mark G, new non-crossing pairs, and new pairs crossing G, respectively.
+Solid grey, dotted blue, and dashed orange arcs mark G, new non-crossing pairs, and new pairs crossing G, respectively.
 Pair arcs show probabilities greater than {PAIR_CUTOFF:g}, with darker arcs for higher probabilities.
+
+<!-- 日本語：context確率の和は1である。
+Internalにはこの図とTercの例で共通の疎な斜線を付ける。
+括弧は塩基{lo}–{hi}のPseudoLoopを示す。
+PseudoLoopは交差bandをつなぐ、またはbandをまたぐ分岐内の非対合領域を表す。
+accessibilityは窓の全塩基が同時に非対合となる確率である（{windows} nt、実線・破線・点線）。
+座標は1始まりの塩基位置または窓の開始位置である。 -->
 Context probabilities sum to one.
+Sparse hatching identifies Internal in this figure and the Terc example.
 The bracket labels PseudoLoop at bases {lo}–{hi}.
 PseudoLoop labels unpaired regions connecting crossing bands or in branches spanning a band.
 Accessibility is the probability that all window bases are unpaired ({windows} nt; solid, dashed, dotted lines).
 Coordinates give 1-based positions or window starts.
-The samples show the most frequent structure and the most frequent structure with a new non-crossing pair ({shown:,} of {d['total']:,} draws; {other:,} other draws).
+
+<!-- 日本語：標本図は最多の構造（{d['shown'][0][0]}回）と、新しい非交差対を含む構造の中で最多のもの（{d['shown'][1][0]}回）を示す。
+全{d['total']}回のうち残り{other}回の標本は示さない。
+MEAの対の重みはγ={d['gamma']:g}とする。
+別の最小自由エネルギー（MFE）探索は同じ分解を使い、独自のbeam候補を持つ。
+この模式図の構造もexactの結果を示す。 -->
+The diagrams show the most frequent sampled structure ({d['shown'][0][0]:,} draws) and the most frequent structure containing a new non-crossing pair ({d['shown'][1][0]:,} draws).
+The remaining {other:,} of {d['total']:,} draws are not shown.
 MEA uses pair weight γ = {d['gamma']:g}.
 The separate minimum-free-energy (MFE) search uses the same decomposition with its own beam candidates.
 Its diagram also shows an exact result.
@@ -423,6 +474,9 @@ Its diagram also shows an exact result.
                   pseudoloop_label_region=[lo, hi], band_spans=d["spans"],
                   band_overlap_probe=d["probe"], bands_spanning_probe=d["overlap"],
                   max_context_sum_error=d["context_error"],
+                  pair_linestyles=dict(scaffold="solid", new_no_crossing="dotted",
+                                       new_crossing_G="dashed"),
+                  context_hatches={c: "/" if c == "Internal" else "" for c in CONTEXTS},
                   illustrative_beam_width=BEAM_DEMO)
     (out / "validation.json").write_text(json.dumps(report, indent=2) + "\n")
     readme = f"""# Figure 1 revision — 2026-10-17

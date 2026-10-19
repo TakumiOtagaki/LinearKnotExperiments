@@ -1,0 +1,29 @@
+{
+  "pdf_size_mm": [
+    165.00000000001026,
+    144.99999999998442
+  ],
+  "png_size_px": [
+    1948,
+    1712
+  ],
+  "png_dpi": [
+    299.9994,
+    299.9994
+  ],
+  "embedded_pdf_minimum_pt": 7.0,
+  "embedded_pdf_maximum_pt": 9.0,
+  "embedded_pdf_distinct_sizes_pt": [
+    7.0,
+    9.0
+  ],
+  "embedded_pdf_spans_checked": 102,
+  "embedded_pdf_glyphs_below_6pt": [],
+  "pdf_font_inspection": "Ghostscript txtwrite TextFormat=0; no NODISPLAY flag",
+  "text_inside_canvas": true,
+  "text_overlap": false,
+  "minimum_matplotlib_text_pt": 7,
+  "histogram_densities_integrate_to_one": true,
+  "all_pairwise_distances_recomputed": true,
+  "focus_windows_contain_only_scaffold_free_bases": true
+}

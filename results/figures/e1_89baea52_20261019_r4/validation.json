@@ -1,0 +1,106 @@
+{
+  "all_passed": true,
+  "checks": {
+    "e1_quantile_scalars_checked": 1750,
+    "e1_summaries_checked": 350,
+    "e1_short_rows": 98500,
+    "e1_long_rows": 8628
+  },
+  "source_files_unchanged": true,
+  "text_within_pages": true,
+  "text_without_overlap": true,
+  "plotted_points_within_axis_limits": true,
+  "minimum_normal_font_pt": 7,
+  "pdf_text_checks": {
+    "figure2_main.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 80,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    },
+    "figure2_d_si.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 42,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    },
+    "figure2_accessibility_si.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 130,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    }
+  },
+  "outputs": [
+    {
+      "file": "figure2_main.pdf",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 36238,
+      "sha256": "07e62eefacca5c466aa7e740704bf1672413da1e1e4a6ce9e46fadc763f1a1e2"
+    },
+    {
+      "file": "figure2_main.png",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 172175,
+      "sha256": "56405eab5855f66919aa890a508f204f812261d8a44691423a38675301d6ae41"
+    },
+    {
+      "file": "figure2_d_si.pdf",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 23253,
+      "sha256": "c7805a87b60c11cf0b1255a44496f65be24b9759e089401026393429c151dede"
+    },
+    {
+      "file": "figure2_d_si.png",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 84343,
+      "sha256": "f6d64db12e6c1283ad6a3a60d83fd3aed789e3fce501b190a131276aa9a1d941"
+    },
+    {
+      "file": "figure2_accessibility_si.pdf",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 31770,
+      "sha256": "422291dd636453f88739d84204f355e992b7c88b2979a209a85723b861d5b74f"
+    },
+    {
+      "file": "figure2_accessibility_si.png",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 226669,
+      "sha256": "f299130ba11c062a38e1fe0e58d661562c567d7342f3002a4a1bb1d492c42912"
+    }
+  ],
+  "figure2B_headline_p90": {
+    "cohort": "short",
+    "length_nt": "300\u2013399",
+    "beam": 200,
+    "values": {
+      "base_state_tv_mean_Gfree": 0.0014963094668528582,
+      "context_tv_mean_Gfree": 0.001775133296871157
+    },
+    "distance_from_zero_mm": {
+      "base_state_tv_mean_Gfree": 8.990378772690606,
+      "context_tv_mean_Gfree": 9.169217578801726
+    },
+    "scale": "symlog",
+    "linear_threshold": 1e-06,
+    "no_positive_floor": true
+  }
+}

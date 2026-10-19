@@ -99,6 +99,19 @@ def read_data(data, beam, region, focus_starts):
                    'sampling_reference_distances.tsv.gz', 'representative_distances.tsv')
     sources = [{'path': str((data / name).relative_to(ROOT)),
                 'sha256': sha((data / name).read_bytes())} for name in table_names]
+    # These are saved joint window probabilities, not single-base contexts.
+    byloop_table = data / 'byloop_regions.tsv'
+    byloop = None
+    if byloop_table.is_file():
+        selected = [r for r in rows(byloop_table) if r['iso'] == 'NEAT1_2'
+                    and int(r['beam']) == beam and int(r['window']) == WINDOW
+                    and (int(r['start_min']), int(r['start_max'])) == focus_starts]
+        assert len(selected) == 1, 'Missing or ambiguous saved loop-type focus means'
+        byloop = {c: float(selected[0][c + '_mean']) for c in CONTEXTS if c != 'Stem'}
+        byloop['total'] = float(selected[0]['total_mean'])
+        assert all(v >= 0 for v in byloop.values())
+        assert abs(sum(v for c, v in byloop.items() if c != 'total') - byloop['total']) < 1e-12
+        sources.append(dict(path=str(byloop_table.relative_to(ROOT)), sha256=sha(byloop_table.read_bytes())))
     inputs = {}
     for name, path in [('NEAT1_2', 'data/neat1-20261016/NEAT1_2.txt'),
                        ('NEAT1_2_emptyG', 'data/neat1-variants-20261016/NEAT1_2_emptyG.txt'),
@@ -243,6 +256,9 @@ def read_data(data, beam, region, focus_starts):
                                    focus_scaffold_paired_bases=int(own_paired[focal_bases].sum()),
                                    focus_context_max={c: float(ctx[c][focal_bases].max()) for c in CONTEXTS})
 
+    if byloop is not None:
+        assert abs(byloop['total'] - diagnostics['G0.7']['focus_mean']) < 1e-12
+
     # Recompute every pair-set distance from streamed samples with integer bitsets.
     # This checks the plotted histograms, references, and exact means independently.
     hist = [r for r in rows(data / 'sampling_histograms.tsv') if r['beam'] == str(beam)]
@@ -295,7 +311,8 @@ def read_data(data, beam, region, focus_starts):
                 profile=profile, access=access, access_by_beam=access_by_beam,
                 access_checks=access_checks, stability=stability, pairs=pairs, fixed_window=fixed_window,
                 hist=hist, summary=summary, diagnostics=diagnostics, sample_checks=sample_checks,
-                sources=sources, artifacts=consumed, supplemental_checkpoints=checkpoints)
+                sources=sources, artifacts=consumed, supplemental_checkpoints=checkpoints,
+                focus_byloop=byloop)
 
 
 def axis_mm(fig, x, y, w, h):
@@ -358,7 +375,7 @@ def draw(fig, d):
     arc_height = max(((int(r['j']) - int(r['i'])) / 2 for method, _, _ in columns
                      for r in d['pairs'][method] if float(r['probability']) >= PAIR_CUTOFF
                      and region[0] <= int(r['i']) < int(r['j']) <= region[1]), default=1) * 1.05
-    styles = {'scaffold': 'solid', 'new_nested': (0, (3, 1.5)), 'crossing': (0, (1, 1.5))}
+    styles = {'scaffold': 'solid', 'new_nested': (0, (1, 1)), 'crossing': (0, (4, 2))}
     for method, x, label in columns:
         text_mm(fig, x, 143.5, label, weight='bold', va='top')
         ax = axis_mm(fig, x, 127.5, column_width, 13.5)
@@ -394,7 +411,7 @@ def draw(fig, d):
     fig.legend(handles=handles, loc='center left', bbox_to_anchor=(20 / WIDTH, 120.2 / LAYOUT_HEIGHT),
                frameon=False, ncol=len(handles), fontsize=FONT_SIZE, borderaxespad=0,
                handlelength=1.7, columnspacing=1, handletextpad=.5)
-    text_mm(fig, 163, 120.2, f'Probability ≥{PAIR_CUTOFF}; darker = higher', ha='right', va='center')
+    text_mm(fig, 163, 120.2, 'Opacity = pair probability', ha='right', va='center')
 
     # Separate, directly named tracks preserve every context in grayscale.
     # All tracks retain the same 0--1 scale; no tiny component is enlarged.
@@ -417,12 +434,12 @@ def draw(fig, d):
             ax.spines['bottom'].set_visible(True)
             ax.spines['bottom'].set_color(GRID)
             if np.max(values) < .001:
-                text_mm(fig, x + 1, y + 1.65, '<0.001 everywhere', va='center')
+                text_mm(fig, x + 1, y + 1.65, '<0.001 in this view', va='center')
 
     for method, x, _ in columns:
         mean = d['diagnostics'][method]['focus_mean']
         text_mm(fig, x, 81.3, f'8-nt accessibility · highlighted mean {mean:.4f}', va='top')
-        ax = axis_mm(fig, x, 64, column_width, 12)
+        ax = axis_mm(fig, x, 66, column_width, 10)
         focus(ax, focal, starts=True)
         if method == 'G0.7':
             mask = d['fixed_window'][region[0] - 1:region[1]]
@@ -438,16 +455,24 @@ def draw(fig, d):
         ax.get_xticklabels()[0].set_ha('left')
         ax.get_xticklabels()[-1].set_ha('right')
         clean_axis(ax)
-    text_mm(fig, 20, 56.6, 'Nucleotide position / window start', va='center')
+    text_mm(fig, 91.5, 60, 'Nucleotide position / window start', ha='center', va='center')
     fig.legend(handles=[Patch(facecolor='#e8e8e4', edgecolor=G_COLOR, hatch='////',
                               label='Window with a G-paired base: 0')],
-               loc='center left', bbox_to_anchor=(96 / WIDTH, 56.6 / LAYOUT_HEIGHT),
+               loc='center left', bbox_to_anchor=(96 / WIDTH, 45.8 / LAYOUT_HEIGHT),
                fontsize=FONT_SIZE, frameon=False, borderaxespad=0, handlelength=1.7)
-    text_mm(fig, 20, 52.3, f'Beam/local-limit sensitivity at the {windows} highlighted starts', weight='bold', va='top')
-    for method, x, _ in columns:
+    if d['focus_byloop'] is not None:
+        text_mm(fig, 20, 56.6, 'Highlighted means by loop type (G)', weight='bold', va='center')
+        for i, context in enumerate(('Hairpin', 'Bulge', 'Internal', 'Multiloop', 'Exterior', 'PseudoLoop')):
+            value = d['focus_byloop'][context]
+            formatted = (f'{value:.2e}' if 0 < value < .001 else f'{value:.3f}').replace('e-', 'e−')
+            text_mm(fig, 20 + 34 * (i % 2), 52.8 - 3.5 * (i // 2),
+                    f'{context} {formatted}', va='center')
+    text_mm(fig, 96, 56.6, 'Highlighted-window sensitivity', weight='bold', va='center')
+    for i, (method, label) in enumerate((('G0.7', 'G'), ('emptyG', 'Empty G'))):
         widths = d['stability'][method]['beam_widths']
         delta = d['stability'][method]['max_absolute_window_change']
-        text_mm(fig, x, 47.5, f'b={widths[0]} / {widths[1]}: largest change {delta:.3g}'.replace('e-', 'e−'), va='top')
+        text_mm(fig, 96, 52.8 - 3.5 * i,
+                f'{label}, b={widths[0]} / {widths[1]}: max change {delta:.3g}'.replace('e-', 'e−'), va='center')
 
     fig.add_artist(Line2D([1.5 / WIDTH, 163 / WIDTH], [44 / LAYOUT_HEIGHT] * 2,
                          transform=fig.transFigure, color=GRID, lw=.5))
@@ -491,10 +516,19 @@ def caption(d, counts):
     windows = focal[1] - focal[0] + 1
     sample = d['sample_checks'][0]
     fixed = len(d['inputs']['NEAT1_1']['fixed'])
+    byloop_note = ''
+    if d['focus_byloop'] is not None:
+        q = d['focus_byloop']
+        others = sum(v for c, v in q.items() if c not in ('total', 'Hairpin'))
+        byloop_note = f'''\n<!-- 日本語：左下の小表はGを使った注目{windows}窓のjoint accessibilityを六つのloopの種類に分けた平均である。
+合計は{q['total']:.3f}、Hairpinの寄与は{q['Hairpin']:.3f}、他の五成分の和は{others:.3f}である。 -->
+The small table gives mean joint accessibility by six loop types for the {windows} highlighted windows with G.
+Mean total accessibility is {q['total']:.3f}; Hairpin contributes {q['Hairpin']:.3f}, and the other five types sum to {others:.3f}.
+'''
     return f'''<!-- 日本語：主な予測は beam 幅 b={d['beam']} を使う。
 beam 幅は保持する候補を制限する。
 scaffold G は全構造で保持する対である。 -->
-**Figure S3. Predicted probabilities and structure diversity in NEAT1.**
+**Figure S4. Predicted probabilities and structure diversity in NEAT1.**
 The main predictions use beam width b={d['beam']}.
 Beam width limits retained candidates.
 Scaffold G contains pairs retained in every structure.
@@ -504,25 +538,30 @@ Scaffold G contains pairs retained in every structure.
 **(A)** NEAT1_2 ({d['inputs']['NEAT1_2']['n']:,} nucleotides, nt).
 The {windows} highlighted eight-base windows start at {focal[0]:,}–{focal[1]:,} and span bases {focal[0]:,}–{focal[1] + WINDOW - 1:,}.
 
-<!-- 日本語：B の灰色実線は G、青色破線は G と交差しない新しい対を示す。
+<!-- 日本語：B の灰色実線は G、青色点線は G と交差しない新しい対、橙色破線はGと交差する新しい対を示す。
+弧の不透明度は対確率であり、重なった弧は濃く見えることがある。
 弧は確率{PAIR_CUTOFF}以上で両端が表示区間内にある対だけを示す。
 区間外へ伸びる対は G ありで{counts['G0.7']['external_omitted']}、空の G で{counts['emptyG']['external_omitted']}対あり、省略する。
 C はそれらの寄与も含む全長計算である。 -->
-**(B)** Solid gray arcs mark G; dashed blue arcs mark new pairs without G crossings.
+**(B)** Solid grey arcs show G, dotted blue arcs show new pairs that do not cross G, and dashed orange arcs show new pairs crossing G.
+Arc opacity represents pair probability; overlapping arcs may appear darker.
 Arcs require probability ≥{PAIR_CUTOFF} and both endpoints in view.
 B omits pairs with a base outside the view: {counts['G0.7']['external_omitted']} with G and {counts['emptyG']['external_omitted']} with empty G.
 C includes their full-transcript contributions.
 
 <!-- 日本語：C の各 context は同じ0–1の尺度で示す。
+0.001未満というラベルは表示区間内のすべての保存値がこの閾値未満であることを示す。
 accessibility は窓内8塩基が同時に非対合である確率である。
 網掛けは G の対合塩基を含み accessibility が0の窓を示す。
 注目窓はすべて G で非対合の塩基だけを含む。
 図内の平均と beam 幅・局所制限を変えた最大差は注目{windows}窓について示す。 -->
 **(C)** Context tracks share a 0–1 scale (definitions in Methods).
+Context values labelled <0.001 are below this threshold throughout the displayed interval.
 Accessibility is the probability that all eight window bases are unpaired together.
 Hatched windows contain G-paired bases and have zero accessibility.
 All highlighted windows contain only bases unpaired in G.
 Means and changes between settings refer to the {windows} highlighted windows.
+{byloop_note}
 
 <!-- 日本語：D は NEAT1_1 全長の{sample['samples']:,}標本で、共通 G の{fixed}対を距離から除く。
 Jaccard 距離は1から共有対数を和集合の対数で割った値を引く。
@@ -552,7 +591,16 @@ Only the successful `NEAT1_2_emptyG-beam200_outer-LinearCParty-rep0` record and 
 Their archive boundaries, byte counts, and SHA-256 hashes are verified.'''
                        if d['supplemental_checkpoints'] else
                        'All selected BPP results are included in the fixed E3 snapshot.')
-    return f'''# Supplementary Figure S3: NEAT1 (2026-10-17)
+    byloop_note = ''
+    if d['focus_byloop'] is not None:
+        byloop_note = ('\n## Joint accessibility by loop type\n\n'
+                      'The small table in C uses the saved `byloop_regions.tsv` row for NEAT1_2, '
+                      f'b={d["beam"]}, w=8, starts {focal[0]}–{focal[1]}. '
+                      'These are joint window probabilities; no component is inferred from single-base contexts. '
+                      'The component sum is checked against the saved total and the independently validated focus curve.\n\n'
+                      '| Loop type | Mean contribution |\n|---|---:|\n' +
+                      ''.join(f'| {c} | {v:.17g} |\n' for c, v in d['focus_byloop'].items()))
+    return f'''# Supplementary Figure S4: NEAT1 (2026-10-19, round four)
 
 [PDF](figure_s3.pdf) / [PNG](figure_s3.png) / [caption](caption.md) / [provenance](provenance.json) / [validation](validation.json) / [focus values](focus_accessibility.tsv)
 
@@ -592,7 +640,7 @@ The [fixed E3 analysis](../../local/e3-neat1-20261016/README.md) supplies all ta
 |---|---|---|
 | A | [NEAT1_2 input](../../../data/neat1-20261016/NEAT1_2.txt), [manifest](../../../data/neat1-20261016/manifest.json) | NR_131012.1, {d['inputs']['NEAT1_2']['n']:,} nt; schematic full-transcript position track. |
 | B | BPP archives `e3-neat1-[variants-]bpp-e2cecbb4-20261016`, `neat1_long/000001`; [BPP table](../../local/e3-neat1-20261016/bpp_pairs.tsv.gz) | G at threshold 0.7 versus empty G, b={d['beam']}; the independent BPP table lacks empty-G b=200, covered by the named checkpoint above. |
-| C | Corresponding `capr`/`raccess` archives; [contexts](../../local/e3-neat1-20261016/position_profiles.tsv.gz), [accessibility](../../local/e3-neat1-20261016/accessibility.tsv.gz) | Whole-transcript probabilities displayed locally; 8-nt total accessibility, not accessibility by loop type. Saved beam/local-limit comparisons are numerical, with no hidden overlay. |
+| C | Corresponding `capr`/`raccess` archives; [contexts](../../local/e3-neat1-20261016/position_profiles.tsv.gz), [accessibility](../../local/e3-neat1-20261016/accessibility.tsv.gz), [loop-type means](../../local/e3-neat1-20261016/byloop_regions.tsv) | Whole-transcript probabilities displayed locally; 8-nt total accessibility curves and the six saved mean loop-type contributions for the highlighted windows with G. Saved beam/local-limit comparisons are numerical. |
 | D | `sampling`/`bpp`/`mea` archives, `neat1_short/000001`; [histograms](../../local/e3-neat1-20261016/sampling_histograms.tsv), [summaries](../../local/e3-neat1-20261016/sampling_summary.tsv), [reference distances](../../local/e3-neat1-20261016/sampling_reference_distances.tsv.gz), [representative distances](../../local/e3-neat1-20261016/representative_distances.tsv) | NEAT1_1, NR_028272.1, {d['inputs']['NEAT1_1']['n']:,} nt; {sample['samples']:,} samples, b={d['beam']}, seed 20261016, MEA weight 1. |
 
 ## Scientific interpretation
@@ -603,11 +651,11 @@ G has {counts['G0.7']['scaffold']} displayed scaffold pairs and {counts['G0.7'][
 Pairs with only one endpoint in view are counted once and omitted: {counts['G0.7']['external_omitted']} with G, {counts['emptyG']['external_omitted']} with empty G.
 Their contributions remain in C.
 The numbers above are recomputed from the verified BPP exports.
-Solid gray (#8a8a85) identifies G, dashed blue (#2a78d6) identifies new pairs without G crossings, and dotted orange (#eb6834) identifies pairs crossing G.
+Solid gray (#8a8a85) identifies G, dotted blue (#2a78d6) identifies new pairs without G crossings, and dashed orange (#eb6834) identifies pairs crossing G.
 There are {counts['G0.7']['crossing']} displayed crossing pairs with G.
 The seven context colors follow the shared palette: Stem #2a78d6, Hairpin #1baf7a, Bulge #eda100, Internal #e87ba4, Multiloop #6250d6, Exterior #b9b8b1, PseudoLoop #eb6834.
 Direct row labels and black probability outlines allow identification without color.
-A `<0.001 everywhere` label is used only when every saved value in that track is below 0.001.
+A `<0.001 in this view` label is used only when every saved value in the displayed interval is below 0.001.
 
 The {windows} highlighted starts are {focal[0]:,}–{focal[1]:,}; their windows cover {windows + WINDOW - 1} bases through {focal[1] + WINDOW - 1:,}.
 Dashed boundaries in B/context rows enclose the bases; the pale accessibility shading encloses the starts.
@@ -619,6 +667,7 @@ The focus was selected exploratorily after inspecting the saved predictions and 
 The author's accepted focus and b=200 setting are unchanged.
 Changing G also changes the conditional ensemble; this comparison does not isolate a causal pseudoknot effect or experimentally validate the predictions.
 
+{byloop_note}
 ## Focused accessibility and sensitivity
 
 | Scaffold | Beam width | Mean over the {windows} highlighted windows |
@@ -780,7 +829,8 @@ def main():
                     sensitivity_display='numerical main-width means and maximum per-window changes',
                     context_display='seven directly named probability tracks, each on 0--1 scale',
                     context_colors=dict(zip(CONTEXTS, CONTEXT_COLORS)),
-                    pair_line_styles=dict(scaffold='solid', new_without_G_crossing='dashed', crossing_G='dotted'),
+                    pair_line_styles=dict(scaffold='solid', new_without_G_crossing='dotted', crossing_G='dashed'),
+                    focus_joint_accessibility_by_loop_type=d['focus_byloop'],
                     region_context_max={m: {c: float(d['profile'][m][c][d['region'][0]-1:d['region'][1]].max())
                                             for c in CONTEXTS} for m in ('G0.7', 'emptyG')},
                     context_program='LinearPKCapR', accessibility_program='LinearPKRaccess',

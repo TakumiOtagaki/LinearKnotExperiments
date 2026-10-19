@@ -274,7 +274,7 @@ def make_plot(out, rec, setting, stats):
 
     text(8, 99, f"Rat Terc  |  {n} nt  |  G: {len(g)} canonical nested reference pairs  |  beam width 200",
          fontsize=8, fontweight="bold")
-    title(1, 93, "A", "Base-pairing probabilities")
+    title(1, 93, "A", "Pair-probability overview")
     pair_styles = (("G", G_COLOR, "solid"),
                    ("New, no crossing", NEW_COLOR, (0, (1, 1))),
                    ("Crossing G", CROSS_COLOR, (0, (4, 2))))
@@ -310,6 +310,13 @@ def make_plot(out, rec, setting, stats):
         for start, end in arms:
             axa.plot((start, end), (level, level), color=INK, lw=1.5,
                      linestyle=linestyle, solid_capstyle="butt")
+        labels = ((40, 120), (167, 120)) if name == "outer" else ((90, 155), (115, 155))
+        for (start, end), (x, y) in zip(arms, labels):
+            axa.annotate("O" if name == "outer" else "I", xy=((start + end) / 2, level),
+                         xytext=(x, y), ha="center", va="center", fontsize=7,
+                         bbox=dict(facecolor="white", edgecolor="none", pad=.3),
+                         arrowprops=dict(arrowstyle="->", color=INK, lw=.55,
+                                         shrinkA=2, shrinkB=1))
     axa.set_xticks((1, 50, 100, 150, 200, 250, 300, 350, n))
     axa.get_xticklabels()[-1].set_ha("right")
     axa.set_yticks([])
@@ -373,7 +380,9 @@ def make_plot(out, rec, setting, stats):
     for name, label in (("outer", "Outer"), ("inner", "Inner")):
         stem = stats["stems"][name]
         columns = column_positions[name]
-        text(float(np.mean(columns)), 43, f"{label} ({len(stem['pairs'])})", ha="center", fontweight="bold")
+        text(float(np.mean(columns)) if name == "outer" else 177, 43,
+             f"{'O' if name == 'outer' else 'I'}: {label} ({len(stem['pairs'])})",
+             ha="center" if name == "outer" else "right", fontweight="bold")
         text(float(np.mean(columns)) if name == "outer" else 177, 39.5,
              f"p {stem['pair_probability_min']:.3f}–{stem['pair_probability_max']:.3f}",
              ha="center" if name == "outer" else "right")
@@ -462,18 +471,20 @@ def write_caption(out, rec, stats, differences):
     n = len(rec["seq"])
     caption = f"""<!-- 日本語：ラットTerc（NR_001567.1、{n} nt）をbeam幅200で解析した。
 GはbpRNA参照構造の入れ子の部分から選んだcanonicalな61対を含む。 -->
-**Figure 4. Structural contexts and accessibility in rat telomerase RNA.**
+**Figure 3. Structural contexts and accessibility in rat telomerase RNA.**
 Rat Terc (NR_001567.1; {n} nt) was analyzed at beam width 200.
 Scaffold G contains the 61 canonical AU, GC, or GU pairs in the nested part of the bpRNA reference structure.
 
 <!-- 日本語：Aは確率0.01以上の対を示す。
 灰色の実線はG、青色の点線はGと交差しない新しい対、橙色の破線はGと交差する対を表す。
 弧の不透明度は対確率そのものとし、重なった弧は濃く見えることがある。
-基線下の印は参照9対の二群の位置を示し、Dに全座標と対確率pの範囲を示す。 -->
-**(A)** Arcs show pairs with probability ≥0.01.
+OとIの指示線は外側と内側の参照対群の両腕を示す。
+Dに全9対の座標と対確率pの範囲を示す。 -->
+**(A)** The positional overview shows pairs with probability ≥0.01.
 Grey solid arcs show G; blue dotted arcs show new pairs without crossings; orange dashed arcs show new pairs crossing G.
 Arc opacity equals pair probability; overlapping arcs may appear darker.
-Baseline marks locate the two reference pair groups drawn in D, where p denotes pair probability.
+O and I point to both arms of the outer and inner reference groups.
+D lists all nine reference pairs and their probability ranges, where p denotes pair probability.
 
 <!-- 日本語：Bは各塩基の七つのcontext確率を示す。
 PseudoLoopはMethodsで定義したpseudoknotに対応する非対合contextである。

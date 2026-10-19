@@ -1,0 +1,20 @@
+{
+  "G_pairs": 61,
+  "length": 388,
+  "forced_pair_max_abs_error": 8.881784197001252e-16,
+  "constraint_interfaces_logz_abs_difference": 0.0,
+  "context_mass_max_abs_error": 2.353672812205332e-14,
+  "window_mass_abs_error": 2.498001805406602e-16,
+  "pk_window_mass_abs_error": 5.551115123125783e-16,
+  "sampling_max_stem_abs_error": 0.0024928354936792907,
+  "classifier_fixtures_passed": 5,
+  "samples_per_condition": 100000,
+  "sampled_structure_G_violations": 0,
+  "reference_pairs_forbidden_by_crossing_G": 9,
+  "fixed_structure_energy_checks": 9,
+  "fixed_structure_energy_max_abs_error": 5.684341886080802e-14,
+  "max_single_child_unpaired_gap_in_G": 15,
+  "temporary_files_location": "/tmp/9059185.1.all.q",
+  "delta_F_allowed_minus_no_crossings": -1.7372331135172772,
+  "accessibility_allowed_minus_no_crossings": 0.7376478765384752
+}

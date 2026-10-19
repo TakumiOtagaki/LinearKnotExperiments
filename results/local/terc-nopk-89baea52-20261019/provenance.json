@@ -1,0 +1,47 @@
+{
+  "started_utc": "2026-10-19T05:16:35.823973+00:00",
+  "argv": [
+    "scripts/analyze_terc_nopk_89baea52.py"
+  ],
+  "source_revision": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "source_status_before": "",
+  "dependencies_sha256_before": {
+    "scripts/analyze_terc_nopk_89baea52.py": "ceb33f9a3edf611a913f3d2e9ea142a06a5c5640347baab9f86beac6e73a5d27",
+    "deps/LinearCParty-89baea52/params/rna_Turner04.par": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+    "results/local/small-rerun-89baea52-20261018/terc_data.tar": "a1c435d40731167ef72b565d7f8396999df769b00d7b6d934e71d68fc0270f0d",
+    "results/figures/figure4_terc_89baea52_20261018/provenance.json": "8db8f676539459d77624fb71a1e0d6bceb8bb824d41d7e965f2f07b9a37a4864",
+    "results/figures/figure4_terc_89baea52_20261018/rerun_provenance.json": "409dea2e346678f7b03e0695d7792145cfa86ae0ac9040197f42716ee423b872",
+    "manifests/software-pilot-89baea52.json": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99",
+    "build/linear-cparty-89baea52/libcparty_scfg2_exact.a": "bf3a9365b3e5dfdaf81d23e753a91c2259938f5b2ef4506bfd4b63b512336f99",
+    "build/linear-cparty-89baea52/libRNA.a": "a4cfd6eac4441da25af7557f72729f86ff14b1b7b6b05042a29277f4d6f006d7",
+    "build/linear-cparty-89baea52/CMakeCache.txt": "5b0660aed3d70ea6c7a33c9589d3cde8e7d6a712f4da9daade2aebccf055a05c",
+    "build/linear-cparty-89baea52/LinearCParty": "fcf7a9735e55f82488051a22204b77a83cb477002dd005551e42936a35b7e56c",
+    "build/linear-cparty-89baea52/LinearPKCapR": "f4388139247d3dd96e617b3865ddc014ba13309364f733d0cc98b98284a93b71",
+    "build/linear-cparty-89baea52/LinearPKRaccess": "f742eae39a648557db7e60949c1b9be4aea8fe6b5da7b1df5b8b70338bdf2517"
+  },
+  "python": "3.9.25 (main, Mar 26 2026, 00:00:00) \n[GCC 11.5.0 20240719 (Red Hat 11.5.0-11)]",
+  "vienna_version": "2.7.2",
+  "vienna_module": "/home/3/ub07263/.local/lib/python3.9/site-packages/RNA/__init__.py",
+  "hostname": "r19n1",
+  "seed": 20261019,
+  "draws_per_ensemble": 100000,
+  "analysis_type": "single-input conditional-ensemble comparison; no timing claims",
+  "finished_utc": "2026-10-19T05:23:10.640475+00:00",
+  "elapsed_seconds": 394.81487247115,
+  "dependencies_sha256_after": {
+    "scripts/analyze_terc_nopk_89baea52.py": "ceb33f9a3edf611a913f3d2e9ea142a06a5c5640347baab9f86beac6e73a5d27",
+    "deps/LinearCParty-89baea52/params/rna_Turner04.par": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+    "results/local/small-rerun-89baea52-20261018/terc_data.tar": "a1c435d40731167ef72b565d7f8396999df769b00d7b6d934e71d68fc0270f0d",
+    "results/figures/figure4_terc_89baea52_20261018/provenance.json": "8db8f676539459d77624fb71a1e0d6bceb8bb824d41d7e965f2f07b9a37a4864",
+    "results/figures/figure4_terc_89baea52_20261018/rerun_provenance.json": "409dea2e346678f7b03e0695d7792145cfa86ae0ac9040197f42716ee423b872",
+    "manifests/software-pilot-89baea52.json": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99",
+    "build/linear-cparty-89baea52/libcparty_scfg2_exact.a": "bf3a9365b3e5dfdaf81d23e753a91c2259938f5b2ef4506bfd4b63b512336f99",
+    "build/linear-cparty-89baea52/libRNA.a": "a4cfd6eac4441da25af7557f72729f86ff14b1b7b6b05042a29277f4d6f006d7",
+    "build/linear-cparty-89baea52/CMakeCache.txt": "5b0660aed3d70ea6c7a33c9589d3cde8e7d6a712f4da9daade2aebccf055a05c",
+    "build/linear-cparty-89baea52/LinearCParty": "fcf7a9735e55f82488051a22204b77a83cb477002dd005551e42936a35b7e56c",
+    "build/linear-cparty-89baea52/LinearPKCapR": "f4388139247d3dd96e617b3865ddc014ba13309364f733d0cc98b98284a93b71",
+    "build/linear-cparty-89baea52/LinearPKRaccess": "f742eae39a648557db7e60949c1b9be4aea8fe6b5da7b1df5b8b70338bdf2517"
+  },
+  "source_status_after": "",
+  "raw_archive_sha256": "951896e2f7089a2a46598b7d14f8cf0f294f765068b9fcdcdfc1a168266f7868"
+}

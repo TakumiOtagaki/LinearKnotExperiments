@@ -1,0 +1,484 @@
+cohort	parameter	input	canonical_reference_pairs	scaffold_pairs	noncanonical_reference_pairs_removed	canonical_nonscaffold_not_crossing	reference_pairs_added	reference_pairs_removed	added_reference_symbols	reference_scope
+200	turner04	bpRNA_RFAM_29240	17	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_23425	16	10	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29236	14	9	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31073	22	20	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29713	14	9	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35566	28	22	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_30899	15	10	7	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_23362	11	7	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RNP_111	70	66	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35494	33	28	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_30942	23	20	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29738	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34857	25	18	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_12431	76	66	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34861	22	15	6	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34379	18	14	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29306	15	10	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29243	16	11	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_27796	26	21	4	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_23443	16	11	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29558	13	8	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29155	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29242	17	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34891	55	46	1	0	2	0	"{""{"": 2}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31431	11	7	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29239	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29680	14	9	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_30909	27	23	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31459	11	7	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_CRW_1328	61	58	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_4730	70	62	4	2	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_18265	22	16	1	0	1	0	"{""{"": 1}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33321	26	19	12	0	4	0	"{""{"": 4}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_4763	62	54	7	2	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_13039	17	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29587	14	9	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_4759	54	48	7	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_23441	14	9	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34311	18	14	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31341	12	8	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_12429	62	55	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_11190	36	31	19	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_10636	23	20	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34882	24	17	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_23361	13	7	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_30955	25	20	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_12484	64	58	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35634	15	9	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31062	25	19	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33258	42	34	9	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_6444	30	21	1	0	2	0	"{""{"": 2}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34314	22	18	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_11248	68	64	7	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_tmRNA_144	42	38	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31060	25	20	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33330	23	20	12	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35510	33	27	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33358	45	39	10	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31077	21	17	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29641	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_23364	13	7	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_15606	16	9	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35482	33	28	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_23433	14	9	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RNP_332	83	79	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34309	22	18	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RNP_352	83	79	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29310	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_7590	14	5	6	0	2	0	"{""{"": 2}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_14668	56	42	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_27774	33	28	1	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34336	16	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35542	31	26	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31457	11	7	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_5089	31	25	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33237	44	36	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34834	24	17	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35538	18	14	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31191	24	18	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31241	25	21	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RNP_31	77	70	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33368	44	36	9	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_30970	21	19	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_4768	42	37	8	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31350	11	7	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29433	17	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34877	26	19	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_27859	33	28	1	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_27790	34	29	0	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31397	12	8	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34389	22	18	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34366	22	18	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_23405	38	32	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_11246	61	58	14	1	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29763	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_7580	18	9	2	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_23446	16	11	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_CRW_54578	67	61	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_PDB_345	18	11	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31327	28	24	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31442	11	7	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33274	38	31	13	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_27751	32	27	2	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34854	27	20	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_PDB_379	18	12	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31041	25	20	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35519	30	24	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_CRW_10337	36	34	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RNP_30	62	56	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29286	17	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_5077	31	25	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31213	20	14	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_4735	64	56	7	2	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_30914	15	12	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34831	26	19	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31074	25	23	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34685	25	18	9	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_23439	15	10	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31300	26	22	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33260	45	38	10	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_4740	69	62	5	1	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_12434	68	61	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35565	31	25	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31140	22	16	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_27882	28	23	6	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RNP_345	84	80	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29552	16	11	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_30956	25	18	3	1	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_7560	15	8	5	0	1	0	"{""{"": 1}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31352	12	8	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35534	28	23	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34373	17	14	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RNP_269	84	80	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35497	19	17	7	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29172	17	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29321	15	10	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_30960	21	17	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_30972	25	20	5	2	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33235	45	37	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35487	34	29	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34328	22	18	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_7554	15	8	5	0	1	0	"{""{"": 1}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33319	41	33	13	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_PDB_598	22	19	2	1	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_2271	57	52	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_CRW_54546	81	76	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35475	32	27	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_27761	33	28	1	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_2339	53	48	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_10657	22	19	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RNP_24	65	59	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_PDB_591	20	15	2	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_27780	33	28	1	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_7572	9	6	8	0	1	0	"{""{"": 1}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29145	14	9	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RNP_150	82	78	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31360	12	8	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29411	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33233	47	39	9	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_12439	73	67	8	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33279	38	31	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_4739	67	60	6	1	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_5083	32	25	3	1	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29609	15	10	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33327	32	23	19	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31071	20	16	6	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33281	29	26	14	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35216	55	48	1	1	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31432	11	7	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34892	50	41	4	1	2	0	"{""{"": 2}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31106	23	20	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_27865	33	29	1	0	2	0	"{""{"": 2}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35551	19	14	9	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_4731	65	58	9	1	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_30959	20	16	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_15656	15	10	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31154	25	23	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31099	19	17	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31305	24	21	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35539	29	24	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_34342	22	18	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35554	26	21	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29570	11	6	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_30964	21	17	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_4615	40	34	13	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33376	37	31	16	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31032	20	16	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_27757	33	28	1	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33223	45	37	9	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_29246	15	10	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31092	23	18	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_30935	22	17	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35504	23	19	6	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_27868	31	26	3	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_31065	23	20	3	1	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_7581	20	10	0	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33363	20	18	15	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_33231	47	39	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_23376	21	17	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	turner04	bpRNA_RFAM_35558	26	21	6	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29240	17	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_23425	16	10	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29236	14	9	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31073	22	20	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29713	14	9	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35566	28	22	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_30899	15	10	7	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_23362	11	7	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RNP_111	70	66	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35494	33	28	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_30942	23	20	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29738	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34857	25	18	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_12431	76	66	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34861	22	15	6	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34379	18	14	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29306	15	10	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29243	16	11	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_27796	26	21	4	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_23443	16	11	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29558	13	8	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29155	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29242	17	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34891	55	46	1	0	2	0	"{""{"": 2}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31431	11	7	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29239	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29680	14	9	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_30909	27	23	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31459	11	7	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_CRW_1328	61	58	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_4730	70	62	4	2	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_18265	22	16	1	0	1	0	"{""{"": 1}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33321	26	19	12	0	4	0	"{""{"": 4}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_4763	62	54	7	2	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_13039	17	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29587	14	9	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_4759	54	48	7	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_23441	14	9	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34311	18	14	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31341	12	8	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_12429	62	55	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_11190	36	31	19	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_10636	23	20	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34882	24	17	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_23361	13	7	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_30955	25	20	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_12484	64	58	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35634	15	9	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31062	25	19	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33258	42	34	9	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_6444	30	21	1	0	2	0	"{""{"": 2}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34314	22	18	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_11248	68	64	7	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_tmRNA_144	42	38	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31060	25	20	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33330	23	20	12	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35510	33	27	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33358	45	39	10	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31077	21	17	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29641	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_23364	13	7	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_15606	16	9	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35482	33	28	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_23433	14	9	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RNP_332	83	79	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34309	22	18	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RNP_352	83	79	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29310	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_7590	14	5	6	0	2	0	"{""{"": 2}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_14668	56	42	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_27774	33	28	1	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34336	16	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35542	31	26	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31457	11	7	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_5089	31	25	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33237	44	36	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34834	24	17	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35538	18	14	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31191	24	18	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31241	25	21	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RNP_31	77	70	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33368	44	36	9	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_30970	21	19	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_4768	42	37	8	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31350	11	7	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29433	17	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34877	26	19	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_27859	33	28	1	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_27790	34	29	0	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31397	12	8	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34389	22	18	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34366	22	18	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_23405	38	32	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_11246	61	58	14	1	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29763	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_7580	18	9	2	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_23446	16	11	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_CRW_54578	67	61	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_PDB_345	18	11	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31327	28	24	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31442	11	7	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33274	38	31	13	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_27751	32	27	2	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34854	27	20	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_PDB_379	18	12	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31041	25	20	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35519	30	24	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_CRW_10337	36	34	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RNP_30	62	56	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29286	17	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_5077	31	25	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31213	20	14	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_4735	64	56	7	2	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_30914	15	12	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34831	26	19	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31074	25	23	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34685	25	18	9	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_23439	15	10	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31300	26	22	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33260	45	38	10	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_4740	69	62	5	1	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_12434	68	61	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35565	31	25	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31140	22	16	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_27882	28	23	6	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RNP_345	84	80	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29552	16	11	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_30956	25	18	3	1	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_7560	15	8	5	0	1	0	"{""{"": 1}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31352	12	8	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35534	28	23	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34373	17	14	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RNP_269	84	80	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35497	19	17	7	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29172	17	12	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29321	15	10	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_30960	21	17	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_30972	25	20	5	2	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33235	45	37	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35487	34	29	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34328	22	18	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_7554	15	8	5	0	1	0	"{""{"": 1}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33319	41	33	13	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_PDB_598	22	19	2	1	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_2271	57	52	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_CRW_54546	81	76	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35475	32	27	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_27761	33	28	1	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_2339	53	48	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_10657	22	19	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RNP_24	65	59	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_PDB_591	20	15	2	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_27780	33	28	1	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_7572	9	6	8	0	1	0	"{""{"": 1}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29145	14	9	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RNP_150	82	78	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31360	12	8	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29411	18	13	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33233	47	39	9	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_12439	73	67	8	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33279	38	31	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_4739	67	60	6	1	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_5083	32	25	3	1	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29609	15	10	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33327	32	23	19	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31071	20	16	6	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33281	29	26	14	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35216	55	48	1	1	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31432	11	7	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34892	50	41	4	1	2	0	"{""{"": 2}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31106	23	20	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_27865	33	29	1	0	2	0	"{""{"": 2}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35551	19	14	9	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_4731	65	58	9	1	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_30959	20	16	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_15656	15	10	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31154	25	23	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31099	19	17	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31305	24	21	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35539	29	24	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_34342	22	18	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35554	26	21	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29570	11	6	2	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_30964	21	17	5	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_4615	40	34	13	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33376	37	31	16	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31032	20	16	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_27757	33	28	1	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33223	45	37	9	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_29246	15	10	1	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31092	23	18	3	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_30935	22	17	4	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35504	23	19	6	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_27868	31	26	3	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_31065	23	20	3	1	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_7581	20	10	0	0	3	0	"{""{"": 3}"	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33363	20	18	15	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_33231	47	39	11	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_23376	21	17	0	0	0	0	{}	all canonical pairs in saved full annotation
+200	dp09	bpRNA_RFAM_35558	26	21	6	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2558	93	84	15	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RNP_179	97	93	11	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RNP_65	138	127	7	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2273	47	44	9	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_4342	95	86	8	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_575	90	68	0	1	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RNP_374	102	96	3	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_42	95	73	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_4617	40	34	19	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_35972	33	28	15	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2624	109	98	4	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_255	101	80	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2615	87	77	13	2	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RNP_436	96	89	4	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_621	106	79	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_CRW_54602	114	108	5	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2882	97	90	6	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RNP_438	93	87	1	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_35935	49	42	4	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_265	91	68	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2652	101	89	5	1	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2709	95	86	15	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2645	86	77	14	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_35968	47	42	5	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2506	110	99	3	1	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_35944	48	40	6	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2420	91	83	19	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2598	101	91	7	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_35962	37	31	12	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RNP_212	91	87	5	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2871	97	90	6	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_2	106	84	0	1	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_4765	61	55	13	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RNP_142	99	95	3	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_707	98	77	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2635	103	96	1	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2525	106	95	4	2	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2691	104	94	6	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RNP_272	152	139	5	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2472	86	79	19	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_CRW_4958	97	93	10	1	0	1	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_131	89	66	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2747	104	97	9	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2564	100	91	6	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RNP_278	122	113	16	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_CRW_2185	154	150	7	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_4721	60	54	6	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RNP_423	52	49	12	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_35981	44	37	7	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2385	105	97	8	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_35913	48	42	4	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_95	107	83	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_96	101	76	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_35949	46	41	6	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_12485	78	71	8	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2440	101	90	10	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_556	98	76	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_4733	62	56	8	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2640	104	92	4	1	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RNP_347	99	95	6	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_387	53	42	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_12446	74	64	7	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_190	97	73	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_4314	75	66	18	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_4309	82	73	15	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2597	101	90	9	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_567	99	77	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2463	98	87	12	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_35887	37	32	13	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_CRW_54591	100	94	2	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2567	87	75	9	1	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_4317	70	61	12	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_325	82	73	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_CRW_4764	158	154	11	1	0	1	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_tmRNA_174	99	77	0	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_4771	60	54	3	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_35952	33	28	15	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_35884	54	46	1	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_CRW_8677	158	153	9	0	0	0	{}	all canonical pairs in saved full annotation
+80	turner04	bpRNA_RFAM_2735	102	93	9	0	0	0	{}	all canonical pairs in saved full annotation
+rrna	turner04	bpRNA_CRW_20565	438	430	27	0	0	0	{}	frozen G plus saved canonical square/curly coordinate targets; raw DBN unavailable
+rrna	turner04	bpRNA_CRW_54735	372	369	26	0	0	0	{}	frozen G plus saved canonical square/curly coordinate targets; raw DBN unavailable
+rrna	turner04	bpRNA_CRW_55337	689	676	45	0	0	0	{}	frozen G plus saved canonical square/curly coordinate targets; raw DBN unavailable

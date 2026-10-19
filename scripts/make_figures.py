@@ -1108,6 +1108,8 @@ def main():
                         help="Render 183-mm main Figures 2 (92 mm) and 3 (55 mm), plus separate SI panel 2D")
     parser.add_argument("--review-layout", action="store_true",
                         help="Render revised 178-mm main and 165-mm SI figures; preserve historical layouts")
+    parser.add_argument("--published-only", action="store_true",
+                        help="With --review-layout, omit unpublished resource companions")
     parser.add_argument("--e2-version", choices=("febd2bc1", "d02d261c"),
                         help="With --review-layout, select the dated E2 aggregate and required revision")
     parser.add_argument("--g-features", type=Path,
@@ -1117,6 +1119,7 @@ def main():
                              "main_20261016 with --main-compact, otherwise draft_20261016")
     args = parser.parse_args()
     require(not (args.main_compact and args.review_layout), "Choose one manuscript layout")
+    require(not args.published_only or args.review_layout, "--published-only requires --review-layout")
     require(not args.e2_version or args.review_layout, "--e2-version requires --review-layout")
     if args.review_layout:
         args.figure3_panels = "abc"

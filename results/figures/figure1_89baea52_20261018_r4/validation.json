@@ -1,0 +1,97 @@
+{
+  "pdf_page_mm": [
+    178.0000000000147,
+    144.99999999998442
+  ],
+  "png_pixels": [
+    2102,
+    1712
+  ],
+  "png_dpi": [
+    299.9994,
+    299.9994
+  ],
+  "pdf_text_sizes_pt": [
+    7.0,
+    7.3,
+    7.5,
+    8.0,
+    9.0
+  ],
+  "minimum_embedded_text_pt": 7.0,
+  "minimum_matplotlib_text_pt": 7.0,
+  "text_outside_page": [],
+  "gs_command": [
+    "gs",
+    "-q",
+    "-dBATCH",
+    "-dNOPAUSE",
+    "-sDEVICE=txtwrite",
+    "-dTextFormat=0",
+    "-sOutputFile=-",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/figures/figure1_89baea52_20261018_r4/figure1.pdf"
+  ],
+  "visual_inspection": "Required separately: open the generated PNG.",
+  "input_directory": "/tmp/9059185.1.all.q/figure-data-89baea52-z0iebmml/figure1",
+  "input_sha256": {
+    "rec.json": "2ae03f723c97a60915c11c3c9c4a3f40e70f983db908bfe515d6b0c4ac4aebe8",
+    "in.txt": "cd8670e7429a5a63449353d5339a45a73b287ebdbabc8f9bc5c9f5ee2280f57e",
+    "lc.out": "1c81d48443a3eed9855e0080bf0eac98b5da1154fd05483fc1451cd6d559a257",
+    "bpp.tsv": "f2149cba8e20dc757384f5a4a5a43b10b9585a29825b6b3ea19a6c5a43df2080",
+    "capr.out": "09c54351a5136708c46a3416d883a7559d3fe64a917cb3437ace495385f51ee1",
+    "racc.out": "2b1238a48f2f4843e06c9ec65a5deb5f5883f9a7695cda1fdca00f3c6eb28ada",
+    "samp.out": "07626b9a4beb02533cb805003277a1ffebe6bd8eab14f2a67a18732d17036254",
+    "mea.out": "251dbcfb5324a745b6bd49dce0ef7e2a49ac980837b40ff7926028ac15991f59"
+  },
+  "script_sha256": "18b921ea0039f2ea30386c8b2af1e9c9224fc3fcbbc115371e77c34e6142cc33",
+  "sequence_length": 63,
+  "scaffold_pair_count": 11,
+  "extension_pair_count": 7,
+  "displayed_bpp_pair_count": 18,
+  "bpp_display_cutoff_exclusive": 0.01,
+  "sample_draws_total": 1000,
+  "sample_counts_shown": [
+    975,
+    6
+  ],
+  "sample_draws_other": 19,
+  "sample_selection": "Most frequent; most frequent with a new non-crossing pair",
+  "accessibility_window_lengths": [
+    1,
+    4,
+    8
+  ],
+  "mea_gamma": 1.0,
+  "pseudoloop_label_region": [
+    39,
+    51
+  ],
+  "band_spans": [
+    [
+      5,
+      38
+    ],
+    [
+      18,
+      58
+    ]
+  ],
+  "band_overlap_probe": 28.0,
+  "bands_spanning_probe": 2,
+  "max_context_sum_error": 2.220446049250313e-16,
+  "pair_linestyles": {
+    "scaffold": "solid",
+    "new_no_crossing": "dotted",
+    "new_crossing_G": "dashed"
+  },
+  "context_hatches": {
+    "Stem": "",
+    "Hairpin": "",
+    "Bulge": "",
+    "Internal": "/",
+    "Multiloop": "",
+    "Exterior": "",
+    "PseudoLoop": ""
+  },
+  "illustrative_beam_width": 3
+}

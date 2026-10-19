@@ -1,0 +1,19 @@
+{
+  "revision": "89baea52",
+  "raw_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/local/small-rerun-89baea52-20261018/figure1_data.tar",
+  "raw_archive_sha256": "bb35ee1a945a9a014ba6c7c8c5539b19930892151625267aa78bc9d6b567cb11",
+  "renderer_sha256": "2731e7449814634ba05f3fde6e4bc55459da848a2313e97f00c4923847d5a043",
+  "data_sha256": {
+    "rec.json": "2ae03f723c97a60915c11c3c9c4a3f40e70f983db908bfe515d6b0c4ac4aebe8",
+    "in.txt": "cd8670e7429a5a63449353d5339a45a73b287ebdbabc8f9bc5c9f5ee2280f57e",
+    "capr.out": "09c54351a5136708c46a3416d883a7559d3fe64a917cb3437ace495385f51ee1",
+    "subopt.out": "0f5ec3a5647fe09c85c22bc1805c7915f53a07c1d3b449e0f261d7b130480afb",
+    "mea.out": "251dbcfb5324a745b6bd49dce0ef7e2a49ac980837b40ff7926028ac15991f59",
+    "samp.out": "07626b9a4beb02533cb805003277a1ffebe6bd8eab14f2a67a18732d17036254",
+    "lc.out": "1c81d48443a3eed9855e0080bf0eac98b5da1154fd05483fc1451cd6d559a257",
+    "bpp.tsv": "f2149cba8e20dc757384f5a4a5a43b10b9585a29825b6b3ea19a6c5a43df2080",
+    "racc.out": "2b1238a48f2f4843e06c9ec65a5deb5f5883f9a7695cda1fdca00f3c6eb28ada",
+    "README.md": "e63a57be678f171751466a494a9b7437407592485a9dd4e9151dbc2856f032d5"
+  },
+  "tar_extraction": "node-local TMPDIR only"
+}

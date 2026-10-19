@@ -1,0 +1,73 @@
+{
+  "layout": "review-20261019-r4",
+  "e2_revision": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "scripts_sha256": {
+    "make_figures.py": "e96f7510207d8adfc2dd9e5813e41615dbe15c387711d6de0e987860ec1ed216",
+    "make_figures_review.py": "f1008e3765b250e6a850b47d9952a084c400d3ea21e985fc1d1d1a523cf07345"
+  },
+  "numpy": "2.0.2",
+  "matplotlib": "3.9.4",
+  "sources": {
+    "e2_metrics.tsv": {
+      "path": "../../local/e2-89baea52-20261018/metrics.tsv",
+      "sha256": "973f5ef5e1b738b507ae9432b69141e10919fd10c77a608bac1f3d093ec2da76"
+    },
+    "e2_comparisons.tsv": {
+      "path": "../../local/e2-89baea52-20261018/comparisons.tsv",
+      "sha256": "5a542820c8ae62bf49fa57fc1b650ac6f8694e7853f2b740fb6cc743a2245c4e"
+    },
+    "e2_memory_metrics.tsv": {
+      "path": "../../local/e2-89baea52-20261018/memory_metrics.tsv",
+      "sha256": "83d42a22071ad9aa2e8ddb1ad0c0c0b56ea4be8cf1ba4af6e186306e6a701c08"
+    },
+    "e2_summary.json": {
+      "path": "../../local/e2-89baea52-20261018/summary.json",
+      "sha256": "e8fd6ff478090fa65913c073578c2ff4da8793d2fabe247ce27cbd97eebb3ef5"
+    },
+    "g_features": {
+      "path": "../../local/e2-e2cecbb4-g-features-20261016/rnacentral_g_features.tsv",
+      "sha256": "856c1f56b79ef524038d1885540203ecdf9f037b5946592f0179e12032978c82"
+    },
+    "synthetic_designs": {
+      "path": "../../../data/e2-synthetic-shapes-20261012/inputs.jsonl",
+      "sha256": "acdab9208952bd2a53ce6a1cfce84f50e024dfcc707158ef1d949071027c8fbe"
+    }
+  },
+  "outputs": [
+    {
+      "file": "figure3_main.pdf",
+      "width_mm": 178,
+      "height_mm": 55.00000000000001,
+      "bytes": 28560,
+      "sha256": "bcf70aff6ac9beffcf75bac4bb9673e5c632daa541de83d7cd3e0790c8d96a78"
+    },
+    {
+      "file": "figure3_main.png",
+      "width_mm": 178,
+      "height_mm": 55.00000000000001,
+      "bytes": 134067,
+      "sha256": "f9ec039d78040c6adb56555f302ba889396d380823007be648888979e03697ef"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.pdf",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 60754,
+      "sha256": "e930dcd61d0ababbc1d835a50e7988c394c4152e01ebb6d9ddad983343b1172b"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.png",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 449861,
+      "sha256": "b4fc08eb2400500530195b7ce7b939da45bafd6f559dc31058ae45bde62dee1a"
+    }
+  ],
+  "derived_files": {
+    "caption.md": "cb6f84404735753c9aefeb7862a709c26fd2b3d4fdbc9e8f431f1ffb53575c9c",
+    "README.md": "3f20a3f0f1bb16ab57037e217f40b30d5146eb7326a590837c5fcb0bfd35969a",
+    "plot_data.tsv": "fd395c72604371af03547f9cb8aefe89f1741bced6b6e242de1d1345b28b7aca",
+    "validation.json": "aad8a3c0439d282e1858ec2aa5c9903ae2bdd763b616a4e2949544ac736e8177"
+  },
+  "render_wrapper_sha256": "2731e7449814634ba05f3fde6e4bc55459da848a2313e97f00c4923847d5a043"
+}

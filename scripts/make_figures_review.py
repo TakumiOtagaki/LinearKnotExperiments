@@ -89,7 +89,7 @@ def grouped_points(ax, data, base, cohort, metric, statistic="p90", kind="single
                 y = q["median"]
             else:
                 y = q[statistic]
-            dx = -.025 if kind == "pairing" else .025 if kind == "context" else 0
+            dx = -.04 if kind == "pairing" else .04 if kind == "context" else 0
             ax.plot(x + dx, y, marker=m, ls="none", color=c, markersize=3,
                     markerfacecolor="white" if kind == "context" else c,
                     markeredgewidth=.65, zorder=4)
@@ -122,16 +122,16 @@ def accuracy_figure(data, base):
         ax.yaxis.set_minor_locator(NullLocator())
         ax.axhspan(-.001, .001, color=".92", zorder=0)
         ax.set_ylabel("ΔF (kcal/mol)")
+        ax.tick_params(axis="x", labelbottom=False)
         if col == 0:
             ax.set_title("Free-energy difference", loc="left")
 
         ax = base.mm_axes(fig, left, 34, 68, 15)
         for metric, kind in zip(base.TV, ("pairing", "context")):
             grouped_points(ax, data, base, cohort, metric, kind=kind)
-        ax.set_ylim(-.015, .42)
-        ax.set_yticks([0, .2, .4])
+        error_axis(ax)
         ax.tick_params(axis="x", labelbottom=False)
-        ax.set_ylabel("90th percentile\nof mean TV")
+        ax.set_ylabel("p90 mean TV")
         ax.set_title("Pairing and context probabilities", loc="left")
 
         ax = base.mm_axes(fig, left, 10, 68, 13)
@@ -142,15 +142,20 @@ def accuracy_figure(data, base):
         ax.set_title("16-nt accessibility (MAE)", loc="left")
     for letter, y in zip("ABC", (84, 51, 25)):
         panel(fig, letter, 1, y)
-    legend_mm(fig, [Line2D([], [], color=".3", lw=.7, label="Range"),
-                    Line2D([], [], color=".3", lw=2, label="10–90%"),
-                    Line2D([], [], color=".3", marker="o", ls="none", label="Median")],
-              139, 84.5, 3, columnspacing=.6)
+    key = base.mm_axes(fig, 106, 83, 4, 4)
+    key.plot([.5, .5], [0, 1], color=".3", lw=.7)
+    key.plot([.5, .5], [.2, .8], color=".3", lw=2)
+    key.plot(.5, .5, marker="D", color=".3", ms=3)
+    key.set(xlim=(0, 1), ylim=(-.1, 1.1))
+    key.axis("off")
+    text_mm(fig, 111, 84.2, "Range; 10–90%; symbol: median")
+    text_mm(fig, 18, 60.5, "Linear region: −0.001 to 0.001 kcal/mol")
     text_mm(fig, 28, 56, "Beam width b", ha="center")
     legend_mm(fig, beam_handles(), 105, 56.6, 5)
     legend_mm(fig, [Line2D([], [], color=".2", marker="o", ls="none", label="Pairing: filled"),
                     Line2D([], [], color=".2", marker="o", markerfacecolor="white", ls="none",
-                           label="Contexts: open")], 91, 28.5, 2)
+                           label="Contexts: open")], 130, 29, 2)
+    text_mm(fig, 18, 28.2, "B/C linear region: 0 to 1e−6")
     return fig
 
 
@@ -167,7 +172,9 @@ def threshold_figure(data, base):
                 y = data.thresholds[(cohort, tier, beam)]["positive_gt_0.01"]
                 ax.plot(x, y, marker=BEAM_MARKERS[i], color=BEAM_COLORS[i], ls="none")
         ax.set_xlim(-.6, 3.6)
-        ax.set_xticks(range(4), [base.bin_label(t) for t in base.COHORTS[cohort]])
+        labels = [f"{base.bin_label(t)}\nN={data.q[(cohort, t, beams[0], base.DELTA)]['n']:,}"
+                  for t in base.COHORTS[cohort]]
+        ax.set_xticks(range(4), labels)
         ax.set_ylim(-3, 105)
         ax.set_yticks([0, 25, 50, 75, 100])
         ax.set_ylabel("RNAs with ΔF > 0.01 (%)")
@@ -207,9 +214,11 @@ def rna_points(ax, data, base, metric):
     cost = base.value(row, metric + "_median")
     amount = f"{cost / 60:.1f} min" if metric == "wall_seconds" else f"{cost:.2f} GiB"
     ax.annotate(f"{int(row['n']) / 1000:.1f} kb: {amount}",
-                xy=(int(row["n"]) / 1000, cost), xytext=(4.1, maximum * 1.12),
-                textcoords="data", va="center", fontsize=7,
-                arrowprops=dict(arrowstyle="-", lw=.6, color=".3"))
+                xy=(int(row["n"]) / 1000, cost),
+                xytext=(int(row["n"]) / 1000, maximum * 1.12),
+                textcoords="data", va="center", ha="right", fontsize=7,
+                arrowprops=dict(arrowstyle="->", lw=.6, color=".3",
+                                connectionstyle="angle,angleA=0,angleB=90,rad=0"))
     base.clean(ax)
 
 
@@ -230,7 +239,7 @@ def resource_figure(data, base):
             denominator = data.synthetic_summary[("LinearCParty", series, 2000, metric)]["median"]
             ratio = numerator / denominator
             ratios.append(ratio)
-            ax.plot(ratio, 6 - j + (.10 if i == 0 else -.10), marker=("o", "D")[i],
+            ax.plot(ratio, 6 - j + (.18 if i == 0 else -.18), marker=("o", "D")[i],
                     color=("#0072B2", ".2")[i], ls="none", markersize=3.6,
                     markerfacecolor="#0072B2" if i == 0 else "white")
             data.audit.append(dict(panel="3C_ratio", program="LinearCParty", series=series,
@@ -361,6 +370,7 @@ def accessibility_detail(data, base):
                 ax.set_xlabel("RNA length group (nt)")
     text_mm(fig, 49, 133, "Exact reference", ha="center", fontweight="bold")
     text_mm(fig, 132, 133, "Finite reference (b=400)", ha="center", fontweight="bold")
+    text_mm(fig, 19, 6.3, "Linear region: 0 to 1e−6; logarithmic above")
     text_mm(fig, 25, 3, "Beam width b", ha="center")
     legend_mm(fig, beam_handles(), 102, 3.8, 5)
     return fig
@@ -497,13 +507,20 @@ A shows the signed free-energy difference ΔF=F_b−F_ref, where F_b and F_ref a
 Thin lines show the full range, thick lines the 10th–90th percentiles, and symbols the median across RNAs.
 The symmetric logarithmic axis is linear within the shaded band from −0.001 to 0.001 kcal/mol.
 
-Bでは、各RNA内でGの非対合塩基についてtotal variation distance（TV）を平均した後、RNA間の90パーセンタイルを取る。
+Bでは、各RNA内でGの非対合塩基についてtotal variation distance（TV）を平均した後、RNA間の90パーセンタイル（p90）を取る。
 塗った記号は相手塩基と非対合状態の分布、白抜き記号は七つのcontextの分布を比べる。
 TVは各分布の確率差の絶対値の和の半分である。
 
-B first averages total variation distance (TV) over bases unpaired in scaffold G within each RNA, then takes the 90th percentile across RNAs in each length group.
+B first averages total variation distance (TV) over bases unpaired in scaffold G within each RNA, then takes the 90th percentile (p90) across RNAs in each length group.
 Filled symbols compare distributions over pairing partners and the unpaired state; open symbols compare the seven structural-context probabilities.
 TV is half the sum of absolute probability differences over the states in each distribution.
+
+BとCは灰色帯の0–0.000001で線形、その上で対数の尺度を使う。
+ゼロを正の下限値へ置き換えていない。
+
+B and C use a linear scale in the shaded band from 0 to 0.000001 and a logarithmic scale above it.
+Zeros remain zero; no positive floor is applied to the observations.
+FOCUS_TV_STATISTICS
 
 Cは、16 nt窓の全塩基が同時に非対合となる確率の平均絶対誤差を示す。
 Gの対合塩基を含まない窓についてRNA内で平均し、長さ群ごとにRNA間の90パーセンタイルを取る。
@@ -571,12 +588,14 @@ A/BはFigure 2と同じexact/有限参照の群を使う。
 この片側の条件は負の差を数えない。
 幅400の自己比較はゼロになるため表示しない。
 色と記号、群内の等間隔の設定はFigure 2と同じである。
+各長さ群のNは割合の分母となるRNA数を示す。
 
 A and B use the exact and finite references from Figure 2, respectively.
 Each percentage divides the number of RNAs with ΔF=F_b−F_ref greater than 0.01 kcal/mol by all RNAs in that length group.
 This one-sided criterion excludes negative differences.
 The b=400 self-comparison is omitted because its percentage is zero by definition.
 Colors, symbols and equally spaced settings within each length group match Figure 2.
+N gives the number of RNAs in each length group, the denominator of the percentage.
 GROUP_COUNTS
 
 ## Figure S2 — figure3_mode_memory_si.pdf
@@ -595,18 +614,27 @@ The peaks cannot be added or subtracted to infer memory components.
 ## Additional SI — figure2_accessibility_si.pdf
 
 **Accessibility differences by window length and RNA length.**
-A–Dは1/4/8/16 nt窓について、Figure 2Cと同じRNA内平均とRNA間90パーセンタイルを使う。
-参照、色、記号、評価域、対称対数軸はFigure 2と同じである。
+A–Dは1/4/8/16 nt窓の同時非対合確率について、RNA内の平均絶対誤差を求め、RNA間の90パーセンタイルを示す。
+左列は400 nt未満をexactと比べ、右列は400–4,381 ntを有限幅b=400と比べる。
+色と記号はbeam幅bを示し、b=400の自己比較は除く。
+Gで対合している塩基を含む窓は除き、確率ゼロの窓は含める。
+灰色帯の0–0.000001は線形、その上は対数とする。
+hとdは局所探索の上限で、h=d=max(b,30)とした。
 長さ群・窓長ごとの評価数と除外数はevaluation_counts.tsvに保存する。
 
-A–D show 1-, 4-, 8- and 16-nt windows using the same within-RNA means and between-RNA 90th percentiles as Figure 2C.
-References, colors, symbols, eligibility and symmetric logarithmic axes match Figure 2.
+A–D show the 90th percentile across RNAs of within-RNA mean absolute errors in 1-, 4-, 8- and 16-nt joint window accessibility.
+Left panels compare RNAs shorter than 400 nt with exact calculations.
+Right panels use b=400 as a finite reference for RNAs of 400–4,381 nt.
+Colors and symbols identify beam width b; the b=400 self-comparison is omitted.
+Eligible windows contain no base paired in G; eligible zero-probability windows are included.
+The shaded band is linear from 0 to 0.000001; larger values use a logarithmic scale.
+The local search limits h and d are set to max(b,30).
 Evaluation counts and excluded RNAs for every length group and window length are provided in evaluation_counts.tsv.
 
 ## Additional SI — figure3_synthetic_all_cli_si.pdf
 
 **Measured costs for seven synthetic sequence–scaffold series.**
-三プログラムの時間とRSSを対数軸で示す。
+両軸は対数であり、RNA長は底2、時間とpeak RSSは底10を使う。
 点は各seed三反復の中央値を三seed間でまとめた中央値、縦線は九測定の全範囲である。
 線は同じ系列の測定点を結ぶ。
 全156入力のうち、共通の五長さを持つ七系列×五長さ×三seedの105入力を示す。
@@ -614,7 +642,7 @@ Evaluation counts and excluded RNAs for every length group and window length are
 非空のGはfloor(0.15n)対を持ち、配列のGC含量は50%である。
 下の弧図は保存済みの250 ntのGを同じ縮尺で示す。
 
-Time and RSS use logarithmic axes for all three programs.
+Both axes are logarithmic: RNA length uses base 2, and time and peak RSS use base 10.
 Symbols show medians across three seeds of within-seed medians of three repetitions; vertical bars span all nine measurements.
 Lines connect measured values within each series.
 The figure shows 105 of the 156 inputs: seven series, five shared lengths and three seeds.
@@ -638,6 +666,14 @@ Settings used different hosts of the same resource type; dotted lines mark a rat
 These ratios do not correct the other measurements.
 """
     captions = captions.replace("GROUP_COUNTS", "RNA counts by length group are " + group_counts + ".")
+    focus_note = ''
+    if counts:
+        pairing, context = (data.q[('short', 'nt300_399', 200, m)] for m in base.TV)
+        focus_note = (f"\n300–399 nt・b=200のp90はpairing {pairing['p90']:.4f}、context {context['p90']:.4f}である。\n"
+                      f"同群・同設定のRNA内平均TVの最大値はそれぞれ{pairing['max']:.3f}と{context['max']:.3f}であり、p90とは異なる。\n\n"
+                      f"For 300–399 nt at b=200, p90 is {pairing['p90']:.4f} for pairing and {context['p90']:.4f} for contexts.\n"
+                      f"The corresponding maxima of RNA mean TV are {pairing['max']:.3f} and {context['max']:.3f}; B plots p90, not these maxima.\n")
+    captions = captions.replace('FOCUS_TV_STATISTICS', focus_note)
     if data.figure3_only:
         blocks = captions.split("\n## ")
         captions = blocks[0] + "".join("\n## " + block for block in blocks[1:]
@@ -798,6 +834,9 @@ def render_review(args, data, base):
                     (memory_figure, "figure3_mode_memory_si", 165),
                     (lambda d, b: synthetic_detail(d, b, designs), "figure3_synthetic_all_cli_si", 165),
                     (concurrency_figure, "figure3_parallel_impact_si", 165)))
+    if args.published_only:
+        figures = [f for f in figures if f[1] not in
+                   ("figure3_mode_memory_si", "figure3_parallel_impact_si")]
     for draw, name, width in figures:
         base.save(draw(data, base), name, out, width, records, check_text_overlap=True)
         print(f"Rendered {name}", flush=True)
@@ -805,6 +844,17 @@ def render_review(args, data, base):
                   for r in records if r["file"].endswith(".pdf")}
     base.write_audit(data, out)
     captions(data, base, out, counts)
+    if args.published_only:
+        blocks = (out / "caption.md").read_text().split("\n## ")
+        selected = [b for b in blocks[1:] if 'figure3_mode_memory_si.pdf' not in b.splitlines()[0]
+                    and 'figure3_parallel_impact_si.pdf' not in b.splitlines()[0]]
+        caption = blocks[0] + ''.join('\n## ' + b for b in selected)
+        caption = caption.replace('Figure 3 — figure3_main.pdf', 'Figure 4 — figure3_main.pdf')
+        caption = caption.replace('Additional SI — figure3_synthetic_all_cli_si.pdf',
+                                  'Figure S3 — figure3_synthetic_all_cli_si.pdf')
+        caption = caption.replace('Figure numbers follow the task labels; the manuscript editor can renumber the resource figure after Terc.',
+                                  'Figure numbers match the adopted manuscript: Figure 4 (resources) and Figure S3 (synthetic series).')
+        (out / 'caption.md').write_text(caption)
     readme(data, base, out, records, pdf_checks, counts)
     for key, path in data.paths.items():
         base.require(base.digest(path) == data.hashes[key], f"Source changed: {path}")
@@ -816,7 +866,8 @@ def render_review(args, data, base):
     derived = ["caption.md", "README.md", "plot_data.tsv", "validation.json"]
     if counts:
         derived.append("evaluation_counts.tsv")
-    manifest = dict(layout="review-20261017", e2_revision=data.e2_commit,
+    manifest = dict(layout="review-20261019-r4" if out.name.endswith('_r4') else "review-20261017",
+                    e2_revision=data.e2_commit,
                     scripts_sha256={p.name: base.digest(p) for p in (Path(base.__file__), Path(__file__))},
                     numpy=np.__version__, matplotlib=plt.matplotlib.__version__,
                     sources={key: dict(path=os.path.relpath(path,out), sha256=data.hashes[key])
