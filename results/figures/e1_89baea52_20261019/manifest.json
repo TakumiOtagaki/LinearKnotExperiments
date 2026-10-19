@@ -1,0 +1,105 @@
+{
+  "layout": "review-20261017",
+  "e1_revisions": {
+    "short": [
+      "89baea52c9435b18829ef0867a66a24be56d70f9",
+      "89baea52c9435b18829ef0867a66a24be56d70f9"
+    ],
+    "long": [
+      "89baea52c9435b18829ef0867a66a24be56d70f9"
+    ]
+  },
+  "scripts_sha256": {
+    "render_e1_89baea52.py": "390b63ce5078dea9755dfe3f10ba836c1c0747ba5e0f2c39d497fc5cee7c3a5d",
+    "make_figures.py": "304b58d4fa7f5ac9028ac3cad183f0f6b463c484c220f2dcb87937a0309160f8",
+    "make_figures_review.py": "4b4041549077ee1e9c4f5abe189a33685c1bb832bdbbdf364be754a82ac0c53f"
+  },
+  "numpy": "2.0.2",
+  "matplotlib": "3.9.4",
+  "sources": {
+    "e1_short_metrics.tsv": {
+      "path": "../../local/e1-bprna-short-89baea52-20261018/metrics.tsv",
+      "sha256": "644f7cead4848506177057fcdfe35c52236850eccf8b29f714563f7762fe51f0"
+    },
+    "e1_short_quantiles.tsv": {
+      "path": "../../local/e1-bprna-short-89baea52-20261018/quantiles.tsv",
+      "sha256": "f853161352a882f174935fe9155451bbfa7fe7ff4e5b3e4f248a189de23ac2be"
+    },
+    "e1_short_provenance.json": {
+      "path": "../../local/e1-bprna-short-89baea52-20261018/provenance.json",
+      "sha256": "d8895e877f3bcb811b36031dab4c248ac9d7d50f8a32de7e0d7985ce66bda8a8"
+    },
+    "e1_short_window_counts.tsv": {
+      "path": "../../local/e1-bprna-short-89baea52-20261018/window_counts.tsv",
+      "sha256": "ed86b4dc9c930a2939af5ff915ae369eefc2350c21929513383f3e9eb5be7ed0"
+    },
+    "e1_long_metrics.tsv": {
+      "path": "../../local/e1-bprna-long-89baea52-cpu16-20261018/metrics.tsv",
+      "sha256": "134a9805f554cc9d7c74762fc06d1216356d603621c4be72b55484afb9624f68"
+    },
+    "e1_long_quantiles.tsv": {
+      "path": "../../local/e1-bprna-long-89baea52-cpu16-20261018/quantiles.tsv",
+      "sha256": "e1687497070f50932c674f9ea8984c3615a3915bbf3b8e45ffe9bbfd54c0a0c6"
+    },
+    "e1_long_provenance.json": {
+      "path": "../../local/e1-bprna-long-89baea52-cpu16-20261018/provenance.json",
+      "sha256": "904cdc85e66dda9d4df1a1d08795e1aba8a831e0f97e006ab2a8223fa4b7192e"
+    },
+    "e1_long_window_counts.tsv": {
+      "path": "../../local/e1-bprna-long-89baea52-cpu16-20261018/window_counts.tsv",
+      "sha256": "0051be7a5aa6dae5224f187a512eb67f23f75356b310590b249d2c093a8701e1"
+    }
+  },
+  "outputs": [
+    {
+      "file": "figure2_main.pdf",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 36134,
+      "sha256": "2168f46f6ae65b4195a3a870da1d220df96a45f384c8f6da529e1d70060ef5ca"
+    },
+    {
+      "file": "figure2_main.png",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 177797,
+      "sha256": "188dc5bc08e1522479c671d9ca2b91e5357f591eacf6c3007a35f8206fa5feb0"
+    },
+    {
+      "file": "figure2_d_si.pdf",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 22964,
+      "sha256": "ce76169938a2a609fda18d401a22cea964c4fc39002f3891883f404b6d708434"
+    },
+    {
+      "file": "figure2_d_si.png",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 73427,
+      "sha256": "7c536e75572b2575bc394c5fba65cc634149d94a9ae680df5f84ba43c8b443cc"
+    },
+    {
+      "file": "figure2_accessibility_si.pdf",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 31197,
+      "sha256": "e6fa1deae16a61d4c968e7e685adf38eb05bbc82efea231671bfeae4ba5641e7"
+    },
+    {
+      "file": "figure2_accessibility_si.png",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 216442,
+      "sha256": "3b18acfc1ed224e579bbbf649f846c0341b656f4a28554b46a2c6039e274d8a0"
+    }
+  ],
+  "derived_files": {
+    "caption.md": "c363f380489289fe0bf0d66d949eddcf4eebc07d269b2e72977de2fcae3248d0",
+    "README.md": "edf1a4b8e8220f01207edef95a1dfa98c32a9972ca7be0beed46f6f71abc6d2f",
+    "plot_data.tsv": "48174abda3772a5e49d1ba2fe93f311ead1a90a9407d8a957e88a8a34f989c21",
+    "evaluation_counts.tsv": "b7928090a07fd6adebebfca41dbf6032ba5dce38064805d8ebae884764067d0e",
+    "validation.json": "7f175aa13040548539afc87818949b9a430bede8a9ea9b0e6b792f174e2b42a2",
+    "review_report.json": "833c32f39c29b3dd644df0b79e0fbafc057e0764110533b1c0bd9cdd64cadd1e"
+  }
+}

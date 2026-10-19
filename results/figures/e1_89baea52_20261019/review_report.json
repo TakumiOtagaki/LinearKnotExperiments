@@ -1,0 +1,32 @@
+{
+  "png_visual_review_passed": true,
+  "files_opened": [
+    "figure2_main.png",
+    "figure2_accessibility_si.png",
+    "figure2_d_si.png"
+  ],
+  "findings": [
+    "The main figure preserves the 20261017 layout, reference columns, symbols and scales.",
+    "Labels and legends are legible; no cropping or overlaps were seen.",
+    "Both SI companions preserve the reference distinction and omit b=400 self-comparisons.",
+    "The updated Abstract, main Figure 2, quantile table, stratified table, evaluation/opening-domain counts and both SI figures were checked in the built PDFs."
+  ],
+  "manuscript_integration_pending": false,
+  "regular_pdf_pages": {
+    "main": 8,
+    "supplementary": 27
+  },
+  "pdf_pages_opened": {
+    "main": [
+      1,
+      5
+    ],
+    "supplementary": [
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  "pdf_visual_review_passed": true
+}

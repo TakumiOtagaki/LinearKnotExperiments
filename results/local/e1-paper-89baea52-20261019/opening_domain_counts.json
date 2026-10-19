@@ -1,0 +1,1202 @@
+[
+  {
+    "cohort": "short",
+    "beam": 20,
+    "window": 1,
+    "eligible_windows": {
+      "total_windows": 1684864,
+      "rna_with_positive_count": 24625,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1684864,
+      "rna_with_positive_count": 24625,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 20,
+    "window": 4,
+    "eligible_windows": {
+      "total_windows": 1088368,
+      "rna_with_positive_count": 24592,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1088368,
+      "rna_with_positive_count": 24592,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 20,
+    "window": 8,
+    "eligible_windows": {
+      "total_windows": 707799,
+      "rna_with_positive_count": 22322,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 707799,
+      "rna_with_positive_count": 22322,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 20,
+    "window": 16,
+    "eligible_windows": {
+      "total_windows": 418465,
+      "rna_with_positive_count": 14060,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 418448,
+      "rna_with_positive_count": 14060,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 5,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 10,
+      "rna_with_positive_count": 3,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 2,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 50,
+    "window": 1,
+    "eligible_windows": {
+      "total_windows": 1684864,
+      "rna_with_positive_count": 24625,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1684864,
+      "rna_with_positive_count": 24625,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 50,
+    "window": 4,
+    "eligible_windows": {
+      "total_windows": 1088368,
+      "rna_with_positive_count": 24592,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1088368,
+      "rna_with_positive_count": 24592,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 50,
+    "window": 8,
+    "eligible_windows": {
+      "total_windows": 707799,
+      "rna_with_positive_count": 22322,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 707799,
+      "rna_with_positive_count": 22322,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 50,
+    "window": 16,
+    "eligible_windows": {
+      "total_windows": 418465,
+      "rna_with_positive_count": 14060,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 418456,
+      "rna_with_positive_count": 14060,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 5,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 2,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 2,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 100,
+    "window": 1,
+    "eligible_windows": {
+      "total_windows": 1684864,
+      "rna_with_positive_count": 24625,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1684864,
+      "rna_with_positive_count": 24625,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 100,
+    "window": 4,
+    "eligible_windows": {
+      "total_windows": 1088368,
+      "rna_with_positive_count": 24592,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1088368,
+      "rna_with_positive_count": 24592,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 100,
+    "window": 8,
+    "eligible_windows": {
+      "total_windows": 707799,
+      "rna_with_positive_count": 22322,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 707799,
+      "rna_with_positive_count": 22322,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 100,
+    "window": 16,
+    "eligible_windows": {
+      "total_windows": 418465,
+      "rna_with_positive_count": 14060,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 418457,
+      "rna_with_positive_count": 14060,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 7,
+      "rna_with_positive_count": 2,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 1,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 200,
+    "window": 1,
+    "eligible_windows": {
+      "total_windows": 1684864,
+      "rna_with_positive_count": 24625,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1684864,
+      "rna_with_positive_count": 24625,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 200,
+    "window": 4,
+    "eligible_windows": {
+      "total_windows": 1088368,
+      "rna_with_positive_count": 24592,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1088368,
+      "rna_with_positive_count": 24592,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 200,
+    "window": 8,
+    "eligible_windows": {
+      "total_windows": 707799,
+      "rna_with_positive_count": 22322,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 707799,
+      "rna_with_positive_count": 22322,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "short",
+    "beam": 200,
+    "window": 16,
+    "eligible_windows": {
+      "total_windows": 418465,
+      "rna_with_positive_count": 14060,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 418458,
+      "rna_with_positive_count": 14060,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 7,
+      "rna_with_positive_count": 2,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 20,
+    "window": 1,
+    "eligible_windows": {
+      "total_windows": 1176310,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1176309,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 1,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 20,
+    "window": 4,
+    "eligible_windows": {
+      "total_windows": 790413,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 790411,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 2,
+      "rna_with_positive_count": 2,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 20,
+    "window": 8,
+    "eligible_windows": {
+      "total_windows": 551798,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 551787,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 11,
+      "rna_with_positive_count": 5,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 20,
+    "window": 16,
+    "eligible_windows": {
+      "total_windows": 360700,
+      "rna_with_positive_count": 1426,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 360543,
+      "rna_with_positive_count": 1426,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 2,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 155,
+      "rna_with_positive_count": 20,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 50,
+    "window": 1,
+    "eligible_windows": {
+      "total_windows": 1176310,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1176310,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 50,
+    "window": 4,
+    "eligible_windows": {
+      "total_windows": 790413,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 790411,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 2,
+      "rna_with_positive_count": 2,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 50,
+    "window": 8,
+    "eligible_windows": {
+      "total_windows": 551798,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 551798,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 50,
+    "window": 16,
+    "eligible_windows": {
+      "total_windows": 360700,
+      "rna_with_positive_count": 1426,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 360673,
+      "rna_with_positive_count": 1426,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 2,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 25,
+      "rna_with_positive_count": 5,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 100,
+    "window": 1,
+    "eligible_windows": {
+      "total_windows": 1176310,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1176310,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 100,
+    "window": 4,
+    "eligible_windows": {
+      "total_windows": 790413,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 790412,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 1,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 100,
+    "window": 8,
+    "eligible_windows": {
+      "total_windows": 551798,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 551798,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 100,
+    "window": 16,
+    "eligible_windows": {
+      "total_windows": 360700,
+      "rna_with_positive_count": 1426,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 360688,
+      "rna_with_positive_count": 1426,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 10,
+      "rna_with_positive_count": 3,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 2,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 200,
+    "window": 1,
+    "eligible_windows": {
+      "total_windows": 1176310,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1176310,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 200,
+    "window": 4,
+    "eligible_windows": {
+      "total_windows": 790413,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 790413,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 200,
+    "window": 8,
+    "eligible_windows": {
+      "total_windows": 551798,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 551798,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 200,
+    "window": 16,
+    "eligible_windows": {
+      "total_windows": 360700,
+      "rna_with_positive_count": 1426,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 360694,
+      "rna_with_positive_count": 1426,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 2,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 4,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 300,
+    "window": 1,
+    "eligible_windows": {
+      "total_windows": 1176310,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1176310,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 300,
+    "window": 4,
+    "eligible_windows": {
+      "total_windows": 790413,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 790413,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 300,
+    "window": 8,
+    "eligible_windows": {
+      "total_windows": 551798,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 551798,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 300,
+    "window": 16,
+    "eligible_windows": {
+      "total_windows": 360700,
+      "rna_with_positive_count": 1426,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 360698,
+      "rna_with_positive_count": 1426,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 2,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 400,
+    "window": 1,
+    "eligible_windows": {
+      "total_windows": 1176310,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 1176310,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 400,
+    "window": 4,
+    "eligible_windows": {
+      "total_windows": 790413,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 790413,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 400,
+    "window": 8,
+    "eligible_windows": {
+      "total_windows": 551798,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 551798,
+      "rna_with_positive_count": 1438,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  },
+  {
+    "cohort": "long",
+    "beam": 400,
+    "window": 16,
+    "eligible_windows": {
+      "total_windows": 360700,
+      "rna_with_positive_count": 1426,
+      "missing_rna": 0
+    },
+    "both_positive": {
+      "total_windows": 360698,
+      "rna_with_positive_count": 1426,
+      "missing_rna": 0
+    },
+    "both_zero": {
+      "total_windows": 2,
+      "rna_with_positive_count": 1,
+      "missing_rna": 0
+    },
+    "reference_positive_candidate_zero": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    },
+    "reference_zero_candidate_positive": {
+      "total_windows": 0,
+      "rna_with_positive_count": 0,
+      "missing_rna": 0
+    }
+  }
+]

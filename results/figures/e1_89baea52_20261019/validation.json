@@ -1,0 +1,90 @@
+{
+  "all_passed": true,
+  "checks": {
+    "e1_quantile_scalars_checked": 1750,
+    "e1_summaries_checked": 350,
+    "e1_short_rows": 98500,
+    "e1_long_rows": 8628
+  },
+  "source_files_unchanged": true,
+  "text_within_pages": true,
+  "text_without_overlap": true,
+  "plotted_points_within_axis_limits": true,
+  "minimum_normal_font_pt": 7,
+  "pdf_text_checks": {
+    "figure2_main.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 88,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    },
+    "figure2_d_si.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 34,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    },
+    "figure2_accessibility_si.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 128,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    }
+  },
+  "outputs": [
+    {
+      "file": "figure2_main.pdf",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 36134,
+      "sha256": "2168f46f6ae65b4195a3a870da1d220df96a45f384c8f6da529e1d70060ef5ca"
+    },
+    {
+      "file": "figure2_main.png",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 177797,
+      "sha256": "188dc5bc08e1522479c671d9ca2b91e5357f591eacf6c3007a35f8206fa5feb0"
+    },
+    {
+      "file": "figure2_d_si.pdf",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 22964,
+      "sha256": "ce76169938a2a609fda18d401a22cea964c4fc39002f3891883f404b6d708434"
+    },
+    {
+      "file": "figure2_d_si.png",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 73427,
+      "sha256": "7c536e75572b2575bc394c5fba65cc634149d94a9ae680df5f84ba43c8b443cc"
+    },
+    {
+      "file": "figure2_accessibility_si.pdf",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 31197,
+      "sha256": "e6fa1deae16a61d4c968e7e685adf38eb05bbc82efea231671bfeae4ba5641e7"
+    },
+    {
+      "file": "figure2_accessibility_si.png",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 216442,
+      "sha256": "3b18acfc1ed224e579bbbf649f846c0341b656f4a28554b46a2c6039e274d8a0"
+    }
+  ]
+}

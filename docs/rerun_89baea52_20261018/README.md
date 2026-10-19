@@ -301,3 +301,29 @@ python3 -B scripts/validate_vienna_89baea52.py \
 最大絶対差は log Z が1.4495071809506044e-12、BPPが1.245337166722038e-12、
 単一構造のPFエネルギーとMFE再採点が2.842170943040401e-14 kcal/molだった。
 元の失敗を成功として書き換えていない。
+
+## E1 の集計・図・原稿への反映完了（2026-10-19）
+
+short 106 task / 369,375 CLI、long cpu16 60 task / 25,884 CLI は全件成功、欠測0。
+取り下げた `e1-bprna-long-89baea52-20261018` のcpu_40 planは使っていない。
+`analyze.sh` はlongのplan・run・集計出力をcpu16へ変更した。
+short/long解析は二つの独立したプロセスで並行し、shortの検証後に層別解析へ進む。
+`validate_e1_production.py` が既存のスカラー恒等式・窓の分母・空評価域・行数・hashを検証し、層別に必要な `validation.json` を作る。
+数値指標・分位点・窓域・層別の定義は従来と同じである。
+
+```bash
+# Fresh output directories are required; completed summaries are not overwritten.
+bash docs/rerun_89baea52_20261018/analyze.sh --e1-only
+# --e1-analysis-only skips only run-level reaggregation when those manifests
+# have already been refreshed and audited; all raw numerical outputs are read.
+python3 -B scripts/audit_e1_89baea52.py
+python3 -B scripts/render_e1_89baea52.py
+```
+
+集計は `results/local/e1-bprna-short-89baea52-20261018/`、
+`results/local/e1-bprna-long-89baea52-cpu16-20261018/`、
+`results/local/e1-pk-stratified-89baea52-20261018/`。
+新旧比較と掲載値の監査は `results/local/e1-paper-89baea52-20261019/`。
+Figure 2とSIの2図は `results/figures/e1_89baea52_20261019/`。
+旧版の値は新旧比較にだけ使い、新しい数値の欠測を埋めるためには使っていない。
+PNGの表示確認、原稿への反映、通常PDFと代替赤青比較の検証は、論文repoの同日作業記録に保存した。

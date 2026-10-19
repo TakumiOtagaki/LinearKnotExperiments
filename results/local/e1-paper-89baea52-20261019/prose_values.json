@@ -1,0 +1,7 @@
+{
+  "small_bound": 7e-13,
+  "mid_bound": 0.012,
+  "high_bound": 1e-13,
+  "high_rna": 10341,
+  "local_max": 0.983331878417817
+}

@@ -48,7 +48,7 @@ def render(directory):
         r"Here p90 denotes the 90th percentile.",
         r"The RNA counts give all RNAs / RNAs with eligible 16-nt windows.",
         r"An eligible window contains no base paired in $G$.",
-        r"Each error cell gives p90 / maximum across RNA-level values, using the definitions in Table~\ref{tab:si_accuracy_short}.",
+        r"Each error cell gives p90 / maximum across RNA-level values, using the definitions in Table~\ref{tab:si_accuracy_quantiles}.",
         r"The groups are not matched by RNA length.",
         r"B: exact probability is at least 0.1 for the selected PseudoLoop bases, crossing pairs, or total-accessibility windows.",
         r"The counts give RNAs with selected events / selected bases, pairs, or windows.",
