@@ -147,3 +147,4 @@ arrayの計画～初回実行・scheduler log・atomic temporaryは89 entries。
 28,000,000のlive上限までの残りは約642万。これは予約ではないので投入直前にも再確認する。
 共有側にCLIごとのファイルは作らず、生出力はtar。作成したnode-local中間ファイルは検証後に削除する。
 原稿・既存の図は変更しておらず、この時点の試行値を本文・SIの実験結果には追加していない。
+9070012-9070016 submitted 2026-10-20 (CParty vs LinearKnot scaling)
