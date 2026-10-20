@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "protected_fingerprints_unchanged": true,
+  "archive_members": 1572,
+  "successful_processes": 785,
+  "recounted_draws": 3600000,
+  "decoding_cases": 729,
+  "report_recomputed": true,
+  "summary_recomputed": true,
+  "tools_sha256": {
+    "probe.cc": "f63b560ec7440c42a02a262388ca7031eb3475f7a9086abe16518bf9a500cbfa",
+    "run.py": "c260afc5a0193ed4cb0ab22f0f5ff2db7d4b9ad7d243e5dfd737b7238d55cdca",
+    "analyze.py": "68af02e56286d83b37eab9356c5e607a3f2c491cc8b938d56f860f81fcbf98b3",
+    "validate.py": "204cbcecc6e95e6d0e6768198d592dc5b61f82f379d34a3656d849c2bb1e9054"
+  },
+  "artifact_sha256": {
+    "report.json": "ab4420a79112f1540776ec38aa24ae8c4bacc07cb38497cf2161398ab5f8e913",
+    "summary.json": "65d66f989ede66acb25e85c45ed1264288bd44971cf03eca1941e6f4afd7236c",
+    "raw.tar.gz": "68b926bbffb48c7af9f07cf3943da4481fbf1e2e64e96a57254e866a62cafb99",
+    "runs.jsonl": "3ed8be6006df2c69a6fd2b99bd76b052ae9b843b7e524b55d06f5850b7f082ff",
+    "config.json": "d7ed889546f95f4c6f3684ec5ca81598f80c8a694d22d209936ea48046e7541c",
+    "manifest.json": "217401904263e7a47c171696a7a6a3a0ffe1bbd22afd20f417b4d13e2d4c4673"
+  }
+}
