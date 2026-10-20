@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-20T01:43:47.546447+00:00",
+  "purpose": "development",
+  "source_repository": "https://github.com/TakumiOtagaki/LinearKnot",
+  "source_commit": "9c7d6e170b2b21a94a2e626d9939817e62898253",
+  "source_git_state": {
+    "commit": "9c7d6e170b2b21a94a2e626d9939817e62898253",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "source_tree": "148f5c91b6bccf862111f2d87bd192753e13a291",
+  "build_revision_verified": true,
+  "verification_method": "dedicated clean checkout; CMake configure/build; selected maintained checks",
+  "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "CMAKE_GENERATOR": "Unix Makefiles"
+  },
+  "configure_arguments": [
+    "-DCMAKE_BUILD_TYPE=Release",
+    "-DBUILD_TESTING=ON",
+    "-DLINEARKNOT_ENABLE_LTO=OFF"
+  ],
+  "cmake_cache_sha256": "4c96200010c8b68b8ba307a73a798aef2d5557509449e3e9afe80554cf285549",
+  "binaries": {
+    "linearknot": "94814e01000a7099ccbbf1f9d46933b76e0cd65c39af66a30764bf71fbca1d7e"
+  },
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "verification_results": [
+    {
+      "name": "scfg2_rules_core_exact_weight_test",
+      "returncode": 0,
+      "stdout": "scfg2_rules_core_exact_weight=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_exact_inside_oracle_test",
+      "returncode": 0,
+      "stdout": "scfg2_exact_inside_oracle=ok\n",
+      "stderr": ""
+    },
+    {
+      "name": "scfg2_beam_api_test",
+      "returncode": 0,
+      "stdout": "scfg2_beam_api=ok\n",
+      "stderr": ""
+    }
+  ],
+  "required_suite": "Maintained run_required_scfg2_tests.sh passed from the clean source root; logs packed in docs/linearknot_9c7d6e1_20261020/preparation_logs.tar.gz",
+  "scientific_scope": "fixed implementation pilot, not independent proof of ensemble semantics",
+  "known_semantic_followup": "",
+  "cli_layout": "unified",
+  "subcommands": [
+    "fold",
+    "profile",
+    "access",
+    "sample",
+    "subopt",
+    "mea",
+    "centroid"
+  ],
+  "version": "LinearKnot 0.1.1"
+}

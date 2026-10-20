@@ -1,0 +1,131 @@
+{
+  "created_utc": "2026-10-20T01:41:55.983406+00:00",
+  "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "software_root": "deps/LinearCParty-89baea52",
+  "build_dir": "build/linear-cparty-89baea52",
+  "variants": [
+    {
+      "name": "e3-neat1-centroid-89baea52-20261020",
+      "config": "configs/centroid_89baea52_20261020/e3-neat1-centroid-89baea52-20261020.json",
+      "array_config": "configs/centroid_89baea52_20261020/arrays/e3-neat1-centroid-89baea52-20261020.json",
+      "plan": "results/runs/e3-neat1-centroid-89baea52-20261020/array_plan.json",
+      "execution": "array",
+      "tasks": [
+        {
+          "tier": "neat1_short",
+          "task_id": 1,
+          "estimated_seconds": 1049.7992800633656,
+          "memory_cap_envelope_mib": 62464,
+          "h_rt": "00:22:00",
+          "workers": 3,
+          "requested_resource": "cpu_40=1"
+        },
+        {
+          "tier": "neat1_long",
+          "task_id": 1,
+          "estimated_seconds": 8063.8774164017295,
+          "memory_cap_envelope_mib": 62464,
+          "h_rt": "02:50:00",
+          "workers": 3,
+          "requested_resource": "cpu_40=1"
+        }
+      ],
+      "planned_jobs": 6,
+      "scripts": [
+        "jobs/e3-neat1-centroid-89baea52-20261020/neat1_short.sh",
+        "jobs/e3-neat1-centroid-89baea52-20261020/neat1_long.sh"
+      ]
+    },
+    {
+      "name": "terc-centroid-89baea52-20261020",
+      "config": "configs/centroid_89baea52_20261020/terc-centroid-89baea52-20261020.json",
+      "array_config": "configs/centroid_89baea52_20261020/arrays/terc-centroid-89baea52-20261020.json",
+      "plan": "results/runs/terc-centroid-89baea52-20261020/array_plan.json",
+      "execution": "local",
+      "tasks": [
+        {
+          "tier": "terc",
+          "task_id": 1,
+          "estimated_seconds": 1440.000004656,
+          "memory_cap_envelope_mib": 9216,
+          "h_rt": "04:00:00",
+          "workers": 1,
+          "requested_resource": "cpu_16=1"
+        }
+      ],
+      "planned_jobs": 12,
+      "scripts": [
+        "jobs/terc-centroid-89baea52-20261020/terc.sh"
+      ],
+      "local_script": "jobs/terc-centroid-89baea52-20261020/local.sh"
+    },
+    {
+      "name": "figure1-centroid-89baea52-20261020",
+      "config": "configs/centroid_89baea52_20261020/figure1-centroid-89baea52-20261020.json",
+      "array_config": "configs/centroid_89baea52_20261020/arrays/figure1-centroid-89baea52-20261020.json",
+      "plan": "results/runs/figure1-centroid-89baea52-20261020/array_plan.json",
+      "execution": "local",
+      "tasks": [
+        {
+          "tier": "figure1",
+          "task_id": 1,
+          "estimated_seconds": 720.000000378,
+          "memory_cap_envelope_mib": 9216,
+          "h_rt": "04:00:00",
+          "workers": 1,
+          "requested_resource": "cpu_16=1"
+        }
+      ],
+      "planned_jobs": 6,
+      "scripts": [
+        "jobs/figure1-centroid-89baea52-20261020/figure1.sh"
+      ],
+      "local_script": "jobs/figure1-centroid-89baea52-20261020/local.sh"
+    }
+  ],
+  "e0": {
+    "script": "jobs/e0-decoding-centroid-89baea52-20261020/decoding.sh",
+    "cases": 729,
+    "centroid_objective_checks": 6561,
+    "centroid_cli_checks": 6561,
+    "gamma": [
+      0.5,
+      1,
+      2
+    ],
+    "estimated_minutes": 40,
+    "h_rt": "02:00:00"
+  },
+  "files_sha256": {
+    "configs/centroid_89baea52_20261020/terc-centroid-89baea52-20261020.json": "bfdf3f47c87f33828fe19c0c50c2acacac77d1bf6b2971a28adc3c606849a272",
+    "configs/centroid_89baea52_20261020/figure1-centroid-89baea52-20261020.json": "138eac7c1cb40be3a243f553ba869cc081a6dc5a442635d7cc5a9169ebac4c70",
+    "configs/centroid_89baea52_20261020/e3-neat1-centroid-89baea52-20261020.json": "3450fb1f18d670ca72942dccfbe468a27a42681612770dc45feae094f56cceab",
+    "configs/centroid_89baea52_20261020/e0-decoding-centroid-89baea52-20261020.json": "d7ed889546f95f4c6f3684ec5ca81598f80c8a694d22d209936ea48046e7541c",
+    "configs/centroid_89baea52_20261020/arrays/terc-centroid-89baea52-20261020.json": "3360dcad00518628d2ef82398412556b906c8d028f412b52084a0355c98d6939",
+    "configs/centroid_89baea52_20261020/arrays/figure1-centroid-89baea52-20261020.json": "cc36374706fc7f5f6126a92e94a4a2c1d6ef1e61adafe209683c307880086dcb",
+    "configs/centroid_89baea52_20261020/arrays/e3-neat1-centroid-89baea52-20261020.json": "ad1ed9c61c501840adf89db38361aada7f394fadd22fc24be09a0dba253b7175",
+    "tools/validation_centroid_89baea52_20261020/decoding/probe.cc": "f63b560ec7440c42a02a262388ca7031eb3475f7a9086abe16518bf9a500cbfa",
+    "tools/validation_centroid_89baea52_20261020/decoding/analyze.py": "68af02e56286d83b37eab9356c5e607a3f2c491cc8b938d56f860f81fcbf98b3",
+    "tools/validation_centroid_89baea52_20261020/decoding/validate.py": "204cbcecc6e95e6d0e6768198d592dc5b61f82f379d34a3656d849c2bb1e9054",
+    "tools/validation_centroid_89baea52_20261020/decoding/run.py": "c260afc5a0193ed4cb0ab22f0f5ff2db7d4b9ad7d243e5dfd737b7238d55cdca",
+    "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_short/000001/run/task_results.jsonl": "0c0a4f14d3ba50a8eba4783d852d8a869b71e70df3832331a8a6ab4d1994c484",
+    "results/runs/e3-neat1-mea-d02d261c-20261017/tasks/neat1_long/000001/run/task_results.jsonl": "101fa2653c2d3738e0f73cd3a9e04d2fbb6d42238bc19bdd4982d6d9fd574f28",
+    "tools/validation_89baea52/baseline_15aa7742/inputs/cases.json": "d00ca2d70611adbaa0dece14cceee4b6d6d4dc2025969c475cbcecc587a06b49",
+    "tools/validation_89baea52/enumeration/enumerate.cc": "039a21508af6971b6f122fd4bd2cbe086043b518b2e08e2470744b2e2dd5e102",
+    "scripts/prepare_centroid_89baea52.py": "1d5ba2031652553537eb9bc503d4db21147e059c583547046975f9d7f30c243c",
+    "scripts/run_centroid_validation_89baea52.py": "25f9d2ad4475b48ea976149bf9942968758b4667d59e23e3a490b510caa77193",
+    "jobs/e0-decoding-centroid-89baea52-20261020/decoding.sh": "279f09301830e2bec0984fdc36149297dabda57ef129fbaf0d1ace5040a70ff5",
+    "results/runs/e3-neat1-centroid-89baea52-20261020/array_plan.json": "a68ab44e41950e47c05ddc78e4eecffc46430bc285340eedf29664016f25fd52",
+    "jobs/e3-neat1-centroid-89baea52-20261020/neat1_short.sh": "4d7e868d8db1214ef2aa1188d0616602698f8aeb5c9fc9366684611c10d5f0f3",
+    "jobs/e3-neat1-centroid-89baea52-20261020/neat1_long.sh": "6a31aa3849fc8bde42cee416bb778b0ce05d8bee9badd8db3f9d3b365247cace",
+    "results/runs/terc-centroid-89baea52-20261020/array_plan.json": "860efda544054b3ca6c52c777f2c397a5f47516238634f7bdd70d0ec7f673de7",
+    "jobs/terc-centroid-89baea52-20261020/terc.sh": "2788642272900a2442650179ec1933abb7e0fff3527587389558d1c737469447",
+    "jobs/terc-centroid-89baea52-20261020/local.sh": "54f39a6d4b74719a5b3110c8b7babfdcfe22916110032c54e087d23de21f0cdf",
+    "results/runs/figure1-centroid-89baea52-20261020/array_plan.json": "21b033500541162213cfcaabf75cf95bcb80ae75732493fc45110ce9b9dba84e",
+    "jobs/figure1-centroid-89baea52-20261020/figure1.sh": "37a6740c7587d1a3d3fb77e6e15bb97a357306c4d1bb6856e5c47004932384cb",
+    "jobs/figure1-centroid-89baea52-20261020/local.sh": "9f13a351669417f5732764ddc0afbdf1c62c1c334ff92a115e67713f7881ed2c",
+    "manifests/software-pilot-89baea52.json": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99",
+    "manifests/software-examples-89baea52-20261018.json": "96ded31c384babe5fe56dbc3f88ad071dd61272cf7b2abc9c6579da02d6e25e4"
+  },
+  "submitted": false
+}

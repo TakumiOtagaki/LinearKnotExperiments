@@ -1,0 +1,29 @@
+{
+  "sources": {
+    "data.json": {
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/local/figure-feedback-20261020/data.json",
+      "sha256": "e5bf96a61ea8e22ad183f0d27a370d19535a34493ebc0afe597eb305e2ccb412"
+    }
+  },
+  "final_handoff_script_sha256": "6d69cc21891cb8106ef33b71af83e9020e71abeb88ca9656da82b60f1a707d1e",
+  "derived_files": {
+    "README.md": "849d21fe9e9a4387e3b0b98a430f9973e09d33e66469ae54d84fd14f2ad5a4b2",
+    "caption.md": "0677dbffdb2f7c68d2484617f76ab1fe0f5eaea30556dff3adc09f029307610c",
+    "validation.json": "c6b5632b3cdf5a9e8fa7c5e867977e4da5c1bfe1c058f33c8cf1898f160e9457"
+  },
+  "final_figures": [
+    {
+      "file": "figure4.png",
+      "pdf": "figure4.pdf",
+      "width_mm": 178.0000000000147,
+      "height_mm": 104.00000000000027,
+      "minimum_pdf_text_pt": 7.0,
+      "png_pixels": [
+        2102,
+        1228
+      ],
+      "png_sha256": "1f8df1937213be1811f8917ab1f338c8803296d644054bdf383777ee6aa07930",
+      "pdf_sha256": "6f76e7b0615620a1d2fc4c169a828a8c79b22bc9d52cb2d0cdd8ae0031726a47"
+    }
+  ]
+}

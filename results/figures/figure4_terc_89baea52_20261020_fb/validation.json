@@ -1,0 +1,116 @@
+{
+  "pdf_page_mm": [
+    178.0000000000147,
+    104.00000000000027
+  ],
+  "pdf_text_check": {
+    "minimum_pt": 7.0,
+    "maximum_pt": 9.0,
+    "spans": 103,
+    "sizes_pt": [
+      7.0,
+      8.0,
+      9.0
+    ],
+    "method": "Ghostscript txtwrite TextFormat=0"
+  },
+  "text_outside_page": [],
+  "text_overlaps": [],
+  "source_data_sha256": "e5bf96a61ea8e22ad183f0d27a370d19535a34493ebc0afe597eb305e2ccb412",
+  "script_sha256": "8f3fc832d57c2c5444a92a75de8ecb84539862cf5fae9d946d6411be3ac58971",
+  "visual_inspection": "Open the generated PNG separately.",
+  "probability_display_cutoff_inclusive": 0.05,
+  "context_hatches": "none",
+  "highlighted_bases_A_B": [
+    123,
+    126
+  ],
+  "reference_bulged_base": 133,
+  "reference_marks": {
+    "outer": [
+      [
+        63,
+        68
+      ],
+      [
+        134,
+        139
+      ]
+    ],
+    "inner": [
+      [
+        69,
+        71
+      ],
+      [
+        130,
+        132
+      ]
+    ]
+  },
+  "sample_fractions": {
+    "outer": 0.81,
+    "inner": 0.237,
+    "both": 0.235
+  },
+  "centroid_gamma": 1,
+  "centroid_region": [
+    40,
+    160
+  ],
+  "centroid_pairs_outside_region": 72,
+  "Bzoom_C_alignment_px": 0.0,
+  "centroid_reference_pairs": {
+    "outer": [
+      [
+        63,
+        139
+      ],
+      [
+        64,
+        138
+      ],
+      [
+        65,
+        137
+      ],
+      [
+        66,
+        136
+      ],
+      [
+        67,
+        135
+      ],
+      [
+        68,
+        134
+      ]
+    ],
+    "inner": []
+  },
+  "context_sum_max_error": 1.5543122344752192e-15,
+  "byloop_sum_max_error": 3.674838211509268e-14,
+  "window1_context_max_error": 2.55351295663786e-14,
+  "scaffold_pair_max_error": 0.0,
+  "final_visual_review": {
+    "date": "2026-10-20",
+    "method": "Opened every listed PNG with view_image",
+    "figures": [
+      {
+        "file": "figure4.png",
+        "pdf": "figure4.pdf",
+        "width_mm": 178.0000000000147,
+        "height_mm": 104.00000000000027,
+        "minimum_pdf_text_pt": 7.0,
+        "png_pixels": [
+          2102,
+          1228
+        ],
+        "png_sha256": "1f8df1937213be1811f8917ab1f338c8803296d644054bdf383777ee6aa07930",
+        "pdf_sha256": "6f76e7b0615620a1d2fc4c169a828a8c79b22bc9d52cb2d0cdd8ae0031726a47"
+      }
+    ]
+  },
+  "final_handoff_script_sha256": "6d69cc21891cb8106ef33b71af83e9020e71abeb88ca9656da82b60f1a707d1e"
+}

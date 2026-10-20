@@ -1,0 +1,117 @@
+{
+  "created_utc": "2026-10-20T02:14:51.291757+00:00",
+  "comparison_report_sha256": "e42ac548f448e9e9282b9a49cec893f090826780dbf8f6cf52bff1d9192601bd",
+  "comparison_directory": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/local/linearknot-9c7d6e1-comparison-20261020",
+  "inputs": 14,
+  "comparisons": 378,
+  "processes": 756,
+  "byte_identical": 294,
+  "total_process_attempts": 760,
+  "retried_comparisons": 2,
+  "initial_report": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/local/linearknot-9c7d6e1-comparison-20261020-initial8g/comparison.json",
+  "by_command": {
+    "fold": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "profile": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "access": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 0,
+      "identical_after_metadata_rename": 42
+    },
+    "access-byloop": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 0,
+      "identical_after_metadata_rename": 42
+    },
+    "sample": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "sample-unique": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "mea": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "centroid": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "subopt": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    }
+  },
+  "metadata_rename_occurrences": {
+    "# linearpkraccess_metadata=1": 84,
+    "# engine=linearcparty-scfg2": 84
+  },
+  "other_differences": [],
+  "all_identical_after_metadata_rename": true,
+  "ignored_elapsed_line_prefix": "# elapsed_seconds",
+  "metadata_renames": {
+    "# linearpkraccess_metadata=1": "# linearknot_access_metadata=1",
+    "# engine=linearcparty-scfg2": "# engine=linearknot-scfg2"
+  },
+  "fingerprints": {
+    "reference": {
+      "source": {
+        "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "binaries": {
+        "LinearPKMEA": "fcd9caeaa6859167c691376588a022c7e8ab03254af830f4fdf2058e94589ded",
+        "LinearPKCapR": "f4388139247d3dd96e617b3865ddc014ba13309364f733d0cc98b98284a93b71",
+        "LinearPKRaccess": "f742eae39a648557db7e60949c1b9be4aea8fe6b5da7b1df5b8b70338bdf2517",
+        "LinearPKCentroid": "c2f0f80c28a33999998e4fc33fd07a772279422c06f098458259017566378746",
+        "LinearPKSampling": "7d4556d2601c90f9d2043824cb38cdf0f55997f62c157690d0d6440b57f1f7e7",
+        "LinearCParty": "fcf7a9735e55f82488051a22204b77a83cb477002dd005551e42936a35b7e56c",
+        "LinearPKSubopt": "eafc5b52c8c99cfbe5ef44b22cf2ba076d1bf46d47ee601540eff1d63b0519f9"
+      },
+      "cmake_cache_sha256": "5b0660aed3d70ea6c7a33c9589d3cde8e7d6a712f4da9daade2aebccf055a05c",
+      "parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+    },
+    "candidate": {
+      "source": {
+        "commit": "9c7d6e170b2b21a94a2e626d9939817e62898253",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "binaries": {
+        "linearknot": "94814e01000a7099ccbbf1f9d46933b76e0cd65c39af66a30764bf71fbca1d7e"
+      },
+      "cmake_cache_sha256": "4c96200010c8b68b8ba307a73a798aef2d5557509449e3e9afe80554cf285549",
+      "parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+    }
+  },
+  "artifacts_sha256": {
+    "raw_outputs.tar": "44d95ed3f12edec64a41f80d19a2f72572a6c9c06fe2c2a7da36bbe303a7f4dd",
+    "processes.jsonl": "55147cf85fc3abf0b2fd5df112e5a4956418760663de3a8185394a88196e92a9"
+  }
+}

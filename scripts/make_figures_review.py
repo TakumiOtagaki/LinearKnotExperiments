@@ -27,14 +27,14 @@ BEAM_COLORS = ("#0072B2", "#D55E00", "#009E73", "#CC79A7", "#222222")
 BEAM_MARKERS = ("o", "s", "^", "D", "v")
 PROGRAM_COLORS = ("#0072B2", "#D55E00", "#009E73")
 OUTPUT_LABELS = (
-    "LinearCParty: MFE + partition function + BPPs",
-    "LinearPKCapR: contexts",
-    "LinearPKRaccess: contexts + accessibility",
+    "fold: partition function + BPPs + MFE",
+    "profile: loop profile",
+    "access: accessibility",
 )
 MODE_LABELS = ("Inside + preliminary ranking", "MFE program",
                "BPP program", "Context program")
 SHORT_SERIES = ("Empty G", "Long stem", "3 helices", "Free bases together",
-                "12 helices", "Deep branching", "Balanced branching")
+                "12 helices", "Nested multiloops", "Balanced multiloops")
 
 
 def style(base):
@@ -419,7 +419,8 @@ def synthetic_detail(data, base, designs):
             summaries = [q for (p, s, n, m), q in data.synthetic_summary.items() if m == metric]
             lo, hi = min(q["min"] for q in summaries) * .65, max(q["max"] for q in summaries) * 1.4
             ax.set_ylim(lo, hi)
-            ax.set_title(program + (": time" if col == 0 else ": memory"), loc="left")
+            role = ("fold", "profile (loop profile)", "access (accessibility)")[row]
+            ax.set_title(role + (": time" if col == 0 else ": memory"), loc="left")
             # Normal-sized decimal labels, including all logarithmic ticks.
             ticks = [10.**k for k in range(math.floor(math.log10(lo)), math.ceil(math.log10(hi)) + 1)]
             ax.yaxis.set_major_locator(FixedLocator(ticks))
@@ -435,7 +436,7 @@ def synthetic_detail(data, base, designs):
         ax = base.mm_axes(fig, left, bottom, 17, 8)
         draw_design(ax, designs[series])
         text_mm(fig, left + 20, bottom + 6, SHORT_SERIES[i].replace("Free bases together", "Free bases\ntogether")
-                .replace("Balanced branching", "Balanced\nbranching").replace("Deep branching", "Deep\nbranching"),
+                .replace("Balanced multiloops", "Balanced\nmultiloops").replace("Nested multiloops", "Nested\nmultiloops"),
                 va="center", color=".15")
         key = base.mm_axes(fig, left + 20, bottom - .5, 15, 2)
         key.plot([0, 1], [.5, .5], color=base.COLORS[i], ls=base.LINES[i],

@@ -1,0 +1,198 @@
+{
+  "ok": true,
+  "cases": [
+    "closure14",
+    "random004",
+    "random031"
+  ],
+  "api_objective_checks": 27,
+  "cli_checks": 27,
+  "max_error": 2.842170943040401e-14,
+  "rows": [
+    {
+      "id": "closure14",
+      "mode": "exact",
+      "gamma": 0.5,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "closure14",
+      "mode": "exact",
+      "gamma": 1.0,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "closure14",
+      "mode": "exact",
+      "gamma": 2.0,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "closure14",
+      "mode": "beam20",
+      "gamma": 0.5,
+      "optimum_and_score_error": 5.551115123125783e-17
+    },
+    {
+      "id": "closure14",
+      "mode": "beam20",
+      "gamma": 1.0,
+      "optimum_and_score_error": 5.551115123125783e-17
+    },
+    {
+      "id": "closure14",
+      "mode": "beam20",
+      "gamma": 2.0,
+      "optimum_and_score_error": 5.551115123125783e-17
+    },
+    {
+      "id": "closure14",
+      "mode": "beam100",
+      "gamma": 0.5,
+      "optimum_and_score_error": 5.551115123125783e-17
+    },
+    {
+      "id": "closure14",
+      "mode": "beam100",
+      "gamma": 1.0,
+      "optimum_and_score_error": 5.551115123125783e-17
+    },
+    {
+      "id": "closure14",
+      "mode": "beam100",
+      "gamma": 2.0,
+      "optimum_and_score_error": 5.551115123125783e-17
+    },
+    {
+      "id": "random004",
+      "mode": "exact",
+      "gamma": 0.5,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "random004",
+      "mode": "exact",
+      "gamma": 1.0,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "random004",
+      "mode": "exact",
+      "gamma": 2.0,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "random004",
+      "mode": "beam20",
+      "gamma": 0.5,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "random004",
+      "mode": "beam20",
+      "gamma": 1.0,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "random004",
+      "mode": "beam20",
+      "gamma": 2.0,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "random004",
+      "mode": "beam100",
+      "gamma": 0.5,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "random004",
+      "mode": "beam100",
+      "gamma": 1.0,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "random004",
+      "mode": "beam100",
+      "gamma": 2.0,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "random031",
+      "mode": "exact",
+      "gamma": 0.5,
+      "optimum_and_score_error": 2.842170943040401e-14
+    },
+    {
+      "id": "random031",
+      "mode": "exact",
+      "gamma": 1.0,
+      "optimum_and_score_error": 2.842170943040401e-14
+    },
+    {
+      "id": "random031",
+      "mode": "exact",
+      "gamma": 2.0,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "random031",
+      "mode": "beam20",
+      "gamma": 0.5,
+      "optimum_and_score_error": 2.842170943040401e-14
+    },
+    {
+      "id": "random031",
+      "mode": "beam20",
+      "gamma": 1.0,
+      "optimum_and_score_error": 2.842170943040401e-14
+    },
+    {
+      "id": "random031",
+      "mode": "beam20",
+      "gamma": 2.0,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    },
+    {
+      "id": "random031",
+      "mode": "beam100",
+      "gamma": 0.5,
+      "optimum_and_score_error": 2.842170943040401e-14
+    },
+    {
+      "id": "random031",
+      "mode": "beam100",
+      "gamma": 1.0,
+      "optimum_and_score_error": 2.842170943040401e-14
+    },
+    {
+      "id": "random031",
+      "mode": "beam100",
+      "gamma": 2.0,
+      "optimum_and_score_error": 1.4210854715202004e-14
+    }
+  ],
+  "provenance": {
+    "probe_source_sha256": "f63b560ec7440c42a02a262388ca7031eb3475f7a9086abe16518bf9a500cbfa",
+    "probe_binary_sha256": "992971eba8bf2eb5cf08f25e9c6253dbdd1641220a6084b905912b467c2bac77",
+    "compile_argv": [
+      "g++",
+      "-O1",
+      "-std=c++17",
+      "-I/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52/src",
+      "-DCPARTY_VALIDATION_ORACLE=\"/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/validation_89baea52/enumeration/enumerate.cc\"",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/validation_centroid_89baea52_20261020/decoding/probe.cc",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/libcparty_scfg2_beam.a",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/libcparty_scfg2_exact.a",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linear-cparty-89baea52/libRNA.a",
+      "-o",
+      "/tmp/9066100.1.all.q/linearknot-pin-20261020/centroid-probe"
+    ],
+    "adopted_lock_sha256": "59a615ae9923647b662c82ad4460da1eb462c0096d690172b3f44b9d573bcc99",
+    "library_sha256": {
+      "libcparty_scfg2_beam.a": "c2b9210566a971b0c84bebe545458253101b39dfe42ac12ab4f6560623146307",
+      "libcparty_scfg2_exact.a": "bf3a9365b3e5dfdaf81d23e753a91c2259938f5b2ef4506bfd4b63b512336f99",
+      "libRNA.a": "a4cfd6eac4441da25af7557f72729f86ff14b1b7b6b05042a29277f4d6f006d7"
+    }
+  }
+}

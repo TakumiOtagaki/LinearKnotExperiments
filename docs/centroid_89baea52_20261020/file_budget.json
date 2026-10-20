@@ -1,0 +1,17 @@
+{
+  "estimated_shared_entries": 500,
+  "basis": "Three matrix plans (four tasks), E0 wrapper/config, source copies, reports and execution allowance",
+  "project": 102571,
+  "filesystem": "/gs/bs",
+  "quota": {
+    "used_files": 21571093,
+    "limit_files": 28000000,
+    "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9555671336  14680064000 14680064000       - 21571093  28000000 28000000       -"
+  },
+  "hard_file_limit": 24000000,
+  "remaining_files": 2428907,
+  "remaining_source": "lfs quota (with configured conservative hard limit)",
+  "max_remaining_fraction": 0.1,
+  "allowed_entries": 242890,
+  "accepted": true
+}

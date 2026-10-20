@@ -1,5 +1,9 @@
 # Release preparation and reruns
 
+For the renamed unified CLI, see [LinearKnot 9c7d6e1 preparation and comparison](linearknot_9c7d6e1_20261020/README.md).
+`make_software_lock.py` accepts the single `linearknot` binary and records its subcommands; the historical `prepare_release.py` naming and production runners below still target the separate CLIs.
+The [centroid replacement plans](centroid_89baea52_20261020/README.md) use the adopted 89baea52 build and include local commands and unsubmitted array scripts.
+
 Run from the experiment repository with `PYTHONDONTWRITEBYTECODE=1` and node-local `TMPDIR` or `--scratch-dir /tmp`.
 These tools never submit scheduler jobs.
 

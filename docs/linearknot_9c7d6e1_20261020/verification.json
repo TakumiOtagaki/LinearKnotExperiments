@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "comparisons": 378,
+  "effective_successful_processes": 756,
+  "total_process_attempts": 760,
+  "initial_resource_failures": 2,
+  "retry_memory_limit_mib": 16384,
+  "strict_byte_identical": 294,
+  "identical_after_access_metadata_renames": 378,
+  "other_output_differences": 0,
+  "raw_tar_unique_members": 1604,
+  "checked_source_and_doc_files": 25,
+  "local_markdown_links_verified": true,
+  "software_lock_verified": true,
+  "prepared_matrices_not_executed": true,
+  "progress_recorded_in_both_repositories": true
+}

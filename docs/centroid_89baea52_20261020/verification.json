@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "frozen_dependencies_verified": 29,
+  "matrix_tasks_not_started": 4,
+  "e0_not_started": true,
+  "shell_scripts_syntax_checked": 7,
+  "all_plans_live_dependencies_verified": true,
+  "scientific_settings_preserved": true,
+  "adopted_lock_verified": true,
+  "new_linearknot_lock_verified": true
+}

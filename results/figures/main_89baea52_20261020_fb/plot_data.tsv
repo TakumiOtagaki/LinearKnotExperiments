@@ -1,0 +1,1245 @@
+denominator	length	length_from	length_to	max	median	metric	min	mode	n	name	numerator	panel	program	run	seed	seeds	series	statistic	value
+	1000			36.76	33.46	wall_seconds	32.07		3	syn_n1000_s2026101201_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101201		balanced_branching		
+	1000			0.20158004760742188	0.20148086547851562	rss_gib	0.20101547241210938		3	syn_n1000_s2026101201_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101201		balanced_branching		
+	1000			24.86	24.2	wall_seconds	21.11		3	syn_n1000_s2026101201_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		balanced_branching		
+	1000			0.18620681762695312	0.18611526489257812	rss_gib	0.18529510498046875		3	syn_n1000_s2026101201_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		balanced_branching		
+	1000			24.77	24.35	wall_seconds	21.37		3	syn_n1000_s2026101201_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		balanced_branching		
+	1000			0.187042236328125	0.18685150146484375	rss_gib	0.18671417236328125		3	syn_n1000_s2026101201_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		balanced_branching		
+	1000			36.91	33.54	wall_seconds	32.39		3	syn_n1000_s2026101201_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d15		
+	1000			0.20138931274414062	0.20005035400390625	rss_gib	0.19848251342773438		3	syn_n1000_s2026101201_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d15		
+	1000			26.29	22.96	wall_seconds	22.45		3	syn_n1000_s2026101201_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d15		
+	1000			0.18970870971679688	0.18952178955078125	rss_gib	0.18798065185546875		3	syn_n1000_s2026101201_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d15		
+	1000			23.3	23.19	wall_seconds	22.28		3	syn_n1000_s2026101201_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d15		
+	1000			0.18916702270507812	0.18799972534179688	rss_gib	0.18508529663085938		3	syn_n1000_s2026101201_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d15		
+	1000			35.02	34.9	wall_seconds	30.46		3	syn_n1000_s2026101201_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d30		
+	1000			0.20127487182617188	0.1992950439453125	rss_gib	0.19901275634765625		3	syn_n1000_s2026101201_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d30		
+	1000			24.77	24.19	wall_seconds	21.52		3	syn_n1000_s2026101201_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d30		
+	1000			0.1868896484375	0.18685150146484375	rss_gib	0.18655014038085938		3	syn_n1000_s2026101201_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d30		
+	1000			25.05	24.38	wall_seconds	21.28		3	syn_n1000_s2026101201_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d30		
+	1000			0.18764495849609375	0.18708419799804688	rss_gib	0.18687820434570312		3	syn_n1000_s2026101201_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d30		
+	1000			35.33	35.04	wall_seconds	30.83		3	syn_n1000_s2026101201_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d31		
+	1000			0.2116241455078125	0.21140289306640625	rss_gib	0.21129226684570312		3	syn_n1000_s2026101201_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d31		
+	1000			23.86	23.62	wall_seconds	21.09		3	syn_n1000_s2026101201_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d31		
+	1000			0.18867111206054688	0.1878204345703125	rss_gib	0.18725204467773438		3	syn_n1000_s2026101201_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d31		
+	1000			23.95	22.07	wall_seconds	21.29		3	syn_n1000_s2026101201_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d31		
+	1000			0.18857955932617188	0.18836212158203125	rss_gib	0.18690872192382812		3	syn_n1000_s2026101201_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d31		
+	1000			34.86	34.45	wall_seconds	32.15		3	syn_n1000_s2026101201_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101201		deep_branching		
+	1000			0.20592117309570312	0.20322418212890625	rss_gib	0.20110702514648438		3	syn_n1000_s2026101201_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101201		deep_branching		
+	1000			24.97	23.29	wall_seconds	21.24		3	syn_n1000_s2026101201_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		deep_branching		
+	1000			0.18836593627929688	0.18790054321289062	rss_gib	0.18772125244140625		3	syn_n1000_s2026101201_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		deep_branching		
+	1000			23.92	23.48	wall_seconds	21.63		3	syn_n1000_s2026101201_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		deep_branching		
+	1000			0.18909072875976562	0.18795013427734375	rss_gib	0.18776321411132812		3	syn_n1000_s2026101201_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		deep_branching		
+	1000			63.12	58.69	wall_seconds	57.41		3	syn_n1000_s2026101201_empty		3C_detail	LinearCParty	synthetic_current	2026101201		empty		
+	1000			0.28025054931640625	0.2800941467285156	rss_gib	0.279693603515625		3	syn_n1000_s2026101201_empty		3C_detail	LinearCParty	synthetic_current	2026101201		empty		
+	1000			44.92	43.13	wall_seconds	39.4		3	syn_n1000_s2026101201_empty		3C_detail	LinearPKCapR	synthetic_current	2026101201		empty		
+	1000			0.2745246887207031	0.274261474609375	rss_gib	0.2724609375		3	syn_n1000_s2026101201_empty		3C_detail	LinearPKCapR	synthetic_current	2026101201		empty		
+	1000			42.99	41.97	wall_seconds	39.46		3	syn_n1000_s2026101201_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101201		empty		
+	1000			0.2783393859863281	0.2767791748046875	rss_gib	0.2764625549316406		3	syn_n1000_s2026101201_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101201		empty		
+	1000			44.06	43.44	wall_seconds	38.03		3	syn_n1000_s2026101201_long_stem		3C_detail	LinearCParty	synthetic_current	2026101201		long_stem		
+	1000			0.20906448364257812	0.20850372314453125	rss_gib	0.2076263427734375		3	syn_n1000_s2026101201_long_stem		3C_detail	LinearCParty	synthetic_current	2026101201		long_stem		
+	1000			31.56	31.39	wall_seconds	26.44		3	syn_n1000_s2026101201_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101201		long_stem		
+	1000			0.20905303955078125	0.20839309692382812	rss_gib	0.2079315185546875		3	syn_n1000_s2026101201_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101201		long_stem		
+	1000			30.19	29.6	wall_seconds	26.53		3	syn_n1000_s2026101201_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101201		long_stem		
+	1000			0.20891571044921875	0.208740234375	rss_gib	0.20776748657226562		3	syn_n1000_s2026101201_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101201		long_stem		
+	1000			50.02	48.19	wall_seconds	42.66		3	syn_n1000_s2026101201_separated_12		3C_detail	LinearCParty	synthetic_current	2026101201		separated_12		
+	1000			0.2788429260253906	0.278839111328125	rss_gib	0.2786712646484375		3	syn_n1000_s2026101201_separated_12		3C_detail	LinearCParty	synthetic_current	2026101201		separated_12		
+	1000			39.38	35.59	wall_seconds	32.0		3	syn_n1000_s2026101201_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_12		
+	1000			0.27999114990234375	0.27924346923828125	rss_gib	0.278839111328125		3	syn_n1000_s2026101201_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_12		
+	1000			38.07	33.07	wall_seconds	32.21		3	syn_n1000_s2026101201_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_12		
+	1000			0.27988433837890625	0.2788581848144531	rss_gib	0.2788581848144531		3	syn_n1000_s2026101201_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_12		
+	1000			46.66	43.41	wall_seconds	39.76		3	syn_n1000_s2026101201_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101201		separated_concentrated		
+	1000			0.19110488891601562	0.19106674194335938	rss_gib	0.19006729125976562		3	syn_n1000_s2026101201_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101201		separated_concentrated		
+	1000			34.05	33.21	wall_seconds	28.99		3	syn_n1000_s2026101201_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_concentrated		
+	1000			0.1840667724609375	0.18289566040039062	rss_gib	0.18178558349609375		3	syn_n1000_s2026101201_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_concentrated		
+	1000			34.17	32.92	wall_seconds	28.74		3	syn_n1000_s2026101201_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_concentrated		
+	1000			0.18214797973632812	0.18167495727539062	rss_gib	0.18160629272460938		3	syn_n1000_s2026101201_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_concentrated		
+	1000			41.02	40.34	wall_seconds	35.89		3	syn_n1000_s2026101201_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101201		separated_helices		
+	1000			0.2527198791503906	0.252716064453125	rss_gib	0.2520027160644531		3	syn_n1000_s2026101201_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101201		separated_helices		
+	1000			31.14	29.2	wall_seconds	25.63		3	syn_n1000_s2026101201_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_helices		
+	1000			0.2520599365234375	0.252044677734375	rss_gib	0.2519187927246094		3	syn_n1000_s2026101201_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_helices		
+	1000			30.04	29.83	wall_seconds	25.8		3	syn_n1000_s2026101201_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_helices		
+	1000			0.2527313232421875	0.2519683837890625	rss_gib	0.2514228820800781		3	syn_n1000_s2026101201_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_helices		
+	1000			38.68	37.93	wall_seconds	33.86		3	syn_n1000_s2026101202_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101202		balanced_branching		
+	1000			0.20386886596679688	0.20206451416015625	rss_gib	0.20053482055664062		3	syn_n1000_s2026101202_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101202		balanced_branching		
+	1000			26.67	25.0	wall_seconds	22.41		3	syn_n1000_s2026101202_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		balanced_branching		
+	1000			0.18935394287109375	0.18935012817382812	rss_gib	0.1876373291015625		3	syn_n1000_s2026101202_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		balanced_branching		
+	1000			26.65	24.27	wall_seconds	22.9		3	syn_n1000_s2026101202_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		balanced_branching		
+	1000			0.19021987915039062	0.19005966186523438	rss_gib	0.18721389770507812		3	syn_n1000_s2026101202_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		balanced_branching		
+	1000			37.51	35.94	wall_seconds	35.34		3	syn_n1000_s2026101202_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d15		
+	1000			0.20606613159179688	0.20585250854492188	rss_gib	0.2051544189453125		3	syn_n1000_s2026101202_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d15		
+	1000			28.74	25.99	wall_seconds	24.16		3	syn_n1000_s2026101202_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d15		
+	1000			0.19237136840820312	0.19228744506835938	rss_gib	0.19042587280273438		3	syn_n1000_s2026101202_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d15		
+	1000			27.97	27.0	wall_seconds	24.09		3	syn_n1000_s2026101202_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d15		
+	1000			0.1936492919921875	0.19303512573242188	rss_gib	0.19067001342773438		3	syn_n1000_s2026101202_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d15		
+	1000			35.19	31.34	wall_seconds	29.98		3	syn_n1000_s2026101202_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d30		
+	1000			0.20061492919921875	0.19895172119140625	rss_gib	0.19722366333007812		3	syn_n1000_s2026101202_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d30		
+	1000			26.99	24.76	wall_seconds	21.21		3	syn_n1000_s2026101202_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d30		
+	1000			0.18703842163085938	0.1864166259765625	rss_gib	0.18507003784179688		3	syn_n1000_s2026101202_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d30		
+	1000			24.43	22.11	wall_seconds	20.83		3	syn_n1000_s2026101202_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d30		
+	1000			0.18735885620117188	0.18517684936523438	rss_gib	0.18507003784179688		3	syn_n1000_s2026101202_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d30		
+	1000			36.88	35.09	wall_seconds	32.22		3	syn_n1000_s2026101202_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d31		
+	1000			0.2120819091796875	0.21160507202148438	rss_gib	0.21120834350585938		3	syn_n1000_s2026101202_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d31		
+	1000			25.59	24.36	wall_seconds	21.48		3	syn_n1000_s2026101202_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d31		
+	1000			0.195159912109375	0.19442367553710938	rss_gib	0.19217300415039062		3	syn_n1000_s2026101202_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d31		
+	1000			24.74	22.95	wall_seconds	21.52		3	syn_n1000_s2026101202_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d31		
+	1000			0.19261932373046875	0.19181442260742188	rss_gib	0.19167327880859375		3	syn_n1000_s2026101202_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d31		
+	1000			36.35	35.57	wall_seconds	33.95		3	syn_n1000_s2026101202_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101202		deep_branching		
+	1000			0.20622634887695312	0.20330047607421875	rss_gib	0.20275497436523438		3	syn_n1000_s2026101202_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101202		deep_branching		
+	1000			26.01	23.78	wall_seconds	22.74		3	syn_n1000_s2026101202_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		deep_branching		
+	1000			0.19308090209960938	0.19095230102539062	rss_gib	0.190399169921875		3	syn_n1000_s2026101202_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		deep_branching		
+	1000			26.69	26.12	wall_seconds	23.07		3	syn_n1000_s2026101202_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		deep_branching		
+	1000			0.19247055053710938	0.19073486328125	rss_gib	0.18780136108398438		3	syn_n1000_s2026101202_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		deep_branching		
+	1000			62.83	61.24	wall_seconds	58.32		3	syn_n1000_s2026101202_empty		3C_detail	LinearCParty	synthetic_current	2026101202		empty		
+	1000			0.2866325378417969	0.28594207763671875	rss_gib	0.2818489074707031		3	syn_n1000_s2026101202_empty		3C_detail	LinearCParty	synthetic_current	2026101202		empty		
+	1000			45.66	42.76	wall_seconds	40.63		3	syn_n1000_s2026101202_empty		3C_detail	LinearPKCapR	synthetic_current	2026101202		empty		
+	1000			0.2748222351074219	0.2740516662597656	rss_gib	0.27384185791015625		3	syn_n1000_s2026101202_empty		3C_detail	LinearPKCapR	synthetic_current	2026101202		empty		
+	1000			45.68	45.31	wall_seconds	40.5		3	syn_n1000_s2026101202_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101202		empty		
+	1000			0.2742958068847656	0.2740592956542969	rss_gib	0.27239990234375		3	syn_n1000_s2026101202_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101202		empty		
+	1000			43.44	40.72	wall_seconds	38.55		3	syn_n1000_s2026101202_long_stem		3C_detail	LinearCParty	synthetic_current	2026101202		long_stem		
+	1000			0.20886611938476562	0.208526611328125	rss_gib	0.207794189453125		3	syn_n1000_s2026101202_long_stem		3C_detail	LinearCParty	synthetic_current	2026101202		long_stem		
+	1000			31.15	30.5	wall_seconds	27.08		3	syn_n1000_s2026101202_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101202		long_stem		
+	1000			0.2079010009765625	0.2079010009765625	rss_gib	0.2079010009765625		3	syn_n1000_s2026101202_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101202		long_stem		
+	1000			31.95	31.87	wall_seconds	27.54		3	syn_n1000_s2026101202_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101202		long_stem		
+	1000			0.20870590209960938	0.20807266235351562	rss_gib	0.20784378051757812		3	syn_n1000_s2026101202_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101202		long_stem		
+	1000			45.06	43.16	wall_seconds	37.83		3	syn_n1000_s2026101202_separated_12		3C_detail	LinearCParty	synthetic_current	2026101202		separated_12		
+	1000			0.2792472839355469	0.27902984619140625	rss_gib	0.27898406982421875		3	syn_n1000_s2026101202_separated_12		3C_detail	LinearCParty	synthetic_current	2026101202		separated_12		
+	1000			33.45	30.03	wall_seconds	29.01		3	syn_n1000_s2026101202_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_12		
+	1000			0.2790336608886719	0.2790336608886719	rss_gib	0.2787208557128906		3	syn_n1000_s2026101202_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_12		
+	1000			35.89	35.22	wall_seconds	29.32		3	syn_n1000_s2026101202_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_12		
+	1000			0.2798004150390625	0.2796287536621094	rss_gib	0.2789955139160156		3	syn_n1000_s2026101202_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_12		
+	1000			47.71	44.87	wall_seconds	40.44		3	syn_n1000_s2026101202_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101202		separated_concentrated		
+	1000			0.19312286376953125	0.19272994995117188	rss_gib	0.18991470336914062		3	syn_n1000_s2026101202_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101202		separated_concentrated		
+	1000			35.52	34.69	wall_seconds	29.2		3	syn_n1000_s2026101202_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_concentrated		
+	1000			0.18609619140625	0.18503570556640625	rss_gib	0.18396759033203125		3	syn_n1000_s2026101202_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_concentrated		
+	1000			34.56	33.18	wall_seconds	29.31		3	syn_n1000_s2026101202_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_concentrated		
+	1000			0.18416213989257812	0.18355560302734375	rss_gib	0.1814727783203125		3	syn_n1000_s2026101202_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_concentrated		
+	1000			42.02	37.94	wall_seconds	35.95		3	syn_n1000_s2026101202_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101202		separated_helices		
+	1000			0.2529106140136719	0.25176239013671875	rss_gib	0.2501716613769531		3	syn_n1000_s2026101202_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101202		separated_helices		
+	1000			31.0	30.16	wall_seconds	25.61		3	syn_n1000_s2026101202_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_helices		
+	1000			0.2527351379394531	0.25260162353515625	rss_gib	0.251953125		3	syn_n1000_s2026101202_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_helices		
+	1000			30.21	26.27	wall_seconds	26.15		3	syn_n1000_s2026101202_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_helices		
+	1000			0.2526741027832031	0.2519989013671875	rss_gib	0.2519950866699219		3	syn_n1000_s2026101202_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_helices		
+	1000			36.98	35.33	wall_seconds	31.98		3	syn_n1000_s2026101203_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101203		balanced_branching		
+	1000			0.19944381713867188	0.19805908203125	rss_gib	0.19504165649414062		3	syn_n1000_s2026101203_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101203		balanced_branching		
+	1000			25.09	23.27	wall_seconds	21.28		3	syn_n1000_s2026101203_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		balanced_branching		
+	1000			0.18610000610351562	0.18589019775390625	rss_gib	0.1839447021484375		3	syn_n1000_s2026101203_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		balanced_branching		
+	1000			24.61	24.0	wall_seconds	21.53		3	syn_n1000_s2026101203_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		balanced_branching		
+	1000			0.18579864501953125	0.18562698364257812	rss_gib	0.18300628662109375		3	syn_n1000_s2026101203_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		balanced_branching		
+	1000			35.78	35.67	wall_seconds	31.11		3	syn_n1000_s2026101203_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d15		
+	1000			0.19760894775390625	0.19516754150390625	rss_gib	0.19489669799804688		3	syn_n1000_s2026101203_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d15		
+	1000			26.31	24.5	wall_seconds	21.58		3	syn_n1000_s2026101203_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d15		
+	1000			0.18923568725585938	0.18892669677734375	rss_gib	0.18868637084960938		3	syn_n1000_s2026101203_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d15		
+	1000			24.93	21.76	wall_seconds	21.69		3	syn_n1000_s2026101203_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d15		
+	1000			0.18939208984375	0.18914794921875	rss_gib	0.1879730224609375		3	syn_n1000_s2026101203_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d15		
+	1000			31.5	29.44	wall_seconds	29.17		3	syn_n1000_s2026101203_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d30		
+	1000			0.19828033447265625	0.19820404052734375	rss_gib	0.19720458984375		3	syn_n1000_s2026101203_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d30		
+	1000			24.16	20.6	wall_seconds	20.6		3	syn_n1000_s2026101203_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d30		
+	1000			0.18497085571289062	0.18429183959960938	rss_gib	0.18274307250976562		3	syn_n1000_s2026101203_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d30		
+	1000			24.06	20.73	wall_seconds	20.64		3	syn_n1000_s2026101203_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d30		
+	1000			0.18709182739257812	0.18435287475585938	rss_gib	0.18383407592773438		3	syn_n1000_s2026101203_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d30		
+	1000			32.07	31.99	wall_seconds	31.58		3	syn_n1000_s2026101203_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d31		
+	1000			0.20793914794921875	0.2071990966796875	rss_gib	0.20592498779296875		3	syn_n1000_s2026101203_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d31		
+	1000			23.95	21.88	wall_seconds	21.59		3	syn_n1000_s2026101203_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d31		
+	1000			0.19395065307617188	0.19376373291015625	rss_gib	0.19348526000976562		3	syn_n1000_s2026101203_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d31		
+	1000			22.12	22.01	wall_seconds	21.69		3	syn_n1000_s2026101203_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d31		
+	1000			0.191925048828125	0.19184494018554688	rss_gib	0.19144058227539062		3	syn_n1000_s2026101203_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d31		
+	1000			35.61	35.01	wall_seconds	32.08		3	syn_n1000_s2026101203_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101203		deep_branching		
+	1000			0.203399658203125	0.20044708251953125	rss_gib	0.19797515869140625		3	syn_n1000_s2026101203_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101203		deep_branching		
+	1000			24.85	23.56	wall_seconds	21.65		3	syn_n1000_s2026101203_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		deep_branching		
+	1000			0.1881561279296875	0.18763351440429688	rss_gib	0.18605804443359375		3	syn_n1000_s2026101203_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		deep_branching		
+	1000			24.9	21.78	wall_seconds	21.48		3	syn_n1000_s2026101203_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		deep_branching		
+	1000			0.18886947631835938	0.18873214721679688	rss_gib	0.1878204345703125		3	syn_n1000_s2026101203_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		deep_branching		
+	1000			64.12	62.04	wall_seconds	56.07		3	syn_n1000_s2026101203_empty		3C_detail	LinearCParty	synthetic_current	2026101203		empty		
+	1000			0.2839012145996094	0.28214263916015625	rss_gib	0.2798919677734375		3	syn_n1000_s2026101203_empty		3C_detail	LinearCParty	synthetic_current	2026101203		empty		
+	1000			45.79	42.71	wall_seconds	38.23		3	syn_n1000_s2026101203_empty		3C_detail	LinearPKCapR	synthetic_current	2026101203		empty		
+	1000			0.27646636962890625	0.27503204345703125	rss_gib	0.2750244140625		3	syn_n1000_s2026101203_empty		3C_detail	LinearPKCapR	synthetic_current	2026101203		empty		
+	1000			42.57	41.14	wall_seconds	38.17		3	syn_n1000_s2026101203_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101203		empty		
+	1000			0.2767601013183594	0.27611541748046875	rss_gib	0.27390289306640625		3	syn_n1000_s2026101203_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101203		empty		
+	1000			41.2	36.99	wall_seconds	36.22		3	syn_n1000_s2026101203_long_stem		3C_detail	LinearCParty	synthetic_current	2026101203		long_stem		
+	1000			0.20846176147460938	0.20795822143554688	rss_gib	0.20763015747070312		3	syn_n1000_s2026101203_long_stem		3C_detail	LinearCParty	synthetic_current	2026101203		long_stem		
+	1000			28.62	28.27	wall_seconds	24.76		3	syn_n1000_s2026101203_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101203		long_stem		
+	1000			0.20849609375	0.20790481567382812	rss_gib	0.20763778686523438		3	syn_n1000_s2026101203_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101203		long_stem		
+	1000			28.68	27.63	wall_seconds	24.89		3	syn_n1000_s2026101203_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101203		long_stem		
+	1000			0.20884323120117188	0.20873260498046875	rss_gib	0.20871734619140625		3	syn_n1000_s2026101203_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101203		long_stem		
+	1000			46.01	43.17	wall_seconds	39.26		3	syn_n1000_s2026101203_separated_12		3C_detail	LinearCParty	synthetic_current	2026101203		separated_12		
+	1000			0.27997589111328125	0.2795295715332031	rss_gib	0.2789115905761719		3	syn_n1000_s2026101203_separated_12		3C_detail	LinearCParty	synthetic_current	2026101203		separated_12		
+	1000			34.75	34.07	wall_seconds	29.76		3	syn_n1000_s2026101203_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_12		
+	1000			0.278961181640625	0.278961181640625	rss_gib	0.2788429260253906		3	syn_n1000_s2026101203_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_12		
+	1000			35.37	31.7	wall_seconds	29.92		3	syn_n1000_s2026101203_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_12		
+	1000			0.2797393798828125	0.2792701721191406	rss_gib	0.2787284851074219		3	syn_n1000_s2026101203_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_12		
+	1000			40.46	39.64	wall_seconds	38.88		3	syn_n1000_s2026101203_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101203		separated_concentrated		
+	1000			0.19188690185546875	0.1916961669921875	rss_gib	0.19064712524414062		3	syn_n1000_s2026101203_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101203		separated_concentrated		
+	1000			33.53	31.2	wall_seconds	27.85		3	syn_n1000_s2026101203_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_concentrated		
+	1000			0.18634796142578125	0.18609237670898438	rss_gib	0.18404388427734375		3	syn_n1000_s2026101203_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_concentrated		
+	1000			33.0	31.2	wall_seconds	28.28		3	syn_n1000_s2026101203_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_concentrated		
+	1000			0.18674087524414062	0.18612289428710938	rss_gib	0.18512725830078125		3	syn_n1000_s2026101203_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_concentrated		
+	1000			38.7	38.5	wall_seconds	33.62		3	syn_n1000_s2026101203_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101203		separated_helices		
+	1000			0.2529945373535156	0.2525520324707031	rss_gib	0.251983642578125		3	syn_n1000_s2026101203_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101203		separated_helices		
+	1000			27.82	26.37	wall_seconds	24.16		3	syn_n1000_s2026101203_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_helices		
+	1000			0.2529449462890625	0.25263214111328125	rss_gib	0.2520027160644531		3	syn_n1000_s2026101203_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_helices		
+	1000			27.33	27.33	wall_seconds	24.01		3	syn_n1000_s2026101203_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_helices		
+	1000			0.2520027160644531	0.2520027160644531	rss_gib	0.2518768310546875		3	syn_n1000_s2026101203_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_helices		
+	2000			114.45	111.78	wall_seconds	106.77		3	syn_n2000_s2026101201_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101201		balanced_branching		
+	2000			0.49570465087890625	0.4950141906738281	rss_gib	0.4949989318847656		3	syn_n2000_s2026101201_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101201		balanced_branching		
+	2000			74.45	70.73	wall_seconds	69.77		3	syn_n2000_s2026101201_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		balanced_branching		
+	2000			0.4958686828613281	0.4955482482910156	rss_gib	0.49297332763671875		3	syn_n2000_s2026101201_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		balanced_branching		
+	2000			81.21	77.96	wall_seconds	70.59		3	syn_n2000_s2026101201_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		balanced_branching		
+	2000			0.4950103759765625	0.4949684143066406	rss_gib	0.49434661865234375		3	syn_n2000_s2026101201_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		balanced_branching		
+	2000			120.65	116.07	wall_seconds	109.9		3	syn_n2000_s2026101201_branch_depth_d100		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d100		
+	2000			0.50531005859375	0.5050392150878906	rss_gib	0.5032386779785156		3	syn_n2000_s2026101201_branch_depth_d100		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d100		
+	2000			82.52	72.13	wall_seconds	70.53		3	syn_n2000_s2026101201_branch_depth_d100		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d100		
+	2000			0.5052833557128906	0.5052490234375	rss_gib	0.5031204223632812		3	syn_n2000_s2026101201_branch_depth_d100		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d100		
+	2000			80.23	79.66	wall_seconds	74.56		3	syn_n2000_s2026101201_branch_depth_d100		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d100		
+	2000			0.503204345703125	0.503204345703125	rss_gib	0.5030937194824219		3	syn_n2000_s2026101201_branch_depth_d100		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d100		
+	2000			108.39	106.29	wall_seconds	100.79		3	syn_n2000_s2026101201_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d15		
+	2000			0.69635009765625	0.69635009765625	rss_gib	0.6950187683105469		3	syn_n2000_s2026101201_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d15		
+	2000			82.38	79.92	wall_seconds	71.48		3	syn_n2000_s2026101201_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d15		
+	2000			0.6964225769042969	0.6963882446289062	rss_gib	0.6947746276855469		3	syn_n2000_s2026101201_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d15		
+	2000			81.81	80.2	wall_seconds	71.39		3	syn_n2000_s2026101201_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d15		
+	2000			0.6967658996582031	0.6964607238769531	rss_gib	0.6962394714355469		3	syn_n2000_s2026101201_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d15		
+	2000			104.41	101.72	wall_seconds	95.43		3	syn_n2000_s2026101201_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d30		
+	2000			0.6619834899902344	0.6611480712890625	rss_gib	0.66046142578125		3	syn_n2000_s2026101201_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d30		
+	2000			76.79	67.07	wall_seconds	67.03		3	syn_n2000_s2026101201_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d30		
+	2000			0.6618919372558594	0.6618881225585938	rss_gib	0.6611862182617188		3	syn_n2000_s2026101201_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d30		
+	2000			68.23	67.64	wall_seconds	67.09		3	syn_n2000_s2026101201_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d30		
+	2000			0.6617774963378906	0.6609420776367188	rss_gib	0.6606979370117188		3	syn_n2000_s2026101201_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d30		
+	2000			96.13	87.88	wall_seconds	87.47		3	syn_n2000_s2026101201_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d31		
+	2000			0.6589317321777344	0.6583480834960938	rss_gib	0.656585693359375		3	syn_n2000_s2026101201_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d31		
+	2000			70.55	61.2	wall_seconds	60.57		3	syn_n2000_s2026101201_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d31		
+	2000			0.6589279174804688	0.6577873229980469	rss_gib	0.6577377319335938		3	syn_n2000_s2026101201_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d31		
+	2000			69.78	69.77	wall_seconds	60.46		3	syn_n2000_s2026101201_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d31		
+	2000			0.6589469909667969	0.6586570739746094	rss_gib	0.6573524475097656		3	syn_n2000_s2026101201_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d31		
+	2000			124.07	110.1	wall_seconds	109.66		3	syn_n2000_s2026101201_branch_depth_d99		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d99		
+	2000			0.5061683654785156	0.5059776306152344	rss_gib	0.5058326721191406		3	syn_n2000_s2026101201_branch_depth_d99		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d99		
+	2000			81.24	78.69	wall_seconds	71.46		3	syn_n2000_s2026101201_branch_depth_d99		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d99		
+	2000			0.5076217651367188	0.5061988830566406	rss_gib	0.5060806274414062		3	syn_n2000_s2026101201_branch_depth_d99		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d99		
+	2000			79.68	79.02	wall_seconds	70.85		3	syn_n2000_s2026101201_branch_depth_d99		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d99		
+	2000			0.5073966979980469	0.5060882568359375	rss_gib	0.5060882568359375		3	syn_n2000_s2026101201_branch_depth_d99		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d99		
+	2000			116.07	115.15	wall_seconds	108.55		3	syn_n2000_s2026101201_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101201		deep_branching		
+	2000			0.501800537109375	0.50177001953125	rss_gib	0.5017013549804688		3	syn_n2000_s2026101201_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101201		deep_branching		
+	2000			78.73	71.21	wall_seconds	70.92		3	syn_n2000_s2026101201_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		deep_branching		
+	2000			0.5036277770996094	0.5028572082519531	rss_gib	0.5016593933105469		3	syn_n2000_s2026101201_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		deep_branching		
+	2000			80.97	79.1	wall_seconds	70.7		3	syn_n2000_s2026101201_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		deep_branching		
+	2000			0.5032463073730469	0.5032463073730469	rss_gib	0.5024948120117188		3	syn_n2000_s2026101201_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		deep_branching		
+	2000			150.14	142.47	wall_seconds	141.03		3	syn_n2000_s2026101201_empty		3C_detail	LinearCParty	synthetic_current	2026101201		empty		
+	2000			0.8358879089355469	0.8353042602539062	rss_gib	0.8347587585449219		3	syn_n2000_s2026101201_empty		3C_detail	LinearCParty	synthetic_current	2026101201		empty		
+	2000			111.6	98.77	wall_seconds	97.18		3	syn_n2000_s2026101201_empty		3C_detail	LinearPKCapR	synthetic_current	2026101201		empty		
+	2000			0.8381309509277344	0.835418701171875	rss_gib	0.8352775573730469		3	syn_n2000_s2026101201_empty		3C_detail	LinearPKCapR	synthetic_current	2026101201		empty		
+	2000			98.42	98.0	wall_seconds	97.7		3	syn_n2000_s2026101201_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101201		empty		
+	2000			0.8358726501464844	0.8356666564941406	rss_gib	0.8355369567871094		3	syn_n2000_s2026101201_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101201		empty		
+	2000			105.77	102.23	wall_seconds	93.72		3	syn_n2000_s2026101201_long_stem		3C_detail	LinearCParty	synthetic_current	2026101201		long_stem		
+	2000			0.7305908203125	0.7301025390625	rss_gib	0.7298507690429688		3	syn_n2000_s2026101201_long_stem		3C_detail	LinearCParty	synthetic_current	2026101201		long_stem		
+	2000			75.59	64.09	wall_seconds	63.83		3	syn_n2000_s2026101201_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101201		long_stem		
+	2000			0.7302932739257812	0.7293663024902344	rss_gib	0.7289619445800781		3	syn_n2000_s2026101201_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101201		long_stem		
+	2000			77.01	74.62	wall_seconds	64.12		3	syn_n2000_s2026101201_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101201		long_stem		
+	2000			0.7292747497558594	0.7292633056640625	rss_gib	0.728729248046875		3	syn_n2000_s2026101201_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101201		long_stem		
+	2000			105.24	96.89	wall_seconds	89.67		3	syn_n2000_s2026101201_separated_12		3C_detail	LinearCParty	synthetic_current	2026101201		separated_12		
+	2000			1.0649948120117188	1.0646591186523438	rss_gib	1.06439208984375		3	syn_n2000_s2026101201_separated_12		3C_detail	LinearCParty	synthetic_current	2026101201		separated_12		
+	2000			82.7	68.07	wall_seconds	66.92		3	syn_n2000_s2026101201_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_12		
+	2000			1.0658912658691406	1.0656051635742188	rss_gib	1.0651817321777344		3	syn_n2000_s2026101201_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_12		
+	2000			82.57	68.82	wall_seconds	66.6		3	syn_n2000_s2026101201_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_12		
+	2000			1.0659065246582031	1.065887451171875	rss_gib	1.0650787353515625		3	syn_n2000_s2026101201_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_12		
+	2000			118.55	113.45	wall_seconds	104.78		3	syn_n2000_s2026101201_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101201		separated_concentrated		
+	2000			0.49933624267578125	0.4989280700683594	rss_gib	0.4988441467285156		3	syn_n2000_s2026101201_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101201		separated_concentrated		
+	2000			76.34	76.21	wall_seconds	76.13		3	syn_n2000_s2026101201_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_concentrated		
+	2000			0.49985504150390625	0.4992179870605469	rss_gib	0.4987831115722656		3	syn_n2000_s2026101201_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_concentrated		
+	2000			92.04	77.58	wall_seconds	75.91		3	syn_n2000_s2026101201_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_concentrated		
+	2000			0.500518798828125	0.5001792907714844	rss_gib	0.4993553161621094		3	syn_n2000_s2026101201_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_concentrated		
+	2000			112.97	111.95	wall_seconds	101.92		3	syn_n2000_s2026101201_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101201		separated_helices		
+	2000			0.94708251953125	0.9470291137695312	rss_gib	0.9469146728515625		3	syn_n2000_s2026101201_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101201		separated_helices		
+	2000			88.96	73.31	wall_seconds	73.13		3	syn_n2000_s2026101201_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_helices		
+	2000			0.9452400207519531	0.9436683654785156	rss_gib	0.9423103332519531		3	syn_n2000_s2026101201_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_helices		
+	2000			87.67	82.96	wall_seconds	74.89		3	syn_n2000_s2026101201_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_helices		
+	2000			0.9469070434570312	0.9461593627929688	rss_gib	0.9460639953613281		3	syn_n2000_s2026101201_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_helices		
+	2000			125.4	125.22	wall_seconds	116.65		3	syn_n2000_s2026101202_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101202		balanced_branching		
+	2000			0.4958763122558594	0.49587249755859375	rss_gib	0.4948539733886719		3	syn_n2000_s2026101202_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101202		balanced_branching		
+	2000			87.12	85.69	wall_seconds	75.63		3	syn_n2000_s2026101202_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		balanced_branching		
+	2000			0.4959449768066406	0.49526214599609375	rss_gib	0.4943733215332031		3	syn_n2000_s2026101202_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		balanced_branching		
+	2000			86.41	85.39	wall_seconds	74.71		3	syn_n2000_s2026101202_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		balanced_branching		
+	2000			0.4958381652832031	0.4958381652832031	rss_gib	0.494293212890625		3	syn_n2000_s2026101202_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		balanced_branching		
+	2000			122.83	120.44	wall_seconds	115.12		3	syn_n2000_s2026101202_branch_depth_d100		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d100		
+	2000			0.5051765441894531	0.5030097961425781	rss_gib	0.5030059814453125		3	syn_n2000_s2026101202_branch_depth_d100		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d100		
+	2000			85.52	84.69	wall_seconds	74.47		3	syn_n2000_s2026101202_branch_depth_d100		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d100		
+	2000			0.5060501098632812	0.5046653747558594	rss_gib	0.5036430358886719		3	syn_n2000_s2026101202_branch_depth_d100		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d100		
+	2000			87.08	84.41	wall_seconds	74.49		3	syn_n2000_s2026101202_branch_depth_d100		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d100		
+	2000			0.5054244995117188	0.50457763671875	rss_gib	0.5032501220703125		3	syn_n2000_s2026101202_branch_depth_d100		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d100		
+	2000			117.09	115.83	wall_seconds	104.69		3	syn_n2000_s2026101202_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d15		
+	2000			0.6964530944824219	0.6964530944824219	rss_gib	0.6948318481445312		3	syn_n2000_s2026101202_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d15		
+	2000			89.22	74.87	wall_seconds	74.71		3	syn_n2000_s2026101202_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d15		
+	2000			0.6964950561523438	0.6962776184082031	rss_gib	0.6957206726074219		3	syn_n2000_s2026101202_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d15		
+	2000			86.62	85.9	wall_seconds	74.59		3	syn_n2000_s2026101202_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d15		
+	2000			0.6968040466308594	0.6956787109375	rss_gib	0.6952934265136719		3	syn_n2000_s2026101202_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d15		
+	2000			102.26	102.04	wall_seconds	101.99		3	syn_n2000_s2026101202_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d30		
+	2000			0.6603889465332031	0.6603317260742188	rss_gib	0.6602973937988281		3	syn_n2000_s2026101202_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d30		
+	2000			82.64	70.41	wall_seconds	70.26		3	syn_n2000_s2026101202_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d30		
+	2000			0.6617546081542969	0.6605453491210938	rss_gib	0.6603813171386719		3	syn_n2000_s2026101202_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d30		
+	2000			83.2	81.37	wall_seconds	70.73		3	syn_n2000_s2026101202_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d30		
+	2000			0.66162109375	0.6608848571777344	rss_gib	0.6607666015625		3	syn_n2000_s2026101202_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d30		
+	2000			97.94	97.51	wall_seconds	88.99		3	syn_n2000_s2026101202_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d31		
+	2000			0.6589546203613281	0.657958984375	rss_gib	0.6573638916015625		3	syn_n2000_s2026101202_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d31		
+	2000			71.78	70.41	wall_seconds	61.34		3	syn_n2000_s2026101202_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d31		
+	2000			0.6594581604003906	0.6583251953125	rss_gib	0.6577377319335938		3	syn_n2000_s2026101202_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d31		
+	2000			70.52	70.18	wall_seconds	61.6		3	syn_n2000_s2026101202_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d31		
+	2000			0.6580886840820312	0.6577339172363281	rss_gib	0.6573753356933594		3	syn_n2000_s2026101202_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d31		
+	2000			120.87	112.56	wall_seconds	111.95		3	syn_n2000_s2026101202_branch_depth_d99		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d99		
+	2000			0.506256103515625	0.5062522888183594	rss_gib	0.5061721801757812		3	syn_n2000_s2026101202_branch_depth_d99		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d99		
+	2000			86.24	81.44	wall_seconds	74.36		3	syn_n2000_s2026101202_branch_depth_d99		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d99		
+	2000			0.5074615478515625	0.5061836242675781	rss_gib	0.5054206848144531		3	syn_n2000_s2026101202_branch_depth_d99		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d99		
+	2000			83.82	82.47	wall_seconds	75.09		3	syn_n2000_s2026101202_branch_depth_d99		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d99		
+	2000			0.5062484741210938	0.5062484741210938	rss_gib	0.5062446594238281		3	syn_n2000_s2026101202_branch_depth_d99		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d99		
+	2000			118.51	117.54	wall_seconds	111.33		3	syn_n2000_s2026101202_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101202		deep_branching		
+	2000			0.5033340454101562	0.5025634765625	rss_gib	0.5022125244140625		3	syn_n2000_s2026101202_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101202		deep_branching		
+	2000			82.85	81.37	wall_seconds	74.77		3	syn_n2000_s2026101202_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		deep_branching		
+	2000			0.5033760070800781	0.5030593872070312	rss_gib	0.5023040771484375		3	syn_n2000_s2026101202_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		deep_branching		
+	2000			85.84	81.84	wall_seconds	75.15		3	syn_n2000_s2026101202_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		deep_branching		
+	2000			0.5026054382324219	0.5022621154785156	rss_gib	0.5020866394042969		3	syn_n2000_s2026101202_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		deep_branching		
+	2000			159.37	156.57	wall_seconds	152.0		3	syn_n2000_s2026101202_empty		3C_detail	LinearCParty	synthetic_current	2026101202		empty		
+	2000			0.8356742858886719	0.8349647521972656	rss_gib	0.8343315124511719		3	syn_n2000_s2026101202_empty		3C_detail	LinearCParty	synthetic_current	2026101202		empty		
+	2000			119.06	101.92	wall_seconds	101.05		3	syn_n2000_s2026101202_empty		3C_detail	LinearPKCapR	synthetic_current	2026101202		empty		
+	2000			0.8354873657226562	0.8353195190429688	rss_gib	0.8351402282714844		3	syn_n2000_s2026101202_empty		3C_detail	LinearPKCapR	synthetic_current	2026101202		empty		
+	2000			111.7	111.59	wall_seconds	102.62		3	syn_n2000_s2026101202_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101202		empty		
+	2000			0.8361930847167969	0.8352851867675781	rss_gib	0.8321380615234375		3	syn_n2000_s2026101202_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101202		empty		
+	2000			119.82	104.1	wall_seconds	102.38		3	syn_n2000_s2026101202_long_stem		3C_detail	LinearCParty	synthetic_current	2026101202		long_stem		
+	2000			0.730560302734375	0.7290573120117188	rss_gib	0.7289314270019531		3	syn_n2000_s2026101202_long_stem		3C_detail	LinearCParty	synthetic_current	2026101202		long_stem		
+	2000			90.51	84.31	wall_seconds	78.4		3	syn_n2000_s2026101202_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101202		long_stem		
+	2000			0.7304725646972656	0.7300872802734375	rss_gib	0.7300872802734375		3	syn_n2000_s2026101202_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101202		long_stem		
+	2000			85.73	82.16	wall_seconds	72.2		3	syn_n2000_s2026101202_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101202		long_stem		
+	2000			0.7299537658691406	0.7292861938476562	rss_gib	0.7291526794433594		3	syn_n2000_s2026101202_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101202		long_stem		
+	2000			100.76	98.36	wall_seconds	88.92		3	syn_n2000_s2026101202_separated_12		3C_detail	LinearCParty	synthetic_current	2026101202		separated_12		
+	2000			1.0658187866210938	1.0650100708007812	rss_gib	1.0641670227050781		3	syn_n2000_s2026101202_separated_12		3C_detail	LinearCParty	synthetic_current	2026101202		separated_12		
+	2000			79.8	68.42	wall_seconds	66.71		3	syn_n2000_s2026101202_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_12		
+	2000			1.0659065246582031	1.0653419494628906	rss_gib	1.0650177001953125		3	syn_n2000_s2026101202_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_12		
+	2000			79.75	79.44	wall_seconds	68.0		3	syn_n2000_s2026101202_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_12		
+	2000			1.0658187866210938	1.0647163391113281	rss_gib	1.064422607421875		3	syn_n2000_s2026101202_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_12		
+	2000			114.3	112.83	wall_seconds	105.36		3	syn_n2000_s2026101202_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101202		separated_concentrated		
+	2000			0.501800537109375	0.5002479553222656	rss_gib	0.5001792907714844		3	syn_n2000_s2026101202_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101202		separated_concentrated		
+	2000			90.05	88.08	wall_seconds	77.64		3	syn_n2000_s2026101202_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_concentrated		
+	2000			0.500457763671875	0.5000534057617188	rss_gib	0.49921417236328125		3	syn_n2000_s2026101202_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_concentrated		
+	2000			86.99	77.54	wall_seconds	76.89		3	syn_n2000_s2026101202_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_concentrated		
+	2000			0.5017929077148438	0.50030517578125	rss_gib	0.4994697570800781		3	syn_n2000_s2026101202_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_concentrated		
+	2000			116.55	110.64	wall_seconds	102.61		3	syn_n2000_s2026101202_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101202		separated_helices		
+	2000			0.9470977783203125	0.946868896484375	rss_gib	0.9465866088867188		3	syn_n2000_s2026101202_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101202		separated_helices		
+	2000			87.67	87.33	wall_seconds	73.26		3	syn_n2000_s2026101202_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_helices		
+	2000			0.9452857971191406	0.9448165893554688	rss_gib	0.9444694519042969		3	syn_n2000_s2026101202_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_helices		
+	2000			93.28	84.54	wall_seconds	73.4		3	syn_n2000_s2026101202_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_helices		
+	2000			0.9462432861328125	0.9459114074707031	rss_gib	0.9445457458496094		3	syn_n2000_s2026101202_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_helices		
+	2000			119.3	112.86	wall_seconds	112.11		3	syn_n2000_s2026101203_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101203		balanced_branching		
+	2000			0.4956512451171875	0.4954414367675781	rss_gib	0.494842529296875		3	syn_n2000_s2026101203_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101203		balanced_branching		
+	2000			81.33	73.73	wall_seconds	72.42		3	syn_n2000_s2026101203_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		balanced_branching		
+	2000			0.4958915710449219	0.4948272705078125	rss_gib	0.4943504333496094		3	syn_n2000_s2026101203_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		balanced_branching		
+	2000			84.63	82.42	wall_seconds	72.97		3	syn_n2000_s2026101203_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		balanced_branching		
+	2000			0.4958686828613281	0.4947090148925781	rss_gib	0.4942970275878906		3	syn_n2000_s2026101203_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		balanced_branching		
+	2000			116.2	109.36	wall_seconds	109.0		3	syn_n2000_s2026101203_branch_depth_d100		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d100		
+	2000			0.5057640075683594	0.505401611328125	rss_gib	0.5032196044921875		3	syn_n2000_s2026101203_branch_depth_d100		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d100		
+	2000			80.02	72.4	wall_seconds	72.05		3	syn_n2000_s2026101203_branch_depth_d100		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d100		
+	2000			0.5031890869140625	0.5031890869140625	rss_gib	0.5031814575195312		3	syn_n2000_s2026101203_branch_depth_d100		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d100		
+	2000			79.98	79.17	wall_seconds	72.11		3	syn_n2000_s2026101203_branch_depth_d100		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d100		
+	2000			0.5058708190917969	0.5052986145019531	rss_gib	0.5032463073730469		3	syn_n2000_s2026101203_branch_depth_d100		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d100		
+	2000			116.82	115.76	wall_seconds	104.55		3	syn_n2000_s2026101203_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d15		
+	2000			0.6969032287597656	0.6965179443359375	rss_gib	0.696258544921875		3	syn_n2000_s2026101203_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d15		
+	2000			88.72	88.45	wall_seconds	74.07		3	syn_n2000_s2026101203_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d15		
+	2000			0.6969261169433594	0.6964988708496094	rss_gib	0.6934242248535156		3	syn_n2000_s2026101203_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d15		
+	2000			86.42	74.51	wall_seconds	74.27		3	syn_n2000_s2026101203_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d15		
+	2000			0.6970252990722656	0.6952667236328125	rss_gib	0.6946144104003906		3	syn_n2000_s2026101203_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d15		
+	2000			102.09	91.02	wall_seconds	90.33		3	syn_n2000_s2026101203_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d30		
+	2000			0.6622695922851562	0.6617279052734375	rss_gib	0.6611595153808594		3	syn_n2000_s2026101203_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d30		
+	2000			73.43	62.92	wall_seconds	62.28		3	syn_n2000_s2026101203_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d30		
+	2000			0.6610755920410156	0.6609725952148438	rss_gib	0.6609573364257812		3	syn_n2000_s2026101203_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d30		
+	2000			72.21	63.94	wall_seconds	63.07		3	syn_n2000_s2026101203_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d30		
+	2000			0.6621665954589844	0.6618156433105469	rss_gib	0.6604804992675781		3	syn_n2000_s2026101203_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d30		
+	2000			94.78	88.38	wall_seconds	87.69		3	syn_n2000_s2026101203_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d31		
+	2000			0.6594619750976562	0.6589584350585938	rss_gib	0.6586761474609375		3	syn_n2000_s2026101203_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d31		
+	2000			70.86	68.95	wall_seconds	60.84		3	syn_n2000_s2026101203_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d31		
+	2000			0.6589851379394531	0.6589469909667969	rss_gib	0.6582756042480469		3	syn_n2000_s2026101203_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d31		
+	2000			71.7	70.46	wall_seconds	61.14		3	syn_n2000_s2026101203_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d31		
+	2000			0.6593399047851562	0.6589241027832031	rss_gib	0.6580772399902344		3	syn_n2000_s2026101203_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d31		
+	2000			115.22	109.98	wall_seconds	108.91		3	syn_n2000_s2026101203_branch_depth_d99		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d99		
+	2000			0.50653076171875	0.5061302185058594	rss_gib	0.5053901672363281		3	syn_n2000_s2026101203_branch_depth_d99		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d99		
+	2000			78.25	72.07	wall_seconds	71.52		3	syn_n2000_s2026101203_branch_depth_d99		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d99		
+	2000			0.506683349609375	0.5063133239746094	rss_gib	0.5059547424316406		3	syn_n2000_s2026101203_branch_depth_d99		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d99		
+	2000			81.32	72.38	wall_seconds	72.01		3	syn_n2000_s2026101203_branch_depth_d99		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d99		
+	2000			0.5080680847167969	0.5061187744140625	rss_gib	0.5061187744140625		3	syn_n2000_s2026101203_branch_depth_d99		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d99		
+	2000			115.91	111.64	wall_seconds	109.04		3	syn_n2000_s2026101203_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101203		deep_branching		
+	2000			0.5033912658691406	0.5033340454101562	rss_gib	0.5018577575683594		3	syn_n2000_s2026101203_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101203		deep_branching		
+	2000			82.69	79.04	wall_seconds	71.26		3	syn_n2000_s2026101203_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		deep_branching		
+	2000			0.5032730102539062	0.5032730102539062	rss_gib	0.5031318664550781		3	syn_n2000_s2026101203_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		deep_branching		
+	2000			81.07	80.75	wall_seconds	70.97		3	syn_n2000_s2026101203_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		deep_branching		
+	2000			0.5032768249511719	0.5028419494628906	rss_gib	0.5023880004882812		3	syn_n2000_s2026101203_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		deep_branching		
+	2000			164.16	159.01	wall_seconds	148.89		3	syn_n2000_s2026101203_empty		3C_detail	LinearCParty	synthetic_current	2026101203		empty		
+	2000			0.8359527587890625	0.8354034423828125	rss_gib	0.83502197265625		3	syn_n2000_s2026101203_empty		3C_detail	LinearCParty	synthetic_current	2026101203		empty		
+	2000			123.31	108.27	wall_seconds	104.41		3	syn_n2000_s2026101203_empty		3C_detail	LinearPKCapR	synthetic_current	2026101203		empty		
+	2000			0.8359031677246094	0.8357391357421875	rss_gib	0.8349494934082031		3	syn_n2000_s2026101203_empty		3C_detail	LinearPKCapR	synthetic_current	2026101203		empty		
+	2000			115.88	114.99	wall_seconds	104.35		3	syn_n2000_s2026101203_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101203		empty		
+	2000			0.8358345031738281	0.8354873657226562	rss_gib	0.8341217041015625		3	syn_n2000_s2026101203_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101203		empty		
+	2000			114.29	105.6	wall_seconds	104.62		3	syn_n2000_s2026101203_long_stem		3C_detail	LinearCParty	synthetic_current	2026101203		long_stem		
+	2000			0.7299232482910156	0.7292327880859375	rss_gib	0.7285423278808594		3	syn_n2000_s2026101203_long_stem		3C_detail	LinearCParty	synthetic_current	2026101203		long_stem		
+	2000			87.8	84.88	wall_seconds	73.13		3	syn_n2000_s2026101203_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101203		long_stem		
+	2000			0.7303390502929688	0.7303390502929688	rss_gib	0.7299842834472656		3	syn_n2000_s2026101203_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101203		long_stem		
+	2000			75.84	74.92	wall_seconds	73.43		3	syn_n2000_s2026101203_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101203		long_stem		
+	2000			0.7299842834472656	0.7289505004882812	rss_gib	0.7289199829101562		3	syn_n2000_s2026101203_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101203		long_stem		
+	2000			98.24	97.56	wall_seconds	87.89		3	syn_n2000_s2026101203_separated_12		3C_detail	LinearCParty	synthetic_current	2026101203		separated_12		
+	2000			1.0657920837402344	1.0657234191894531	rss_gib	1.0655059814453125		3	syn_n2000_s2026101203_separated_12		3C_detail	LinearCParty	synthetic_current	2026101203		separated_12		
+	2000			81.3	77.79	wall_seconds	67.0		3	syn_n2000_s2026101203_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_12		
+	2000			1.0660400390625	1.0659828186035156	rss_gib	1.0645828247070312		3	syn_n2000_s2026101203_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_12		
+	2000			80.75	74.82	wall_seconds	67.63		3	syn_n2000_s2026101203_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_12		
+	2000			1.0663604736328125	1.0658493041992188	rss_gib	1.0649261474609375		3	syn_n2000_s2026101203_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_12		
+	2000			117.34	115.05	wall_seconds	106.63		3	syn_n2000_s2026101203_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101203		separated_concentrated		
+	2000			0.5013923645019531	0.5003700256347656	rss_gib	0.50006103515625		3	syn_n2000_s2026101203_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101203		separated_concentrated		
+	2000			93.35	91.78	wall_seconds	77.97		3	syn_n2000_s2026101203_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_concentrated		
+	2000			0.5013694763183594	0.5012664794921875	rss_gib	0.4988594055175781		3	syn_n2000_s2026101203_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_concentrated		
+	2000			88.03	78.03	wall_seconds	77.77		3	syn_n2000_s2026101203_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_concentrated		
+	2000			0.5011940002441406	0.4998283386230469	rss_gib	0.49919891357421875		3	syn_n2000_s2026101203_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_concentrated		
+	2000			116.3	108.87	wall_seconds	105.21		3	syn_n2000_s2026101203_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101203		separated_helices		
+	2000			0.9454460144042969	0.9447860717773438	rss_gib	0.9414634704589844		3	syn_n2000_s2026101203_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101203		separated_helices		
+	2000			90.49	90.08	wall_seconds	74.5		3	syn_n2000_s2026101203_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_helices		
+	2000			0.9466056823730469	0.9452438354492188	rss_gib	0.945220947265625		3	syn_n2000_s2026101203_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_helices		
+	2000			90.08	76.0	wall_seconds	75.18		3	syn_n2000_s2026101203_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_helices		
+	2000			0.9462165832519531	0.9459800720214844	rss_gib	0.9446487426757812		3	syn_n2000_s2026101203_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_helices		
+	250			1.87	1.82	wall_seconds	1.78		3	syn_n250_s2026101201_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101201		balanced_branching		
+	250			0.04405975341796875	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101201_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101201		balanced_branching		
+	250			1.39	1.37	wall_seconds	1.34		3	syn_n250_s2026101201_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		balanced_branching		
+	250			0.0439453125	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101201_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		balanced_branching		
+	250			1.41	1.38	wall_seconds	1.35		3	syn_n250_s2026101201_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		balanced_branching		
+	250			0.0439453125	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101201_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		balanced_branching		
+	250			2.21	2.19	wall_seconds	2.06		3	syn_n250_s2026101201_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d15		
+	250			0.049404144287109375	0.049198150634765625	rss_gib	0.0491943359375		3	syn_n250_s2026101201_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d15		
+	250			1.6	1.6	wall_seconds	1.54		3	syn_n250_s2026101201_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d15		
+	250			0.04650115966796875	0.04650115966796875	rss_gib	0.04650115966796875		3	syn_n250_s2026101201_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d15		
+	250			1.62	1.6	wall_seconds	1.56		3	syn_n250_s2026101201_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d15		
+	250			0.046512603759765625	0.0465087890625	rss_gib	0.046504974365234375		3	syn_n250_s2026101201_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d15		
+	250			1.96	1.88	wall_seconds	1.79		3	syn_n250_s2026101201_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101201		deep_branching		
+	250			0.04448699951171875	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101201_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101201		deep_branching		
+	250			1.42	1.4	wall_seconds	1.35		3	syn_n250_s2026101201_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		deep_branching		
+	250			0.0439453125	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101201_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		deep_branching		
+	250			1.47	1.39	wall_seconds	1.36		3	syn_n250_s2026101201_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		deep_branching		
+	250			0.0439453125	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101201_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		deep_branching		
+	250			5.89	5.66	wall_seconds	5.29		3	syn_n250_s2026101201_empty		3C_detail	LinearCParty	synthetic_current	2026101201		empty		
+	250			0.099609375	0.099609375	rss_gib	0.099609375		3	syn_n250_s2026101201_empty		3C_detail	LinearCParty	synthetic_current	2026101201		empty		
+	250			4.17	4.07	wall_seconds	3.72		3	syn_n250_s2026101201_empty		3C_detail	LinearPKCapR	synthetic_current	2026101201		empty		
+	250			0.0966796875	0.0966796875	rss_gib	0.0966796875		3	syn_n250_s2026101201_empty		3C_detail	LinearPKCapR	synthetic_current	2026101201		empty		
+	250			4.27	4.01	wall_seconds	3.8		3	syn_n250_s2026101201_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101201		empty		
+	250			0.0966796875	0.0966796875	rss_gib	0.0966796875		3	syn_n250_s2026101201_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101201		empty		
+	250			2.74	2.67	wall_seconds	2.54		3	syn_n250_s2026101201_long_stem		3C_detail	LinearCParty	synthetic_current	2026101201		long_stem		
+	250			0.0703125	0.0703125	rss_gib	0.0703125		3	syn_n250_s2026101201_long_stem		3C_detail	LinearCParty	synthetic_current	2026101201		long_stem		
+	250			1.9	1.89	wall_seconds	1.87		3	syn_n250_s2026101201_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101201		long_stem		
+	250			0.0673828125	0.0673828125	rss_gib	0.0673828125		3	syn_n250_s2026101201_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101201		long_stem		
+	250			1.95	1.89	wall_seconds	1.87		3	syn_n250_s2026101201_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101201		long_stem		
+	250			0.0673828125	0.0673828125	rss_gib	0.0673828125		3	syn_n250_s2026101201_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101201		long_stem		
+	250			2.89	2.81	wall_seconds	2.74		3	syn_n250_s2026101201_separated_12		3C_detail	LinearCParty	synthetic_current	2026101201		separated_12		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		3	syn_n250_s2026101201_separated_12		3C_detail	LinearCParty	synthetic_current	2026101201		separated_12		
+	250			2.25	2.17	wall_seconds	2.07		3	syn_n250_s2026101201_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_12		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		3	syn_n250_s2026101201_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_12		
+	250			2.22	2.14	wall_seconds	2.07		3	syn_n250_s2026101201_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_12		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		3	syn_n250_s2026101201_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_12		
+	250			3.0	2.93	wall_seconds	2.79		3	syn_n250_s2026101201_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101201		separated_concentrated		
+	250			0.064453125	0.064453125	rss_gib	0.064453125		3	syn_n250_s2026101201_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101201		separated_concentrated		
+	250			2.3	2.29	wall_seconds	2.2		3	syn_n250_s2026101201_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_concentrated		
+	250			0.0615234375	0.0615234375	rss_gib	0.0615234375		3	syn_n250_s2026101201_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_concentrated		
+	250			2.41	2.32	wall_seconds	2.23		3	syn_n250_s2026101201_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_concentrated		
+	250			0.0615234375	0.0615234375	rss_gib	0.0615234375		3	syn_n250_s2026101201_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_concentrated		
+	250			3.18	3.06	wall_seconds	2.91		3	syn_n250_s2026101201_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101201		separated_helices		
+	250			0.0615234375	0.0615234375	rss_gib	0.0615234375		3	syn_n250_s2026101201_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101201		separated_helices		
+	250			2.38	2.21	wall_seconds	2.19		3	syn_n250_s2026101201_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_helices		
+	250			0.05859375	0.05859375	rss_gib	0.05859375		3	syn_n250_s2026101201_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_helices		
+	250			2.4	2.34	wall_seconds	2.21		3	syn_n250_s2026101201_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_helices		
+	250			0.05859375	0.05859375	rss_gib	0.05859375		3	syn_n250_s2026101201_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_helices		
+	250			1.82	1.81	wall_seconds	1.73		3	syn_n250_s2026101202_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101202		balanced_branching		
+	250			0.0439453125	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101202_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101202		balanced_branching		
+	250			1.34	1.3	wall_seconds	1.29		3	syn_n250_s2026101202_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		balanced_branching		
+	250			0.0439453125	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101202_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		balanced_branching		
+	250			1.37	1.36	wall_seconds	1.32		3	syn_n250_s2026101202_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		balanced_branching		
+	250			0.0439453125	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101202_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		balanced_branching		
+	250			2.09	2.01	wall_seconds	2.0		3	syn_n250_s2026101202_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d15		
+	250			0.0498046875	0.0498046875	rss_gib	0.0498046875		3	syn_n250_s2026101202_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d15		
+	250			1.59	1.5	wall_seconds	1.48		3	syn_n250_s2026101202_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d15		
+	250			0.046875	0.046875	rss_gib	0.046875		3	syn_n250_s2026101202_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d15		
+	250			1.55	1.55	wall_seconds	1.49		3	syn_n250_s2026101202_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d15		
+	250			0.046875	0.046875	rss_gib	0.046875		3	syn_n250_s2026101202_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d15		
+	250			1.83	1.8	wall_seconds	1.73		3	syn_n250_s2026101202_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101202		deep_branching		
+	250			0.04427337646484375	0.0440826416015625	rss_gib	0.0439453125		3	syn_n250_s2026101202_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101202		deep_branching		
+	250			1.35	1.35	wall_seconds	1.31		3	syn_n250_s2026101202_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		deep_branching		
+	250			0.0439453125	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101202_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		deep_branching		
+	250			1.37	1.35	wall_seconds	1.31		3	syn_n250_s2026101202_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		deep_branching		
+	250			0.0439453125	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101202_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		deep_branching		
+	250			5.83	5.8	wall_seconds	5.53		3	syn_n250_s2026101202_empty		3C_detail	LinearCParty	synthetic_current	2026101202		empty		
+	250			0.0966796875	0.0966796875	rss_gib	0.0966796875		3	syn_n250_s2026101202_empty		3C_detail	LinearCParty	synthetic_current	2026101202		empty		
+	250			4.19	4.17	wall_seconds	4.16		3	syn_n250_s2026101202_empty		3C_detail	LinearPKCapR	synthetic_current	2026101202		empty		
+	250			0.09375	0.09375	rss_gib	0.09375		3	syn_n250_s2026101202_empty		3C_detail	LinearPKCapR	synthetic_current	2026101202		empty		
+	250			4.18	3.99	wall_seconds	3.98		3	syn_n250_s2026101202_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101202		empty		
+	250			0.09375	0.09375	rss_gib	0.09375		3	syn_n250_s2026101202_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101202		empty		
+	250			2.98	2.84	wall_seconds	2.78		3	syn_n250_s2026101202_long_stem		3C_detail	LinearCParty	synthetic_current	2026101202		long_stem		
+	250			0.0732421875	0.0732421875	rss_gib	0.0732421875		3	syn_n250_s2026101202_long_stem		3C_detail	LinearCParty	synthetic_current	2026101202		long_stem		
+	250			2.07	2.06	wall_seconds	2.0		3	syn_n250_s2026101202_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101202		long_stem		
+	250			0.0703125	0.0703125	rss_gib	0.0703125		3	syn_n250_s2026101202_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101202		long_stem		
+	250			2.21	2.13	wall_seconds	2.02		3	syn_n250_s2026101202_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101202		long_stem		
+	250			0.0703125	0.0703125	rss_gib	0.0703125		3	syn_n250_s2026101202_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101202		long_stem		
+	250			2.94	2.91	wall_seconds	2.75		3	syn_n250_s2026101202_separated_12		3C_detail	LinearCParty	synthetic_current	2026101202		separated_12		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		3	syn_n250_s2026101202_separated_12		3C_detail	LinearCParty	synthetic_current	2026101202		separated_12		
+	250			2.19	2.12	wall_seconds	2.07		3	syn_n250_s2026101202_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_12		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		3	syn_n250_s2026101202_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_12		
+	250			2.23	2.13	wall_seconds	2.06		3	syn_n250_s2026101202_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_12		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		3	syn_n250_s2026101202_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_12		
+	250			3.21	3.18	wall_seconds	3.08		3	syn_n250_s2026101202_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101202		separated_concentrated		
+	250			0.0615234375	0.0615234375	rss_gib	0.0615234375		3	syn_n250_s2026101202_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101202		separated_concentrated		
+	250			2.62	2.62	wall_seconds	2.47		3	syn_n250_s2026101202_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_concentrated		
+	250			0.0615234375	0.0615234375	rss_gib	0.0615234375		3	syn_n250_s2026101202_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_concentrated		
+	250			2.61	2.6	wall_seconds	2.5		3	syn_n250_s2026101202_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_concentrated		
+	250			0.0615234375	0.0615234375	rss_gib	0.0615234375		3	syn_n250_s2026101202_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_concentrated		
+	250			3.3	3.27	wall_seconds	3.1		3	syn_n250_s2026101202_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101202		separated_helices		
+	250			0.064453125	0.064453125	rss_gib	0.064453125		3	syn_n250_s2026101202_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101202		separated_helices		
+	250			2.35	2.33	wall_seconds	2.29		3	syn_n250_s2026101202_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_helices		
+	250			0.0615234375	0.0615234375	rss_gib	0.0615234375		3	syn_n250_s2026101202_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_helices		
+	250			2.4	2.38	wall_seconds	2.35		3	syn_n250_s2026101202_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_helices		
+	250			0.0615234375	0.0615234375	rss_gib	0.0615234375		3	syn_n250_s2026101202_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_helices		
+	250			1.73	1.68	wall_seconds	1.62		3	syn_n250_s2026101203_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101203		balanced_branching		
+	250			0.041015625	0.041015625	rss_gib	0.041015625		3	syn_n250_s2026101203_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101203		balanced_branching		
+	250			1.25	1.24	wall_seconds	1.23		3	syn_n250_s2026101203_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		balanced_branching		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		3	syn_n250_s2026101203_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		balanced_branching		
+	250			1.28	1.27	wall_seconds	1.23		3	syn_n250_s2026101203_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		balanced_branching		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		3	syn_n250_s2026101203_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		balanced_branching		
+	250			1.92	1.9	wall_seconds	1.87		3	syn_n250_s2026101203_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d15		
+	250			0.0439453125	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101203_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d15		
+	250			1.48	1.41	wall_seconds	1.4		3	syn_n250_s2026101203_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d15		
+	250			0.0439453125	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101203_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d15		
+	250			1.45	1.45	wall_seconds	1.4		3	syn_n250_s2026101203_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d15		
+	250			0.0439453125	0.0439453125	rss_gib	0.0439453125		3	syn_n250_s2026101203_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d15		
+	250			1.77	1.65	wall_seconds	1.64		3	syn_n250_s2026101203_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101203		deep_branching		
+	250			0.041015625	0.041015625	rss_gib	0.041015625		3	syn_n250_s2026101203_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101203		deep_branching		
+	250			1.28	1.26	wall_seconds	1.23		3	syn_n250_s2026101203_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		deep_branching		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		3	syn_n250_s2026101203_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		deep_branching		
+	250			1.26	1.24	wall_seconds	1.22		3	syn_n250_s2026101203_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		deep_branching		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		3	syn_n250_s2026101203_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		deep_branching		
+	250			5.89	5.77	wall_seconds	5.39		3	syn_n250_s2026101203_empty		3C_detail	LinearCParty	synthetic_current	2026101203		empty		
+	250			0.09375	0.09375	rss_gib	0.09375		3	syn_n250_s2026101203_empty		3C_detail	LinearCParty	synthetic_current	2026101203		empty		
+	250			4.09	4.08	wall_seconds	3.87		3	syn_n250_s2026101203_empty		3C_detail	LinearPKCapR	synthetic_current	2026101203		empty		
+	250			0.0908203125	0.0908203125	rss_gib	0.0908203125		3	syn_n250_s2026101203_empty		3C_detail	LinearPKCapR	synthetic_current	2026101203		empty		
+	250			4.21	4.12	wall_seconds	3.88		3	syn_n250_s2026101203_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101203		empty		
+	250			0.0908203125	0.0908203125	rss_gib	0.0908203125		3	syn_n250_s2026101203_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101203		empty		
+	250			2.89	2.88	wall_seconds	2.74		3	syn_n250_s2026101203_long_stem		3C_detail	LinearCParty	synthetic_current	2026101203		long_stem		
+	250			0.0673828125	0.0673828125	rss_gib	0.0673828125		3	syn_n250_s2026101203_long_stem		3C_detail	LinearCParty	synthetic_current	2026101203		long_stem		
+	250			2.08	2.04	wall_seconds	1.98		3	syn_n250_s2026101203_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101203		long_stem		
+	250			0.064453125	0.064453125	rss_gib	0.064453125		3	syn_n250_s2026101203_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101203		long_stem		
+	250			2.2	2.18	wall_seconds	1.96		3	syn_n250_s2026101203_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101203		long_stem		
+	250			0.064453125	0.064453125	rss_gib	0.064453125		3	syn_n250_s2026101203_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101203		long_stem		
+	250			3.0	2.89	wall_seconds	2.69		3	syn_n250_s2026101203_separated_12		3C_detail	LinearCParty	synthetic_current	2026101203		separated_12		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		3	syn_n250_s2026101203_separated_12		3C_detail	LinearCParty	synthetic_current	2026101203		separated_12		
+	250			2.11	2.05	wall_seconds	2.02		3	syn_n250_s2026101203_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_12		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		3	syn_n250_s2026101203_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_12		
+	250			2.1	2.03	wall_seconds	2.02		3	syn_n250_s2026101203_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_12		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		3	syn_n250_s2026101203_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_12		
+	250			2.85	2.8	wall_seconds	2.74		3	syn_n250_s2026101203_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101203		separated_concentrated		
+	250			0.058868408203125	0.058841705322265625	rss_gib	0.05863189697265625		3	syn_n250_s2026101203_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101203		separated_concentrated		
+	250			2.27	2.18	wall_seconds	2.15		3	syn_n250_s2026101203_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_concentrated		
+	250			0.05859375	0.05859375	rss_gib	0.05859375		3	syn_n250_s2026101203_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_concentrated		
+	250			2.46	2.26	wall_seconds	2.19		3	syn_n250_s2026101203_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_concentrated		
+	250			0.05859375	0.05859375	rss_gib	0.05859375		3	syn_n250_s2026101203_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_concentrated		
+	250			3.1	3.03	wall_seconds	2.88		3	syn_n250_s2026101203_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101203		separated_helices		
+	250			0.0615234375	0.0615234375	rss_gib	0.0615234375		3	syn_n250_s2026101203_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101203		separated_helices		
+	250			2.24	2.21	wall_seconds	2.11		3	syn_n250_s2026101203_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_helices		
+	250			0.0556640625	0.0556640625	rss_gib	0.0556640625		3	syn_n250_s2026101203_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_helices		
+	250			2.33	2.23	wall_seconds	2.13		3	syn_n250_s2026101203_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_helices		
+	250			0.0556640625	0.0556640625	rss_gib	0.0556640625		3	syn_n250_s2026101203_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_helices		
+	4000			198.12	197.86	wall_seconds	194.83		3	syn_n4000_s2026101201_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101201		balanced_branching		
+	4000			1.7703590393066406	1.7694206237792969	rss_gib	1.7692451477050781		3	syn_n4000_s2026101201_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101201		balanced_branching		
+	4000			144.92	138.16	wall_seconds	137.71		3	syn_n4000_s2026101201_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		balanced_branching		
+	4000			1.7703170776367188	1.7700386047363281	rss_gib	1.7690849304199219		3	syn_n4000_s2026101201_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		balanced_branching		
+	4000			138.05	137.99	wall_seconds	136.64		3	syn_n4000_s2026101201_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		balanced_branching		
+	4000			1.7705154418945312	1.7694740295410156	rss_gib	1.7676544189453125		3	syn_n4000_s2026101201_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		balanced_branching		
+	4000			198.84	197.32	wall_seconds	194.47		3	syn_n4000_s2026101201_branch_depth_d100		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d100		
+	4000			1.7759170532226562	1.775238037109375	rss_gib	1.7751808166503906		3	syn_n4000_s2026101201_branch_depth_d100		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d100		
+	4000			138.07	137.15	wall_seconds	137.1		3	syn_n4000_s2026101201_branch_depth_d100		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d100		
+	4000			1.7762413024902344	1.7762336730957031	rss_gib	1.7718124389648438		3	syn_n4000_s2026101201_branch_depth_d100		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d100		
+	4000			137.77	137.57	wall_seconds	137.14		3	syn_n4000_s2026101201_branch_depth_d100		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d100		
+	4000			1.7765350341796875	1.7756385803222656	rss_gib	1.7747993469238281		3	syn_n4000_s2026101201_branch_depth_d100		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d100		
+	4000			239.34	237.23	wall_seconds	234.53		3	syn_n4000_s2026101201_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d15		
+	4000			1.947906494140625	1.947601318359375	rss_gib	1.9465179443359375		3	syn_n4000_s2026101201_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d15		
+	4000			175.34	170.82	wall_seconds	170.45		3	syn_n4000_s2026101201_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d15		
+	4000			1.9475669860839844	1.94598388671875	rss_gib	1.9452095031738281		3	syn_n4000_s2026101201_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d15		
+	4000			172.57	172.21	wall_seconds	172.04		3	syn_n4000_s2026101201_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d15		
+	4000			1.9476089477539062	1.947235107421875	rss_gib	1.9457054138183594		3	syn_n4000_s2026101201_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d15		
+	4000			242.66	236.77	wall_seconds	236.01		3	syn_n4000_s2026101201_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d30		
+	4000			1.9183540344238281	1.918212890625	rss_gib	1.9178619384765625		3	syn_n4000_s2026101201_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d30		
+	4000			208.5	183.85	wall_seconds	172.56		3	syn_n4000_s2026101201_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d30		
+	4000			1.9180107116699219	1.9178962707519531	rss_gib	1.9174690246582031		3	syn_n4000_s2026101201_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d30		
+	4000			181.66	172.18	wall_seconds	170.62		3	syn_n4000_s2026101201_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d30		
+	4000			1.9181022644042969	1.9169273376464844	rss_gib	1.9166526794433594		3	syn_n4000_s2026101201_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d30		
+	4000			256.34	239.08	wall_seconds	233.28		3	syn_n4000_s2026101201_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d31		
+	4000			1.916900634765625	1.9162330627441406	rss_gib	1.9156036376953125		3	syn_n4000_s2026101201_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d31		
+	4000			174.63	167.08	wall_seconds	166.41		3	syn_n4000_s2026101201_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d31		
+	4000			1.9171028137207031	1.914520263671875	rss_gib	1.9128608703613281		3	syn_n4000_s2026101201_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d31		
+	4000			176.72	168.69	wall_seconds	167.43		3	syn_n4000_s2026101201_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d31		
+	4000			1.9163970947265625	1.915802001953125	rss_gib	1.9149436950683594		3	syn_n4000_s2026101201_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d31		
+	4000			195.74	195.5	wall_seconds	195.14		3	syn_n4000_s2026101201_branch_depth_d99		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d99		
+	4000			1.778228759765625	1.7780914306640625	rss_gib	1.7773284912109375		3	syn_n4000_s2026101201_branch_depth_d99		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d99		
+	4000			136.99	136.84	wall_seconds	136.11		3	syn_n4000_s2026101201_branch_depth_d99		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d99		
+	4000			1.7772941589355469	1.7772064208984375	rss_gib	1.7761955261230469		3	syn_n4000_s2026101201_branch_depth_d99		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d99		
+	4000			136.9	136.22	wall_seconds	136.22		3	syn_n4000_s2026101201_branch_depth_d99		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d99		
+	4000			1.7782325744628906	1.77703857421875	rss_gib	1.7769584655761719		3	syn_n4000_s2026101201_branch_depth_d99		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d99		
+	4000			199.28	198.44	wall_seconds	196.22		3	syn_n4000_s2026101201_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101201		deep_branching		
+	4000			1.7748336791992188	1.7747039794921875	rss_gib	1.7742958068847656		3	syn_n4000_s2026101201_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101201		deep_branching		
+	4000			138.78	138.34	wall_seconds	137.34		3	syn_n4000_s2026101201_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		deep_branching		
+	4000			1.774444580078125	1.7734489440917969	rss_gib	1.7711372375488281		3	syn_n4000_s2026101201_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		deep_branching		
+	4000			139.45	139.05	wall_seconds	138.06		3	syn_n4000_s2026101201_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		deep_branching		
+	4000			1.7739677429199219	1.7724342346191406	rss_gib	1.7718925476074219		3	syn_n4000_s2026101201_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		deep_branching		
+	4000			310.46	306.52	wall_seconds	306.46		3	syn_n4000_s2026101201_empty		3C_detail	LinearCParty	synthetic_current	2026101201		empty		
+	4000			1.8963127136230469	1.8950958251953125	rss_gib	1.8944664001464844		3	syn_n4000_s2026101201_empty		3C_detail	LinearCParty	synthetic_current	2026101201		empty		
+	4000			219.1	217.61	wall_seconds	217.31		3	syn_n4000_s2026101201_empty		3C_detail	LinearPKCapR	synthetic_current	2026101201		empty		
+	4000			1.8957481384277344	1.8950958251953125	rss_gib	1.8948287963867188		3	syn_n4000_s2026101201_empty		3C_detail	LinearPKCapR	synthetic_current	2026101201		empty		
+	4000			218.57	216.82	wall_seconds	216.72		3	syn_n4000_s2026101201_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101201		empty		
+	4000			1.8956031799316406	1.8948440551757812	rss_gib	1.8940162658691406		3	syn_n4000_s2026101201_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101201		empty		
+	4000			239.59	239.33	wall_seconds	237.86		3	syn_n4000_s2026101201_long_stem		3C_detail	LinearCParty	synthetic_current	2026101201		long_stem		
+	4000			1.9751815795898438	1.9749298095703125	rss_gib	1.9748001098632812		3	syn_n4000_s2026101201_long_stem		3C_detail	LinearCParty	synthetic_current	2026101201		long_stem		
+	4000			169.64	169.22	wall_seconds	169.0		3	syn_n4000_s2026101201_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101201		long_stem		
+	4000			1.9755516052246094	1.9740753173828125	rss_gib	1.9740715026855469		3	syn_n4000_s2026101201_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101201		long_stem		
+	4000			170.84	170.17	wall_seconds	168.79		3	syn_n4000_s2026101201_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101201		long_stem		
+	4000			1.9748573303222656	1.9745407104492188	rss_gib	1.9717979431152344		3	syn_n4000_s2026101201_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101201		long_stem		
+	4000			221.62	220.48	wall_seconds	218.14		3	syn_n4000_s2026101201_separated_12		3C_detail	LinearCParty	synthetic_current	2026101201		separated_12		
+	4000			2.6944618225097656	2.6940574645996094	rss_gib	2.6924705505371094		3	syn_n4000_s2026101201_separated_12		3C_detail	LinearCParty	synthetic_current	2026101201		separated_12		
+	4000			165.44	164.71	wall_seconds	164.27		3	syn_n4000_s2026101201_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_12		
+	4000			2.6942367553710938	2.6922531127929688	rss_gib	2.692058563232422		3	syn_n4000_s2026101201_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_12		
+	4000			168.67	167.84	wall_seconds	164.91		3	syn_n4000_s2026101201_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_12		
+	4000			2.692455291748047	2.692028045654297	rss_gib	2.691974639892578		3	syn_n4000_s2026101201_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_12		
+	4000			237.34	236.67	wall_seconds	235.59		3	syn_n4000_s2026101201_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101201		separated_concentrated		
+	4000			1.2585258483886719	1.2580604553222656	rss_gib	1.25640869140625		3	syn_n4000_s2026101201_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101201		separated_concentrated		
+	4000			173.16	172.25	wall_seconds	171.35		3	syn_n4000_s2026101201_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_concentrated		
+	4000			1.2486572265625	1.2479286193847656	rss_gib	1.2477684020996094		3	syn_n4000_s2026101201_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_concentrated		
+	4000			174.24	172.35	wall_seconds	171.52		3	syn_n4000_s2026101201_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_concentrated		
+	4000			1.2504692077636719	1.2501182556152344	rss_gib	1.25006103515625		3	syn_n4000_s2026101201_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_concentrated		
+	4000			223.0	222.88	wall_seconds	220.92		3	syn_n4000_s2026101201_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101201		separated_helices		
+	4000			2.4207534790039062	2.4180755615234375	rss_gib	2.4180374145507812		3	syn_n4000_s2026101201_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101201		separated_helices		
+	4000			157.34	157.14	wall_seconds	156.48		3	syn_n4000_s2026101201_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_helices		
+	4000			2.4202728271484375	2.4199371337890625	rss_gib	2.41851806640625		3	syn_n4000_s2026101201_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_helices		
+	4000			157.94	157.56	wall_seconds	157.16		3	syn_n4000_s2026101201_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_helices		
+	4000			2.4206085205078125	2.41925048828125	rss_gib	2.4191131591796875		3	syn_n4000_s2026101201_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_helices		
+	4000			198.01	197.25	wall_seconds	196.89		3	syn_n4000_s2026101202_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101202		balanced_branching		
+	4000			1.770263671875	1.7699356079101562	rss_gib	1.7696952819824219		3	syn_n4000_s2026101202_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101202		balanced_branching		
+	4000			139.82	139.22	wall_seconds	139.04		3	syn_n4000_s2026101202_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		balanced_branching		
+	4000			1.7692489624023438	1.7687110900878906	rss_gib	1.7683296203613281		3	syn_n4000_s2026101202_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		balanced_branching		
+	4000			138.6	138.06	wall_seconds	137.06		3	syn_n4000_s2026101202_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		balanced_branching		
+	4000			1.7696647644042969	1.7692298889160156	rss_gib	1.7670478820800781		3	syn_n4000_s2026101202_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		balanced_branching		
+	4000			203.18	200.76	wall_seconds	197.05		3	syn_n4000_s2026101202_branch_depth_d100		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d100		
+	4000			1.77630615234375	1.7744636535644531	rss_gib	1.7736892700195312		3	syn_n4000_s2026101202_branch_depth_d100		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d100		
+	4000			139.33	138.02	wall_seconds	136.08		3	syn_n4000_s2026101202_branch_depth_d100		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d100		
+	4000			1.77642822265625	1.7746505737304688	rss_gib	1.7743873596191406		3	syn_n4000_s2026101202_branch_depth_d100		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d100		
+	4000			141.48	139.26	wall_seconds	138.23		3	syn_n4000_s2026101202_branch_depth_d100		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d100		
+	4000			1.7764892578125	1.7764816284179688	rss_gib	1.775482177734375		3	syn_n4000_s2026101202_branch_depth_d100		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d100		
+	4000			217.54	217.19	wall_seconds	217.08		3	syn_n4000_s2026101202_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d15		
+	4000			1.9477043151855469	1.9476814270019531	rss_gib	1.9456596374511719		3	syn_n4000_s2026101202_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d15		
+	4000			151.37	150.57	wall_seconds	149.76		3	syn_n4000_s2026101202_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d15		
+	4000			1.9470405578613281	1.9461784362792969	rss_gib	1.9450798034667969		3	syn_n4000_s2026101202_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d15		
+	4000			152.94	152.42	wall_seconds	152.16		3	syn_n4000_s2026101202_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d15		
+	4000			1.9459190368652344	1.9454498291015625	rss_gib	1.9453544616699219		3	syn_n4000_s2026101202_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d15		
+	4000			257.31	243.67	wall_seconds	231.9		3	syn_n4000_s2026101202_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d30		
+	4000			1.9180641174316406	1.918060302734375	rss_gib	1.9177932739257812		3	syn_n4000_s2026101202_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d30		
+	4000			179.71	171.12	wall_seconds	165.88		3	syn_n4000_s2026101202_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d30		
+	4000			1.9181785583496094	1.917236328125	rss_gib	1.91473388671875		3	syn_n4000_s2026101202_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d30		
+	4000			179.12	171.63	wall_seconds	168.75		3	syn_n4000_s2026101202_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d30		
+	4000			1.9183311462402344	1.9178428649902344	rss_gib	1.9175949096679688		3	syn_n4000_s2026101202_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d30		
+	4000			236.12	235.9	wall_seconds	235.21		3	syn_n4000_s2026101202_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d31		
+	4000			1.9158363342285156	1.9154701232910156	rss_gib	1.9153327941894531		3	syn_n4000_s2026101202_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d31		
+	4000			173.29	170.36	wall_seconds	168.58		3	syn_n4000_s2026101202_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d31		
+	4000			1.9160385131835938	1.9149894714355469	rss_gib	1.9147377014160156		3	syn_n4000_s2026101202_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d31		
+	4000			169.6	169.01	wall_seconds	168.76		3	syn_n4000_s2026101202_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d31		
+	4000			1.9175796508789062	1.9152488708496094	rss_gib	1.9150466918945312		3	syn_n4000_s2026101202_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d31		
+	4000			199.77	199.59	wall_seconds	197.6		3	syn_n4000_s2026101202_branch_depth_d99		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d99		
+	4000			1.7782478332519531	1.7765388488769531	rss_gib	1.7764930725097656		3	syn_n4000_s2026101202_branch_depth_d99		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d99		
+	4000			143.21	139.57	wall_seconds	137.9		3	syn_n4000_s2026101202_branch_depth_d99		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d99		
+	4000			1.7778854370117188	1.7769966125488281	rss_gib	1.7764549255371094		3	syn_n4000_s2026101202_branch_depth_d99		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d99		
+	4000			141.37	138.21	wall_seconds	137.77		3	syn_n4000_s2026101202_branch_depth_d99		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d99		
+	4000			1.7784156799316406	1.7770118713378906	rss_gib	1.776336669921875		3	syn_n4000_s2026101202_branch_depth_d99		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d99		
+	4000			202.73	201.66	wall_seconds	201.33		3	syn_n4000_s2026101202_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101202		deep_branching		
+	4000			1.7735137939453125	1.7726173400878906	rss_gib	1.7723884582519531		3	syn_n4000_s2026101202_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101202		deep_branching		
+	4000			154.29	140.72	wall_seconds	140.31		3	syn_n4000_s2026101202_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		deep_branching		
+	4000			1.7742271423339844	1.7724838256835938	rss_gib	1.7721633911132812		3	syn_n4000_s2026101202_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		deep_branching		
+	4000			158.04	143.35	wall_seconds	140.9		3	syn_n4000_s2026101202_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		deep_branching		
+	4000			1.7744026184082031	1.7726249694824219	rss_gib	1.7722549438476562		3	syn_n4000_s2026101202_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		deep_branching		
+	4000			337.18	333.26	wall_seconds	332.15		3	syn_n4000_s2026101202_empty		3C_detail	LinearCParty	synthetic_current	2026101202		empty		
+	4000			1.8958511352539062	1.8948707580566406	rss_gib	1.8942070007324219		3	syn_n4000_s2026101202_empty		3C_detail	LinearCParty	synthetic_current	2026101202		empty		
+	4000			238.5	237.13	wall_seconds	235.11		3	syn_n4000_s2026101202_empty		3C_detail	LinearPKCapR	synthetic_current	2026101202		empty		
+	4000			1.8966331481933594	1.8957366943359375	rss_gib	1.8953361511230469		3	syn_n4000_s2026101202_empty		3C_detail	LinearPKCapR	synthetic_current	2026101202		empty		
+	4000			236.26	235.64	wall_seconds	233.99		3	syn_n4000_s2026101202_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101202		empty		
+	4000			1.8963203430175781	1.8952751159667969	rss_gib	1.8942794799804688		3	syn_n4000_s2026101202_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101202		empty		
+	4000			222.24	221.95	wall_seconds	219.16		3	syn_n4000_s2026101202_long_stem		3C_detail	LinearCParty	synthetic_current	2026101202		long_stem		
+	4000			1.9757232666015625	1.9755821228027344	rss_gib	1.9747467041015625		3	syn_n4000_s2026101202_long_stem		3C_detail	LinearCParty	synthetic_current	2026101202		long_stem		
+	4000			154.19	153.69	wall_seconds	153.04		3	syn_n4000_s2026101202_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101202		long_stem		
+	4000			1.9746055603027344	1.9745063781738281	rss_gib	1.9738502502441406		3	syn_n4000_s2026101202_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101202		long_stem		
+	4000			154.71	153.0	wall_seconds	152.21		3	syn_n4000_s2026101202_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101202		long_stem		
+	4000			1.9759407043457031	1.9745407104492188	rss_gib	1.9743614196777344		3	syn_n4000_s2026101202_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101202		long_stem		
+	4000			238.1	238.03	wall_seconds	236.55		3	syn_n4000_s2026101202_separated_12		3C_detail	LinearCParty	synthetic_current	2026101202		separated_12		
+	4000			2.6937942504882812	2.6936912536621094	rss_gib	2.6936607360839844		3	syn_n4000_s2026101202_separated_12		3C_detail	LinearCParty	synthetic_current	2026101202		separated_12		
+	4000			179.75	177.08	wall_seconds	176.61		3	syn_n4000_s2026101202_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_12		
+	4000			2.694507598876953	2.6942825317382812	rss_gib	2.6922073364257812		3	syn_n4000_s2026101202_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_12		
+	4000			179.55	178.06	wall_seconds	176.38		3	syn_n4000_s2026101202_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_12		
+	4000			2.6946144104003906	2.6945419311523438	rss_gib	2.692150115966797		3	syn_n4000_s2026101202_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_12		
+	4000			261.25	249.37	wall_seconds	247.49		3	syn_n4000_s2026101202_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101202		separated_concentrated		
+	4000			1.2576408386230469	1.2560272216796875	rss_gib	1.2519950866699219		3	syn_n4000_s2026101202_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101202		separated_concentrated		
+	4000			183.0	182.82	wall_seconds	182.6		3	syn_n4000_s2026101202_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_concentrated		
+	4000			1.2485923767089844	1.2476577758789062	rss_gib	1.2475204467773438		3	syn_n4000_s2026101202_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_concentrated		
+	4000			186.07	184.17	wall_seconds	182.86		3	syn_n4000_s2026101202_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_concentrated		
+	4000			1.248565673828125	1.2476119995117188	rss_gib	1.2473716735839844		3	syn_n4000_s2026101202_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_concentrated		
+	4000			244.53	242.97	wall_seconds	241.94		3	syn_n4000_s2026101202_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101202		separated_helices		
+	4000			2.4203338623046875	2.4203262329101562	rss_gib	2.4202919006347656		3	syn_n4000_s2026101202_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101202		separated_helices		
+	4000			178.56	177.31	wall_seconds	176.09		3	syn_n4000_s2026101202_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_helices		
+	4000			2.4198989868164062	2.4191970825195312	rss_gib	2.41851806640625		3	syn_n4000_s2026101202_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_helices		
+	4000			181.14	178.71	wall_seconds	177.97		3	syn_n4000_s2026101202_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_helices		
+	4000			2.4205360412597656	2.4197006225585938	rss_gib	2.4196319580078125		3	syn_n4000_s2026101202_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_helices		
+	4000			204.79	202.02	wall_seconds	201.78		3	syn_n4000_s2026101203_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101203		balanced_branching		
+	4000			1.7694015502929688	1.7688522338867188	rss_gib	1.7688217163085938		3	syn_n4000_s2026101203_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101203		balanced_branching		
+	4000			140.8	140.5	wall_seconds	139.82		3	syn_n4000_s2026101203_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		balanced_branching		
+	4000			1.7694358825683594	1.7688064575195312	rss_gib	1.768341064453125		3	syn_n4000_s2026101203_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		balanced_branching		
+	4000			141.24	140.83	wall_seconds	140.78		3	syn_n4000_s2026101203_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		balanced_branching		
+	4000			1.7702789306640625	1.7688369750976562	rss_gib	1.7677688598632812		3	syn_n4000_s2026101203_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		balanced_branching		
+	4000			213.56	202.64	wall_seconds	202.25		3	syn_n4000_s2026101203_branch_depth_d100		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d100		
+	4000			1.7743110656738281	1.7741165161132812	rss_gib	1.7740364074707031		3	syn_n4000_s2026101203_branch_depth_d100		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d100		
+	4000			144.29	141.18	wall_seconds	140.86		3	syn_n4000_s2026101203_branch_depth_d100		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d100		
+	4000			1.7750816345214844	1.7738494873046875	rss_gib	1.7725257873535156		3	syn_n4000_s2026101203_branch_depth_d100		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d100		
+	4000			160.06	142.08	wall_seconds	141.75		3	syn_n4000_s2026101203_branch_depth_d100		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d100		
+	4000			1.775360107421875	1.7750663757324219	rss_gib	1.7728271484375		3	syn_n4000_s2026101203_branch_depth_d100		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d100		
+	4000			220.53	220.44	wall_seconds	220.07		3	syn_n4000_s2026101203_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d15		
+	4000			1.9477691650390625	1.9475288391113281	rss_gib	1.9454612731933594		3	syn_n4000_s2026101203_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d15		
+	4000			153.6	152.36	wall_seconds	151.72		3	syn_n4000_s2026101203_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d15		
+	4000			1.9470596313476562	1.9456901550292969	rss_gib	1.94537353515625		3	syn_n4000_s2026101203_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d15		
+	4000			155.64	154.25	wall_seconds	153.23		3	syn_n4000_s2026101203_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d15		
+	4000			1.9457168579101562	1.9454727172851562	rss_gib	1.9454421997070312		3	syn_n4000_s2026101203_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d15		
+	4000			243.99	241.99	wall_seconds	241.05		3	syn_n4000_s2026101203_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d30		
+	4000			1.918548583984375	1.91766357421875	rss_gib	1.9175224304199219		3	syn_n4000_s2026101203_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d30		
+	4000			173.85	171.71	wall_seconds	169.81		3	syn_n4000_s2026101203_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d30		
+	4000			1.9184036254882812	1.9183502197265625	rss_gib	1.91717529296875		3	syn_n4000_s2026101203_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d30		
+	4000			172.58	171.74	wall_seconds	170.52		3	syn_n4000_s2026101203_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d30		
+	4000			1.9187240600585938	1.9181365966796875	rss_gib	1.9177055358886719		3	syn_n4000_s2026101203_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d30		
+	4000			247.21	237.2	wall_seconds	235.55		3	syn_n4000_s2026101203_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d31		
+	4000			1.9167938232421875	1.9157066345214844	rss_gib	1.9147491455078125		3	syn_n4000_s2026101203_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d31		
+	4000			189.08	171.08	wall_seconds	168.37		3	syn_n4000_s2026101203_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d31		
+	4000			1.9179267883300781	1.9178466796875	rss_gib	1.9162788391113281		3	syn_n4000_s2026101203_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d31		
+	4000			172.86	170.12	wall_seconds	169.96		3	syn_n4000_s2026101203_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d31		
+	4000			1.9171638488769531	1.9161491394042969	rss_gib	1.9151420593261719		3	syn_n4000_s2026101203_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d31		
+	4000			209.49	208.99	wall_seconds	207.48		3	syn_n4000_s2026101203_branch_depth_d99		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d99		
+	4000			1.7783470153808594	1.7769699096679688	rss_gib	1.7766609191894531		3	syn_n4000_s2026101203_branch_depth_d99		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d99		
+	4000			145.18	145.1	wall_seconds	144.61		3	syn_n4000_s2026101203_branch_depth_d99		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d99		
+	4000			1.7781524658203125	1.7773208618164062	rss_gib	1.7766532897949219		3	syn_n4000_s2026101203_branch_depth_d99		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d99		
+	4000			147.71	145.64	wall_seconds	144.1		3	syn_n4000_s2026101203_branch_depth_d99		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d99		
+	4000			1.7777595520019531	1.7775650024414062	rss_gib	1.7761192321777344		3	syn_n4000_s2026101203_branch_depth_d99		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d99		
+	4000			201.0	200.45	wall_seconds	200.26		3	syn_n4000_s2026101203_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101203		deep_branching		
+	4000			1.7739639282226562	1.7735710144042969	rss_gib	1.7727241516113281		3	syn_n4000_s2026101203_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101203		deep_branching		
+	4000			139.24	138.13	wall_seconds	137.66		3	syn_n4000_s2026101203_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		deep_branching		
+	4000			1.7744865417480469	1.7744407653808594	rss_gib	1.7719383239746094		3	syn_n4000_s2026101203_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		deep_branching		
+	4000			139.24	139.19	wall_seconds	138.84		3	syn_n4000_s2026101203_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		deep_branching		
+	4000			1.7723731994628906	1.7722320556640625	rss_gib	1.7715377807617188		3	syn_n4000_s2026101203_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		deep_branching		
+	4000			321.54	320.04	wall_seconds	318.68		3	syn_n4000_s2026101203_empty		3C_detail	LinearCParty	synthetic_current	2026101203		empty		
+	4000			1.8964576721191406	1.8964118957519531	rss_gib	1.8944931030273438		3	syn_n4000_s2026101203_empty		3C_detail	LinearCParty	synthetic_current	2026101203		empty		
+	4000			230.36	227.88	wall_seconds	225.4		3	syn_n4000_s2026101203_empty		3C_detail	LinearPKCapR	synthetic_current	2026101203		empty		
+	4000			1.8962440490722656	1.8952064514160156	rss_gib	1.894500732421875		3	syn_n4000_s2026101203_empty		3C_detail	LinearPKCapR	synthetic_current	2026101203		empty		
+	4000			229.77	228.13	wall_seconds	226.67		3	syn_n4000_s2026101203_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101203		empty		
+	4000			1.8949394226074219	1.89447021484375	rss_gib	1.8938331604003906		3	syn_n4000_s2026101203_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101203		empty		
+	4000			224.88	221.14	wall_seconds	220.49		3	syn_n4000_s2026101203_long_stem		3C_detail	LinearCParty	synthetic_current	2026101203		long_stem		
+	4000			1.9758110046386719	1.9746742248535156	rss_gib	1.9724769592285156		3	syn_n4000_s2026101203_long_stem		3C_detail	LinearCParty	synthetic_current	2026101203		long_stem		
+	4000			156.2	155.07	wall_seconds	154.22		3	syn_n4000_s2026101203_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101203		long_stem		
+	4000			1.9749183654785156	1.9742202758789062	rss_gib	1.9734878540039062		3	syn_n4000_s2026101203_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101203		long_stem		
+	4000			156.55	156.18	wall_seconds	155.21		3	syn_n4000_s2026101203_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101203		long_stem		
+	4000			1.9754829406738281	1.9741744995117188	rss_gib	1.9729194641113281		3	syn_n4000_s2026101203_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101203		long_stem		
+	4000			240.93	240.63	wall_seconds	240.43		3	syn_n4000_s2026101203_separated_12		3C_detail	LinearCParty	synthetic_current	2026101203		separated_12		
+	4000			2.6945877075195312	2.694347381591797	rss_gib	2.694263458251953		3	syn_n4000_s2026101203_separated_12		3C_detail	LinearCParty	synthetic_current	2026101203		separated_12		
+	4000			179.67	177.82	wall_seconds	176.91		3	syn_n4000_s2026101203_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_12		
+	4000			2.694324493408203	2.694049835205078	rss_gib	2.6940460205078125		3	syn_n4000_s2026101203_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_12		
+	4000			178.71	178.52	wall_seconds	176.99		3	syn_n4000_s2026101203_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_12		
+	4000			2.6943206787109375	2.692241668701172	rss_gib	2.6918792724609375		3	syn_n4000_s2026101203_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_12		
+	4000			244.67	242.69	wall_seconds	242.61		3	syn_n4000_s2026101203_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101203		separated_concentrated		
+	4000			1.2581748962402344	1.2573471069335938	rss_gib	1.2542953491210938		3	syn_n4000_s2026101203_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101203		separated_concentrated		
+	4000			177.69	175.97	wall_seconds	175.62		3	syn_n4000_s2026101203_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_concentrated		
+	4000			1.2485885620117188	1.2476539611816406	rss_gib	1.2465972900390625		3	syn_n4000_s2026101203_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_concentrated		
+	4000			176.04	175.49	wall_seconds	174.2		3	syn_n4000_s2026101203_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_concentrated		
+	4000			1.2481307983398438	1.2478408813476562	rss_gib	1.2468948364257812		3	syn_n4000_s2026101203_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_concentrated		
+	4000			225.93	224.32	wall_seconds	223.32		3	syn_n4000_s2026101203_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101203		separated_helices		
+	4000			2.420177459716797	2.4199981689453125	rss_gib	2.4181137084960938		3	syn_n4000_s2026101203_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101203		separated_helices		
+	4000			159.15	158.48	wall_seconds	158.11		3	syn_n4000_s2026101203_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_helices		
+	4000			2.419384002685547	2.4181747436523438	rss_gib	2.4169044494628906		3	syn_n4000_s2026101203_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_helices		
+	4000			159.23	156.47	wall_seconds	156.11		3	syn_n4000_s2026101203_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_helices		
+	4000			2.420246124267578	2.420085906982422	rss_gib	2.41693115234375		3	syn_n4000_s2026101203_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_helices		
+	500			9.28	8.68	wall_seconds	8.4		3	syn_n500_s2026101201_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101201		balanced_branching		
+	500			0.1171875	0.115692138671875	rss_gib	0.1142578125		3	syn_n500_s2026101201_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101201		balanced_branching		
+	500			6.47	6.44	wall_seconds	5.77		3	syn_n500_s2026101201_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		balanced_branching		
+	500			0.111328125	0.111328125	rss_gib	0.111328125		3	syn_n500_s2026101201_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		balanced_branching		
+	500			6.43	6.42	wall_seconds	5.8		3	syn_n500_s2026101201_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		balanced_branching		
+	500			0.111328125	0.111328125	rss_gib	0.111328125		3	syn_n500_s2026101201_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		balanced_branching		
+	500			13.5	13.32	wall_seconds	11.79		3	syn_n500_s2026101201_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d15		
+	500			0.1318359375	0.1318359375	rss_gib	0.1318359375		3	syn_n500_s2026101201_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d15		
+	500			9.4	9.39	wall_seconds	8.21		3	syn_n500_s2026101201_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d15		
+	500			0.12538909912109375	0.12309646606445312	rss_gib	0.12253952026367188		3	syn_n500_s2026101201_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d15		
+	500			9.97	9.06	wall_seconds	8.25		3	syn_n500_s2026101201_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d15		
+	500			0.12310791015625	0.123046875	rss_gib	0.123046875		3	syn_n500_s2026101201_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d15		
+	500			10.92	10.73	wall_seconds	9.69		3	syn_n500_s2026101201_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d30		
+	500			0.123046875	0.12204742431640625	rss_gib	0.118988037109375		3	syn_n500_s2026101201_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d30		
+	500			7.76	7.69	wall_seconds	6.64		3	syn_n500_s2026101201_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d30		
+	500			0.1171875	0.1171875	rss_gib	0.1142578125		3	syn_n500_s2026101201_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d30		
+	500			7.51	7.04	wall_seconds	6.63		3	syn_n500_s2026101201_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d30		
+	500			0.1171875	0.1171875	rss_gib	0.1171875		3	syn_n500_s2026101201_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d30		
+	500			10.85	10.81	wall_seconds	9.41		3	syn_n500_s2026101201_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d31		
+	500			0.12414169311523438	0.123046875	rss_gib	0.12129592895507812		3	syn_n500_s2026101201_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101201		branch_depth_d31		
+	500			7.35	7.28	wall_seconds	6.54		3	syn_n500_s2026101201_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d31		
+	500			0.1171875	0.1171875	rss_gib	0.1171875		3	syn_n500_s2026101201_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101201		branch_depth_d31		
+	500			7.81	7.44	wall_seconds	6.69		3	syn_n500_s2026101201_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d31		
+	500			0.1171875	0.11601638793945312	rss_gib	0.11588668823242188		3	syn_n500_s2026101201_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101201		branch_depth_d31		
+	500			9.46	8.7	wall_seconds	8.42		3	syn_n500_s2026101201_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101201		deep_branching		
+	500			0.1171875	0.1171875	rss_gib	0.1142578125		3	syn_n500_s2026101201_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101201		deep_branching		
+	500			6.41	6.38	wall_seconds	5.78		3	syn_n500_s2026101201_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		deep_branching		
+	500			0.111328125	0.111328125	rss_gib	0.111328125		3	syn_n500_s2026101201_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101201		deep_branching		
+	500			6.55	6.34	wall_seconds	5.79		3	syn_n500_s2026101201_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		deep_branching		
+	500			0.111236572265625	0.11113357543945312	rss_gib	0.10950851440429688		3	syn_n500_s2026101201_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101201		deep_branching		
+	500			22.22	21.51	wall_seconds	19.96		3	syn_n500_s2026101201_empty		3C_detail	LinearCParty	synthetic_current	2026101201		empty		
+	500			0.15651702880859375	0.15411376953125	rss_gib	0.15398406982421875		3	syn_n500_s2026101201_empty		3C_detail	LinearCParty	synthetic_current	2026101201		empty		
+	500			15.73	15.65	wall_seconds	13.65		3	syn_n500_s2026101201_empty		3C_detail	LinearPKCapR	synthetic_current	2026101201		empty		
+	500			0.14702606201171875	0.1468658447265625	rss_gib	0.1468353271484375		3	syn_n500_s2026101201_empty		3C_detail	LinearPKCapR	synthetic_current	2026101201		empty		
+	500			16.29	16.12	wall_seconds	13.88		3	syn_n500_s2026101201_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101201		empty		
+	500			0.1464996337890625	0.1464691162109375	rss_gib	0.1464691162109375		3	syn_n500_s2026101201_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101201		empty		
+	500			13.3	13.03	wall_seconds	11.27		3	syn_n500_s2026101201_long_stem		3C_detail	LinearCParty	synthetic_current	2026101201		long_stem		
+	500			0.12970733642578125	0.12961196899414062	rss_gib	0.12876129150390625		3	syn_n500_s2026101201_long_stem		3C_detail	LinearCParty	synthetic_current	2026101201		long_stem		
+	500			8.93	8.71	wall_seconds	7.82		3	syn_n500_s2026101201_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101201		long_stem		
+	500			0.12508010864257812	0.12464523315429688	rss_gib	0.12432098388671875		3	syn_n500_s2026101201_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101201		long_stem		
+	500			9.15	9.12	wall_seconds	7.87		3	syn_n500_s2026101201_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101201		long_stem		
+	500			0.12830734252929688	0.12482070922851562	rss_gib	0.1248016357421875		3	syn_n500_s2026101201_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101201		long_stem		
+	500			14.39	14.05	wall_seconds	12.39		3	syn_n500_s2026101201_separated_12		3C_detail	LinearCParty	synthetic_current	2026101201		separated_12		
+	500			0.09095001220703125	0.0903167724609375	rss_gib	0.09031295776367188		3	syn_n500_s2026101201_separated_12		3C_detail	LinearCParty	synthetic_current	2026101201		separated_12		
+	500			11.95	11.09	wall_seconds	9.24		3	syn_n500_s2026101201_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_12		
+	500			0.0933074951171875	0.09330368041992188	rss_gib	0.09330368041992188		3	syn_n500_s2026101201_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_12		
+	500			10.65	10.48	wall_seconds	9.39		3	syn_n500_s2026101201_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_12		
+	500			0.09314727783203125	0.09217453002929688	rss_gib	0.09217071533203125		3	syn_n500_s2026101201_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_12		
+	500			13.56	13.04	wall_seconds	11.53		3	syn_n500_s2026101201_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101201		separated_concentrated		
+	500			0.12471771240234375	0.12464523315429688	rss_gib	0.123046875		3	syn_n500_s2026101201_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101201		separated_concentrated		
+	500			9.89	9.38	wall_seconds	8.62		3	syn_n500_s2026101201_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_concentrated		
+	500			0.12054061889648438	0.12026214599609375	rss_gib	0.1201171875		3	syn_n500_s2026101201_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_concentrated		
+	500			9.79	9.74	wall_seconds	8.6		3	syn_n500_s2026101201_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_concentrated		
+	500			0.12073898315429688	0.12012863159179688	rss_gib	0.1201171875		3	syn_n500_s2026101201_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_concentrated		
+	500			12.81	12.55	wall_seconds	10.83		3	syn_n500_s2026101201_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101201		separated_helices		
+	500			0.12374114990234375	0.12215042114257812	rss_gib	0.12203598022460938		3	syn_n500_s2026101201_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101201		separated_helices		
+	500			9.38	9.09	wall_seconds	7.88		3	syn_n500_s2026101201_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_helices		
+	500			0.11741256713867188	0.116485595703125	rss_gib	0.116485595703125		3	syn_n500_s2026101201_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101201		separated_helices		
+	500			8.95	8.18	wall_seconds	7.86		3	syn_n500_s2026101201_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_helices		
+	500			0.11821746826171875	0.11732101440429688	rss_gib	0.116485595703125		3	syn_n500_s2026101201_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101201		separated_helices		
+	500			10.54	10.45	wall_seconds	8.93		3	syn_n500_s2026101202_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101202		balanced_branching		
+	500			0.11528778076171875	0.11504745483398438	rss_gib	0.1138916015625		3	syn_n500_s2026101202_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101202		balanced_branching		
+	500			6.86	6.7	wall_seconds	6.19		3	syn_n500_s2026101202_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		balanced_branching		
+	500			0.10968017578125	0.10797119140625	rss_gib	0.10797119140625		3	syn_n500_s2026101202_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		balanced_branching		
+	500			6.91	6.72	wall_seconds	6.25		3	syn_n500_s2026101202_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		balanced_branching		
+	500			0.11043930053710938	0.11001968383789062	rss_gib	0.10807418823242188		3	syn_n500_s2026101202_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		balanced_branching		
+	500			14.73	14.31	wall_seconds	12.57		3	syn_n500_s2026101202_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d15		
+	500			0.13512039184570312	0.13510894775390625	rss_gib	0.1318359375		3	syn_n500_s2026101202_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d15		
+	500			9.76	9.66	wall_seconds	8.74		3	syn_n500_s2026101202_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d15		
+	500			0.126953125	0.12674331665039062	rss_gib	0.1267242431640625		3	syn_n500_s2026101202_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d15		
+	500			10.29	10.11	wall_seconds	8.87		3	syn_n500_s2026101202_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d15		
+	500			0.12719345092773438	0.12688446044921875	rss_gib	0.1259765625		3	syn_n500_s2026101202_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d15		
+	500			12.37	12.3	wall_seconds	10.47		3	syn_n500_s2026101202_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d30		
+	500			0.12386703491210938	0.12372970581054688	rss_gib	0.12347793579101562		3	syn_n500_s2026101202_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d30		
+	500			8.77	8.01	wall_seconds	7.39		3	syn_n500_s2026101202_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d30		
+	500			0.1187286376953125	0.11850357055664062	rss_gib	0.11608123779296875		3	syn_n500_s2026101202_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d30		
+	500			8.25	7.85	wall_seconds	7.39		3	syn_n500_s2026101202_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d30		
+	500			0.11895370483398438	0.11885452270507812	rss_gib	0.118743896484375		3	syn_n500_s2026101202_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d30		
+	500			12.17	11.56	wall_seconds	10.22		3	syn_n500_s2026101202_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d31		
+	500			0.1226959228515625	0.12232589721679688	rss_gib	0.12174606323242188		3	syn_n500_s2026101202_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101202		branch_depth_d31		
+	500			8.38	8.09	wall_seconds	7.15		3	syn_n500_s2026101202_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d31		
+	500			0.11745452880859375	0.11733627319335938	rss_gib	0.11718368530273438		3	syn_n500_s2026101202_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101202		branch_depth_d31		
+	500			8.6	7.56	wall_seconds	7.17		3	syn_n500_s2026101202_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d31		
+	500			0.11746978759765625	0.11669921875	rss_gib	0.11664962768554688		3	syn_n500_s2026101202_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101202		branch_depth_d31		
+	500			10.23	10.16	wall_seconds	8.83		3	syn_n500_s2026101202_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101202		deep_branching		
+	500			0.11602783203125	0.11565017700195312	rss_gib	0.11516571044921875		3	syn_n500_s2026101202_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101202		deep_branching		
+	500			6.87	6.77	wall_seconds	6.15		3	syn_n500_s2026101202_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		deep_branching		
+	500			0.10970306396484375	0.10839080810546875	rss_gib	0.1083526611328125		3	syn_n500_s2026101202_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101202		deep_branching		
+	500			7.1	6.92	wall_seconds	6.2		3	syn_n500_s2026101202_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		deep_branching		
+	500			0.1112823486328125	0.11050796508789062	rss_gib	0.110137939453125		3	syn_n500_s2026101202_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101202		deep_branching		
+	500			24.68	22.98	wall_seconds	21.05		3	syn_n500_s2026101202_empty		3C_detail	LinearCParty	synthetic_current	2026101202		empty		
+	500			0.15388870239257812	0.15269088745117188	rss_gib	0.15269088745117188		3	syn_n500_s2026101202_empty		3C_detail	LinearCParty	synthetic_current	2026101202		empty		
+	500			16.17	15.85	wall_seconds	14.63		3	syn_n500_s2026101202_empty		3C_detail	LinearPKCapR	synthetic_current	2026101202		empty		
+	500			0.14657974243164062	0.1465606689453125	rss_gib	0.14430618286132812		3	syn_n500_s2026101202_empty		3C_detail	LinearPKCapR	synthetic_current	2026101202		empty		
+	500			16.71	16.09	wall_seconds	14.71		3	syn_n500_s2026101202_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101202		empty		
+	500			0.14664840698242188	0.1466217041015625	rss_gib	0.146453857421875		3	syn_n500_s2026101202_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101202		empty		
+	500			13.48	13.07	wall_seconds	12.0		3	syn_n500_s2026101202_long_stem		3C_detail	LinearCParty	synthetic_current	2026101202		long_stem		
+	500			0.12999725341796875	0.12992477416992188	rss_gib	0.12950515747070312		3	syn_n500_s2026101202_long_stem		3C_detail	LinearCParty	synthetic_current	2026101202		long_stem		
+	500			9.46	9.44	wall_seconds	8.56		3	syn_n500_s2026101202_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101202		long_stem		
+	500			0.12797164916992188	0.12593841552734375	rss_gib	0.12590789794921875		3	syn_n500_s2026101202_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101202		long_stem		
+	500			9.96	9.7	wall_seconds	8.66		3	syn_n500_s2026101202_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101202		long_stem		
+	500			0.1270599365234375	0.12583160400390625	rss_gib	0.12580490112304688		3	syn_n500_s2026101202_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101202		long_stem		
+	500			14.38	14.25	wall_seconds	12.37		3	syn_n500_s2026101202_separated_12		3C_detail	LinearCParty	synthetic_current	2026101202		separated_12		
+	500			0.09033584594726562	0.09033203125	rss_gib	0.09033203125		3	syn_n500_s2026101202_separated_12		3C_detail	LinearCParty	synthetic_current	2026101202		separated_12		
+	500			10.94	10.29	wall_seconds	9.25		3	syn_n500_s2026101202_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_12		
+	500			0.09334945678710938	0.0932769775390625	rss_gib	0.09071731567382812		3	syn_n500_s2026101202_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_12		
+	500			11.36	10.24	wall_seconds	9.29		3	syn_n500_s2026101202_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_12		
+	500			0.09329986572265625	0.09329986572265625	rss_gib	0.09088897705078125		3	syn_n500_s2026101202_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_12		
+	500			14.48	14.33	wall_seconds	12.8		3	syn_n500_s2026101202_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101202		separated_concentrated		
+	500			0.13044357299804688	0.13042068481445312	rss_gib	0.12890625		3	syn_n500_s2026101202_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101202		separated_concentrated		
+	500			11.48	10.97	wall_seconds	9.67		3	syn_n500_s2026101202_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_concentrated		
+	500			0.12647628784179688	0.1259765625	rss_gib	0.1259765625		3	syn_n500_s2026101202_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_concentrated		
+	500			11.31	10.75	wall_seconds	9.84		3	syn_n500_s2026101202_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_concentrated		
+	500			0.12647628784179688	0.1259765625	rss_gib	0.1259765625		3	syn_n500_s2026101202_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_concentrated		
+	500			14.58	14.05	wall_seconds	12.76		3	syn_n500_s2026101202_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101202		separated_helices		
+	500			0.12921142578125	0.12914276123046875	rss_gib	0.12611007690429688		3	syn_n500_s2026101202_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101202		separated_helices		
+	500			11.03	10.83	wall_seconds	9.24		3	syn_n500_s2026101202_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_helices		
+	500			0.12101364135742188	0.12075424194335938	rss_gib	0.11940383911132812		3	syn_n500_s2026101202_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101202		separated_helices		
+	500			11.42	11.2	wall_seconds	9.37		3	syn_n500_s2026101202_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_helices		
+	500			0.1209716796875	0.12081527709960938	rss_gib	0.11896896362304688		3	syn_n500_s2026101202_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101202		separated_helices		
+	500			9.85	9.41	wall_seconds	8.9		3	syn_n500_s2026101203_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101203		balanced_branching		
+	500			0.121978759765625	0.12197494506835938	rss_gib	0.121429443359375		3	syn_n500_s2026101203_balanced_branching		3C_detail	LinearCParty	synthetic_current	2026101203		balanced_branching		
+	500			7.06	6.96	wall_seconds	6.11		3	syn_n500_s2026101203_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		balanced_branching		
+	500			0.116058349609375	0.1154937744140625	rss_gib	0.11536026000976562		3	syn_n500_s2026101203_balanced_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		balanced_branching		
+	500			6.99	6.71	wall_seconds	6.19		3	syn_n500_s2026101203_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		balanced_branching		
+	500			0.11621856689453125	0.11543655395507812	rss_gib	0.11527252197265625		3	syn_n500_s2026101203_balanced_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		balanced_branching		
+	500			14.31	13.87	wall_seconds	11.97		3	syn_n500_s2026101203_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d15		
+	500			0.1376953125	0.1376953125	rss_gib	0.13550949096679688		3	syn_n500_s2026101203_branch_depth_d15		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d15		
+	500			9.75	9.69	wall_seconds	8.46		3	syn_n500_s2026101203_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d15		
+	500			0.13047027587890625	0.1299285888671875	rss_gib	0.12878036499023438		3	syn_n500_s2026101203_branch_depth_d15		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d15		
+	500			10.18	9.78	wall_seconds	8.39		3	syn_n500_s2026101203_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d15		
+	500			0.13016510009765625	0.13011932373046875	rss_gib	0.1301116943359375		3	syn_n500_s2026101203_branch_depth_d15		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d15		
+	500			11.86	10.76	wall_seconds	10.28		3	syn_n500_s2026101203_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d30		
+	500			0.12992095947265625	0.12855148315429688	rss_gib	0.127471923828125		3	syn_n500_s2026101203_branch_depth_d30		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d30		
+	500			8.16	8.02	wall_seconds	7.21		3	syn_n500_s2026101203_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d30		
+	500			0.12350082397460938	0.12339401245117188	rss_gib	0.12265396118164062		3	syn_n500_s2026101203_branch_depth_d30		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d30		
+	500			8.52	8.31	wall_seconds	7.17		3	syn_n500_s2026101203_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d30		
+	500			0.12313079833984375	0.12300872802734375	rss_gib	0.12299346923828125		3	syn_n500_s2026101203_branch_depth_d30		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d30		
+	500			11.34	11.27	wall_seconds	10.03		3	syn_n500_s2026101203_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d31		
+	500			0.127532958984375	0.12749099731445312	rss_gib	0.1274566650390625		3	syn_n500_s2026101203_branch_depth_d31		3C_detail	LinearCParty	synthetic_current	2026101203		branch_depth_d31		
+	500			8.04	7.78	wall_seconds	6.97		3	syn_n500_s2026101203_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d31		
+	500			0.12206268310546875	0.1201171875	rss_gib	0.1201171875		3	syn_n500_s2026101203_branch_depth_d31		3C_detail	LinearPKCapR	synthetic_current	2026101203		branch_depth_d31		
+	500			7.97	7.36	wall_seconds	7.05		3	syn_n500_s2026101203_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d31		
+	500			0.122955322265625	0.12208175659179688	rss_gib	0.121490478515625		3	syn_n500_s2026101203_branch_depth_d31		3C_detail	LinearPKRaccess	synthetic_current	2026101203		branch_depth_d31		
+	500			10.53	10.14	wall_seconds	8.8		3	syn_n500_s2026101203_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101203		deep_branching		
+	500			0.12174224853515625	0.12158966064453125	rss_gib	0.1215667724609375		3	syn_n500_s2026101203_deep_branching		3C_detail	LinearCParty	synthetic_current	2026101203		deep_branching		
+	500			6.8	6.39	wall_seconds	6.2		3	syn_n500_s2026101203_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		deep_branching		
+	500			0.1163787841796875	0.11616897583007812	rss_gib	0.1156005859375		3	syn_n500_s2026101203_deep_branching		3C_detail	LinearPKCapR	synthetic_current	2026101203		deep_branching		
+	500			6.81	6.48	wall_seconds	6.17		3	syn_n500_s2026101203_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		deep_branching		
+	500			0.11765670776367188	0.116302490234375	rss_gib	0.11608123779296875		3	syn_n500_s2026101203_deep_branching		3C_detail	LinearPKRaccess	synthetic_current	2026101203		deep_branching		
+	500			23.75	21.03	wall_seconds	20.7		3	syn_n500_s2026101203_empty		3C_detail	LinearCParty	synthetic_current	2026101203		empty		
+	500			0.15291976928710938	0.15272140502929688	rss_gib	0.15267562866210938		3	syn_n500_s2026101203_empty		3C_detail	LinearCParty	synthetic_current	2026101203		empty		
+	500			16.42	15.27	wall_seconds	14.18		3	syn_n500_s2026101203_empty		3C_detail	LinearPKCapR	synthetic_current	2026101203		empty		
+	500			0.14701461791992188	0.14543914794921875	rss_gib	0.14519500732421875		3	syn_n500_s2026101203_empty		3C_detail	LinearPKCapR	synthetic_current	2026101203		empty		
+	500			16.34	15.15	wall_seconds	14.07		3	syn_n500_s2026101203_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101203		empty		
+	500			0.1464691162109375	0.14566802978515625	rss_gib	0.14428329467773438		3	syn_n500_s2026101203_empty		3C_detail	LinearPKRaccess	synthetic_current	2026101203		empty		
+	500			13.14	12.78	wall_seconds	11.68		3	syn_n500_s2026101203_long_stem		3C_detail	LinearCParty	synthetic_current	2026101203		long_stem		
+	500			0.1355438232421875	0.13383102416992188	rss_gib	0.13181304931640625		3	syn_n500_s2026101203_long_stem		3C_detail	LinearCParty	synthetic_current	2026101203		long_stem		
+	500			8.73	8.41	wall_seconds	8.26		3	syn_n500_s2026101203_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101203		long_stem		
+	500			0.1284332275390625	0.12839126586914062	rss_gib	0.12777328491210938		3	syn_n500_s2026101203_long_stem		3C_detail	LinearPKCapR	synthetic_current	2026101203		long_stem		
+	500			9.23	9.23	wall_seconds	8.29		3	syn_n500_s2026101203_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101203		long_stem		
+	500			0.1296539306640625	0.12798309326171875	rss_gib	0.12791061401367188		3	syn_n500_s2026101203_long_stem		3C_detail	LinearPKRaccess	synthetic_current	2026101203		long_stem		
+	500			15.84	15.17	wall_seconds	12.57		3	syn_n500_s2026101203_separated_12		3C_detail	LinearCParty	synthetic_current	2026101203		separated_12		
+	500			0.09644317626953125	0.09482955932617188	rss_gib	0.09466934204101562		3	syn_n500_s2026101203_separated_12		3C_detail	LinearCParty	synthetic_current	2026101203		separated_12		
+	500			11.45	10.71	wall_seconds	9.51		3	syn_n500_s2026101203_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_12		
+	500			0.09324264526367188	0.09324264526367188	rss_gib	0.09324264526367188		3	syn_n500_s2026101203_separated_12		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_12		
+	500			11.51	11.01	wall_seconds	9.71		3	syn_n500_s2026101203_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_12		
+	500			0.0908203125	0.09034347534179688	rss_gib	0.09034347534179688		3	syn_n500_s2026101203_separated_12		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_12		
+	500			13.92	12.96	wall_seconds	12.11		3	syn_n500_s2026101203_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101203		separated_concentrated		
+	500			0.13000869750976562	0.12938308715820312	rss_gib	0.12890625		3	syn_n500_s2026101203_separated_concentrated		3C_detail	LinearCParty	synthetic_current	2026101203		separated_concentrated		
+	500			10.31	10.23	wall_seconds	9.06		3	syn_n500_s2026101203_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_concentrated		
+	500			0.1259765625	0.1259765625	rss_gib	0.1259765625		3	syn_n500_s2026101203_separated_concentrated		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_concentrated		
+	500			10.43	10.32	wall_seconds	9.01		3	syn_n500_s2026101203_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_concentrated		
+	500			0.1259765625	0.12496566772460938	rss_gib	0.123046875		3	syn_n500_s2026101203_separated_concentrated		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_concentrated		
+	500			13.95	13.57	wall_seconds	12.04		3	syn_n500_s2026101203_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101203		separated_helices		
+	500			0.13112640380859375	0.13112258911132812	rss_gib	0.12950897216796875		3	syn_n500_s2026101203_separated_helices		3C_detail	LinearCParty	synthetic_current	2026101203		separated_helices		
+	500			10.25	10.16	wall_seconds	8.66		3	syn_n500_s2026101203_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_helices		
+	500			0.12235641479492188	0.12235260009765625	rss_gib	0.12235260009765625		3	syn_n500_s2026101203_separated_helices		3C_detail	LinearPKCapR	synthetic_current	2026101203		separated_helices		
+	500			9.42	9.4	wall_seconds	8.77		3	syn_n500_s2026101203_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_helices		
+	500			0.12319564819335938	0.12236785888671875	rss_gib	0.12191390991210938		3	syn_n500_s2026101203_separated_helices		3C_detail	LinearPKRaccess	synthetic_current	2026101203		separated_helices		
+	5482			223.22	212.63	wall_seconds	196.34		3	URS00019626CE		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	5482			0.7538795471191406	0.7526817321777344	rss_gib	0.7517166137695312		3	URS00019626CE		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	5482			149.8	138.94	wall_seconds	132.89		3	URS00019626CE		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	5482			0.7425880432128906	0.7409858703613281	rss_gib	0.7403984069824219		3	URS00019626CE		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	5482			148.01	138.84	wall_seconds	131.94		3	URS00019626CE		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	5482			0.742095947265625	0.7400474548339844	rss_gib	0.7398223876953125		3	URS00019626CE		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	4793			90.28	85.91	wall_seconds	83.39		3	URS000233CDDE		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	4793			0.4911613464355469	0.49027252197265625	rss_gib	0.4899444580078125		3	URS000233CDDE		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	4793			61.81	61.23	wall_seconds	54.47		3	URS000233CDDE		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	4793			0.46063995361328125	0.4605064392089844	rss_gib	0.4602203369140625		3	URS000233CDDE		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	4793			55.4	55.3	wall_seconds	54.69		3	URS000233CDDE		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	4793			0.4634742736816406	0.46068572998046875	rss_gib	0.4601554870605469		3	URS000233CDDE		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	22543			720.51	719.92	wall_seconds	718.67		3	URS000238C72C		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	22543			2.570117950439453	2.567432403564453	rss_gib	2.567169189453125		3	URS000238C72C		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	22543			482.48	480.74	wall_seconds	474.91		3	URS000238C72C		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	22543			2.458698272705078	2.4583358764648438	rss_gib	2.457611083984375		3	URS000238C72C		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	22543			486.21	485.44	wall_seconds	480.56		3	URS000238C72C		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	22543			2.4592971801757812	2.458404541015625	rss_gib	2.4574203491210938		3	URS000238C72C		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	6990			228.76	218.5	wall_seconds	205.77		3	URS000239D8A4		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	6990			0.8359107971191406	0.8348236083984375	rss_gib	0.8339462280273438		3	URS000239D8A4		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	6990			140.87	140.2	wall_seconds	135.94		3	URS000239D8A4		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	6990			0.7958335876464844	0.7937812805175781	rss_gib	0.7932891845703125		3	URS000239D8A4		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	6990			153.96	151.38	wall_seconds	136.5		3	URS000239D8A4		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	6990			0.7961883544921875	0.7955055236816406	rss_gib	0.792999267578125		3	URS000239D8A4		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	29106			730.98	695.12	wall_seconds	690.66		3	URS00023A4DB9		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	29106			2.750164031982422	2.74822998046875	rss_gib	2.745655059814453		3	URS00023A4DB9		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	29106			469.61	464.93	wall_seconds	464.02		3	URS00023A4DB9		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	29106			2.608440399169922	2.606739044189453	rss_gib	2.606414794921875		3	URS00023A4DB9		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	29106			505.4	469.74	wall_seconds	469.41		3	URS00023A4DB9		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	29106			2.608489990234375	2.6080856323242188	rss_gib	2.6047286987304688		3	URS00023A4DB9		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	11832			246.16	245.85	wall_seconds	243.36		3	URS00023C9544		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	11832			1.213409423828125	1.2105598449707031	rss_gib	1.2098922729492188		3	URS00023C9544		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	11832			182.2	163.43	wall_seconds	160.87		3	URS00023C9544		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	11832			1.1434249877929688	1.1432876586914062	rss_gib	1.1424980163574219		3	URS00023C9544		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	11832			162.24	160.92	wall_seconds	160.91		3	URS00023C9544		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	11832			1.1457443237304688	1.1449623107910156	rss_gib	1.1424217224121094		3	URS00023C9544		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	13652			561.88	555.6	wall_seconds	537.06		3	URS000241043C		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	13652			1.9300956726074219	1.9283905029296875	rss_gib	1.9281768798828125		3	URS000241043C		3AB	LinearCParty	rnacentral_current	NA		rnacentral		
+	13652			382.82	365.36	wall_seconds	363.51		3	URS000241043C		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	13652			1.8415489196777344	1.8413467407226562	rss_gib	1.8397254943847656		3	URS000241043C		3AB	LinearPKCapR	rnacentral_current	NA		rnacentral		
+	13652			367.4	364.75	wall_seconds	364.37		3	URS000241043C		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	13652			1.8416824340820312	1.8413658142089844	rss_gib	1.8412361145019531		3	URS000241043C		3AB	LinearPKRaccess	rnacentral_current	NA		rnacentral		
+	250			5.89	5.77	wall_seconds	5.29		9			3C	LinearCParty	synthetic_current		3	empty		
+	250			0.099609375	0.0966796875	rss_gib	0.09375		9			3C	LinearCParty	synthetic_current		3	empty		
+	500			24.68	21.51	wall_seconds	19.96		9			3C	LinearCParty	synthetic_current		3	empty		
+	500			0.15651702880859375	0.15272140502929688	rss_gib	0.15267562866210938		9			3C	LinearCParty	synthetic_current		3	empty		
+	1000			64.12	61.24	wall_seconds	56.07		9			3C	LinearCParty	synthetic_current		3	empty		
+	1000			0.2866325378417969	0.28214263916015625	rss_gib	0.279693603515625		9			3C	LinearCParty	synthetic_current		3	empty		
+	2000			164.16	156.57	wall_seconds	141.03		9			3C	LinearCParty	synthetic_current		3	empty		
+	2000			0.8359527587890625	0.8353042602539062	rss_gib	0.8343315124511719		9			3C	LinearCParty	synthetic_current		3	empty		
+	4000			337.18	320.04	wall_seconds	306.46		9			3C	LinearCParty	synthetic_current		3	empty		
+	4000			1.8964576721191406	1.8950958251953125	rss_gib	1.8942070007324219		9			3C	LinearCParty	synthetic_current		3	empty		
+	250			2.98	2.84	wall_seconds	2.54		9			3C	LinearCParty	synthetic_current		3	long_stem		
+	250			0.0732421875	0.0703125	rss_gib	0.0673828125		9			3C	LinearCParty	synthetic_current		3	long_stem		
+	500			13.48	13.03	wall_seconds	11.27		9			3C	LinearCParty	synthetic_current		3	long_stem		
+	500			0.1355438232421875	0.12992477416992188	rss_gib	0.12876129150390625		9			3C	LinearCParty	synthetic_current		3	long_stem		
+	1000			44.06	40.72	wall_seconds	36.22		9			3C	LinearCParty	synthetic_current		3	long_stem		
+	1000			0.20906448364257812	0.20850372314453125	rss_gib	0.2076263427734375		9			3C	LinearCParty	synthetic_current		3	long_stem		
+	2000			119.82	104.1	wall_seconds	93.72		9			3C	LinearCParty	synthetic_current		3	long_stem		
+	2000			0.7305908203125	0.7292327880859375	rss_gib	0.7285423278808594		9			3C	LinearCParty	synthetic_current		3	long_stem		
+	4000			239.59	221.95	wall_seconds	219.16		9			3C	LinearCParty	synthetic_current		3	long_stem		
+	4000			1.9758110046386719	1.9749298095703125	rss_gib	1.9724769592285156		9			3C	LinearCParty	synthetic_current		3	long_stem		
+	250			3.3	3.06	wall_seconds	2.88		9			3C	LinearCParty	synthetic_current		3	separated_helices		
+	250			0.064453125	0.0615234375	rss_gib	0.0615234375		9			3C	LinearCParty	synthetic_current		3	separated_helices		
+	500			14.58	13.57	wall_seconds	10.83		9			3C	LinearCParty	synthetic_current		3	separated_helices		
+	500			0.13112640380859375	0.12914276123046875	rss_gib	0.12203598022460938		9			3C	LinearCParty	synthetic_current		3	separated_helices		
+	1000			42.02	38.5	wall_seconds	33.62		9			3C	LinearCParty	synthetic_current		3	separated_helices		
+	1000			0.2529945373535156	0.2525520324707031	rss_gib	0.2501716613769531		9			3C	LinearCParty	synthetic_current		3	separated_helices		
+	2000			116.55	110.64	wall_seconds	101.92		9			3C	LinearCParty	synthetic_current		3	separated_helices		
+	2000			0.9470977783203125	0.946868896484375	rss_gib	0.9414634704589844		9			3C	LinearCParty	synthetic_current		3	separated_helices		
+	4000			244.53	224.32	wall_seconds	220.92		9			3C	LinearCParty	synthetic_current		3	separated_helices		
+	4000			2.4207534790039062	2.4199981689453125	rss_gib	2.4180374145507812		9			3C	LinearCParty	synthetic_current		3	separated_helices		
+	250			3.21	2.93	wall_seconds	2.74		9			3C	LinearCParty	synthetic_current		3	separated_concentrated		
+	250			0.064453125	0.0615234375	rss_gib	0.05863189697265625		9			3C	LinearCParty	synthetic_current		3	separated_concentrated		
+	500			14.48	13.04	wall_seconds	11.53		9			3C	LinearCParty	synthetic_current		3	separated_concentrated		
+	500			0.13044357299804688	0.12938308715820312	rss_gib	0.123046875		9			3C	LinearCParty	synthetic_current		3	separated_concentrated		
+	1000			47.71	43.41	wall_seconds	38.88		9			3C	LinearCParty	synthetic_current		3	separated_concentrated		
+	1000			0.19312286376953125	0.1916961669921875	rss_gib	0.18991470336914062		9			3C	LinearCParty	synthetic_current		3	separated_concentrated		
+	2000			118.55	113.45	wall_seconds	104.78		9			3C	LinearCParty	synthetic_current		3	separated_concentrated		
+	2000			0.501800537109375	0.5002479553222656	rss_gib	0.4988441467285156		9			3C	LinearCParty	synthetic_current		3	separated_concentrated		
+	4000			261.25	242.69	wall_seconds	235.59		9			3C	LinearCParty	synthetic_current		3	separated_concentrated		
+	4000			1.2585258483886719	1.2573471069335938	rss_gib	1.2519950866699219		9			3C	LinearCParty	synthetic_current		3	separated_concentrated		
+	250			3.0	2.89	wall_seconds	2.69		9			3C	LinearCParty	synthetic_current		3	separated_12		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		9			3C	LinearCParty	synthetic_current		3	separated_12		
+	500			15.84	14.25	wall_seconds	12.37		9			3C	LinearCParty	synthetic_current		3	separated_12		
+	500			0.09644317626953125	0.09033203125	rss_gib	0.09031295776367188		9			3C	LinearCParty	synthetic_current		3	separated_12		
+	1000			50.02	43.17	wall_seconds	37.83		9			3C	LinearCParty	synthetic_current		3	separated_12		
+	1000			0.27997589111328125	0.27902984619140625	rss_gib	0.2786712646484375		9			3C	LinearCParty	synthetic_current		3	separated_12		
+	2000			105.24	97.56	wall_seconds	87.89		9			3C	LinearCParty	synthetic_current		3	separated_12		
+	2000			1.0658187866210938	1.0650100708007812	rss_gib	1.0641670227050781		9			3C	LinearCParty	synthetic_current		3	separated_12		
+	4000			240.93	238.03	wall_seconds	218.14		9			3C	LinearCParty	synthetic_current		3	separated_12		
+	4000			2.6945877075195312	2.6940574645996094	rss_gib	2.6924705505371094		9			3C	LinearCParty	synthetic_current		3	separated_12		
+	250			1.96	1.8	wall_seconds	1.64		9			3C	LinearCParty	synthetic_current		3	deep_branching		
+	250			0.04448699951171875	0.0439453125	rss_gib	0.041015625		9			3C	LinearCParty	synthetic_current		3	deep_branching		
+	500			10.53	10.14	wall_seconds	8.42		9			3C	LinearCParty	synthetic_current		3	deep_branching		
+	500			0.12174224853515625	0.1171875	rss_gib	0.1142578125		9			3C	LinearCParty	synthetic_current		3	deep_branching		
+	1000			36.35	35.01	wall_seconds	32.08		9			3C	LinearCParty	synthetic_current		3	deep_branching		
+	1000			0.20622634887695312	0.20322418212890625	rss_gib	0.19797515869140625		9			3C	LinearCParty	synthetic_current		3	deep_branching		
+	2000			118.51	115.15	wall_seconds	108.55		9			3C	LinearCParty	synthetic_current		3	deep_branching		
+	2000			0.5033912658691406	0.5025634765625	rss_gib	0.5017013549804688		9			3C	LinearCParty	synthetic_current		3	deep_branching		
+	4000			202.73	200.45	wall_seconds	196.22		9			3C	LinearCParty	synthetic_current		3	deep_branching		
+	4000			1.7748336791992188	1.7735710144042969	rss_gib	1.7723884582519531		9			3C	LinearCParty	synthetic_current		3	deep_branching		
+	250			1.87	1.81	wall_seconds	1.62		9			3C	LinearCParty	synthetic_current		3	balanced_branching		
+	250			0.04405975341796875	0.0439453125	rss_gib	0.041015625		9			3C	LinearCParty	synthetic_current		3	balanced_branching		
+	500			10.54	9.41	wall_seconds	8.4		9			3C	LinearCParty	synthetic_current		3	balanced_branching		
+	500			0.121978759765625	0.115692138671875	rss_gib	0.1138916015625		9			3C	LinearCParty	synthetic_current		3	balanced_branching		
+	1000			38.68	35.33	wall_seconds	31.98		9			3C	LinearCParty	synthetic_current		3	balanced_branching		
+	1000			0.20386886596679688	0.20148086547851562	rss_gib	0.19504165649414062		9			3C	LinearCParty	synthetic_current		3	balanced_branching		
+	2000			125.4	112.86	wall_seconds	106.77		9			3C	LinearCParty	synthetic_current		3	balanced_branching		
+	2000			0.4958763122558594	0.4954414367675781	rss_gib	0.494842529296875		9			3C	LinearCParty	synthetic_current		3	balanced_branching		
+	4000			204.79	197.86	wall_seconds	194.83		9			3C	LinearCParty	synthetic_current		3	balanced_branching		
+	4000			1.7703590393066406	1.7694206237792969	rss_gib	1.7688217163085938		9			3C	LinearCParty	synthetic_current		3	balanced_branching		
+	250			4.19	4.08	wall_seconds	3.72		9			3C	LinearPKCapR	synthetic_current		3	empty		
+	250			0.0966796875	0.09375	rss_gib	0.0908203125		9			3C	LinearPKCapR	synthetic_current		3	empty		
+	500			16.42	15.65	wall_seconds	13.65		9			3C	LinearPKCapR	synthetic_current		3	empty		
+	500			0.14702606201171875	0.1465606689453125	rss_gib	0.14430618286132812		9			3C	LinearPKCapR	synthetic_current		3	empty		
+	1000			45.79	42.76	wall_seconds	38.23		9			3C	LinearPKCapR	synthetic_current		3	empty		
+	1000			0.27646636962890625	0.274261474609375	rss_gib	0.2724609375		9			3C	LinearPKCapR	synthetic_current		3	empty		
+	2000			123.31	101.92	wall_seconds	97.18		9			3C	LinearPKCapR	synthetic_current		3	empty		
+	2000			0.8381309509277344	0.835418701171875	rss_gib	0.8349494934082031		9			3C	LinearPKCapR	synthetic_current		3	empty		
+	4000			238.5	227.88	wall_seconds	217.31		9			3C	LinearPKCapR	synthetic_current		3	empty		
+	4000			1.8966331481933594	1.8952064514160156	rss_gib	1.894500732421875		9			3C	LinearPKCapR	synthetic_current		3	empty		
+	250			2.08	2.04	wall_seconds	1.87		9			3C	LinearPKCapR	synthetic_current		3	long_stem		
+	250			0.0703125	0.0673828125	rss_gib	0.064453125		9			3C	LinearPKCapR	synthetic_current		3	long_stem		
+	500			9.46	8.71	wall_seconds	7.82		9			3C	LinearPKCapR	synthetic_current		3	long_stem		
+	500			0.1284332275390625	0.12593841552734375	rss_gib	0.12432098388671875		9			3C	LinearPKCapR	synthetic_current		3	long_stem		
+	1000			31.56	30.5	wall_seconds	24.76		9			3C	LinearPKCapR	synthetic_current		3	long_stem		
+	1000			0.20905303955078125	0.20790481567382812	rss_gib	0.20763778686523438		9			3C	LinearPKCapR	synthetic_current		3	long_stem		
+	2000			90.51	84.31	wall_seconds	63.83		9			3C	LinearPKCapR	synthetic_current		3	long_stem		
+	2000			0.7304725646972656	0.7300872802734375	rss_gib	0.7289619445800781		9			3C	LinearPKCapR	synthetic_current		3	long_stem		
+	4000			169.64	155.07	wall_seconds	153.04		9			3C	LinearPKCapR	synthetic_current		3	long_stem		
+	4000			1.9755516052246094	1.9742202758789062	rss_gib	1.9734878540039062		9			3C	LinearPKCapR	synthetic_current		3	long_stem		
+	250			2.38	2.21	wall_seconds	2.11		9			3C	LinearPKCapR	synthetic_current		3	separated_helices		
+	250			0.0615234375	0.05859375	rss_gib	0.0556640625		9			3C	LinearPKCapR	synthetic_current		3	separated_helices		
+	500			11.03	10.16	wall_seconds	7.88		9			3C	LinearPKCapR	synthetic_current		3	separated_helices		
+	500			0.12235641479492188	0.12075424194335938	rss_gib	0.116485595703125		9			3C	LinearPKCapR	synthetic_current		3	separated_helices		
+	1000			31.14	29.2	wall_seconds	24.16		9			3C	LinearPKCapR	synthetic_current		3	separated_helices		
+	1000			0.2529449462890625	0.25260162353515625	rss_gib	0.2519187927246094		9			3C	LinearPKCapR	synthetic_current		3	separated_helices		
+	2000			90.49	87.33	wall_seconds	73.13		9			3C	LinearPKCapR	synthetic_current		3	separated_helices		
+	2000			0.9466056823730469	0.9448165893554688	rss_gib	0.9423103332519531		9			3C	LinearPKCapR	synthetic_current		3	separated_helices		
+	4000			178.56	158.48	wall_seconds	156.48		9			3C	LinearPKCapR	synthetic_current		3	separated_helices		
+	4000			2.4202728271484375	2.4191970825195312	rss_gib	2.4169044494628906		9			3C	LinearPKCapR	synthetic_current		3	separated_helices		
+	250			2.62	2.29	wall_seconds	2.15		9			3C	LinearPKCapR	synthetic_current		3	separated_concentrated		
+	250			0.0615234375	0.0615234375	rss_gib	0.05859375		9			3C	LinearPKCapR	synthetic_current		3	separated_concentrated		
+	500			11.48	10.23	wall_seconds	8.62		9			3C	LinearPKCapR	synthetic_current		3	separated_concentrated		
+	500			0.12647628784179688	0.1259765625	rss_gib	0.1201171875		9			3C	LinearPKCapR	synthetic_current		3	separated_concentrated		
+	1000			35.52	33.21	wall_seconds	27.85		9			3C	LinearPKCapR	synthetic_current		3	separated_concentrated		
+	1000			0.18634796142578125	0.18503570556640625	rss_gib	0.18178558349609375		9			3C	LinearPKCapR	synthetic_current		3	separated_concentrated		
+	2000			93.35	88.08	wall_seconds	76.13		9			3C	LinearPKCapR	synthetic_current		3	separated_concentrated		
+	2000			0.5013694763183594	0.5000534057617188	rss_gib	0.4987831115722656		9			3C	LinearPKCapR	synthetic_current		3	separated_concentrated		
+	4000			183.0	175.97	wall_seconds	171.35		9			3C	LinearPKCapR	synthetic_current		3	separated_concentrated		
+	4000			1.2486572265625	1.2476577758789062	rss_gib	1.2465972900390625		9			3C	LinearPKCapR	synthetic_current		3	separated_concentrated		
+	250			2.25	2.12	wall_seconds	2.02		9			3C	LinearPKCapR	synthetic_current		3	separated_12		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		9			3C	LinearPKCapR	synthetic_current		3	separated_12		
+	500			11.95	10.71	wall_seconds	9.24		9			3C	LinearPKCapR	synthetic_current		3	separated_12		
+	500			0.09334945678710938	0.0932769775390625	rss_gib	0.09071731567382812		9			3C	LinearPKCapR	synthetic_current		3	separated_12		
+	1000			39.38	34.07	wall_seconds	29.01		9			3C	LinearPKCapR	synthetic_current		3	separated_12		
+	1000			0.27999114990234375	0.2790336608886719	rss_gib	0.2787208557128906		9			3C	LinearPKCapR	synthetic_current		3	separated_12		
+	2000			82.7	68.42	wall_seconds	66.71		9			3C	LinearPKCapR	synthetic_current		3	separated_12		
+	2000			1.0660400390625	1.0656051635742188	rss_gib	1.0645828247070312		9			3C	LinearPKCapR	synthetic_current		3	separated_12		
+	4000			179.75	177.08	wall_seconds	164.27		9			3C	LinearPKCapR	synthetic_current		3	separated_12		
+	4000			2.694507598876953	2.694049835205078	rss_gib	2.692058563232422		9			3C	LinearPKCapR	synthetic_current		3	separated_12		
+	250			1.42	1.35	wall_seconds	1.23		9			3C	LinearPKCapR	synthetic_current		3	deep_branching		
+	250			0.0439453125	0.0439453125	rss_gib	0.0380859375		9			3C	LinearPKCapR	synthetic_current		3	deep_branching		
+	500			6.87	6.39	wall_seconds	5.78		9			3C	LinearPKCapR	synthetic_current		3	deep_branching		
+	500			0.1163787841796875	0.111328125	rss_gib	0.1083526611328125		9			3C	LinearPKCapR	synthetic_current		3	deep_branching		
+	1000			26.01	23.56	wall_seconds	21.24		9			3C	LinearPKCapR	synthetic_current		3	deep_branching		
+	1000			0.19308090209960938	0.18790054321289062	rss_gib	0.18605804443359375		9			3C	LinearPKCapR	synthetic_current		3	deep_branching		
+	2000			82.85	79.04	wall_seconds	70.92		9			3C	LinearPKCapR	synthetic_current		3	deep_branching		
+	2000			0.5036277770996094	0.5030593872070312	rss_gib	0.5016593933105469		9			3C	LinearPKCapR	synthetic_current		3	deep_branching		
+	4000			154.29	138.34	wall_seconds	137.34		9			3C	LinearPKCapR	synthetic_current		3	deep_branching		
+	4000			1.7744865417480469	1.7734489440917969	rss_gib	1.7711372375488281		9			3C	LinearPKCapR	synthetic_current		3	deep_branching		
+	250			1.39	1.3	wall_seconds	1.23		9			3C	LinearPKCapR	synthetic_current		3	balanced_branching		
+	250			0.0439453125	0.0439453125	rss_gib	0.0380859375		9			3C	LinearPKCapR	synthetic_current		3	balanced_branching		
+	500			7.06	6.7	wall_seconds	5.77		9			3C	LinearPKCapR	synthetic_current		3	balanced_branching		
+	500			0.116058349609375	0.111328125	rss_gib	0.10797119140625		9			3C	LinearPKCapR	synthetic_current		3	balanced_branching		
+	1000			26.67	24.2	wall_seconds	21.11		9			3C	LinearPKCapR	synthetic_current		3	balanced_branching		
+	1000			0.18935394287109375	0.18611526489257812	rss_gib	0.1839447021484375		9			3C	LinearPKCapR	synthetic_current		3	balanced_branching		
+	2000			87.12	73.73	wall_seconds	69.77		9			3C	LinearPKCapR	synthetic_current		3	balanced_branching		
+	2000			0.4959449768066406	0.49526214599609375	rss_gib	0.49297332763671875		9			3C	LinearPKCapR	synthetic_current		3	balanced_branching		
+	4000			144.92	139.22	wall_seconds	137.71		9			3C	LinearPKCapR	synthetic_current		3	balanced_branching		
+	4000			1.7703170776367188	1.7688064575195312	rss_gib	1.7683296203613281		9			3C	LinearPKCapR	synthetic_current		3	balanced_branching		
+	250			4.27	4.01	wall_seconds	3.8		9			3C	LinearPKRaccess	synthetic_current		3	empty		
+	250			0.0966796875	0.09375	rss_gib	0.0908203125		9			3C	LinearPKRaccess	synthetic_current		3	empty		
+	500			16.71	16.09	wall_seconds	13.88		9			3C	LinearPKRaccess	synthetic_current		3	empty		
+	500			0.14664840698242188	0.1464691162109375	rss_gib	0.14428329467773438		9			3C	LinearPKRaccess	synthetic_current		3	empty		
+	1000			45.68	41.97	wall_seconds	38.17		9			3C	LinearPKRaccess	synthetic_current		3	empty		
+	1000			0.2783393859863281	0.27611541748046875	rss_gib	0.27239990234375		9			3C	LinearPKRaccess	synthetic_current		3	empty		
+	2000			115.88	111.59	wall_seconds	97.7		9			3C	LinearPKRaccess	synthetic_current		3	empty		
+	2000			0.8361930847167969	0.8354873657226562	rss_gib	0.8321380615234375		9			3C	LinearPKRaccess	synthetic_current		3	empty		
+	4000			236.26	228.13	wall_seconds	216.72		9			3C	LinearPKRaccess	synthetic_current		3	empty		
+	4000			1.8963203430175781	1.8948440551757812	rss_gib	1.8938331604003906		9			3C	LinearPKRaccess	synthetic_current		3	empty		
+	250			2.21	2.13	wall_seconds	1.87		9			3C	LinearPKRaccess	synthetic_current		3	long_stem		
+	250			0.0703125	0.0673828125	rss_gib	0.064453125		9			3C	LinearPKRaccess	synthetic_current		3	long_stem		
+	500			9.96	9.23	wall_seconds	7.87		9			3C	LinearPKRaccess	synthetic_current		3	long_stem		
+	500			0.1296539306640625	0.12583160400390625	rss_gib	0.1248016357421875		9			3C	LinearPKRaccess	synthetic_current		3	long_stem		
+	1000			31.95	29.6	wall_seconds	24.89		9			3C	LinearPKRaccess	synthetic_current		3	long_stem		
+	1000			0.20891571044921875	0.20873260498046875	rss_gib	0.20776748657226562		9			3C	LinearPKRaccess	synthetic_current		3	long_stem		
+	2000			85.73	74.92	wall_seconds	64.12		9			3C	LinearPKRaccess	synthetic_current		3	long_stem		
+	2000			0.7299842834472656	0.7292633056640625	rss_gib	0.728729248046875		9			3C	LinearPKRaccess	synthetic_current		3	long_stem		
+	4000			170.84	156.18	wall_seconds	152.21		9			3C	LinearPKRaccess	synthetic_current		3	long_stem		
+	4000			1.9759407043457031	1.9745407104492188	rss_gib	1.9717979431152344		9			3C	LinearPKRaccess	synthetic_current		3	long_stem		
+	250			2.4	2.34	wall_seconds	2.13		9			3C	LinearPKRaccess	synthetic_current		3	separated_helices		
+	250			0.0615234375	0.05859375	rss_gib	0.0556640625		9			3C	LinearPKRaccess	synthetic_current		3	separated_helices		
+	500			11.42	9.4	wall_seconds	7.86		9			3C	LinearPKRaccess	synthetic_current		3	separated_helices		
+	500			0.12319564819335938	0.12081527709960938	rss_gib	0.116485595703125		9			3C	LinearPKRaccess	synthetic_current		3	separated_helices		
+	1000			30.21	27.33	wall_seconds	24.01		9			3C	LinearPKRaccess	synthetic_current		3	separated_helices		
+	1000			0.2527313232421875	0.2519989013671875	rss_gib	0.2514228820800781		9			3C	LinearPKRaccess	synthetic_current		3	separated_helices		
+	2000			93.28	82.96	wall_seconds	73.4		9			3C	LinearPKRaccess	synthetic_current		3	separated_helices		
+	2000			0.9469070434570312	0.9459800720214844	rss_gib	0.9445457458496094		9			3C	LinearPKRaccess	synthetic_current		3	separated_helices		
+	4000			181.14	157.56	wall_seconds	156.11		9			3C	LinearPKRaccess	synthetic_current		3	separated_helices		
+	4000			2.4206085205078125	2.4197006225585938	rss_gib	2.41693115234375		9			3C	LinearPKRaccess	synthetic_current		3	separated_helices		
+	250			2.61	2.32	wall_seconds	2.19		9			3C	LinearPKRaccess	synthetic_current		3	separated_concentrated		
+	250			0.0615234375	0.0615234375	rss_gib	0.05859375		9			3C	LinearPKRaccess	synthetic_current		3	separated_concentrated		
+	500			11.31	10.32	wall_seconds	8.6		9			3C	LinearPKRaccess	synthetic_current		3	separated_concentrated		
+	500			0.12647628784179688	0.12496566772460938	rss_gib	0.1201171875		9			3C	LinearPKRaccess	synthetic_current		3	separated_concentrated		
+	1000			34.56	32.92	wall_seconds	28.28		9			3C	LinearPKRaccess	synthetic_current		3	separated_concentrated		
+	1000			0.18674087524414062	0.18355560302734375	rss_gib	0.1814727783203125		9			3C	LinearPKRaccess	synthetic_current		3	separated_concentrated		
+	2000			92.04	77.58	wall_seconds	75.91		9			3C	LinearPKRaccess	synthetic_current		3	separated_concentrated		
+	2000			0.5017929077148438	0.5001792907714844	rss_gib	0.49919891357421875		9			3C	LinearPKRaccess	synthetic_current		3	separated_concentrated		
+	4000			186.07	175.49	wall_seconds	171.52		9			3C	LinearPKRaccess	synthetic_current		3	separated_concentrated		
+	4000			1.2504692077636719	1.2478408813476562	rss_gib	1.2468948364257812		9			3C	LinearPKRaccess	synthetic_current		3	separated_concentrated		
+	250			2.23	2.13	wall_seconds	2.02		9			3C	LinearPKRaccess	synthetic_current		3	separated_12		
+	250			0.0380859375	0.0380859375	rss_gib	0.0380859375		9			3C	LinearPKRaccess	synthetic_current		3	separated_12		
+	500			11.51	10.48	wall_seconds	9.29		9			3C	LinearPKRaccess	synthetic_current		3	separated_12		
+	500			0.09329986572265625	0.09217453002929688	rss_gib	0.09034347534179688		9			3C	LinearPKRaccess	synthetic_current		3	separated_12		
+	1000			38.07	33.07	wall_seconds	29.32		9			3C	LinearPKRaccess	synthetic_current		3	separated_12		
+	1000			0.27988433837890625	0.2792701721191406	rss_gib	0.2787284851074219		9			3C	LinearPKRaccess	synthetic_current		3	separated_12		
+	2000			82.57	74.82	wall_seconds	66.6		9			3C	LinearPKRaccess	synthetic_current		3	separated_12		
+	2000			1.0663604736328125	1.0658493041992188	rss_gib	1.064422607421875		9			3C	LinearPKRaccess	synthetic_current		3	separated_12		
+	4000			179.55	178.06	wall_seconds	164.91		9			3C	LinearPKRaccess	synthetic_current		3	separated_12		
+	4000			2.6946144104003906	2.692241668701172	rss_gib	2.6918792724609375		9			3C	LinearPKRaccess	synthetic_current		3	separated_12		
+	250			1.47	1.35	wall_seconds	1.22		9			3C	LinearPKRaccess	synthetic_current		3	deep_branching		
+	250			0.0439453125	0.0439453125	rss_gib	0.0380859375		9			3C	LinearPKRaccess	synthetic_current		3	deep_branching		
+	500			7.1	6.48	wall_seconds	5.79		9			3C	LinearPKRaccess	synthetic_current		3	deep_branching		
+	500			0.11765670776367188	0.11113357543945312	rss_gib	0.10950851440429688		9			3C	LinearPKRaccess	synthetic_current		3	deep_branching		
+	1000			26.69	23.48	wall_seconds	21.48		9			3C	LinearPKRaccess	synthetic_current		3	deep_branching		
+	1000			0.19247055053710938	0.18873214721679688	rss_gib	0.18776321411132812		9			3C	LinearPKRaccess	synthetic_current		3	deep_branching		
+	2000			85.84	80.75	wall_seconds	70.7		9			3C	LinearPKRaccess	synthetic_current		3	deep_branching		
+	2000			0.5032768249511719	0.5028419494628906	rss_gib	0.5020866394042969		9			3C	LinearPKRaccess	synthetic_current		3	deep_branching		
+	4000			158.04	139.19	wall_seconds	138.06		9			3C	LinearPKRaccess	synthetic_current		3	deep_branching		
+	4000			1.7744026184082031	1.7724342346191406	rss_gib	1.7715377807617188		9			3C	LinearPKRaccess	synthetic_current		3	deep_branching		
+	250			1.41	1.36	wall_seconds	1.23		9			3C	LinearPKRaccess	synthetic_current		3	balanced_branching		
+	250			0.0439453125	0.0439453125	rss_gib	0.0380859375		9			3C	LinearPKRaccess	synthetic_current		3	balanced_branching		
+	500			6.99	6.71	wall_seconds	5.8		9			3C	LinearPKRaccess	synthetic_current		3	balanced_branching		
+	500			0.11621856689453125	0.111328125	rss_gib	0.10807418823242188		9			3C	LinearPKRaccess	synthetic_current		3	balanced_branching		
+	1000			26.65	24.27	wall_seconds	21.37		9			3C	LinearPKRaccess	synthetic_current		3	balanced_branching		
+	1000			0.19021987915039062	0.18685150146484375	rss_gib	0.18300628662109375		9			3C	LinearPKRaccess	synthetic_current		3	balanced_branching		
+	2000			86.41	82.42	wall_seconds	70.59		9			3C	LinearPKRaccess	synthetic_current		3	balanced_branching		
+	2000			0.4958686828613281	0.4949684143066406	rss_gib	0.494293212890625		9			3C	LinearPKRaccess	synthetic_current		3	balanced_branching		
+	4000			141.24	138.06	wall_seconds	136.64		9			3C	LinearPKRaccess	synthetic_current		3	balanced_branching		
+	4000			1.7705154418945312	1.7692298889160156	rss_gib	1.7670478820800781		9			3C	LinearPKRaccess	synthetic_current		3	balanced_branching		
+	5482					rss_gib		outside_bpp_outer	1	URS00019626CE		SI_mode_memory							0.750091552734375
+	5482					rss_gib		inside_outer	1	URS00019626CE		SI_mode_memory							0.45885467529296875
+	4793					rss_gib		inside_outer	1	URS000233CDDE		SI_mode_memory							0.2639923095703125
+	4793					rss_gib		mfe_outer	1	URS000233CDDE		SI_mode_memory							0.4572906494140625
+	4793					rss_gib		loop_profile_outer	1	URS000233CDDE		SI_mode_memory							0.4612007141113281
+	6990					rss_gib		loop_profile_outer	1	URS000239D8A4		SI_mode_memory							0.796142578125
+	5482					rss_gib		mfe_outer	1	URS00019626CE		SI_mode_memory							0.7293205261230469
+	6990					rss_gib		inside_outer	1	URS000239D8A4		SI_mode_memory							0.5175552368164062
+	6990					rss_gib		outside_bpp_outer	1	URS000239D8A4		SI_mode_memory							0.8232307434082031
+	5482					rss_gib		loop_profile_outer	1	URS00019626CE		SI_mode_memory							0.74224853515625
+	6990					rss_gib		mfe_outer	1	URS000239D8A4		SI_mode_memory							0.8342323303222656
+	4793					rss_gib		outside_bpp_outer	1	URS000233CDDE		SI_mode_memory							0.4892997741699219
+	13652					rss_gib		outside_bpp_outer	1	URS000241043C		SI_mode_memory							1.9093666076660156
+	13652					rss_gib		inside_outer	1	URS000241043C		SI_mode_memory							1.0830955505371094
+	11832					rss_gib		inside_outer	1	URS00023C9544		SI_mode_memory							0.66131591796875
+	11832					rss_gib		mfe_outer	1	URS00023C9544		SI_mode_memory							1.1560440063476562
+	11832					rss_gib		loop_profile_outer	1	URS00023C9544		SI_mode_memory							1.1395988464355469
+	13652					rss_gib		mfe_outer	1	URS000241043C		SI_mode_memory							1.7953681945800781
+	13652					rss_gib		loop_profile_outer	1	URS000241043C		SI_mode_memory							1.841339111328125
+	11832					rss_gib		outside_bpp_outer	1	URS00023C9544		SI_mode_memory							1.2001724243164062
+	22543					rss_gib		inside_outer	1	URS000238C72C		SI_mode_memory							1.448333740234375
+	22543					rss_gib		outside_bpp_outer	1	URS000238C72C		SI_mode_memory							2.5435028076171875
+	22543					rss_gib		loop_profile_outer	1	URS000238C72C		SI_mode_memory							2.458934783935547
+	22543					rss_gib		mfe_outer	1	URS000238C72C		SI_mode_memory							2.4427833557128906
+	29106					rss_gib		inside_outer	1	URS00023A4DB9		SI_mode_memory							1.5899238586425781
+	29106					rss_gib		outside_bpp_outer	1	URS00023A4DB9		SI_mode_memory							2.7193641662597656
+	29106					rss_gib		loop_profile_outer	1	URS00023A4DB9		SI_mode_memory							2.606365203857422
+	29106					rss_gib		mfe_outer	1	URS00023A4DB9		SI_mode_memory							2.6618690490722656
+						wall_seconds_ratio				URS000241043C/URS00023C9544		3_annotation	LinearCParty						2.2599145820622333
+						rss_gib_ratio				URS000241043C/URS00023C9544		3_annotation	LinearCParty						1.5929741193227474
+						wall_seconds_ratio				URS000241043C/URS00023C9544		3_annotation	LinearPKCapR						2.235574863856085
+						rss_gib_ratio				URS000241043C/URS00023C9544		3_annotation	LinearPKCapR						1.6105716935930545
+						wall_seconds_ratio				URS000241043C/URS00023C9544		3_annotation	LinearPKRaccess						2.2666542381307484
+						rss_gib_ratio				URS000241043C/URS00023C9544		3_annotation	LinearPKRaccess						1.6082326875343584
+						scaffold_pairs				URS00023C9544		3_annotation							2232
+						free_bases				URS00023C9544		3_annotation							7368
+						loop_free_max				URS00023C9544		3_annotation							302
+						same_loop_pairs_turn				URS00023C9544		3_annotation							300925
+						scaffold_pairs				URS000241043C		3_annotation							2238
+						free_bases				URS000241043C		3_annotation							9176
+						loop_free_max				URS000241043C		3_annotation							712
+						same_loop_pairs_turn				URS000241043C		3_annotation							842307
+156.57		2000	4000			wall_seconds					320.04	3C_ratio	LinearCParty				empty	ratio of medians of three within-seed medians	2.0440697451619085
+0.8353042602539062		2000	4000			rss_gib					1.8950958251953125	3C_ratio	LinearCParty				empty	ratio of medians of three within-seed medians	2.2687491437183174
+104.1		2000	4000			wall_seconds					221.95	3C_ratio	LinearCParty				long_stem	ratio of medians of three within-seed medians	2.1320845341018253
+0.7292327880859375		2000	4000			rss_gib					1.9749298095703125	3C_ratio	LinearCParty				long_stem	ratio of medians of three within-seed medians	2.708229582975874
+110.64		2000	4000			wall_seconds					224.32	3C_ratio	LinearCParty				separated_helices	ratio of medians of three within-seed medians	2.0274765003615327
+0.946868896484375		2000	4000			rss_gib					2.4199981689453125	3C_ratio	LinearCParty				separated_helices	ratio of medians of three within-seed medians	2.555790118284075
+113.45		2000	4000			wall_seconds					242.69	3C_ratio	LinearCParty				separated_concentrated	ratio of medians of three within-seed medians	2.1391802556192157
+0.5002479553222656		2000	4000			rss_gib					1.2573471069335938	3C_ratio	LinearCParty				separated_concentrated	ratio of medians of three within-seed medians	2.513447768364382
+97.56		2000	4000			wall_seconds					238.03	3C_ratio	LinearCParty				separated_12	ratio of medians of three within-seed medians	2.439831898318983
+1.0650100708007812		2000	4000			rss_gib					2.6940574645996094	3C_ratio	LinearCParty				separated_12	ratio of medians of three within-seed medians	2.52960750180883
+115.15		2000	4000			wall_seconds					200.45	3C_ratio	LinearCParty				deep_branching	ratio of medians of three within-seed medians	1.7407729049066434
+0.5025634765625		2000	4000			rss_gib					1.7735710144042969	3C_ratio	LinearCParty				deep_branching	ratio of medians of three within-seed medians	3.5290487612339083
+112.86		2000	4000			wall_seconds					197.86	3C_ratio	LinearCParty				balanced_branching	ratio of medians of three within-seed medians	1.7531454899875953
+0.4954414367675781		2000	4000			rss_gib					1.7694206237792969	3C_ratio	LinearCParty				balanced_branching	ratio of medians of three within-seed medians	3.5714021728250573

@@ -1,0 +1,101 @@
+{
+  "layout": "review-20261017",
+  "e2_revision": "89baea52c9435b18829ef0867a66a24be56d70f9",
+  "scripts_sha256": {
+    "make_figures.py": "e96f7510207d8adfc2dd9e5813e41615dbe15c387711d6de0e987860ec1ed216",
+    "make_figures_review.py": "e8079fd92ae2b8be72084a3ad91b6541ebb56a145b3d749be60a7a4aeab42f90"
+  },
+  "numpy": "2.0.2",
+  "matplotlib": "3.9.4",
+  "sources": {
+    "e2_metrics.tsv": {
+      "path": "../../local/e2-89baea52-20261018/metrics.tsv",
+      "sha256": "973f5ef5e1b738b507ae9432b69141e10919fd10c77a608bac1f3d093ec2da76"
+    },
+    "e2_comparisons.tsv": {
+      "path": "../../local/e2-89baea52-20261018/comparisons.tsv",
+      "sha256": "5a542820c8ae62bf49fa57fc1b650ac6f8694e7853f2b740fb6cc743a2245c4e"
+    },
+    "e2_memory_metrics.tsv": {
+      "path": "../../local/e2-89baea52-20261018/memory_metrics.tsv",
+      "sha256": "83d42a22071ad9aa2e8ddb1ad0c0c0b56ea4be8cf1ba4af6e186306e6a701c08"
+    },
+    "e2_summary.json": {
+      "path": "../../local/e2-89baea52-20261018/summary.json",
+      "sha256": "e8fd6ff478090fa65913c073578c2ff4da8793d2fabe247ce27cbd97eebb3ef5"
+    },
+    "g_features": {
+      "path": "../../local/e2-e2cecbb4-g-features-20261016/rnacentral_g_features.tsv",
+      "sha256": "856c1f56b79ef524038d1885540203ecdf9f037b5946592f0179e12032978c82"
+    },
+    "synthetic_designs": {
+      "path": "../../../data/e2-synthetic-shapes-20261012/inputs.jsonl",
+      "sha256": "acdab9208952bd2a53ce6a1cfce84f50e024dfcc707158ef1d949071027c8fbe"
+    }
+  },
+  "outputs": [
+    {
+      "file": "figure3_main.pdf",
+      "width_mm": 178,
+      "height_mm": 55.00000000000001,
+      "bytes": 27902,
+      "sha256": "e521f3950a17b83ff7c404cd05e54c1f3bc17be7c827df631a03b6ebcf17c9b8"
+    },
+    {
+      "file": "figure3_main.png",
+      "width_mm": 178,
+      "height_mm": 55.00000000000001,
+      "bytes": 125313,
+      "sha256": "e6da45be3003c7c63cbc732f19bccb2a6001432dae4d9aaa625cb064e954e1a2"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.pdf",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 61127,
+      "sha256": "0401d2e108b8bdc90fd6029361c138ec6ecb495cfd1752d1feca8332b8173164"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.png",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 449708,
+      "sha256": "c0dbc2343e209afe0eae2f7be3e6a84712bbe9fedf19eebe22a0eea6e53aa4cf"
+    }
+  ],
+  "derived_files": {
+    "README.md": "059cea337bd24787424ee065b0564a4d4e387afaa31c07e4195e59d66eecb7b3",
+    "caption.md": "37ea7b6c4df5d48286ba7e8eeaffddb85b7ced4da254e3447bc435de81eb47ec",
+    "validation.json": "0fc06635534fb65bc3953a5bbe34c91206cd95e8a38b810c88063d72a58c821c"
+  },
+  "feedback_script_sha256": "ee03fac2456a644a5c9676e9c30788aa322e6c4f236c301a9456f351a6930e4f",
+  "final_handoff_script_sha256": "6d69cc21891cb8106ef33b71af83e9020e71abeb88ca9656da82b60f1a707d1e",
+  "final_figures": [
+    {
+      "file": "figure3_main.png",
+      "pdf": "figure3_main.pdf",
+      "width_mm": 178.0000000000147,
+      "height_mm": 54.999999999991665,
+      "minimum_pdf_text_pt": 7.0,
+      "png_pixels": [
+        2102,
+        649
+      ],
+      "png_sha256": "e6da45be3003c7c63cbc732f19bccb2a6001432dae4d9aaa625cb064e954e1a2",
+      "pdf_sha256": "e521f3950a17b83ff7c404cd05e54c1f3bc17be7c827df631a03b6ebcf17c9b8"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.png",
+      "pdf": "figure3_synthetic_all_cli_si.pdf",
+      "width_mm": 165.00000000001026,
+      "height_mm": 178.0000000000147,
+      "minimum_pdf_text_pt": 7.0,
+      "png_pixels": [
+        1948,
+        2102
+      ],
+      "png_sha256": "c0dbc2343e209afe0eae2f7be3e6a84712bbe9fedf19eebe22a0eea6e53aa4cf",
+      "pdf_sha256": "0401d2e108b8bdc90fd6029361c138ec6ecb495cfd1752d1feca8332b8173164"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "old": "LinearCParty",
+    "new": "linearknot fold",
+    "options_unchanged": true
+  },
+  {
+    "old": "LinearPKCapR",
+    "new": "linearknot profile",
+    "options_unchanged": true
+  },
+  {
+    "old": "LinearPKRaccess",
+    "new": "linearknot access",
+    "options_unchanged": true
+  },
+  {
+    "old": "LinearPKSampling",
+    "new": "linearknot sample",
+    "options_unchanged": true
+  },
+  {
+    "old": "LinearPKSubopt",
+    "new": "linearknot subopt",
+    "options_unchanged": true
+  },
+  {
+    "old": "LinearPKMEA",
+    "new": "linearknot mea",
+    "options_unchanged": true
+  },
+  {
+    "old": "LinearPKCentroid",
+    "new": "linearknot centroid",
+    "options_unchanged": true
+  }
+]

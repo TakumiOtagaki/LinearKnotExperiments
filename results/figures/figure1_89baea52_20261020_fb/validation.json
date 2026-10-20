@@ -1,0 +1,66 @@
+{
+  "pdf_page_mm": [
+    178.0000000000147,
+    144.99999999998442
+  ],
+  "pdf_text_check": {
+    "minimum_pt": 7.0,
+    "maximum_pt": 9.0,
+    "spans": 82,
+    "sizes_pt": [
+      7.0,
+      7.5,
+      8.0,
+      9.0
+    ],
+    "method": "Ghostscript txtwrite TextFormat=0"
+  },
+  "text_outside_page": [],
+  "text_overlaps": [],
+  "source_data_sha256": "e5bf96a61ea8e22ad183f0d27a370d19535a34493ebc0afe597eb305e2ccb412",
+  "script_sha256": "8f3fc832d57c2c5444a92a75de8ecb84539862cf5fae9d946d6411be3ac58971",
+  "visual_inspection": "Open the generated PNG separately.",
+  "sequence_length": 61,
+  "scaffold_pairs": 8,
+  "band_spans": [
+    [
+      6,
+      36
+    ],
+    [
+      26,
+      50
+    ]
+  ],
+  "probability_display_cutoff_inclusive": 0.05,
+  "displayed_bpp_pairs": 15,
+  "sample_draws": 10000,
+  "sample_counts_shown": [
+    3431,
+    1426
+  ],
+  "context_hatches": "none",
+  "centroid_gamma": 1,
+  "max_context_sum_error": 2.220446049250313e-16,
+  "max_sample_bpp_difference": 0.010521403741104995,
+  "final_visual_review": {
+    "date": "2026-10-20",
+    "method": "Opened every listed PNG with view_image",
+    "figures": [
+      {
+        "file": "figure1.png",
+        "pdf": "figure1.pdf",
+        "width_mm": 178.0000000000147,
+        "height_mm": 144.99999999998442,
+        "minimum_pdf_text_pt": 7.0,
+        "png_pixels": [
+          2102,
+          1712
+        ],
+        "png_sha256": "19c2f14750ff072a75be53296d10e05eb737654fb5caacb08375343a36ce1ead",
+        "pdf_sha256": "93e09c96d515523e6efa25c93687ebc1b9e8062117690a9d5c2565f3cda48511"
+      }
+    ]
+  },
+  "final_handoff_script_sha256": "6d69cc21891cb8106ef33b71af83e9020e71abeb88ca9656da82b60f1a707d1e"
+}
