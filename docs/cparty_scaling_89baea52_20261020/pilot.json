@@ -1,0 +1,119 @@
+{
+  "host": "r8n8",
+  "scratch": "/tmp/9069440.1.all.q/cparty-scaling-pilot-o0ja8fso",
+  "purpose": "development calibration only",
+  "warmups": 0,
+  "repetitions": 1,
+  "memory_limit_mib": 4096,
+  "timeout_seconds": 120,
+  "observations": [
+    {
+      "status": "success",
+      "returncode": 0,
+      "error": null,
+      "elapsed_seconds": 0.11687555210664868,
+      "time_wall_seconds": 0.07,
+      "peak_rss_kib": 9216,
+      "name": "syn_n250_s2026101201_empty",
+      "length": 250,
+      "family": "empty",
+      "input_sha256": "46a2705aa4a424186f890a8315f0101efea962105f243d9489063d3a7e39442b"
+    },
+    {
+      "status": "success",
+      "returncode": 0,
+      "error": null,
+      "elapsed_seconds": 0.0660537201911211,
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 9216,
+      "name": "syn_n250_s2026101201_long_stem",
+      "length": 250,
+      "family": "long_stem",
+      "input_sha256": "8193929d1f5feb4ff1eab143d602ac50ccad7c5370075778303d46876c5ffe79"
+    },
+    {
+      "status": "success",
+      "returncode": 0,
+      "error": null,
+      "elapsed_seconds": 0.06592734903097153,
+      "time_wall_seconds": 0.05,
+      "peak_rss_kib": 9216,
+      "name": "syn_n250_s2026101201_balanced_branching",
+      "length": 250,
+      "family": "balanced_branching",
+      "input_sha256": "c4dc0513ed2f1ccc0cbd6d304809322bcafb8291228eb42928c0ffe89444b0b7"
+    },
+    {
+      "status": "success",
+      "returncode": 0,
+      "error": null,
+      "elapsed_seconds": 0.4672628347761929,
+      "time_wall_seconds": 0.45,
+      "peak_rss_kib": 24576,
+      "name": "syn_n500_s2026101201_empty",
+      "length": 500,
+      "family": "empty",
+      "input_sha256": "1160cc07303f28992af4526379808c873f1a6f629ba04e9b774ccd26ad8bcde3"
+    },
+    {
+      "status": "success",
+      "returncode": 0,
+      "error": null,
+      "elapsed_seconds": 0.3676360109820962,
+      "time_wall_seconds": 0.32,
+      "peak_rss_kib": 24576,
+      "name": "syn_n500_s2026101201_long_stem",
+      "length": 500,
+      "family": "long_stem",
+      "input_sha256": "6715ce8f00482bb4a5f9915c6e5b09b190d432e45cac4b047f1c37603643e914"
+    },
+    {
+      "status": "success",
+      "returncode": 0,
+      "error": null,
+      "elapsed_seconds": 0.36775026423856616,
+      "time_wall_seconds": 0.35,
+      "peak_rss_kib": 24576,
+      "name": "syn_n500_s2026101201_balanced_branching",
+      "length": 500,
+      "family": "balanced_branching",
+      "input_sha256": "a5a0dff26947eab6b5d0c99741800933e1b614629c02a3c272c46bbbfbe573d0"
+    },
+    {
+      "status": "success",
+      "returncode": 0,
+      "error": null,
+      "elapsed_seconds": 3.474722675047815,
+      "time_wall_seconds": 3.44,
+      "peak_rss_kib": 87780,
+      "name": "syn_n1000_s2026101201_empty",
+      "length": 1000,
+      "family": "empty",
+      "input_sha256": "76da934317ad71f87e2dd37dc235f49548c8a0e3c0532bd3bc566fcc3e869892"
+    },
+    {
+      "status": "failed",
+      "returncode": 1,
+      "error": null,
+      "elapsed_seconds": 2.5219739489257336,
+      "time_wall_seconds": 2.48,
+      "peak_rss_kib": 87776,
+      "name": "syn_n1000_s2026101201_long_stem",
+      "length": 1000,
+      "family": "long_stem",
+      "input_sha256": "3ab69d0be52fdaa8d7b63f2a86f473cc53dd998a1577266ed0fca55a724c9332"
+    },
+    {
+      "status": "success",
+      "returncode": 0,
+      "error": null,
+      "elapsed_seconds": 2.773636154830456,
+      "time_wall_seconds": 2.73,
+      "peak_rss_kib": 87480,
+      "name": "syn_n1000_s2026101201_balanced_branching",
+      "length": 1000,
+      "family": "balanced_branching",
+      "input_sha256": "e4cdbdeb7cd67ff3d80e950b3ff30a9a9f785f868eef0f513eafb9341f5dcad4"
+    }
+  ]
+}

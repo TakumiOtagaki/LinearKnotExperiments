@@ -1,0 +1,3 @@
+Disk quotas for prj 102571 (pid 102571):
+     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace
+         /gs/bs 9511630856  14680064000 14680064000       - 21584608  28000000 28000000       -

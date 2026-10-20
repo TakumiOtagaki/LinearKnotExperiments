@@ -1,0 +1,12 @@
+{
+  "tasks_not_started": 5,
+  "inputs_hash_equal_to_e2": 105,
+  "total_jobs": 1092,
+  "measured_jobs": 819,
+  "warmups": 273,
+  "software_lock_valid": true,
+  "job_shell_syntax": 5,
+  "memory_cap_envelopes_valid": true,
+  "plan_sha256": "d547d092e749562c487f873b0a39e045cd13729096db681afe67de29ac5cb9a9",
+  "points_upper": 1.056
+}

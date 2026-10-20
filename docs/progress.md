@@ -1,5 +1,16 @@
 # Experiment preparation progress
 
+## 2026-10-20 CParty / LinearKnot PF scaling preparation (not submitted)
+
+- Prepared [the runbook](cparty_scaling_89baea52_20261020/README.md), configs, a verified observer lock and five new `cpu_16` array scripts under `jobs/cparty-linearknot-pf-89baea52-20261020/`. No qsub or git commit. Existing runs, E2 input bytes and external implementation working trees are unchanged.
+- The original six-patch CParty CLI includes MFE, PF, sampling-derived BPP and decoding. The external `PFScaling` driver execs the existing E0 CParty observer (sampling=0) or calls adopted 89baea52 exact/beam inside APIs. All methods use compatible closure; beam h=d=100 and outer ranking. BPP is excluded. The main-text default weak-closure model and whole-CLI timings remain separate.
+- Completed a local CParty pilot: three shapes at 250/500/1,000 nt, warm-up 1 plus measurements 3, 4 GiB AS cap. Successful input medians span 0.067–0.117 s, 0.367–0.467 s, and 2.722–3.423 s. The 1,000-nt long-stem warm-up and all measurements return a nonfinite PF; raw failures are retained. A separate seed probe changes finite PF values, so no scaling workaround was adopted. These numerical limitations may prevent measuring a crossover with this oracle.
+- Preserved a broader interrupted pilot after a 120 s exact warm-up timeout and added one-shot calibration. Exact at 500 nt takes 26–45 s; beam100 at 1,000 nt takes 16.85–26.87 s. CParty/exact PF agree on all six 250/500-nt inputs (maximum absolute log Z difference 2.05e-12). These development observations are not manuscript timing results.
+- Planning uses CParty cubic time/quadratic RSS, exact max(cubic, observed exponent), beam linear envelopes, a 1.5 factor, 6 h / 80 GiB process limits, and approximately doubled h_rt for complete 1+3 matrices. Exact is admitted through 1,000 nt, CParty/beam through 4,000 nt. Exact 2,000 nt cannot fit the doubled matrix allowance in 24 h; exact 4,000 nt also exceeds the process-time limit.
+- The new plan has 105 inputs, five tasks, 1,092 CLI calls (819 measured, 273 warm-ups), 8/8/8/8/4 workers, 1/1/2/2/8 GiB AS caps, and h_rt 00:15/00:50/07:40/01:25/11:50. All tasks remain not_started with empty attempts. Priority-0 estimated points are 0.59065, with h_rt envelope 1.056. Official billing rules were checked and linked in the runbook.
+- Added summary and 165×66 mm log-log figure scripts. They retain failures, exclusions and denominators, use a common complete input cohort at each length, and check CParty/exact PF parity where exact is measured. Crossings require adjacent valid measurements bracketing a ratio of one; missing results are not extrapolated.
+- Validation: four new comparison tests and ten existing array tests pass. A 24/48/96-nt development array ran 36 CLI calls with two workers, passed PF parity and rendered PDF/SVG/PNG. Frozen-input, live-lock, memory-envelope, shell-syntax and unstarted-plan checks pass. Raw evidence is packed in tar files. The inode gate estimates 89 array lifecycle entries against 2,415,389 remaining below the conservative 24-million boundary; the full preparation has a 300-entry allowance. Scratch uses `$TMPDIR` and local intermediates are removed after inspection.
+
 ## 2026-10-11
 
 ### Runner and verification

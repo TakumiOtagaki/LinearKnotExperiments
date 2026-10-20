@@ -1,0 +1,42 @@
+{
+  "development_only": true,
+  "scratch": "/tmp/9069440.1.all.q/pf-pipeline-smoke-22jpoogq",
+  "inputs_nt": [
+    24,
+    48,
+    96
+  ],
+  "jobs": 36,
+  "workers": 2,
+  "parity": [
+    {
+      "input": "n24",
+      "length": 24,
+      "status": "pass",
+      "delta_log_z": 1.0658141036401503e-14,
+      "delta_free_energy": -7.105427357601002e-15
+    },
+    {
+      "input": "n48",
+      "length": 48,
+      "status": "pass",
+      "delta_log_z": 1.4210854715202004e-14,
+      "delta_free_energy": -7.105427357601002e-15
+    },
+    {
+      "input": "n96",
+      "length": 96,
+      "status": "pass",
+      "delta_log_z": -9.663381206337363e-13,
+      "delta_free_energy": 5.968558980384842e-13
+    }
+  ],
+  "status_counts": {
+    "success": 9
+  },
+  "figure_width_mm": 165,
+  "summary_sha256": "f61575e26f72508933f9f2eb9fe616c2ad8eda135a5793437dc17660d574ad9a",
+  "final_analysis_script_sha256": "5b2814dcc48d2eb05635ff42516a2edc431e9795f83d93a708fb41d5bfe6c3b3",
+  "final_plot_script_sha256": "2ba2e3b5c341362746e967cd905ec6e5ad819f60e0d9f13bdf5786befc843582",
+  "final_summary_sha256": "5a3ed8d9ce733122ae83f594afe0abeafacf38a6f405689b251986c16b43152e"
+}

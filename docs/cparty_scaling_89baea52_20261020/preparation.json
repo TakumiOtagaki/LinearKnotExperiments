@@ -1,0 +1,593 @@
+{
+  "created_utc": "2026-10-20T04:20:04.161863+00:00",
+  "no_qsub": true,
+  "no_commit": true,
+  "source_e2_plan_sha256": "a6dda4813d24116024c0b451aacb00a1e4927a1029800e1a27db2df78b89f107",
+  "pilot_sha256": "4c784c7bfc7a0b31c838d725bcfae49df8c707bba5b58c370fac80d18e8fbe7b",
+  "fits": {
+    "cparty": {
+      "time_exponent": 3,
+      "time_coefficient": 7.482183873653412e-09,
+      "rss_exponent": 2,
+      "rss_mib_coefficient": 0.000144,
+      "planning_factor": 1.5,
+      "predictions": {
+        "250": {
+          "seconds": 0.17536368453875184,
+          "rss_mib": 13.5,
+          "within_per_process_limit": true
+        },
+        "500": {
+          "seconds": 1.4029094763100147,
+          "rss_mib": 54.0,
+          "within_per_process_limit": true
+        },
+        "1000": {
+          "seconds": 11.223275810480118,
+          "rss_mib": 216.0,
+          "within_per_process_limit": true
+        },
+        "2000": {
+          "seconds": 89.78620648384094,
+          "rss_mib": 864.0,
+          "within_per_process_limit": true
+        },
+        "4000": {
+          "seconds": 718.2896518707275,
+          "rss_mib": 3456.0,
+          "within_per_process_limit": true
+        }
+      },
+      "successful_calibration_jobs": 36,
+      "censored_jobs": [],
+      "numerical_failures": [
+        {
+          "status": "failed",
+          "returncode": 1,
+          "error": null,
+          "elapsed_seconds": 2.4706681766547263,
+          "time_wall_seconds": 2.43,
+          "peak_rss_kib": 88276,
+          "name": "syn_n1000_s2026101201_long_stem",
+          "length": 1000,
+          "family": "long_stem",
+          "seed": 2026101201,
+          "sha256": "3ab69d0be52fdaa8d7b63f2a86f473cc53dd998a1577266ed0fca55a724c9332",
+          "method": "cparty",
+          "warmup": true,
+          "repetition": 0,
+          "stdout": "",
+          "stderr": "nonfinite oracle inside\n"
+        },
+        {
+          "status": "failed",
+          "returncode": 1,
+          "error": null,
+          "elapsed_seconds": 2.471356139983982,
+          "time_wall_seconds": 2.46,
+          "peak_rss_kib": 87632,
+          "name": "syn_n1000_s2026101201_long_stem",
+          "length": 1000,
+          "family": "long_stem",
+          "seed": 2026101201,
+          "sha256": "3ab69d0be52fdaa8d7b63f2a86f473cc53dd998a1577266ed0fca55a724c9332",
+          "method": "cparty",
+          "warmup": false,
+          "repetition": 0,
+          "stdout": "",
+          "stderr": "nonfinite oracle inside\n"
+        },
+        {
+          "status": "failed",
+          "returncode": 1,
+          "error": null,
+          "elapsed_seconds": 2.4714509840123355,
+          "time_wall_seconds": 2.44,
+          "peak_rss_kib": 86220,
+          "name": "syn_n1000_s2026101201_long_stem",
+          "length": 1000,
+          "family": "long_stem",
+          "seed": 2026101201,
+          "sha256": "3ab69d0be52fdaa8d7b63f2a86f473cc53dd998a1577266ed0fca55a724c9332",
+          "method": "cparty",
+          "warmup": false,
+          "repetition": 1,
+          "stdout": "",
+          "stderr": "nonfinite oracle inside\n"
+        },
+        {
+          "status": "failed",
+          "returncode": 1,
+          "error": null,
+          "elapsed_seconds": 2.471195186022669,
+          "time_wall_seconds": 2.44,
+          "peak_rss_kib": 88056,
+          "name": "syn_n1000_s2026101201_long_stem",
+          "length": 1000,
+          "family": "long_stem",
+          "seed": 2026101201,
+          "sha256": "3ab69d0be52fdaa8d7b63f2a86f473cc53dd998a1577266ed0fca55a724c9332",
+          "method": "cparty",
+          "warmup": false,
+          "repetition": 2,
+          "stdout": "",
+          "stderr": "nonfinite oracle inside\n"
+        }
+      ]
+    },
+    "exact": {
+      "time_exponent": 3.647165419621786,
+      "time_coefficient": 7.048393333574813e-09,
+      "rss_exponent": 2,
+      "rss_mib_coefficient": 0.000626875,
+      "planning_factor": 1.5,
+      "predictions": {
+        "250": {
+          "seconds": 5.8866100665181875,
+          "rss_mib": 58.76953125000001,
+          "within_per_process_limit": true
+        },
+        "500": {
+          "seconds": 73.75160215604976,
+          "rss_mib": 235.07812500000003,
+          "within_per_process_limit": true
+        },
+        "1000": {
+          "seconds": 924.0120815071211,
+          "rss_mib": 940.3125000000001,
+          "within_per_process_limit": true
+        },
+        "2000": {
+          "seconds": 11576.674971271612,
+          "rss_mib": 3761.2500000000005,
+          "within_per_process_limit": true
+        },
+        "4000": {
+          "seconds": 145040.74792168583,
+          "rss_mib": 15045.000000000002,
+          "within_per_process_limit": false
+        }
+      },
+      "successful_calibration_jobs": 9,
+      "censored_jobs": [
+        {
+          "status": "timeout",
+          "returncode": -15,
+          "error": null,
+          "elapsed_seconds": 120.00439312215894,
+          "time_wall_seconds": null,
+          "peak_rss_kib": null,
+          "name": "syn_n1000_s2026101201_balanced_branching",
+          "length": 1000,
+          "family": "balanced_branching",
+          "seed": 2026101201,
+          "sha256": "e4cdbdeb7cd67ff3d80e950b3ff30a9a9f785f868eef0f513eafb9341f5dcad4",
+          "method": "exact",
+          "repetition": 1,
+          "warmup": true,
+          "stdout": "",
+          "stderr": ""
+        }
+      ],
+      "numerical_failures": []
+    },
+    "beam100": {
+      "time_exponent": 1,
+      "time_coefficient": 0.026874367946293207,
+      "rss_exponent": 1,
+      "rss_mib_coefficient": 0.27792578125,
+      "planning_factor": 1.5,
+      "predictions": {
+        "250": {
+          "seconds": 10.077887979859952,
+          "rss_mib": 104.22216796875,
+          "within_per_process_limit": true
+        },
+        "500": {
+          "seconds": 20.155775959719904,
+          "rss_mib": 208.4443359375,
+          "within_per_process_limit": true
+        },
+        "1000": {
+          "seconds": 40.31155191943981,
+          "rss_mib": 416.888671875,
+          "within_per_process_limit": true
+        },
+        "2000": {
+          "seconds": 80.62310383887962,
+          "rss_mib": 833.77734375,
+          "within_per_process_limit": true
+        },
+        "4000": {
+          "seconds": 161.24620767775923,
+          "rss_mib": 1667.5546875,
+          "within_per_process_limit": true
+        }
+      },
+      "successful_calibration_jobs": 5,
+      "censored_jobs": [],
+      "numerical_failures": []
+    }
+  },
+  "method_length_decisions": [
+    {
+      "method": "cparty",
+      "length": 250,
+      "included": true,
+      "seconds": 0.17536368453875184,
+      "rss_mib": 13.5,
+      "within_per_process_limit": true,
+      "exclusion_reason": null
+    },
+    {
+      "method": "cparty",
+      "length": 500,
+      "included": true,
+      "seconds": 1.4029094763100147,
+      "rss_mib": 54.0,
+      "within_per_process_limit": true,
+      "exclusion_reason": null
+    },
+    {
+      "method": "cparty",
+      "length": 1000,
+      "included": true,
+      "seconds": 11.223275810480118,
+      "rss_mib": 216.0,
+      "within_per_process_limit": true,
+      "exclusion_reason": null
+    },
+    {
+      "method": "cparty",
+      "length": 2000,
+      "included": true,
+      "seconds": 89.78620648384094,
+      "rss_mib": 864.0,
+      "within_per_process_limit": true,
+      "exclusion_reason": null
+    },
+    {
+      "method": "cparty",
+      "length": 4000,
+      "included": true,
+      "seconds": 718.2896518707275,
+      "rss_mib": 3456.0,
+      "within_per_process_limit": true,
+      "exclusion_reason": null
+    },
+    {
+      "method": "exact",
+      "length": 250,
+      "included": true,
+      "seconds": 5.8866100665181875,
+      "rss_mib": 58.76953125000001,
+      "within_per_process_limit": true,
+      "exclusion_reason": null
+    },
+    {
+      "method": "exact",
+      "length": 500,
+      "included": true,
+      "seconds": 73.75160215604976,
+      "rss_mib": 235.07812500000003,
+      "within_per_process_limit": true,
+      "exclusion_reason": null
+    },
+    {
+      "method": "exact",
+      "length": 1000,
+      "included": true,
+      "seconds": 924.0120815071211,
+      "rss_mib": 940.3125000000001,
+      "within_per_process_limit": true,
+      "exclusion_reason": null
+    },
+    {
+      "method": "exact",
+      "length": 2000,
+      "included": false,
+      "seconds": 11576.674971271612,
+      "rss_mib": 3761.2500000000005,
+      "within_per_process_limit": true,
+      "exclusion_reason": "6h/job or 80GiB/process, or 1+3 matrix cannot fit half of 24h"
+    },
+    {
+      "method": "exact",
+      "length": 4000,
+      "included": false,
+      "seconds": 145040.74792168583,
+      "rss_mib": 15045.000000000002,
+      "within_per_process_limit": false,
+      "exclusion_reason": "6h/job or 80GiB/process, or 1+3 matrix cannot fit half of 24h"
+    },
+    {
+      "method": "beam100",
+      "length": 250,
+      "included": true,
+      "seconds": 10.077887979859952,
+      "rss_mib": 104.22216796875,
+      "within_per_process_limit": true,
+      "exclusion_reason": null
+    },
+    {
+      "method": "beam100",
+      "length": 500,
+      "included": true,
+      "seconds": 20.155775959719904,
+      "rss_mib": 208.4443359375,
+      "within_per_process_limit": true,
+      "exclusion_reason": null
+    },
+    {
+      "method": "beam100",
+      "length": 1000,
+      "included": true,
+      "seconds": 40.31155191943981,
+      "rss_mib": 416.888671875,
+      "within_per_process_limit": true,
+      "exclusion_reason": null
+    },
+    {
+      "method": "beam100",
+      "length": 2000,
+      "included": true,
+      "seconds": 80.62310383887962,
+      "rss_mib": 833.77734375,
+      "within_per_process_limit": true,
+      "exclusion_reason": null
+    },
+    {
+      "method": "beam100",
+      "length": 4000,
+      "included": true,
+      "seconds": 161.24620767775923,
+      "rss_mib": 1667.5546875,
+      "within_per_process_limit": true,
+      "exclusion_reason": null
+    }
+  ],
+  "batch_envelopes": [
+    {
+      "length": 250,
+      "batch_size": 21,
+      "workers": 8,
+      "cap_mib": 1024,
+      "per_method_prediction": {
+        "cparty": {
+          "seconds": 0.17536368453875184,
+          "rss_mib": 13.5,
+          "within_per_process_limit": true
+        },
+        "exact": {
+          "seconds": 5.8866100665181875,
+          "rss_mib": 58.76953125000001,
+          "within_per_process_limit": true
+        },
+        "beam100": {
+          "seconds": 10.077887979859952,
+          "rss_mib": 104.22216796875,
+          "within_per_process_limit": true
+        }
+      },
+      "full_batch_bound_seconds": 345.9580642328365,
+      "h_rt_seconds": 900,
+      "credit": 0.16666666666666666
+    },
+    {
+      "length": 500,
+      "batch_size": 21,
+      "workers": 8,
+      "cap_mib": 1024,
+      "per_method_prediction": {
+        "cparty": {
+          "seconds": 1.4029094763100147,
+          "rss_mib": 54.0,
+          "within_per_process_limit": true
+        },
+        "exact": {
+          "seconds": 73.75160215604976,
+          "rss_mib": 235.07812500000003,
+          "within_per_process_limit": true
+        },
+        "beam100": {
+          "seconds": 20.155775959719904,
+          "rss_mib": 208.4443359375,
+          "within_per_process_limit": true
+        }
+      },
+      "full_batch_bound_seconds": 1454.3440262891154,
+      "h_rt_seconds": 3000,
+      "credit": 0.16666666666666666
+    },
+    {
+      "length": 1000,
+      "batch_size": 21,
+      "workers": 8,
+      "cap_mib": 2048,
+      "per_method_prediction": {
+        "cparty": {
+          "seconds": 11.223275810480118,
+          "rss_mib": 216.0,
+          "within_per_process_limit": true
+        },
+        "exact": {
+          "seconds": 924.0120815071211,
+          "rss_mib": 940.3125000000001,
+          "within_per_process_limit": true
+        },
+        "beam100": {
+          "seconds": 40.31155191943981,
+          "rss_mib": 416.888671875,
+          "within_per_process_limit": true
+        }
+      },
+      "full_batch_bound_seconds": 13777.656729318574,
+      "h_rt_seconds": 27600,
+      "credit": 0.16666666666666666
+    },
+    {
+      "length": 2000,
+      "batch_size": 21,
+      "workers": 8,
+      "cap_mib": 2048,
+      "per_method_prediction": {
+        "cparty": {
+          "seconds": 89.78620648384094,
+          "rss_mib": 864.0,
+          "within_per_process_limit": true
+        },
+        "beam100": {
+          "seconds": 80.62310383887962,
+          "rss_mib": 833.77734375,
+          "within_per_process_limit": true
+        }
+      },
+      "full_batch_bound_seconds": 2505.730344518088,
+      "h_rt_seconds": 5100,
+      "credit": 0.16666666666666666
+    },
+    {
+      "length": 4000,
+      "batch_size": 21,
+      "workers": 4,
+      "cap_mib": 8192,
+      "per_method_prediction": {
+        "cparty": {
+          "seconds": 718.2896518707275,
+          "rss_mib": 3456.0,
+          "within_per_process_limit": true
+        },
+        "beam100": {
+          "seconds": 161.24620767775923,
+          "rss_mib": 1667.5546875,
+          "within_per_process_limit": true
+        }
+      },
+      "full_batch_bound_seconds": 21228.860629163682,
+      "h_rt_seconds": 42600,
+      "credit": 0.2857142857142857
+    }
+  ],
+  "actual_task_wall_bounds": [
+    {
+      "tier": "n250",
+      "task_id": 1,
+      "wall_bound_seconds": 345.9580642328365
+    },
+    {
+      "tier": "n500",
+      "task_id": 1,
+      "wall_bound_seconds": 1454.3440262891154
+    },
+    {
+      "tier": "n1000",
+      "task_id": 1,
+      "wall_bound_seconds": 13777.656729318574
+    },
+    {
+      "tier": "n2000",
+      "task_id": 1,
+      "wall_bound_seconds": 2505.730344518088
+    },
+    {
+      "tier": "n4000",
+      "task_id": 1,
+      "wall_bound_seconds": 21228.860629163682
+    }
+  ],
+  "budgets": [
+    {
+      "tier": "n250",
+      "tasks": 1,
+      "resource": "cpu_16=1",
+      "workers": 8,
+      "cap_mib": 1024,
+      "h_rt": "00:15:00",
+      "reserved_task_hours": 0.25,
+      "estimated_task_hours": 0.09609946228689902,
+      "estimated_points": 0.005536177416049759,
+      "h_rt_envelope_points": 0.011999999999999999
+    },
+    {
+      "tier": "n500",
+      "tasks": 1,
+      "resource": "cpu_16=1",
+      "workers": 8,
+      "cap_mib": 1024,
+      "h_rt": "00:50:00",
+      "reserved_task_hours": 0.8333333333333334,
+      "estimated_task_hours": 0.4039844517469765,
+      "estimated_points": 0.021967346973373016,
+      "h_rt_envelope_points": 0.04
+    },
+    {
+      "tier": "n1000",
+      "tasks": 1,
+      "resource": "cpu_16=1",
+      "workers": 8,
+      "cap_mib": 2048,
+      "h_rt": "07:40:00",
+      "reserved_task_hours": 7.666666666666667,
+      "estimated_task_hours": 3.8271268692551597,
+      "estimated_points": 0.20673932850871668,
+      "h_rt_envelope_points": 0.368
+    },
+    {
+      "tier": "n2000",
+      "tasks": 1,
+      "resource": "cpu_16=1",
+      "workers": 8,
+      "cap_mib": 2048,
+      "h_rt": "01:25:00",
+      "reserved_task_hours": 1.4166666666666667,
+      "estimated_task_hours": 0.69603620681058,
+      "estimated_points": 0.03773352068604435,
+      "h_rt_envelope_points": 0.06799999999999999
+    },
+    {
+      "tier": "n4000",
+      "tasks": 1,
+      "resource": "cpu_16=1",
+      "workers": 4,
+      "cap_mib": 8192,
+      "h_rt": "11:50:00",
+      "reserved_task_hours": 11.833333333333334,
+      "estimated_task_hours": 5.896905730323245,
+      "estimated_points": 0.3186700406735763,
+      "h_rt_envelope_points": 0.568
+    }
+  ],
+  "total_h_rt_envelope_points": 1.056,
+  "total_estimated_points": 0.5906464142577601,
+  "billing_source": "https://www.somuka.titech.ac.jp/reiki_int/reiki_honbun/x385RG00001693.html",
+  "billing_checked_date": "2026-10-20",
+  "billing_priority": 0,
+  "billing_note": "cpu_16 coefficient .060; .7*max(wall,300)+.1*h_rt; /3600. Envelope uses h_rt for wall. Before 0.0001-point truncation; storage and retries excluded.",
+  "plan_sha256": "d547d092e749562c487f873b0a39e045cd13729096db681afe67de29ac5cb9a9",
+  "file_budget": {
+    "format": "task-jsonl-tar-v1",
+    "tasks": 5,
+    "nonempty_tiers": 5,
+    "entries_per_task": 13,
+    "fixed_entries": 24,
+    "estimated_shared_entries": 89,
+    "counts_directories": true,
+    "scheduler_log_attempts": 1,
+    "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "quota": {
+      "used_files": 21584611,
+      "limit_files": 28000000,
+      "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9511630860  14680064000 14680064000       - 21584611  28000000 28000000       -"
+    },
+    "hard_file_limit": 24000000,
+    "remaining_files": 2415389,
+    "remaining_source": "lfs quota (with configured conservative hard limit)",
+    "max_remaining_fraction": 0.1,
+    "allowed_entries": 241538,
+    "accepted": true
+  },
+  "all_tasks_not_started": true,
+  "planned_jobs": 1092
+}
