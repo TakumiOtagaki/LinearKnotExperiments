@@ -137,6 +137,23 @@ class ProductionTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             report.validate_row(broken)
 
+    def test_combined_exact_uses_the_same_frozen_plan_and_rejects_another_matrix(self):
+        run = self.pack("combined", 50, ["exact"]+[f"beam{b}_outer" for b in (20,50,100,200)])
+        plan_path = run / "array_plan.json"
+        plan = json.loads(plan_path.read_text())
+        plan["output_dir"] = str(run)
+        plan_path.write_text(json.dumps(plan))
+        result = production.write_metrics(run, run, "unused", self.root / "combined-out")
+        self.assertEqual(result["selected_job_status_counts"], {"success": 15})
+        other = copy.deepcopy(plan)
+        other["output_dir"] = str(self.root / "other")
+        with self.assertRaisesRegex(ValueError, "identical combined plan"):
+            production.check_exact_modes(plan, other)
+        other["output_dir"] = plan["output_dir"]
+        other["config"]["modes"].pop()
+        with self.assertRaisesRegex(ValueError, "identical combined plan"):
+            production.check_exact_modes(plan, other)
+
     def test_options_and_cross_revision_guard(self):
         a = production.arguments(["short", "--beam-run", "b", "--exact-run", "e", "--out", "o"])
         self.assertEqual(a.exact_run, Path("e"))
