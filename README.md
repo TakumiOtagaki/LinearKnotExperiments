@@ -1,8 +1,17 @@
-# LinearCPartyExperiments
+# LinearKnotExperiments
 
-Experiments for the LinearCParty paper: exact-reference validation, beam-width
+Experiments for the LinearKnot paper: exact-reference validation, beam-width
 accuracy, runtime and memory scaling, RNA examples and scaffold sensitivity.
 The experiment repository can run independently of the manuscript repository.
+
+**Naming.** The implementation was renamed from LinearCParty to
+[LinearKnot](https://github.com/TakumiOtagaki/LinearKnot) on 2026-10-20, and
+this repository from LinearCPartyExperiments to LinearKnotExperiments.
+The manuscript results were computed with the archived implementation
+`LinearCParty-history` at commit `89baea52`; LinearKnot `9c7d6e1` gives the
+same outputs (`docs/linearknot_9c7d6e1_20261020/README.md`).
+The old names (LinearCParty, LinearPKCapR, LinearPKRaccess, ...) remain below
+and in the run records because they describe the commands that were run.
 
 The initial runner uses Python's standard library and GNU `/usr/bin/time` on
 Linux. It runs the existing LinearCParty CLI binaries without modifying or
