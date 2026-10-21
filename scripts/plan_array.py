@@ -288,7 +288,7 @@ def check_lock(config):
     path = experiment_path(config["software_lock"])
     lock = json.loads(path.read_text())
     hashes = [lock.get("cmake_cache_sha256"), lock.get("energy_parameter_sha256")]
-    hashes += [lock.get("binaries", {}).get(p["name"]) for p in config["programs"]]
+    hashes += [lock.get("binaries", {}).get(p.get("executable", p["name"])) for p in config["programs"]]
     if (lock.get("schema_version") != 1 or not re.fullmatch(r"[0-9a-f]{40}", str(lock.get("source_commit")))
             or any(not isinstance(h, str) or not re.fullmatch(r"[0-9a-f]{64}", h) for h in hashes)):
         raise ValueError("software lock needs a source commit, cache, parameter and binary hashes")

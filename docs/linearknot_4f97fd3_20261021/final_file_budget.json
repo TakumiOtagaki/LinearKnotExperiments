@@ -1,0 +1,26 @@
+{
+  "estimated_shared_entries": 8000,
+  "basis": "Whole lifecycle allowance including retained clone/CLI build, observers, all new plans/configs/docs and first execution; measured source/build entries recorded separately",
+  "project": 102571,
+  "filesystem": "/gs/bs",
+  "quota": {
+    "used_files": 21601064,
+    "limit_files": 28000000,
+    "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9469776424  14680064000 14680064000       - 21601064  28000000 28000000       -"
+  },
+  "hard_file_limit": 24000000,
+  "remaining_files": 2398936,
+  "remaining_source": "lfs quota (with configured conservative hard limit)",
+  "max_remaining_fraction": 0.1,
+  "allowed_entries": 239893,
+  "accepted": true,
+  "measured_source_build_entries": {
+    "deps/LinearKnot-4f97fd3": 1232,
+    "build/linearknot-4f97fd3": 2446,
+    "build/stage-timing-4f97fd3": 5,
+    "build/pf-scaling-4f97fd3-20261021": 5
+  },
+  "measured_current_plan_job_entries": 532,
+  "plan_execution_gate_entries": 1294,
+  "additional_execution_analysis_allowance": 2000
+}

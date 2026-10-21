@@ -20,7 +20,7 @@ from plan_array import exclusive, load_plan, make_tasks, prepare, validate_array
 from run_array_task import run_task
 from run_cli import digest, validate, write_json
 from validate_outputs import validate_outputs
-from task_storage import ArchiveReader, jsonl_rows
+from task_storage import ArchiveReader, RunReader, jsonl_rows
 
 
 class ArrayTests(unittest.TestCase):
@@ -169,6 +169,45 @@ sys.exit(7 if pathlib.Path(sys.argv[0]).name == 'failure' else 0)
         copied.write_text("changed\n")
         with self.assertRaisesRegex(ValueError, "frozen dependency"):
             load_plan(self.plan_path)
+
+    def test_unified_subcommands_keep_distinct_results_and_verify_actual_binary(self):
+        binary = self.build / "linearknot"
+        binary.write_text(f'''#!{sys.executable}
+import pathlib, sys
+assert sys.argv[1] in ('fold', 'profile', 'access')
+assert sys.argv[2] == '-i'
+print(sys.argv[1])
+if '--bpp' in sys.argv:
+    pathlib.Path(sys.argv[sys.argv.index('--bpp')+1]).write_text('1 5 0.5\\n')
+''')
+        binary.chmod(0o755)
+        self.lock["binaries"] = {"linearknot": digest(binary)}
+        write_json(self.lock_path, self.lock)
+        self.config.update(inputs=self.config["inputs"][:1], modes=[{"name": "beam"}],
+                           warmups=0, repetitions=1,
+                           programs=[{"name": name, "executable": "linearknot", "subcommand": sub,
+                                      **({"outputs": [{"flag": "--bpp", "name": "bpp.tsv"}]} if sub == "fold" else {})}
+                                     for name, sub in (("LinearCParty", "fold"), ("LinearPKCapR", "profile"),
+                                                       ("LinearPKRaccess", "access"))])
+        self.settings["tiers"] = self.settings["tiers"][:1]
+        plan = self.prepare()
+        self.assertEqual(self.run_task(), 0)
+        run = self.output / plan["tasks"][0]["directory"] / "run"
+        rows = jsonl_rows(run / "task_results.jsonl")
+        reader = RunReader(run)
+        self.assertEqual({r["program"] for r in rows}, {"LinearCParty", "LinearPKCapR", "LinearPKRaccess"})
+        for row in rows:
+            command = row["command"]
+            self.assertEqual(Path(command[0]).name, "linearknot")
+            self.assertIn(command[1], ("fold", "profile", "access"))
+            self.assertEqual(command[2], "-i")
+            self.assertEqual(reader.artifact(row, "stdout.txt").strip(), command[1].encode())
+            if command[1] == "fold":
+                self.assertEqual(reader.artifact(row, "bpp.tsv"), b"1 5 0.5\n")
+        manifest = json.loads((run / "run.json").read_text())
+        self.assertEqual(set(manifest["binaries_before"].values()), {digest(binary)})
+        binary.write_text(binary.read_text() + "# changed\n")
+        self.assertEqual(self.run_task(resume=True), 2)
 
     def test_environment_task_execution_resume_and_partial_aggregation(self):
         plan = self.prepare()

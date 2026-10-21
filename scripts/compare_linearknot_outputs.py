@@ -34,6 +34,9 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--candidate-build", type=Path, default=ROOT / "build/linearknot-9c7d6e1")
     p.add_argument("--reference-build", type=Path, default=ROOT / "build/linear-cparty-89baea52")
+    p.add_argument("--candidate-source", type=Path, default=ROOT / "deps/LinearKnot-9c7d6e1")
+    p.add_argument("--reference-source", type=Path, default=ROOT / "deps/LinearCParty-89baea52")
+    p.add_argument("--reference-cli-layout", choices=("legacy", "unified"), default="legacy")
     p.add_argument("--scratch-dir", type=Path)
     p.add_argument("--timeout", type=float, default=180)
     p.add_argument("--memory-limit-mib", type=int, default=16384)
@@ -46,9 +49,9 @@ def main():
     receipt = ROOT / "manifests/release-preparation-89baea52.json"
     frozen = json.loads(receipt.read_text())["stages"]["comparison"]["specification"]["inputs"]
     assert len(frozen) == 14
-    sources = {"reference": ROOT / "deps/LinearCParty-89baea52", "candidate": ROOT / "deps/LinearKnot-9c7d6e1"}
+    sources = {"reference": a.reference_source.resolve(), "candidate": a.candidate_source.resolve()}
     builds = {"reference": a.reference_build.resolve(), "candidate": a.candidate_build.resolve()}
-    binaries = {"reference": [v[1] for v in COMMANDS], "candidate": ["linearknot"]}
+    binaries = {"reference": ["linearknot"] if a.reference_cli_layout == "unified" else [v[1] for v in COMMANDS], "candidate": ["linearknot"]}
     fingerprints = {s: {"source": git_state(sources[s]), "binaries": {n: digest(builds[s] / n) for n in set(binaries[s])},
                          "cmake_cache_sha256": digest(builds[s] / "CMakeCache.txt"),
                          "parameter_sha256": digest(sources[s] / "params/rna_Turner04.par")} for s in sources}
@@ -62,6 +65,7 @@ def main():
               "release_receipt_sha256": digest(receipt), "commands": COMMANDS,
               "ignored_lines": ["# elapsed_seconds"], "timeout_seconds": a.timeout,
               "memory_limit_mib": a.memory_limit_mib, "script_sha256": digest(Path(__file__)),
+              "reference_cli_layout": a.reference_cli_layout,
               "planned_comparisons": 14 * 3 * len(COMMANDS), "rows": [], "status": "running"}
     write_json(a.out / "comparison.json", report)
     with local_workspace(a.scratch_dir) as work, tarfile.open(ROOT / report["input_archive"]) as inputs, \
@@ -84,7 +88,7 @@ def main():
                     for side in ("reference", "candidate"):
                         directory = work / side
                         directory.mkdir()
-                        prefix = [str(builds[side] / legacy)] if side == "reference" else [str(builds[side] / "linearknot"), label.split("-")[0]]
+                        prefix = [str(builds[side] / legacy)] if side == "reference" and a.reference_cli_layout == "legacy" else [str(builds[side] / "linearknot"), label.split("-")[0]]
                         argv = [*prefix, "-i", str(source), *options, *extra]
                         if label == "fold":
                             argv += ["--bpp", str(directory / "bpp.tsv")]
@@ -122,7 +126,7 @@ def main():
                   artifacts_sha256={n: digest(a.out / n) for n in ("raw_outputs.tar", "processes.jsonl")})
     write_json(a.out / "comparison.json", report)
     print(json.dumps({k: report[k] for k in ("successful", "identical", "comparisons", "identical_comparisons")}))
-    return 0 if report["successful"] else 1
+    return 0 if report["successful"] and (report["identical"] or a.reference_cli_layout == "legacy") else 1
 
 
 if __name__ == "__main__":

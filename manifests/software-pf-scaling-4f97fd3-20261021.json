@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-21T08:35:39.466769+00:00",
+  "purpose": "formal",
+  "source_commit": "4f97fd332e793a50fe157e47767a1a75a306fd01",
+  "source_git_state": {
+    "commit": "4f97fd332e793a50fe157e47767a1a75a306fd01",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "build_revision_verified": true,
+  "verification_method": "Inside-only observer linked to same-release stage-lock certified archives",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "-O2 -std=c++17 -Wall -Wextra -pedantic"
+  },
+  "cmake_cache_sha256": "2e29e9adaceda3f729303d4fdaf52da934242a964c88a73a3921a28ab846df7e",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "binaries": {
+    "PFScaling": "c8157a3c0eefbabf59d93af018ee0b24b64914cd62b974fb645a29cd5e699158"
+  },
+  "extra_files": [
+    {
+      "path": "build/linearknot-4f97fd3/CMakeCache.txt",
+      "sha256": "f08cbe8e19a7d1f9bb26f6c171e0e9b21e25850f2094f1556c42ff7802984652"
+    },
+    {
+      "path": "build/linearknot-4f97fd3/libRNA.a",
+      "sha256": "1b0e5081b98f17c624fa76e97ded9bbcba6a856ce558f7a2f62a4fa32cc372e7"
+    },
+    {
+      "path": "build/linearknot-4f97fd3/libcparty_scfg2_beam.a",
+      "sha256": "1d42102c03859eb5f849fd7574b49320689c9c8c5ae1f695673595298f366e78"
+    },
+    {
+      "path": "build/linearknot-4f97fd3/libcparty_scfg2_exact.a",
+      "sha256": "4a17eda04f78c8316f444f62a53ec01e97b6caef7d5f4821b3ebc1521ccf5a08"
+    },
+    {
+      "path": "build/linearknot-4f97fd3/linearknot",
+      "sha256": "360b65cb2f0e9ffd7653e62db1769c1a195e74478ec2a1c12aa5e73f39037a90"
+    },
+    {
+      "path": "build/pf-scaling-4f97fd3-20261021/build_provenance.json",
+      "sha256": "17a513f4e2eb92cc0dc211d056c4bd81efbd4a3a068d25e420a6b11d3c40f03d"
+    },
+    {
+      "path": "build/stage-timing-4f97fd3/build_provenance.json",
+      "sha256": "77c9e92f9d20fa16fda8d76e646e79b46d0143b74417f3414fbb39243530b36a"
+    },
+    {
+      "path": "manifests/software-linearknot-4f97fd3.json",
+      "sha256": "7ef74a240eeee505b16616913da03cae38cc04a246230814e8131687aa2db1a2"
+    },
+    {
+      "path": "manifests/software-stage-timing-4f97fd3-20261021.json",
+      "sha256": "dad9bab8b5272ed6b0f3fe30aceda02f212f9ec47f50555f22fdfb3308f0318a"
+    },
+    {
+      "path": "scripts/build_pf_scaling_linearknot.py",
+      "sha256": "c9146c2cd05c516608c3a8239598cd0573d6cfb9cd913e4fb64e80887c6b1092"
+    },
+    {
+      "path": "scripts/build_stage_timing_driver.py",
+      "sha256": "7ff0ce4a955687228c023197d6b50617d62d5b033c92ff8eabd8605fc0228b0b"
+    },
+    {
+      "path": "tools/pf_scaling_linearknot.cc",
+      "sha256": "6feaab86910e691282fa972ffeb374b2032ef839517ffc3eafe6f0646340fc58"
+    },
+    {
+      "path": "tools/stage_timing_driver.cc",
+      "sha256": "3b9d1f5b96b0d1f2ef55e2cbbbcb1f47319e3e0e809eedbcf247707d44336d51"
+    }
+  ],
+  "scientific_scope": "Inside-only PF; exact uncapped and beam h=d=100, outer ranking; compatible closure"
+}

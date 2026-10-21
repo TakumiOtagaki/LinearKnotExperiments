@@ -1,0 +1,82 @@
+{
+  "created_utc": "2026-10-21T08:06:59.612241+00:00",
+  "receipt_before_resume_commands": [
+    {
+      "stage": "clone",
+      "argv": [
+        "git",
+        "clone",
+        "--no-hardlinks",
+        "--no-checkout",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearKnot",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments",
+      "returncode": 0,
+      "log_sha256": "a1caef17131911e90b3818377742facaa857ca729cb4d04a46c3f8eee1dfb744"
+    },
+    {
+      "stage": "checkout",
+      "argv": [
+        "git",
+        "-C",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3",
+        "checkout",
+        "--detach",
+        "4f97fd332e793a50fe157e47767a1a75a306fd01"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments",
+      "returncode": 0,
+      "log_sha256": "aac9b4826e10f9267f40068b726baea105e5f4f955d4839fe4a9dcde4e281955"
+    },
+    {
+      "stage": "origin",
+      "argv": [
+        "git",
+        "-C",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3",
+        "remote",
+        "set-url",
+        "origin",
+        "https://github.com/TakumiOtagaki/LinearKnot.git"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments",
+      "returncode": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "configure",
+      "argv": [
+        "cmake",
+        "-S",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3",
+        "-B",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linearknot-4f97fd3",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DBUILD_TESTING=ON",
+        "-DLINEARKNOT_ENABLE_LTO=OFF"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments",
+      "returncode": 0,
+      "log_sha256": "9add943b2b31fc33e088b5650c4b82f01bda03dc083961498f7cb93bbe49824a"
+    }
+  ],
+  "external_sources": {
+    "../../LinearKnot": {
+      "commit": "4f97fd332e793a50fe157e47767a1a75a306fd01",
+      "dirty": false,
+      "status": "",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "../../LinearCParty": {
+      "commit": "23ccea8bc9296e0c19b5c1fc8c234d79212ab218",
+      "dirty": true,
+      "status": "?? CParty_legacy_public_replay_fix_dbg/\n?? documents/eval_structure/scfg2_beam_performance_round1_20261020.md\n?? documents/eval_structure/scfg2_beam_performance_round1_20261020_artifacts.tar.gz\n?? documents/eval_structure/scfg2_exact_performance_20261020.md\n?? documents/eval_structure/scfg2_exact_performance_20261020_artifacts.tar.gz\n?? documents/eval_structure/scfg2_exact_performance_round2_20261020.md\n?? documents/eval_structure/scfg2_exact_performance_round2_20261020_artifacts.tar.gz\n?? documents/eval_structure/scfg2_performance_large_20261021.md\n?? documents/eval_structure/scfg2_performance_large_20261021_artifacts.tar.gz\n?? documents/eval_structure/scfg2_performance_round10_20261021.md\n?? documents/eval_structure/scfg2_performance_round10_20261021_artifacts.tar.gz\n?? documents/eval_structure/scfg2_performance_round11_20261021.md\n?? documents/eval_structure/scfg2_performance_round11_20261021_artifacts.tar.gz\n?? documents/eval_structure/scfg2_performance_round12_20261021.md\n?? documents/eval_structure/scfg2_performance_round12_20261021_artifacts.tar.gz\n?? documents/eval_structure/scfg2_performance_round13_20261021.md\n?? documents/eval_structure/scfg2_performance_round13_20261021_artifacts.tar.gz\n?? documents/eval_structure/scfg2_performance_round14_20261021.md\n?? documents/eval_structure/scfg2_performance_round14_20261021_artifacts.tar.gz\n?? documents/eval_structure/scfg2_performance_round3_20261020.md\n?? documents/eval_structure/scfg2_performance_round3_20261020_artifacts.tar.gz\n?? documents/eval_structure/scfg2_performance_round4_20261020.md\n?? documents/eval_structure/scfg2_performance_round4_20261020_artifacts.tar.gz\n?? documents/eval_structure/scfg2_performance_round5_20261021.md\n?? documents/eval_structure/scfg2_performance_round5_20261021_artifacts.tar.gz\n?? documents/eval_structure/scfg2_performance_round6_20261021.md\n?? documents/eval_structure/scfg2_performance_round6_20261021_artifacts.tar.gz\n?? documents/eval_structure/scfg2_performance_round7_20261021.md\n?? documents/eval_structure/scfg2_performance_round7_20261021_artifacts.tar.gz\n?? documents/eval_structure/scfg2_performance_round8_20261021.md\n?? documents/eval_structure/scfg2_performance_round8_20261021_artifacts.tar.gz\n?? documents/eval_structure/scfg2_performance_round9_20261021.md\n?? documents/eval_structure/scfg2_performance_round9_20261021_artifacts.tar.gz\n?? documents/scfg2/beam_inside_memory_steps_20261016.md\n?? documents/scfg2/beam_prefix_ranking_request_20261013.md\n?? documents/scfg2/energy_boundary_check_20261017.md\n?? documents/scfg2/exact_outside_memory_20261015.md\n?? documents/scfg2/local_cap_default_request_20261012.md\n?? documents/scfg2/log_domain_without_scaling_20261010.md\n?? documents/scfg2/si_energy_semantics_request_20261013.md\n?? documents/scfg2/wip_hairpin_bound_and_dp09_default_request_20261013.md\n?? paper/",
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "reused_clone": true,
+  "reused_partial_build": true,
+  "new_scheduler_submissions": 0,
+  "new_git_commits": 0
+}

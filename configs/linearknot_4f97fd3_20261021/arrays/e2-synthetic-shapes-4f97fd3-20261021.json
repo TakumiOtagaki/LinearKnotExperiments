@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "measurement": "timing",
+  "seed": 20261012,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1
+  },
+  "tiers": [
+    {
+      "name": "synthetic_n250",
+      "min_length": 250,
+      "max_length": 250,
+      "resource": "cpu_40",
+      "h_rt": "00:15:00",
+      "target_seconds": 629.0,
+      "max_inputs_per_task": 24,
+      "workers": 10,
+      "memory_budget_mib": 87738,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Allocation-wall credits: maximum prior complete task wall / retained scheduled jobs at the same worker count and batch cap; 1.25x allowance, no new-release speed discount. Not sequential CLI work or a complexity claim. h_rt >= twice the fitted full batch and prior maximum task plus 240 s, rounded up to 5 min.",
+        "seconds_per_nt_condition": 1e-12,
+        "seconds_constant_per_condition": 0.9386342578125001,
+        "safety_factor": 1,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 0,
+        "calibration": {
+          "source_plan": "results/runs/e2-synthetic-shapes-89baea52-20261018/array_plan.json",
+          "max_wall_credit_per_job": 0.7509074062500001,
+          "max_previous_task_seconds": 216.261333,
+          "max_cli_seconds": 5.9326665350236,
+          "max_previous_batch_inputs": 24
+        }
+      },
+      "job_limits": {
+        "memory_limit_mib": 8192,
+        "timeout_seconds": 840
+      },
+      "max_wall_fraction": 0.7
+    },
+    {
+      "name": "synthetic_n500",
+      "min_length": 500,
+      "max_length": 500,
+      "resource": "cpu_40",
+      "h_rt": "00:45:00",
+      "target_seconds": 1888.9999999999998,
+      "max_inputs_per_task": 30,
+      "workers": 10,
+      "memory_budget_mib": 87738,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Allocation-wall credits: maximum prior complete task wall / retained scheduled jobs at the same worker count and batch cap; 1.25x allowance, no new-release speed discount. Not sequential CLI work or a complexity claim. h_rt >= twice the fitted full batch and prior maximum task plus 240 s, rounded up to 5 min.",
+        "seconds_per_nt_condition": 1e-12,
+        "seconds_constant_per_condition": 3.7893181736111115,
+        "safety_factor": 1,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 0,
+        "calibration": {
+          "source_plan": "results/runs/e2-synthetic-shapes-89baea52-20261018/array_plan.json",
+          "max_wall_credit_per_job": 3.031454538888889,
+          "max_previous_task_seconds": 1091.323634,
+          "max_cli_seconds": 24.7323294011876,
+          "max_previous_batch_inputs": 30
+        }
+      },
+      "job_limits": {
+        "memory_limit_mib": 8192,
+        "timeout_seconds": 2640
+      },
+      "max_wall_fraction": 0.7
+    },
+    {
+      "name": "synthetic_n1000",
+      "min_length": 1000,
+      "max_length": 1000,
+      "resource": "cpu_40",
+      "h_rt": "00:35:00",
+      "target_seconds": 1469.0,
+      "max_inputs_per_task": 7,
+      "workers": 10,
+      "memory_budget_mib": 87738,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Allocation-wall credits: maximum prior complete task wall / retained scheduled jobs at the same worker count and batch cap; 1.25x allowance, no new-release speed discount. Not sequential CLI work or a complexity claim. h_rt >= twice the fitted full batch and prior maximum task plus 240 s, rounded up to 5 min.",
+        "seconds_per_nt_condition": 1e-12,
+        "seconds_constant_per_condition": 13.513642261904762,
+        "safety_factor": 1,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 0,
+        "calibration": {
+          "source_plan": "results/runs/e2-synthetic-shapes-89baea52-20261018/array_plan.json",
+          "max_wall_credit_per_job": 10.810913809523809,
+          "max_previous_task_seconds": 908.11676,
+          "max_cli_seconds": 64.14035173691809,
+          "max_previous_batch_inputs": 7
+        }
+      },
+      "job_limits": {
+        "memory_limit_mib": 8192,
+        "timeout_seconds": 2040
+      },
+      "max_wall_fraction": 0.7
+    },
+    {
+      "name": "synthetic_n2000",
+      "min_length": 2000,
+      "max_length": 2000,
+      "resource": "cpu_40",
+      "h_rt": "00:50:00",
+      "target_seconds": 2099.0,
+      "max_inputs_per_task": 3,
+      "workers": 10,
+      "memory_budget_mib": 87738,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Allocation-wall credits: maximum prior complete task wall / retained scheduled jobs at the same worker count and batch cap; 1.25x allowance, no new-release speed discount. Not sequential CLI work or a complexity claim. h_rt >= twice the fitted full batch and prior maximum task plus 240 s, rounded up to 5 min.",
+        "seconds_per_nt_condition": 1e-12,
+        "seconds_constant_per_condition": 44.88638920138889,
+        "safety_factor": 1,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 0,
+        "calibration": {
+          "source_plan": "results/runs/e2-synthetic-shapes-89baea52-20261018/array_plan.json",
+          "max_wall_credit_per_job": 35.90911136111111,
+          "max_previous_task_seconds": 1292.728009,
+          "max_cli_seconds": 164.2174083739519,
+          "max_previous_batch_inputs": 3
+        }
+      },
+      "job_limits": {
+        "memory_limit_mib": 8192,
+        "timeout_seconds": 2940
+      },
+      "max_wall_fraction": 0.7
+    },
+    {
+      "name": "synthetic_n4000",
+      "min_length": 4000,
+      "max_length": 4000,
+      "resource": "cpu_40",
+      "h_rt": "01:05:00",
+      "target_seconds": 2729.0,
+      "max_inputs_per_task": 1,
+      "workers": 10,
+      "memory_budget_mib": 87738,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Allocation-wall credits: maximum prior complete task wall / retained scheduled jobs at the same worker count and batch cap; 1.25x allowance, no new-release speed discount. Not sequential CLI work or a complexity claim. h_rt >= twice the fitted full batch and prior maximum task plus 240 s, rounded up to 5 min.",
+        "seconds_per_nt_condition": 1e-12,
+        "seconds_constant_per_condition": 177.6397895833333,
+        "safety_factor": 1,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 0,
+        "calibration": {
+          "source_plan": "results/runs/e2-synthetic-shapes-89baea52-20261018/array_plan.json",
+          "max_wall_credit_per_job": 142.11183166666666,
+          "max_previous_task_seconds": 1705.34198,
+          "max_cli_seconds": 337.19689590483904,
+          "max_previous_batch_inputs": 1
+        }
+      },
+      "job_limits": {
+        "memory_limit_mib": 8192,
+        "timeout_seconds": 3600
+      },
+      "max_wall_fraction": 0.7
+    }
+  ],
+  "note": "Release rerun; cpu_40; time coefficients inherited from the recorded template; sequential-work wall estimate.",
+  "compact_plan": true,
+  "max_concurrent_tasks": 30,
+  "parallel_timing": {
+    "allowed": true,
+    "reason": "Retain the prior fixed single-thread worker count for matched resource reruns; allocation wall calibration keeps concurrency and host effects, without a new-release speed discount."
+  }
+}

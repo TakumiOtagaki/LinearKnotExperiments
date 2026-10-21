@@ -1,5 +1,10 @@
 # Release preparation and reruns
 
+The [4f97fd3 preparation](linearknot_4f97fd3_20261021/README.md) records strict
+378/378 output agreement with 9c7d6e1 and unsubmitted resource-only reruns.
+Their configs use `executable` and `subcommand` to call the unified CLI while
+preserving distinct analysis names in the packed runner.
+
 For the renamed unified CLI, see [LinearKnot 9c7d6e1 preparation and comparison](linearknot_9c7d6e1_20261020/README.md).
 `make_software_lock.py` accepts the single `linearknot` binary and records its subcommands; the historical `prepare_release.py` naming and production runners below still target the separate CLIs.
 The [centroid replacement plans](centroid_89baea52_20261020/README.md) use the adopted 89baea52 build and include local commands and unsubmitted array scripts.

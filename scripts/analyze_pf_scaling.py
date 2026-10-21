@@ -126,10 +126,26 @@ def tsv(path, rows):
             writer.writerow({k: json.dumps(v, sort_keys=True) if isinstance(v, (list, dict)) else v for k, v in r.items()})
 
 
-def analyze(plan_path, output):
-    if output.exists():
-        raise ValueError("use a new analysis output directory")
-    plan = load_plan(plan_path)
+def matched_cparty_modes(plan, reference):
+    """Reuse only CParty observations, with the same frozen inputs and model."""
+    fields = ("name", "sha256", "length", "family", "seed")
+    inputs = lambda p: sorted(tuple(x[k] for k in fields) for x in p["inputs"])
+    if inputs(plan) != inputs(reference):
+        raise ValueError("CParty reference inputs differ")
+    for key in ("model_settings", "warmups", "repetitions"):
+        if plan["config"][key] != reference["config"][key]:
+            raise ValueError("CParty reference model or repetitions differ")
+    if plan["software_lock"]["energy_parameter_sha256"] != reference["software_lock"]["energy_parameter_sha256"]:
+        raise ValueError("CParty reference parameters differ")
+    if {m["name"] for m in plan["config"]["modes"]} != {"exact", "beam100"}:
+        raise ValueError("new plan must contain only exact and beam100")
+    modes = [m for m in reference["config"]["modes"] if m["name"] == "cparty"]
+    if len(modes) != 1:
+        raise ValueError("reference must contain a single CParty mode")
+    return modes + plan["config"]["modes"]
+
+
+def read_observations(plan, selected_modes=None):
     observations, attempts = [], []
     for task in plan["tasks"]:
         directory = Path(plan["output_dir"]) / task["directory"]
@@ -149,6 +165,8 @@ def analyze(plan_path, output):
         if {j["id"] for j in manifest["jobs"]} != expected:
             raise ValueError("task schedule differs from frozen plan")
         for job in manifest["jobs"]:
+            if selected_modes is not None and job["mode"] not in selected_modes:
+                continue
             row = dict(job)
             if row["status"] == "success":
                 try:
@@ -156,7 +174,26 @@ def analyze(plan_path, output):
                 except (ValueError, KeyError, TypeError) as exc:
                     row.update(status="invalid_pf", parse_error=str(exc))
             observations.append(row)
-    rows, parity, paired = summarize(observations, plan["inputs"], plan["config"]["modes"], plan["config"]["repetitions"])
+    return observations, attempts
+
+
+def analyze(plan_path, output, cparty_plan_path=None):
+    if output.exists():
+        raise ValueError("use a new analysis output directory")
+    plan = load_plan(plan_path)
+    observations, attempts = read_observations(plan)
+    modes = plan["config"]["modes"]
+    reference_info = None
+    if cparty_plan_path is not None:
+        reference = load_plan(cparty_plan_path)
+        modes = matched_cparty_modes(plan, reference)
+        previous, previous_attempts = read_observations(reference, {"cparty"})
+        observations.extend(previous)
+        reference_info = {"plan": str(cparty_plan_path), "plan_sha256": digest(cparty_plan_path),
+                          "source_commit": reference["software_lock"]["source_commit"],
+                          "reused_modes": ["cparty"], "observations": len(previous),
+                          "attempts": previous_attempts}
+    rows, parity, paired = summarize(observations, plan["inputs"], modes, plan["config"]["repetitions"])
     output.mkdir(parents=True)
     tsv(output / "resources.tsv", rows)
     tsv(output / "parity.tsv", parity)
@@ -164,6 +201,7 @@ def analyze(plan_path, output):
               "planned_inputs": len(plan["inputs"]), "observations": observations, "resources": rows,
               "parity": parity, "paired_resources": paired, "crossings": crossings(paired),
               "status_counts": dict(Counter(r["status"] for r in rows)), "attempts": attempts,
+              "source_commit": plan["software_lock"]["source_commit"], "cparty_reference": reference_info,
               "pairing_rule": "Same input and all applicable methods, three successful repetitions; CParty/exact parity required where exact is measured. Exact-excluded lengths use paired CParty/beam100 finite outputs, with exact parity unassessed.",
               "time_definition": "Median of three process elapsed_seconds including GNU time wrapper; warmups excluded",
               "memory_definition": "Median peak RSS of three processes; min/max also saved; RLIMIT_AS is separate"}
@@ -175,6 +213,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--plan", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--cparty-plan", type=Path, help="reuse only CParty records from a matched completed plan")
     args = parser.parse_args()
-    report = analyze(args.plan.resolve(), args.out.resolve())
+    report = analyze(args.plan.resolve(), args.out.resolve(), args.cparty_plan.resolve() if args.cparty_plan else None)
     print(json.dumps({"status_counts": report["status_counts"], "paired_rows": len(report["paired_resources"])}))

@@ -5,10 +5,30 @@ from pathlib import Path
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from analyze_pf_scaling import crossings, summarize, value
+from analyze_pf_scaling import crossings, matched_cparty_modes, summarize, value
 
 
 class PFScalingTests(unittest.TestCase):
+    def test_cparty_reuse_requires_matching_inputs_model_and_parameters(self):
+        current = {"inputs": [{"name": "one", "sha256": "bytes", "length": 250, "family": "empty", "seed": 1}],
+                   "config": {"model_settings": {"wmb_closure_policy": "LegacyCompatible"},
+                              "warmups": 1, "repetitions": 3,
+                              "modes": [{"name": "exact"}, {"name": "beam100"}]},
+                   "software_lock": {"energy_parameter_sha256": "parameters"}}
+        reference = copy.deepcopy(current)
+        reference["config"]["modes"].insert(0, {"name": "cparty"})
+        self.assertEqual([m["name"] for m in matched_cparty_modes(current, reference)],
+                         ["cparty", "exact", "beam100"])
+        for change in ("input", "closure", "repetitions", "parameters", "ambiguous"):
+            modified = copy.deepcopy(reference)
+            if change == "input": modified["inputs"][0]["sha256"] = "different"
+            if change == "closure": modified["config"]["model_settings"]["wmb_closure_policy"] = "RequireWeakClosure"
+            if change == "repetitions": modified["config"]["repetitions"] = 1
+            if change == "parameters": modified["software_lock"]["energy_parameter_sha256"] = "different"
+            if change == "ambiguous": modified["config"]["modes"].append({"name": "cparty"})
+            with self.subTest(change=change), self.assertRaises(ValueError):
+                matched_cparty_modes(current, modified)
+
     def fixture(self):
         items = [{"name": f"n{n}", "length": n, "family": "empty", "seed": 1} for n in (250, 500)]
         modes = [{"name": m} for m in ("cparty", "exact", "beam100")]

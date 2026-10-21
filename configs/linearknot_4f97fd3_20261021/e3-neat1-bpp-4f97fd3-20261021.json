@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "name": "e3-neat1-bpp-4f97fd3-20261021",
+  "purpose": "formal",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "temperature_source": "CLI/API default; verify RT metadata",
+    "build_revision_verified": true
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 72000,
+  "warmups": 0,
+  "repetitions": 1,
+  "inputs": [
+    {
+      "name": "NEAT1_1",
+      "path": "data/neat1-20261016/NEAT1_1.txt",
+      "input_archive": "results/runs/e3-neat1-bpp-89baea52-20261018/inputs.tar",
+      "input_member": "inputs/NEAT1_1.txt",
+      "sha256": "113ccf81eff2e9f2992f05bacb7eb220c6294675b9b5957c58e43794e147dbf8",
+      "length": 3756
+    },
+    {
+      "name": "NEAT1_2",
+      "path": "data/neat1-20261016/NEAT1_2.txt",
+      "input_archive": "results/runs/e3-neat1-bpp-89baea52-20261018/inputs.tar",
+      "input_member": "inputs/NEAT1_2.txt",
+      "sha256": "97238dd464ca55d37f146ce1b84d8a0ff1a3197b82f273de5c9ded933f1232c8",
+      "length": 22743
+    }
+  ],
+  "modes": [
+    {
+      "name": "beam100_outer",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ]
+    },
+    {
+      "name": "beam200_outer",
+      "args": [
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ]
+    },
+    {
+      "name": "beam400_outer",
+      "args": [
+        "-b",
+        "400",
+        "--max-hairpin",
+        "400",
+        "--max-case3-depth",
+        "400",
+        "--ranking",
+        "outer"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "name": "LinearCParty",
+      "args": [
+        "--bpp-cutoff",
+        "0.001"
+      ],
+      "outputs": [
+        {
+          "name": "bpp.tsv",
+          "flag": "--bpp"
+        }
+      ],
+      "executable": "linearknot",
+      "subcommand": "fold"
+    }
+  ],
+  "analysis": {
+    "purpose": "E3 NEAT1 analysis",
+    "scope": "Resource rerun on LinearKnot 4f97fd3; retain adopted scientific results; same inputs, model, outputs, seeds and repetition policy."
+  },
+  "software_lock": "manifests/software-linearknot-4f97fd3.json",
+  "memory_limit_mib": 20480,
+  "order": {
+    "kind": "blocked_random",
+    "seed": 20261012
+  },
+  "input_manifest": "data/neat1-20261016/manifest.json",
+  "rerun_preparation": {
+    "release": "4f97fd332e793a50fe157e47767a1a75a306fd01",
+    "source_plan": "results/runs/e3-neat1-bpp-89baea52-20261018/array_plan.json",
+    "source_plan_sha256": "df4ec28f2d3d2b1b75690f5ae8c5999669a0aca8c1876098481cdb55bcb1166f",
+    "strict_comparison_sha256": "c0ec6394b84e21730eab9224d4626ff22004d6fecd89e144bbbd3fcc2fd546fc"
+  }
+}

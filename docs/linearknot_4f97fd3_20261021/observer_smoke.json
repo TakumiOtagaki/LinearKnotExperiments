@@ -1,0 +1,361 @@
+{
+  "scope": "Functional checks only; not performance calibration",
+  "pf_identical_comparisons": 4,
+  "stage_successful_processes": 10,
+  "processes": [
+    {
+      "input": "pk_scaffold",
+      "method": "exact",
+      "side": "reference",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/pf-scaling-89baea52-20261020/PFScaling",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/pk_scaffold.txt",
+        "--method",
+        "exact"
+      ],
+      "returncode": 0
+    },
+    {
+      "input": "pk_scaffold",
+      "method": "exact",
+      "side": "candidate",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/pf-scaling-4f97fd3-20261021/PFScaling",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/pk_scaffold.txt",
+        "--method",
+        "exact"
+      ],
+      "returncode": 0
+    },
+    {
+      "input": "pk_scaffold",
+      "method": "beam100",
+      "side": "reference",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/pf-scaling-89baea52-20261020/PFScaling",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/pk_scaffold.txt",
+        "--method",
+        "beam100"
+      ],
+      "returncode": 0
+    },
+    {
+      "input": "pk_scaffold",
+      "method": "beam100",
+      "side": "candidate",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/pf-scaling-4f97fd3-20261021/PFScaling",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/pk_scaffold.txt",
+        "--method",
+        "beam100"
+      ],
+      "returncode": 0
+    },
+    {
+      "input": "pk_scaffold",
+      "stage": "inside",
+      "ranking": "outer",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/stage-timing-4f97fd3/stage_timing_driver",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/pk_scaffold.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--stage",
+        "inside",
+        "--session-mode",
+        "fresh",
+        "--skip-inside-repeat"
+      ],
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "input": "pk_scaffold",
+      "stage": "mfe",
+      "ranking": "outer",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/stage-timing-4f97fd3/stage_timing_driver",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/pk_scaffold.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--stage",
+        "mfe",
+        "--session-mode",
+        "fresh",
+        "--skip-inside-repeat"
+      ],
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "input": "pk_scaffold",
+      "stage": "outside_bpp",
+      "ranking": "outer",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/stage-timing-4f97fd3/stage_timing_driver",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/pk_scaffold.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--stage",
+        "outside_bpp",
+        "--session-mode",
+        "fresh",
+        "--skip-inside-repeat"
+      ],
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "input": "pk_scaffold",
+      "stage": "loop_profile",
+      "ranking": "outer",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/stage-timing-4f97fd3/stage_timing_driver",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/pk_scaffold.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--stage",
+        "loop_profile",
+        "--session-mode",
+        "fresh",
+        "--skip-inside-repeat"
+      ],
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "input": "pk_scaffold",
+      "stage": "inside",
+      "ranking": "baseline",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/stage-timing-4f97fd3/stage_timing_driver",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/pk_scaffold.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "baseline",
+        "--stage",
+        "inside",
+        "--session-mode",
+        "fresh",
+        "--skip-inside-repeat"
+      ],
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "input": "empty_scaffold",
+      "method": "exact",
+      "side": "reference",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/pf-scaling-89baea52-20261020/PFScaling",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/empty_scaffold.txt",
+        "--method",
+        "exact"
+      ],
+      "returncode": 0
+    },
+    {
+      "input": "empty_scaffold",
+      "method": "exact",
+      "side": "candidate",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/pf-scaling-4f97fd3-20261021/PFScaling",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/empty_scaffold.txt",
+        "--method",
+        "exact"
+      ],
+      "returncode": 0
+    },
+    {
+      "input": "empty_scaffold",
+      "method": "beam100",
+      "side": "reference",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/pf-scaling-89baea52-20261020/PFScaling",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/empty_scaffold.txt",
+        "--method",
+        "beam100"
+      ],
+      "returncode": 0
+    },
+    {
+      "input": "empty_scaffold",
+      "method": "beam100",
+      "side": "candidate",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/pf-scaling-4f97fd3-20261021/PFScaling",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/empty_scaffold.txt",
+        "--method",
+        "beam100"
+      ],
+      "returncode": 0
+    },
+    {
+      "input": "empty_scaffold",
+      "stage": "inside",
+      "ranking": "outer",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/stage-timing-4f97fd3/stage_timing_driver",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/empty_scaffold.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--stage",
+        "inside",
+        "--session-mode",
+        "fresh",
+        "--skip-inside-repeat"
+      ],
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "input": "empty_scaffold",
+      "stage": "mfe",
+      "ranking": "outer",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/stage-timing-4f97fd3/stage_timing_driver",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/empty_scaffold.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--stage",
+        "mfe",
+        "--session-mode",
+        "fresh",
+        "--skip-inside-repeat"
+      ],
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "input": "empty_scaffold",
+      "stage": "outside_bpp",
+      "ranking": "outer",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/stage-timing-4f97fd3/stage_timing_driver",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/empty_scaffold.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--stage",
+        "outside_bpp",
+        "--session-mode",
+        "fresh",
+        "--skip-inside-repeat"
+      ],
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "input": "empty_scaffold",
+      "stage": "loop_profile",
+      "ranking": "outer",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/stage-timing-4f97fd3/stage_timing_driver",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/empty_scaffold.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer",
+        "--stage",
+        "loop_profile",
+        "--session-mode",
+        "fresh",
+        "--skip-inside-repeat"
+      ],
+      "returncode": 0,
+      "ok": true
+    },
+    {
+      "input": "empty_scaffold",
+      "stage": "inside",
+      "ranking": "baseline",
+      "argv": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/stage-timing-4f97fd3/stage_timing_driver",
+        "-i",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/data/smoke/empty_scaffold.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "baseline",
+        "--stage",
+        "inside",
+        "--session-mode",
+        "fresh",
+        "--skip-inside-repeat"
+      ],
+      "returncode": 0,
+      "ok": true
+    }
+  ]
+}

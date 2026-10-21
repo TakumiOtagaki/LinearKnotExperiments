@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-21T07:53:47.205488+00:00",
+  "status": "complete",
+  "donor_before": {
+    "commit": "4f97fd332e793a50fe157e47767a1a75a306fd01",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "release": {
+    "commit": "4f97fd332e793a50fe157e47767a1a75a306fd01",
+    "source": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3",
+    "build": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linearknot-4f97fd3",
+    "lock": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/manifests/software-linearknot-4f97fd3.json"
+  },
+  "configure_arguments": [
+    "-DCMAKE_BUILD_TYPE=Release",
+    "-DBUILD_TESTING=ON",
+    "-DLINEARKNOT_ENABLE_LTO=OFF"
+  ],
+  "build_parallelism": 8,
+  "scheduler_submission": false,
+  "git_commit": false,
+  "commands": [
+    {
+      "stage": "clone",
+      "argv": [
+        "git",
+        "clone",
+        "--no-hardlinks",
+        "--no-checkout",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearKnot",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments",
+      "returncode": 0,
+      "log_sha256": "a1caef17131911e90b3818377742facaa857ca729cb4d04a46c3f8eee1dfb744"
+    },
+    {
+      "stage": "checkout",
+      "argv": [
+        "git",
+        "-C",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3",
+        "checkout",
+        "--detach",
+        "4f97fd332e793a50fe157e47767a1a75a306fd01"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments",
+      "returncode": 0,
+      "log_sha256": "aac9b4826e10f9267f40068b726baea105e5f4f955d4839fe4a9dcde4e281955"
+    },
+    {
+      "stage": "origin",
+      "argv": [
+        "git",
+        "-C",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3",
+        "remote",
+        "set-url",
+        "origin",
+        "https://github.com/TakumiOtagaki/LinearKnot.git"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments",
+      "returncode": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "stage": "configure",
+      "argv": [
+        "cmake",
+        "-S",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3",
+        "-B",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linearknot-4f97fd3",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DBUILD_TESTING=ON",
+        "-DLINEARKNOT_ENABLE_LTO=OFF"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments",
+      "returncode": 0,
+      "log_sha256": "9add943b2b31fc33e088b5650c4b82f01bda03dc083961498f7cb93bbe49824a"
+    },
+    {
+      "stage": "required_suite",
+      "argv": [
+        "bash",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3/test/tools/run_required_scfg2_tests.sh"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3",
+      "returncode": 0,
+      "log_sha256": "fb1be323d8035d6f8beb525561ecc3b9427b62acd746ebd19727799506585b29",
+      "log_tail": "9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nscfg2_api_input_boundary=ok\n[scfg2-required] ok scfg2_api_input_boundary_test\n[scfg2-required] start scfg2_log_weight_test\nmultiloop_closing_boundaries=ok cases=48\nmultiloop_fixed_structures=ok cases=24\nscfg2_log_weight=ok\n[scfg2-required] ok scfg2_log_weight_test\n[scfg2-required] start scfg2_beam_api_test\nscfg2_beam_api=ok\n[scfg2-required] ok scfg2_beam_api_test\n[scfg2-required] start scfg2_beam_memory_observation_test\nscfg2_beam_memory_observation=ok\n[scfg2-required] ok scfg2_beam_memory_observation_test\n[scfg2-required] start scfg2_hotspot_wavefront_test\nscfg2_hotspot_wavefront=ok anchors=816 retained=1608 successors=5693\n[scfg2-required] ok scfg2_hotspot_wavefront_test\n[scfg2-required] start scfg2_hotspot_viterbi_api_test\nscfg2_hotspot_viterbi_api=ok records=2 groups=2 energy=-2.573\n[scfg2-required] ok scfg2_hotspot_viterbi_api_test\n[scfg2-required] start scfg2_empty_scaffold_pkfree_contract_test\nscfg2_empty_scaffold_pkfree_contract=ok\n[scfg2-required] ok scfg2_empty_scaffold_pkfree_contract_test\n[scfg2-required] start scfg2_random_consistency_test\nscfg2_random_consistency=ok checked=60 round_output_cases=33 square_output_cases=56 mixed_output_cases=29\n[scfg2-required] ok scfg2_random_consistency_test\n[scfg2-required] start scfg2_pair_accuracy\nscfg2_pair_accuracy=ok\n[scfg2-required] ok scfg2_pair_accuracy\n[scfg2-required] start make_scaffold\ntest_make_scaffold=ok\n[scfg2-required] ok make_scaffold\n[scfg2-required] start linearknot_mea_cli\nmea_cli=ok\ncentroid_cli=ok\n[scfg2-required] ok linearknot_mea_cli\n[scfg2-required] start linearknot_subopt_cli\nlinearknot_subopt_cli=ok\n[scfg2-required] ok linearknot_subopt_cli\n[scfg2-required] start linearknot_access_cli\nlinearknot_access_cli=ok\n[scfg2-required] ok linearknot_access_cli\n[scfg2-required] start outer_ranking_cli\nouter_ranking_cli=ok programs=7 default=outer exponents=2 batch=2\n[scfg2-required] ok outer_ranking_cli\n[scfg2-required] start scfg2_installed_api\nscfg2_installed_api=ok\n[scfg2-required] ok scfg2_installed_api\n[scfg2-required] start scfg2_exact_outside_memory\nscfg2_exact_outside_memory=ok n=160 address_space_mib=256 consumers=4 sampling_n=384 sampling_counts=0,1\n[scfg2-required] ok scfg2_exact_outside_memory\n[scfg2-required] start scfg2_pseudobase_audit\nscfg2_pseudobase_audit=ok\n[scfg2-required] ok scfg2_pseudobase_audit\n[scfg2-required] start scfg2_pseudobase_viterbi_runner\nscfg2_pseudobase_viterbi_runner=ok\n[scfg2-required] ok scfg2_pseudobase_viterbi_runner\n[scfg2-required] start ipknot_pseudobase_runner\nipknot_pseudobase_runner=ok\n[scfg2-required] ok ipknot_pseudobase_runner\n[scfg2-required] start pseudobase_benchmark_summary\npseudobase_benchmark_summary=ok\n[scfg2-required] ok pseudobase_benchmark_summary\nscfg2_scfg_dependency_gate=ok\n[scfg2-required] required set ok\n"
+    },
+    {
+      "stage": "software_lock",
+      "argv": [
+        "/bin/python3",
+        "-B",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/scripts/make_software_lock.py",
+        "--software-root",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3",
+        "--build-dir",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linearknot-4f97fd3",
+        "--cli-layout",
+        "unified",
+        "--configure-argument=-DCMAKE_BUILD_TYPE=Release",
+        "--configure-argument=-DBUILD_TESTING=ON",
+        "--configure-argument=-DLINEARKNOT_ENABLE_LTO=OFF",
+        "--required-suite",
+        "Maintained required set ok; 96 checks and dependency gate passed from source root; log sha256=fb1be323d8035d6f8beb525561ecc3b9427b62acd746ebd19727799506585b29",
+        "--out",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/manifests/software-linearknot-4f97fd3.json"
+      ],
+      "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments",
+      "returncode": 0,
+      "log_sha256": "50b9ef54d94b3280b2250ea84f4b79076eb8d8cfc8e05aafa8955f146dd94cc2",
+      "log_tail": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/manifests/software-linearknot-4f97fd3.json 4f97fd332e793a50fe157e47767a1a75a306fd01\n"
+    }
+  ],
+  "file_budget": {
+    "estimated_shared_entries": 25000,
+    "basis": "692 tracked files, Git/directories, 20000 build entries, logs and plans allowance",
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "quota": {
+      "used_files": 21592387,
+      "limit_files": 28000000,
+      "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9469066976  14680064000 14680064000       - 21592387  28000000 28000000       -"
+    },
+    "hard_file_limit": 24000000,
+    "remaining_files": 2407613,
+    "remaining_source": "lfs quota (with configured conservative hard limit)",
+    "max_remaining_fraction": 0.1,
+    "allowed_entries": 240761,
+    "accepted": true
+  },
+  "resumed_utc": "2026-10-21T08:02:04.317516+00:00",
+  "resume_source_state": {
+    "commit": "4f97fd332e793a50fe157e47767a1a75a306fd01",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "scratch_logs": "/tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5",
+  "required_suite": {
+    "stage": "required_suite",
+    "argv": [
+      "bash",
+      "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3/test/tools/run_required_scfg2_tests.sh"
+    ],
+    "cwd": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3",
+    "returncode": 0,
+    "log_sha256": "fb1be323d8035d6f8beb525561ecc3b9427b62acd746ebd19727799506585b29",
+    "log_tail": "9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nWARNING: read_parameter_file():Can't open file /tmp/9086956.1.all.q/linearknot-4f97fd3-preparation-ej18h1u5/scfg2-parameters-ABd7qw.missing\n\nscfg2_api_input_boundary=ok\n[scfg2-required] ok scfg2_api_input_boundary_test\n[scfg2-required] start scfg2_log_weight_test\nmultiloop_closing_boundaries=ok cases=48\nmultiloop_fixed_structures=ok cases=24\nscfg2_log_weight=ok\n[scfg2-required] ok scfg2_log_weight_test\n[scfg2-required] start scfg2_beam_api_test\nscfg2_beam_api=ok\n[scfg2-required] ok scfg2_beam_api_test\n[scfg2-required] start scfg2_beam_memory_observation_test\nscfg2_beam_memory_observation=ok\n[scfg2-required] ok scfg2_beam_memory_observation_test\n[scfg2-required] start scfg2_hotspot_wavefront_test\nscfg2_hotspot_wavefront=ok anchors=816 retained=1608 successors=5693\n[scfg2-required] ok scfg2_hotspot_wavefront_test\n[scfg2-required] start scfg2_hotspot_viterbi_api_test\nscfg2_hotspot_viterbi_api=ok records=2 groups=2 energy=-2.573\n[scfg2-required] ok scfg2_hotspot_viterbi_api_test\n[scfg2-required] start scfg2_empty_scaffold_pkfree_contract_test\nscfg2_empty_scaffold_pkfree_contract=ok\n[scfg2-required] ok scfg2_empty_scaffold_pkfree_contract_test\n[scfg2-required] start scfg2_random_consistency_test\nscfg2_random_consistency=ok checked=60 round_output_cases=33 square_output_cases=56 mixed_output_cases=29\n[scfg2-required] ok scfg2_random_consistency_test\n[scfg2-required] start scfg2_pair_accuracy\nscfg2_pair_accuracy=ok\n[scfg2-required] ok scfg2_pair_accuracy\n[scfg2-required] start make_scaffold\ntest_make_scaffold=ok\n[scfg2-required] ok make_scaffold\n[scfg2-required] start linearknot_mea_cli\nmea_cli=ok\ncentroid_cli=ok\n[scfg2-required] ok linearknot_mea_cli\n[scfg2-required] start linearknot_subopt_cli\nlinearknot_subopt_cli=ok\n[scfg2-required] ok linearknot_subopt_cli\n[scfg2-required] start linearknot_access_cli\nlinearknot_access_cli=ok\n[scfg2-required] ok linearknot_access_cli\n[scfg2-required] start outer_ranking_cli\nouter_ranking_cli=ok programs=7 default=outer exponents=2 batch=2\n[scfg2-required] ok outer_ranking_cli\n[scfg2-required] start scfg2_installed_api\nscfg2_installed_api=ok\n[scfg2-required] ok scfg2_installed_api\n[scfg2-required] start scfg2_exact_outside_memory\nscfg2_exact_outside_memory=ok n=160 address_space_mib=256 consumers=4 sampling_n=384 sampling_counts=0,1\n[scfg2-required] ok scfg2_exact_outside_memory\n[scfg2-required] start scfg2_pseudobase_audit\nscfg2_pseudobase_audit=ok\n[scfg2-required] ok scfg2_pseudobase_audit\n[scfg2-required] start scfg2_pseudobase_viterbi_runner\nscfg2_pseudobase_viterbi_runner=ok\n[scfg2-required] ok scfg2_pseudobase_viterbi_runner\n[scfg2-required] start ipknot_pseudobase_runner\nipknot_pseudobase_runner=ok\n[scfg2-required] ok ipknot_pseudobase_runner\n[scfg2-required] start pseudobase_benchmark_summary\npseudobase_benchmark_summary=ok\n[scfg2-required] ok pseudobase_benchmark_summary\nscfg2_scfg_dependency_gate=ok\n[scfg2-required] required set ok\n",
+    "status": "passed",
+    "checks": 96,
+    "dependency_gate": true,
+    "environment": {
+      "SCFG2_BUILD_DIR": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linearknot-4f97fd3",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "LC_ALL": "C"
+    }
+  },
+  "build": {
+    "status": "passed",
+    "method": "Resumed existing CMake Release build through maintained suite targets",
+    "cmake_cache_sha256": "f08cbe8e19a7d1f9bb26f6c171e0e9b21e25850f2094f1556c42ff7802984652",
+    "effective_cli_flags": "# CMAKE generated file: DO NOT EDIT!\n# Generated by \"Unix Makefiles\" Generator, CMake Version 3.26\n\n# compile CXX with /bin/c++\nCXX_DEFINES = -DLINEARKNOT_VERSION=\\\"0.1.1\\\"\n\nCXX_INCLUDES = -I/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearKnot-4f97fd3/src -I/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linearknot-4f97fd3/generated\n\nCXX_FLAGS = -Wall -Wextra -O3 -std=gnu++17\n\n",
+    "cli_link_command": "/bin/c++ -Wall -Wextra -O3 CMakeFiles/linearknot.dir/src/scfg2/cli/main.cc.o CMakeFiles/linearknot.dir/src/scfg2/cli/fold.cc.o CMakeFiles/linearknot.dir/src/scfg2/cli/profile.cc.o CMakeFiles/linearknot.dir/src/scfg2/cli/access.cc.o CMakeFiles/linearknot.dir/src/scfg2/cli/sample.cc.o CMakeFiles/linearknot.dir/src/scfg2/cli/subopt.cc.o CMakeFiles/linearknot.dir/src/scfg2/cli/decode.cc.o -o linearknot  libcparty_scfg2_beam.a libcparty_scfg2_exact.a libRNA.a \n"
+  },
+  "software_lock_sha256": "7ef74a240eeee505b16616913da03cae38cc04a246230814e8131687aa2db1a2",
+  "build_finished_utc": "2026-10-21T08:08:12.610508+00:00",
+  "source_after": {
+    "commit": "4f97fd332e793a50fe157e47767a1a75a306fd01",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "donor_after": {
+    "commit": "4f97fd332e793a50fe157e47767a1a75a306fd01",
+    "dirty": false,
+    "status": "",
+    "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "preparation_logs": "docs/linearknot_4f97fd3_20261021/preparation_logs.tar.gz",
+  "preparation_logs_sha256": "e167bba77ab26202a2bbdb62c695a1f6b416ace365bf433307c2e1957f965bf6",
+  "finished_utc": "2026-10-21T08:42:59.185789+00:00",
+  "comparison": {
+    "directory": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/local/linearknot-4f97fd3-comparison-20261021",
+    "successful": true,
+    "strict_identical": true,
+    "comparisons": 378,
+    "processes": 756,
+    "report_sha256": "c0ec6394b84e21730eab9224d4626ff22004d6fecd89e144bbbd3fcc2fd546fc",
+    "summary_sha256": "b4bce216fbe00d4e5e2b6b3b3d35ec8bf160238ff786b7d54d32f73cbc073871"
+  },
+  "timing_preparation": {
+    "manifest": "docs/linearknot_4f97fd3_20261021/preparation.json",
+    "manifest_sha256": "9d63a6538335333b4b36240c63fe2430093892e9d32f2418f37214791afe2ebe",
+    "matrices": 12,
+    "tasks": 82,
+    "scripts": 30,
+    "cli_jobs": 2768,
+    "all_tasks_not_started": true
+  },
+  "final_verification_sha256": "06db8d25284a366d451e144e93d20dbb019713abec8fbc7fc22492b0a41ea49a",
+  "clone_total_entries": 1232,
+  "build_total_entries": 2446
+}

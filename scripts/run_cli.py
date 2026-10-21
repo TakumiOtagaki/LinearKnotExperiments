@@ -107,7 +107,7 @@ def verify_lock(path, software, build, programs, parameter):
     if digest(parameter) != lock["energy_parameter_sha256"]:
         raise ValueError("energy parameters differ from software lock")
     for program in programs:
-        name = program["name"]
+        name = program.get("executable", program["name"])
         if digest(build / name) != lock["binaries"].get(name) or lock["binaries"].get(name) is None:
             raise ValueError("binary differs from software lock: " + name)
     for entry in lock.get("extra_files", []):
@@ -188,6 +188,10 @@ def validate(config, array=False):
                         not 1 <= bounds["min_length"] <= bounds["max_length"]):
                     raise ValueError("mode length_range needs positive inclusive bounds")
     for program in config["programs"]:
+        for key in ("executable", "subcommand"):
+            if key in program and (not isinstance(program[key], str) or
+                                   not re.fullmatch(r"[A-Za-z0-9_-]+", program[key])):
+                raise ValueError(key + " must be a simple executable or subcommand name")
         for product in program.get("outputs", []):
             name = product["name"]
             if Path(name).name != name or name in (".", ".."):
@@ -430,7 +434,9 @@ def execute_jobs(manifest, output, build, env, workers, through_beam=None, works
                         shutil.move(str(directory), str(archive / str(index)))
                     directory.mkdir(parents=True)
                     item, mode, program = items[job["input"]], modes[job["mode"]], programs[job["program"]]
-                    command = [str(build / program["name"]), "-i", item["copied_path"],
+                    command = [str(build / program.get("executable", program["name"])),
+                               *([program["subcommand"]] if "subcommand" in program else []),
+                               "-i", item["copied_path"],
                                *mode.get("args", []), *program.get("args", [])]
                     for product in program.get("outputs", []):
                         command.extend([product["flag"], str(directory / product["name"])])
@@ -523,7 +529,7 @@ def execute(config_path, software, build, output, resume=False, array_context=No
         raise ValueError("an input file is missing")
     plan = plan_jobs(config)
     state = git_state(software)
-    binaries = {p["name"]: digest(build / p["name"]) for p in config["programs"]}
+    binaries = {p["name"]: digest(build / p.get("executable", p["name"])) for p in config["programs"]}
     copied_parameter = (_workspace or output) / "inputs/energy.par"
     env = os.environ.copy()
     env.update(config.get("environment", {}))
@@ -609,7 +615,7 @@ def execute(config_path, software, build, output, resume=False, array_context=No
     manifest.update({"finished_utc": now(), "status": "interrupted" if interrupted else
                      "failed" if failed else "success", "software_after": git_state(software),
                      "experiment_after": git_state(ROOT),
-                     "binaries_after": {p["name"]: digest(build / p["name"])
+                     "binaries_after": {p["name"]: digest(build / p.get("executable", p["name"]))
                                         for p in config["programs"]}})
     manifest["software_changed_during_run"] = manifest["software_before"] != manifest["software_after"]
     manifest["binaries_changed_during_run"] = manifest["binaries_before"] != manifest["binaries_after"]

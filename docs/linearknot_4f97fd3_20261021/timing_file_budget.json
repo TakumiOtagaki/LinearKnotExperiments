@@ -1,0 +1,17 @@
+{
+  "estimated_shared_entries": 5000,
+  "basis": "All new timing plans, configs, observer builds, tests, reports, first execution and scheduler logs; clone/CLI build already certified separately",
+  "project": 102571,
+  "filesystem": "/gs/bs",
+  "quota": {
+    "used_files": 21596096,
+    "limit_files": 28000000,
+    "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9469790100  14680064000 14680064000       - 21596096  28000000 28000000       -"
+  },
+  "hard_file_limit": 24000000,
+  "remaining_files": 2403904,
+  "remaining_source": "lfs quota (with configured conservative hard limit)",
+  "max_remaining_fraction": 0.1,
+  "allowed_entries": 240390,
+  "accepted": true
+}

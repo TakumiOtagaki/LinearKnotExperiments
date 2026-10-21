@@ -1,0 +1,108 @@
+{
+  "created_utc": "2026-10-21T08:33:22.364327+00:00",
+  "comparison_report_sha256": "c0ec6394b84e21730eab9224d4626ff22004d6fecd89e144bbbd3fcc2fd546fc",
+  "comparison_directory": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/local/linearknot-4f97fd3-comparison-20261021",
+  "inputs": 14,
+  "comparisons": 378,
+  "processes": 756,
+  "byte_identical": 378,
+  "total_process_attempts": 756,
+  "retried_comparisons": 0,
+  "initial_report": null,
+  "by_command": {
+    "fold": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "profile": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "access": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "access-byloop": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "sample": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "sample-unique": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "mea": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "centroid": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    },
+    "subopt": {
+      "comparisons": 42,
+      "successful": 42,
+      "byte_identical": 42,
+      "identical_after_metadata_rename": 42
+    }
+  },
+  "metadata_rename_occurrences": {},
+  "other_differences": [],
+  "all_identical_after_metadata_rename": true,
+  "ignored_elapsed_line_prefix": "# elapsed_seconds",
+  "metadata_renames": {
+    "# linearpkraccess_metadata=1": "# linearknot_access_metadata=1",
+    "# engine=linearcparty-scfg2": "# engine=linearknot-scfg2"
+  },
+  "fingerprints": {
+    "reference": {
+      "source": {
+        "commit": "9c7d6e170b2b21a94a2e626d9939817e62898253",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "binaries": {
+        "linearknot": "94814e01000a7099ccbbf1f9d46933b76e0cd65c39af66a30764bf71fbca1d7e"
+      },
+      "cmake_cache_sha256": "4c96200010c8b68b8ba307a73a798aef2d5557509449e3e9afe80554cf285549",
+      "parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+    },
+    "candidate": {
+      "source": {
+        "commit": "4f97fd332e793a50fe157e47767a1a75a306fd01",
+        "dirty": false,
+        "status": "",
+        "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "binaries": {
+        "linearknot": "360b65cb2f0e9ffd7653e62db1769c1a195e74478ec2a1c12aa5e73f39037a90"
+      },
+      "cmake_cache_sha256": "f08cbe8e19a7d1f9bb26f6c171e0e9b21e25850f2094f1556c42ff7802984652",
+      "parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+    }
+  },
+  "artifacts_sha256": {
+    "raw_outputs.tar": "f448fb53b8a5d5c6a71cd305fa7a749e11b3cb16bbfea9915959c91e021c1c32",
+    "processes.jsonl": "445d422875b51b185ef3724227192a99838fcdb8a79cf46f92f931c527baf32f"
+  }
+}

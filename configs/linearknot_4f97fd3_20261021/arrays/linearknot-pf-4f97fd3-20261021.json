@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "measurement": "timing",
+  "seed": 20261020,
+  "compact_plan": true,
+  "max_concurrent_tasks": 30,
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1
+  },
+  "parallel_timing": {
+    "allowed": true,
+    "reason": "Retain the prior fixed single-thread worker count for matched resource reruns; allocation wall calibration keeps concurrency and host effects, without a new-release speed discount."
+  },
+  "tiers": [
+    {
+      "name": "n250",
+      "min_length": 250,
+      "max_length": 250,
+      "resource": "cpu_16",
+      "h_rt": "00:10:00",
+      "target_seconds": 419.0,
+      "max_wall_fraction": 0.7,
+      "max_inputs_per_task": 21,
+      "workers": 8,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "memory_limit_mib": 1024,
+        "timeout_seconds": 540
+      },
+      "cost_model": {
+        "basis": "Allocation-wall credits: maximum prior complete task wall / retained scheduled jobs at the same worker count and batch cap; 1.25x allowance, no new-release speed discount. Not sequential CLI work or a complexity claim. h_rt >= twice the fitted full batch and prior maximum task plus 240 s, rounded up to 5 min.",
+        "seconds_per_nt_condition": 1e-12,
+        "seconds_constant_per_condition": 1.0268471726190478,
+        "safety_factor": 1,
+        "memory_base_mib": 1024,
+        "mib_per_nt": 0,
+        "calibration": {
+          "source_plan": "results/runs/cparty-linearknot-pf-89baea52-20261020/array_plan.json",
+          "max_wall_credit_per_job": 0.8214777380952382,
+          "max_previous_task_seconds": 138.00826,
+          "max_cli_seconds": 5.779355069156736,
+          "max_previous_batch_inputs": 21
+        }
+      }
+    },
+    {
+      "name": "n500",
+      "min_length": 500,
+      "max_length": 500,
+      "resource": "cpu_16",
+      "h_rt": "00:45:00",
+      "target_seconds": 1888.9999999999998,
+      "max_wall_fraction": 0.7,
+      "max_inputs_per_task": 21,
+      "workers": 8,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "memory_limit_mib": 1024,
+        "timeout_seconds": 2640
+      },
+      "cost_model": {
+        "basis": "Allocation-wall credits: maximum prior complete task wall / retained scheduled jobs at the same worker count and batch cap; 1.25x allowance, no new-release speed discount. Not sequential CLI work or a complexity claim. h_rt >= twice the fitted full batch and prior maximum task plus 240 s, rounded up to 5 min.",
+        "seconds_per_nt_condition": 1e-12,
+        "seconds_constant_per_condition": 8.677625334821428,
+        "safety_factor": 1,
+        "memory_base_mib": 1024,
+        "mib_per_nt": 0,
+        "calibration": {
+          "source_plan": "results/runs/cparty-linearknot-pf-89baea52-20261020/array_plan.json",
+          "max_wall_credit_per_job": 6.942100267857143,
+          "max_previous_task_seconds": 1166.272845,
+          "max_cli_seconds": 64.97413586266339,
+          "max_previous_batch_inputs": 21
+        }
+      }
+    },
+    {
+      "name": "n1000",
+      "min_length": 1000,
+      "max_length": 1000,
+      "resource": "cpu_16",
+      "h_rt": "06:30:00",
+      "target_seconds": 16378.999999999998,
+      "max_wall_fraction": 0.7,
+      "max_inputs_per_task": 21,
+      "workers": 8,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "memory_limit_mib": 2048,
+        "timeout_seconds": 21600
+      },
+      "cost_model": {
+        "basis": "Allocation-wall credits: maximum prior complete task wall / retained scheduled jobs at the same worker count and batch cap; 1.25x allowance, no new-release speed discount. Not sequential CLI work or a complexity claim. h_rt >= twice the fitted full batch and prior maximum task plus 240 s, rounded up to 5 min.",
+        "seconds_per_nt_condition": 1e-12,
+        "seconds_constant_per_condition": 85.33011546875,
+        "safety_factor": 1,
+        "memory_base_mib": 2048,
+        "mib_per_nt": 0,
+        "calibration": {
+          "source_plan": "results/runs/cparty-linearknot-pf-89baea52-20261020/array_plan.json",
+          "max_wall_credit_per_job": 68.26409237499999,
+          "max_previous_task_seconds": 11468.367519,
+          "max_cli_seconds": 628.5886976644397,
+          "max_previous_batch_inputs": 21
+        }
+      }
+    },
+    {
+      "name": "n2000",
+      "min_length": 2000,
+      "max_length": 2000,
+      "resource": "cpu_16",
+      "h_rt": "01:30:00",
+      "target_seconds": 3778.9999999999995,
+      "max_wall_fraction": 0.7,
+      "max_inputs_per_task": 21,
+      "workers": 8,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "memory_limit_mib": 2048,
+        "timeout_seconds": 5340
+      },
+      "cost_model": {
+        "basis": "Allocation-wall credits: maximum prior complete task wall / retained scheduled jobs at the same worker count and batch cap; 1.25x allowance, no new-release speed discount. Not sequential CLI work or a complexity claim. h_rt >= twice the fitted full batch and prior maximum task plus 240 s, rounded up to 5 min.",
+        "seconds_per_nt_condition": 1e-12,
+        "seconds_constant_per_condition": 37.00336081845238,
+        "safety_factor": 1,
+        "memory_base_mib": 2048,
+        "mib_per_nt": 0,
+        "calibration": {
+          "source_plan": "results/runs/cparty-linearknot-pf-89baea52-20261020/array_plan.json",
+          "max_wall_credit_per_job": 29.602688654761902,
+          "max_previous_task_seconds": 2486.625847,
+          "max_cli_seconds": 93.620781569276,
+          "max_previous_batch_inputs": 21
+        }
+      }
+    },
+    {
+      "name": "n4000",
+      "min_length": 4000,
+      "max_length": 4000,
+      "resource": "cpu_16",
+      "h_rt": "07:25:00",
+      "target_seconds": 18689.0,
+      "max_wall_fraction": 0.7,
+      "max_inputs_per_task": 21,
+      "workers": 4,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "memory_limit_mib": 8192,
+        "timeout_seconds": 21600
+      },
+      "cost_model": {
+        "basis": "Allocation-wall credits: maximum prior complete task wall / retained scheduled jobs at the same worker count and batch cap; 1.25x allowance, no new-release speed discount. Not sequential CLI work or a complexity claim. h_rt >= twice the fitted full batch and prior maximum task plus 240 s, rounded up to 5 min.",
+        "seconds_per_nt_condition": 1e-12,
+        "seconds_constant_per_condition": 196.74721544642858,
+        "safety_factor": 1,
+        "memory_base_mib": 8192,
+        "mib_per_nt": 0,
+        "calibration": {
+          "source_plan": "results/runs/cparty-linearknot-pf-89baea52-20261020/array_plan.json",
+          "max_wall_credit_per_job": 157.39777235714286,
+          "max_previous_task_seconds": 13221.412878,
+          "max_cli_seconds": 217.79563351534307,
+          "max_previous_batch_inputs": 21
+        }
+      }
+    }
+  ]
+}
