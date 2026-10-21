@@ -1,5 +1,9 @@
 # LinearKnot 4f97fd3 の固定・出力照合・時間とメモリの再測定準備
 
+**2026-10-21 集計完了：12 matrix・82 task・2,768 processがすべて成功、欠測0。**
+新しい時間・メモリ、旧新版の比較表、CParty比較、図と再現コマンドは [集計報告](aggregation.md) にまとめた。
+以下は投入前に作った固定・準備の記録である。
+
 **固定と照合を完了し、12 matrix・82 task・30 job scriptを準備した。qsub と git commit は行っていない。**
 全82 taskは `not_started`、attemptは空、taskの `run/` は存在しない。
 外部の実装repoと既存runは変更していない。

@@ -139,7 +139,7 @@ def audit_packed_payload(path, jobs):
     """One sequential scan, hash every raw member, retain only small scalars."""
     expected = {name: entry for j in jobs for name, entry in j["artifacts"].items()}
     actual, scalars = set(), {}
-    with tarfile.open(path, "r|*") as archive:
+    with tarfile.open(path, "r|*", bufsize=1024 * 1024) as archive:
         for member in archive:
             if not member.isfile():
                 continue

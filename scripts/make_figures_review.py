@@ -18,7 +18,7 @@ import subprocess
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.patches import Arc
-from matplotlib.ticker import FixedLocator, FuncFormatter, NullFormatter, NullLocator
+from matplotlib.ticker import FixedLocator, FuncFormatter, MaxNLocator, NullFormatter, NullLocator
 import numpy as np
 
 MM = 1 / 25.4
@@ -206,10 +206,7 @@ def rna_points(ax, data, base, metric):
     ax.set_xticks([5, 15, 25])
     ax.set_xlabel("RNA length (kb)")
     ax.set_ylabel("Wall time (s)" if metric == "wall_seconds" else "Peak RSS (GiB)")
-    if metric == "wall_seconds":
-        ax.set_yticks([0, 500, 1000])
-    else:
-        ax.set_yticks([0, 2, 4])
+    ax.yaxis.set_major_locator(MaxNLocator(nbins=3, integer=metric == "wall_seconds"))
     row = max((r for r in data.rna if r["program"] == "LinearCParty"), key=lambda r: int(r["n"]))
     cost = base.value(row, metric + "_median")
     amount = f"{cost / 60:.1f} min" if metric == "wall_seconds" else f"{cost:.2f} GiB"
@@ -345,7 +342,7 @@ def concurrency_figure(data, base):
         base.clean(ax)
         panel(fig, "AB"[col], 1 + 82 * col, 66)
     legend_mm(fig, [Line2D([], [], marker=m, ls="none", color=c, label=p)
-                    for m, c, p in zip(("o", "s", "^"), PROGRAM_COLORS, base.PROGRAMS)],
+                    for m, c, p in zip(("o", "s", "^"), PROGRAM_COLORS, ("fold", "profile", "access"))],
               83, 12, 3)
     legend_mm(fig, [Line2D([], [], marker="o", ls="none", color=".3", label=label,
                            markerfacecolor=".3" if filled else "white")

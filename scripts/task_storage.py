@@ -126,7 +126,7 @@ class ArchiveReader:
         self.path = Path(path)
         self.members = {}
         try:
-            with tarfile.open(self.path, "r|*") as archive:
+            with tarfile.open(self.path, "r|*", bufsize=1024 * 1024) as archive:
                 for member in archive:
                     if member.isfile():
                         name = str(PurePosixPath(member.name))

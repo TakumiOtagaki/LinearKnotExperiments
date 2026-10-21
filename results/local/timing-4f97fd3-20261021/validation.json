@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "matrices": 12,
+  "tasks": 82,
+  "processes": 2768,
+  "failures": 0,
+  "missing": 0,
+  "neat1_conditions": 33,
+  "pf_conditions": 168,
+  "cparty_nonfinite_inputs": 48,
+  "cparty_nonfinite_processes": 192,
+  "cparty_exact_parity": {
+    "pass": 51,
+    "unavailable": 54
+  },
+  "script_sha256": "6717e1411aa8cc98f52b8600b11cb224b63d84bbafbab9953d09804d896788ca",
+  "tar_extractions_to_filesystem": 0,
+  "version_comparison_rows": 575
+}
