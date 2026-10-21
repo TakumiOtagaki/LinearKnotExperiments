@@ -7,8 +7,10 @@ The experiment repository can run independently of the manuscript repository.
 **Naming.** The implementation was renamed from LinearCParty to
 [LinearKnot](https://github.com/TakumiOtagaki/LinearKnot) on 2026-10-20, and
 this repository from LinearCPartyExperiments to LinearKnotExperiments.
-The manuscript results were computed with the archived implementation
-`LinearCParty-history` at commit `89baea52`; LinearKnot `9c7d6e1` gives the
+The manuscript results were computed at commit `89baea52` of LinearCParty,
+whose history is preserved in the
+[LinearKnot-history archive](https://github.com/TakumiOtagaki/LinearKnot-history).
+LinearKnot `9c7d6e1` gives the
 same outputs (`docs/linearknot_9c7d6e1_20261020/README.md`).
 The old names (LinearCParty, LinearPKCapR, LinearPKRaccess, ...) remain below
 and in the run records because they describe the commands that were run.
