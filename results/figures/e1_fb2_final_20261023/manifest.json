@@ -1,0 +1,104 @@
+{
+  "layout": "review-20261019-r4",
+  "e1_revisions": {
+    "short": [
+      "89baea52c9435b18829ef0867a66a24be56d70f9",
+      "89baea52c9435b18829ef0867a66a24be56d70f9"
+    ],
+    "long": [
+      "89baea52c9435b18829ef0867a66a24be56d70f9"
+    ]
+  },
+  "scripts_sha256": {
+    "render_e1_89baea52.py": "8824934f17af8cca34db3b4b2c36e522d3e2daf9af3daae2a1987fe985febf44",
+    "make_figures.py": "e96f7510207d8adfc2dd9e5813e41615dbe15c387711d6de0e987860ec1ed216",
+    "make_figures_review.py": "681427ccd701d9c8522fba00a05ced659589eaed1add7f1aea4eceed2711e0ae"
+  },
+  "numpy": "2.0.2",
+  "matplotlib": "3.9.4",
+  "sources": {
+    "e1_short_metrics.tsv": {
+      "path": "../../local/e1-bprna-short-89baea52-20261018/metrics.tsv",
+      "sha256": "644f7cead4848506177057fcdfe35c52236850eccf8b29f714563f7762fe51f0"
+    },
+    "e1_short_quantiles.tsv": {
+      "path": "../../local/e1-bprna-short-89baea52-20261018/quantiles.tsv",
+      "sha256": "f853161352a882f174935fe9155451bbfa7fe7ff4e5b3e4f248a189de23ac2be"
+    },
+    "e1_short_provenance.json": {
+      "path": "../../local/e1-bprna-short-89baea52-20261018/provenance.json",
+      "sha256": "d8895e877f3bcb811b36031dab4c248ac9d7d50f8a32de7e0d7985ce66bda8a8"
+    },
+    "e1_short_window_counts.tsv": {
+      "path": "../../local/e1-bprna-short-89baea52-20261018/window_counts.tsv",
+      "sha256": "ed86b4dc9c930a2939af5ff915ae369eefc2350c21929513383f3e9eb5be7ed0"
+    },
+    "e1_long_metrics.tsv": {
+      "path": "../../local/e1-bprna-long-89baea52-cpu16-20261018/metrics.tsv",
+      "sha256": "134a9805f554cc9d7c74762fc06d1216356d603621c4be72b55484afb9624f68"
+    },
+    "e1_long_quantiles.tsv": {
+      "path": "../../local/e1-bprna-long-89baea52-cpu16-20261018/quantiles.tsv",
+      "sha256": "e1687497070f50932c674f9ea8984c3615a3915bbf3b8e45ffe9bbfd54c0a0c6"
+    },
+    "e1_long_provenance.json": {
+      "path": "../../local/e1-bprna-long-89baea52-cpu16-20261018/provenance.json",
+      "sha256": "904cdc85e66dda9d4df1a1d08795e1aba8a831e0f97e006ab2a8223fa4b7192e"
+    },
+    "e1_long_window_counts.tsv": {
+      "path": "../../local/e1-bprna-long-89baea52-cpu16-20261018/window_counts.tsv",
+      "sha256": "0051be7a5aa6dae5224f187a512eb67f23f75356b310590b249d2c093a8701e1"
+    }
+  },
+  "outputs": [
+    {
+      "file": "figure2_main.pdf",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 36039,
+      "sha256": "4dc75e735d08bee6fc31d18d21e5b6a4255b3777617b4b5235fd2b72515de18f"
+    },
+    {
+      "file": "figure2_main.png",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 175219,
+      "sha256": "a48c7fa69434e7374109216530763c57be8b51de4e8b8e2f1f29747b45ac41d1"
+    },
+    {
+      "file": "figure2_d_si.pdf",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 23253,
+      "sha256": "a573b3b385997081ebb817722ee89b8892d8349c6c697c55fec34a3fc92b457a"
+    },
+    {
+      "file": "figure2_d_si.png",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 84343,
+      "sha256": "f6d64db12e6c1283ad6a3a60d83fd3aed789e3fce501b190a131276aa9a1d941"
+    },
+    {
+      "file": "figure2_accessibility_si.pdf",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 31770,
+      "sha256": "2cb0adb21c0619d1cb8c022691637934c7868c74e547d11cbb32247566ff9e9a"
+    },
+    {
+      "file": "figure2_accessibility_si.png",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 226669,
+      "sha256": "f299130ba11c062a38e1fe0e58d661562c567d7342f3002a4a1bb1d492c42912"
+    }
+  ],
+  "derived_files": {
+    "caption.md": "c0fb4c0f84332dc26e17a814bef387969152e731f569b4a3464d89c9e0d061e1",
+    "README.md": "5c9c96b805ebe416070039d96e75f8b9e84385e31082ab7e6128301c17255f4f",
+    "plot_data.tsv": "48174abda3772a5e49d1ba2fe93f311ead1a90a9407d8a957e88a8a34f989c21",
+    "evaluation_counts.tsv": "b7928090a07fd6adebebfca41dbf6032ba5dce38064805d8ebae884764067d0e",
+    "validation.json": "9a12093564b414e99eb8c34dd37647513272b15e7ebd28a7ea85a385b68e8978"
+  }
+}

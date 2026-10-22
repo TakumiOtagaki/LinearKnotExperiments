@@ -139,7 +139,7 @@ def accuracy_figure(data, base):
         error_axis(ax)
         ax.set_ylabel("90th percentile")
         ax.set_xlabel("RNA length group (nt)")
-        ax.set_title("16-nt accessibility (MAE)", loc="left")
+        ax.set_title("16-nt accessibility: absolute difference", loc="left")
     for letter, y in zip("ABC", (84, 51, 25)):
         panel(fig, letter, 1, y)
     key = base.mm_axes(fig, 106, 83, 4, 4)
@@ -526,7 +526,7 @@ Gの対合塩基を含まない窓についてRNA内で平均し、長さ群ご�
 対称対数軸は灰色帯の0–0.000001の間で線形であり、差に正の下限を代入していない。
 他の窓長と評価件数は補足図とevaluation_counts.tsvに示す。
 
-C shows the 90th percentile across RNAs of the mean absolute error (MAE) in 16-nt window accessibility, the probability that all bases in the window are unpaired together.
+C shows the 90th percentile across RNAs of the mean absolute difference in 16-nt window accessibility, the probability that all bases in the window are unpaired together.
 Within each RNA, the mean includes only windows with no base paired in G.
 RNAs without an eligible window are excluded; eligible windows with zero probability are included.
 The symmetric logarithmic axis is linear in the shaded band from 0 to 0.000001, and no positive floor is applied to the data.

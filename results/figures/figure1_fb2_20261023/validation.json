@@ -1,0 +1,88 @@
+{
+  "sequence_length": 61,
+  "scaffold_pairs": 8,
+  "band_spans": [
+    [
+      6,
+      36
+    ],
+    [
+      26,
+      50
+    ]
+  ],
+  "probability_display_cutoff_inclusive": 0.05,
+  "displayed_bpp_pairs": 15,
+  "sample_draws": 10000,
+  "sample_counts_shown": [
+    3431,
+    1426
+  ],
+  "context_hatches": "none",
+  "centroid_gamma": 1,
+  "illustrative_beam_width": 3,
+  "multiloop_rule": "BE_WIP_WIP",
+  "intermediate_order": [
+    "Inner + Right",
+    "Left + Intermediate + local factor"
+  ],
+  "max_context_sum_error": 2.220446049250313e-16,
+  "max_sample_bpp_difference": 0.010521403741104995,
+  "pdf_page_mm": [
+    178.0000000000147,
+    144.99999999998442
+  ],
+  "png_pixels": [
+    2102,
+    1712
+  ],
+  "png_dpi": [
+    299.9994,
+    299.9994
+  ],
+  "pdf_text_sizes_pt": [
+    7.0,
+    7.5,
+    8.0,
+    9.0
+  ],
+  "minimum_embedded_text_pt": 7.0,
+  "minimum_matplotlib_text_pt": 7.0,
+  "text_outside_page": [],
+  "text_overlaps": [],
+  "gs_command": [
+    "gs",
+    "-q",
+    "-dBATCH",
+    "-dNOPAUSE",
+    "-sDEVICE=txtwrite",
+    "-dTextFormat=0",
+    "-sOutputFile=-",
+    "results/figures/figure1_fb2_20261023/figure1.pdf"
+  ],
+  "visual_inspection": {
+    "date": "2026-10-23",
+    "method": "Opened final figure1.png with view_image",
+    "result": "Checked A bands, B combination order/intermediate/arrows/beam grid, and C labels at 178 x 145 mm."
+  },
+  "source_data": "results/local/figure-feedback-20261020/data.json",
+  "source_data_sha256": "e5bf96a61ea8e22ad183f0d27a370d19535a34493ebc0afe597eb305e2ccb412",
+  "panel_C_data_sha256": "23993afcd02814a7c37901991d3e0521a394bc99aad26ec635b1ec731bfacb2d",
+  "script_sha256": "cd3995d46a201ed5d5fbcda7dd878ab4a8de8915f7b236dd80fb28b5d82e4387",
+  "panel_C_preservation_check": {
+    "reference_renderer": "scripts/make_figures_feedback_20261020.py:figure1",
+    "axes_compared": 6,
+    "arc_patches_compared": 47,
+    "line_arrays_compared": 7,
+    "context_collections_compared": 7,
+    "result": "Identical axes, arcs, probabilities, context polygons, accessibility curves and structures; two labels intentionally changed."
+  },
+  "output_sha256": {
+    "figure1.pdf": "0e29ed3e5e4ffe4725316469f531d8a06f7701716594f2250f22353324d9218a",
+    "figure1.png": "d9b05756e1bbbb6829e88428afefbcec734da514b4560665ac85dc099cd9c211"
+  },
+  "export_check": {
+    "destination": "figures/figure1.pdf in paper repository",
+    "manifest_and_output_hashes_match": true
+  }
+}

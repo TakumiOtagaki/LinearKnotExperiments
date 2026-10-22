@@ -1,0 +1,4 @@
+dataset	rna_count	n_min	n_max	case3_ancestors_max	case3_depth_cap	rnas_over_30	case3_truncated_endpoints	free_bases	maximum_branching_ancestors_of_free_base	inputs_at_maximum
+bpRNA_ge400	1438	400	4381	16	30	0	0	1176310	16	bpRNA_RFAM_43116
+NEAT1_1	1	3756	3756	8	30	0	0	2302	8	NEAT1_1
+NEAT1_2	1	22743	22743	26	30	0	0	14421	26	NEAT1_2

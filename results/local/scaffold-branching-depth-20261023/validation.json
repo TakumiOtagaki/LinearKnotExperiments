@@ -1,0 +1,92 @@
+{
+  "generated_utc": "2026-10-22T15:40:03.686477+00:00",
+  "analysis_commit": "43c18c6e4ccb9f76b6caf27fdd22d616a66178a7",
+  "analysis_kind": "saved scaffold geometry only; no RNA CLI or scaffold generation",
+  "definition": "scaffold_features.scaffold_features; proper branching ancestors of free-base owner; branching root included",
+  "case3_depth_cap": 30,
+  "target_rnas_checked": 1440,
+  "independent_histograms_checked": 1447,
+  "input_hashes_verified": true,
+  "cohort_and_dataset_hashes_verified": true,
+  "neat1_scaffold_settings": {
+    "beam": 200,
+    "dangles": 2,
+    "pair_probability_threshold": 0.7,
+    "min_helix": 2
+  },
+  "frozen_sources": {
+    "results/runs/e1-bprna-long-89baea52-cpu16-20261018": {
+      "array_plan_sha256": "0b8d6f8f7398f0f1f1feebbbb756a74af63b35a207a02783d8fe7efd74eec55d",
+      "inputs_archive_sha256": "b0c9613994c5f2f9a473129350b579ec7d9b05eceef2531bb3b795a93cb8b5dd",
+      "inputs": 1438
+    },
+    "results/runs/e2-rnacentral-e2cecbb4-20261016": {
+      "array_plan_sha256": "544bf9836f973884c6b47fd033e06352beac5acdcdc8ff6c6d29bdf9eb3b9a4a",
+      "inputs_archive_sha256": "3d86a1d5fb38709575a829fae8d584291eb2633d5a975ba35b50867887b0886e",
+      "inputs": 7
+    }
+  },
+  "source_sha256": {
+    "manifests/cohorts/bprna-400plus-20261012.json": "b04c5ccb13a49b22cbf435c06bcd928885c5ed25ab0df17688e0f8da0e1505df",
+    "results/local/bprna-full-scaffolds-20261011/dataset.json": "746db8f5acb4c394df3d8f282f08ef53a2e9e444aa5b19ee14617da8d414bf5a",
+    "data/neat1-20261016/manifest.json": "1ea630ba7870bebf06dc4fa7c000b8b0faa1418d367dc97f8e07a44b3f9640af",
+    "results/local/e2-e2cecbb4-g-features-20261016/rnacentral_g_features.tsv": "856c1f56b79ef524038d1885540203ecdf9f037b5946592f0179e12032978c82",
+    "scripts/analyze_scaffold_branching_depth.py": "55481d9f8ae983b3cd8e15f452d2fdb358afaffba33245df39ff6702a7bd1eaf",
+    "scripts/scaffold_features.py": "2f8bc7f848245e08447208712d7f73755812c5b8d09039ce11c3953f8db260c3",
+    "scripts/rna_records.py": "a9521da62337f26d2d8f774a4c343cfb14118ba640f9ff4b8eaf340534d5acec",
+    "scripts/task_storage.py": "7371e4ded5f037d8719d391f4bfa1474502e353ed78251f881c833061ad55821"
+  },
+  "rnacentral_reference": [
+    {
+      "input": "URS000233CDDE",
+      "case3_ancestors_max": 8,
+      "case3_depth_cap": 30,
+      "case3_truncated_endpoints": 0
+    },
+    {
+      "input": "URS00019626CE",
+      "case3_ancestors_max": 10,
+      "case3_depth_cap": 30,
+      "case3_truncated_endpoints": 0
+    },
+    {
+      "input": "URS000239D8A4",
+      "case3_ancestors_max": 10,
+      "case3_depth_cap": 30,
+      "case3_truncated_endpoints": 0
+    },
+    {
+      "input": "URS00023C9544",
+      "case3_ancestors_max": 19,
+      "case3_depth_cap": 30,
+      "case3_truncated_endpoints": 0
+    },
+    {
+      "input": "URS000241043C",
+      "case3_ancestors_max": 23,
+      "case3_depth_cap": 30,
+      "case3_truncated_endpoints": 0
+    },
+    {
+      "input": "URS000238C72C",
+      "case3_ancestors_max": 12,
+      "case3_depth_cap": 30,
+      "case3_truncated_endpoints": 0
+    },
+    {
+      "input": "URS00023A4DB9",
+      "case3_ancestors_max": 28,
+      "case3_depth_cap": 30,
+      "case3_truncated_endpoints": 0
+    }
+  ],
+  "rnacentral_saved_depth_cap": [
+    100
+  ],
+  "rnacentral_maximum": 28,
+  "rnacentral_truncated_endpoints_at_30": 0,
+  "output_sha256": {
+    "per_rna.tsv": "6c3cf7ad874e8e8eb5e7c8cc7fa0a0668891fb25b260f1d0dc0835fb7d0f39d6",
+    "summary.tsv": "1f1d1e1a55eb70b096514b72a78b19212ea58286d58025f14ebee82a6b0b123d"
+  }
+}
