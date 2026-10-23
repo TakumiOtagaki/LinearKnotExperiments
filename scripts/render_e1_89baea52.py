@@ -19,7 +19,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path,
                         default=base.ROOT / 'results/figures/e1_89baea52_20261019_r4')
+    parser.add_argument('--short-data', type=Path, help='Validated context-update short aggregate')
+    parser.add_argument('--long-data', type=Path, help='Validated context-update long aggregate')
     args = parser.parse_args()
+    if bool(args.short_data) != bool(args.long_data):
+        parser.error('--short-data and --long-data must be supplied together')
     out = args.out.resolve()
     out.mkdir(parents=True, exist_ok=False)
     data = base.Data.__new__(base.Data)
@@ -32,7 +36,16 @@ def main():
     revisions = {}
     for cohort, suffix in (("short", "20261018"), ("long", "cpu16-20261018")):
         directory = base.ROOT / f"results/local/e1-bprna-{cohort}-89baea52-{suffix}"
+        if args.short_data:
+            directory = args.short_data if cohort == 'short' else args.long_data
         provenance = json.loads((directory / "provenance.json").read_text())
+        if args.short_data:
+            base.require(provenance.get('context_source_version') == '0.2.0' and
+                         provenance.get('noncontext_columns_byte_identical') is True,
+                         'Expected a certified context-only 0.2.0 aggregate')
+            validation = json.loads((directory / 'validation.json').read_text())
+            base.require(validation['all_passed'] and validation['metrics_sha256'] ==
+                         provenance['metrics_sha256'], 'Context aggregate validation failed')
         revisions[cohort] = [run["software_commit"] for run in provenance["runs"]]
         base.require(all(r.startswith("89baea52") for r in revisions[cohort]),
                      "E1 sources must all be 89baea52")
@@ -118,8 +131,25 @@ The captions use the adopted Figure 2 / S1 / S2 numbering.
 PNG inspection is recorded below after generation; manuscript insertion belongs
 to the manuscript editor. No LaTeX or existing figure is changed.
 """)
+    if args.short_data:
+        (out / 'README.md').write_text('''# E1 context update — LinearKnot 0.2.0, 2026-10-23
+
+Profiles use f93b55e (v0.2.0); all other E1 metrics use the certified saved
+89baea52 outputs. Cohorts, definitions, reference modes and rendering functions
+are unchanged. See manifest.json for the exact source and script hashes.
+The SI companions use total accessibility and free energy; neither uses contexts.
+
+Reproduce from the experiments repository:
+```sh
+python3 -B scripts/render_e1_89baea52.py \\
+  --short-data ''' + str(args.short_data.relative_to(base.ROOT)) + ''' \\
+  --long-data ''' + str(args.long_data.relative_to(base.ROOT)) + ''' \\
+  --out ''' + str(out.relative_to(base.ROOT)) + '''
+```
+''')
     derived = ("caption.md", "README.md", "plot_data.tsv", "evaluation_counts.tsv", "validation.json")
     manifest = dict(layout="review-20261019-r4", e1_revisions=revisions,
+                    context_version='0.2.0' if args.short_data else None,
                     scripts_sha256={p.name: base.digest(p) for p in
                                     (Path(__file__), Path(base.__file__), Path(review.__file__))},
                     numpy=base.np.__version__, matplotlib=base.plt.matplotlib.__version__,

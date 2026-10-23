@@ -1,0 +1,105 @@
+{
+  "layout": "review-20261019-r4",
+  "e1_revisions": {
+    "short": [
+      "89baea52c9435b18829ef0867a66a24be56d70f9",
+      "89baea52c9435b18829ef0867a66a24be56d70f9"
+    ],
+    "long": [
+      "89baea52c9435b18829ef0867a66a24be56d70f9"
+    ]
+  },
+  "context_version": "0.2.0",
+  "scripts_sha256": {
+    "render_e1_89baea52.py": "ffa75e3a6ecb6e1cd23912305bf4fdd9f407f77c77dd16b3bd4482db3c82dfd1",
+    "make_figures.py": "e96f7510207d8adfc2dd9e5813e41615dbe15c387711d6de0e987860ec1ed216",
+    "make_figures_review.py": "681427ccd701d9c8522fba00a05ced659589eaed1add7f1aea4eceed2711e0ae"
+  },
+  "numpy": "2.0.2",
+  "matplotlib": "3.9.4",
+  "sources": {
+    "e1_short_metrics.tsv": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-short-context-0.2.0-20261023/metrics.tsv",
+      "sha256": "03336242bdfd4b369b4167e33bf47d0993787054f54fae2208aae470f7fdde5b"
+    },
+    "e1_short_quantiles.tsv": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-short-context-0.2.0-20261023/quantiles.tsv",
+      "sha256": "4dbc22f088ba9501e341cecdfcbc009462f2c4603399a893b41ffb7544996e0e"
+    },
+    "e1_short_provenance.json": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-short-context-0.2.0-20261023/provenance.json",
+      "sha256": "b97eb430b81a1d335a88fe31156ca46aff525c0c462bf6496b647a9b16887272"
+    },
+    "e1_short_window_counts.tsv": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-short-context-0.2.0-20261023/window_counts.tsv",
+      "sha256": "ed86b4dc9c930a2939af5ff915ae369eefc2350c21929513383f3e9eb5be7ed0"
+    },
+    "e1_long_metrics.tsv": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-long-context-0.2.0-20261023/metrics.tsv",
+      "sha256": "0dff08e3bc24f8f42e85280189a1051fa1bf62c4aad956e408bf61be056e6c14"
+    },
+    "e1_long_quantiles.tsv": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-long-context-0.2.0-20261023/quantiles.tsv",
+      "sha256": "0e607aa723a080814b9c7afc20ef841972c0f57583a3935b46c66a6e7eea8d97"
+    },
+    "e1_long_provenance.json": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-long-context-0.2.0-20261023/provenance.json",
+      "sha256": "db81308c5773fcfb320e29e13b70678cfaee8bffcd1e60b5058ac9315a852607"
+    },
+    "e1_long_window_counts.tsv": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-long-context-0.2.0-20261023/window_counts.tsv",
+      "sha256": "0051be7a5aa6dae5224f187a512eb67f23f75356b310590b249d2c093a8701e1"
+    }
+  },
+  "outputs": [
+    {
+      "file": "figure2_main.pdf",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 36050,
+      "sha256": "befa10a75c5a23306b6c20a8d9f97690ff16ea01cc2b11089dac53cf227397da"
+    },
+    {
+      "file": "figure2_main.png",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 175159,
+      "sha256": "d70f4ffbdd763c8c89a30a0dc06060cfac1e22bea102ec951befebee5e001066"
+    },
+    {
+      "file": "figure2_d_si.pdf",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 23253,
+      "sha256": "98e749395ea006ecdc1ffca8e0acc3690810b52cc8ead6651ae8341db1c36d03"
+    },
+    {
+      "file": "figure2_d_si.png",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 84343,
+      "sha256": "f6d64db12e6c1283ad6a3a60d83fd3aed789e3fce501b190a131276aa9a1d941"
+    },
+    {
+      "file": "figure2_accessibility_si.pdf",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 31770,
+      "sha256": "065698d7c2066b1d6ebcb49c5009c6312f8d3a180974c632d743f5d363188efd"
+    },
+    {
+      "file": "figure2_accessibility_si.png",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 226669,
+      "sha256": "f299130ba11c062a38e1fe0e58d661562c567d7342f3002a4a1bb1d492c42912"
+    }
+  ],
+  "derived_files": {
+    "caption.md": "7ca6b18c569e64225dbfe88c7bb8f1333b8dc07bde3e642749471e6e68e3f958",
+    "README.md": "9cda641255a802aec5a4091199ae2ffa5af183ca9661817fff894461c889ee1d",
+    "plot_data.tsv": "639d288482b87ea215be399744d74b5689858228299f1aa7cbc69e931bc1ec06",
+    "evaluation_counts.tsv": "b7928090a07fd6adebebfca41dbf6032ba5dce38064805d8ebae884764067d0e",
+    "validation.json": "a8387ba58f28f22f0b2fc8b2a18d39332a8691edf0d46447966ab1dc3fc408a1"
+  }
+}

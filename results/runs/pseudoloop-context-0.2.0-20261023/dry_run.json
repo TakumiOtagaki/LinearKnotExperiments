@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-23T02:13:41.190402+00:00",
+  "checked_utc": "2026-10-23T03:34:38.833332+00:00",
   "status": "passed",
   "cli_executed": false,
   "inputs": 26063,
@@ -19,15 +19,15 @@
     "project": 102571,
     "filesystem": "/gs/bs",
     "quota": {
-      "used_files": 21851086,
+      "used_files": 21852828,
       "limit_files": 28000000,
-      "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9595957940  14680064000 14680064000       - 21851086  28000000 28000000       -"
+      "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9600651916  14680064000 14680064000       - 21852828  28000000 28000000       -"
     },
     "hard_file_limit": 24000000,
-    "remaining_files": 2148914,
+    "remaining_files": 2147172,
     "remaining_source": "lfs quota (with configured conservative hard limit)",
     "max_remaining_fraction": 0.1,
-    "allowed_entries": 214891,
+    "allowed_entries": 214717,
     "accepted": true
   }
 }

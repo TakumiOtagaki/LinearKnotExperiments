@@ -202,3 +202,63 @@ qsub -g "$TSUBAME_GROUP" -tc 3 jobs/pseudoloop-context-0.2.0-20261023/nt3200_438
 中断taskの例：子processの停止を確認してから `qsub -g "$TSUBAME_GROUP" -tc 3 -t 2-2 jobs/pseudoloop-context-0.2.0-20261023/nt300_399.sh --resume`。plan、runtime、runnerを変更するとhash検査で停止する。h_rtとresourceを提出時に上書きしない。
 
 array完了後は、新旧profileのMulti+Pseudo/他五文脈の不変性を全件確認してから、新profile同士（短鎖exact、長鎖b400参照）でcontext TV/各文脈MAE/PseudoLoopの選択・局所誤差を再集計する。BPP・total accessibility・free energyの旧値は入力hashで結合する。旧 `analyze_e1_production.py` は三CLIを要求するため、profile-only出力にそのまま実行しない。Figure 2BとSIセルはその集計を待つ。現時点で原稿のこれらの数値を更新してよいとは結論しない。
+
+
+## 2026-10-23 E1全230 taskの検証・集計と英日原稿への反映
+
+上の「tagなし」「未投入・未コピー」は準備段階の記録。この節はarray完了後の結果である。現在の `v0.2.0` tagのpeeled commitは、再計算に使った `f93b55ed9749dd1c198cd1f1809aece50f12f7d8` と一致する。
+
+- [新しい全集計](../results/local/e1-context-0.2.0-20261023/)に短鎖・長鎖のmetrics/quantiles/summary/provenance/validation、参照側のPseudoLoop massと自由塩基上の平均、層別・局所誤差を保存した。旧集計は上書きしていない。長鎖の参照は有限b400のまま。
+- [新しいFigure 2](../results/figures/e1-context-0.2.0-20261023/figure2_main.pdf)、300 dpi PNG、plot_data/evaluation_counts/caption/manifest/validationを保存し、論文repoのFigure 2とexport manifestを更新した。
+- `check`が成功。plan/runtime/source/runner/storage/job-script/旧plan/入力tarと、全入力のbyte・配列・長さのhashを確認した。完了taskは **230/230**、profileは **131,753/131,753**、入力は **26,063/26,063**。欠落・重複・失敗・timeout・不正出力は0。task metadata、JSONLの終端・mode行列、終了コード、実際の引数、binary/parameter/input hash、tar内全4 artifactのbyte数とSHA-256、commandとstdoutの対応を検査した。task tar自体のhashも保存した。
+- 全 **27,208,998塩基分**で旧profileと比較した。Multiloop+PseudoLoopの最大絶対差は **6.464965520642124e-12**、Stemは **3.019806626980426e-14**、Hairpin/Bulge/Internal/Exteriorは **0**。計画どおり絶対許容差1e-9を使った。
+- 短鎖 **98,500行**・長鎖 **8,628行**の文脈以外の全列が、旧metricsと文字列単位で一致した。BPP・total accessibility・ΔF・窓数・保存資源値は旧値のまま。新metricsは既存 `validate_e1_production.py` に合格した。
+- 文脈は既存 `analyze_accuracy.compare_contexts`、集約は `analyze_e1_production.summarize` を使用。層別adapterは `analyze_e1_pk_stratified.py` の選択・誤差・分位点関数をそのまま使い、旧profileを通した全4表も全セル再現して照合した。局所誤差は既存 `analyze_e1_local_errors_89baea52.py` に新profileを重ねて集計した。閾値、NA、等RNA重み、線形補間の分位点は変更していない。
+- all/交差pair mass群の文脈以外の派生集計も旧値と一致した。PseudoLoop mass層別では新しいmassで群を選び直したため、群の所属と、その群で条件づけたBPP/accessibility等の集計は変わり得る。RNA単位の非文脈量の変化とは区別した。
+
+### 原稿に使う主要値（旧 → 新）
+
+| 対象 | 旧 | 新 |
+|---|---:|---:|
+| 300–399 nt、b200、Context TV p90 | 0.001775133296871157 | 0.001735394573176407 |
+| 同、本文・caption | 0.0018 | 0.0017 |
+| 同、S13 | 0.00178 | 0.00174 |
+| 同、Context TV最大 | 0.20602449748510265 | 0.20602439304774917（丸め0.206を維持） |
+| 全長鎖、b300、Context TV p90 | 0.04306175698759455 | 0.04306177015534478（丸め0.043を維持） |
+| S14B、exact PseudoLoop≥0.1のRNA / 塩基数 | 12,740 / 223,512 | 12,687 / 219,028 |
+| 同、PseudoLoop局所誤差p90 | 4.007905118896815e-14 | 4.030109579389318e-14 |
+| 同、PseudoLoop局所誤差最大 | 0.9819132567351885 | 0.9819320729907435 |
+
+S15のPseudoLoop行（300–399 nt、全1,095本。各欄は事象数 / RNA数）：
+
+| b | 取りこぼし：旧 → 新 | 作り出し：旧 → 新 |
+|---:|---|---|
+| 20 | 694 / 85 → 687 / 85 | 59 / 12 → 59 / 12 |
+| 50 | 446 / 56 → 449 / 57 | 38 / 6 → 41 / 6 |
+| 100 | 307 / 42 → 306 / 42 | 11 / 4 → 14 / 4 |
+| 200 | 80 / 15 → 80 / 15 | 0 / 0 → 0 / 0 |
+
+塩基325の例はarrayでも小規模の新誤差0.9819320729907435を確認し、既に反映済みの丸め0.98193を維持した。小規模のFigure 1・Terc・列挙・by-loop検証は先の採用値を保持した。inventoryの **pending array 1,874件を全て新値と新しい出どころで埋めた**。S13のContext TV 16セル、S14Aの6セル、S14BのPseudoLoop選択数・誤差、S15の全4行、本文とFigure 2 captionを英日で対応させた。
+
+本文の「少なくとも90%が…以下」は、丸めたp90を厳密な上限として読ませないため、「p90 mean TV distances were …」とp90を直接述べる文にした。日本語も「平均TVのp90は…」にした。
+交差mass≥1の群でb20/50/100の四指標のp90が他の二群より大きいという文は、全12比較で引き続き成立した。大小関係の逆転による意味の変更はない。
+
+Figure 2のPNGを開き、Bの白抜き記号、軸、凡例、文字の重なり・欠けがないことを確認した。178×92 mm、300 dpi、最小7 ptを維持し、1,750分位点・350集計と文字・座標検査に合格した。文脈以外のplot_data **450行**と評価窓数は旧図と完全一致。E1のSI二図はtotal accessibilityとΔFのみを使い、新しいPNGが両方とも旧図とbyte一致した。採用SI図の差し替えは不要だった。export先と新Figure 2のPDF hashも一致した。
+
+### ビルド・再現・実行記録
+
+`cd manuscript/latex && bash build.sh` と `bash make_diff.sh 37a0058` が成功。通常本文 **8頁**・SI **29頁**、差分本文 **10頁**・差分SI **30頁**。比較元は `37a0058c21897bac7cc55489e89435dff929caa8`。LaTeXエラー・未定義参照・未定義引用は0。変更頁と差分の赤青表示を画像で確認した。PDF・ソースhashと警告は論文repo `manuscript/latex/build/e1_context_0.2.0_20261023_validation.json` に保存した。
+
+実験repoからの再現手順（再実行時は新しい `--out` と対応するrenderer入力pathを指定する）：
+
+```sh
+python3 -B scripts/pseudoloop_context_array_20261023.py check
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python3 -B scripts/reanalyze_e1_context_0_2_0_20261023.py --scratch-dir /tmp --workers 4
+python3 -B scripts/render_e1_89baea52.py --short-data results/local/e1-context-0.2.0-20261023/e1-bprna-short-context-0.2.0-20261023 --long-data results/local/e1-context-0.2.0-20261023/e1-bprna-long-context-0.2.0-20261023 --out results/figures/e1-context-0.2.0-20261023
+```
+
+新集計rootの `task_output_validation.json`、`context_update_validation.json`、`noncontext_and_claim_validation.json`、`manuscript_update.json`、`output_manifest.json` に照合結果とhashを記録した。実行時codeと転記・検証scriptは `analysis_scripts.tar.gz`、ログは `execution_logs.tar.gz` にまとめた。初回auditのscriptは `initial_analysis_scripts.tar.gz` に保存した。
+
+開発上の記録：参照descriptorの初回exportは長鎖出力directoryがまだなく失敗した。両集計のvalidationを待つ順に直して成功した。逐次の層別集計は読み直しが多かったため、検証済みprofile DBをnode-localに保持して停止・再開し、tarのmemory cacheとtask並列adapterへ切り替えた。旧4表全セルの再現、新旧RNA指標と非文脈集計の一致で検証した。これらは集計処理の実行記録であり、arrayのprofile失敗や科学的な性能測定ではない。
+
+共有inodeを確認し、per-inputのファイルを共有領域に展開せず、profile DBと中間ファイルはnode-localに置いた。95 MBの短鎖metricsを含む `results/local/` と生出力はgitの対象外。20 MB超の新規ファイルをstageせず、git commitも行っていない。外部実装repoは読み取りだけで、RNA CLIの再実行・qsub・性能測定は行っていない。
