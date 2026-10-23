@@ -6,8 +6,8 @@ No folding program is run and no experimental values are invented.
 Example, from the experiments repository::
 
     MPLCONFIGDIR=/tmp/figure1-mpl python3 scripts/make_figure1.py \
-        --data results/local/figure-feedback-20261020/data.json \
-        --out results/figures/figure1_fb2_20261023
+        --data results/local/pseudoloop-0.2.0-20261023/examples/figure_data.json \
+        --out results/figures/figure1_fb4_20261023
 
 The output directory receives figure1.pdf, figure1.png (300 dpi), caption.md,
 README.md and validation.json. The old figure and saved inputs are unchanged.
@@ -253,6 +253,99 @@ def context_key(scene,x,y):
                    'Multiloop':23,'Exterior':21,'PseudoLoop':24}[c]
 
 
+def decomposition_panel(s):
+    """One BE-wing multiloop, drawn as states and grouped deduction edges.
+
+    Each card represents a state (a set of partial structures), not a unique
+    structure. Its arcs are one representative. The shared edge junction is
+    not a state. In the binary expansion, the first edge has zero local
+    energy; the original local factor is applied only on completion.
+    """
+    s.panel(63,142,'B','Partial structures, decomposition trees and pruning')
+    for x,label in ((82,'CParty'),(121,'LinearKnot'),(161,'Beam pruning')):
+        s.text(x,136,label,fontsize=7.5,ha='center',weight='bold')
+
+    def arcs(x,y,w,parts=('Left','Inner','Right'),closed=False):
+        # Fixed relative positions make every thumbnail the same example.
+        scale=w/30
+        if closed:
+            s.line(x,y,x+w,y,color=MUTED,lw=.4)
+            s.fig.add_artist(Arc(((x+w/2)/s.w,y/s.h),w*.97/s.w,w*.46/s.h,
+                transform=s.fig.transFigure,theta1=0,theta2=180,color=GREY,lw=.85))
+        for name,a,b,c,style in (('Left',3,9,BLUE,STYLES[1]),
+                                 ('Inner',12,18,GREY,STYLES[0]),
+                                 ('Right',21,27,BLUE,STYLES[1])):
+            if name not in parts: continue
+            if not closed:
+                s.line(x+(a-1)*scale,y,x+(b+1)*scale,y,color=MUTED,lw=.4)
+            for inset in (0,1):
+                span=(b-a-2*inset)*scale
+                s.fig.add_artist(Arc(((x+(a+b)/2*scale)/s.w,y/s.h),
+                    span/s.w,span*.9/s.h,transform=s.fig.transFigure,
+                    theta1=0,theta2=180,color=c,lw=.85,ls=style))
+
+    def state(x,y,w,label,parts,closed=False,intermediate=False):
+        s.rect(x,y,w,9,fc='white',ec=INK,lw=.65,
+               ls=(0,(3,2)) if intermediate else '-')
+        s.text(x+w/2,y+8.4,label,ha='center')
+        # Cropped domains keep individual branches large enough to read.
+        if len(parts)==1:
+            full_w=(w-2)*30/8
+            offset={'Left':2,'Inner':11,'Right':20}[parts[0]]
+            arcs(x+1-offset*full_w/30,y+1.2,full_w,parts)
+        elif intermediate:
+            full_w=(w-2)*30/17
+            arcs(x+1-11*full_w/30,y+1.2,full_w,parts)
+        else:
+            arcs(x+1,y+1.2,w-2,parts,closed)
+
+    def join(children,junction,parent,label,label_xy):
+        # All branches meet at one junction: one edge with several children.
+        # A junction dot is deliberately much smaller than a state card.
+        for x,y in children:
+            s.line(x,y,*junction,color=INK,lw=.7)
+        s.fig.add_artist(Line2D([junction[0]/s.w],[junction[1]/s.h],
+            transform=s.fig.transFigure,marker='o',ms=1.5,color=INK,ls='none'))
+        s.arrow(*junction,*parent)
+        s.text(*label_xy,label)
+
+    all_parts=('Left','Inner','Right')
+    state(73,123,18,'Parent',all_parts,closed=True)
+    for x,name in ((64,'Left'),(77,'Inner'),(90,'Right')):
+        state(x,109,10.5,name,(name,))
+    join([(69.25,118),(82.25,118),(95.25,118)],(82,120.5),(82,122.8),
+         '+ E',(87,122.4))
+    s.text(82,104,'Same multiloop',ha='center')
+    arcs(68,94.5,28,closed=True)
+
+    state(112,123,18,'Parent',all_parts,closed=True)
+    state(103,109,10.5,'Left',('Left',))
+    state(116,109,24,'Intermediate',('Inner','Right'),intermediate=True)
+    join([(108.25,118),(128,118)],(121,120.5),(121,122.8),
+         '+ E',(128,122.4))
+    for x,name in ((116,'Inner'),(129.5,'Right')):
+        state(x,95.5,10.5,name,(name,))
+    join([(121.25,104.5),(134.75,104.5)],(128,106.5),(128,108.8),
+         '+ 0',(132,108.3))
+
+    s.text(161,132,'Keep top b (b = 3)',ha='center')
+    s.text(161,128,'Intermediate states',ha='center')
+    s.text(161,124.5,'Higher rank ↑',ha='center')
+    for x in (151,160,169):
+        for k in range(5):
+            s.fig.add_artist(Line2D([x/s.w],[(109+k*3)/s.h],
+                transform=s.fig.transFigure,marker='o' if k>=2 else 'x',
+                ms=3.2,color=INK if k>=2 else GREY,ls='none'))
+    s.line(148,113.5,173,113.5,color=MUTED,lw=.5,ls=(0,(2,2)))
+    s.arrow(140.6,114,147.5,118.5,color=MUTED,ls=(0,(3,2)))
+    s.arrow(148,105,174,105)
+    s.text(161,103.5,'Right endpoint',ha='center')
+    s.text(161,99.5,'× = discarded',ha='center')
+
+    s.text(63,91,'Box: a state = a set of partial structures; arcs: one example.')
+    s.text(63,87,'Joined lines: one step; E = local energy (added once).')
+
+
 def make_figure(d):
     s=Scene(145); n=len(d['record']['seq']); g=pair_set(d['scaffold'])
     gp=set(map(tuple,d['record']['pk']))
@@ -268,66 +361,7 @@ def make_figure(d):
         x=lambda p:7+(p-.5)*50/n
         s.line(x(i),y,x(j),y,color=c,lw=1.4)
     s.text(7,86.5,'Grey and orange bands cross')
-    # BE_WIP_WIP has three children: left WIP, inner BE, right WIP.
-    # This is not ordinary V/VM multiloop recursion, already binary in CParty.
-    s.panel(63,142,'B','Multiloop: smaller steps, then pruning')
-    for x,label,detail in ((79.5,'CParty','Join all three'),
-                            (119.5,'LinearKnot','Join two at a time'),
-                            (161.5,'Beam pruning','Keep top b (b = 3)')):
-        s.text(x,134,label,fontsize=7.5,ha='center',weight='bold')
-        s.text(x,130,detail,ha='center')
-
-    def multiloop(x,y,parts=('Left','Inner','Right'),closed=False):
-        # Geometry in millimetres is identical before/after regrouping.
-        # The inner grey arc is the boundary of this band's calculation;
-        # its interior is not consumed here.
-        if closed:
-            s.line(x,y,x+30,y,color=MUTED,lw=.45)
-            s.fig.add_artist(Arc(((x+15)/s.w,y/s.h),29/s.w,18/s.h,
-                transform=s.fig.transFigure,theta1=0,theta2=180,color=GREY,lw=1.05))
-        for name,a,b,c,style in (('Left',3,9,BLUE,STYLES[1]),
-                                 ('Inner',12,18,GREY,STYLES[0]),
-                                 ('Right',21,27,BLUE,STYLES[1])):
-            if name not in parts: continue
-            if not closed: s.line(x+a-1,y,x+b+1,y,color=MUTED,lw=.45)
-            for inset in (0,1):
-                span=b-a-2*inset
-                s.fig.add_artist(Arc(((x+(a+b)/2)/s.w,y/s.h),span/s.w,span*.9/s.h,
-                    transform=s.fig.transFigure,theta1=0,theta2=180,color=c,lw=.95,ls=style))
-
-    # CParty combines all three inputs in one step.
-    multiloop(64.5,117,closed=True)
-    multiloop(64.5,100)
-    for x,label in ((70.5,'Left'),(79.5,'Inner'),(88.5,'Right')):
-        s.text(x,98,label,ha='center')
-        s.arrow(x,104.5,x,115.7)
-    s.text(79.5,90,'One combination',ha='center')
-    s.arrow(96,120,102,120)
-
-    # LinearKnot first joins inner BE + right WIP, then adds left WIP and
-    # the local outer-pair factor. Anchors and child coordinates are retained.
-    multiloop(104.5,117,closed=True)
-    multiloop(104.5,104,parts=('Left',))
-    multiloop(104.5,104,parts=('Inner','Right'))
-    s.rect(114.8,103,19.4,10,fill=False,ec=INK,lw=.65,ls=(0,(3,2)))
-    s.text(124.5,112,'Intermediate',ha='center')
-    s.arrow(110.5,108.5,110.5,115.7)
-    s.arrow(125,113.5,125,115.7)
-    multiloop(104.5,89,parts=('Inner','Right'))
-    s.text(124,92,'+',ha='center')
-    s.arrow(124.5,94,124.5,102.2)
-    s.arrow(136,120,142.5,120)
-
-    # Neutral candidate markers keep blue reserved for added base pairs.
-    for x in (153,161,169):
-        for k in range(5):
-            s.fig.add_artist(Line2D([x/s.w],[(112+k*3.2)/s.h],transform=s.fig.transFigure,
-                marker='o' if k>=2 else 'x',ms=3.2,color=INK if k>=2 else GREY,ls='none'))
-    s.arrow(147,111,147,127.8)
-    s.text(144.5,119.5,'Higher rank',rotation=90,ha='center',va='center')
-    s.arrow(151,109,174,109)
-    s.text(162,107,'Right endpoint',ha='center')
-    s.arrow(170,100,170,78,color=BLUE)
+    decomposition_panel(s)
     s.panel(2,82,'C','Outputs: exact example, bpRNA_RFAM_31397 (61 nt)')
     s.rect(5,1,170,76,fill=False,ec=BLUE,lw=.8)
     s.text(12,74,'Pair probabilities',fontsize=7.5,weight='bold')
@@ -362,6 +396,11 @@ def make_figure(d):
         sample_draws=total,sample_counts_shown=[c for c,db in d['samples'][:2]],
         context_hatches='none',centroid_gamma=1,illustrative_beam_width=BEAM_DEMO,
         multiloop_rule='BE_WIP_WIP',intermediate_order=['Inner + Right','Left + Intermediate + local factor'],
+        decomposition_child_counts={'CParty':[3],'LinearKnot':[2,2]},
+        decomposition_local_energy={'CParty':['E'],'LinearKnot':['0','E']},
+        state_thumbnails='One representative per set of partial structures',
+        beam_grid_state_type='Intermediate states',
+        panel_C_uses_illustrative_beam=False,
         **d['validation'])
 
 
@@ -452,38 +491,47 @@ G and G′ share no paired bases, and each has no crossing pairs.
 The grey and orange underlines mark the spans of two groups of nested pairs, called bands, that cross each other.
 The density-2 restriction allows at most two bands in a connected crossing group to span one position.
 
-Bはscaffoldの一つのmultiloopを示す。
-multiloopとは、枝と呼ぶ複数の閉じた部分構造をつなぐloopである。
-CPartyは内側のscaffoldの部分と左右の枝を一度につなぐ。
-LinearKnotはまず内側と右側をつなぎ、破線の枠で示す途中の状態を作る。
-次に左側を加えてmultiloopを閉じる。
-beam pruningでは、右端ごとに同じ種類の候補を順位づけ、上位b個を残す（模式図はb={BEAM_DEMO}）。
-丸は保持候補、×は破棄候補を示す。
-同じ分解でBoltzmann重みの和を取ると分配関数、エネルギーの最小を取ると最小自由エネルギー（MFE）構造を得る。
+Bは、二つのscaffold対の間に左右の枝を一つずつ加えたmultiloopを示す。
+multiloopは、枝と呼ぶ閉じた部分構造をつなぐloopである。
+各枠は状態、すなわち部分構造の集まりを表し、弧はその一例を示す。
+黒い点で合流する線は、子を親につなぐ分解の一段階を表す。
+CPartyは左の枝・内側のscaffold部分・右の枝を一度につなぐ。
+LinearKnotは内側と右の枝を途中の状態にまとめ、次に左の枝を加える。
+Eは局所エネルギーを表す。
+最初の段階では0、次の段階でEを加える。
+beam pruningは、部分構造の最後の塩基である右端ごとに同じ種類の状態を順位づけ、上位b個を残す（模式図はb={BEAM_DEMO}）。
+途中の状態も枝刈りの対象となる。
+丸は保持、×は破棄を示す。
+Cは枝刈りを行わない計算例である。
 
-**(B)** The arcs show one multiloop in the scaffold.
-A multiloop connects several closed substructures, called branches.
-CParty joins the inner scaffold part and the branches on its left and right in one step.
-LinearKnot first joins the inner part to the right branch, forming the intermediate state in the dashed box.
-It then adds the left branch and closes the multiloop.
-Beam pruning ranks candidates of the same type at each right endpoint and keeps the top b (b={BEAM_DEMO} in this sketch).
-Circles mark retained candidates; crosses mark discarded candidates.
-The same decomposition gives the partition function by summing Boltzmann weights and an MFE structure by minimizing energy.
+**(B)** The example has one new branch on each side of a multiloop between two scaffold pairs.
+A multiloop connects closed substructures, called branches.
+Each box is a state: a set of partial structures.
+The arcs show one example from that set.
+Lines that meet at a black dot form one decomposition step, joining the children to their parent.
+CParty joins the left branch, inner scaffold part and right branch at once.
+LinearKnot first joins the inner part and right branch into an intermediate state, then adds the left branch.
+E denotes the local energy term.
+The first step adds zero; the second adds E.
+Beam pruning ranks states of the same type at each right endpoint, the last base in the partial structure, and keeps the top b (b={BEAM_DEMO} in this sketch).
+It also prunes intermediate states.
+Circles remain; crosses are discarded.
+Panel C uses no pruning.
 
 CはbpRNA_RFAM_31397（61 nt）のexact計算を示す。
 Gは、pseudoknotを持つ参照構造の入れ子部分にある8対のAU、GC、GU対からなる。
-左上の対確率図だけは、0.05以上の確率を弧の濃さで示す（数値キー参照）。
+左上の対確率図だけは、0.05以上の確率を弧の濃さで示す。
 右の二つの標本図とγ-centroid図は、それぞれ一つの完成構造を示す。
 灰色実線はG、青点線はGと交差しない追加対、橙破線はGと交差する追加対を示す。
 
 **(C)** Panel C shows exact calculations for bpRNA_RFAM_31397 (61 nt).
 G contains eight AU, GC, or GU pairs from the nested part of the reference structure, which also contains a pseudoknot.
-Only the upper-left pair-probability diagram uses arc opacity to show probability (numeric key; pairs with probability at least 0.05).
+Only the upper-left pair-probability diagram uses arc opacity to show probability (pairs with probability at least 0.05).
 The sample diagrams and the γ-centroid diagram each show one completed structure.
 Solid grey arcs show G; dotted blue arcs show new pairs that do not cross G; dashed orange arcs show new pairs crossing G.
 
 七つのcontext確率の和は各塩基で1となる。
-PseudoLoopは、Methodsで定義した、pseudoknotに伴う非対合loopを示す。
+PseudoLoopは、交差するbandの間の非対合の隙間を示す。
 accessibilityは窓内の全塩基が同時に非対合となる確率である。
 実線・破線・点線は1・4・8 ntの窓を示す。
 accessibilityの横軸は窓の先頭の塩基の位置を1始まりで示す。
@@ -493,7 +541,7 @@ accessibilityの横軸は窓の先頭の塩基の位置を1始まりで示す。
 代表構造はγ=1のγ-centroid構造である。
 
 The seven context probabilities sum to one at each base.
-PseudoLoop denotes unpaired loops associated with a pseudoknot, as defined in Methods.
+PseudoLoop denotes unpaired gaps between crossing bands.
 Accessibility is the probability that all bases in a window are unpaired together.
 Solid, dashed, and dotted curves show 1-, 4-, and 8-nt windows.
 The accessibility x-axis gives the 1-based position of the first base in each window.
@@ -507,71 +555,103 @@ The representative structure is the γ-centroid structure at γ=1.
         panel_C_data_sha256=hashlib.sha256(json.dumps(d,sort_keys=True,separators=(',',':')).encode()).hexdigest(),
         script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
     (out/'validation.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n')
-    (out/'README.md').write_text(f"""# Figure 1 — multiloop revision, 2026-10-23
+    (out/'README.md').write_text(f"""# Figure 1 — states, partial structures and decomposition trees, 2026-10-23
 
-[figure1.pdf](figure1.pdf): {WIDTH} × {HEIGHT} mm, the same dimensions as the adopted figure.
+[figure1.pdf](figure1.pdf): {WIDTH} × {HEIGHT} mm.
 [figure1.png](figure1.png): 300 dpi preview.
-Minimum embedded PDF text: {report['minimum_embedded_text_pt']:g} pt.
-The caption proposal is below and in [caption.md](caption.md); LaTeX is left to the manuscript editor.
+Minimum embedded text: {report['minimum_embedded_text_pt']:g} pt.
+The bilingual caption proposal is below and in [caption.md](caption.md).
 
 ## Reproduce
 
 From experiments/:
 
 ~~~sh
-MPLCONFIGDIR=/tmp/figure1-fb2-mpl python3 -B scripts/make_figure1.py \\
+MPLCONFIGDIR=/tmp/figure1-fb4-mpl python3 -B scripts/make_figure1.py \\
     --data {source_name} \\
     --out {out_name}
 ~~~
 
 Dependencies: Matplotlib, NumPy, Pillow, pypdf, Ghostscript.
-Five final files are written; intermediate files stay under /tmp.
-No folding CLI is run. The canonical Figure 1C data hash and input hash are in validation.json.
-Raw outputs, calls and source provenance remain beside the saved data.
+Five output files; no RNA folding or experimental recomputation.
+The input is the adopted LinearKnot 0.2.0 drawing data, including updated contexts.
+Source, panel-C data and renderer hashes are in validation.json.
 
-## Scientific drawing and implementation evidence
+## Scientific drawing
 
-B shows a local scaffold multiloop with an inner scaffold boundary and an added branch on each side.
-Grey arcs are G; dotted blue arcs are added pairs that do not cross G.
-The inner grey arc is the inner boundary of the scaffold band; its interior is outside this band's calculation.
-The two unclosed pieces in the dashed box form a calculation in progress.
-The outer grey pair and its local energy factor enter when the multiloop closes.
-Coordinates, unpaired-base factors and other admissibility conditions are omitted.
+B shows one multiloop between two scaffold pairs, with a new branch on each side.
+Grey arcs are scaffold G; dotted blue arcs are added pairs that do not cross G.
+The inner grey boundary delimits this band's calculation; its enclosed region is omitted.
+Each outlined node is a state representing a set of partial structures.
+Its thumbnail is one example, not the complete set.
+Lines meeting at a small black dot are one edge with several children (a hyperedge).
+The dot is an edge junction, not another state.
+The arrows point from children toward the parent.
+CParty has one three-child edge; LinearKnot has two two-child edges.
+The intermediate contains the inner part and right branch, without the outer closing pair.
+Its first edge adds zero local energy; the completion edge adds the original local term E once.
+The two parent thumbnails and the larger lower-left multiloop have the same pairs.
+The intermediate's dashed box points to a beam of intermediate states, for one state type.
+At each right endpoint (last base of a partial structure), the sketch keeps {BEAM_DEMO} top-ranked states.
+Black circles remain; grey crosses are discarded. These ranks are illustrative, not measured.
+Coordinates, scaffold anchors, unpaired-base factors and admissibility details are omitted.
 
-The example is the three-child BE_WIP_WIP combination: left WIP × inner BE × right WIP.
-Ordinary V/VM multiloop recursion already uses binary steps in CParty; that recursion is not claimed as the change.
-LinearKnot first forms inner BE × right WIP, then joins the left WIP and local outer factor.
-Both completed multiloops have the same arcs.
-The beam grid illustrates b={BEAM_DEMO} for one type at several right endpoints.
-Additional implementation-specific retention rules remain in SI.
-C contains saved exact results and does not result from this illustrative grid.
+A and all C content keep their adopted geometry, labels and saved values.
+The misleading B-to-C arrow is removed: C is an exact example without pruning.
+C retains sample frequencies {a:,}, {b:,}, and {other:,} other draws out of {total:,}.
+No inference about these exact outputs is made from the illustrative beam grid.
 
-References read locally:
-- textbook/chapters/01_preliminaries.tex: loop and branch definitions.
-- textbook/chapters/03_grammar.tex and textbook/figures/arc_multiloop.pdf: multiloop example.
-- LinearKnot v0.1.1 documents/model.md and src/scfg2/deductions/README.md.
-- v0.1.1 src/scfg2/deductions/expand_basic.hh: BE_WIP_WIP.
-- v0.1.1 src/scfg2/beam/be_frame_reuse_profile.hh, be_right_tail_selection.hh and be_left_right_frame_events.hh.
-- textbook/chapters/08_beam.tex: BE right-tail and shell selection.
+## Implementation evidence (not figure labels)
 
-Read-only tag resolution: v0.1.1 = 4f97fd332e793a50fe157e47767a1a75a306fd01.
-External working trees are unchanged.
-Scientific content and implementation evidence are separated above.
+The example is BE_WIP_WIP: left WIP × inner BE × right WIP.
+Ordinary V/VM multiloop recursion is already binary in CParty; this drawing makes no general claim that CParty multiloops all have three children.
+LinearKnot first combines inner BE × right WIP, then left WIP and the local outer factor.
+The split coordinates and scaffold anchors are retained when grouping the products.
+Contracting the intermediate restores the original edge and its weight before pruning.
+The diagram does not claim that other local energy terms vanish.
 
-## Feedback and handoff
+Read-only evidence:
+- results/figures/figure1_fb2_20261023/README.md.
+- LinearKnot v0.2.0 documents/model.md, “Derivation correspondence” (BE wings).
+- LinearKnot v0.2.0 src/scfg2/deductions/expand_basic.hh (BE_WIP_WIP).
+- LinearKnot v0.2.0 src/scfg2/beam/be_frame_cache.hh: the intermediate is a product of the two child factors; the local factor enters on completion.
+- LinearKnot src/scfg2/beam/be_right_tail_selection.hh for the separate intermediate selection.
 
-- G29: remove A's dotted vertical line; state that grey and orange bands cross each other.
-- G30–G31: state what each diagram shows and that G is the nested subset of a reference that also contains a pseudoknot.
-- G32: label the sample diagrams “Sampled structures”; state that each sample/centroid diagram is one completed structure.
-- G33: label the accessibility x-axis “Window start (nt, 1-based)”; define the first base and give an 8-nt example.
-- G34, G41: replace abstract region/part boxes with one multiloop, its three inputs, the intermediate, and beam pruning.
+## What was taken from the earlier versions
 
-C keeps all adopted probabilities, context colors, window lengths, sample selection/counts, centroid and p ≥ 0.05 cutoff.
-The counts stay {a:,}, {b:,}, and {other:,} other draws out of {total:,}.
-The saved source provenance records the earlier implementation; no cross-version result is inferred here.
-The PNG must be opened after generation; final review is recorded in validation.json and docs/progress.md in the paper repository.
-Export destination: figures/figure1.pdf in the paper repository.
-LaTeX, bibliography and external implementations are unchanged; no Git commit is made.
+Viewed the earlier exported PDF at paper commit 867ccd7 and the adopted 0.2.0 PNG individually.
+Read the earlier renderer history (experiments 2076dd8 / 350ba2f) and the current renderer.
+The earlier boxes and branching lines made the decomposition tree clear; those are restored.
+The current multiloop arcs, the inner-plus-right order, and the pair colors are retained.
+Every tree node now has a structural thumbnail; the intermediate is explicitly a state.
+A shared edge junction groups all three CParty children into one step.
+Both binary steps and their local-energy assignments are visible in LinearKnot.
+
+## Author feedback review
+
+Opened m-1.png through m-9.png individually and checked the marked sentences against the PDF annotation coordinates.
+Author StrikeOut annotations were distinguished from red latexdiff deletions.
+The subtype-free Annots entries on pages 2, 4 and 5 resolve to XRef streams, not extra author comments.
+Marks outside Figure 1 are recorded here for scope awareness and left to the manuscript editor.
+
+- p1: highlight on the Lyngsø and Pedersen (2000) citation in the NP-hard sentence.
+- p2: highlights on “No scaffold pair”, “may connect a base inside a completed pseudoknot region”, and “internal-loop length limits”; the margin asks what the undefined pseudoknot region means and asks for concrete limit values (the latter is visible in the image, not a typed annotation).
+- p3: highlight on Intermediate and comment asking for the state–structure–tree relationship; comment contrasting the beam sketch with exact C; author StrikeOut on “numeric key;” and “with opaque arcs”. The new B addresses the tree comment, the B-to-C arrow is removed, and the caption proposal omits the struck phrases.
+- p4: highlights on “calculation with a small beam” / “for ranking” and on the outside-calculation sentence; margin comments request the reason for the pilot beam and a short outside explanation with an example. An image-only red comment next to the TV formula asks for wording such as “TV is defined by”.
+- p5: StrikeOut on the end of the context paragraph (other loops retaining labels, and the band multiloop example); margin suggests deleting from “other loops” or “For example”; highlights and comments on sampling “its parts”, computational-cost “dependence on the local limits” (image-only note: is “local limits” understandable?), and BPP “alternatives”.
+- p6: StrikeOut on the sentence excluding RNAs without eligible windows; highlight and comment on “four window lengths”, asking to list them.
+- p7: no author annotation or handwritten comment found.
+- p8: highlight on the partition-function ratio in the accessibility explanation, with a comment questioning its placement and “no-crossing calculation”; StrikeOut and comment on the Discussion probability-output / centroid sentence, suggesting sampling or subopt instead; bottom comment asks for the default scaffold construction in Methods.
+- p9: two adjacent StrikeOut annotations remove the statements that retaining every scaffold pair excludes replacement structures and that a crossing pair can have low probability when other structures have lower energies.
+
+## Validation and handoff
+
+Page size, embedded text size, text intersections and saved inputs are checked during rendering.
+PNG visual inspection and unchanged A/C comparisons are recorded in validation.json.
+Export: paper figures/figure1.pdf; only its export-manifest entry is updated.
+LaTeX, bibliography and external implementation repositories are unchanged.
+The canvas remains 178 × 145 mm, so the figure's manuscript footprint is unchanged.
+No Git commit is made.
 
 ## Caption proposal (Japanese / English)
 

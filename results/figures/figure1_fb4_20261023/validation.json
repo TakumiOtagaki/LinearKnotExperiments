@@ -1,0 +1,132 @@
+{
+  "sequence_length": 61,
+  "scaffold_pairs": 8,
+  "band_spans": [
+    [
+      6,
+      36
+    ],
+    [
+      26,
+      50
+    ]
+  ],
+  "probability_display_cutoff_inclusive": 0.05,
+  "displayed_bpp_pairs": 15,
+  "sample_draws": 10000,
+  "sample_counts_shown": [
+    3431,
+    1426
+  ],
+  "context_hatches": "none",
+  "centroid_gamma": 1,
+  "illustrative_beam_width": 3,
+  "multiloop_rule": "BE_WIP_WIP",
+  "intermediate_order": [
+    "Inner + Right",
+    "Left + Intermediate + local factor"
+  ],
+  "decomposition_child_counts": {
+    "CParty": [
+      3
+    ],
+    "LinearKnot": [
+      2,
+      2
+    ]
+  },
+  "decomposition_local_energy": {
+    "CParty": [
+      "E"
+    ],
+    "LinearKnot": [
+      "0",
+      "E"
+    ]
+  },
+  "state_thumbnails": "One representative per set of partial structures",
+  "beam_grid_state_type": "Intermediate states",
+  "panel_C_uses_illustrative_beam": false,
+  "max_context_sum_error": 2.220446049250313e-16,
+  "max_sample_bpp_difference": 0.010521403741104995,
+  "pdf_page_mm": [
+    178.0000000000147,
+    144.99999999998442
+  ],
+  "png_pixels": [
+    2102,
+    1712
+  ],
+  "png_dpi": [
+    299.9994,
+    299.9994
+  ],
+  "pdf_text_sizes_pt": [
+    7.0,
+    7.5,
+    8.0,
+    9.0
+  ],
+  "minimum_embedded_text_pt": 7.0,
+  "minimum_matplotlib_text_pt": 7.0,
+  "text_outside_page": [],
+  "text_overlaps": [],
+  "gs_command": [
+    "gs",
+    "-q",
+    "-dBATCH",
+    "-dNOPAUSE",
+    "-sDEVICE=txtwrite",
+    "-dTextFormat=0",
+    "-sOutputFile=-",
+    "results/figures/figure1_fb4_20261023/figure1.pdf"
+  ],
+  "visual_inspection": "2026-10-23: opened final 300-dpi PNG and whole-figure preview; tree junctions, card labels and thumbnails, intermediate-to-beam arrow, legends and page edges have no overlap or clipping.",
+  "source_data": "results/local/pseudoloop-0.2.0-20261023/examples/figure_data.json",
+  "source_data_sha256": "d960a3a320da054f57613a1d28b27e003a560136c1255df27ecc44d9a55c6648",
+  "panel_C_data_sha256": "80dfc89ba8c78a5c849f3836e064a57f157bf30c7fe3e69e5714015d62de900c",
+  "script_sha256": "c850a21bb4c7eea74fc15850bcb47caa5a2764d42c22a0305f54dec78899cf41",
+  "preservation_comparison": {
+    "baseline": "results/figures/pseudoloop-0.2.0-20261023/figure1/figure1.png",
+    "pixel_regions": {
+      "A": {
+        "crop_pixels": [
+          0,
+          0,
+          720,
+          720
+        ],
+        "different_pixels_bbox": null
+      },
+      "C_content": {
+        "crop_pixels": [
+          0,
+          797,
+          2102,
+          1712
+        ],
+        "different_pixels_bbox": null
+      },
+      "C_title": {
+        "crop_pixels": [
+          0,
+          726,
+          1889,
+          797
+        ],
+        "different_pixels_bbox": null
+      }
+    },
+    "input_data_hash_unchanged": true,
+    "panel_C_data_hash_unchanged": true,
+    "only_removed_connection": "B-to-C illustrative beam arrow"
+  },
+  "model_evidence": {
+    "tag": "v0.2.0",
+    "resolved_commit": "e0055e334539838e0202e44ddf5690e743d704b7",
+    "document_blob": "8f2fd7bc8086af2defc748d32adf904f77b631b0",
+    "context_outputs": "0.2.0 / f93b55e, adopted saved drawing data"
+  },
+  "feedback_review": "Opened all nine supplied page images individually; read Annots with pypdf; enlarged image-only red notes on p2/p4/p5. Page-by-page inventory is in README.md.",
+  "pdf_sha256": "19e406e2db306e6e596cc6211dea6429c2ee95440221f9bf151d7dea9d092d0e"
+}
