@@ -1,0 +1,1012 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-10-23T03:48:56.275424+00:00",
+  "comparison_kind": "beam_width_sensitivity",
+  "reference_mode": "beam400_outer",
+  "beams": [
+    20,
+    50,
+    100,
+    200,
+    300,
+    400
+  ],
+  "bins": [
+    [
+      "nt400_799",
+      400,
+      799
+    ],
+    [
+      "nt800_1599",
+      800,
+      1599
+    ],
+    [
+      "nt1600_3199",
+      1600,
+      3199
+    ],
+    [
+      "nt3200_4381",
+      3200,
+      4381
+    ]
+  ],
+  "runs": [
+    {
+      "path": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "array_plan_sha256": "0b8d6f8f7398f0f1f1feebbbb756a74af63b35a207a02783d8fe7efd74eec55d",
+      "inputs_archive_sha256": "b0c9613994c5f2f9a473129350b579ec7d9b05eceef2531bb3b795a93cb8b5dd",
+      "software_commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+      "software_lock": {
+        "schema_version": 1,
+        "created_utc": "2026-10-18T12:03:12.952001+00:00",
+        "purpose": "development",
+        "source_repository": "https://github.com/TakumiOtagaki/LinearCParty",
+        "source_commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+        "source_git_state": {
+          "commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "dirty": false,
+          "status": "",
+          "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "source_tree": "ff9aaffc6edc6eacae2e3ccd515165f11c439309",
+        "build_revision_verified": true,
+        "verification_method": "dedicated clean checkout; CMake configure/build; selected maintained checks",
+        "compiler": "c++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+        "build_settings": {
+          "CMAKE_BUILD_TYPE": "Release",
+          "CMAKE_CXX_COMPILER": "/bin/c++",
+          "CMAKE_CXX_FLAGS": "",
+          "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+          "CMAKE_GENERATOR": "Unix Makefiles"
+        },
+        "configure_arguments": [
+          "-DBUILD_TESTING=ON",
+          "-DCMAKE_BUILD_TYPE=Release"
+        ],
+        "cmake_cache_sha256": "5b0660aed3d70ea6c7a33c9589d3cde8e7d6a712f4da9daade2aebccf055a05c",
+        "binaries": {
+          "LinearCParty": "fcf7a9735e55f82488051a22204b77a83cb477002dd005551e42936a35b7e56c",
+          "LinearPKCapR": "f4388139247d3dd96e617b3865ddc014ba13309364f733d0cc98b98284a93b71",
+          "LinearPKRaccess": "f742eae39a648557db7e60949c1b9be4aea8fe6b5da7b1df5b8b70338bdf2517",
+          "LinearPKSampling": "7d4556d2601c90f9d2043824cb38cdf0f55997f62c157690d0d6440b57f1f7e7",
+          "LinearPKMEA": "fcd9caeaa6859167c691376588a022c7e8ab03254af830f4fdf2058e94589ded",
+          "LinearPKCentroid": "c2f0f80c28a33999998e4fc33fd07a772279422c06f098458259017566378746"
+        },
+        "energy_parameter_file": "params/rna_Turner04.par",
+        "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+        "verification_results": [
+          {
+            "name": "scfg2_rules_core_exact_weight_test",
+            "returncode": 0,
+            "stdout": "scfg2_rules_core_exact_weight=ok\n",
+            "stderr": ""
+          },
+          {
+            "name": "scfg2_exact_inside_oracle_test",
+            "returncode": 0,
+            "stdout": "scfg2_exact_inside_oracle=ok\n",
+            "stderr": ""
+          },
+          {
+            "name": "scfg2_beam_api_test",
+            "returncode": 0,
+            "stdout": "scfg2_beam_api=ok\n",
+            "stderr": ""
+          }
+        ],
+        "required_suite": "test/tools/run_required_scfg2_tests.sh: required set ok; receipt /gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/manifests/release-preparation-89baea52.json",
+        "scientific_scope": "fixed implementation pilot, not independent proof of ensemble semantics",
+        "known_semantic_followup": ""
+      },
+      "config": {
+        "schema_version": 1,
+        "name": "e1-bprna-long-89baea52-cpu16-20261018",
+        "purpose": "formal",
+        "energy_parameter_file": "params/rna_Turner04.par",
+        "model_settings": {
+          "temperature_celsius": 37,
+          "temperature_source": "CLI/API default; verify RT metadata",
+          "build_revision_verified": true
+        },
+        "environment": {
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "LC_ALL": "C"
+        },
+        "timeout_seconds": 7200,
+        "warmups": 0,
+        "repetitions": 1,
+        "modes": [
+          {
+            "name": "beam20_outer",
+            "args": [
+              "-b",
+              "20",
+              "--max-hairpin",
+              "30",
+              "--max-case3-depth",
+              "30",
+              "--ranking",
+              "outer"
+            ]
+          },
+          {
+            "name": "beam50_outer",
+            "args": [
+              "-b",
+              "50",
+              "--max-hairpin",
+              "50",
+              "--max-case3-depth",
+              "50",
+              "--ranking",
+              "outer"
+            ]
+          },
+          {
+            "name": "beam100_outer",
+            "args": [
+              "-b",
+              "100",
+              "--max-hairpin",
+              "100",
+              "--max-case3-depth",
+              "100",
+              "--ranking",
+              "outer"
+            ]
+          },
+          {
+            "name": "beam200_outer",
+            "args": [
+              "-b",
+              "200",
+              "--max-hairpin",
+              "200",
+              "--max-case3-depth",
+              "200",
+              "--ranking",
+              "outer"
+            ]
+          },
+          {
+            "name": "beam300_outer",
+            "args": [
+              "-b",
+              "300",
+              "--max-hairpin",
+              "300",
+              "--max-case3-depth",
+              "300",
+              "--ranking",
+              "outer"
+            ]
+          },
+          {
+            "name": "beam400_outer",
+            "args": [
+              "-b",
+              "400",
+              "--max-hairpin",
+              "400",
+              "--max-case3-depth",
+              "400",
+              "--ranking",
+              "outer"
+            ]
+          }
+        ],
+        "programs": [
+          {
+            "name": "LinearCParty",
+            "args": [
+              "--bpp-cutoff",
+              "0"
+            ],
+            "outputs": [
+              {
+                "name": "bpp.tsv",
+                "flag": "--bpp"
+              }
+            ]
+          },
+          {
+            "name": "LinearPKCapR",
+            "args": []
+          },
+          {
+            "name": "LinearPKRaccess",
+            "args": [
+              "--access-len",
+              "1,4,8,16",
+              "--probability"
+            ]
+          }
+        ],
+        "analysis": {
+          "purpose": "E1 formal: no exact for n>=400; report change relative to the widest width; outer ranking; caps h=d=max(b,30)"
+        },
+        "software_lock": "manifests/software-pilot-89baea52.json",
+        "memory_limit_mib": 4096,
+        "order": {
+          "kind": "blocked_random",
+          "seed": 20261011
+        },
+        "input_cohort": "manifests/cohorts/bprna-400plus-20261012.json",
+        "manifest_checkpoint_jobs": 1000,
+        "rerun_preparation": {
+          "release": "89baea52c9435b18829ef0867a66a24be56d70f9",
+          "template": "configs/e1_bprna_long_d21618c5_20261014.json"
+        }
+      }
+    }
+  ],
+  "analysis_git_state": {
+    "commit": "8eb71628237c0e5759fa4dc61d2082054b1b4900",
+    "dirty": true,
+    "status": "M docs/rerun_89baea52_20261018/analyze.sh\n M tests/test_e1_production.py\n?? data/rerun-89baea52-20261018/\n?? scripts/render_e1_89baea52.py\n?? scripts/validate_e1_production.py\n?? tests/test_parallel_packing.py\n?? tests/test_rerun_preparation_89baea52.py",
+    "tracked_diff_sha256": "228261b7b23fd103e9a1f7175676614a745e3a58012b5444564e79e2bd1ecba2"
+  },
+  "script_sha256": {
+    "analyze_e1_production.py": "f4df099171be1b2dbfe98350816303d7004180d36a433a8d01757f0427cd6461",
+    "analyze_accuracy.py": "15d8dba3e996be28cc216d2f58d299735d729cdf35585114e91d67d24d4d3a57",
+    "analyze_bprna_short.py": "08eae66d74a362c8ab6b9d6ddfa60c54906af13b24f2641b399c00e1b3f29008",
+    "analyze_bprna_long.py": "7de2906e4656ec04fe122038c9292f883ce08fdee6a2a5fef267a05dda7a7979",
+    "bprna_capb.py": "a1ad72db261dda154c1dee46428891fa513c99d00636693cc9786d6f8cabaa56",
+    "task_storage.py": "e290ee9cc90b824002ca064989ebc2efead2fc10251fa729bb21fb001fd31d5d",
+    "rna_records.py": "a9521da62337f26d2d8f774a4c343cfb14118ba640f9ff4b8eaf340534d5acec",
+    "reanalyze_e1_context_0_2_0_20261023.py": "c9ce883b42fc3fdd5a1709197c7ba117cee93b1d3482ac5503fa09bb5990c9a0"
+  },
+  "storage": "tar member streams; no extraction; one temporary SQLite file under /tmp for exact join",
+  "resource_scope": "reference distributions only; concurrent accuracy jobs; one repetition; no performance comparison",
+  "tasks": [
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt400_799",
+      "task": 1,
+      "run_manifest_sha256": "4f98e3a2b0c20c85c740ee9f093fb88e8c3489fcb27129ce237011289e305b78",
+      "checkpoint_sha256": "d1b55f9db7c9725cd4fdf971baa9f206363ffb2f740ddf9c694b5200244fdb6c",
+      "inputs": 183,
+      "selected_jobs": 3294,
+      "excluded_jobs": 0,
+      "hostname": "r5n6",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt400_799",
+      "task": 2,
+      "run_manifest_sha256": "f8073eff169be0840ece4f74ec42565ac6fcfb3c4eb13c708d9185408f5b12d9",
+      "checkpoint_sha256": "07753ad72b8b1ebb4f5684b490c4895b85ea0237889e7ad50e4dc32318ab2fbc",
+      "inputs": 147,
+      "selected_jobs": 2646,
+      "excluded_jobs": 0,
+      "hostname": "r13n4",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt400_799",
+      "task": 3,
+      "run_manifest_sha256": "889fb07baa54433a8b4a716ed7c4882b4bebaaaaf4b68df18b615ff7126ec715",
+      "checkpoint_sha256": "5b0c6d1573116d5b5294ef4237600de8bd31ce039935a5f756af41acdc763ab3",
+      "inputs": 83,
+      "selected_jobs": 1494,
+      "excluded_jobs": 0,
+      "hostname": "r9n2",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt400_799",
+      "task": 4,
+      "run_manifest_sha256": "b37b9ce8be6c35c2c3a7c47cb485553b53d767294cfc5bd0ecb6320ead251c50",
+      "checkpoint_sha256": "c72308da5eb811ca309f036a9a12ba36a2bfc2bff07852aa5bc2379a37552b06",
+      "inputs": 71,
+      "selected_jobs": 1278,
+      "excluded_jobs": 0,
+      "hostname": "r2n7",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt400_799",
+      "task": 5,
+      "run_manifest_sha256": "a5cc82afde22feab722e5674fc00812f2a794d2445c70b41806d69801f2a9375",
+      "checkpoint_sha256": "5fcbc70504149fa1160c659fca0a66d09e2392022759562fb1a55eff34d261ba",
+      "inputs": 46,
+      "selected_jobs": 828,
+      "excluded_jobs": 0,
+      "hostname": "r5n7",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt400_799",
+      "task": 6,
+      "run_manifest_sha256": "b8ab8dbb951481925119d550a3bd2039632069cc51929dd6626c915c3a359d6a",
+      "checkpoint_sha256": "8b889d77c800b8772c72186e4308e23484ed1b980c7915359f871744d94e2436",
+      "inputs": 36,
+      "selected_jobs": 648,
+      "excluded_jobs": 0,
+      "hostname": "r1n11",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt400_799",
+      "task": 7,
+      "run_manifest_sha256": "84f96dfb76ebd4ac51674de3a68a9f285d17089a49231fdf51e92d432f16752a",
+      "checkpoint_sha256": "4edfbf7e9716835edb6424eaad86dc3fd6f10c81caf037832488e59fdef31b5d",
+      "inputs": 18,
+      "selected_jobs": 324,
+      "excluded_jobs": 0,
+      "hostname": "r9n6",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 1,
+      "run_manifest_sha256": "d44e5ac8185b88beefcec9ac7751725db804dd7b423bd5ec7a1ace0c73c03748",
+      "checkpoint_sha256": "375c560463a11e00d85c1aa5d38062b03956e8a0c6842650c2bb51407eecf3de",
+      "inputs": 46,
+      "selected_jobs": 828,
+      "excluded_jobs": 0,
+      "hostname": "r19n3",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 2,
+      "run_manifest_sha256": "282824bbead0bc05d123c23f559daaaa6ec559135efa8c50b77e471cdc586753",
+      "checkpoint_sha256": "5686589a9428329eaa530fc4dec33c387bfae843c865b258fd5dc480ed0d3b92",
+      "inputs": 28,
+      "selected_jobs": 504,
+      "excluded_jobs": 0,
+      "hostname": "r5n2",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 3,
+      "run_manifest_sha256": "14fceb5f6e7d1d74d80000a437924917d24c341242f350609ccf4bb4acd4b4ae",
+      "checkpoint_sha256": "0402209063c5e6fab771eef160657d2a253015a615c8a6e732d5c7406979e886",
+      "inputs": 45,
+      "selected_jobs": 810,
+      "excluded_jobs": 0,
+      "hostname": "r8n8",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 4,
+      "run_manifest_sha256": "186d60904e0b6f7910e5fb1f8be9254dfb3a695535e99d7f82cddfff6d2c23bc",
+      "checkpoint_sha256": "ee9903322156092e16f4c140a1d04f4c6906716a7db241620ee47f94a5c20cae",
+      "inputs": 21,
+      "selected_jobs": 378,
+      "excluded_jobs": 0,
+      "hostname": "r9n4",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 5,
+      "run_manifest_sha256": "2b824bb2dbcc8ea8f3f5c829909ef7b9e5a1a26ba73689f1e331adcaa752bc1f",
+      "checkpoint_sha256": "f96abe5cee82be45812acae6ba724083965b44712729aa4c864c55812e4891e4",
+      "inputs": 17,
+      "selected_jobs": 306,
+      "excluded_jobs": 0,
+      "hostname": "r4n6",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 6,
+      "run_manifest_sha256": "19e5c055ee6dae61ef2c698107814430ea6cb4838e1e97659b1bd86bf2e1fab0",
+      "checkpoint_sha256": "15a22855d54be86207814961967ff0f610a1984219e69caffae619e2469cce4c",
+      "inputs": 16,
+      "selected_jobs": 288,
+      "excluded_jobs": 0,
+      "hostname": "r9n2",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 7,
+      "run_manifest_sha256": "a5d39f143c43a7c269a954f49d2be32ffe30d7c7535a750aa5dad080928767cd",
+      "checkpoint_sha256": "d54dd8041d66f529ef6aae6d0f36a0173918a443265b2a3df4ca2f58504e5ecb",
+      "inputs": 17,
+      "selected_jobs": 306,
+      "excluded_jobs": 0,
+      "hostname": "r8n8",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 8,
+      "run_manifest_sha256": "7c9f20ff153aefa0f5373a8c39d32e4331b686261c719ae85552574a6d1ab0ed",
+      "checkpoint_sha256": "8e62a5953477ad5840b9ebe1fd8b0b6702afcba86f74a35f5f32f63238fd732b",
+      "inputs": 22,
+      "selected_jobs": 396,
+      "excluded_jobs": 0,
+      "hostname": "r19n7",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 9,
+      "run_manifest_sha256": "23e403b873063221d96b3a3e3dad5b3ff33ae2ff2e2d600c36d303181b1bc838",
+      "checkpoint_sha256": "784f762dd03fccabd28d69caaf63bc89cbd840eb11502ed7b629df20187c02a1",
+      "inputs": 27,
+      "selected_jobs": 486,
+      "excluded_jobs": 0,
+      "hostname": "r1n2",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 10,
+      "run_manifest_sha256": "5fa31c01ee54f4706de0cb80382a8a93476657dc610bcd49d52a419b0053300e",
+      "checkpoint_sha256": "03c62d6361712730a09820c644b649326285f788e8d21c9db598ef66c0197fd4",
+      "inputs": 25,
+      "selected_jobs": 450,
+      "excluded_jobs": 0,
+      "hostname": "r4n7",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 11,
+      "run_manifest_sha256": "8fbcc6881d9b4717a3cf59d95d53a9d09c3336b2342f9ef3f5eebd7558c443dd",
+      "checkpoint_sha256": "43b466176ee25729c1c3a2085cdc71ff1e62c7e7d02dc7d599653bb7c6128746",
+      "inputs": 24,
+      "selected_jobs": 432,
+      "excluded_jobs": 0,
+      "hostname": "r11n6",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 12,
+      "run_manifest_sha256": "91c3697ef5485d8a8d4a8ca001d6ac55dce39dd297fcc431f970f624f84bd345",
+      "checkpoint_sha256": "b04ad877d6802da93dcc54359e63f74e290e4c38d1a4b45f59cfa11b8c857c1b",
+      "inputs": 16,
+      "selected_jobs": 288,
+      "excluded_jobs": 0,
+      "hostname": "r9n2",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 13,
+      "run_manifest_sha256": "b907c3b17f13090deb14265dc5e730e002d253d81921fd387dbfed77edb83ecd",
+      "checkpoint_sha256": "b5ec3ecac0ddfee9a5d635a62b25630ba989d27f510cda3197902300c52d4dca",
+      "inputs": 20,
+      "selected_jobs": 360,
+      "excluded_jobs": 0,
+      "hostname": "r3n8",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 14,
+      "run_manifest_sha256": "5021430ab62f27a49ef0be5f878fde8161912e67622e61dcb9b2575d5329bd7a",
+      "checkpoint_sha256": "8db8c16909b017b73515c7b76f3deb7098a40006417ba23986f59c32b2e6a7da",
+      "inputs": 20,
+      "selected_jobs": 360,
+      "excluded_jobs": 0,
+      "hostname": "r1n11",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 15,
+      "run_manifest_sha256": "5c851d24b2a41f35568826f20460dd92541189391f1687b5cc5db2cb83c5a217",
+      "checkpoint_sha256": "5bd564114e27fb3d0488e620e256f54392108d26d8c3d8d79374980ee319eb67",
+      "inputs": 20,
+      "selected_jobs": 360,
+      "excluded_jobs": 0,
+      "hostname": "r2n8",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 16,
+      "run_manifest_sha256": "8da1fbcfae843da46dcefa92e5288f18ec220c4da94104c09c146603fa2597fe",
+      "checkpoint_sha256": "a1cecc85fe4059d35d6d1f204f1b7cdbc763d6018b5070ca77626645dabc951b",
+      "inputs": 22,
+      "selected_jobs": 396,
+      "excluded_jobs": 0,
+      "hostname": "r21n4",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 17,
+      "run_manifest_sha256": "31b6078b8d28471000cc3471f7c6693eff610dcc6876849e2896ad18a4ac9ece",
+      "checkpoint_sha256": "cc2d81b9bb689fe222315c7cf21cbe1a049585ba0c6c6cea01b8c0f071f26e23",
+      "inputs": 17,
+      "selected_jobs": 306,
+      "excluded_jobs": 0,
+      "hostname": "r4n6",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 18,
+      "run_manifest_sha256": "3f1cd9b6cdc3c2673c79ebed5ec002e2aea2e98730e06cbfbc0bb3858fcd26dd",
+      "checkpoint_sha256": "f8606a7f4c251fd4e1edda22b9bac59320f90eb7080839720edae98672154b71",
+      "inputs": 18,
+      "selected_jobs": 324,
+      "excluded_jobs": 0,
+      "hostname": "r5n2",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt800_1599",
+      "task": 19,
+      "run_manifest_sha256": "6766909ca77400612d6fee8a770793cf65d004a34a8d8cc7f5341daf1dc8f336",
+      "checkpoint_sha256": "9097cabde10947415ab53a4235293efb41ceb982ac6ac32c57554201390ee435",
+      "inputs": 2,
+      "selected_jobs": 36,
+      "excluded_jobs": 0,
+      "hostname": "r9n2",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 1,
+      "run_manifest_sha256": "620cf5390c44f4a48b913d94880685eec21e960dc16ad3d62b845b78d17b787e",
+      "checkpoint_sha256": "5f9d0fccdd41ddfd3f5fd84af2e4b75890d7094c6ef92478f421383ab0658ab9",
+      "inputs": 26,
+      "selected_jobs": 468,
+      "excluded_jobs": 0,
+      "hostname": "r2n7",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 2,
+      "run_manifest_sha256": "8333ca1838044c94c34238342d4c074a1149202248bac99b157debb97439e9ca",
+      "checkpoint_sha256": "dabb6595f1586a7e68cbafed32f26a9fabfedf079489da57a3ec056d471893fa",
+      "inputs": 22,
+      "selected_jobs": 396,
+      "excluded_jobs": 0,
+      "hostname": "r18n11",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 3,
+      "run_manifest_sha256": "daba9780eb20d7d44adc381344d4a84a0c45205001cc64bb1f951694721e6698",
+      "checkpoint_sha256": "0d231cfa276d7d66e33357f5246c78e21c4729cee618898ebb4930c0da62c0b7",
+      "inputs": 19,
+      "selected_jobs": 342,
+      "excluded_jobs": 0,
+      "hostname": "r17n10",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 4,
+      "run_manifest_sha256": "42c2764cc0695e192d140ae6c8781ed422e6553a9b0b4e339e9e2e88a62ce3dd",
+      "checkpoint_sha256": "4081f234733f1c54f71e7a558c8e2a429b651e6268e25f70733a9a06f1c43b33",
+      "inputs": 24,
+      "selected_jobs": 432,
+      "excluded_jobs": 0,
+      "hostname": "r9n8",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 5,
+      "run_manifest_sha256": "48f46f14eb31343ba561e96ec3d03c778df484319b0e2eda50b76430bc37f090",
+      "checkpoint_sha256": "0d1a7c4a838f4b8a8f999fda27db24ae154357ffc16094ec11840148e80b7287",
+      "inputs": 22,
+      "selected_jobs": 396,
+      "excluded_jobs": 0,
+      "hostname": "r2n7",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 6,
+      "run_manifest_sha256": "b6efceb0ea4b88d2e774188720652b0e8c977d9dfde59f6316fd987ee180fec0",
+      "checkpoint_sha256": "87470cb1aac8add6d4bc6038f7fd66d6c044bcbe6f1ceefa80bf47d7b882b82d",
+      "inputs": 14,
+      "selected_jobs": 252,
+      "excluded_jobs": 0,
+      "hostname": "r8n8",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 7,
+      "run_manifest_sha256": "01482f5193d23c2f6c3797d7ea83216ce88b75dcb740fc880b1e13ba6c1cba13",
+      "checkpoint_sha256": "7a883280d7d0c0a28ab92425ed2caca53bd03311250fe2f9a4c0e3dc19eb7955",
+      "inputs": 12,
+      "selected_jobs": 216,
+      "excluded_jobs": 0,
+      "hostname": "r10n9",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 8,
+      "run_manifest_sha256": "a2ca00c380cf8cdba40a175d87bc1cd55e62ff7441c7974171c8d5435f01d0db",
+      "checkpoint_sha256": "7b48125b14221c00e00ad8dc2a6e901224a2b3a9a0b8c344a93d6f38f77b23bc",
+      "inputs": 9,
+      "selected_jobs": 162,
+      "excluded_jobs": 0,
+      "hostname": "r2n7",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 9,
+      "run_manifest_sha256": "e14e7bd0711b9acf713975865547e24a76d466c73ca2a8fc880e336fba04c36a",
+      "checkpoint_sha256": "d754081347abeed0a6d6b08fd242c9a1cf0f2878ee842ccb5668a938731773e6",
+      "inputs": 8,
+      "selected_jobs": 144,
+      "excluded_jobs": 0,
+      "hostname": "r21n6",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 10,
+      "run_manifest_sha256": "1edd1046cfdca9734d0b9a224f6141f79999216c1b2b9781bc60b1bc1a33cb0e",
+      "checkpoint_sha256": "842a89664235e43c9ec51f5d3d65208855ec4834f5072739bcd0ee4c1086f7aa",
+      "inputs": 9,
+      "selected_jobs": 162,
+      "excluded_jobs": 0,
+      "hostname": "r16n9",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 11,
+      "run_manifest_sha256": "67c4e596a8bf8c1e608598337f2bc83685419f4d995aae0d105179bbf5aaeb36",
+      "checkpoint_sha256": "0ee4b0bb9a7f1689a9657b340fd76e69c2f5f3e9b88b2f540dc25f82346e315f",
+      "inputs": 14,
+      "selected_jobs": 252,
+      "excluded_jobs": 0,
+      "hostname": "r9n8",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 12,
+      "run_manifest_sha256": "86af3c8605b38353d22778a52c097cbcb8cc27477d7aaed5845f0e75889a9890",
+      "checkpoint_sha256": "dec3ccca6e5ebd21b7634de9d63d4ac0482c782204c1c18e651f24bed7005252",
+      "inputs": 7,
+      "selected_jobs": 126,
+      "excluded_jobs": 0,
+      "hostname": "r21n1",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 13,
+      "run_manifest_sha256": "2dfce70fd28d62990a28852020db23b59663a6ccea6c57f40ac6376f53450b02",
+      "checkpoint_sha256": "7e448f650013f732ef782bb98d3dd00182cfb9c57baf85cae07c37f6f366deea",
+      "inputs": 12,
+      "selected_jobs": 216,
+      "excluded_jobs": 0,
+      "hostname": "r8n8",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 14,
+      "run_manifest_sha256": "906a0514bd7cec57a197e013a274f39f66a6113622d88dbbf7aa41f3a5d7119d",
+      "checkpoint_sha256": "84bf5c217f7c400653e190d6d56e4ce0b3a00c7806452c3e02a240d1b5a7c84a",
+      "inputs": 16,
+      "selected_jobs": 288,
+      "excluded_jobs": 0,
+      "hostname": "r18n7",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 15,
+      "run_manifest_sha256": "265e38ec9b6b0c1751225cefafdd17947a552f69a5609a85ccb86c894ef5871a",
+      "checkpoint_sha256": "8aa2912b8cc3694297eb135c553939bb3fc860a1a1db4cf217cf03f77ec0db63",
+      "inputs": 12,
+      "selected_jobs": 216,
+      "excluded_jobs": 0,
+      "hostname": "r16n9",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 16,
+      "run_manifest_sha256": "7ee24c4e03b2fb0fd49fcd868bfbfd034923691562286cbe5d20ce2a4f778318",
+      "checkpoint_sha256": "f7b9a33308572799692a66f1ad904fee39f85df0a17062249e4976792cb4bb9a",
+      "inputs": 10,
+      "selected_jobs": 180,
+      "excluded_jobs": 0,
+      "hostname": "r20n6",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 17,
+      "run_manifest_sha256": "dc07608c0e1f406d0084ce64cc4faf79a490153518f2af1e4ecc659c80723e4c",
+      "checkpoint_sha256": "4c72fd3c83738d06d4a819b3117b275e49034914f6843aa360b86f35aa8adf7a",
+      "inputs": 15,
+      "selected_jobs": 270,
+      "excluded_jobs": 0,
+      "hostname": "r7n11",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 18,
+      "run_manifest_sha256": "4a0984e1b3b45288c28bd772f7dacd3fe7995822c49fc3280dd61a986ea786bc",
+      "checkpoint_sha256": "7122812f578f5b382ac0769a1ccce9bc1f058352bdbf95abb05bfe9a14dd8cc3",
+      "inputs": 11,
+      "selected_jobs": 198,
+      "excluded_jobs": 0,
+      "hostname": "r1n6",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 19,
+      "run_manifest_sha256": "f176f46f1b5f4f66794b878e8f8fd49557c2ab0774f72b5326ef63e03bfa78ad",
+      "checkpoint_sha256": "949311f16b8222fb64d78c071e6449a73dbcfedebd71b5e4d95e5ad7b7fd9d7f",
+      "inputs": 11,
+      "selected_jobs": 198,
+      "excluded_jobs": 0,
+      "hostname": "r16n9",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 20,
+      "run_manifest_sha256": "2ac04b5d4ca03e49a7f1d3c15623470e62fddafb6271ea2eb0628600f03d9b2e",
+      "checkpoint_sha256": "aa6657e792c042efc6abbe1cb00e0bcc7b47421aeea1d2ebd15cc2f25eb21a15",
+      "inputs": 12,
+      "selected_jobs": 216,
+      "excluded_jobs": 0,
+      "hostname": "r8n8",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 21,
+      "run_manifest_sha256": "4507d8bf781a943028cd809a99b2f116f0abfdc577fe65fe2392d6d17a98dfbc",
+      "checkpoint_sha256": "aa0c499879c304ed6e0b5001a8796e9760626771d4c793877a3b7b077a9cd0e4",
+      "inputs": 13,
+      "selected_jobs": 234,
+      "excluded_jobs": 0,
+      "hostname": "r5n9",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 22,
+      "run_manifest_sha256": "4a009d7810addae4939d84670fcb14179bf3c1efaac1b743426f4ad9b6dff61b",
+      "checkpoint_sha256": "42c46f68873be6c5e00004f0a6192ab645a646c45daf8f04f1e26a8d4051e940",
+      "inputs": 17,
+      "selected_jobs": 306,
+      "excluded_jobs": 0,
+      "hostname": "r16n4",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 23,
+      "run_manifest_sha256": "38b1724074fabe049f335e603441d42115e29e1189afb9ff4ea3a3aa9d6b67e4",
+      "checkpoint_sha256": "39c8a126cf00cb298e0b26ece5dd5f232ebf930e9e45b6e59b9f91646dfebf7d",
+      "inputs": 18,
+      "selected_jobs": 324,
+      "excluded_jobs": 0,
+      "hostname": "r5n7",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt1600_3199",
+      "task": 24,
+      "run_manifest_sha256": "8911de52e55e7d40ba1d77d0d1db5c7f4f0e9a46b47ac1abf82076ba33db3161",
+      "checkpoint_sha256": "234618486a082064050feed320143649887a8f6df81c2ce82d68d541d8d21e35",
+      "inputs": 7,
+      "selected_jobs": 126,
+      "excluded_jobs": 0,
+      "hostname": "r4n6",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt3200_4381",
+      "task": 1,
+      "run_manifest_sha256": "97b777be0937bfda18caaf73f2e24c1b0cc30b8d42ddbd5d731fa0e9e3935485",
+      "checkpoint_sha256": "939fcfb31b65526774c32dba1924218797c6c033edd03177243ffc3bea18aed1",
+      "inputs": 15,
+      "selected_jobs": 270,
+      "excluded_jobs": 0,
+      "hostname": "r11n3",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt3200_4381",
+      "task": 2,
+      "run_manifest_sha256": "8a4a23b4affffcfc502d1e37355a48bb0ef145649b715fcd1b7ddb0f78185407",
+      "checkpoint_sha256": "8509a94cb69b32ee391c1928e960f8c660e1647b9dbe41dfa0a2ea0f87124113",
+      "inputs": 10,
+      "selected_jobs": 180,
+      "excluded_jobs": 0,
+      "hostname": "r2n6",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt3200_4381",
+      "task": 3,
+      "run_manifest_sha256": "ec5ba4774f40327229d659600f86c9f8b9ec04f4583f8aa4811e15192c8a5a30",
+      "checkpoint_sha256": "0b322c0e3df482798293c6c41470543be340ed942c3ece5dd8f4fedaa187407f",
+      "inputs": 15,
+      "selected_jobs": 270,
+      "excluded_jobs": 0,
+      "hostname": "r9n8",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt3200_4381",
+      "task": 4,
+      "run_manifest_sha256": "9e763b71bc088a1aea7bfb17fb5728fba354914dad7ac0b7030cda73e16a50c5",
+      "checkpoint_sha256": "89d1ad68bae826128705f48b14cb62e08b73e74cf79813e4cd0921931eb3a318",
+      "inputs": 11,
+      "selected_jobs": 198,
+      "excluded_jobs": 0,
+      "hostname": "r9n4",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt3200_4381",
+      "task": 5,
+      "run_manifest_sha256": "881c8ba0543d30e6798b688960c900141ed1998000f80e363e7f105b303e893b",
+      "checkpoint_sha256": "14cf44b672d8f0ef3d384a04e13f988d868ef485c7350247982c4411d375fa67",
+      "inputs": 15,
+      "selected_jobs": 270,
+      "excluded_jobs": 0,
+      "hostname": "r5n6",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt3200_4381",
+      "task": 6,
+      "run_manifest_sha256": "97973f907c6120dc3babdac1af9a01684c70e1898caec34099417e86794418e3",
+      "checkpoint_sha256": "2e24a0ec424789848c5247b157c95a3810bcc4e7a5c75e44faaec242ad46cf3e",
+      "inputs": 10,
+      "selected_jobs": 180,
+      "excluded_jobs": 0,
+      "hostname": "r8n9",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt3200_4381",
+      "task": 7,
+      "run_manifest_sha256": "cc1e7370f0838470e1ac4a4fafe20b459ab33e5d1f6fee5aa7ee6d099925823b",
+      "checkpoint_sha256": "60e8e29676e3856242252b42e1f433b4d87a2a892aec77c389e169eb2b1b40ab",
+      "inputs": 6,
+      "selected_jobs": 108,
+      "excluded_jobs": 0,
+      "hostname": "r18n3",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt3200_4381",
+      "task": 8,
+      "run_manifest_sha256": "ac847615d10b4916b90da09f0d866542f6f0dc17fe5f326be47b287eae21d3b7",
+      "checkpoint_sha256": "0717f10172179148b8aa92927d1024af2033363e3ca203b6594fee8358368a90",
+      "inputs": 4,
+      "selected_jobs": 72,
+      "excluded_jobs": 0,
+      "hostname": "r5n6",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt3200_4381",
+      "task": 9,
+      "run_manifest_sha256": "5478ae91f5e89c435958771fbc545d6f893f78a63e65ae249f1d78c3258279bd",
+      "checkpoint_sha256": "f305d0370fa6b352bf4ca358ca5909312afb5a8815c88ac83b1b8a11480bb23d",
+      "inputs": 4,
+      "selected_jobs": 72,
+      "excluded_jobs": 0,
+      "hostname": "r10n6",
+      "workers": 8
+    },
+    {
+      "run": "results/runs/e1-bprna-long-89baea52-cpu16-20261018",
+      "tier": "nt3200_4381",
+      "task": 10,
+      "run_manifest_sha256": "55530ea27f43166625f88c13fcdc8d147982d186560239b367b336604b2de403",
+      "checkpoint_sha256": "bfee7459b87b1c8c472628a9cf1ad79c90a3c18e69867d124691a15bbcfe0f34",
+      "inputs": 1,
+      "selected_jobs": 18,
+      "excluded_jobs": 0,
+      "hostname": "r9n6",
+      "workers": 8
+    }
+  ],
+  "selected_job_status_counts": {
+    "success": 25884
+  },
+  "excluded_job_status_counts": {},
+  "consistency_checks": {
+    "success": 8628
+  },
+  "consistency_maxima": {
+    "stem_vs_bpp_max_error": 6.838339894343903e-10,
+    "accessibility_w1_vs_unpaired_max_error": 6.836677890476039e-10,
+    "accessibility_above_marginal_max_violation": 6.936096141885173e-11
+  },
+  "inputs": 1438,
+  "metric_rows": 8628,
+  "metrics_sha256": "0dff08e3bc24f8f42e85280189a1051fa1bf62c4aad956e408bf61be056e6c14",
+  "elapsed_seconds": 2484.3043311741203,
+  "validation": "selected matrix, unchanged task dependencies, S/G hashes, raw commands/results/resources, used artifact hashes and CLI consistency passed",
+  "context_source_commit": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+  "context_source_version": "0.2.0",
+  "context_plan_sha256": "f674fae7796b325e222cb54f2372116d1f8793cd5a45b43d043ad701e908a5ea",
+  "context_audit_sha256": "781481d4485d8c346c3924d3f43f1b25e79a45b16ee9bb02fb285d31ded726c0",
+  "retained_noncontext_source": "results/local/e1-bprna-long-89baea52-cpu16-20261018",
+  "retained_noncontext_metrics_sha256": "134a9805f554cc9d7c74762fc06d1216356d603621c4be72b55484afb9624f68",
+  "noncontext_columns_byte_identical": true
+}

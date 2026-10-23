@@ -1,0 +1,141 @@
+{
+  "all_passed": true,
+  "checks": {
+    "rna_error_quantiles.tsv_noncontext_fixed_strata_rows_identical": 128,
+    "local_error_quantiles.tsv_noncontext_fixed_strata_rows_identical": 32,
+    "summary.tsv_noncontext_rows_identical": 60,
+    "examples.tsv_noncontext_rows_identical": 92,
+    "local_per_rna_noncontext_rows_identical": 295500,
+    "plot_noncontext_rows_identical": 450,
+    "evaluation_counts_byte_identical": true,
+    "total_accessibility_and_deltaF_si_pngs_byte_identical": true,
+    "stratified_higher_p90_sentence_still_true": true,
+    "b200_shorter_groups_no_tail_events": true
+  },
+  "changed": {
+    "rna_error_quantiles.tsv_rows": 172,
+    "local_error_quantiles.tsv_rows": 48
+  },
+  "stratified_sentence_checks": [
+    {
+      "beam": "20",
+      "metric": "delta_free_energy_kcal_mol",
+      "ge1_has_higher_p90_than_both": true,
+      "values": {
+        "lt0.1": 0.4713358265101917,
+        "0.1_to_lt1": 0.4462625070043577,
+        "ge1": 1.2237918473566651
+      }
+    },
+    {
+      "beam": "20",
+      "metric": "base_state_tv_mean_Gfree",
+      "ge1_has_higher_p90_than_both": true,
+      "values": {
+        "lt0.1": 0.1390208398648388,
+        "0.1_to_lt1": 0.11675068589016357,
+        "ge1": 0.1664546382688298
+      }
+    },
+    {
+      "beam": "20",
+      "metric": "context_tv_mean_Gfree",
+      "ge1_has_higher_p90_than_both": true,
+      "values": {
+        "lt0.1": 0.11913791898316967,
+        "0.1_to_lt1": 0.1141801766951541,
+        "ge1": 0.195514258669133
+      }
+    },
+    {
+      "beam": "20",
+      "metric": "access_w16_probability_mae_eligible",
+      "ge1_has_higher_p90_than_both": true,
+      "values": {
+        "lt0.1": 0.005499460181025546,
+        "0.1_to_lt1": 0.010762284424644568,
+        "ge1": 0.028029058764488798
+      }
+    },
+    {
+      "beam": "50",
+      "metric": "delta_free_energy_kcal_mol",
+      "ge1_has_higher_p90_than_both": true,
+      "values": {
+        "lt0.1": 0.006731788008341876,
+        "0.1_to_lt1": 0.04257855983720231,
+        "ge1": 0.11238629958414492
+      }
+    },
+    {
+      "beam": "50",
+      "metric": "base_state_tv_mean_Gfree",
+      "ge1_has_higher_p90_than_both": true,
+      "values": {
+        "lt0.1": 0.0020271386889056846,
+        "0.1_to_lt1": 0.008276328512569608,
+        "ge1": 0.01796865327785861
+      }
+    },
+    {
+      "beam": "50",
+      "metric": "context_tv_mean_Gfree",
+      "ge1_has_higher_p90_than_both": true,
+      "values": {
+        "lt0.1": 0.0021642799672879744,
+        "0.1_to_lt1": 0.011594738973198326,
+        "ge1": 0.023424610500655665
+      }
+    },
+    {
+      "beam": "50",
+      "metric": "access_w16_probability_mae_eligible",
+      "ge1_has_higher_p90_than_both": true,
+      "values": {
+        "lt0.1": 0.00035499916193223004,
+        "0.1_to_lt1": 0.0008253419856967767,
+        "ge1": 0.0013796955995742121
+      }
+    },
+    {
+      "beam": "100",
+      "metric": "delta_free_energy_kcal_mol",
+      "ge1_has_higher_p90_than_both": true,
+      "values": {
+        "lt0.1": 8.751658882033629e-08,
+        "0.1_to_lt1": 5.785486894893641e-06,
+        "ge1": 9.747886231536995e-06
+      }
+    },
+    {
+      "beam": "100",
+      "metric": "base_state_tv_mean_Gfree",
+      "ge1_has_higher_p90_than_both": true,
+      "values": {
+        "lt0.1": 1.8698857463957918e-08,
+        "0.1_to_lt1": 1.2497150537064572e-06,
+        "ge1": 2.3230174881573825e-06
+      }
+    },
+    {
+      "beam": "100",
+      "metric": "context_tv_mean_Gfree",
+      "ge1_has_higher_p90_than_both": true,
+      "values": {
+        "lt0.1": 2.5443365755182444e-08,
+        "0.1_to_lt1": 1.8988977692048094e-06,
+        "ge1": 2.9750383023382564e-06
+      }
+    },
+    {
+      "beam": "100",
+      "metric": "access_w16_probability_mae_eligible",
+      "ge1_has_higher_p90_than_both": true,
+      "values": {
+        "lt0.1": 2.137859053502135e-07,
+        "0.1_to_lt1": 1.6952104876882224e-06,
+        "ge1": 2.724164361611539e-06
+      }
+    }
+  ]
+}

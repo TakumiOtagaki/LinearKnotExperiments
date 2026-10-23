@@ -1,0 +1,76 @@
+{
+  "inventory_updated": 1874,
+  "changed_files": [
+    {
+      "path": "manuscript/latex/supplementary/results.tex",
+      "before_sha256": "896e1d559fe7772b129f9f83092a5c9704799ad499f354c81ea4822f8df16b33",
+      "after_sha256": "079fdd67e9aab45da665c9c35208732b5e2366fb181b9dcf961426045cd55fa0"
+    },
+    {
+      "path": "manuscript/supplementary_results_ja.md",
+      "before_sha256": "e08e0886730200293955c1155f2b045800a1f26070b74b182f0a6ce786c624ea",
+      "after_sha256": "e9acc1dadb9fd085de4932079aa9668d8d387289d3021a135394b17204fb1327"
+    },
+    {
+      "path": "manuscript/latex/sections/results.tex",
+      "before_sha256": "f4474ab4e4d57652a19b9d4eca20a389707214f8fa18d7d4678cc9d7ddd7ecc3",
+      "after_sha256": "c6c5666b9a7c54a72ec8173c1c7aea89b96b8e976babb5e07023d254c7a4d44f"
+    },
+    {
+      "path": "manuscript/latex/sections/methods.tex",
+      "before_sha256": "30fdf0c6b020a98e215bc676f7302c789828babc3aad75612dad1071b13ffc30",
+      "after_sha256": "761e52430e115eeebfd96ac09419f13b00539ac843a173ededd762b560b8da8d"
+    },
+    {
+      "path": "manuscript/results_ja.md",
+      "before_sha256": "c53c7163fb3a1b5d8cbeb817995cae851f0670523492c15baba4797b609002ef",
+      "after_sha256": "5b7970b15b567885a81819af97da56d91bc23627756a16f98f11881db06ef968"
+    },
+    {
+      "path": "manuscript/methods_ja.md",
+      "before_sha256": "5d3daacee3186c6e45de6f513274582ca24baf46e5eadc69087c47d15e3648a9",
+      "after_sha256": "4293cd87e41731825d12fdb3812a7c477592c71b9e5b47fe705dda1307e8c106"
+    }
+  ],
+  "short_context": {
+    "bin": "nt300_399",
+    "beam": "200",
+    "metric": "context_tv_mean_Gfree",
+    "rna": "1095",
+    "n": "1095",
+    "missing_or_out_of_domain_rna": "0",
+    "median": "8.11812124961671e-11",
+    "p90": "0.001735394573176407",
+    "p99": "0.09756700270820651",
+    "max": "0.20602439304774917",
+    "min": "7.705027401599496e-15",
+    "mean": "0.0030392891274863124"
+  },
+  "long_context": {
+    "bin": "all",
+    "beam": "300",
+    "metric": "context_tv_mean_Gfree",
+    "rna": "1438",
+    "n": "1438",
+    "missing_or_out_of_domain_rna": "0",
+    "median": "7.077061836805619e-07",
+    "p90": "0.04306177015534478",
+    "p99": "0.15159073154372033",
+    "max": "0.2745650273536085",
+    "min": "0.0",
+    "mean": "0.01118587099618119"
+  },
+  "pseudoloop_local": {
+    "axis": "all",
+    "stratum": "all",
+    "beam": "200",
+    "metric": "pseudoloop_ge0.1",
+    "rna_total": "24625",
+    "rna_selected": "12687",
+    "n": "219028",
+    "p50": "6.411537967210279e-15",
+    "p90": "4.030109579389318e-14",
+    "max": "0.9819320729907435",
+    "min": "0.0"
+  }
+}

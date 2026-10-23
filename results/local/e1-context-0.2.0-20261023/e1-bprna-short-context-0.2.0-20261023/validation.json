@@ -1,0 +1,8 @@
+{
+  "all_passed": true,
+  "metrics_sha256": "03336242bdfd4b369b4167e33bf47d0993787054f54fae2208aae470f7fdde5b",
+  "rows_validated": 98500,
+  "provenance_sha256": "b97eb430b81a1d335a88fe31156ca46aff525c0c462bf6496b647a9b16887272",
+  "script_sha256": "6b3abb0ca7c3e1a15b9346b47193a58a2953dd1e0f22556b29b3f331861137fe",
+  "checks": "E1 scalar identities, finite core metrics, unique complete input/beam matrix, window-domain partitions, NA domains and hashes"
+}

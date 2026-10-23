@@ -1,0 +1,18 @@
+{
+  "all_passed": true,
+  "changed_context_columns": {
+    "context_tv_mean_Gfree": 100352,
+    "context_Stem_mae_Gfree": 87204,
+    "context_Hairpin_mae_Gfree": 0,
+    "context_Bulge_mae_Gfree": 0,
+    "context_Internal_mae_Gfree": 0,
+    "context_Multiloop_mae_Gfree": 100134,
+    "context_Exterior_mae_Gfree": 0,
+    "context_PseudoLoop_mae_Gfree": 99503
+  },
+  "noncontext_columns_byte_identical": true,
+  "source_metrics_sha256": {
+    "short": "644f7cead4848506177057fcdfe35c52236850eccf8b29f714563f7762fe51f0",
+    "long": "134a9805f554cc9d7c74762fc06d1216356d603621c4be72b55484afb9624f68"
+  }
+}
