@@ -1,0 +1,24 @@
+{
+  "started_utc": "2026-10-23T02:13:56.816076+00:00",
+  "status": "success",
+  "tier": "nt400_799",
+  "task_id": 1,
+  "inputs": [
+    "bpRNA_CRW_2852"
+  ],
+  "workers": 8,
+  "requested_resource": "cpu_16=1",
+  "h_rt_seconds": 1800,
+  "plan_sha256": "f674fae7796b325e222cb54f2372116d1f8793cd5a45b43d043ad701e908a5ea",
+  "runner_sha256": "7d4cac52f3969943d2e03c42ca5bf8732ff2982d1cee03295dca31e2cf1be0fb",
+  "job_id": "9108095",
+  "sge_task_id": "undefined",
+  "hostname": "r13n10",
+  "pilot": true,
+  "previous_attempts": [],
+  "finished_utc": "2026-10-23T02:13:57.511753+00:00",
+  "completed_jobs": 6,
+  "status_counts": {
+    "success": 6
+  }
+}

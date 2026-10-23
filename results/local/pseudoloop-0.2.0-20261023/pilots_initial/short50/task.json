@@ -1,0 +1,50 @@
+{
+  "started_utc": "2026-10-23T02:06:20.958357+00:00",
+  "status": "success",
+  "tier": "nt50_99",
+  "task_id": 1,
+  "inputs": [
+    "bpRNA_CRW_18713",
+    "bpRNA_CRW_34873"
+  ],
+  "workers": 4,
+  "requested_resource": "cpu_16=1",
+  "h_rt_seconds": 900,
+  "plan_sha256": "c6e90ec550a1e989995b7a69a0f8d7bc1eccbafd044a3c9366113e1bf556c0bb",
+  "runner_sha256": "bdf34611ad94ff50261da916ffa1e73607ba6f10b66009c07faf14cc247e2981",
+  "job_id": "9108095",
+  "sge_task_id": "undefined",
+  "hostname": "r13n10",
+  "pilot": true,
+  "previous_attempts": [
+    {
+      "started_utc": "2026-10-23T02:03:42.013173+00:00",
+      "status": "success",
+      "tier": "nt50_99",
+      "task_id": 1,
+      "inputs": [
+        "bpRNA_CRW_18713",
+        "bpRNA_CRW_34873"
+      ],
+      "workers": 4,
+      "requested_resource": "cpu_16=1",
+      "h_rt_seconds": 900,
+      "plan_sha256": "c6e90ec550a1e989995b7a69a0f8d7bc1eccbafd044a3c9366113e1bf556c0bb",
+      "runner_sha256": "bdf34611ad94ff50261da916ffa1e73607ba6f10b66009c07faf14cc247e2981",
+      "job_id": "9108095",
+      "sge_task_id": "undefined",
+      "hostname": "r13n10",
+      "pilot": true,
+      "finished_utc": "2026-10-23T02:03:43.120412+00:00",
+      "completed_jobs": 10,
+      "status_counts": {
+        "success": 10
+      }
+    }
+  ],
+  "finished_utc": "2026-10-23T02:06:21.659339+00:00",
+  "completed_jobs": 10,
+  "status_counts": {
+    "success": 10
+  }
+}

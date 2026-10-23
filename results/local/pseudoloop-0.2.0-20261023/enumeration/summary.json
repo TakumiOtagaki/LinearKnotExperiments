@@ -1,0 +1,40 @@
+{
+  "cases": 729,
+  "unique_inputs": 706,
+  "totals": {
+    "structures": 156534,
+    "derivations": 156534,
+    "crossing_structures": 60222,
+    "candidate_superset": 164790,
+    "candidate_rejected": 8256,
+    "ambiguous": 0,
+    "context_ambiguous": 0,
+    "ownership_bad": 0,
+    "ownership_duplicate": 0,
+    "ownership_missing": 0,
+    "ownership_on_paired": 0,
+    "allowed_absent": 0,
+    "overflow": 0
+  },
+  "maxima": {
+    "logZ_error": 2.1316282072803006e-14,
+    "grouping_logZ_error": 2.1316282072803006e-14,
+    "energy_error": 1.4210854715202004e-14,
+    "bpp_error": 2.0761170560490427e-14,
+    "unpaired_error": 2.1213377734106975e-14,
+    "context_error": 2.142730437526552e-14,
+    "access_error": 2.1316282072803006e-14,
+    "context_error_S": 2.0827957414315534e-14,
+    "context_error_H": 2.0650148258027912e-14,
+    "context_error_B": 2.0539125955565396e-14,
+    "context_error_I": 2.142730437526552e-14,
+    "context_error_M": 2.1345230270808369e-19,
+    "context_error_E": 1.4876988529977098e-14,
+    "context_error_P": 1.554312234475219e-14,
+    "access_error_1": 2.1316282072803006e-14,
+    "access_error_2": 2.1316282072803006e-14,
+    "access_error_3": 2.1094237467877974e-14,
+    "access_error_5": 1.2878587085651816e-14
+  },
+  "failures": []
+}

@@ -1,0 +1,72 @@
+{
+  "sequence_length": 61,
+  "scaffold_pairs": 8,
+  "band_spans": [
+    [
+      6,
+      36
+    ],
+    [
+      26,
+      50
+    ]
+  ],
+  "probability_display_cutoff_inclusive": 0.05,
+  "displayed_bpp_pairs": 15,
+  "sample_draws": 10000,
+  "sample_counts_shown": [
+    3431,
+    1426
+  ],
+  "context_hatches": "none",
+  "centroid_gamma": 1,
+  "illustrative_beam_width": 3,
+  "multiloop_rule": "BE_WIP_WIP",
+  "intermediate_order": [
+    "Inner + Right",
+    "Left + Intermediate + local factor"
+  ],
+  "max_context_sum_error": 2.220446049250313e-16,
+  "max_sample_bpp_difference": 0.010521403741104995,
+  "pdf_page_mm": [
+    178.0000000000147,
+    144.99999999998442
+  ],
+  "png_pixels": [
+    2102,
+    1712
+  ],
+  "png_dpi": [
+    299.9994,
+    299.9994
+  ],
+  "pdf_text_sizes_pt": [
+    7.0,
+    7.5,
+    8.0,
+    9.0
+  ],
+  "minimum_embedded_text_pt": 7.0,
+  "minimum_matplotlib_text_pt": 7.0,
+  "text_outside_page": [],
+  "text_overlaps": [],
+  "gs_command": [
+    "gs",
+    "-q",
+    "-dBATCH",
+    "-dNOPAUSE",
+    "-sDEVICE=txtwrite",
+    "-dTextFormat=0",
+    "-sOutputFile=-",
+    "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/figures/pseudoloop-0.2.0-20261023/figure1/figure1.pdf"
+  ],
+  "visual_inspection": "2026-10-23: opened full PNG; context bands, stacked window components, labels, axes and legends have no clipping or overlap.",
+  "source_data": "results/local/pseudoloop-0.2.0-20261023/examples/figure_data.json",
+  "source_data_sha256": "d960a3a320da054f57613a1d28b27e003a560136c1255df27ecc44d9a55c6648",
+  "panel_C_data_sha256": "80dfc89ba8c78a5c849f3836e064a57f157bf30c7fe3e69e5714015d62de900c",
+  "script_sha256": "cd3995d46a201ed5d5fbcda7dd878ab4a8de8915f7b236dd80fb28b5d82e4387",
+  "context_release": "0.2.0 / f93b55e",
+  "context_source": "results/local/pseudoloop-0.2.0-20261023/examples",
+  "render_wrapper_sha256": "b654436542c2ea8004d65f5b98a2b078568fa0df9ae6c64172d12e7bfa5fa9ec",
+  "retained_quantities": "BPP, total accessibility, samples and centroid: adopted saved outputs; contexts and by-loop: freshly recomputed"
+}

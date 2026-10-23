@@ -1,0 +1,445 @@
+{
+  "long400": [
+    {
+      "other_channels_max_abs_difference": 2.220446049250313e-16,
+      "multi_plus_pseudo_max_abs_difference": 2.1441214999332532e-16,
+      "min_multiloop_gain": -1.0757318430129614e-19,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 8.83194165392546e-06,
+      "input": "bpRNA_CRW_2852",
+      "mode": "beam20_outer",
+      "old_seconds": 0.16816874127835035,
+      "new_seconds": 0.18989244429394603,
+      "ratio": 1.1291780080558427,
+      "peak_rss_kib": 12288
+    },
+    {
+      "other_channels_max_abs_difference": 2.220446049250313e-16,
+      "multi_plus_pseudo_max_abs_difference": 1.93421667571414e-16,
+      "min_multiloop_gain": -1.1123914289701275e-16,
+      "min_pseudoloop_loss": -8.47032949620883e-22,
+      "max_transferred_probability": 8.55410856911835e-06,
+      "input": "bpRNA_CRW_2852",
+      "mode": "beam50_outer",
+      "old_seconds": 0.3174953921698034,
+      "new_seconds": 0.2913200780749321,
+      "ratio": 0.917556869358053,
+      "peak_rss_kib": 15360
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 1.1102230246251565e-16,
+      "min_multiloop_gain": -1.0842021724855044e-19,
+      "min_pseudoloop_loss": -2.7052114752934217e-20,
+      "max_transferred_probability": 0.9481250723755075,
+      "input": "bpRNA_CRW_2852",
+      "mode": "beam100_outer",
+      "old_seconds": 0.41834524972364306,
+      "new_seconds": 0.3803282198496163,
+      "ratio": 0.909125226355168,
+      "peak_rss_kib": 21504
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 1.266890238549312e-16,
+      "min_multiloop_gain": -3.6422416731934915e-20,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 0.9499847077935142,
+      "input": "bpRNA_CRW_2852",
+      "mode": "beam300_outer",
+      "old_seconds": 0.6698072399012744,
+      "new_seconds": 0.49192827427759767,
+      "ratio": 0.7344326023560225,
+      "peak_rss_kib": 21504
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 1.1102230246251565e-16,
+      "min_multiloop_gain": -3.7269449679189215e-20,
+      "min_pseudoloop_loss": -3.194886666145098e-29,
+      "max_transferred_probability": 0.9499842915145432,
+      "input": "bpRNA_CRW_2852",
+      "mode": "beam200_outer",
+      "old_seconds": 0.619121478870511,
+      "new_seconds": 0.48507044231519103,
+      "ratio": 0.7834818510902337,
+      "peak_rss_kib": 21504
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 1.266890238549312e-16,
+      "min_multiloop_gain": -3.6422416731934915e-20,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 0.9499847077935142,
+      "input": "bpRNA_CRW_2852",
+      "mode": "beam400_outer",
+      "old_seconds": 0.7193333907052875,
+      "new_seconds": 0.5356520297937095,
+      "ratio": 0.744650584436956,
+      "peak_rss_kib": 24576
+    }
+  ],
+  "short300": [
+    {
+      "other_channels_max_abs_difference": 3.3306690738754696e-16,
+      "multi_plus_pseudo_max_abs_difference": 8.886121005683116e-16,
+      "min_multiloop_gain": -1.1102230246251565e-16,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 8.72635297355373e-14,
+      "input": "bpRNA_RFAM_12438",
+      "mode": "exact",
+      "old_seconds": 6.332187924068421,
+      "new_seconds": 1.2779085831716657,
+      "ratio": 0.20181153789109457,
+      "peak_rss_kib": 34004
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 9.990123382956124e-17,
+      "min_multiloop_gain": -1.0842021724855044e-19,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 3.510953613614501e-16,
+      "input": "bpRNA_RFAM_12438",
+      "mode": "beam20_outer",
+      "old_seconds": 0.6721396688371897,
+      "new_seconds": 0.4292957931756973,
+      "ratio": 0.6387002777538553,
+      "peak_rss_kib": 21504
+    },
+    {
+      "other_channels_max_abs_difference": 3.3306690738754696e-16,
+      "multi_plus_pseudo_max_abs_difference": 5.80265002710203e-16,
+      "min_multiloop_gain": 0.0,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 8.737455203799982e-14,
+      "input": "bpRNA_RFAM_12438",
+      "mode": "beam200_outer",
+      "old_seconds": 4.478753209579736,
+      "new_seconds": 2.3855854677967727,
+      "ratio": 0.5326449920692603,
+      "peak_rss_kib": 67584
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 3.4668234059522466e-16,
+      "min_multiloop_gain": -1.2116903504194741e-27,
+      "min_pseudoloop_loss": -1.262177448353619e-29,
+      "max_transferred_probability": 5.440092820663267e-15,
+      "input": "bpRNA_RFAM_12438",
+      "mode": "beam50_outer",
+      "old_seconds": 1.7215363658033311,
+      "new_seconds": 1.030150854960084,
+      "ratio": 0.598390411857131,
+      "peak_rss_kib": 36864
+    },
+    {
+      "other_channels_max_abs_difference": 2.220446049250313e-16,
+      "multi_plus_pseudo_max_abs_difference": 1.252196980741365e-15,
+      "min_multiloop_gain": 0.0,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 9.492406860545088e-14,
+      "input": "bpRNA_RFAM_12438",
+      "mode": "beam100_outer",
+      "old_seconds": 3.224606898147613,
+      "new_seconds": 1.6827009697444737,
+      "ratio": 0.5218313496479547,
+      "peak_rss_kib": 55296
+    }
+  ],
+  "short50": [
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 2.7755575615628914e-17,
+      "min_multiloop_gain": -5.5751973286074065e-22,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 6.308764650247604e-05,
+      "input": "bpRNA_CRW_18713",
+      "mode": "beam100_outer",
+      "old_seconds": 0.036303493194282055,
+      "new_seconds": 0.04722636705264449,
+      "ratio": 1.3008766621963208,
+      "peak_rss_kib": 3072
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 5.551115123125783e-17,
+      "min_multiloop_gain": -1.6940658945086007e-21,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 3.777780693821173e-05,
+      "input": "bpRNA_CRW_34873",
+      "mode": "beam100_outer",
+      "old_seconds": 0.03609027387574315,
+      "new_seconds": 0.05250595975667238,
+      "ratio": 1.4548506874025824,
+      "peak_rss_kib": 3072
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 2.7755575615628914e-17,
+      "min_multiloop_gain": -5.5751973286074065e-22,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 6.308764650247604e-05,
+      "input": "bpRNA_CRW_18713",
+      "mode": "beam200_outer",
+      "old_seconds": 0.03936425689607859,
+      "new_seconds": 0.05614247592166066,
+      "ratio": 1.426229791911898,
+      "peak_rss_kib": 3072
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 6.938893903907228e-18,
+      "min_multiloop_gain": 0.0,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 6.30876511642948e-05,
+      "input": "bpRNA_CRW_18713",
+      "mode": "beam20_outer",
+      "old_seconds": 0.035746623296290636,
+      "new_seconds": 0.05565691087394953,
+      "ratio": 1.5569837299772298,
+      "peak_rss_kib": 3072
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 2.7755575615628914e-17,
+      "min_multiloop_gain": 0.0,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 6.308764650247594e-05,
+      "input": "bpRNA_CRW_18713",
+      "mode": "exact",
+      "old_seconds": 0.0388415576890111,
+      "new_seconds": 0.03211520006880164,
+      "ratio": 0.8268257500364757,
+      "peak_rss_kib": 3072
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 5.551115123125783e-17,
+      "min_multiloop_gain": 0.0,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 3.788114294396111e-05,
+      "input": "bpRNA_CRW_34873",
+      "mode": "beam20_outer",
+      "old_seconds": 0.035748098976910114,
+      "new_seconds": 0.03191707981750369,
+      "ratio": 0.8928329262520813,
+      "peak_rss_kib": 3072
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 5.551115123125783e-17,
+      "min_multiloop_gain": 0.0,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 3.777780693821187e-05,
+      "input": "bpRNA_CRW_34873",
+      "mode": "exact",
+      "old_seconds": 0.036753158550709486,
+      "new_seconds": 0.027432671282440424,
+      "ratio": 0.7464030947051995,
+      "peak_rss_kib": 3072
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 5.551115123125783e-17,
+      "min_multiloop_gain": -1.6940658945086007e-21,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 3.777780693821173e-05,
+      "input": "bpRNA_CRW_34873",
+      "mode": "beam200_outer",
+      "old_seconds": 0.036182970739901066,
+      "new_seconds": 0.04626808688044548,
+      "ratio": 1.2787254869988596,
+      "peak_rss_kib": 3072
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 2.7755575615628914e-17,
+      "min_multiloop_gain": -5.5751973286074065e-22,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 6.308764650247604e-05,
+      "input": "bpRNA_CRW_18713",
+      "mode": "beam50_outer",
+      "old_seconds": 0.03582520177587867,
+      "new_seconds": 0.04685832001268864,
+      "ratio": 1.3079708610109946,
+      "peak_rss_kib": 3072
+    },
+    {
+      "other_channels_max_abs_difference": 1.1102230246251565e-16,
+      "multi_plus_pseudo_max_abs_difference": 5.551115123125783e-17,
+      "min_multiloop_gain": -1.6940658945086007e-21,
+      "min_pseudoloop_loss": 0.0,
+      "max_transferred_probability": 3.777780693821173e-05,
+      "input": "bpRNA_CRW_34873",
+      "mode": "beam50_outer",
+      "old_seconds": 0.036240678280591965,
+      "new_seconds": 0.04494290007278323,
+      "ratio": 1.240123038669825,
+      "peak_rss_kib": 3072
+    }
+  ],
+  "bpRNA_RFAM_35940": {
+    "exact": {
+      "other_channels_max_abs_difference": 7.771561172376096e-16,
+      "multi_plus_pseudo_max_abs_difference": 7.771561172376096e-16,
+      "min_multiloop_gain": 0.0,
+      "min_pseudoloop_loss": -1.8010436121664352e-21,
+      "max_transferred_probability": 3.177463814327281e-05,
+      "old_base325": {
+        "Stem": 0.007217479410088323,
+        "Hairpin": 0.0001030134093141725,
+        "Bulge": 5.627171091364225e-07,
+        "Internal": 0.0028245731347970133,
+        "Multiloop": 1.6642901416640893e-09,
+        "Exterior": 0.0,
+        "PseudoLoop": 0.9898543696644012
+      },
+      "new_base325": {
+        "Stem": 0.007217479410088101,
+        "Hairpin": 0.0001030134093141725,
+        "Bulge": 5.627171091364225e-07,
+        "Internal": 0.0028245731347970133,
+        "Multiloop": 2.0766623031724088e-07,
+        "Exterior": 0.0,
+        "PseudoLoop": 0.9898541636624613
+      },
+      "new_base325_pseudoloop_abs_error": 0.0
+    },
+    "beam20_outer": {
+      "other_channels_max_abs_difference": 3.3306690738754696e-16,
+      "multi_plus_pseudo_max_abs_difference": 2.8058241663506556e-16,
+      "min_multiloop_gain": -1.6503378186065974e-16,
+      "min_pseudoloop_loss": -2.710505431213761e-20,
+      "max_transferred_probability": 1.7167236555194277e-05,
+      "old_base325": {
+        "Stem": 2.270822187844246e-06,
+        "Hairpin": 0.058860717746945235,
+        "Bulge": 2.3645570029051145e-07,
+        "Internal": 0.9410352292375304,
+        "Multiloop": 9.509570385215709e-07,
+        "Exterior": 0.0,
+        "PseudoLoop": 0.00010059478059777203
+      },
+      "new_base325": {
+        "Stem": 2.2708221880662904e-06,
+        "Hairpin": 0.058860717746945235,
+        "Bulge": 2.3645570029051145e-07,
+        "Internal": 0.9410352292375304,
+        "Multiloop": 9.533041674191068e-07,
+        "Exterior": 0.0,
+        "PseudoLoop": 0.00010059243346870947
+      },
+      "new_base325_pseudoloop_abs_error": 0.9897535712289925
+    },
+    "beam50_outer": {
+      "other_channels_max_abs_difference": 3.3306690738754696e-16,
+      "multi_plus_pseudo_max_abs_difference": 3.465110143263672e-16,
+      "min_multiloop_gain": -1.48318857196017e-16,
+      "min_pseudoloop_loss": -1.0842021724855044e-19,
+      "max_transferred_probability": 2.62400295902767e-05,
+      "old_base325": {
+        "Stem": 1.1308368279672187e-05,
+        "Hairpin": 0.058842622895800445,
+        "Bulge": 8.978649998777054e-07,
+        "Internal": 0.9407459899852062,
+        "Multiloop": 9.506646969060453e-07,
+        "Exterior": 0.0,
+        "PseudoLoop": 0.0003982302210169588
+      },
+      "new_base325": {
+        "Stem": 1.1308368279672187e-05,
+        "Hairpin": 0.058842622895800445,
+        "Bulge": 8.978649998777054e-07,
+        "Internal": 0.9407459899852062,
+        "Multiloop": 9.517785308271501e-07,
+        "Exterior": 0.0,
+        "PseudoLoop": 0.00039822910718289277
+      },
+      "new_base325_pseudoloop_abs_error": 0.9894559345552784
+    },
+    "beam100_outer": {
+      "other_channels_max_abs_difference": 3.3306690738754696e-16,
+      "multi_plus_pseudo_max_abs_difference": 3.468322515716134e-16,
+      "min_multiloop_gain": 0.0,
+      "min_pseudoloop_loss": -1.0842021724855044e-19,
+      "max_transferred_probability": 2.537553080263384e-05,
+      "old_base325": {
+        "Stem": 1.116717181848248e-05,
+        "Hairpin": 0.05884264282374668,
+        "Bulge": 9.015817303402463e-07,
+        "Internal": 0.9407463082236185,
+        "Multiloop": 9.506650190081104e-07,
+        "Exterior": 0.0,
+        "PseudoLoop": 0.00039802953406696003
+      },
+      "new_base325": {
+        "Stem": 1.1167171818260435e-05,
+        "Hairpin": 0.05884264282374668,
+        "Bulge": 9.015817303402463e-07,
+        "Internal": 0.9407463082236185,
+        "Multiloop": 9.507342240031252e-07,
+        "Exterior": 0.0,
+        "PseudoLoop": 0.0003980294648622034
+      },
+      "new_base325_pseudoloop_abs_error": 0.989456134197599
+    },
+    "beam200_outer": {
+      "other_channels_max_abs_difference": 3.3306690738754696e-16,
+      "multi_plus_pseudo_max_abs_difference": 2.821974967072427e-16,
+      "min_multiloop_gain": 0.0,
+      "min_pseudoloop_loss": -1.3877787807814457e-17,
+      "max_transferred_probability": 0.013538250026604028,
+      "old_base325": {
+        "Stem": 0.02227276830980085,
+        "Hairpin": 0.05707515194132434,
+        "Bulge": 0.00014617087149173535,
+        "Internal": 0.9125638738388325,
+        "Multiloop": 9.221093377986914e-07,
+        "Exterior": 0.0,
+        "PseudoLoop": 0.007941112929212707
+      },
+      "new_base325": {
+        "Stem": 0.02227276830980074,
+        "Hairpin": 0.05707515194132434,
+        "Bulge": 0.00014617087149173535,
+        "Internal": 0.9125638738388325,
+        "Multiloop": 1.9944366832855844e-05,
+        "Exterior": 0.0,
+        "PseudoLoop": 0.00792209067171774
+      },
+      "new_base325_pseudoloop_abs_error": 0.9819320729907435
+    }
+  },
+  "figure1_byloop": {
+    "other_channels_max_abs_difference": 0.0,
+    "multi_plus_pseudo_max_abs_difference": 1.1102230246251565e-16,
+    "min_multiloop_gain": -1.0842021724855044e-19,
+    "min_pseudoloop_loss": 0.0,
+    "max_transferred_probability": 0.0015273386655017885,
+    "old_binary_sha256": "94814e01000a7099ccbbf1f9d46933b76e0cd65c39af66a30764bf71fbca1d7e"
+  },
+  "terc_exact_samples": {
+    "original_20261017": {
+      "sha256": "41ecd697f944ceae1aca785e7c6da927d92ffdc98ebf74dc5e3c0a325987c2b7",
+      "draws": 1000,
+      "unpaired_window_draws": 871,
+      "context_counts": {
+        "H": 18,
+        "M": 2,
+        "P": 848,
+        "B": 3
+      }
+    },
+    "adopted_89baea52": {
+      "sha256": "41ecd697f944ceae1aca785e7c6da927d92ffdc98ebf74dc5e3c0a325987c2b7",
+      "draws": 1000,
+      "unpaired_window_draws": 871,
+      "context_counts": {
+        "H": 18,
+        "M": 2,
+        "P": 848,
+        "B": 3
+      }
+    }
+  }
+}

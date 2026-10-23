@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "purpose": "profile-only context recalculation; no submission",
+  "plan": "results/runs/pseudoloop-context-0.2.0-20261023/array_plan.json",
+  "plan_sha256": "f674fae7796b325e222cb54f2372116d1f8793cd5a45b43d043ad701e908a5ea",
+  "source_commit": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+  "binary_sha256": "90a5a39d1f1294898b64460480066ffa512cab3afeaa81e47a4e50d1b9b6b92d",
+  "parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "runtime_sha256": "8a826b8d38682b6598ca61b67818207a26ad8de02a915e174c4441dfd7f6cc76",
+  "programs": [
+    {
+      "subcommand": "profile",
+      "args": []
+    }
+  ],
+  "modes": {
+    "short": [
+      {
+        "name": "exact",
+        "args": [
+          "--exact"
+        ]
+      },
+      {
+        "name": "beam20_outer",
+        "args": [
+          "-b",
+          "20",
+          "--max-hairpin",
+          "30",
+          "--max-case3-depth",
+          "30",
+          "--ranking",
+          "outer"
+        ]
+      },
+      {
+        "name": "beam50_outer",
+        "args": [
+          "-b",
+          "50",
+          "--max-hairpin",
+          "50",
+          "--max-case3-depth",
+          "50",
+          "--ranking",
+          "outer"
+        ]
+      },
+      {
+        "name": "beam100_outer",
+        "args": [
+          "-b",
+          "100",
+          "--max-hairpin",
+          "100",
+          "--max-case3-depth",
+          "100",
+          "--ranking",
+          "outer"
+        ]
+      },
+      {
+        "name": "beam200_outer",
+        "args": [
+          "-b",
+          "200",
+          "--max-hairpin",
+          "200",
+          "--max-case3-depth",
+          "200",
+          "--ranking",
+          "outer"
+        ]
+      }
+    ],
+    "long": [
+      {
+        "name": "beam20_outer",
+        "args": [
+          "-b",
+          "20",
+          "--max-hairpin",
+          "30",
+          "--max-case3-depth",
+          "30",
+          "--ranking",
+          "outer"
+        ]
+      },
+      {
+        "name": "beam50_outer",
+        "args": [
+          "-b",
+          "50",
+          "--max-hairpin",
+          "50",
+          "--max-case3-depth",
+          "50",
+          "--ranking",
+          "outer"
+        ]
+      },
+      {
+        "name": "beam100_outer",
+        "args": [
+          "-b",
+          "100",
+          "--max-hairpin",
+          "100",
+          "--max-case3-depth",
+          "100",
+          "--ranking",
+          "outer"
+        ]
+      },
+      {
+        "name": "beam200_outer",
+        "args": [
+          "-b",
+          "200",
+          "--max-hairpin",
+          "200",
+          "--max-case3-depth",
+          "200",
+          "--ranking",
+          "outer"
+        ]
+      },
+      {
+        "name": "beam300_outer",
+        "args": [
+          "-b",
+          "300",
+          "--max-hairpin",
+          "300",
+          "--max-case3-depth",
+          "300",
+          "--ranking",
+          "outer"
+        ]
+      },
+      {
+        "name": "beam400_outer",
+        "args": [
+          "-b",
+          "400",
+          "--max-hairpin",
+          "400",
+          "--max-case3-depth",
+          "400",
+          "--ranking",
+          "outer"
+        ]
+      }
+    ]
+  },
+  "tiers": {
+    "nt50_99": {
+      "cohort": "short",
+      "resource": "cpu_16",
+      "workers": 4,
+      "h_rt_seconds": 900,
+      "memory_budget_mib": 35045,
+      "task_overhead_mib": 1024,
+      "memory_limit_mib": 8192,
+      "timeout_seconds": 600,
+      "target_wall_fraction": 0.65,
+      "max_inputs_per_task": 500,
+      "script": "jobs/pseudoloop-context-0.2.0-20261023/nt50_99.sh",
+      "script_sha256": "714b54920ae612f4d188c4a31f955453f712fcb119732eb73f56e01e72fc489d"
+    },
+    "nt100_199": {
+      "cohort": "short",
+      "resource": "cpu_16",
+      "workers": 4,
+      "h_rt_seconds": 900,
+      "memory_budget_mib": 35045,
+      "task_overhead_mib": 1024,
+      "memory_limit_mib": 8192,
+      "timeout_seconds": 600,
+      "target_wall_fraction": 0.65,
+      "max_inputs_per_task": 500,
+      "script": "jobs/pseudoloop-context-0.2.0-20261023/nt100_199.sh",
+      "script_sha256": "677d99aba993dff7943cd5531c5ab557d59385455027e55f05917f01a28fbe39"
+    },
+    "nt200_299": {
+      "cohort": "short",
+      "resource": "cpu_16",
+      "workers": 2,
+      "h_rt_seconds": 1800,
+      "memory_budget_mib": 35045,
+      "task_overhead_mib": 1024,
+      "memory_limit_mib": 16384,
+      "timeout_seconds": 600,
+      "target_wall_fraction": 0.65,
+      "max_inputs_per_task": 500,
+      "script": "jobs/pseudoloop-context-0.2.0-20261023/nt200_299.sh",
+      "script_sha256": "b35b293eb0e40ee862e2f22aba3961d7cc56692444a63ad1f098ccc76469b26c"
+    },
+    "nt300_399": {
+      "cohort": "short",
+      "resource": "cpu_16",
+      "workers": 2,
+      "h_rt_seconds": 1800,
+      "memory_budget_mib": 35045,
+      "task_overhead_mib": 1024,
+      "memory_limit_mib": 16384,
+      "timeout_seconds": 600,
+      "target_wall_fraction": 0.65,
+      "max_inputs_per_task": 500,
+      "script": "jobs/pseudoloop-context-0.2.0-20261023/nt300_399.sh",
+      "script_sha256": "1bd2f64d4d5dcba5851ab39b3aebf2c7b68dbce38d7fde2274b0ae4aef5710d3"
+    },
+    "nt400_799": {
+      "cohort": "long",
+      "resource": "cpu_16",
+      "workers": 8,
+      "h_rt_seconds": 1800,
+      "memory_budget_mib": 35045,
+      "task_overhead_mib": 1024,
+      "memory_limit_mib": 4096,
+      "timeout_seconds": 7200,
+      "target_wall_fraction": 0.65,
+      "max_inputs_per_task": 500,
+      "script": "jobs/pseudoloop-context-0.2.0-20261023/nt400_799.sh",
+      "script_sha256": "4eae245e9d4578c8a3b28574a4dd2237e34e62c8b6d4a70ef160b6bbbde91658"
+    },
+    "nt800_1599": {
+      "cohort": "long",
+      "resource": "cpu_16",
+      "workers": 8,
+      "h_rt_seconds": 3300,
+      "memory_budget_mib": 35045,
+      "task_overhead_mib": 1024,
+      "memory_limit_mib": 4096,
+      "timeout_seconds": 7200,
+      "target_wall_fraction": 0.65,
+      "max_inputs_per_task": 500,
+      "script": "jobs/pseudoloop-context-0.2.0-20261023/nt800_1599.sh",
+      "script_sha256": "5cb1e5442088524fc4ad14fb5ae86066da656411ede0e6bd15f081e795957a0a"
+    },
+    "nt1600_3199": {
+      "cohort": "long",
+      "resource": "cpu_16",
+      "workers": 8,
+      "h_rt_seconds": 5400,
+      "memory_budget_mib": 35045,
+      "task_overhead_mib": 1024,
+      "memory_limit_mib": 4096,
+      "timeout_seconds": 7200,
+      "target_wall_fraction": 0.65,
+      "max_inputs_per_task": 500,
+      "script": "jobs/pseudoloop-context-0.2.0-20261023/nt1600_3199.sh",
+      "script_sha256": "a32886a13bb1bd4705bdd1fc9c1fb50ff7dd31bf40d3204912c25cbdd93e7450"
+    },
+    "nt3200_4381": {
+      "cohort": "long",
+      "resource": "cpu_16",
+      "workers": 8,
+      "h_rt_seconds": 8400,
+      "memory_budget_mib": 35045,
+      "task_overhead_mib": 1024,
+      "memory_limit_mib": 4096,
+      "timeout_seconds": 7200,
+      "target_wall_fraction": 0.65,
+      "max_inputs_per_task": 500,
+      "script": "jobs/pseudoloop-context-0.2.0-20261023/nt3200_4381.sh",
+      "script_sha256": "e31fa3d79f7a7d7058104bd44b1f2b33bf3f20b48d9e8f5aeafaa90d2d2e4016"
+    }
+  },
+  "seed": 20261011,
+  "warmups": 0,
+  "repetitions": 1,
+  "old_plans": {
+    "short": {
+      "path": "results/runs/e1-bprna-short-89baea52-20261018/array_plan.json",
+      "sha256": "2c8eb969ef27eb3b76ee49eb1a9d48d172e784d1288a40333316d9805d9a4ba2",
+      "cohort_size": 24625,
+      "source_commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+      "input_hash_set_sha256": "fca8f0464b482e386ea6f8d39f642d21078878528d746b78db0a6b2e4aecfe1e"
+    },
+    "long": {
+      "path": "results/runs/e1-bprna-long-89baea52-cpu16-20261018/array_plan.json",
+      "sha256": "0b8d6f8f7398f0f1f1feebbbb756a74af63b35a207a02783d8fe7efd74eec55d",
+      "cohort_size": 1438,
+      "source_commit": "89baea52c9435b18829ef0867a66a24be56d70f9",
+      "input_hash_set_sha256": "0f090b8865922f0c481cda4380da3a76b9c78dc7948ba1fd3f400fe3fc77f2d5"
+    }
+  },
+  "calibration": "matched old profile elapsed_seconds; factor 2 plus 0.5 s/job, list bound / 0.8 + 60 s/task",
+  "file_budget": {
+    "format": "task-jsonl-tar-v1",
+    "tasks": 230,
+    "nonempty_tiers": 8,
+    "entries_per_task": 13,
+    "fixed_entries": 30,
+    "estimated_shared_entries": 3020,
+    "counts_directories": true,
+    "scheduler_log_attempts": 1,
+    "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "quota": {
+      "used_files": 21850997,
+      "limit_files": 28000000,
+      "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9595729196  14680064000 14680064000       - 21850997  28000000 28000000       -"
+    },
+    "hard_file_limit": 24000000,
+    "remaining_files": 2149003,
+    "remaining_source": "lfs quota (with configured conservative hard limit)",
+    "max_remaining_fraction": 0.1,
+    "allowed_entries": 214900,
+    "accepted": true
+  },
+  "resource_policy": "cpu_16 for all; preserve original memory caps (4/8 GiB beam, 8/16 GiB exact); choose concurrency to fit 36.8 decimal GB",
+  "commands": {
+    "plan": "python3 -B scripts/pseudoloop_context_array_20261023.py plan --source NODE_LOCAL_SOURCE --build NODE_LOCAL_BUILD",
+    "check": "python3 -B scripts/pseudoloop_context_array_20261023.py check"
+  }
+}

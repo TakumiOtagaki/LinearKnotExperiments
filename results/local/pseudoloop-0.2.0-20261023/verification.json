@@ -1,0 +1,20 @@
+{
+  "python_syntax": "six scripts passed",
+  "plan_config_and_shell_scripts": "hashes and 8 shell syntax checks passed",
+  "formal_tasks_started": 0,
+  "short50_completed": 10,
+  "resume": "10 completed jobs retained; two attempts",
+  "short300_completed": 5,
+  "long400_completed": 6,
+  "geometry": {
+    "structure_instances": 156534,
+    "base_instances": 2898623,
+    "derivations": 156534,
+    "fully_unpaired_window_instances": 4328947
+  },
+  "small_raw_archives": "four raw archive hashes passed",
+  "figure_artifacts": "all saved hashes passed",
+  "report_local_links": "passed",
+  "final_plan_sha256": "f674fae7796b325e222cb54f2372116d1f8793cd5a45b43d043ad701e908a5ea",
+  "inventory_entries": 1903
+}

@@ -1,0 +1,50 @@
+{
+  "started_utc": "2026-10-23T02:14:25.370373+00:00",
+  "status": "success",
+  "tier": "nt50_99",
+  "task_id": 1,
+  "inputs": [
+    "bpRNA_CRW_18713",
+    "bpRNA_CRW_34873"
+  ],
+  "workers": 4,
+  "requested_resource": "cpu_16=1",
+  "h_rt_seconds": 900,
+  "plan_sha256": "f674fae7796b325e222cb54f2372116d1f8793cd5a45b43d043ad701e908a5ea",
+  "runner_sha256": "7d4cac52f3969943d2e03c42ca5bf8732ff2982d1cee03295dca31e2cf1be0fb",
+  "job_id": "9108095",
+  "sge_task_id": "undefined",
+  "hostname": "r13n10",
+  "pilot": true,
+  "previous_attempts": [
+    {
+      "started_utc": "2026-10-23T02:13:56.774919+00:00",
+      "status": "success",
+      "tier": "nt50_99",
+      "task_id": 1,
+      "inputs": [
+        "bpRNA_CRW_18713",
+        "bpRNA_CRW_34873"
+      ],
+      "workers": 4,
+      "requested_resource": "cpu_16=1",
+      "h_rt_seconds": 900,
+      "plan_sha256": "f674fae7796b325e222cb54f2372116d1f8793cd5a45b43d043ad701e908a5ea",
+      "runner_sha256": "7d4cac52f3969943d2e03c42ca5bf8732ff2982d1cee03295dca31e2cf1be0fb",
+      "job_id": "9108095",
+      "sge_task_id": "undefined",
+      "hostname": "r13n10",
+      "pilot": true,
+      "finished_utc": "2026-10-23T02:13:57.702256+00:00",
+      "completed_jobs": 10,
+      "status_counts": {
+        "success": 10
+      }
+    }
+  ],
+  "finished_utc": "2026-10-23T02:14:26.073839+00:00",
+  "completed_jobs": 10,
+  "status_counts": {
+    "success": 10
+  }
+}

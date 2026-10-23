@@ -1,0 +1,81 @@
+{
+  "source_commit": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+  "version": "0.2.0",
+  "source_acquisition": "git archive f93b55e | tar -x; node-local; no worktree",
+  "binary_sha256": "90a5a39d1f1294898b64460480066ffa512cab3afeaa81e47a4e50d1b9b6b92d",
+  "parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "cmake_cache_sha256": "506e7f1573c5ee364d2365a37177aa2acb59a12477c3fb5da86e7a7547666605",
+  "script_sha256": "001377802f1daff70b038565cb6eccf77583e62cd7776bebce074966bfe8be42",
+  "calls": [
+    {
+      "argv": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/scfg2_pk_profiles_oracle_test"
+      ],
+      "cwd": "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source",
+      "returncode": 0,
+      "elapsed_seconds": 0.6508893542923033,
+      "stdout_sha256": "e42da00edd86987f88e19104de72de7e419728158d8dfd70b6aceb3b9cd6067f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/scfg2_pk_profiles_beam_test"
+      ],
+      "cwd": "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source",
+      "returncode": 0,
+      "elapsed_seconds": 1.8340995837934315,
+      "stdout_sha256": "c4ba2d7aadcaba0af84ce161da5d82e7b9cb78ebfcf4a2f46b06c752bc854fcb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source/test/tools/test_pseudoloop_geometry.py",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build"
+      ],
+      "cwd": "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source",
+      "returncode": 0,
+      "elapsed_seconds": 1.1457691309042275,
+      "stdout_sha256": "76cecd735f09c751ac0408142f9eb418c868e43a59f7d30fba4f4168460eb07e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "c++",
+        "-O2",
+        "-std=gnu++17",
+        "-I/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source/src",
+        "-I/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source/test",
+        "-I/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/generated",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-validation/byloop.cc",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/libcparty_scfg2_exact.a",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/libRNA.a",
+        "-o",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-validation/byloop"
+      ],
+      "cwd": "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source",
+      "returncode": 0,
+      "elapsed_seconds": 33.67338452581316,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-validation/byloop"
+      ],
+      "cwd": "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source",
+      "returncode": 0,
+      "elapsed_seconds": 2.973751278128475,
+      "stdout_sha256": "a97855347d4c6e2843b0a098ced285dc30284bfb4cadb26276c5f807d95142c0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "byloop_binary_sha256": "ffc1e47b3d68a8a57d8263989d9e4a9b31e2c1617554145b36dd91034f391097",
+  "raw_archive_sha256": "b8be158a2070e0d32e8932cd7247372f131644dd2218864f8381c5feda841d3d",
+  "input_manifest_sha256": "05ac1d25c51a9ec74271690903432a41e8bf09e7ced5c5422476c7d8d4fd63d0",
+  "parameter_files_sha256": {
+    "rna_Turner04.par": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+    "rna_DirksPierce09.par": "46e750b6b9f09ebd59cf2f65b388668f4cc2cce6726f2f151c65b50e06a4f6d6"
+  }
+}

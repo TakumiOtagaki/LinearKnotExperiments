@@ -1,0 +1,136 @@
+{
+  "plan_sha256": "f674fae7796b325e222cb54f2372116d1f8793cd5a45b43d043ad701e908a5ea",
+  "binary_sha256": "90a5a39d1f1294898b64460480066ffa512cab3afeaa81e47a4e50d1b9b6b92d",
+  "parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "script_sha256": "a21a42bd073b7e70ff5c2639aaab14c6a903f853ca9cb51fe4fd00b0ab8aa6b2",
+  "calls": [
+    {
+      "command": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/linearknot",
+        "profile",
+        "-i",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-audit/bpRNA_RFAM_35940.txt",
+        "--exact"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.7998859258368611,
+      "stdout_sha256": "cb273f8a170a6ee690b86e473b99bf8740bc924ba7f0c3b62b4131876c6bf7b4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/linearknot",
+        "profile",
+        "-i",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-audit/bpRNA_RFAM_35940.txt",
+        "-b",
+        "20",
+        "--max-hairpin",
+        "30",
+        "--max-case3-depth",
+        "30",
+        "--ranking",
+        "outer"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.36513363709673285,
+      "stdout_sha256": "96f198d8a39d4f2989fbfaedd415c2b1a9974c5747875bf3ef1c737c9c18daa2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/linearknot",
+        "profile",
+        "-i",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-audit/bpRNA_RFAM_35940.txt",
+        "-b",
+        "50",
+        "--max-hairpin",
+        "50",
+        "--max-case3-depth",
+        "50",
+        "--ranking",
+        "outer"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.8906957991421223,
+      "stdout_sha256": "047163eabdf0d315a3dc09988221b848b230d1d60714e49aeecdcd661aabecd8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/linearknot",
+        "profile",
+        "-i",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-audit/bpRNA_RFAM_35940.txt",
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 1.311517583206296,
+      "stdout_sha256": "b9fd18357fd69a9703c0c9f545934e4e2873bac9f59cea776f4e1782c5be5c93",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/linearknot",
+        "profile",
+        "-i",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-audit/bpRNA_RFAM_35940.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 1.6361562861129642,
+      "stdout_sha256": "e69c52f1efb7f13f62f71f59f71739c3214e9ed14c5142e10b101b330af5b9db",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/linearknot-9c7d6e1/linearknot",
+        "access",
+        "-i",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-audit/figure1.txt",
+        "--exact",
+        "--access-len",
+        "1,4,8",
+        "--probability",
+        "--by-loop"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.05674260389059782,
+      "stdout_sha256": "e64dde298fba015382b65c61247d66d18e70edc71c9a514a7fb2e9c6602b1ee1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/linearknot",
+        "access",
+        "-i",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-audit/figure1.txt",
+        "--exact",
+        "--access-len",
+        "1,4,8",
+        "--probability",
+        "--by-loop"
+      ],
+      "returncode": 0,
+      "elapsed_seconds": 0.0247874204069376,
+      "stdout_sha256": "8c2aa5a38902b4c86bb0bb42751ea9c47f6894039bb9313352b73340fb03bbc7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "raw_archive_sha256": "daaaba845ba8cd9e95fd2a450acc4825eb7042c552042c18c353cc0b242c0c93"
+}

@@ -1,0 +1,33 @@
+{
+  "checked_utc": "2026-10-23T02:13:41.190402+00:00",
+  "status": "passed",
+  "cli_executed": false,
+  "inputs": 26063,
+  "profile_jobs": 131753,
+  "tasks": 230,
+  "checks": "plan/runtime/source/scripts/storage/old-plan hashes, every input hash/length/sequence, complete disjoint cohort, memory/wall budgets",
+  "file_budget": {
+    "format": "task-jsonl-tar-v1",
+    "tasks": 230,
+    "nonempty_tiers": 8,
+    "entries_per_task": 13,
+    "fixed_entries": 30,
+    "estimated_shared_entries": 3020,
+    "counts_directories": true,
+    "scheduler_log_attempts": 1,
+    "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "quota": {
+      "used_files": 21851086,
+      "limit_files": 28000000,
+      "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9595957940  14680064000 14680064000       - 21851086  28000000 28000000       -"
+    },
+    "hard_file_limit": 24000000,
+    "remaining_files": 2148914,
+    "remaining_source": "lfs quota (with configured conservative hard limit)",
+    "max_remaining_fraction": 0.1,
+    "allowed_entries": 214891,
+    "accepted": true
+  }
+}

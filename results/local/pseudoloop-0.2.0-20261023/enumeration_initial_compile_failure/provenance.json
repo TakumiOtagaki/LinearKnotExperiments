@@ -1,0 +1,30 @@
+{
+  "source_commit": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+  "version": "0.2.0",
+  "source_acquisition": "git archive f93b55e | tar -x; node-local; no worktree",
+  "binary_sha256": "90a5a39d1f1294898b64460480066ffa512cab3afeaa81e47a4e50d1b9b6b92d",
+  "parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "cmake_cache_sha256": "506e7f1573c5ee364d2365a37177aa2acb59a12477c3fb5da86e7a7547666605",
+  "script_sha256": "001377802f1daff70b038565cb6eccf77583e62cd7776bebce074966bfe8be42",
+  "calls": [
+    {
+      "argv": [
+        "c++",
+        "-O1",
+        "-std=c++17",
+        "-I/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source/src",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-enumeration/enumerate.cc",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/libcparty_scfg2_beam.a",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/libcparty_scfg2_exact.a",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/libRNA.a",
+        "-o",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-enumeration/enumerate"
+      ],
+      "cwd": "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source",
+      "returncode": 1,
+      "elapsed_seconds": 0.9281122097745538,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e313dd369b90e3660c3bb2bb89003c42c5a38960b06b25e197a1279960c37778"
+    }
+  ]
+}

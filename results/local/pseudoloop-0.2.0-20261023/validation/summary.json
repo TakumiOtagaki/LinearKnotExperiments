@@ -1,0 +1,78 @@
+{
+  "contexts": [
+    "Hairpin",
+    "Bulge",
+    "Internal",
+    "Multi",
+    "Exterior",
+    "PseudoLoop"
+  ],
+  "geometry": {
+    "geometry_fixtures": 14,
+    "production": {
+      "0": {
+        "groups": 461,
+        "bases": 10565,
+        "free_windows": 19987
+      },
+      "1": {
+        "groups": 461,
+        "bases": 10565,
+        "free_windows": 19987
+      }
+    },
+    "changed_rules_covered_per_policy": 7,
+    "status": "ok"
+  },
+  "comparisons": {
+    "exact_vs_enumeration": {
+      "conditions": 21,
+      "component_max_abs_error": [
+        4.3298697960381105e-15,
+        2.220446049250313e-16,
+        7.771561172376096e-16,
+        6.661338147750939e-16,
+        1.887379141862766e-15,
+        3.4416913763379853e-15
+      ],
+      "sum_max_abs_error": 2.220446049250313e-16,
+      "unit_max_abs_error": 1.1102230246251565e-16
+    },
+    "unpruned_vs_exact": {
+      "conditions": 21,
+      "component_max_abs_error": [
+        8.881784197001252e-16,
+        2.2551405187698492e-17,
+        8.881784197001252e-16,
+        7.573064690121713e-29,
+        8.881784197001252e-16,
+        3.4416913763379853e-15
+      ],
+      "sum_max_abs_error": 2.220446049250313e-16,
+      "unit_max_abs_error": 1.1102230246251565e-16
+    },
+    "finite_vs_taped": {
+      "conditions": 252,
+      "component_max_abs_error": [
+        3.552713678800501e-15,
+        1.1102230246251565e-16,
+        3.3306690738754696e-16,
+        5.37667398159468e-24,
+        1.3322676295501878e-15,
+        2.55351295663786e-15
+      ],
+      "sum_max_abs_error": 2.220446049250313e-16,
+      "unit_max_abs_error": 3.3306690738754696e-16
+    }
+  },
+  "distinct_inputs": 20,
+  "enumerated_groups": 320,
+  "positive_longer_windows": [
+    1835,
+    83,
+    55,
+    105,
+    669,
+    1175
+  ]
+}

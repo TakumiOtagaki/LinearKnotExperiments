@@ -1,0 +1,141 @@
+file	line	text
+experiments/../manuscript/latex/sections/abstract.tex	17	Loop profiles give probabilities for paired bases and six unpaired loop types, including pseudoknot loops.
+experiments/../manuscript/latex/sections/discussion.tex	4	At fixed beam size and local limits, LinearKnot computes the partition function, BPPs, seven loop-context probabilities, window accessibility, and MFE and $\gamma$-centroid structures in linear time in sequence length.
+experiments/../manuscript/latex/sections/discussion.tex	25	Its pair probabilities, loop-context probabilities, window accessibility, samples, and representative structures come from one ensemble computed in linear time, and they show where crossing pairs and open windows are likely for a given scaffold.
+experiments/../manuscript/latex/sections/introduction.tex	12	CapR gives loop profiles: structural-context probabilities that describe whether each base is paired or belongs to a particular loop type \citep{Fukunaga2014-fz}.
+experiments/../manuscript/latex/sections/introduction.tex	15	These outputs describe local loop types, unpaired windows, and structural variation beyond one MFE prediction.
+experiments/../manuscript/latex/sections/introduction.tex	42	LinearSampling samples structures according to their Boltzmann probabilities \citep{Zhang2023-ut}, and LinearCapR computes structural-context probabilities \citep{Otagaki2026-ev}.
+experiments/../manuscript/latex/sections/introduction.tex	53	From the partition function, LinearKnot computes base-pairing probabilities, loop profiles, window accessibility by loop type, Boltzmann samples, and representative $\gamma$-centroid structures chosen from base-pairing probabilities.
+experiments/../manuscript/latex/sections/introduction.tex	54	The loop profiles include PseudoLoop, the unpaired gaps between the crossing stems of a pseudoknot.
+experiments/../manuscript/latex/sections/methods.tex	56	\textbf{(B)} For a multiloop between two scaffold pairs, CParty joins the inner part and the new branch on each side in one step.
+experiments/../manuscript/latex/sections/methods.tex	68	The profile shows the seven context probabilities defined in Methods.
+experiments/../manuscript/latex/sections/methods.tex	89	% Scaffold multiloop の内側と右を先につなぎ、左を加える。右端ごとに順位の高い候補を残す。
+experiments/../manuscript/latex/sections/methods.tex	91	A branch is a closed part of the structure attached to a loop; a multiloop joins several branches.
+experiments/../manuscript/latex/sections/methods.tex	92	In Figure~\ref{fig:overview}B, CParty joins the inner part and both side branches of a multiloop between two scaffold pairs at once.
+experiments/../manuscript/latex/sections/methods.tex	93	Ordinary multiloops already use two-branch steps.
+experiments/../manuscript/latex/sections/methods.tex	102	Ranking by inside weights alone can discard unfinished multiloops and pseudoknot parts, so a preliminary calculation with a small beam estimates their surrounding weights for ranking (Supplementary Section~\ref{sec:si_beam}).
+experiments/../manuscript/latex/sections/methods.tex	133	The pairing or context distribution at a base sums structure probabilities in groups.
+experiments/../manuscript/latex/sections/methods.tex	147	% 七つの context は対合と六種類の非対合領域を区別する。PseudoLoop の範囲を定め、通常の band 内 loop と区別する。
+experiments/../manuscript/latex/sections/methods.tex	148	We assign each base to one of seven structural contexts.
+experiments/../manuscript/latex/sections/methods.tex	152	Multiloop denotes unpaired bases in a loop with at least two child branches.
+experiments/../manuscript/latex/sections/methods.tex	154	PseudoLoop denotes unpaired bases in the gaps between crossing bands (Figure~\ref{fig:overview}C).
+experiments/../manuscript/latex/sections/methods.tex	155	Other loops keep their labels inside a pseudoknot; for example, a multiloop closed by two pairs of one band is a Multiloop.
+experiments/../manuscript/latex/sections/methods.tex	156	For context label $c$, let $P_i(c)$ be the probability that base $i$ has that context.
+experiments/../manuscript/latex/sections/methods.tex	158	Thus, $P_i(\mathrm{Stem})=1-q_i$, and the six unpaired-context probabilities sum to $q_i$.
+experiments/../manuscript/latex/sections/methods.tex	172	We separate accessibility into six contributions, one for each unpaired loop type.
+experiments/../manuscript/latex/sections/methods.tex	206	\textbf{(B)} Filled symbols compare distributions over pairing partners and the unpaired state; open symbols compare seven context probabilities.
+experiments/../manuscript/latex/sections/methods.tex	237	For loop profiles, the alternatives are the seven contexts.
+experiments/../manuscript/latex/sections/methods.tex	247	We use beam size $b=100$, limit new hairpins to 100 unpaired bases, and search at most 100 enclosing scaffold multiloops.
+experiments/../manuscript/latex/sections/methods.tex	261	We show four-base accessibility by loop type, draw 1,000 samples, and predict the $\gamma$-centroid structure at $\gamma=1$.
+experiments/../manuscript/latex/sections/results.tex	11	Enumeration of small structures checked the structure weights, pairing and context probabilities, accessibility, MFE energies, and sampling frequencies (Supplementary Tables~\ref{tab:validation} and~\ref{tab:si_byloop_validation}).
+experiments/../manuscript/latex/sections/results.tex	19	\caption{Loop profiles and accessibility by loop type in rat Terc (NR\_001567.1; 388 nt) at beam size 200.
+experiments/../manuscript/latex/sections/results.tex	21	Within coordinates 40--160, maximum absolute differences from exact calculations are below 0.00284 for contexts and 0.00192 for four-base total accessibility.
+experiments/../manuscript/latex/sections/results.tex	29	\textbf{(B)} Colored bands show seven single-base context probabilities.
+experiments/../manuscript/latex/sections/results.tex	30	PseudoLoop is the context of unpaired gaps between crossing bands, defined in Methods.
+experiments/../manuscript/latex/sections/results.tex	33	\textbf{(C)} Each colored component is the joint probability that all four window bases are unpaired and assigned to that loop type.
+experiments/../manuscript/latex/sections/results.tex	35	Window 123--126 has accessibility 0.859, including a PseudoLoop contribution of 0.840.
+experiments/../manuscript/latex/sections/results.tex	53	At $b=200$, at least 90\% of these RNAs had a mean TV distance no greater than 0.0015 for BPPs and 0.0018 for contexts.
+experiments/../manuscript/latex/sections/results.tex	55	Errors were larger for some RNAs: the largest mean TV distances were 0.37 for BPPs and 0.21 for contexts.
+experiments/../manuscript/latex/sections/results.tex	61	The p90 RNA-level mean distances were 0.059 for BPPs and 0.043 for contexts.
+experiments/../manuscript/latex/sections/results.tex	72	Hairpins have at most 100 unpaired bases; we search at most 100 enclosing scaffold multiloops.
+experiments/../manuscript/latex/sections/results.tex	86	\subsection{Loop profiles and accessibility by loop type around a pseudoknot}
+experiments/../manuscript/latex/sections/results.tex	96	% PseudoLoop の寄与を joint probability の内訳として述べる。局所 exact 比較の数値は caption に集約する。
+experiments/../manuscript/latex/sections/results.tex	98	About 98\% of the unpaired probability mass of window 123--126 belongs to PseudoLoop.
+experiments/../manuscript/latex/sections/results.tex	116	The PseudoLoop contribution with crossings was 0.842; the Hairpin contribution without crossings was 0.117.
+experiments/../manuscript/latex/sections/results.tex	137	At $b=100$, all analyses, including accessibility by loop type, sampling, and $\gamma$-centroid prediction, also completed for 22,743-nt NEAT1\_2 (Supplementary Table~\ref{tab:neat1_resources}).
+experiments/../manuscript/latex/supplementary/complexity.tex	19	For any supplied pseudoknot-free scaffold, the partition function, base-pairing probabilities (BPPs), seven context probabilities, and finite-beam MFE or $\gamma$-centroid decoding each use expected time $T_0$ and space $S_0$:
+experiments/../manuscript/latex/supplementary/complexity.tex	25	For total accessibility or accessibility by loop type, expected time $T_A$ and space $S_A$ are
+experiments/../manuscript/latex/supplementary/complexity.tex	30	Six unpaired loop types change only a constant factor.
+experiments/../manuscript/latex/supplementary/complexity.tex	35	Let $E_d$ count the scaffold multiloop levels stored across free endpoints.
+experiments/../manuscript/latex/supplementary/complexity.tex	44	$E_d\le nd$ counts stored scaffold multiloop levels; $\Delta\le n$ is the maximum scaffold child count.
+experiments/../manuscript/latex/supplementary/complexity.tex	52	Scaffold setup & Time, space & $O(n+E_d)$ & Boundary indices and outward multiloop paths. \\
+experiments/../manuscript/latex/supplementary/complexity.tex	58	Contexts/windows & Time & $O(nb^2+n)$ per length & Difference arrays and chains; log-prefix products. \\
+experiments/../manuscript/latex/supplementary/complexity.tex	59	 & Space & $O(n)$ output per length & Context and window arrays. \\
+experiments/../manuscript/latex/supplementary/complexity.tex	94	Context and window assembly take $O((r_w+1)T_{\mathrm{ex}}+r_wN_{\mathrm{ex}}+nr_w)$ time and $O(n^2+nr_w)$ space.
+experiments/../manuscript/latex/supplementary/methods.tex	27	We call a loop formed by crossing bands a pseudoloop.
+experiments/../manuscript/latex/supplementary/methods.tex	45	VM & Ordinary-multiloop interior, including its closing energy. \\
+experiments/../manuscript/latex/supplementary/methods.tex	48	WM & Ordinary-multiloop branch sequence, with at least one branch. \\
+experiments/../manuscript/latex/supplementary/methods.tex	49	WI, WIP & Weakly closed gap in a pseudoloop or band-spanning multiloop.
+experiments/../manuscript/latex/supplementary/methods.tex	106	PSM & 10.07 & Introduce a pseudoknot branch into an ordinary or band-spanning multiloop. \\
+experiments/../manuscript/latex/supplementary/methods.tex	107	PSP & 15.00 & Introduce a pseudoknot branch into a pseudoloop. \\
+experiments/../manuscript/latex/supplementary/methods.tex	109	PUP & 0.06 & One unpaired base in a pseudoloop gap. \\
+experiments/../manuscript/latex/supplementary/methods.tex	110	PPS & 0.96 & One closed branch in a pseudoloop. \\
+experiments/../manuscript/latex/supplementary/methods.tex	111	$a_p,b_p,c_p$ & 3.41, 0.56, 0.12 & Initiation, branch, and unpaired-base costs for a band-spanning multiloop. \\
+experiments/../manuscript/latex/supplementary/methods.tex	112	$b_C$ & 0.03 & Ordinary-multiloop branch cost for a pseudoknot branch, in addition to PSM. \\
+experiments/../manuscript/latex/supplementary/methods.tex	120	For one pseudoloop, let $m_P,q_P,u_P$ count bands, directly assigned closed regions, and unpaired bases.
+experiments/../manuscript/latex/supplementary/methods.tex	126	the parent adds PS, PSM, or PSP once according to its loop type.
+experiments/../manuscript/latex/supplementary/methods.tex	127	For an ordinary multiloop, let $t,k,u$ count ordinary branches, pseudoknot branches, and directly assigned unpaired bases.
+experiments/../manuscript/latex/supplementary/methods.tex	134	A band-spanning multiloop connects outer and continuing inner pairs with at least one side branch.
+experiments/../manuscript/latex/supplementary/methods.tex	149	Write $E(i,j)$ for an exterior-branch factor, $M(i,j)$ for an ordinary-multiloop branch factor, and $C(i,j)$ for its closing factor.
+experiments/../manuscript/latex/supplementary/methods.tex	150	Let $U=B(c_T)$ be the ordinary-multiloop unpaired-base factor.
+experiments/../manuscript/latex/supplementary/methods.tex	169	$M(i,j)$ & Same neighboring-base conditions as $E(i,j)$, using multiloop mismatch terms and one MLintern term. \\\addlinespace[2pt]
+experiments/../manuscript/latex/supplementary/methods.tex	170	$C(i,j)$ & One MLclosing term and a multiloop stem term with reversed pair type.
+experiments/../manuscript/latex/supplementary/methods.tex	194	The unpaired constraint applies to all four bases together, with no restriction on their loop type.
+experiments/../manuscript/latex/supplementary/methods.tex	241	V & Hairpin ($H$), stack or internal loop around V ($I$), or ordinary multiloop VM (factor 1). \\
+experiments/../manuscript/latex/supplementary/methods.tex	322	Enumeration of 729 cases on 706 distinct inputs found one derivation for each of the 156,534 structure instances, with no missing or duplicate context assignments (Table~\ref{tab:validation}).
+experiments/../manuscript/latex/supplementary/methods.tex	365	Inside weight alone omits the surrounding structure and can give unfinished multiloops or pseudoknot parts low ranks.
+experiments/../manuscript/latex/supplementary/methods.tex	376	Take the maximum over proposed contexts after testing the original boundary conditions.
+experiments/../manuscript/latex/supplementary/methods.tex	432	Scaffold multiloop levels searched outward & At most $d=\max(b,30)$ & No $d$ limit. \\
+experiments/../manuscript/latex/supplementary/methods.tex	445	The limit $d$ controls how many levels of nested scaffold multiloops we search outward when connecting bands.
+experiments/../manuscript/latex/supplementary/methods.tex	514	\subsubsection{Pair and context probabilities}
+experiments/../manuscript/latex/supplementary/methods.tex	515	\label{sec:si_pseudoloop}
+experiments/../manuscript/latex/supplementary/methods.tex	521	% 対と非対合の受け持ち、七つの context を定義する。
+experiments/../manuscript/latex/supplementary/methods.tex	527	Multiloop labels unpaired bases directly assigned to multiloops, including band-spanning multiloops, whose unpaired bases have energy cost $c_p$.
+experiments/../manuscript/latex/supplementary/methods.tex	529	PseudoLoop labels unpaired bases in gaps between crossing bands; these bases have energy cost PUP.
+experiments/../manuscript/latex/supplementary/methods.tex	530	Thus PseudoLoop follows the shape of the loop, not the energy parameter set: a band-spanning multiloop uses pseudoknot parameters but is labeled Multiloop.
+experiments/../manuscript/latex/supplementary/methods.tex	541	Rule or rule group & Context & Assigned positions \\
+experiments/../manuscript/latex/supplementary/methods.tex	543	\toprule Rule or rule group & Context & Assigned positions \\\midrule\endhead
+experiments/../manuscript/latex/supplementary/methods.tex	547	VM with a leading unpaired run & Multiloop & $[i+1,k-1]$. \\\addlinespace[2pt]
+experiments/../manuscript/latex/supplementary/methods.tex	548	WM branch start & Multiloop & $[i,k-1]$. \\\addlinespace[2pt]
+experiments/../manuscript/latex/supplementary/methods.tex	549	WM, WMv, WMp unpaired extension & Multiloop & Position $j$. \\\addlinespace[2pt]
+experiments/../manuscript/latex/supplementary/methods.tex	550	WI unpaired start or extension & PseudoLoop & Position $j$. \\\addlinespace[2pt]
+experiments/../manuscript/latex/supplementary/methods.tex	551	WIP unpaired extension & Multiloop & Position $j$. \\\addlinespace[2pt]
+experiments/../manuscript/latex/supplementary/methods.tex	552	WIP or VPL leading unpaired run & Multiloop & $[i,k-1]$. \\\addlinespace[2pt]
+experiments/../manuscript/latex/supplementary/methods.tex	553	VPR trailing unpaired run & Multiloop & $[k+1,j]$. \\\addlinespace[2pt]
+experiments/../manuscript/latex/supplementary/methods.tex	554	BE with an unpaired right wing & Multiloop & $[l+1,j-1]$. \\\addlinespace[2pt]
+experiments/../manuscript/latex/supplementary/methods.tex	555	BE with an unpaired left wing & Multiloop & $[i+1,k-1]$. \\\addlinespace[2pt]
+experiments/../manuscript/latex/supplementary/methods.tex	564	Paired bases have context Stem, so every base has exactly one context and its seven context probabilities sum to 1.
+experiments/../manuscript/latex/supplementary/methods.tex	568	Cumulative sums give $P_i(c)$, the probability of context $c$ at base $i$.
+experiments/../manuscript/latex/supplementary/methods.tex	570	We compute Stem probability as one minus the summed unpaired-context probabilities.
+experiments/../manuscript/latex/supplementary/methods.tex	578	\subsubsection{Total accessibility and accessibility by loop type}
+experiments/../manuscript/latex/supplementary/methods.tex	582	Let $C_R(i)$ be the context assigned to position $i$ in structure $R$.
+experiments/../manuscript/latex/supplementary/methods.tex	591	Here $c$ ranges over the six unpaired contexts.
+experiments/../manuscript/latex/supplementary/methods.tex	593	They are not products of single-base probabilities or probabilities normalized within a loop type.
+experiments/../manuscript/latex/supplementary/methods.tex	594	A contiguous unpaired window has one assigned context under this classification, even across separately assigned parts of a PseudoLoop.
+experiments/../manuscript/latex/supplementary/methods.tex	617	The contribution is assigned to the chain's unpaired context.
+experiments/../manuscript/latex/supplementary/methods.tex	629	They cover all six contexts in windows longer than one base, including PseudoLoop windows spanning separately assigned segments and a three-base hairpin at a band boundary.
+experiments/../manuscript/latex/supplementary/methods.tex	633	Exact enumeration uses completed pair sets and assigned contexts, but shares the decomposition rules and local weights.
+experiments/../manuscript/latex/supplementary/methods.tex	641	\caption{Maximum absolute differences in loop-type accessibility on 20 distinct inputs.
+experiments/../manuscript/latex/supplementary/methods.tex	643	All six unpaired contexts occur in multi-base windows.}
+experiments/../manuscript/latex/supplementary/methods.tex	653	Multiloop & $7.8\times10^{-16}$ \\
+experiments/../manuscript/latex/supplementary/methods.tex	655	PseudoLoop & $3.4\times10^{-15}$ \\
+experiments/../manuscript/latex/supplementary/methods.tex	663	Length-one component versus single-base context & $3.3\times10^{-16}$ \\
+experiments/../manuscript/latex/supplementary/methods.tex	668	The 729-case enumeration and the resource benchmark concern total accessibility; the NEAT1 runs also include loop-type components (Section~\ref{sec:si_neat1_resources}).
+experiments/../manuscript/latex/supplementary/methods.tex	750	The same steps apply to the context distribution, with seven sets, one for each context of base $i$; each structure gives base $i$ exactly one context.
+experiments/../manuscript/latex/supplementary/methods.tex	806	The \texttt{profile} subcommand returns seven single-base context probabilities.
+experiments/../manuscript/latex/supplementary/methods.tex	807	The \texttt{access} subcommand returns total accessibility or opening energy; \texttt{--by-loop} adds the six joint loop-type probabilities.
+experiments/../manuscript/latex/supplementary/methods.tex	834	Patch 0009 corrects the neighboring bases used for multiloop closure at sequence ends.
+experiments/../manuscript/latex/supplementary/results.tex	27	After aggregation by pair set within each case, all 156,534 structure instances have one derivation and a unique context assignment.
+experiments/../manuscript/latex/supplementary/results.tex	29	These accessibility checks concern total accessibility; validation of the loop-type components is described in Supplementary Section~\ref{sec:si_accessibility}.
+experiments/../manuscript/latex/supplementary/results.tex	69	Context probabilities & Enumerated probabilities & 2.14e-14 \\
+experiments/../manuscript/latex/supplementary/results.tex	82	Its maximum PseudoLoop probability is 0.608737, and 15 positions have PseudoLoop probabilities between 0.2 and 0.8.
+experiments/../manuscript/latex/supplementary/results.tex	96	% 全短鎖・全長鎖の分位点を示す。BPP/context は自由塩基の平均、accessibility は適格窓の平均を RNA ごとに求める。
+experiments/../manuscript/latex/supplementary/results.tex	99	For BPPs and contexts, each RNA-level value is the mean total variation distance over bases unpaired in $G$.
+experiments/../manuscript/latex/supplementary/results.tex	103	They measure sensitivity to the combined settings and concern total accessibility, not errors in each loop-type contribution.
+experiments/../manuscript/latex/supplementary/results.tex	114	BPP and context values are mean total variation (TV) distances over bases free in $G$.
+experiments/../manuscript/latex/supplementary/results.tex	122	Length (nt) & RNAs & $b$ & Statistic & $\Delta F$ & BPP TV & Context TV & 16-nt access. \\
+experiments/../manuscript/latex/supplementary/results.tex	187	Crossing mass & RNAs & Statistic & $\Delta F$ & BPP TV & Context TV & 16-nt access. \\
+experiments/../manuscript/latex/supplementary/results.tex	207	PseudoLoop base & 12,740 / 223,512 & 4.01e-14 & 0.982 \\
+experiments/../manuscript/latex/supplementary/results.tex	217	Base 325 had PseudoLoop probability error 0.98191.
+experiments/../manuscript/latex/supplementary/results.tex	222	At $b=200$, crossing-pair decreases and increases affected 7 and 2 of the 1,095 RNAs of 300--399 nt; the corresponding counts were 15 and 0 for PseudoLoop, and 7 and 4 for four-base accessibility.
+experiments/../manuscript/latex/supplementary/results.tex	255	PseudoLoop bases & 20 & 694 & 85 (7.76\%) & 59 & 12 (1.10\%) \\
+experiments/../manuscript/latex/supplementary/results.tex	401	For 29,106 nt, peak RSS was 2.12 GiB for inside, 3.22 for MFE, 3.15 for BPPs, and 3.04 for contexts (recorded with the resource measurements).
+experiments/../manuscript/latex/supplementary/results.tex	411	The seven main patterns are an empty scaffold, one long stem, three separated helices, three helices with free bases concentrated in one gap, 12 separated helices, nested multiloops, and balanced multiloops.
+experiments/../manuscript/latex/supplementary/results.tex	414	The two multiloop patterns use binary branching, with the same number of pairs and branches at each length.
+experiments/../manuscript/latex/supplementary/results.tex	415	Nested multiloops put the branching levels along one chain; balanced multiloops divide them between two sides.
+experiments/../manuscript/latex/supplementary/results.tex	422	Inputs with 101 levels are already among the nested-multiloop pattern and are not repeated.
+experiments/../manuscript/latex/supplementary/results.tex	436	Nested multiloops are scaffold multiloops inside one another; $d$ caps the levels searched outward.
+experiments/../manuscript/latex/supplementary/results.tex	450	MFE, BPP, and context modes also include preparation and forward calculation.
+experiments/../manuscript/latex/supplementary/results.tex	487	Loop-type accessibility includes contexts and total and six-component accessibility at lengths 1, 4, 8, and 16 nt.
+experiments/../manuscript/latex/supplementary/results.tex	499	 & 100 & Loop-type accessibility & 36 & 0.47 \\
+experiments/../manuscript/latex/supplementary/results.tex	506	 & 100 & Loop-type accessibility & 247 & 2.80 \\

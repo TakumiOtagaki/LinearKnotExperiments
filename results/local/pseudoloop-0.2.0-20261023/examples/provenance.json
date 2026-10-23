@@ -1,0 +1,126 @@
+{
+  "source_commit": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+  "version": "0.2.0",
+  "source_acquisition": "git archive f93b55e | tar -x; node-local; no worktree",
+  "binary_sha256": "90a5a39d1f1294898b64460480066ffa512cab3afeaa81e47a4e50d1b9b6b92d",
+  "parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "cmake_cache_sha256": "506e7f1573c5ee364d2365a37177aa2acb59a12477c3fb5da86e7a7547666605",
+  "script_sha256": "001377802f1daff70b038565cb6eccf77583e62cd7776bebce074966bfe8be42",
+  "calls": [
+    {
+      "argv": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/linearknot",
+        "profile",
+        "-i",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-examples/figure1/in.txt",
+        "--exact"
+      ],
+      "cwd": "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source",
+      "returncode": 0,
+      "elapsed_seconds": 0.022132457233965397,
+      "stdout_sha256": "0f591e4ee76c0fc1cfde56a507134d4f8c4b909682106c1af5a5f2bdd658012b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/linearknot",
+        "access",
+        "-i",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-examples/figure1/in.txt",
+        "--exact",
+        "--access-len",
+        "1,4,8",
+        "--probability",
+        "--by-loop"
+      ],
+      "cwd": "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source",
+      "returncode": 0,
+      "elapsed_seconds": 0.02156921522691846,
+      "stdout_sha256": "7ddc7c1b1310014c976efd8e1694b1b81d7497e05278e4f54e5ce2adec9bac9f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/linearknot",
+        "profile",
+        "-i",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-examples/terc/in.txt",
+        "--exact"
+      ],
+      "cwd": "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source",
+      "returncode": 0,
+      "elapsed_seconds": 1.3354085409082472,
+      "stdout_sha256": "4e401ce22cee121374c7f759cfb79bc9298ac0c63250edd47bf05e90fb069e09",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/linearknot",
+        "access",
+        "-i",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-examples/terc/in.txt",
+        "--exact",
+        "--access-len",
+        "1,4,8",
+        "--probability",
+        "--by-loop"
+      ],
+      "cwd": "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source",
+      "returncode": 0,
+      "elapsed_seconds": 1.359100277069956,
+      "stdout_sha256": "7af07a7da754f20834f0c207489d0cb29fd1f80308f9642d2a027181c9f34d67",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/linearknot",
+        "profile",
+        "-i",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-examples/terc/in.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ],
+      "cwd": "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source",
+      "returncode": 0,
+      "elapsed_seconds": 2.5033530043438077,
+      "stdout_sha256": "4055b9cf95f2ebb1d1a1b9d5e03c3ef01b6c6f373c36de529f6595d784b19371",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/build/linearknot",
+        "access",
+        "-i",
+        "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/small-examples/terc/in.txt",
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer",
+        "--access-len",
+        "1,4,8",
+        "--probability",
+        "--by-loop"
+      ],
+      "cwd": "/tmp/9108095.1.all.q/pseudoloop-0.2.0-20261023/source",
+      "returncode": 0,
+      "elapsed_seconds": 2.5254812641069293,
+      "stdout_sha256": "d97ce4fe1629268821b3ebee347e6816bf847e12b19ca4cef127c15628f65d79",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "saved_data_sha256": "e5bf96a61ea8e22ad183f0d27a370d19535a34493ebc0afe597eb305e2ccb412",
+  "figure1_input_sha256": "573fbc2ba050f0b43d058f2653425e0c876052b5e22a27b764fd2edecfec7b74",
+  "terc_saved_archive_sha256": "a1c435d40731167ef72b565d7f8396999df769b00d7b6d934e71d68fc0270f0d",
+  "terc_input_sha256": "897919ac1bed916f670363299b4002971fb8479146127b75b0dae6508b21ce1b",
+  "raw_archive_sha256": "fa02972309a61a52e9cff676fcbe0832123de1ee7dde88ebe62e70053edd2e07"
+}

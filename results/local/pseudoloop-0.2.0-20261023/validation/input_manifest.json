@@ -1,0 +1,156 @@
+{
+  "serialization": "UTF-8 sequence + newline + scaffold + newline; embedded observer inputs, not a CLI FASTA hash",
+  "parameter_files_sha256": {
+    "rna_Turner04.par": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+    "rna_DirksPierce09.par": "46e750b6b9f09ebd59cf2f65b388668f4cc2cce6726f2f151c65b50e06a4f6d6"
+  },
+  "cases": [
+    {
+      "name": "wmb-witness",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "(.(......)...)",
+      "input_sha256": "797ccfd94339f6afe48dea556a2325153c20ce122848377e0623f630df14cee1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "two-hairpins",
+      "sequence": "GGGAAACCCAGGGAAACCC",
+      "scaffold": "(((...)))..........",
+      "input_sha256": "0f980d06537437bf4f3df2bf31393f5df94a139c42d13031370249f5b2867c52",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "empty-g",
+      "sequence": "GGGAAAUCCCAGG",
+      "scaffold": ".............",
+      "input_sha256": "e1635b25ff64489b0e67dc998c05c1a304e00550ef9ce810944fa806340af294",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "gallery",
+      "sequence": "GGGGGAACCAACCC",
+      "scaffold": "((.....)).....",
+      "input_sha256": "937321e13941cf9532c973d5c1c9bdd81480d63d2c709ce95e95a15e63b5fe6e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fixed-bulge",
+      "sequence": "GAAGAAACC",
+      "scaffold": "(..(...))",
+      "input_sha256": "a22c50a1364b6bbec1cd1d6da637c4fbb72ac4b5f268487451bec81f05973eac",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fixed-internal",
+      "sequence": "GAAGAAACAAC",
+      "scaffold": "(..(...)..)",
+      "input_sha256": "0d5985eb7864bd3db883fbf3adef6a3c0412f4688ffb4b93f11b22196fc2db6f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fixed-multi-exterior",
+      "sequence": "AAGAAGAAACAAGAAACAACAA",
+      "scaffold": "..(..(...)..(...)..)..",
+      "input_sha256": "892bb595586d30a8e9ae51d0d8260f1cc255b125f3cf14d6f6b5e2b8494db00e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "wip-minimal-hairpin",
+      "sequence": "GAGAAACAAGAAGAAAAAAAAACCAAAAC",
+      "scaffold": "(.(...)..(............)).....",
+      "input_sha256": "4cb52c691b0ecbaad399e14016795ed72e0ff9a3ccb25ad734bc0bce5849dc09",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "wip-minimal-hairpin-dp09",
+      "sequence": "GAGAAACAAGAAGAAAAAAAAACCAAAAC",
+      "scaffold": "(.(...)..(............)).....",
+      "input_sha256": "4cb52c691b0ecbaad399e14016795ed72e0ff9a3ccb25ad734bc0bce5849dc09",
+      "parameter": "rna_DirksPierce09.par"
+    },
+    {
+      "name": "random0 CCCUGUGGAGGAUUA ..(....)(....).",
+      "sequence": "CCCUGUGGAGGAUUA",
+      "scaffold": "..(....)(....).",
+      "input_sha256": "624756e1785bb276c154ed7bf25acefcb0cca0a95abd8f9e36c6fc80a7b372a8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random1 UUUUACGUGCGAAAUA (((........)))..",
+      "sequence": "UUUUACGUGCGAAAUA",
+      "scaffold": "(((........)))..",
+      "input_sha256": "886f6f189f286cb82b0cdf1b3cae0578e2077856a0ce84bb60d1d02fd619c04f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random2 ACGCAGCGGUCAGU ((...(....).))",
+      "sequence": "ACGCAGCGGUCAGU",
+      "scaffold": "((...(....).))",
+      "input_sha256": "0d738b9e9c42f2a49137c469da5c7b4bf7360423445844e44e9ddf7a06ef88c7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random3 ACAGUGUUCUAUAU (.((....))...)",
+      "sequence": "ACAGUGUUCUAUAU",
+      "scaffold": "(.((....))...)",
+      "input_sha256": "6a7fdff55df2f3469452e2ce004dbc5f0fea77ebc958f470d83c8f177c129683",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random4 CUACACGUUGUUC ..(((...)))..",
+      "sequence": "CUACACGUUGUUC",
+      "scaffold": "..(((...)))..",
+      "input_sha256": "f12751868ecbecfe67a4a984636e1a9e762d83441c784428476133fd9cb14cef",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random5 CGUGAAGCUCCAC .(((......)))",
+      "sequence": "CGUGAAGCUCCAC",
+      "scaffold": ".(((......)))",
+      "input_sha256": "d0742056525ed56f61377bc6433338efa9dbee175f156c634e7d736650f626be",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random6 UAGAAUGUGUAUCCUA ((...(....)...))",
+      "sequence": "UAGAAUGUGUAUCCUA",
+      "scaffold": "((...(....)...))",
+      "input_sha256": "ce0940a2898876a846a107f4c2048464d9377ab707f7769c7831795bf6b20093",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random7 CAGCCUUUCCCACGA .(....).(....).",
+      "sequence": "CAGCCUUUCCCACGA",
+      "scaffold": ".(....).(....).",
+      "input_sha256": "2a75679933fd4934a450d2f1f2da17f7e6379f592306ea05f4fbd40b76bee6cd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random8 GUUAAAUUGACCC ((.......))..",
+      "sequence": "GUUAAAUUGACCC",
+      "scaffold": "((.......))..",
+      "input_sha256": "17cec725d6a6599a9245822cc8d6680b1fe249ce0912ae7fd862f363e4bfb8d2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random9 UUAUAAUGAUUA ..(.......).",
+      "sequence": "UUAUAAUGAUUA",
+      "scaffold": "..(.......).",
+      "input_sha256": "cc1f8051caf54278643da9434164a172b3b6b956269d4b08a0fd0a5dd9442e20",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random10 ACUAAUCGUGUCACAC (....)...(.....)",
+      "sequence": "ACUAAUCGUGUCACAC",
+      "scaffold": "(....)...(.....)",
+      "input_sha256": "822a455600c3173e61859594cefde7c6c43fd4bbab722eb94850170b650aa5ca",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random11 UCCUAAUUUUGAGG .(((.......)))",
+      "sequence": "UCCUAAUUUUGAGG",
+      "scaffold": ".(((.......)))",
+      "input_sha256": "feed3adf7a0004ad0a5ba419902241a20dbe3eaef11d29436a8b7fec5b63ea65",
+      "parameter": "rna_Turner04.par"
+    }
+  ]
+}

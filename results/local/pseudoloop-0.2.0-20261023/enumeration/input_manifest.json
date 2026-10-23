@@ -1,0 +1,5112 @@
+{
+  "serialization": "UTF-8 sequence + newline + scaffold + newline; embedded observer inputs, not a CLI FASTA hash",
+  "parameter_files_sha256": {
+    "rna_Turner04.par": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+    "rna_DirksPierce09.par": "46e750b6b9f09ebd59cf2f65b388668f4cc2cce6726f2f151c65b50e06a4f6d6"
+  },
+  "cases": [
+    {
+      "name": "closure14",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "(.(......)...)",
+      "input_sha256": "797ccfd94339f6afe48dea556a2325153c20ce122848377e0623f630df14cee1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random000",
+      "sequence": "AGGAUACCUGCUUCC",
+      "scaffold": "...............",
+      "input_sha256": "2272dd864e8be222be5b67b7937e8bfd7a62483d64f36cdaf75c69dd06cc675f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random001",
+      "sequence": "AUGAUGACACGAUAAG",
+      "scaffold": ".(.........)....",
+      "input_sha256": "81d21f6113343bc928ebdd472b98191b498e435b6d00fa3c002b3e1871657f0a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random002",
+      "sequence": "UAGGCGCCACCCAA",
+      "scaffold": "...(.(....))..",
+      "input_sha256": "cb530d9fda3b6f42aed9cb0ce768f7f6356d9d11a1f94d167f8bf3fc8bcbef7d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random003",
+      "sequence": "AAGCUGG",
+      "scaffold": "(...)..",
+      "input_sha256": "a0f51b602d831765e5c8bba0a6b90c291ee682b9314cdf03bb556759db13abc6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random004",
+      "sequence": "CUCUUGGGGCAA",
+      "scaffold": "............",
+      "input_sha256": "07d522d5f16f722be500b3be186e31bd69e3f22c6ad8ae1a4ca0e51d0bbfcd0b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random005",
+      "sequence": "GUGUUUCUUGGUUCUG",
+      "scaffold": "(...)(...(...).)",
+      "input_sha256": "cbe35743c1476422afe177202a921a15d0b44d1c00770c20428917144ff9df46",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random006",
+      "sequence": "UCAGCCUUGAAUUCA",
+      "scaffold": ".(......)......",
+      "input_sha256": "97d8ed6fc6c055888a2cccd108731fab9837a5723fc965a7c5fc34e032ba0a04",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random007",
+      "sequence": "GGUGCUGUCGCG",
+      "scaffold": "(...)..(...)",
+      "input_sha256": "76c7052168a7daed4ae670763d4558c076569da89a24966a4a1900fd63a7a918",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random008",
+      "sequence": "GUCACGUUCGUGCCGG",
+      "scaffold": "................",
+      "input_sha256": "0b94738f9d5669e909596f98c782ca7295dedb2651bd7d024a86ea9aaa33933f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random009",
+      "sequence": "UACAGACUUCUC",
+      "scaffold": ".(........).",
+      "input_sha256": "99e910517db9f5680d045f5f8a7fec7314f12d7af54e9a216abc371991778e42",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random010",
+      "sequence": "AAUGAGCUCUGCUC",
+      "scaffold": "...(...)......",
+      "input_sha256": "38171c2db1d7886f32e569d253b28ccd669d936564babcca6e195863ccbe21ae",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random011",
+      "sequence": "CCCCC",
+      "scaffold": ".....",
+      "input_sha256": "988007688974dffc4fc0476ac03b4e6ab3925e32ba23b0044f81a5c7be150d77",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random012",
+      "sequence": "ACAUAGGCGCGA",
+      "scaffold": "............",
+      "input_sha256": "d729658cae66bd922be141149d9bc3b285e68eead6bd706c3b153bc7d30037a2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random013",
+      "sequence": "CGCCC",
+      "scaffold": ".....",
+      "input_sha256": "d21fcb1c900bd0d1f1f42d2436148c78ed6c5315780fad4afd4f90fe0973c51d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random014",
+      "sequence": "GAUAUUUAAUGUGCC",
+      "scaffold": ".(...)((...))..",
+      "input_sha256": "a092fe25f83c120c33ee6c98e573b4e39a8faad206e1779b2d35f1391da9bb20",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random015",
+      "sequence": "AACGCUAU",
+      "scaffold": "...(...)",
+      "input_sha256": "f917e56ab36d5a4ed151608c571c4f3ebd4be79806f0cca04f8be40700ac2a9b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random016",
+      "sequence": "CUUAGACUCCCAGGA",
+      "scaffold": "...............",
+      "input_sha256": "66f467c5a58283b5f783bbbcc567bc67ac12839ccc9cc706ef009a16ad3c0887",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random017",
+      "sequence": "UGUCGA",
+      "scaffold": "(....)",
+      "input_sha256": "b4ae677fa25d4f95a74af0f40182b16ab40b01e905dde8b3f84c70a53d980c9b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random018",
+      "sequence": "ACAGUU",
+      "scaffold": "......",
+      "input_sha256": "42caeba7b1864a124c3782049882926f951870ac325b7ffac836ec1a43e0aaa9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random019",
+      "sequence": "CGGCCUCU",
+      "scaffold": "........",
+      "input_sha256": "107f53bbafc6b26c1d4db765ffdb979a07fdccef4f94a373925aaa632c3f3c56",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random020",
+      "sequence": "CCAAGGGCAG",
+      "scaffold": "..........",
+      "input_sha256": "18d28864782d707e5ac7c44e084d5026f6a19ae38b7eeb415bb2c1e33efd7e64",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random021",
+      "sequence": "ACUAGUG",
+      "scaffold": ".......",
+      "input_sha256": "838429ed65ee1f4f0e157434ca9211ae3690e2196790ff498ed1babc101e8f45",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random022",
+      "sequence": "UACAA",
+      "scaffold": "(...)",
+      "input_sha256": "f4cea72dc78c02c876148de70295774368a1b1fb431ae46c84f39199382c9b85",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random023",
+      "sequence": "UUAUCUCCCCCAUA",
+      "scaffold": ".....(.....)..",
+      "input_sha256": "7ae3dcde23d1820baa02fa109ae1e109a7c553d562441d9fc5ad9748cce7edb7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random024",
+      "sequence": "UUCCCGGUGGGGCAGA",
+      "scaffold": "................",
+      "input_sha256": "9e76e57572de8bb533649dc7609043a9fd1483d545d6cf9a221fc856bbb9c16f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random025",
+      "sequence": "ACUCU",
+      "scaffold": "(...)",
+      "input_sha256": "9631593ad7b205dfb184733bd9d576cff300d89f5e22259ff5b76d85bdc96ac7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random026",
+      "sequence": "GACCGACCA",
+      "scaffold": "(......).",
+      "input_sha256": "3f129a53660c1f95fd45526ab53d6c3e70da12f1232622a9c3450ef18446d485",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random027",
+      "sequence": "UCGCAACCCAGGCUGC",
+      "scaffold": ".((...).......).",
+      "input_sha256": "7be23ca247ec8d41c2ea598639ade2cef2f3663b720d2037860d35b55fa03639",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random028",
+      "sequence": "CGGGCUAGAU",
+      "scaffold": "..........",
+      "input_sha256": "77672f0cbdce59c08401a3c59d743c4d0a4dde1445503428c9634f486af129a1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random029",
+      "sequence": "AUUAAGGACAACC",
+      "scaffold": "..(....).....",
+      "input_sha256": "d1680d4a5b7aaf5768559e0ef6a2ce43fd9522baf91d8e3f32b78139d39f576e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random030",
+      "sequence": "CAAGGCAAUCACUUAA",
+      "scaffold": "...(....).......",
+      "input_sha256": "923a2e80411ca43e745eadc216bc952dfea739453f100b73b50f9f689ba892bd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random031",
+      "sequence": "GCGAUGUACCCAUGA",
+      "scaffold": "(.........)....",
+      "input_sha256": "482cac9f2b46a0eda1ca72d4178ef0ad7c7a1291e15ab01e13b1881fe9df0852",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random032",
+      "sequence": "CUCGUGCGAAUAGAA",
+      "scaffold": "...............",
+      "input_sha256": "1e39d941dbfa57a4b0204f91e60324785832ab4a040c9143ee61e9a31d86ba93",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random033",
+      "sequence": "AUAGGCAC",
+      "scaffold": ".(....).",
+      "input_sha256": "628892fe1e5a76154753bd5ab93501fa59e78350d81338e822d4ae26e5641083",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random034",
+      "sequence": "AUAAGUUUGG",
+      "scaffold": "...(...)..",
+      "input_sha256": "638830aebe648c36fbe0db39d419aac62b171ed5ec09185b530f8ce42c6c2b1f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random035",
+      "sequence": "UGACC",
+      "scaffold": ".....",
+      "input_sha256": "0d49577d2208d67af2d07b877219d7c5746d6d14c5abb5bce0e4a2e4031f848a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random036",
+      "sequence": "UAUUCCGAGGUCAU",
+      "scaffold": "..............",
+      "input_sha256": "8cf52c826d75edd673f9058326595ff2e8ece122e136fec41d66c47d921505fd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random037",
+      "sequence": "GAAUCAGGGCA",
+      "scaffold": "(........).",
+      "input_sha256": "72f96f881f19378a55dd554acaa609003982e75a3298ecd3cf4d0124f8862f81",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random038",
+      "sequence": "CCUGC",
+      "scaffold": ".....",
+      "input_sha256": "b769bbf4fdfdffb23c54a3ce2e2135d79e41ee013496346b74a6246af58c173a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random039",
+      "sequence": "CGUUGACUGGCUC",
+      "scaffold": ".(.(....).)..",
+      "input_sha256": "2140866b942a67e5a489794d0e524e7dc6b5ef4e5eff147951605c5c9a7ebb89",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random040",
+      "sequence": "GCUGAGCUGCCCUG",
+      "scaffold": "..............",
+      "input_sha256": "ea98b6f38744e46b036518e57dc341b2b7b38d9794e1aedb07c4793e8dbdb892",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random041",
+      "sequence": "UCGCUGCCAUUCA",
+      "scaffold": ".....(....)..",
+      "input_sha256": "a97e3056b390ef338a6368e16dca008df434801ef7e09a6bb4622a1ab59fe9bc",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random042",
+      "sequence": "UCUCUAAAU",
+      "scaffold": ".........",
+      "input_sha256": "bf7219ac7dda3239c1078150aa3ec1a9fb96f45cc73762aa860e484f9fbaf829",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random043",
+      "sequence": "UCGCAGGUG",
+      "scaffold": ".(....)..",
+      "input_sha256": "5888e865af85c966215f6bf615b9bb507336fd58fc651513dfaffacd56bf16ca",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random044",
+      "sequence": "UAAGAAGU",
+      "scaffold": "........",
+      "input_sha256": "879eaed595aae298e8e2a952d581339007b26f786feff3f0a2240c834c846f40",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random045",
+      "sequence": "CAGCGCUGAGAUCC",
+      "scaffold": "(..(...).)....",
+      "input_sha256": "85911b185c2829b619f3e3d02d0710ea8176aa2faa62d7d3b95cbc4f6180873b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random046",
+      "sequence": "CAUGUCU",
+      "scaffold": ".(....)",
+      "input_sha256": "dd02a887ade281abd5e269b709ae60f3372764b683d767c5b375139d6d1682a6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random047",
+      "sequence": "AGCUCAACCAU",
+      "scaffold": "...(.....).",
+      "input_sha256": "319a6c333b891e0ebb83abed097c4d81ea5937efbbbd3cabd6bfe20886cb8042",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random048",
+      "sequence": "UCCUCAAUUAGA",
+      "scaffold": "............",
+      "input_sha256": "0d384c3ffe2f31aba262a02e0d497eb4e56f51ad548a8992c60a4ff0abcb13b9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random049",
+      "sequence": "UACAAU",
+      "scaffold": ".(...)",
+      "input_sha256": "554e6a2523bec19d61c68c9e986513eb3a061e54cc1a0bac5665088bc211a7bd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random050",
+      "sequence": "GAUUCACCUUAGC",
+      "scaffold": "(...)..(...).",
+      "input_sha256": "47b4c603921056483085c3bafd6c64df1b2d3ea4445352b92b5d7f9bb8035663",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random051",
+      "sequence": "UUACCGGU",
+      "scaffold": "........",
+      "input_sha256": "53592763747e9556337ee1126e0654d698def0951d7bdac2732d3656a4254d6e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random052",
+      "sequence": "CUACG",
+      "scaffold": ".....",
+      "input_sha256": "f1c431843063a174315e39d4218403fa2b5fb7fcb2d28ac19f112607ffe6dfbc",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random053",
+      "sequence": "AGGCUGAG",
+      "scaffold": "(...)...",
+      "input_sha256": "faafcf569c8257d74d9c6d94ad424c8d90fb7a240c20e17a4ca6fb9caa8fe5c1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random054",
+      "sequence": "GGAGUA",
+      "scaffold": "(...).",
+      "input_sha256": "e76b50fcb8043eea7ddf235f1bc743bf38984ae73310348565be09ebfb98644f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random055",
+      "sequence": "UGCUAAAGAUCACG",
+      "scaffold": "...(...).(...)",
+      "input_sha256": "b1925ccf919a14b6be17816724646ccf15e38ea5a73c74c19f15c21796ba87bf",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random056",
+      "sequence": "AGUAUGAGGGG",
+      "scaffold": "...........",
+      "input_sha256": "935633127ed64e564f670629959b6c64c9981e2fcd7e91338fed2e1e82934fb7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random057",
+      "sequence": "CGGGGUAG",
+      "scaffold": "(...)...",
+      "input_sha256": "cbb9e8da661cc128a7ca68f76173ce5103a99fa7c26c5fd495b430f152f5a632",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random058",
+      "sequence": "UGCACUGCGCUGGGUU",
+      "scaffold": "..(....(...))...",
+      "input_sha256": "065ae95694976148dca12e1cc94453f6706dcb8eb6571fa1809fd69520647b35",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random059",
+      "sequence": "CAGUUCUUAAAUGUC",
+      "scaffold": ".(.....).(...).",
+      "input_sha256": "9cdab70df15ff582997d9b7abca14e04b39a6cb9b2ffe80fe245d691a152c232",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random060",
+      "sequence": "AGUUCUGAUUAGAGG",
+      "scaffold": "...............",
+      "input_sha256": "913183beb92343b0d8d8734fe2b330c9f5dd0e1e1b5d5eb4f0ffe9acaf6635bd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random061",
+      "sequence": "CCUUAUCAG",
+      "scaffold": "..((...))",
+      "input_sha256": "72d1599112bfdefd177d83958f1052528ffbe32c0e551c3bb1a3937d6bd0ffe5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random062",
+      "sequence": "UCCCUUCAUGAUG",
+      "scaffold": "....(..(...))",
+      "input_sha256": "52d6fd47138e439dcc2874eee5e6d625cb6dbb8a3400e40b1001243110531e8b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random063",
+      "sequence": "GGACC",
+      "scaffold": ".....",
+      "input_sha256": "ddf40de4cad877f0c9050e573177fb1a118de9ad05bf174ab5ebdcbd8c4b7182",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random064",
+      "sequence": "AAGGAUACGG",
+      "scaffold": "..........",
+      "input_sha256": "696ce43987c6923281169ca6d35befd5b1c68de3fee1d2b8e74e987b04cace2f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random065",
+      "sequence": "GGCGACCCCCAG",
+      "scaffold": ".....(.....)",
+      "input_sha256": "b4b8bb2d9e2aa86368f3433cdf96231ac79d0f29bec0acf2eb1e74bae1918bc6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random066",
+      "sequence": "CAUCGUCGCCUAAUC",
+      "scaffold": "..(.(...)..)...",
+      "input_sha256": "df3dd3edb08066737d9a078ec4ddfa318b43571512cff0071a30e3ec5c6b1b1b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random067",
+      "sequence": "AAUUUGUAUGA",
+      "scaffold": "(.......)..",
+      "input_sha256": "10e6730ac636dbcffcb3637e24f1902dcabc2a3c2b2194f50967831b0d32aa0c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random068",
+      "sequence": "ACGGGUC",
+      "scaffold": ".......",
+      "input_sha256": "84a29c69532eea7b61d76566ae8e5069eca8f51bbf855d22becd4225bd5c64ee",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random069",
+      "sequence": "AAGGAGGUAG",
+      "scaffold": "..(....)..",
+      "input_sha256": "3f9475bd8991f2913bde556296a18120787641e8c478c2175b0f30e13c452043",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random070",
+      "sequence": "UUUAUGCCG",
+      "scaffold": ".(...)...",
+      "input_sha256": "2a6928d30ad2a30fc68e5f595ebc297b57295628f0da390d6627c94c23ebc55e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random071",
+      "sequence": "UGAGGA",
+      "scaffold": "(...).",
+      "input_sha256": "bffe7cb6ac49a07f65230d643d7612961a5da4ab00ea22b11a12a440e8a43ff7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random072",
+      "sequence": "GUGGCAAGGUGUAAUC",
+      "scaffold": "................",
+      "input_sha256": "39e4aaa90ba60f9b02ef14f28d7dc6907e653995107f5cba1d82d3eec902f677",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random073",
+      "sequence": "GGGAAUGU",
+      "scaffold": "...(...)",
+      "input_sha256": "aa80985bbedcf8b43bd455fbc9369c361a9a070c2ca2ab199a788c5fdf3eb394",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random074",
+      "sequence": "CACCCUGGGCAACCGG",
+      "scaffold": "................",
+      "input_sha256": "f771de8c9549fb5503ef6206ab00a5de20cc83b36eec0a3ff4e4338851648250",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random075",
+      "sequence": "UUGAU",
+      "scaffold": ".....",
+      "input_sha256": "ae596457399f61f5f126e61125a4af40f75a86cff2eae53d7dafb7e3e148a3b2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random076",
+      "sequence": "CGAGACC",
+      "scaffold": ".......",
+      "input_sha256": "696328715fabef0d35c2009545ac71ca99985f0dfb8a1d0500f68b58264ec426",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random077",
+      "sequence": "CCUCUAACACU",
+      "scaffold": "..(.....)..",
+      "input_sha256": "acade781c58f3548e86dc917b1d29973a005d1fecca752a6a4194cada5cc282d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random078",
+      "sequence": "CUGGGG",
+      "scaffold": "(...).",
+      "input_sha256": "80c9c04abf5939e71d128713a1f3e7be3cfd9b05878cf17e3f983963830e7095",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random079",
+      "sequence": "AUGGAG",
+      "scaffold": ".(...)",
+      "input_sha256": "35b53041476fdc9d4c035c34fc06dd57686cf92ac2e9ac2b64c30205050b0f90",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random080",
+      "sequence": "GAGAA",
+      "scaffold": ".....",
+      "input_sha256": "a2eef296ee5e2f54d6d40b2257a55dbc03ae825caf90a1a22b54568b66221b9d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random081",
+      "sequence": "UAGCUUCUGU",
+      "scaffold": "...(....).",
+      "input_sha256": "cbaf301dba34359e682de436c0e979157fa41a152d6ce7ef7c884f0373f0e914",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random082",
+      "sequence": "GAUUAAAGUG",
+      "scaffold": "..(.(...))",
+      "input_sha256": "9113fd7beafa9c65c41a2b9283df3f6a014a971b1b2ebe536e467a40b2cc0d0b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random083",
+      "sequence": "UUACCGCUUACGCA",
+      "scaffold": "...(.(....))..",
+      "input_sha256": "f7355f4e0e6d5aa1cda959fc317662d7e42922a2a0a60c3d62f0cf8b0f80288f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random084",
+      "sequence": "UCGCAC",
+      "scaffold": "......",
+      "input_sha256": "2e8d23ff6e61c559afa358b87bf44dbf84c1a97291d47b7cd889a246586fdf4b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random085",
+      "sequence": "UUGAGGAUUCAUCGGU",
+      "scaffold": "....(.(....)...)",
+      "input_sha256": "822834c0621d3183cbadaeb3e9d2400e3afc2c9ef30f82b064941e62d13d77f8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random086",
+      "sequence": "ACCCGU",
+      "scaffold": "(....)",
+      "input_sha256": "7676f92a1b6ca5033a5761f51768f7bde1f2cab60024d153be8535c7e4fb4446",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random087",
+      "sequence": "CUCUGGGACAUG",
+      "scaffold": ".((...))....",
+      "input_sha256": "b82bc6d9ba64af57a35b0a3b23df174f7de9f4c2ee91cf28febc2604b4335e48",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random088",
+      "sequence": "UGAGCCUCCUGG",
+      "scaffold": "............",
+      "input_sha256": "54dfeb92199f3f5d00e7bf383bd3ca5d290838828c102dfdc08905b2006f430e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random089",
+      "sequence": "CGUCGCAAGGAU",
+      "scaffold": ".(...)(....)",
+      "input_sha256": "1a6017873e18df5e7a2f7d73f14ca60c814572efb63523698435d3867fe1354f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random090",
+      "sequence": "UGACACC",
+      "scaffold": ".(....)",
+      "input_sha256": "b4fd0c4f203632af1adf70f3839fc520b8d5163c591a0e6bff93e168585e5754",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random091",
+      "sequence": "AAGAGUGAUACCUUCC",
+      "scaffold": "..(..(...).)....",
+      "input_sha256": "dbdf0f7c7b0f0799b178a5e2b01c8da0bfc66a8299c7747549d68b39a432f464",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random092",
+      "sequence": "UUGUGAUU",
+      "scaffold": "........",
+      "input_sha256": "8b211251c1a04cc807c61ed497f62d743efdbbbf8d0503c6705e657d9c0732bb",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random093",
+      "sequence": "GGACAUGACGC",
+      "scaffold": ".(......)..",
+      "input_sha256": "85cb7ba733ed3a12dc728e66c6cdb889d7bc113388134430bb097a2c16484bbe",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random094",
+      "sequence": "UCACCGCACAUGUGG",
+      "scaffold": "(....).(....)..",
+      "input_sha256": "ec0011cdad137fb701679ba796415f02431fa168f2efd26e2b8ad2e975e79b6d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random095",
+      "sequence": "CCAUAUCUGGAGG",
+      "scaffold": "(....(....).)",
+      "input_sha256": "171e7127af970d2bf302dcc24e49ccbf45c2d1f2a32bd0e268060a7181a22ad8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random096",
+      "sequence": "AGAUAAA",
+      "scaffold": ".......",
+      "input_sha256": "c3a3e3280ce9c9462b8c071a08a0fd4ebf6908ddbe900b9e50bcfee51f8eac17",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random097",
+      "sequence": "CGUGG",
+      "scaffold": ".....",
+      "input_sha256": "5083bd296f7a0d0a8997d346d237b4adbce062f08f74de034ebca532625bde12",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random098",
+      "sequence": "AAAAGUAU",
+      "scaffold": ".(.....)",
+      "input_sha256": "aaf72475a4a88ecb19f6bb5802eb597db409064c50a5e5a1ccaa0e1fdeb30556",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random099",
+      "sequence": "GUCCGAAAUAC",
+      "scaffold": "...........",
+      "input_sha256": "43b302a0e55d9f03a7b484611ef51e86c1e2e3e63b6b0d0573ccd09bea6633ec",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random100",
+      "sequence": "GUAAACGCG",
+      "scaffold": ".........",
+      "input_sha256": "3392641696d6f898d6b349c0ffb7e5fffb6489d7fd9eb5cb15d8131d6b613fd4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random101",
+      "sequence": "GGUGACAUGCUCGC",
+      "scaffold": "..(.(.....).).",
+      "input_sha256": "8f41eeb4b672506441038e0ba95cd570a884112b34a6ac0e067038f73709e094",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random102",
+      "sequence": "ACCCCAGCAGC",
+      "scaffold": "..(......).",
+      "input_sha256": "f937f3d2929e047c1209f3ce3a4cf04c0a43b45d1592b0b02506b5168764303c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random103",
+      "sequence": "UCGAACU",
+      "scaffold": "(...)..",
+      "input_sha256": "a54de641c2a7e31ed6c7c9b2cd7c5adf56f5f7352936174a3cdb42407a4e514f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random104",
+      "sequence": "GGACAUUGAUUU",
+      "scaffold": "............",
+      "input_sha256": "312f98758b8c89134e8ba6d8418d42f8b3d04a7022591e79ec9730aea4efe96c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random105",
+      "sequence": "GACUUCAU",
+      "scaffold": "(...)...",
+      "input_sha256": "64e588307f3fb9968655f7a08f2e290ed929eccb53f7a612073fb371d1d1f160",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random106",
+      "sequence": "CAACCUUAU",
+      "scaffold": ".........",
+      "input_sha256": "8c2d247b5ebcfb806f47a6a24c27bb4a16a335657e8d9f1c130c26c81aeb65a5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random107",
+      "sequence": "AUGCUCCUCCGUGC",
+      "scaffold": "......(...)...",
+      "input_sha256": "777fef01267b4c906ca86bec537359798743b8f4e74962effd5938e0e354dc64",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random108",
+      "sequence": "GGGAAAAGCAU",
+      "scaffold": "...........",
+      "input_sha256": "e70588eb8e3d12179879832cd9eba07b8b0960bcdd9445d06f9b497e9540193e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random109",
+      "sequence": "GAGUAAGGAUGA",
+      "scaffold": "...(.(...)).",
+      "input_sha256": "f2e572627c8edf3bb6eea77c5dbd142c4f5e3557396411031994d9b539a86762",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random110",
+      "sequence": "CCUCCAGG",
+      "scaffold": "(.(...))",
+      "input_sha256": "d8dfd75cde980f78e4e33277ba2648a66631ce90d518408dd470dad0333cd14c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random111",
+      "sequence": "GAGCCA",
+      "scaffold": "(...).",
+      "input_sha256": "08252a0ec7104a45c789201d01fef01613c371251df13d0b64e77c1f9b624fc5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random112",
+      "sequence": "AGGACGCACG",
+      "scaffold": "..........",
+      "input_sha256": "d7103070a8ea8690429e4d20c915c5bb5fa5320f854197c14d0a3ae5e5c2613b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random113",
+      "sequence": "CCAGUAGUGAACA",
+      "scaffold": ".............",
+      "input_sha256": "8602e62a6d7696b16d2272f762f981284d37102c13cca80a0b5af438625d0043",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random114",
+      "sequence": "GUUUAGCCACCC",
+      "scaffold": "............",
+      "input_sha256": "052511389f98b27c84c338cffa591e699e798d0e1845cfb2b3d96727c9d7c6bf",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random115",
+      "sequence": "AGCGAGUAGC",
+      "scaffold": "..(.....).",
+      "input_sha256": "7ba05569b946c25fa617dd18cacf62bbdcec33c40b0c93e22556229679a2fb1a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random116",
+      "sequence": "AUCGGUACGGGUCACG",
+      "scaffold": "................",
+      "input_sha256": "a1594365603ca88263a071786bda6804c95ff752fcb07c8ebf7113c9508a685e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random117",
+      "sequence": "GAUGACGUGUUGC",
+      "scaffold": "...(...)(...)",
+      "input_sha256": "d1c05a05c6fe08f42231d0fe57129d54ddfa151414e9c0dd44d5b16d85e5e309",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random118",
+      "sequence": "UAAGCACU",
+      "scaffold": "(....)..",
+      "input_sha256": "c660a733204b9316369c4a2580a2aad6b2af61ffd81c90a5fdeb77c915e24b13",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random119",
+      "sequence": "GACUUACCUGCCCAA",
+      "scaffold": "...............",
+      "input_sha256": "ba78a1625d4841c042bba5b964822e53544c07403c523320f3034a5a427af2c3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random120",
+      "sequence": "UUAUGUGGUAAGUU",
+      "scaffold": "..............",
+      "input_sha256": "72bcbbc34f422b5f955e949f0a695cc03f689312cc9bd2284d246ecc1bfc6263",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random121",
+      "sequence": "GAUCCCUUUUCAC",
+      "scaffold": "..(........).",
+      "input_sha256": "212baf4ecffcb1b8c1f4e4afdcb4ee07e377259845fa800606ffc221799ac019",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random122",
+      "sequence": "GCUAGA",
+      "scaffold": "......",
+      "input_sha256": "3eaa6b90add9a8920d94d227644683b72145d02450998eaf64f5618ea924705a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random123",
+      "sequence": "UCACUGCA",
+      "scaffold": "((...).)",
+      "input_sha256": "dd0e171edb879d6bee9dcd15ea13ea85f02f95fbe626c5f25f580f50610c1141",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random124",
+      "sequence": "CUGCCUUC",
+      "scaffold": "........",
+      "input_sha256": "d181cc3ce12c0674586e695562723531af019698ff48a9491aa59d424228f76a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random125",
+      "sequence": "UCCCACCCAGGG",
+      "scaffold": "(...).(....)",
+      "input_sha256": "0cc6cfc5ebb4548a898c8eed596bb24c0cb57f06ea01c5eb623cf39f127bb921",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random126",
+      "sequence": "CCCUAU",
+      "scaffold": "......",
+      "input_sha256": "467041d3f5a1062f0a970122747f4167196f19183c5a17b3a0d600fafada4e4f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random127",
+      "sequence": "AUAUAUAACC",
+      "scaffold": ".(....)...",
+      "input_sha256": "78946a5f461ed39f03478d368c71c9deb689be6b25d2cd870b4ea779a3d6551e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random128",
+      "sequence": "CUGGGACAUGACGCCG",
+      "scaffold": "................",
+      "input_sha256": "0f75508639ff0b6fcfb2a785e66aaafa8aa60eeb16021968a7d2213cb2e1fa45",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random129",
+      "sequence": "GUGGCACUCAG",
+      "scaffold": "...........",
+      "input_sha256": "7bf5c4afd021bd5ce17fe768d985cf8e9dbe2a222f4449221a84f5dd30ff6cdf",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random130",
+      "sequence": "CACGAUC",
+      "scaffold": ".(...).",
+      "input_sha256": "696bf43d2120339ab59a8d987796644290d8ff01cb0a640b8a837bddbe0dfd30",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random131",
+      "sequence": "CCUCAACGCACAUCGU",
+      "scaffold": ".....(......)...",
+      "input_sha256": "b5dce6ee3359aadb9542768369816b26a25f2cf79c338128c863b61bbdd2a89e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random132",
+      "sequence": "CAUAAAGUCUUA",
+      "scaffold": "............",
+      "input_sha256": "6bc5e0de9d492a7438cdb17917d0884a087a9c3df019cfc1e9066b7dba8bd782",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random133",
+      "sequence": "CUUGCUUAAUCGAC",
+      "scaffold": "...(.....)....",
+      "input_sha256": "d4af4673b0b6f3962b9e45793e13ffad5f080f78a474f7fc61fa008e2b870a54",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random134",
+      "sequence": "ACACGU",
+      "scaffold": "(....)",
+      "input_sha256": "7937e407746b02a900b3c523fdc3b9ca17108216d9d16aae27ed58c4adab1de4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random135",
+      "sequence": "GUCACCUAC",
+      "scaffold": ".(.....).",
+      "input_sha256": "9961bc72262a0c4b01ab0363d3323d981f54812ecc10b9d29ceb3a9006661fa0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random136",
+      "sequence": "GUUAAGAAU",
+      "scaffold": ".........",
+      "input_sha256": "1c5ac291e347af77e458c274a6ee1348db7cb0197e7d0cacb64577dcbb0a7d07",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random137",
+      "sequence": "AUAAAUGGCUC",
+      "scaffold": "((.....).).",
+      "input_sha256": "04ba8dfe7df0335f5feeca6f106bb3b6d816470c2b29dcc69c1edb50750966fb",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random138",
+      "sequence": "UUUUAAUACCG",
+      "scaffold": "...(...)...",
+      "input_sha256": "29b22dc6b9093c7cd0789dd2851fe620271beb5d947732e7d54d79437a52b3f2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random139",
+      "sequence": "AUUAGA",
+      "scaffold": "......",
+      "input_sha256": "b99ae4ddadaf9477406c5df71bf6e264e42b2bd7118275ae2c02c48c2e76c59f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random140",
+      "sequence": "GACAGUC",
+      "scaffold": ".......",
+      "input_sha256": "a8d0fcb7abb7cc7aa5737e1412771880c1a63b6d4dc5bfae5a57a04287e3e974",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random141",
+      "sequence": "UGUUUGC",
+      "scaffold": ".(....)",
+      "input_sha256": "3879a51673903fc613bd59398fc7d95a215348e30534b0d9fe290d37ca8dd61d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random142",
+      "sequence": "GACUAUAGGCCAA",
+      "scaffold": ".....(......)",
+      "input_sha256": "f2fc3860ea1db5a27205df7ab0ace13a1df9bc41bc339c81200c6f94b08e75df",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random143",
+      "sequence": "GGUAAAAAU",
+      "scaffold": ".((...).)",
+      "input_sha256": "0a4e0d7671daeb354a5cfbadcd25eb5394ab7441c493d90ca9463cb2036fb217",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random144",
+      "sequence": "GACUCGGCUUC",
+      "scaffold": "...........",
+      "input_sha256": "cfa7dbdd1e3ae7998f3b52cc5f5aa5007e9919404e14f22411b1f039e8dca337",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random145",
+      "sequence": "GAGCGCC",
+      "scaffold": "..(...)",
+      "input_sha256": "971710c5926a342b28c6b2d91bb54c1c5326f1c2dcdadb27f366d66687943445",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random146",
+      "sequence": "UGUGUUGAAUCGCCC",
+      "scaffold": "(.(...)).......",
+      "input_sha256": "1b2cb248c48776dc0233b9015906ee6f03375a749b5e11183f3590b27267646f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random147",
+      "sequence": "AAAUUGUAUGGGU",
+      "scaffold": "....(.(...)).",
+      "input_sha256": "addb01cc4fbd4183acdab0a7d6bb3a36b2f663e38788dd5d66c5fb2f8255f1dd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random148",
+      "sequence": "CUCAA",
+      "scaffold": ".....",
+      "input_sha256": "baf93c1437f65381cafdbbea1a2fc10b6a28ea4342b71d0ec90cbf5bb4bf3d66",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random149",
+      "sequence": "GUCGCU",
+      "scaffold": "......",
+      "input_sha256": "dd3674b6d9b98a3cf2dcfd75fbcb2d43af283ea256c0a138aa0b533086d29999",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random150",
+      "sequence": "CAGUUUAGCGAU",
+      "scaffold": "............",
+      "input_sha256": "f445677de7298160ef3e1cb157cb47d7f79acab8a3397f19229824632c17e38a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random151",
+      "sequence": "UCGAU",
+      "scaffold": ".....",
+      "input_sha256": "f5ff7b3fd8a42414045411df726ce45c8b193ea07c9f32078ee70c80a999dacd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random152",
+      "sequence": "AUAAAUGGCCAGGAGC",
+      "scaffold": "................",
+      "input_sha256": "aba31d2f93380663b47e03a9a8f77abfd6e38a70c1b5977579f6afe0bc19fd1f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random153",
+      "sequence": "ACGCACAAUCCUU",
+      "scaffold": "......((...))",
+      "input_sha256": "c723c5164868ca1d5cdbeff32f29e0c128d943b94604363732d592ed4420558d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random154",
+      "sequence": "AACUUUUCUUUGUU",
+      "scaffold": "..............",
+      "input_sha256": "437856d51d64839166b253b5685f04445c02d8e25d2ceb84de80c9f731bde7af",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random155",
+      "sequence": "CGAUGUUCACGGUGA",
+      "scaffold": "...(..(...)..).",
+      "input_sha256": "6483b8ea38aaa08913076e7758c5e78bf24de97b3abdb348cacd297bcee0378c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random156",
+      "sequence": "UCAUGCAGGUCGUA",
+      "scaffold": "..............",
+      "input_sha256": "d77bfb1630fe6fd7e6f3d172647274a4b00352589379aa772762b4e8de5faa06",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random157",
+      "sequence": "CGGCACGAAC",
+      "scaffold": ".(.......)",
+      "input_sha256": "b4639877e0cea726b47b124a8ad9e2179b5ad22d6ece70ef4e154de9c1b9fdb2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random158",
+      "sequence": "AAAUGUCCUA",
+      "scaffold": "....(...).",
+      "input_sha256": "29149f17dcd42da6f5b1c5cbbe9ddbad5a50df67c3d700329419273ecf497bb8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random159",
+      "sequence": "AAUCU",
+      "scaffold": "(...)",
+      "input_sha256": "f1b1d7827088e8687335d387932ea67ec4a0f750088b6b64b6e0e381919e9a11",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random160",
+      "sequence": "CGCUCUUAAGGCC",
+      "scaffold": ".............",
+      "input_sha256": "4a19ba76c44f3c15ebc6c5e0159b6b19275e395ea342397184c01a51f2fab579",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random161",
+      "sequence": "GAUCAUUCAGGCGU",
+      "scaffold": "..............",
+      "input_sha256": "c1418080a2303804d35e64f201ef766a32d63a7b94dedd378892c27d5a197f41",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random162",
+      "sequence": "UCCCAUUGC",
+      "scaffold": ".........",
+      "input_sha256": "a0cb3a4cba74faaddee121d07c257239971eb8d1422f3e14cac09a875e55e1e5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random163",
+      "sequence": "UAGCGCUCUGG",
+      "scaffold": "(...).(...)",
+      "input_sha256": "fd7f2df1b7cb65333e053a7f50fb873441fba87916ff01cd4e43006097cce9a3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random164",
+      "sequence": "ACUGGAU",
+      "scaffold": ".......",
+      "input_sha256": "bc7379c585a698890f4c90b35b5368e3d387a7434a63ca83f1f3ae5f20645dec",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random165",
+      "sequence": "GAUCUGCUGCC",
+      "scaffold": "(...(...).)",
+      "input_sha256": "555b54d497edef16898e9df70d175d6b2c0bfd54f366c2cd072429883176ab6e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random166",
+      "sequence": "GGCUGGUAGCCGC",
+      "scaffold": ".....(...)...",
+      "input_sha256": "a2470a9fa9ec0e6aa0c7d9f282f7f1fabfe621372f9fe5028295205964512fb6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random167",
+      "sequence": "AUGCCGUUAAAGA",
+      "scaffold": ".(...)(...)..",
+      "input_sha256": "146e8c30482fff7de199c0a51a2bf5cf48e7c06cb35b28ab20a9e093ffb434e2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random168",
+      "sequence": "CGCAUUUGUAUACGC",
+      "scaffold": "...............",
+      "input_sha256": "9622b709e3e80a5e92bc93fdc9789523a8b580ef01a8028a6efd352cf3e4e52a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random169",
+      "sequence": "GAUCUAUC",
+      "scaffold": "(...)...",
+      "input_sha256": "4d7c64dfacaab362da5c99f623dcec092670f635cb6d8d4a3d6d8ae58ea3b989",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random170",
+      "sequence": "AGGAGGUUCGG",
+      "scaffold": "...........",
+      "input_sha256": "99ac77a9f6e230ed8643be2cf3b6def1134bffdf72feafe610efcc4227540ae4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random171",
+      "sequence": "AUCAUAGUUCAAGUC",
+      "scaffold": "..(...)(...)...",
+      "input_sha256": "c966ff19437a3a1ec4d735f9bed3b084a0a05597ae83316f6f09aa5180fd006c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random172",
+      "sequence": "UCUAAUAGGAU",
+      "scaffold": "...........",
+      "input_sha256": "9dd5b73c3ada63a6291996efc4cbbfc129f6f358580cc35b636119db3cc039ec",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random173",
+      "sequence": "GAUCUUUGUUCG",
+      "scaffold": "(.(....)..).",
+      "input_sha256": "13e20de7f864ffca25318af3030dcd2255416e910c05a2374dc3b1598bf6121c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random174",
+      "sequence": "UGACAU",
+      "scaffold": "(...).",
+      "input_sha256": "2b824d0c9caa36ad647bc30854d64ec14a738569c118a70810d160b683ec1b62",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random175",
+      "sequence": "AGUAGGC",
+      "scaffold": ".(....)",
+      "input_sha256": "ee3e7570a5a115be24d899a4191c9b42b411aa199ac9439afdb67bc4cd4f22c2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random176",
+      "sequence": "GAUUGC",
+      "scaffold": "......",
+      "input_sha256": "9f25a98c39c8fd4329c88e3340d1860b58fa59af8a67fb8f69dbac2ddb8b456e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random177",
+      "sequence": "CGGCA",
+      "scaffold": ".....",
+      "input_sha256": "bd9274cf6802887cf5b92024ca54d8fe03518eaab8b44fca24975aa6ad04666c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random178",
+      "sequence": "AGAAUG",
+      "scaffold": "(...).",
+      "input_sha256": "542e66244464712f1d654959623d710b75e2e82a8248ef28d0050acfce3d9690",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random179",
+      "sequence": "UAUAC",
+      "scaffold": ".....",
+      "input_sha256": "3dad7ff3094804f246db7533c13adac890ce83a41ac0276f5ba4a033b7719ea3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random180",
+      "sequence": "CUCAGGCUGC",
+      "scaffold": "..........",
+      "input_sha256": "ab3b943a996cc4358b53c5f5154d38cadec19129df7933ba93e1484517f90f73",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random181",
+      "sequence": "CAAAA",
+      "scaffold": ".....",
+      "input_sha256": "db565344a91e24e933ef28ecbd5044dce6ada508966cf9217ddf07ca2416c361",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random182",
+      "sequence": "CCUGCGUCG",
+      "scaffold": "....(...)",
+      "input_sha256": "f1e0bc942c80642fce12eac66b8f33cf972502d316d4fb0570dbc1de32448919",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random183",
+      "sequence": "AACGCAUUGAAU",
+      "scaffold": "((....))....",
+      "input_sha256": "500527e05e3e2aa0642820c338ce2cc5ac406df61ad21f85998db20026a29a54",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random184",
+      "sequence": "UGUUGCAUGCAAGG",
+      "scaffold": "..............",
+      "input_sha256": "04ee8af31cf3998f91356655e9a6a3d5616ead581547f0621dcb4f625924d304",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random185",
+      "sequence": "GGCUCCUUCGUGC",
+      "scaffold": ".(...)(....).",
+      "input_sha256": "6164682cbdef5983678d228b8df72946e0547c0c75e9270102023eedc421b32f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random186",
+      "sequence": "GGAGUCUCCUC",
+      "scaffold": "((...)....)",
+      "input_sha256": "053ca442d379fb892e0cc750e6ecc1a319e531bbd866a0d270f805f79cca455f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random187",
+      "sequence": "AGUUAU",
+      "scaffold": ".(...)",
+      "input_sha256": "3e76fe9906f081e9f0c13fc4b5f3cb34170407e96cb1cb800ae23cba8d5f8f51",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random188",
+      "sequence": "AUGGUUACAACU",
+      "scaffold": "............",
+      "input_sha256": "dc299216fc8910a1e32999518f4bde70977afc5e95b0c92c421580deedd74d81",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random189",
+      "sequence": "CAUAUGGCUU",
+      "scaffold": ".....(...)",
+      "input_sha256": "87abdd057d9373f33ca08fb31d1c472b51415ec05539b23ddd73993cbc088be5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random190",
+      "sequence": "UCUGA",
+      "scaffold": ".....",
+      "input_sha256": "a15ebb6cf624c4dc806cfd5b21b7d8808cca712454d34d62ba9e8b7637f0bbf9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random191",
+      "sequence": "CAAAGGCGU",
+      "scaffold": "..(.....)",
+      "input_sha256": "494921ea566c016df60667a4af236b1013558ecbb8b65234b7870ae275ba8c1b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random192",
+      "sequence": "GGAUGAC",
+      "scaffold": ".......",
+      "input_sha256": "2fd619047a436e2f72b00fc1dc525640992465fcfb2b2ac070ad259389a18def",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random193",
+      "sequence": "UGAACAGCAGAUUG",
+      "scaffold": "(....)(.....).",
+      "input_sha256": "bbbaa40e6fcf401248f574db9dc0de5eb73dbae28cedfac602391871e83dfe97",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random194",
+      "sequence": "AUGACG",
+      "scaffold": "......",
+      "input_sha256": "7ef5f58cd1ad62efcd9758152b8322f7a87104ad9a2f542c1afd8d3340a3d256",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random195",
+      "sequence": "ACCGUGUACUCCUACG",
+      "scaffold": "....((......))..",
+      "input_sha256": "449056d1d242b71208ebe37dc6cd92037bf8313ff155f2cb95bdbc8039557023",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random196",
+      "sequence": "UAUAAAACAG",
+      "scaffold": "..........",
+      "input_sha256": "c4969a25169f1c64076828024959c5907375106ec5b630f1c35e0e403a6a4edb",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random197",
+      "sequence": "AACUG",
+      "scaffold": ".....",
+      "input_sha256": "68bbbcf9064aec632ecb2d2c8d9b565aaeae62dd21e6d67df9a9956ef6d91967",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random198",
+      "sequence": "GUCCAGAGUAAU",
+      "scaffold": "((.....)...)",
+      "input_sha256": "c935a70417ba6ee761e949d21ab8bf9e64aa746710bd1d6fa4ec7863ab2b00e1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random199",
+      "sequence": "UACUAUCCCGGU",
+      "scaffold": "............",
+      "input_sha256": "4cf13aa894068951f97ae6ce565fcf10cd3b12d44f8d684d092736da8552fe15",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random200",
+      "sequence": "AGAGCUUC",
+      "scaffold": "........",
+      "input_sha256": "6b2ee93205e012ab0cab31637a94ec2fb8b2d945afe03f608eb8ee8b0b0b8550",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random201",
+      "sequence": "UUUGAAC",
+      "scaffold": ".......",
+      "input_sha256": "674caba4061ab37c58ac396aeb8ecc421c9dd74989a6c4cc4948f08d851d7d27",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random202",
+      "sequence": "ACGGACAAU",
+      "scaffold": "(.......)",
+      "input_sha256": "b74a7f9331e5888ab35818b392bb911fe6db06dcccbcdfd4611d665770735ccd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random203",
+      "sequence": "AGUUCC",
+      "scaffold": ".(...)",
+      "input_sha256": "3f04fb592d3c6be41ebb99de6413247485780b01567cb71fc9f5f3a1e6a05386",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random204",
+      "sequence": "GGUAGCCGCAAA",
+      "scaffold": "............",
+      "input_sha256": "face95cedae8b7ed857351115799bf71e04d198452810f72f38e7c06236f063d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random205",
+      "sequence": "UACACGUCUUCAC",
+      "scaffold": ".....((....))",
+      "input_sha256": "efd4c1427617672793ac4622c2c24d090afd5b873a7db856ca18fd3b465f38bd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random206",
+      "sequence": "CUAGCACCCACG",
+      "scaffold": "...(...)....",
+      "input_sha256": "35d2249da1fe08be190796403fb69bb08dae9279ad512dbe8079e6544c74f76d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random207",
+      "sequence": "GUUGAUUAUGUGCACC",
+      "scaffold": "................",
+      "input_sha256": "c4beb7ddd064cececd93aaf4c93d25f6e257018063facd06c614d8d5db57ae11",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random208",
+      "sequence": "UAUUACGUG",
+      "scaffold": ".........",
+      "input_sha256": "7a24e08eab18c446027b6346f1ddc2d2ea7dfb83c606cb50b4bed15270100da3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random209",
+      "sequence": "UUGAGUGCAUGAG",
+      "scaffold": "..(......)...",
+      "input_sha256": "60e2ff0416335b25fdd3053a9b6f2fbeeff499cb3b33fcbae0cb98db5c7baa2a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random210",
+      "sequence": "CAUUGAGCUUAUUUUU",
+      "scaffold": "(...)(.......)..",
+      "input_sha256": "39cf35c79b651a3cf893e35f4e07a40626a637c8a49f6a972d8cb376951b3302",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random211",
+      "sequence": "GGCCGUGUG",
+      "scaffold": "(....)...",
+      "input_sha256": "e91ff41bee07b0507c2ffe09078d8a56e0c891c7fa88a018d8458466de72b70d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random212",
+      "sequence": "CCACAG",
+      "scaffold": "......",
+      "input_sha256": "243f272f9c76d2e8b032321effce3311a2fe14134edecbb96a37ae8db082020b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random213",
+      "sequence": "GGGGUUUGGUGGA",
+      "scaffold": "(.(...)..)...",
+      "input_sha256": "2348a040ae57748245c02e475fc8ef72fecf7a661afa67cdf6f32f8cfed319cc",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random214",
+      "sequence": "AGGGGUUAGGAGGAU",
+      "scaffold": ".(...((...)..))",
+      "input_sha256": "244ac601d6bafd2aac86d3793208194f9d0504ab6c20fe9fae91b4bcb03bcc07",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random215",
+      "sequence": "CAUUAGUCUGAGGA",
+      "scaffold": "...(..(...))..",
+      "input_sha256": "dad634eb87484f0e2d5cc0aa63477e6be76930744cc95db3e8ccd3f725e1ce76",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random216",
+      "sequence": "UGACUGC",
+      "scaffold": ".......",
+      "input_sha256": "c352983c5a4bed192bca493366539f9d319a1c0cd4eff270a52af85c31701a97",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random217",
+      "sequence": "GCUUUGUGUGCC",
+      "scaffold": "(...(....).)",
+      "input_sha256": "101853fa325e60fce1b707ea65c8b74f85453f2b1e0cb2991e669c9b280c0ec9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random218",
+      "sequence": "UAGCGCUUUCACAAA",
+      "scaffold": ".(....).(....).",
+      "input_sha256": "67131b9c57df7a35de62cbc54908ac8e8a315278dd69e5a5c75ce62dc3edcd42",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random219",
+      "sequence": "CAGCUA",
+      "scaffold": "......",
+      "input_sha256": "d7f14bca4cbb68de2596e4d049818c19aa8e9741804ebef7bbe90aaa26c67006",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random220",
+      "sequence": "AGUAGCUGCCCC",
+      "scaffold": "............",
+      "input_sha256": "b66adcfedf1c76abf0bb26cac5ed95281912e4a410b6fb6bb7ded87f1b848d01",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random221",
+      "sequence": "CCCAGGCAGGAGG",
+      "scaffold": "(.(.....)..).",
+      "input_sha256": "2bb02193fe05cedf762601491fcc27f1b3433aee493ecefa8bce7464baeaafd8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random222",
+      "sequence": "GUGGACAUAGUUUA",
+      "scaffold": "..((...)..)...",
+      "input_sha256": "dbc571bff687fbec52b0762803fd4ad1a8769e1b02c688f7d24ea2bb90ed4e54",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random223",
+      "sequence": "CUUCGCGCGCA",
+      "scaffold": "..(.......)",
+      "input_sha256": "8c3726dadabbad5088f8c65d1e44b932d52061074d924d8b059068c2ce735835",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random224",
+      "sequence": "UAGGAAU",
+      "scaffold": ".......",
+      "input_sha256": "3246a5667139f7ec4ed52cbdc714955204cc74e7a4e33a0f194b8ea79db20506",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random225",
+      "sequence": "AUUGU",
+      "scaffold": "(...)",
+      "input_sha256": "c28b121b7aa1b8fa61ac3b641e6bed867aa42dca2fb1cf2555719e4705688648",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random226",
+      "sequence": "CAGGGAUAGGGACCAC",
+      "scaffold": "..(.........)...",
+      "input_sha256": "d243ee789df76dcbe8fce6c032b04c1e19f525fac707039ea0bc3460d0df56b0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random227",
+      "sequence": "UCUCG",
+      "scaffold": "(...)",
+      "input_sha256": "9ada79c7cd17151fe0dffd5d8641bec9e218c0062bae16e5625432cdc267073a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random228",
+      "sequence": "CAAGCGGUUCUUCGGA",
+      "scaffold": "................",
+      "input_sha256": "2e32a170d94bfe65e42e26c31583a671ba8ddf36239e05c940cc51b4ef6b5772",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random229",
+      "sequence": "GAGGAAAUGUCUACG",
+      "scaffold": ".((....).)(...)",
+      "input_sha256": "a4c851684c0a7ec48b7b85522047127d1111a160444178fb8de38391669a317f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random230",
+      "sequence": "CAUGUAUCUCUG",
+      "scaffold": "...(......).",
+      "input_sha256": "3f22e25c2b7e537c9deb9353b16c024c34a4805fbfa4255e9230083c0a7c76f3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random231",
+      "sequence": "AGGAA",
+      "scaffold": ".....",
+      "input_sha256": "e7a4b3008a6ca17b1cc8623cf096e28f8b977eb42042ce3d854746e97b533c0d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random232",
+      "sequence": "ACCCUCAAC",
+      "scaffold": ".........",
+      "input_sha256": "e8f3a2ff5a7a79b40b43d845f20673fa93ba8a1cc8f5557c7dc5147464ed9786",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random233",
+      "sequence": "CCACCAAGCUUG",
+      "scaffold": ".(.....)....",
+      "input_sha256": "b0ec3b217aae5f930521a2740d8cf0d4f36ecb0f33ae42e81bece9f7d43ea1d1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random234",
+      "sequence": "CGCUCUAGAUU",
+      "scaffold": "...(...)...",
+      "input_sha256": "b85a5f026cb643863e77331ce7bf0fac8f32c6fedfd34397d7d8290a26b1ce5f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random235",
+      "sequence": "CAUACUACG",
+      "scaffold": ".........",
+      "input_sha256": "20e5824d4ce3f680feb9ab836784466ad6baa3bf9c7d8fb97327c5155131b789",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random236",
+      "sequence": "GGAGGCUGG",
+      "scaffold": ".........",
+      "input_sha256": "1ab03e6052ce5b086c2de078cd27630e29f933d7fa2f750ff6f95c39f80c2f29",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random237",
+      "sequence": "AUGCAGGGC",
+      "scaffold": ".(.....).",
+      "input_sha256": "b7c4cd92a342a7951b20ff26f9dfba155ed3f7b212cf168bb76235a229d799e6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random238",
+      "sequence": "GAAGCCGGUA",
+      "scaffold": "(....)....",
+      "input_sha256": "d87e7ddb9835fcfe0d9ffedb0265bab86d54346f2b8d270ebd0b997253628bc1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random239",
+      "sequence": "UCUUGGCCGGGAGCCU",
+      "scaffold": ".(...)..((...)).",
+      "input_sha256": "ed4a53e3552c8b19916aa34d31cbc94e502a79c78b10ee51214c44122de460f8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random240",
+      "sequence": "CACGCCCAACAG",
+      "scaffold": "............",
+      "input_sha256": "a53ce8a38ad25dc50ebe89b351763964849c378b14a7e430518610a9e315b118",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random241",
+      "sequence": "GCCACCAACUGGGG",
+      "scaffold": "..............",
+      "input_sha256": "14a869996f2f6481b59629b7b4dcae46d02e02bea2d04c4a93c090c54cdf3c94",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random242",
+      "sequence": "ACCGAGAUUUAU",
+      "scaffold": "((...)..)...",
+      "input_sha256": "a66dce68644e9cfe719a9f871cae9cf36a1f93fe91cb173af9ebf0794daa6623",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random243",
+      "sequence": "GUUGUUUGAG",
+      "scaffold": "..(.(...))",
+      "input_sha256": "dea4ee4ee464f0cd7d6919f6508eb263cb748ab7e2b9cc15c04624e211c94237",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random244",
+      "sequence": "UAGUCACCCCAUU",
+      "scaffold": ".............",
+      "input_sha256": "578c23db78f9afee36dc626e7b3d8ee83e3094a0f102113f95c6e5e835dba0d8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random245",
+      "sequence": "UACUAAAACCGAACG",
+      "scaffold": "(....)...(....)",
+      "input_sha256": "56d85a0560364b24a4d01f771bcef716878f8c2f95f3664f4ab7071b8f0d3324",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random246",
+      "sequence": "UCAUGAAC",
+      "scaffold": "(...)...",
+      "input_sha256": "c84788426364a4d2e285520e45971fe4bf3d1a670005e1f9e5d54a52d7ed4a62",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random247",
+      "sequence": "AUAGAUGA",
+      "scaffold": "........",
+      "input_sha256": "ca4f40d2c920192996c669bc5027308f07d4d9fd7a3aaad554cdee45491aa614",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random248",
+      "sequence": "CGAGAGAAUUGGUGU",
+      "scaffold": "...............",
+      "input_sha256": "38a7e95b270d909fa225e1acdb5737aae285b60c518de2bc8b7962fce4052cc5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random249",
+      "sequence": "UACUGUUUCUUUC",
+      "scaffold": "....(...)....",
+      "input_sha256": "58c0dfebc3fbbe08d0fe109982305220515071cf53a988242b26d1440aa1da11",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random250",
+      "sequence": "UUCACGCUU",
+      "scaffold": ".........",
+      "input_sha256": "6aa9adaf903b7d5c1e89c242f517fdbb3f4bf7f84c33320c581b4d7d82d33c2a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random251",
+      "sequence": "UUUCCCUA",
+      "scaffold": "(......)",
+      "input_sha256": "0ae2d09b16ae3580dc5b671e965725139669fea0a8e558866fe4f2497c7acb72",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random252",
+      "sequence": "UGUAUGAUCAUAA",
+      "scaffold": ".............",
+      "input_sha256": "09f9ee5db07d49d6efa034fa9ef16bf90fa9559297facacf93d388330ecb36f8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random253",
+      "sequence": "GGUUUGGUA",
+      "scaffold": "(...)....",
+      "input_sha256": "44854e7bb3c17fe8a0011540eb7baa84de3cceee156c180d6895d1aa9465d836",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random254",
+      "sequence": "CCCUGG",
+      "scaffold": ".(...)",
+      "input_sha256": "70e7ceab18ca128cf6c834428156da3f26190601c3f973d6978769f156f213a8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random255",
+      "sequence": "AGGUACGUGUUGG",
+      "scaffold": ".(...).(....)",
+      "input_sha256": "9fbef333983d9a8d0195582d4fab23e8fd2573361838626d35e511573a9887bc",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random256",
+      "sequence": "UUAAGCGUUGACCA",
+      "scaffold": "..............",
+      "input_sha256": "c14f8ea228aea9a266f54cf157810a7c8c7e980eed3c386b19a6487df949086c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random257",
+      "sequence": "UCAGU",
+      "scaffold": ".....",
+      "input_sha256": "f5a05fa74eb5ba4f4e9d334824ac5f1862a946c7d0d215ecb98ff19e9485f1a8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random258",
+      "sequence": "UUUCCCGACCUCCCA",
+      "scaffold": ".(....)...(...)",
+      "input_sha256": "55fc6492d179eb35ad7dc90996f57e81d7bab44bb9402ee0e1bb5f6b60196807",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random259",
+      "sequence": "CUGGACU",
+      "scaffold": "..(...)",
+      "input_sha256": "23f178ce41f467aec47e133b2b2c437f5eb8d79a50f02470fd104a3769a870fe",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random260",
+      "sequence": "UUACUAUUCACU",
+      "scaffold": "............",
+      "input_sha256": "1dba172129c692f77de818d0bd47832654895c5bcb18855a7cd21e87cbf34336",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random261",
+      "sequence": "GGGCCACUCU",
+      "scaffold": "(((...)).)",
+      "input_sha256": "ae66d9f7e2338094d3be819b58ff4aa03e49c42b940296c76d58c0fb962e84c7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random262",
+      "sequence": "AAAUA",
+      "scaffold": ".....",
+      "input_sha256": "4508779949df6fc38db3d19af81393c35d0595660eb704176bae50efac57b859",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random263",
+      "sequence": "AUCACACGUACUCAGG",
+      "scaffold": ".(...)..........",
+      "input_sha256": "254e43de4af344019e1ea31bc2b00a5c44a0a7a0e56a6ebe1e1d234099a88212",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random264",
+      "sequence": "UAAUUG",
+      "scaffold": "......",
+      "input_sha256": "9694d0891b08ff1b027054823faf454ff9f5516e1c3b9b1ddd333267d6fc5720",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random265",
+      "sequence": "CCCGGC",
+      "scaffold": "(...).",
+      "input_sha256": "5124f829687a841231ba2aeb54782424ad34e668bf071bec0b5a1bb8ecd95771",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random266",
+      "sequence": "AACCCAAAA",
+      "scaffold": ".........",
+      "input_sha256": "593dd3753b5b2d7c514e59d43a566a7de07c2b9a7bf3e2de285af7074f60434c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random267",
+      "sequence": "CGUACGAGUCCU",
+      "scaffold": ".....(...)..",
+      "input_sha256": "29f1887ba825da1614d3bcdf3ca9a3d957673ee858ab0784737df9ab0d84e676",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random268",
+      "sequence": "UGUUUU",
+      "scaffold": "......",
+      "input_sha256": "61117ecfff6f8dd558f76a8b1de666edc78236594d5976d45910ebee0507dcc6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random269",
+      "sequence": "CACUA",
+      "scaffold": ".....",
+      "input_sha256": "7b3a7b54f58a361b7062d314b7b13b5a0d5937f23dc0e4bfde2928559f2f36e3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random270",
+      "sequence": "GAGGUCAGCGACAUU",
+      "scaffold": "(......(...).).",
+      "input_sha256": "2c39b65ea1f60cc56b492a1ae1eca94eae2ad77474fc63c7d1f3fae03d6e69e3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random271",
+      "sequence": "UGCCAUU",
+      "scaffold": ".(....)",
+      "input_sha256": "61a862e249cada124d2e9fd06d579370cf398c96dda1376f3a6f84a604ce1bb2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random272",
+      "sequence": "CUCUAUG",
+      "scaffold": ".......",
+      "input_sha256": "d85fbb65b08cc9ced3ab1ef5333de41a6d8de937ae9a7debd292e2c7c820874d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random273",
+      "sequence": "ACUAUAGGUAUUGGA",
+      "scaffold": ".(....).(.....)",
+      "input_sha256": "d5d3ff712454e08c1a9fa16cb7858314b3a4fa3b6da27ce598337648e67b75ee",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random274",
+      "sequence": "UACAAGCCA",
+      "scaffold": "(.......)",
+      "input_sha256": "28391304113d337b797b94b1e7702ac738d96524e7504d49345f09ec391c7ee5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random275",
+      "sequence": "UACUUUAACACAAGAU",
+      "scaffold": ".....(..(....)).",
+      "input_sha256": "5b94eefd2a5c2b6a7c9eb6ef0707430cf2a2bd2a7447a4f92ad51515e873600b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random276",
+      "sequence": "UCUUUAUACUU",
+      "scaffold": "...........",
+      "input_sha256": "f6028ae1e9f40178e51f3c10ec277954628790fdca0d5e30c6535687965fc1fa",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random277",
+      "sequence": "AGGUCGUCGGGGCG",
+      "scaffold": "(.....)(...)..",
+      "input_sha256": "c3a2934e23a86b3e702e5538b18baeaea3ef12b202902cdbad93a880758f6c45",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random278",
+      "sequence": "GGUGGUUAGUGAUAA",
+      "scaffold": "....(.......)..",
+      "input_sha256": "ae10bf997de0c5260fb04b8a2035e9d73cb2c20351e1cccf78c24814ddca2d42",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random279",
+      "sequence": "CAGUGUACAC",
+      "scaffold": ".(...)....",
+      "input_sha256": "c8782744e058f94a83dfefca4a457e07fe04a7dc9025bd22ccd56f86b013af3b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random280",
+      "sequence": "GCAUGGACCG",
+      "scaffold": "..........",
+      "input_sha256": "54dd68cd9043bdea68d0f4acfc10f68c3e3b4050bce9b2bbcb1b290e5322d7c4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random281",
+      "sequence": "UGGAAGCGGAUCU",
+      "scaffold": ".(....)(...).",
+      "input_sha256": "824a6c20e8d388724253e748163b78caff0beb3eb175b41c0c67a6b2db5cd004",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random282",
+      "sequence": "UGGGCUAGCGC",
+      "scaffold": ".(...(...))",
+      "input_sha256": "86d9f74df9c2a5152619ef9d927228d1cc26aea9faa873d72a308cd891fb8730",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random283",
+      "sequence": "GUUGGCAUACGA",
+      "scaffold": "(......)....",
+      "input_sha256": "26c52107d5fe051fad358312563d130388c6d8d15aab323bd7e2f39a8821c35e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random284",
+      "sequence": "AUCGUCAACUGAGGC",
+      "scaffold": "...............",
+      "input_sha256": "50d979e1ce24849c0b24afa98cc5a29afa5b675840b78d3704ed7fa65194aeac",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random285",
+      "sequence": "AUGUGUUCCUUUUGC",
+      "scaffold": "(.....)(.....).",
+      "input_sha256": "6d08b4705aed4ac05748fc2ba60804b7bcd49bef5b0fd8d41f2fcfccb28bcfd0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random286",
+      "sequence": "GUAGUGGGGGCG",
+      "scaffold": ".(......)...",
+      "input_sha256": "6f219651ae31f24905a6c840e461a4211cfd83a046d4f18e281374c13a33fd04",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random287",
+      "sequence": "UUUUUAGCUA",
+      "scaffold": "..........",
+      "input_sha256": "c78643695802991514201b8e15d2ce6c0831480e72fb93f41f9acacaac118f1d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random288",
+      "sequence": "AGCUGAAUCGCU",
+      "scaffold": "............",
+      "input_sha256": "48121a88e657cd496da243cb3e760fac4d644dacd295677765f2704cc7413aa6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random289",
+      "sequence": "UUAUAUUUAGU",
+      "scaffold": "....((...))",
+      "input_sha256": "28425d9f230546f99921001e77bff3021967d4da5acbc443f907a49164889d1d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random290",
+      "sequence": "GCUCACAUUUUGUCUC",
+      "scaffold": "(...(....)..)...",
+      "input_sha256": "195d46ab874a1d3d8059ecd8bb6396744559bce5ab6abedfb8a68e6fb132e960",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random291",
+      "sequence": "CUAGA",
+      "scaffold": ".....",
+      "input_sha256": "da6f760035273ea28d80d51853bd8d6199f6957c5ba0571801ae86b56afe3369",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random292",
+      "sequence": "AUAGCAUU",
+      "scaffold": "........",
+      "input_sha256": "90c14cb4348ac37b0a32ff07db129919f6bbb7a34b5cf5e0743c419469f88122",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random293",
+      "sequence": "CUUGGUACUUUUG",
+      "scaffold": "(...)((....))",
+      "input_sha256": "10454ed0598c850890fc3d75ab3645bc345bfe9c9417b33d021dfd7df4844105",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random294",
+      "sequence": "CCAAGCACCCGGGACU",
+      "scaffold": "................",
+      "input_sha256": "569f03640f573c89a6fc2b502782f5dfc6e975993b22174d14d715175360ec6a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random295",
+      "sequence": "GAAAU",
+      "scaffold": "(...)",
+      "input_sha256": "b2efd7beb7359ab9a0a03a2103ea6f74d7d0b32939f14ad0895436a3b78c93ae",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random296",
+      "sequence": "CCACCACA",
+      "scaffold": "........",
+      "input_sha256": "88a177b5a21d5148ac5b5a2b40aa6beeb0ecaec097b7f5eb422550f28192ea82",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random297",
+      "sequence": "CGAUUGUCCACCUAUU",
+      "scaffold": "................",
+      "input_sha256": "1c6a39ae3d88606a6f9635146bae62a388df56cebe6a0fbdee1cf1f166b3e54f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random298",
+      "sequence": "CAAUCGC",
+      "scaffold": ".......",
+      "input_sha256": "a1e200ca684249f9a1aa6a072efc370ef82bd02fe5400fa619118ff1c12a3787",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random299",
+      "sequence": "GCAUAUGCUCAACCC",
+      "scaffold": "(....)(......).",
+      "input_sha256": "298aeb884e68d9854b625a528b311f294ca2468e7b184484ff56b639851022d9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random300",
+      "sequence": "CUAGUUGGCCACU",
+      "scaffold": ".............",
+      "input_sha256": "9ce802c2fe7fc71f74b33febdfd2eb35eb95c1bb3972ac58c58182b656bd7022",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random301",
+      "sequence": "AAUGGUCGCACAUC",
+      "scaffold": ".((.(...)..)).",
+      "input_sha256": "f07418fc3196e4fd982af41aacf4139f2c5216fa59a2f33b2e0f2106491134bb",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random302",
+      "sequence": "ACUUACACAG",
+      "scaffold": "...(.....)",
+      "input_sha256": "82a25e5edfa30b9d5ee36ab21ea82f6aeec946807259210522144245f67115c1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random303",
+      "sequence": "ACGUUCACAUC",
+      "scaffold": "(...)......",
+      "input_sha256": "4e9f55067dfdcc502228c18d7c1e010140c67b0e90116c61614bf9c0963abfc3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random304",
+      "sequence": "GUUUACUAGUAGGUAC",
+      "scaffold": "................",
+      "input_sha256": "2d9b67e8d4d0b7dca0625f5fe5dda23715a8bf3f57dd7ba6f4080c21ba3997a0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random305",
+      "sequence": "ACUUAUCGC",
+      "scaffold": "..(....).",
+      "input_sha256": "7cdde74ace169ff29c06f71a8e5341a75001ffaf002827bcd81bb7af154831f5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random306",
+      "sequence": "CCCAUUGA",
+      "scaffold": "..(...).",
+      "input_sha256": "3397c7b963bc1d0669decf126672959ecdbb91e31069abdb20fae5a1deb29c36",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random307",
+      "sequence": "AAAUGCGGGAGCCG",
+      "scaffold": "......((...)).",
+      "input_sha256": "33a719580d606967818ae1e9c1d13e71c9f9956bd37da32ceb82b5a0b03d7126",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random308",
+      "sequence": "UCGUC",
+      "scaffold": ".....",
+      "input_sha256": "2a299b3029b9e31baeb952f0f8e903ef712583baa9597615bce69ee88304fbbc",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random309",
+      "sequence": "GGCGCC",
+      "scaffold": ".(...)",
+      "input_sha256": "8877f093d776eae921944a57a1e00047c0de32255dc8ee3729ea5e201a16df83",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random310",
+      "sequence": "UAUCAUUG",
+      "scaffold": "((...).)",
+      "input_sha256": "fa8d88958012c61fb05f9ea9d6d92a31924cec68cb2bddd6fa1b7d6335dc51cc",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random311",
+      "sequence": "CUUGUGAAUUGUG",
+      "scaffold": "...(.(...).).",
+      "input_sha256": "c0f0c22523067267d31c4df0d048eee9b819adc4faceddf88253f093b4aad2f1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random312",
+      "sequence": "AUUUUCACCAGGUA",
+      "scaffold": "..............",
+      "input_sha256": "99a6b914f98697bd3c75d9a3f90828070c21616420bfb237b019c93e0c8dedd1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random313",
+      "sequence": "GUACUAAUCCUA",
+      "scaffold": "............",
+      "input_sha256": "20e1355b485691bcf5a67ea9d621b5425962b1abb232f9ea681bbcb20179a769",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random314",
+      "sequence": "GUAUUGUCCCUC",
+      "scaffold": "............",
+      "input_sha256": "2610fe2de9b3d1c0420da0024193394e49fac022f090acd0daf58aece777ff49",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random315",
+      "sequence": "GUUAU",
+      "scaffold": "(...)",
+      "input_sha256": "bb58e04fa708546d0fb3c5127d859ced9c9a3673ce72b7906357072f5eafb34e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random316",
+      "sequence": "GCAAC",
+      "scaffold": ".....",
+      "input_sha256": "7e15d8ff36c0fe522a339027b142324636a27953a5c41b43012ab8e360ea4453",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random317",
+      "sequence": "CGAAUGU",
+      "scaffold": ".......",
+      "input_sha256": "0968faf8cacc1fdfc35fd63d371c440f18e276ec5608652cd30bcf84bb1c7e14",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random318",
+      "sequence": "GGAGAGAU",
+      "scaffold": "........",
+      "input_sha256": "f3a98fe825676bfd1e9e051d1b0354c3626213a7b0499f05c2268e2ff2850fbd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random319",
+      "sequence": "CGAGAUUAU",
+      "scaffold": ".(....)..",
+      "input_sha256": "c3a6ce3e7b7a3983eb105c4ff4205c7af68f526ee5c8850ba820f7dccf269cc1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random320",
+      "sequence": "CACAUGACUUGUGCGA",
+      "scaffold": "................",
+      "input_sha256": "cca1a25bdbf04ebf7f3ab390715c5a8fa7ca349eb32c0d80a4b602301a290dc5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random321",
+      "sequence": "ACUGUGU",
+      "scaffold": ".(...).",
+      "input_sha256": "10e1bf30d03678314daad54266af67808b875275442532128db7bc7fb5095573",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random322",
+      "sequence": "GUGACAUACACUA",
+      "scaffold": ".(...)(.....)",
+      "input_sha256": "d44c609029b857fab82cf0a083b119460cfe444ac3e067e145218e7db2663a2f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random323",
+      "sequence": "CGUGCUACUCUUGCA",
+      "scaffold": "...(...)..(...)",
+      "input_sha256": "c8d932e366cc5f21125211b48f415406dfb42a887201ed1afdf7dba4f33ebfb7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random324",
+      "sequence": "UCCACUCG",
+      "scaffold": "........",
+      "input_sha256": "f70d42f20aeeceaeaa5bc73c30ed63183897dbbf364fa313c34377bb16ccb3a4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random325",
+      "sequence": "ACACUAA",
+      "scaffold": "(...)..",
+      "input_sha256": "b8a5ff891e4712be7c0327c78d6a824aef8752476849f10c65b16f0f45d452b4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random326",
+      "sequence": "CCUGUUA",
+      "scaffold": ".......",
+      "input_sha256": "f697c1034cc5703799e4cac3c121d73eadc460a1ebcc5d0dcb59c1ddda0a6291",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random327",
+      "sequence": "GCAAUUUGGAAAC",
+      "scaffold": "(.....).(...)",
+      "input_sha256": "b6356d53a028005346d7656e77b8059da32a27d905059a7c2189ece58b251f06",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random328",
+      "sequence": "GCCCUGCUACA",
+      "scaffold": "...........",
+      "input_sha256": "280b0f7320de5a34ad7a232d1246cb20334f28392a7516b60abd754a68cf4eae",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random329",
+      "sequence": "AGUAGUUGC",
+      "scaffold": "..(....).",
+      "input_sha256": "f72c6568ac991a09c79cbc561ce9013f3e14ece0a4c7848d75eb17dfe918a0f1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random330",
+      "sequence": "CGGGUACAGC",
+      "scaffold": ".((...)..)",
+      "input_sha256": "490b79586c4d90ab4f12f0b433ff4d4540f5f5c56c7d70fd3bf815a623118566",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random331",
+      "sequence": "CAGUUU",
+      "scaffold": ".(...)",
+      "input_sha256": "6b737830402c97d6903b7561c0ebe5e4cd7ab9f6054a14997afc23f3152dbcfe",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random332",
+      "sequence": "GGGCAACA",
+      "scaffold": "........",
+      "input_sha256": "25f8e324f14b50a0a0d9c61159145860bc3b77226dbb746e8c37a6abe38add90",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random333",
+      "sequence": "UCCACCUA",
+      "scaffold": "(......)",
+      "input_sha256": "ad6faf95a0b2d5d45adcfb2fe9b36a7c7869d78c94024e5a8759b8c7721ccbb3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random334",
+      "sequence": "GGCACCAGCC",
+      "scaffold": "(.(....).)",
+      "input_sha256": "d3406d6d0740016f0d916764677d3e28fdafdab5737805ff34cffd69d909fda2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random335",
+      "sequence": "GCCUUUAGUGGC",
+      "scaffold": "(....)......",
+      "input_sha256": "bdb895fab443c13043e3fd2f850691181bba859d54e69a8a6098e814b95acac4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random336",
+      "sequence": "ACGGAUCUGUUCCUA",
+      "scaffold": "...............",
+      "input_sha256": "280220ca0d809aa5852cbc2f081a8cc8d934ab60234a55f98e505655cf5797cd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random337",
+      "sequence": "CUGAC",
+      "scaffold": ".....",
+      "input_sha256": "55708ec50218f5b85473af812fc694b9ae2982e12ff6e341b95c7888e292f897",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random338",
+      "sequence": "CCCAACCCUCC",
+      "scaffold": "....(...)..",
+      "input_sha256": "497cf6b56dbc00cd4bf79d3c21575602f692b2b634fd9f9137fab6f40916c281",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random339",
+      "sequence": "ACACA",
+      "scaffold": ".....",
+      "input_sha256": "fbbc17c605606688de13d3907e4e75aa6a9de4bd923e717290057df4f6b448b7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random340",
+      "sequence": "GGAACGGACU",
+      "scaffold": "..........",
+      "input_sha256": "7436d813a1e0baee7e19adb4eca86fc23b49c687ae0dffff9d67466600ef1f22",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random341",
+      "sequence": "GGUAUUUC",
+      "scaffold": ".(.....)",
+      "input_sha256": "4fd0eba292aa63e880b372b875ba69e97c377290d300cdef8a0e404e68479180",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random342",
+      "sequence": "UGAUCGUCCUG",
+      "scaffold": "...(.(...))",
+      "input_sha256": "b8aa5158ac2b9f34ec8358550c6be0fbf30f6eeeb3c5cb2500e8758b60e81f52",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random343",
+      "sequence": "UGUGCCCGG",
+      "scaffold": ".(....)..",
+      "input_sha256": "ab1317af363181a88daedff3666e0e24a945e268948d7790a179f00e3de5054a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random344",
+      "sequence": "AAAUACGGG",
+      "scaffold": ".........",
+      "input_sha256": "18e98cc84faffd50c8fa2322bb65aae8d19ab30250db6bcf380b11a95bbb171b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random345",
+      "sequence": "GUACCAC",
+      "scaffold": "(...)..",
+      "input_sha256": "9721698ed1a855d00fcc665d44cc53b6ef5fcf5e7a5e6c71a38e4e00c84acb87",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random346",
+      "sequence": "CACCU",
+      "scaffold": ".....",
+      "input_sha256": "6b3460d000d7f6f5d13a4f6d7a4aa7f2fa1f56b6278ed00492ef2306dbb773ec",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random347",
+      "sequence": "AUUCACAU",
+      "scaffold": "(......)",
+      "input_sha256": "9ed067a4e83ddcc1b357034aafe4ff5470322df94fbd7a993f2de79b94286910",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random348",
+      "sequence": "GUUUAGUAUCCUGGGA",
+      "scaffold": "................",
+      "input_sha256": "cad47fd2a1003fb9ffa0efd6fba22b75da5572449d4f5a760585ec08c3951d72",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random349",
+      "sequence": "AGACAAUCA",
+      "scaffold": ".(....)..",
+      "input_sha256": "dde3498131f0b71421c21e13c3bd3672c83a42008b8ac6935f86bfac08e5af0a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random350",
+      "sequence": "UUCCCACCGCGCG",
+      "scaffold": ".(......)....",
+      "input_sha256": "031f07afb75be026cf5287a573bd92124f69840d14b1bb75a55dba0fb5fee13b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random351",
+      "sequence": "CAUCCUG",
+      "scaffold": ".(...).",
+      "input_sha256": "6332f12d321d0b2dc750e1629e3e3e6fa4260cc89169310b5d4abc6623a2dfc7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random352",
+      "sequence": "UCUGGAACG",
+      "scaffold": ".........",
+      "input_sha256": "a0546aed0da876d946e8960ca8fb2768060e7e861192eb60cc0365bfcdc775ef",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random353",
+      "sequence": "AUUCUCG",
+      "scaffold": "..(...)",
+      "input_sha256": "0b44f51393ee63c9623c12804f636432636a4750abcde64733afaf5f4517b6c2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random354",
+      "sequence": "CUGCAUC",
+      "scaffold": "..(...)",
+      "input_sha256": "4cd5b1d5a071314be1700e217e7654ba2d163754ce77ef57cbd035be5d533740",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random355",
+      "sequence": "CACCUCAGGGCACG",
+      "scaffold": "(......)(...).",
+      "input_sha256": "40b8e32afc28341dfa3c7012c9a28fdcb44fd95506651a02dbd409cdff572c7d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random356",
+      "sequence": "GCUCCUAUU",
+      "scaffold": ".........",
+      "input_sha256": "e4a9b34a8a920d16a1069fcd76babb619e8506418c60a27bae3849b780222834",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random357",
+      "sequence": "AUCUCAUAGCA",
+      "scaffold": "....(...)..",
+      "input_sha256": "005a7bdfb449a6da309346eacf6dcf9d651d961dc9a4643de962adca2506bc7c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random358",
+      "sequence": "CAGCACCCCACCUGC",
+      "scaffold": "...............",
+      "input_sha256": "29cc6b886d8628b943a39d9129f852d86ed09f5f8d9821d68a638df2098b7c88",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random359",
+      "sequence": "GAUAUCGAG",
+      "scaffold": ".........",
+      "input_sha256": "2cc80799fc28de049c4829a55a58c18c7e8e723e033cb318609cc3253bd8cf7b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random360",
+      "sequence": "GGGCUCGCUUGUAAGA",
+      "scaffold": "................",
+      "input_sha256": "8fe7cac78c85ac22eccbac0d887a0a9b19877b4ca153c0bedc3434210bfa2e1b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random361",
+      "sequence": "UUAUUAGCCGGGCAAG",
+      "scaffold": "(..((....))..)..",
+      "input_sha256": "b37aa9ecc05c1ee0b68216d3728f0837dc50be2d5f92e378a3ea3c42a0569586",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random362",
+      "sequence": "CAUUAAUACA",
+      "scaffold": "..(....)..",
+      "input_sha256": "e0a8365ef69a12263798f09911a8b0490ec2818661b3b0fdcec5b32ae1606429",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random363",
+      "sequence": "AUCAU",
+      "scaffold": "(...)",
+      "input_sha256": "49d4f0384d8769205670d2091e3219b4580d63936882784330fe72ec49affcae",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random364",
+      "sequence": "AAAAAAU",
+      "scaffold": ".......",
+      "input_sha256": "caad7beb44dd9f8d926c76530710e4d620ede8551992e7276e84d8957874f668",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random365",
+      "sequence": "UUCCGGUGACGU",
+      "scaffold": "............",
+      "input_sha256": "969fdf4979a28f04860167ad0e5f91917ace16f824c269cc2990f4b331092ea3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random366",
+      "sequence": "CUGCCAAUC",
+      "scaffold": ".........",
+      "input_sha256": "3aee86077b9d60ae7bae7151959d8bc22df0372d4a726e712c576e314b0caa3a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random367",
+      "sequence": "UCUGAAGCUCAAGGUC",
+      "scaffold": "...(...(....)..)",
+      "input_sha256": "70aa0e1472e88b1330be186c047404439cb21661aec4d8e67500d4a523047695",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random368",
+      "sequence": "GUGAACA",
+      "scaffold": ".......",
+      "input_sha256": "78d6705919a18e03047359d44f53b538d014c152731f9dd7928b3e495f3d52b6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random369",
+      "sequence": "CUGAAGUUGAAGGGU",
+      "scaffold": ".(...).(....)..",
+      "input_sha256": "0f9b10026653a24e2ddff430569e0d3a77d99e89c0738e51f14265336cabf76d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random370",
+      "sequence": "UGCCCU",
+      "scaffold": ".(...)",
+      "input_sha256": "54c3c8a897e8b7b8f8ba0fb9c824e6c92d6466f2e17ae3c9b5b177c931a1083f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random371",
+      "sequence": "CUAGAACUGACCCAA",
+      "scaffold": "...............",
+      "input_sha256": "7c198a03385cbcb9ffe55a3bf84bc07a4ca33c4297d0501627bce64ed1abf9dc",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random372",
+      "sequence": "GCCAGUCCGAUGCG",
+      "scaffold": "..............",
+      "input_sha256": "58ec23865f8aa8a228c183ae5fde358724db8d8d6802c11a240fa020860f13d8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random373",
+      "sequence": "UCUAGAC",
+      "scaffold": ".......",
+      "input_sha256": "83867cab17e2a39b3e49892a57c6a2cdad4a7b2b493bd0dcb6b271a0b42c5b96",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random374",
+      "sequence": "CGCCA",
+      "scaffold": ".....",
+      "input_sha256": "c2afeaa36c829ebf0692a683d6ac2d5ce383d7c7249247ca0cb19351a14161f2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random375",
+      "sequence": "UGAGAG",
+      "scaffold": "(...).",
+      "input_sha256": "786e2edc8df86b12565278ac9f96c1e658ad7c544e3eeb1eea18a802d8fd511a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random376",
+      "sequence": "CAAUCGC",
+      "scaffold": ".......",
+      "input_sha256": "a1e200ca684249f9a1aa6a072efc370ef82bd02fe5400fa619118ff1c12a3787",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random377",
+      "sequence": "AAGAAACU",
+      "scaffold": "...(...)",
+      "input_sha256": "657870213eb84a97a2cac97508de80a0393d6340601262d0ccfdc08b5d5ebc86",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random378",
+      "sequence": "UUUGACCA",
+      "scaffold": "(......)",
+      "input_sha256": "f658048a0cab25dbc0bc2281f468b76b0ff9291ad7bdc005072c9ae3a17d9636",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random379",
+      "sequence": "AGUAGGU",
+      "scaffold": ".(....)",
+      "input_sha256": "0cbcc90ed7ebf262392cc1a6fcf0fd4dd203e8cf54f0694fefa4263093263add",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random380",
+      "sequence": "CCGUUAUUGGCCG",
+      "scaffold": ".............",
+      "input_sha256": "81c5308b9bf821709ef71bc61ee41d1d592fb6c698e480e1887c77c908e246f9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random381",
+      "sequence": "AGCGGUAACCAACGA",
+      "scaffold": ".(......)......",
+      "input_sha256": "3f80931570e2e332026c410dee228a084cef99b401adbf05a774b696783faa34",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random382",
+      "sequence": "GCUCACAAUCACA",
+      "scaffold": "....(...)....",
+      "input_sha256": "b079db39bbdb63343bc2ea93bded02ce1c463d658a0e98e0f778c26de970f0ad",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random383",
+      "sequence": "UCGGG",
+      "scaffold": "(...)",
+      "input_sha256": "f30ace30ab42b2e85d85adef11d68808990ba953630f549c61b860baa21f806d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random384",
+      "sequence": "UAUAGC",
+      "scaffold": "......",
+      "input_sha256": "978baef989379b09db0d8066d5e885bdbf52e597ab3bcdfb6692f8ca3818d9af",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random385",
+      "sequence": "UGGCGAAGCUGCCCA",
+      "scaffold": "..(..(...)...).",
+      "input_sha256": "63d0d405d0732ca189abe861c8bded55652aa30bb9969c333b18d57a83e8d6f8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random386",
+      "sequence": "GUAUU",
+      "scaffold": "(...)",
+      "input_sha256": "37f2aa991fa98c5a889f095b55f5ec65ab1e0cda27ddae92ac9e61ca7f687cfb",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random387",
+      "sequence": "AUGGCCAUGUAUCGUA",
+      "scaffold": "..(((...))..)...",
+      "input_sha256": "bf560d778beb6a7a277a3e3cd8d971a23efbb8e30c59f0a6b00324e5c44c5bed",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random388",
+      "sequence": "GGUAGCUCGUUGUG",
+      "scaffold": "..............",
+      "input_sha256": "12d2b9629b9ff6042edecf0482163f61e9cbd6d9e802d9567ebc382da9753559",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random389",
+      "sequence": "AAACGGUGCUCG",
+      "scaffold": "....(....)..",
+      "input_sha256": "dc091b38327da3cfe4ad43a60c7b2b4ceb66021348e7461315deb67d2f98bfae",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random390",
+      "sequence": "AGCUAUAAACAGAA",
+      "scaffold": "(....)........",
+      "input_sha256": "8933b63715881a92be7945d4ed2da7b0d29002658e0fdc6c4d61e9fda8c719fb",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random391",
+      "sequence": "UUGAA",
+      "scaffold": "(...)",
+      "input_sha256": "9514c9b70f2ace64507ec72b9d4d1a70f9ec1e12ffe478f70e7890703862aa51",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random392",
+      "sequence": "UCUCUUGUGACGUAC",
+      "scaffold": "...............",
+      "input_sha256": "a1dc5d477a51df8398770e36c21c3abc74e5a40824608b005e6a2b30d13c5e07",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random393",
+      "sequence": "UUUACAUCCUGUC",
+      "scaffold": "(....)(...)..",
+      "input_sha256": "44073a0ef3c461fcd5c4507d9da384fa6903ff0d4c99fc23ad4b91e26dc2725e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random394",
+      "sequence": "CCCAG",
+      "scaffold": "(...)",
+      "input_sha256": "e9eb53d9e0071305bd1a7e17275f7ed179ab1b12178587e46c1c94153c481ece",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random395",
+      "sequence": "UAGUGAAU",
+      "scaffold": "..(....)",
+      "input_sha256": "836d588a2d50e28c3be82e869b5ff133c9be309911ad18178b983c4199e45b83",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random396",
+      "sequence": "CCCACUGAAGACAUU",
+      "scaffold": "...............",
+      "input_sha256": "2ed94ee3028d10334555b3121ccd2ce0fede9148c739419f6372e9526deb8a67",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random397",
+      "sequence": "ACUCUGUCGU",
+      "scaffold": "((...))...",
+      "input_sha256": "11d6b8bda0264eff887c6cac7d3ff4b33594456b4ae70c25ad29fe919130da1d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random398",
+      "sequence": "AUCUUUCAGUC",
+      "scaffold": ".(.....)...",
+      "input_sha256": "47265104ccb965f7a6221d02a9525208f6d7aae0706f0701f60f6e9ffa71ecb2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "random399",
+      "sequence": "UGCCGGCACU",
+      "scaffold": "....(...).",
+      "input_sha256": "1b7fcb29cc1187ea4831c929200ce2e4258c96b65c1b8ef6e5815f3305e20843",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk000",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "(....)(....)",
+      "input_sha256": "e0ffa2f4eae04f51cb0c82ec217b4c5fc2d39bdb7c3c1c72f508aa31cbf954f8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk001",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "....(....)....",
+      "input_sha256": "0125c957025a8e2b42efae81bf5a977c6c5b0e9cd40bef51efe0d5ed3a1b04dc",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk002",
+      "sequence": "GCGCGCGCGCGCGCGC",
+      "scaffold": "(....)(....)....",
+      "input_sha256": "57e3696a1a5f050b5b8f81e5983b88726c2c46606dd0f5fcee1c0a9d71580e46",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk003",
+      "sequence": "GUGUGUGUGUGUGUGUGU",
+      "scaffold": "..................",
+      "input_sha256": "cc1fff20dc3e32f8face5b12ebd6fc2641d3d68eccb14546ad1f0ca170316e38",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk004",
+      "sequence": "GCGCGCGCGCGCGCGCGCGC",
+      "scaffold": "..((....))..(....)..",
+      "input_sha256": "18ad7a699154030f77e6e2e1558a86f8353c6b3c0169aaac68c6de265321f26e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk005",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "(..(....))..",
+      "input_sha256": "f27ffba82a77862bebee5360a93284cb23bb0e39e7c96d7b0b07eaf2ec9e0e48",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk006",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "(............)",
+      "input_sha256": "467a3f6cbaf7dda42a2afbc90f2af066759ef817a6fc6e2b3791976ee33fd3e8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk007",
+      "sequence": "GUGUGUGUGUGUGUGU",
+      "scaffold": ".....((....))...",
+      "input_sha256": "846ced757d7984fdb6c0911752f1456d1c479de2739b8e0144b2225d8865e1e5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk008",
+      "sequence": "GCGCGCGCGCGCGCGCGC",
+      "scaffold": "..(....).(....)...",
+      "input_sha256": "05b3841cd6e608e678d5582deb748e9346fced3fb3bf3657f9ef95639246fa99",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk009",
+      "sequence": "GUGUGUGUGUGUGUGUGUGU",
+      "scaffold": "..(((....))(....))..",
+      "input_sha256": "6b053e0ccb76b83d09a25861a9886cf42a67abc3ca874edf3fb76024f8b5982a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk010",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": ".....(....).",
+      "input_sha256": "108175225e4c5ed5f9b7c0cb1ba14b350273a055c1a628cd58bbe3acbd65fd65",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk011",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "(....)(....)..",
+      "input_sha256": "defef613c8cd3caebc657cdc260869010adc0a36349df0056d897e076c3d006c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk012",
+      "sequence": "GCGCGCGCGCGCGCGC",
+      "scaffold": ".(....)(....)...",
+      "input_sha256": "d314efea299e657802b7fb962a4a1c0658918314153c61557c04f24f2eafdda9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk013",
+      "sequence": "GUGUGUGUGUGUGUGUGU",
+      "scaffold": "(....)...(....)...",
+      "input_sha256": "cfed042777637cc553b36b449356d29e549bd106a7ce2558969341dc951f05df",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk014",
+      "sequence": "GCGCGCGCGCGCGCGCGCGC",
+      "scaffold": "(....)(....)..(....)",
+      "input_sha256": "e6df9d9b9fdc878508371ec14772ccd0e656709476996dbf83cf50454f5e88df",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk015",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "..(........)",
+      "input_sha256": "862ed0f6b80745876c43094b967e7e684b18aaf1fa800801b583359768152349",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk016",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "(....).(....).",
+      "input_sha256": "b30ae6c7f7d58ec47fb0a11a0a0b6f0f89b18264abe107a772668f203217ecfb",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk017",
+      "sequence": "GUGUGUGUGUGUGUGU",
+      "scaffold": ".(..(....)....).",
+      "input_sha256": "bb10a56b667a1fe21c9db6abcddee4303959865facdae811d437a3714582e267",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk018",
+      "sequence": "GCGCGCGCGCGCGCGCGC",
+      "scaffold": "(....)(....)(....)",
+      "input_sha256": "8266fa0b49545255423f19d83fa0d7cd2fae204ea5e850b4496e6338152df18f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk019",
+      "sequence": "GUGUGUGUGUGUGUGUGUGU",
+      "scaffold": ".(....)(....).(....)",
+      "input_sha256": "06ca8002d18bc965eeef39e43fdc495da724e93a897da07e4f98549512895f92",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk020",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "............",
+      "input_sha256": "f51844c5616fd7ba7f8bb2f40dcd4364e92860162478f4d3c1c540dc389eccc0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk021",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "(....).(....).",
+      "input_sha256": "8b05f3470566975d84e8fb18007478f98c3a4273482cdce0448596b038878c48",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk022",
+      "sequence": "GCGCGCGCGCGCGCGC",
+      "scaffold": "(....)((....))..",
+      "input_sha256": "2758924e1a22f6bd2cfe80f68f15da263d2d2966c5cd3d68c1a78346a3274ba6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk023",
+      "sequence": "GUGUGUGUGUGUGUGUGU",
+      "scaffold": "...(..(....)..)...",
+      "input_sha256": "8d5f7e4eecbf23d11b79cf347a7306cbdbd827f417b7f4c6307dc854ae02a6c1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk024",
+      "sequence": "GCGCGCGCGCGCGCGCGCGC",
+      "scaffold": "...........(....)...",
+      "input_sha256": "ffaff1a6016ac90a4c0dcb36bc68042ac40a09ddccfedc50d486034e9b96e5b7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk025",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "............",
+      "input_sha256": "e6a2b3a426814a9c761934ad1ebdae02944264da556f6b650ed80251bdf168de",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk026",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "...((....))...",
+      "input_sha256": "683613d51bb1fd7fc7f190b7656d9450501edba2d3ee91cc73c1c89424b764ff",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk027",
+      "sequence": "GUGUGUGUGUGUGUGU",
+      "scaffold": "..(..(.(....).))",
+      "input_sha256": "f24037c6025b48fcf795fdfe2bb837d58cc012a3699840703c254ec13da9dc10",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk028",
+      "sequence": "GCGCGCGCGCGCGCGCGC",
+      "scaffold": "...(....).(....)..",
+      "input_sha256": "d2a8182dc69fb26ae322d0b1119498556cf4a15babbaa1bbb986d455096f5793",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk029",
+      "sequence": "GUGUGUGUGUGUGUGUGUGU",
+      "scaffold": "(....)(.(....)...)..",
+      "input_sha256": "2d352a0803944ae6767b3a908e4bc83705f766eb846ee97d68fc7eb185e4a326",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk030",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "..((....))..",
+      "input_sha256": "5694ecb2b88eb52cbff208e999a4df263b31f7365f79e6040d98dacce7ea2a56",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk031",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "((....))(....)",
+      "input_sha256": "a80ed218e95d6b6b64370a7134d09f138531cbaa5c6d5822f71a855d7a91c553",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk032",
+      "sequence": "GCGCGCGCGCGCGCGC",
+      "scaffold": ".(....).(....)..",
+      "input_sha256": "327859a64ef75b2a8967220a9928c87219c101c054cbfc61cdbd7012ebbdc54f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk033",
+      "sequence": "GUGUGUGUGUGUGUGUGU",
+      "scaffold": "...((....)..).....",
+      "input_sha256": "dea651c1c9f4d6de730e1f607aca97dd5212565d8de5bf23762ada0c08605340",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk034",
+      "sequence": "GCGCGCGCGCGCGCGCGCGC",
+      "scaffold": "(....)...(....).....",
+      "input_sha256": "d5f8249c01a38b44e7ee75470bf12c977d108cfacc69c1ce2e8ecc19c7d2f0bf",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk035",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "............",
+      "input_sha256": "e6a2b3a426814a9c761934ad1ebdae02944264da556f6b650ed80251bdf168de",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk036",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": ".....(....)...",
+      "input_sha256": "5f3015d173636ce278ae9fddb58d6c125433a26f00f5848d231125e32c48a873",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk037",
+      "sequence": "GUGUGUGUGUGUGUGU",
+      "scaffold": "..((....))(....)",
+      "input_sha256": "3e6e96db99b5e08f19ba4588e56b6ee9243f00ca6ee3879d680e8eca4e9af602",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk038",
+      "sequence": "GCGCGCGCGCGCGCGCGC",
+      "scaffold": ".(....)(....).....",
+      "input_sha256": "82455c4bd7ad4e178104f7065d30f371c77e89eed743f37a63e7dd2f88290e9e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk039",
+      "sequence": "GUGUGUGUGUGUGUGUGUGU",
+      "scaffold": "..(....(....))(....)",
+      "input_sha256": "75c4f2ef9ca3b6009c45c47ee246433c72018febb819db3797d048a7e2aa1d3e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk040",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": ".(.(....).).",
+      "input_sha256": "eb3f36655a2f8e0d44b254c7e15982385c1c6ac03bb1979981f5f686ab235b2d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk041",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "....(..(....))",
+      "input_sha256": "e47c80df14ee0de1fee7658bd16c7e31dadf90b59ab946e19993d41e6776dd0c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk042",
+      "sequence": "GCGCGCGCGCGCGCGC",
+      "scaffold": "(....)...(....).",
+      "input_sha256": "b90a75045b66c8fbd7878c157f9f72e985b61a2d97953db85aeed90796a9319f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk043",
+      "sequence": "GUGUGUGUGUGUGUGUGU",
+      "scaffold": "((....))((....))..",
+      "input_sha256": "eccc226cf3a4c39bd0e8296c95cf4937e703acebe67e779845d01a7b395b3001",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk044",
+      "sequence": "GCGCGCGCGCGCGCGCGCGC",
+      "scaffold": "....................",
+      "input_sha256": "35da3cfe0f44043e787f6c54b2082de59387341f8498513cdb291addc665f08f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk045",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": ".....(....).",
+      "input_sha256": "b2353791a2156e9c9bea442f8f9071190942dd74f452e1b9d53db541334807c4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk046",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "..............",
+      "input_sha256": "a809ce1290f5443ae531bf6eddbbcf19d78c2a555dc6fb8e224caa165c4e6ab5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk047",
+      "sequence": "GUGUGUGUGUGUGUGU",
+      "scaffold": ".(....)..(....).",
+      "input_sha256": "270f1f0b2be85598d8bdf57640ed01dea6a068271dde6ad3d54598ff52de44dd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk048",
+      "sequence": "GCGCGCGCGCGCGCGCGC",
+      "scaffold": "..................",
+      "input_sha256": "9840d308215840d721f8dae938be8a43357de6b29f3e04cbda2ee6f98957b975",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk049",
+      "sequence": "GUGUGUGUGUGUGUGUGUGU",
+      "scaffold": "...((....))(....)...",
+      "input_sha256": "303ed7df8746f0b133986a07e0c83f5c8162f6fc0de2fafb60eab2b1d107af30",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk050",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "...(....)...",
+      "input_sha256": "f3e3779e5c250fbea6cc5e1276e7b206fb43182127b70d1ccb067a420ad41fc4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk051",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "..(....)(....)",
+      "input_sha256": "6170d4755ed574fafb88eb8029b7d37890d2f00f930c8df24fadd154d7ff761b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk052",
+      "sequence": "GCGCGCGCGCGCGCGC",
+      "scaffold": "(......)((....))",
+      "input_sha256": "5256ba0d2a159ab3b2e6ff4b6cf8c0c66f2b33ebd7e89d4b338b2035cdf66f33",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk053",
+      "sequence": "GUGUGUGUGUGUGUGUGU",
+      "scaffold": "((.(....)...))....",
+      "input_sha256": "8b4a6453c91aaad0d8836a95e52c0efc430ae7a22ec89427dd554d5991a9d831",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk054",
+      "sequence": "GCGCGCGCGCGCGCGCGCGC",
+      "scaffold": "...((....))(....)...",
+      "input_sha256": "68ef3ee5c5be9b8c6c02694eeb1099bfc179fee5d81a29e2dd081a18feb1a6fa",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk055",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": ".((....))...",
+      "input_sha256": "b0a631a330d7b94529a9d87230e14deec0231786382daa10530997276a988257",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk056",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": ".(....(....)).",
+      "input_sha256": "e98016ae3a71711529ac68c8fc73a711b2b1adfdec8ecdbaafcad9a0b4fcb6c0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk057",
+      "sequence": "GUGUGUGUGUGUGUGU",
+      "scaffold": "...((....)).....",
+      "input_sha256": "88d69d2a76e35c87b4eaa661efba02a5c19082288bae5bea1354c5a2eb3f4071",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk058",
+      "sequence": "GCGCGCGCGCGCGCGCGC",
+      "scaffold": ".(............)...",
+      "input_sha256": "83c03ceb84686c86528915017635caaefee3a09038f65cefaaf9eef15a64f10c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk059",
+      "sequence": "GUGUGUGUGUGUGUGUGUGU",
+      "scaffold": ".....(....).........",
+      "input_sha256": "7c22cdd931f3109260be20d6714120fa9dfc89cd8a248ddc768a84e01f212177",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk060",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "............",
+      "input_sha256": "f51844c5616fd7ba7f8bb2f40dcd4364e92860162478f4d3c1c540dc389eccc0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk061",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": ".(.(....).)...",
+      "input_sha256": "e159c1ca50bf308cb13ad0d02de15393665c4ba13b345b4b2bf6c9b8263c9eaf",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk062",
+      "sequence": "GCGCGCGCGCGCGCGC",
+      "scaffold": "....(...(....).)",
+      "input_sha256": "19e5c7f461b9474b3b76300789d2ae3e5f3c7b52f8337e4cac092809664e8969",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk063",
+      "sequence": "GUGUGUGUGUGUGUGUGU",
+      "scaffold": ".(....)....(....).",
+      "input_sha256": "e9575266c9b81cd9e9882e5aca192c4d22bac1450a711477865c04c2b9886446",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk064",
+      "sequence": "GCGCGCGCGCGCGCGCGCGC",
+      "scaffold": "....................",
+      "input_sha256": "35da3cfe0f44043e787f6c54b2082de59387341f8498513cdb291addc665f08f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk065",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": ".....(....).",
+      "input_sha256": "b2353791a2156e9c9bea442f8f9071190942dd74f452e1b9d53db541334807c4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk066",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": ".(((....)))...",
+      "input_sha256": "76f0ad1d492c484b607db03fed93fe067d0c9ba9d91dc3692f63fa85cb0121d8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk067",
+      "sequence": "GUGUGUGUGUGUGUGU",
+      "scaffold": ".(((....))).....",
+      "input_sha256": "f419b6d4238eef1f164837248514700d221a346646949e5b95bc1d148c35fe3c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk068",
+      "sequence": "GCGCGCGCGCGCGCGCGC",
+      "scaffold": "..................",
+      "input_sha256": "9840d308215840d721f8dae938be8a43357de6b29f3e04cbda2ee6f98957b975",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk069",
+      "sequence": "GUGUGUGUGUGUGUGUGUGU",
+      "scaffold": "((....))(.(....).)..",
+      "input_sha256": "77684786e574d9bef06c881f39f4ffd319ee16a4e0b2b1730d626e5dbe70e38e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk070",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "............",
+      "input_sha256": "f51844c5616fd7ba7f8bb2f40dcd4364e92860162478f4d3c1c540dc389eccc0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk071",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "...(..(....)).",
+      "input_sha256": "ca8e24ed256b10ba9dda17b2aec2f77867fd5c653b1a52b9b564c060aea4840c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk072",
+      "sequence": "GCGCGCGCGCGCGCGC",
+      "scaffold": "..((....)..)....",
+      "input_sha256": "4af7dd5af9669d47452dc3a91d0068c5502a4e73493356fdb0e896513b019b6b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk073",
+      "sequence": "GUGUGUGUGUGUGUGUGU",
+      "scaffold": "(....)(.(....)...)",
+      "input_sha256": "9dc06d9a108f69d082619d4b2b7d4bc31e37d0ed4268b9c6f4db9726ee032e09",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk074",
+      "sequence": "GCGCGCGCGCGCGCGCGCGC",
+      "scaffold": "(....).(......).....",
+      "input_sha256": "bb48df35772f8403a53a3e4f67b0771295de76bb03568957b86468c865895a59",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk075",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": ".....(....).",
+      "input_sha256": "b2353791a2156e9c9bea442f8f9071190942dd74f452e1b9d53db541334807c4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk076",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "...((....))...",
+      "input_sha256": "683613d51bb1fd7fc7f190b7656d9450501edba2d3ee91cc73c1c89424b764ff",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk077",
+      "sequence": "GUGUGUGUGUGUGUGU",
+      "scaffold": ".....((....))...",
+      "input_sha256": "846ced757d7984fdb6c0911752f1456d1c479de2739b8e0144b2225d8865e1e5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk078",
+      "sequence": "GCGCGCGCGCGCGCGCGC",
+      "scaffold": ".....(....).......",
+      "input_sha256": "4cd1ec7b3298eb90547aa26d20584fd9da2f5db68c73c39050827e74007ea8bf",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk079",
+      "sequence": "GUGUGUGUGUGUGUGUGUGU",
+      "scaffold": "(....(..(....))..)..",
+      "input_sha256": "06fea55c0c1d37f561151d5de9d3c710a292c792fb26d0412ef72003a2817fd7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk080",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "..(..(....))",
+      "input_sha256": "9d64067a4e52403e6057298480e3a4f927a9e1319cb3d6b2ef2ca3ddfbe2b56b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk081",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "(((....)..))..",
+      "input_sha256": "044ddf6e510504dc4d99a5f1b6b4492fdf0d36d131a6fb30171440772152b640",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk082",
+      "sequence": "GCGCGCGCGCGCGCGC",
+      "scaffold": "(...(....)...)..",
+      "input_sha256": "5609f2e2800405cfde741f2957263fbead1d53bd57211a08ac5f02aebaec6ac3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk083",
+      "sequence": "GUGUGUGUGUGUGUGUGU",
+      "scaffold": "(....).(....).....",
+      "input_sha256": "a729acfb430632dd124ff7c3d2aed4cf5aae06fb785b67421af90f2f96b4bd20",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk084",
+      "sequence": "GCGCGCGCGCGCGCGCGCGC",
+      "scaffold": "...((....)).((....))",
+      "input_sha256": "991f1f51d211ac6e6102b49f1a951c21c2e73ab17b0701ea11741c719e4f9521",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk085",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "...(....)...",
+      "input_sha256": "5aa728c9e1d1bf45e546a89f7bb7eaceec1e94da9448feb72b25d632791476f6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk086",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "...((....))...",
+      "input_sha256": "683613d51bb1fd7fc7f190b7656d9450501edba2d3ee91cc73c1c89424b764ff",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk087",
+      "sequence": "GUGUGUGUGUGUGUGU",
+      "scaffold": "..(..........)..",
+      "input_sha256": "14f506ebdc1e1d3fe260d1f6622eafcbb7832eb7ff57ce3fdf757b62f5c8604e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk088",
+      "sequence": "GCGCGCGCGCGCGCGCGC",
+      "scaffold": "..................",
+      "input_sha256": "9840d308215840d721f8dae938be8a43357de6b29f3e04cbda2ee6f98957b975",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk089",
+      "sequence": "GUGUGUGUGUGUGUGUGUGU",
+      "scaffold": "..((....))....(....)",
+      "input_sha256": "e542b2fe341f0e7a43699d1e7949dad96acf2104d1fa37317c349096dbe658d9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk090",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "....((....))",
+      "input_sha256": "662494c46fcf6a233427c5a54254989ae0654fe7e835e8507957b1c90798e6d0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk091",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "..............",
+      "input_sha256": "e99d15a2f767c1d303c3bc24ac9b51379f41884c07f7f6417b6ab2daaf9141c1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk092",
+      "sequence": "GCGCGCGCGCGCGCGC",
+      "scaffold": "....(((....)))..",
+      "input_sha256": "80657aa279f2c1bf78cb5c5e060faa1fb0e06b9e7afcbf5aa88cbed5c4297e64",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk093",
+      "sequence": "GUGUGUGUGUGUGUGUGU",
+      "scaffold": "(..(.(....).)....)",
+      "input_sha256": "1873041b349dd9f33d52d19798587d521ea506d8fef4456abd68e78349838214",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk094",
+      "sequence": "GCGCGCGCGCGCGCGCGCGC",
+      "scaffold": "(....)(((....))....)",
+      "input_sha256": "5bd3c85e2e1cf3dc3abc4fa89bbec177d3715e5057a617799b872d8489bd38e2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk095",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "...(....)...",
+      "input_sha256": "5aa728c9e1d1bf45e546a89f7bb7eaceec1e94da9448feb72b25d632791476f6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk096",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "..(........)..",
+      "input_sha256": "043827c08620e3b042f289ea2fc5508aa5ff8e2f7e5095c2eb3eb4fba5e86dd9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk097",
+      "sequence": "GUGUGUGUGUGUGUGU",
+      "scaffold": ".......(....)...",
+      "input_sha256": "e8f3856b96767877c9d3101cea8f199e1c9f5b3c1dc76a1299a0b2de4a341d3b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk098",
+      "sequence": "GCGCGCGCGCGCGCGCGC",
+      "scaffold": "(....)(....)(....)",
+      "input_sha256": "8266fa0b49545255423f19d83fa0d7cd2fae204ea5e850b4496e6338152df18f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "pk099",
+      "sequence": "GUGUGUGUGUGUGUGUGUGU",
+      "scaffold": "((....))..((....))..",
+      "input_sha256": "26e9f11664fb43a1bb5de7b69f73ac0bb561795f07c1cbdf3d801a17a911288c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid8_0_1_6",
+      "sequence": "GCGCGCGC",
+      "scaffold": "(....)..",
+      "input_sha256": "55ee06c4569220aa33d2906d81eaea3129ccc77dc9421cdf932ea228c062fa07",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid8_0_1_8",
+      "sequence": "GCGCGCGC",
+      "scaffold": "(......)",
+      "input_sha256": "66d26429f5eca58a6933c6f05e189e79caa1e25c2f3fbdc3ee8d0d8c2721b1fe",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid8_0_2_7",
+      "sequence": "GCGCGCGC",
+      "scaffold": ".(....).",
+      "input_sha256": "2dd7d63e627e7c02b5cb9619011cb7d73241532a39a1e13c777719c34d79acb4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid8_0_3_8",
+      "sequence": "GCGCGCGC",
+      "scaffold": "..(....)",
+      "input_sha256": "1bf900c821ea80bd8f52cef66837cb33aa09945e537281429d8f3d58fd160023",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid8_1_1_6",
+      "sequence": "GUGUGUGU",
+      "scaffold": "(....)..",
+      "input_sha256": "2ced1c6c5649322966ca88dec536324586043209a96eeb8e86d4f9797dc6ec40",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid8_1_1_8",
+      "sequence": "GUGUGUGU",
+      "scaffold": "(......)",
+      "input_sha256": "ca8f767796a565e2be960f6bcaf0d040858aa4f9dd52eb88ab422fbda9c484b2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid8_1_2_7",
+      "sequence": "GUGUGUGU",
+      "scaffold": ".(....).",
+      "input_sha256": "6619e26518bcbcf37d09bf7237bc1ce299d7b63f1e4b59236cc39c212f96a90f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid8_1_3_8",
+      "sequence": "GUGUGUGU",
+      "scaffold": "..(....)",
+      "input_sha256": "f4932fcd1af7f005e682466004985f1a37eef40d93e05eef9a2e916b006d7f3b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_0_1_6",
+      "sequence": "GCGCGCGCGC",
+      "scaffold": "(....)....",
+      "input_sha256": "0142aae992ecdbd648ecc8c5e29f22f17fcea32e714acb2ada89181d0c258f74",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_0_1_8",
+      "sequence": "GCGCGCGCGC",
+      "scaffold": "(......)..",
+      "input_sha256": "4debf1be64f44277949ca6a9d9db4293878efda7aad25e09a8dd91fba4bd34e7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_0_1_10",
+      "sequence": "GCGCGCGCGC",
+      "scaffold": "(........)",
+      "input_sha256": "7de1e50327e549808f70121026d464b78d6eb923c0c4e08c65c60c3e9bd7cf90",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_0_2_7",
+      "sequence": "GCGCGCGCGC",
+      "scaffold": ".(....)...",
+      "input_sha256": "75b8a1a8e739a9458956dbe04f699f9aca5a8815b3f35d9a14e2e6ff78bb2685",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_0_2_9",
+      "sequence": "GCGCGCGCGC",
+      "scaffold": ".(......).",
+      "input_sha256": "a5e788c71283462d0272763102abfc81a72eab10011a1891734735d81aa181a3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_0_3_8",
+      "sequence": "GCGCGCGCGC",
+      "scaffold": "..(....)..",
+      "input_sha256": "a188495038561b556a7d0cc335e62a773c42f58c6fa6c6dec4a08d415ff7c2a0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_0_3_10",
+      "sequence": "GCGCGCGCGC",
+      "scaffold": "..(......)",
+      "input_sha256": "caed8ec632044fe20f06048ec2fe9418810ba6f25c257d7d242e8bdadc538527",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_0_4_9",
+      "sequence": "GCGCGCGCGC",
+      "scaffold": "...(....).",
+      "input_sha256": "12f84af25ae6004ac678b42492a7ee988b41369aac764ae7528220239633aabc",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_0_5_10",
+      "sequence": "GCGCGCGCGC",
+      "scaffold": "....(....)",
+      "input_sha256": "bb08d65b76e4f0128868aa2d73be5c5ff70b8db0c41b3ba567c0e1945150787f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_1_1_6",
+      "sequence": "GUGUGUGUGU",
+      "scaffold": "(....)....",
+      "input_sha256": "2c8d15289677c10055857ba03b07644cd5d9980d90d5ce13fdcd2da616f5fa80",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_1_1_8",
+      "sequence": "GUGUGUGUGU",
+      "scaffold": "(......)..",
+      "input_sha256": "cc34a5d1eedec868d626d84bb2afa94cc08d6253b74898b73151db7a0b7b71a1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_1_1_10",
+      "sequence": "GUGUGUGUGU",
+      "scaffold": "(........)",
+      "input_sha256": "dd66055d052df5fd644c82d1428bb4923a1953b08fb476e0fb0b1fcd16df9478",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_1_2_7",
+      "sequence": "GUGUGUGUGU",
+      "scaffold": ".(....)...",
+      "input_sha256": "6d35d5db81fc085302e31c0e68880d86eac15651f3019e6630f7815b9d1404c3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_1_2_9",
+      "sequence": "GUGUGUGUGU",
+      "scaffold": ".(......).",
+      "input_sha256": "171402888f07e78bc13addb4587340ebc78d49fef6a8e36cea5ea9d18a861f9a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_1_3_8",
+      "sequence": "GUGUGUGUGU",
+      "scaffold": "..(....)..",
+      "input_sha256": "cafe1f3d24c1cf64b88cd547acf5a13ee20365c4edb48ffb021438717e00f52c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_1_3_10",
+      "sequence": "GUGUGUGUGU",
+      "scaffold": "..(......)",
+      "input_sha256": "bb5a9a0c8e5b0be5d695620d8c294aca8b3232f99e7d6ee443df865aaff2f91f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_1_4_9",
+      "sequence": "GUGUGUGUGU",
+      "scaffold": "...(....).",
+      "input_sha256": "b86caabeccfed7ae4e17da8eff8a4e2d37f9eae5543a061142494cd684b89dc2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid10_1_5_10",
+      "sequence": "GUGUGUGUGU",
+      "scaffold": "....(....)",
+      "input_sha256": "4025a049fc6ea4d7094703b9f15cc95ebc0946cc34a86ea024e69cbd00c4152d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_1_6",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "(....)......",
+      "input_sha256": "753a3b4aa14d61e6f45447e0b53679829328968e1212904bcfc6e4877fa51542",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_1_8",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "(......)....",
+      "input_sha256": "4505f210a2d34ca0838d1ad5cc45798f6871c03f380067a76981c4e5fd0de55f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_1_10",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "(........)..",
+      "input_sha256": "5552487f0ceafbe2ce56526174be4b1c8f4f8517e8e95938169d648aebda5e41",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_1_12",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "(..........)",
+      "input_sha256": "f34f1a0ff8a060b8d91a38dd69b8a162326c0e1768777595902847c59782888a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_2_7",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": ".(....).....",
+      "input_sha256": "d43a634923d4a95aadaf1b99f0cb3399a89d8f08388331efb9bd784b3b42fe71",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_2_9",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": ".(......)...",
+      "input_sha256": "a86dbfc0f9624f127475bef2935e55e5d52abbd319e487c0afbdfb444e12bb66",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_2_11",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": ".(........).",
+      "input_sha256": "8473ce6b8b2d1a84cd0165fef7ef73623250b6ad06c4121dceb525e2ce44c2d4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_3_8",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "..(....)....",
+      "input_sha256": "ef20b416e4d6d5af91d887921a233da506146fd43fc37f88fe168abc6887edd8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_3_10",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "..(......)..",
+      "input_sha256": "732c43ad7dc57f14241993b63cc39262818f13d4ed3fa7424b757e5917b2d9b8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_3_12",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "..(........)",
+      "input_sha256": "ee1fe937ad6ec6ff5b82b1a5a90165af1ddc2c9de6a0d989ef6d1defd0e63e13",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_4_9",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "...(....)...",
+      "input_sha256": "f3e3779e5c250fbea6cc5e1276e7b206fb43182127b70d1ccb067a420ad41fc4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_4_11",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "...(......).",
+      "input_sha256": "e3e489af856c64f0ac69091cd2c265de138adcf75f16899c0899c637763f69d8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_5_10",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "....(....)..",
+      "input_sha256": "ab9ec9dfe56676864e175ba4204bbce851f35e409b7f91886f9e880f14ed344c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_5_12",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "....(......)",
+      "input_sha256": "9fdc54a94b5a8f9569e90eefba865a6190613c30218669cb67629fb4e8cbd272",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_6_11",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": ".....(....).",
+      "input_sha256": "108175225e4c5ed5f9b7c0cb1ba14b350273a055c1a628cd58bbe3acbd65fd65",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_0_7_12",
+      "sequence": "GCGCGCGCGCGC",
+      "scaffold": "......(....)",
+      "input_sha256": "9a52538d01ef18057ef12da0b0e4f9facf2414ff78259250f329bcb04d207bb8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_1_6",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "(....)......",
+      "input_sha256": "5ebc4f55ce1abb355806995243e3a8058a5b78399c8ab88f9e2429afa32fd362",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_1_8",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "(......)....",
+      "input_sha256": "cf221b1c41cee1f0762b726de51278b3dfa33e95b7d4bf7b0acf217f9978967c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_1_10",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "(........)..",
+      "input_sha256": "1ba3bd1ff5e02c63097026f09a6414ab13653e2b28318af72b9c82c85b5d2b25",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_1_12",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "(..........)",
+      "input_sha256": "c6205151e8f024bc86cf12b6637e0f16993bed35d619a10aa17132a10f600341",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_2_7",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": ".(....).....",
+      "input_sha256": "b570e807f43efee7c0a036abdad68c439d4e3e12758a67eb104a6c8492883729",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_2_9",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": ".(......)...",
+      "input_sha256": "652b902effe2732923af7c78b1c84d0669c4a6e9672f0f24a513bf2a46505dc7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_2_11",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": ".(........).",
+      "input_sha256": "a669507b251ed84a0c6b5b4e4700cbf31d086927023b0d663848448aa6d5c785",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_3_8",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "..(....)....",
+      "input_sha256": "c32035f6eaded0ad73f1a109d3b51418f862385e1ae7d12af9dce8e677779ed7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_3_10",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "..(......)..",
+      "input_sha256": "476b0f8a10518dfeaec3f27c0d0c02e1bbaab88b451e573106624ef39b1464bb",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_3_12",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "..(........)",
+      "input_sha256": "862ed0f6b80745876c43094b967e7e684b18aaf1fa800801b583359768152349",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_4_9",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "...(....)...",
+      "input_sha256": "5aa728c9e1d1bf45e546a89f7bb7eaceec1e94da9448feb72b25d632791476f6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_4_11",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "...(......).",
+      "input_sha256": "9014ba79dded5f38e8d01fa24dbb093d41bcadf7c47738240359feb0c81038aa",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_5_10",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "....(....)..",
+      "input_sha256": "aa5bdbd84c3a047c6efac464b835adf99e7504705d312afc1bf40f1c9469f505",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_5_12",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "....(......)",
+      "input_sha256": "aec3ca4a590bdaa6840bf8967044143c723e0df1cd500c35673f1819a6b0b8db",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_6_11",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": ".....(....).",
+      "input_sha256": "b2353791a2156e9c9bea442f8f9071190942dd74f452e1b9d53db541334807c4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid12_1_7_12",
+      "sequence": "GUGUGUGUGUGU",
+      "scaffold": "......(....)",
+      "input_sha256": "eaa93cf3bdaf726c2b9e3cde584f0f7dc7ab93f614147bfb24cec0bd9f5f5030",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_1_6",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "(....)........",
+      "input_sha256": "abf33ed3e8328568ae5d4387d901150dbb91dcea1b4488e9b55ea8edbceb637d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_1_8",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "(......)......",
+      "input_sha256": "831f0112d8485447a9500ead5d9a846ce9b5e5dc50acbf97a8dd71d93f104408",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_1_10",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "(........)....",
+      "input_sha256": "aa3dabdf4aa92100390b15537572727ed2cb1fbc7132663e4e45d016bf37a9f2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_1_12",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "(..........)..",
+      "input_sha256": "02a6d10a8af8630f9506c8ec302ec42fd4d4d40bff84d657c2eb47a0cec4a47f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_1_14",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "(............)",
+      "input_sha256": "467a3f6cbaf7dda42a2afbc90f2af066759ef817a6fc6e2b3791976ee33fd3e8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_2_7",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": ".(....).......",
+      "input_sha256": "4f2733a484122c9b2e99fe8662fc547a4e6be6bef8eb15170e0537e79ce2f0b5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_2_9",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": ".(......).....",
+      "input_sha256": "14fcb66d6a8e3d8f66102afd937f08bf764fbff83557dc53e048be335426cfa4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_2_11",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": ".(........)...",
+      "input_sha256": "e33749e2e8957898b46b249c9f8daf19c32fa954df6a41ffd8f092711948079b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_2_13",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": ".(..........).",
+      "input_sha256": "033e0d206ea0add5e845ea5985f0cf1e5d644097807f747422b2d97e9000339b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_3_8",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "..(....)......",
+      "input_sha256": "16d0d202abbd1e5e77709513d1ede8b4d3112d37ab8cb3298bd08e6d144994ac",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_3_10",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "..(......)....",
+      "input_sha256": "52ab26f1f9e01b286fef8b9838257f10343e4fedd77adf10c549491689be4e73",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_3_12",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "..(........)..",
+      "input_sha256": "043827c08620e3b042f289ea2fc5508aa5ff8e2f7e5095c2eb3eb4fba5e86dd9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_3_14",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "..(..........)",
+      "input_sha256": "097ab1662aaf35337cdaeefd38a0d8a933dc3955394dcb044b594c0e6624ec90",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_4_9",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "...(....).....",
+      "input_sha256": "3ed3271c79b0b1ae0a02eddb4c1678b2e02a51a659077dc957e69729d0edd503",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_4_11",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "...(......)...",
+      "input_sha256": "6cb81761aa83d526892bfdd6831460b89147c36c8f0e607522ce0f779aa42dfa",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_4_13",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "...(........).",
+      "input_sha256": "46858bcca78d211dad0ec1f0a01de687e633aa236d279623b7f136ce443a5a1a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_5_10",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "....(....)....",
+      "input_sha256": "4eeaaef1c8e4058f721a7625b84f435a1f6b990f2ed8d5c3edd496f51568fb6e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_5_12",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "....(......)..",
+      "input_sha256": "a0c01b5840f8e5b0ae09cc0a84ecb3303adfb1ef7893b7d5dc794449b85d1333",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_5_14",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "....(........)",
+      "input_sha256": "9c655608a0f1fda047157a1bf4fba597977920a6ad427509645a2a5056e3149f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_6_11",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": ".....(....)...",
+      "input_sha256": "5f3015d173636ce278ae9fddb58d6c125433a26f00f5848d231125e32c48a873",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_6_13",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": ".....(......).",
+      "input_sha256": "a50e989c43bf576d147e807ff71f867e23c136d118eb9a11c7416fcadbb02747",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_7_12",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "......(....)..",
+      "input_sha256": "a929fef104368a18681003992ea85fa233e1cd31cb8b25a26ebbf65f504a6cd1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_7_14",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "......(......)",
+      "input_sha256": "45026d236520d230b2136f6854a2b94fbc561808a7414a1ae4edf46f83121c87",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_8_13",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": ".......(....).",
+      "input_sha256": "77cd262dcfc39d8055fcd745d41de557eb43383e468db0be566adbfd2f445dc9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_0_9_14",
+      "sequence": "GCGCGCGCGCGCGC",
+      "scaffold": "........(....)",
+      "input_sha256": "9db52255a57ec357e24979106ca173fcffa6d863573d1e4afddb556a925cd61e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_1_6",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "(....)........",
+      "input_sha256": "0a6e2604a9d16138e4396afe0e4be3cd9c32efaef0892a8c089ae0ca94c47e4b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_1_8",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "(......)......",
+      "input_sha256": "78124d5836688a2e918ed96e33b3ad24a8cc08fcb0569bf460c708c246f3b3ab",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_1_10",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "(........)....",
+      "input_sha256": "a4f7109dfa2ba9793fac616256a97b488f12e0983f6c05cedb95da87bf40f692",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_1_12",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "(..........)..",
+      "input_sha256": "447c392c20dc707d69c813e7cdc0bc0acc23b461b7f0c3c992f103e1cdc603f6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_1_14",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "(............)",
+      "input_sha256": "349eeeb4cad751d4f560af528b5db606eac63c3747de9b34319d22c7c9a2efc4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_2_7",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": ".(....).......",
+      "input_sha256": "0e16d981df03d096fe5aeecc716bf707c50d2e206fd56f921fdd04a99eef79b1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_2_9",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": ".(......).....",
+      "input_sha256": "87e2c0d9f76f53e8eb02eeaabc85aee4213469374a584fdf95accfbfd31f3e83",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_2_11",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": ".(........)...",
+      "input_sha256": "a2397b469fc456b76eea212885f18f6f5b95f21540ce40099391c4f50d8ffeee",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_2_13",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": ".(..........).",
+      "input_sha256": "db90e6c635c5f087ced9c4198e82765ac0b9d86328bf320dfec7858177b43ba6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_3_8",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "..(....)......",
+      "input_sha256": "df478effe2791e80d0b835bce2b01cba905a1c7c931c8edde1774f0be87fb55e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_3_10",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "..(......)....",
+      "input_sha256": "b452ba4a72b06fed663442e93ca11047682b9ed0a766f6208f6bad16144bf0eb",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_3_12",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "..(........)..",
+      "input_sha256": "c1e7c7e156288308508d3f60335ba01e2807a536d97ada3873e5f65902c3d805",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_3_14",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "..(..........)",
+      "input_sha256": "1e19affa846dc7cf1975c88b2d1e8c0569d908c71a45cc794db014e8875ef764",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_4_9",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "...(....).....",
+      "input_sha256": "e8f2634ac02ca71791224c1439dfd34801acce3780f1728ca35a0b6ea7fa0351",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_4_11",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "...(......)...",
+      "input_sha256": "7e67a2131c290fbad92f64cd0950926d06ad3cdefceb8f4b4cf69765274347bf",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_4_13",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "...(........).",
+      "input_sha256": "7f084e5297141684b7ab9daaa4d02be4ab23f9f16cda2a17ed109c85c62be233",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_5_10",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "....(....)....",
+      "input_sha256": "0125c957025a8e2b42efae81bf5a977c6c5b0e9cd40bef51efe0d5ed3a1b04dc",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_5_12",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "....(......)..",
+      "input_sha256": "98fd1941316db2bd7fa69df9b572f72e77ce9cd83737094d8b3d4579fb5342b5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_5_14",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "....(........)",
+      "input_sha256": "ea7fad0606e4ac6adcc359d2197b08cfef5a2ab6a7b3c9c3a48f9b077958b185",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_6_11",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": ".....(....)...",
+      "input_sha256": "c39027a62d6537ab28a930e5b6cbec15ac2f3a5df5de93c7f2d5ab8a56f4724a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_6_13",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": ".....(......).",
+      "input_sha256": "1f0360e14cd9ee39b1f73bb65fe04ecddff2cd7969001279b40f3cc3fa7ac1eb",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_7_12",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "......(....)..",
+      "input_sha256": "4d3d06b9bc73be96261b5855e095d4dd09606bf89cab07c6cc7f05f7ac91108d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_7_14",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "......(......)",
+      "input_sha256": "69985cac8dc57105d2f8a1930d2aff7756da4bca551c6b60fd00c85989edca52",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_8_13",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": ".......(....).",
+      "input_sha256": "352bffda6d3a3f7b21b6826d53ad21ce2be7b993191d3aab806e43fdf6a7d5e7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "grid14_1_9_14",
+      "sequence": "GUGUGUGUGUGUGU",
+      "scaffold": "........(....)",
+      "input_sha256": "a54659ce2642ab8c91e42b9aca45fe35afc7f59a67fc606192a3ff1e3eaf85d2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh000",
+      "sequence": "CCAGCAGCUGGCAUGCU",
+      "scaffold": ".................",
+      "input_sha256": "8c89913553af414065c8fcef1205f2539e1a246728c00d96603c1cbc740c4493",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh001",
+      "sequence": "ACGGGCAUGUGAAUACGA",
+      "scaffold": ".......(........).",
+      "input_sha256": "257239dd36be281a1bec20822338935c2881bca3cdc00e6e714e516eee0c1222",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh002",
+      "sequence": "CACGUACAAGUAUCAAAGU",
+      "scaffold": ".............(...).",
+      "input_sha256": "e9106f737dfa4579ee846a226b962f239fd33711534ee894f1654db1e501addd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh003",
+      "sequence": "AUUGUAAAGUACUUCGUGUA",
+      "scaffold": "....................",
+      "input_sha256": "39fcc2831109322f9f75fd0c221b89ef5e0c226c77bdd067879280580a3bb352",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh004",
+      "sequence": "CCUGGUAACGAAAAAAU",
+      "scaffold": "....(...........)",
+      "input_sha256": "82cd51c857817aae990c870b6b45f87ec7d0a10675627cedc088a566d897d7cf",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh005",
+      "sequence": "CUUUUGCCCGCAGCGAGA",
+      "scaffold": ".......(........).",
+      "input_sha256": "c9394a85c0d510c5159363a5faaffd97600604161640dd2db09c19dd1dc89125",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh006",
+      "sequence": "CGUAAGAAAAACCAAGGCG",
+      "scaffold": "...................",
+      "input_sha256": "6a4915aace228e779aec68bfc203540182279b74a56ae6d99b95adee85c628c2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh007",
+      "sequence": "UCAGCGCGGCGCAAAAAGUG",
+      "scaffold": "...........(.....)..",
+      "input_sha256": "8f9eaee898f486c501f0f611dc7ebb3e16bee3f5161af1aaf459890b8cb847ce",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh008",
+      "sequence": "CGAUGGGAGCUCACUCA",
+      "scaffold": ".....(....)......",
+      "input_sha256": "4c2aa0c9a28e1105dafa051db9b68f899ef2621912e21dedbdaefc8cff638c4c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh009",
+      "sequence": "CCAGGUUGGCAUCGACCC",
+      "scaffold": "..................",
+      "input_sha256": "33bb4f5ac60340856511965a554517d8782460fd4e354f84f18c4b929622a312",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh010",
+      "sequence": "AUUCGACGGGGGAUCUCGG",
+      "scaffold": "...........(....)..",
+      "input_sha256": "05f2fab97ed60ee4fe8b089c22dd1aa4ddfc4c4bc658aaebf3e3e50ef2d79eda",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh011",
+      "sequence": "CUUAGACGGGUCGUUCGGAU",
+      "scaffold": ".......(.....)......",
+      "input_sha256": "3939842e73d311544a41b4e63522f381dffe36c84932fb8f2fea6811bb1165b6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh012",
+      "sequence": "AUGUCCAGGUCCAGGGC",
+      "scaffold": ".................",
+      "input_sha256": "ba7ecaa1d2d9bdfb42e67965947920b9d033ffa6202f9861a163d09215d2a40b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh013",
+      "sequence": "AAUUAAGCCGAGGACCUU",
+      "scaffold": "............(...).",
+      "input_sha256": "57e7ddfb862739661a860e72ba61fa88e1ff56cee4a90a388cbf53ed55c5f8d2",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh014",
+      "sequence": "UACGUCAGGAACCUCAGGG",
+      "scaffold": "...(..........)....",
+      "input_sha256": "265919718392e6b7970e86f84d98c65bdb72ef2cc9555dc3677429f8dc20f679",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh015",
+      "sequence": "CCGAGUACAGUGGCCGGUCC",
+      "scaffold": "....................",
+      "input_sha256": "f5f256a61cb1426edb9fd14c868aacccb3729b36061739cd6cee6feb562ce0da",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh016",
+      "sequence": "CACAACAGUCGCUGAAU",
+      "scaffold": "......(.....)....",
+      "input_sha256": "57a347abbd8e7e7a2a9ce35db8c8b4d7a4d2810dc0405ffa532262ff68a7347a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh017",
+      "sequence": "CAAGUGGCCACGUUACUG",
+      "scaffold": "(....)............",
+      "input_sha256": "26eaa81acfb6e6513993f59b6094eea2d90a9c6e1a173aea6cf6f3d872486e18",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh018",
+      "sequence": "GGCCUUAUCGGCCGACGGA",
+      "scaffold": "...................",
+      "input_sha256": "0219606cf1c1de3b487a79105ba5dbad8420b49e26a5978b126419cd29e067a1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh019",
+      "sequence": "AUCGCUUCGGGGCAUGCGGA",
+      "scaffold": "..(..............)..",
+      "input_sha256": "a2fc3932d6110c6100a7dd63a520f0373471911267f7af0270c806c3f1fb3177",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh020",
+      "sequence": "GAAGGGAUCAAGUUGCC",
+      "scaffold": ".....(.......)...",
+      "input_sha256": "460241b3a122ae924fb12b29d4ac0372ec42eaf72d021f70cdcfb650c1bca1c6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh021",
+      "sequence": "CCGGGGCGAAGUCGUCGG",
+      "scaffold": "..................",
+      "input_sha256": "a678343d84b4556b5698759dfba2fe632a37c4e2288148031fe5b31932db1a61",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh022",
+      "sequence": "AAGAGAUACGGUCCACAGC",
+      "scaffold": "..(...)............",
+      "input_sha256": "b949bcc904e7a2e4167f893b2738e60eb2f6ce487282f7ffd654e44d5629d099",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh023",
+      "sequence": "CACUCAAUUAACCCACUGCG",
+      "scaffold": ".(.....)............",
+      "input_sha256": "8e1642d244fea96d21c2a7c5788b6e5955e0bf42e5a0971466b7eb761929c365",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh024",
+      "sequence": "UUUUCCCUCGUCAGCAG",
+      "scaffold": ".................",
+      "input_sha256": "e9c9903572a52f20da425c6c94cc7d302b5a73303ca95d14142008be3949152d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh025",
+      "sequence": "CAAUUAAGCCAAACCUUU",
+      "scaffold": "...(.......)......",
+      "input_sha256": "74499280f306874ce972cc66b8af9b28de7acc938ba3759e1feb2520082477c5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh026",
+      "sequence": "AUGUAGGGACGGGUCGGUU",
+      "scaffold": "......(..........).",
+      "input_sha256": "47a9ec04d672be236e368a94e1728453ba0e01183db21625c02c0d16e784a9c8",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh027",
+      "sequence": "CUCAGAACACUUUGGGAUUG",
+      "scaffold": "....................",
+      "input_sha256": "6d9e9343e3d6a1a88cb1e14a88cf6a0ffa4919460f48169a6502cb4446919262",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh028",
+      "sequence": "CAAUUUCGGGCACGCUG",
+      "scaffold": ".....(...).......",
+      "input_sha256": "339fb28510e6adb96c9e05bfca37d50600af1bed829c48c46cf027dbd5c6f662",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh029",
+      "sequence": "UACAUGCCCCUGCGAAAC",
+      "scaffold": ".........(...)....",
+      "input_sha256": "91edb1d007e88a44b37360a492885aedbe4667b46d01156e81a26dde52c9e02b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh030",
+      "sequence": "GGUAUCAGUUUUUAACGAA",
+      "scaffold": "...................",
+      "input_sha256": "48616258dc5235483616ab4b5b02e3885d7be97ad6e8f00444dd0e56a2a4f13a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh031",
+      "sequence": "AUCUACUGUGUUAUAUAGGC",
+      "scaffold": ".......(.....)......",
+      "input_sha256": "d1632a783a92664d0d4b40efc0aef942b78c0d807c9775fa677c0a3a819b3bf6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh032",
+      "sequence": "ACAUCUUAGUAGACCCC",
+      "scaffold": "(.....)..........",
+      "input_sha256": "5c5aa26f9bee86b98748a9ab31c5151fa6a9a95204bc56d28b942df627d9e228",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh033",
+      "sequence": "AGCGCUUCAAUGGGUGCC",
+      "scaffold": "..................",
+      "input_sha256": "049057ed93ecef4b2e6a015004281682e614c70e5a233abe248b7fb85a4d84e6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh034",
+      "sequence": "AGUCCUGUUUUGGCCGGUC",
+      "scaffold": "......(......).....",
+      "input_sha256": "7f01b70eeb22c95536182f73c81d19fbf8ffc9881d646373e4eded3fc686e3e0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh035",
+      "sequence": "CUCCUGUCCUAGAAUCAUUC",
+      "scaffold": ".....(............).",
+      "input_sha256": "364fbef13b3e3c07a1459f03f8a71c684944683958bf4b9e1f55e6ffef2df11e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh036",
+      "sequence": "UAGACCGGGUUUGGACC",
+      "scaffold": ".................",
+      "input_sha256": "308a0ba56474273a1bcdad0589df25bcdc3fa15e6458f994a8e68f95c1b99469",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh037",
+      "sequence": "AAGCCAUCUCGUGUUGUG",
+      "scaffold": "..(......)........",
+      "input_sha256": "bac254030b92404709cf014dd918db972955dbc6b81da1e81cc00f179f4a65f7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh038",
+      "sequence": "AUCCGGCUCAAUGAACAUA",
+      "scaffold": "....(............).",
+      "input_sha256": "658aaaf5708ec529fdfe7415ab789b14b39f30f230272edc119ce8a8dcaf29fe",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh039",
+      "sequence": "CAUCCCACAUGGAGGACCCA",
+      "scaffold": "....................",
+      "input_sha256": "233f0a4cff7f151bef377a272b5183da512dccf701ea05dc6f14977c762a58dd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh040",
+      "sequence": "AAACCUUUAUCGCGUUC",
+      "scaffold": "........(.....)..",
+      "input_sha256": "845472a2c56532686c2d136c9cd23a9c0e79c7e5e5361fceea595e32a8c5506c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh041",
+      "sequence": "GUACGACCUCCCCUUUGC",
+      "scaffold": "...(............).",
+      "input_sha256": "d796544c2fba8ab2cd951ee4f11d5d1cfd7dbb4d338ad62713ece9f1d36ef98a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh042",
+      "sequence": "GUACUAUUAAUUCUGUUAU",
+      "scaffold": "...................",
+      "input_sha256": "d444b102b9785263e6bd01d3c860caaf5ee267e7b3354501381f4f8e0a5849bc",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh043",
+      "sequence": "AAGUACUCCGCAUUUAAGCC",
+      "scaffold": "..(................)",
+      "input_sha256": "7fa9c8ec84c9cc3e6b61eec19c88905f595d610395266fa5edb1bfbc3e590cf0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh044",
+      "sequence": "CUUCGAGCCGUGAGGCA",
+      "scaffold": "(..........).....",
+      "input_sha256": "fc54b898d072c5323a3bb9f60da2af2bf5b754782b4261af7a7cecb51c899669",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh045",
+      "sequence": "GGAUCUCGAGGUUACAUC",
+      "scaffold": "..................",
+      "input_sha256": "de9f706ea784ed2c4fbae97c8cc8ad8e5b198c1040b5dd76350ce5b27817fa05",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh046",
+      "sequence": "AUCCUACAGUCACCGCGUA",
+      "scaffold": ".......(.........).",
+      "input_sha256": "0b49fb268d08764b8933127e82a45f17086d441e1f3d1ec74ab0bd685e4ca579",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh047",
+      "sequence": "UGCUGUAAUUCCCUGCGCGC",
+      "scaffold": ".....(............).",
+      "input_sha256": "01741c4dfe66fcf329c9a260665ad7754ad5e12966e22ff342672f7d411e4fff",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh048",
+      "sequence": "UCUAUAAGGGCGAGUCG",
+      "scaffold": ".................",
+      "input_sha256": "027bed44e2dcddeda8b22c245beb545cc6ab2e4ce436502e2cad9b90d188b514",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh049",
+      "sequence": "CCCCAUCCGUGAUUCAUU",
+      "scaffold": "..(.....).........",
+      "input_sha256": "875a1a07932746335d8591d416823a639a450c7d451a2acfba157153b253b86f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh050",
+      "sequence": "UCAUUGCGUGCGUGCUCUU",
+      "scaffold": ".......(..........)",
+      "input_sha256": "505fb5025464d1a25a0ca8fe7590ced5e08ac4053df1d4fe29f911bf3dddc529",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh051",
+      "sequence": "ACCGUCGUUCAAGGCUCGGG",
+      "scaffold": "....................",
+      "input_sha256": "e12a0cdf9d806b36ed003a20f94ffa54b45f687b040a969bf258160db0a1c4b9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh052",
+      "sequence": "UCUCGAGAACGACCAAC",
+      "scaffold": "(.......)........",
+      "input_sha256": "2d6b5d39667de6e3260d12dd3d0962db541853350271d082524087ea621c0f7f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh053",
+      "sequence": "AUGAGAAUCCGAGCCUAC",
+      "scaffold": "...(...)..........",
+      "input_sha256": "225e75579a00e91dcc263ccc917597bdae185337ec791b9c0018329e64f929e7",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh054",
+      "sequence": "AGUUGCUAGACUCAGAACG",
+      "scaffold": "...................",
+      "input_sha256": "dfbfaf3ac5829ae2605cb5bb61fe8d3c69484b45b52cf6501b7c75fb98e82519",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh055",
+      "sequence": "CAAGCGCCUCACUUCUACAA",
+      "scaffold": "............(.....).",
+      "input_sha256": "ea1b577fc4537716fbe4bdaa8ac629cb2716cff677682a3962e8b35c7cc35780",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh056",
+      "sequence": "UAGUCUUCACUCCCGUC",
+      "scaffold": "..(.......)......",
+      "input_sha256": "0f6e67d5f1d2e299cfd0b2c5d347b3fcde5bc46439eddf8bcf7a3269d61c5d81",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh057",
+      "sequence": "UCUCAAGCCGGCGUGGUC",
+      "scaffold": "..................",
+      "input_sha256": "78bd574f3d9a51d02de141b9b607d84d64d7a7bb85fe21e785590b765594139e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh058",
+      "sequence": "AUCAACGUGCGGUUGUUUU",
+      "scaffold": "(............).....",
+      "input_sha256": "3584184aa920c121c11ba22bc7d4edeb01b7e35215c8c7e620aa2d2b36ead909",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh059",
+      "sequence": "CUGCCGAUGCGUCCAUCGAG",
+      "scaffold": ".(....).............",
+      "input_sha256": "9a14901074f7355d5fe12ec702298506499c1bb3c47f802be23537c2ac40671b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh060",
+      "sequence": "CCGGGGGUCAAAUGAUG",
+      "scaffold": ".................",
+      "input_sha256": "2dcd85897c6f1b323dafba89912464e782a51f4155dfae29c3221b6e168e86fb",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh061",
+      "sequence": "GAUUUAAGGGCACCACGC",
+      "scaffold": "..(...........)...",
+      "input_sha256": "3cbe244b928b58c798afe646f18509dac860d923eba64738fb52e11e96dff803",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh062",
+      "sequence": "GUAGUCUUCGAUCGGCCUA",
+      "scaffold": ".......(..........)",
+      "input_sha256": "ebdf71ed3d8dc45023f703e0f03425b4e9553834d0eec541c342f81dce5e902e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh063",
+      "sequence": "ACGCAACACCAUCGGAGGCU",
+      "scaffold": "....................",
+      "input_sha256": "7ea615477c2acc4ecf129c47da1daad976603c7aee7ae369adfd756ec6252725",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh064",
+      "sequence": "CGGAGGUGAGAAGCCUA",
+      "scaffold": "..(...........)..",
+      "input_sha256": "1db33427e2f2fa659572e731bfc8d96f8a31feecdd741043bff9a54b0717cb79",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh065",
+      "sequence": "UAGUCCUAAGUGGGUGCG",
+      "scaffold": "..(...........)...",
+      "input_sha256": "5e73da4901fdf3d1e389cf85015e0dd893a756b35304e212a57692c918feb3d9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh066",
+      "sequence": "UCUUGCUUAGUCUGUACAU",
+      "scaffold": "...................",
+      "input_sha256": "db154d394b952cda0c23c393ee8b5642c456723f5d399b4d179d78aa4c08f1b9",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh067",
+      "sequence": "GAUCAUAGGUCUUGAAAAUC",
+      "scaffold": "....(......)........",
+      "input_sha256": "95782962f3db1378d97777a9ad79dc05380b36c9102c032849081c92ef1fc7c6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh068",
+      "sequence": "AAAUACUUAAACUAAGU",
+      "scaffold": "......(........).",
+      "input_sha256": "96f7c2dac99b500e42cff599318abe7114b8fce40d461f3c86e5d63ee534f70c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh069",
+      "sequence": "CUCAGCACACACGUCCGA",
+      "scaffold": "..................",
+      "input_sha256": "b8e23e1313a976234becb1fa661ab0aacad048d5557d6772262848421956dac4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh070",
+      "sequence": "UAAGAGACGUUAACCUUCU",
+      "scaffold": "(...........)......",
+      "input_sha256": "e97d53c99928d700e1c203e138ec7414f1d4e7c81da3b0f9833934e99d46bedb",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh071",
+      "sequence": "CCGUCGUUCGGGCUGAGCCA",
+      "scaffold": "..(.........).......",
+      "input_sha256": "eac14770b4f8f2609b0d90040c91e6aa680cf31ef6bc725b78b7e5b692038a92",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh072",
+      "sequence": "GACAGAUGACGACAUAA",
+      "scaffold": ".................",
+      "input_sha256": "69a7d06ca9f47e0d06c1a46c6f34f0ed9d50d7e7ac926ee10c4c56b20d93ef77",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh073",
+      "sequence": "GAAACUUGUCUGAUUGAU",
+      "scaffold": "...(......).......",
+      "input_sha256": "e8bd0bcbb4fa9e22f2d3fc8cc934bdd0cf4ff6797a3ec4508914d44f6362dd16",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh074",
+      "sequence": "AGGCAUUGUGCUGAGUGGG",
+      "scaffold": "..(............)...",
+      "input_sha256": "49275680791c9cb3ea89962433a3c3b0a7f60c294a599624afc9157060bd14b1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh075",
+      "sequence": "AAAAAAACCAGACUUAUCCC",
+      "scaffold": "....................",
+      "input_sha256": "1ea1d4e86d053e62c1069f9820ec5df4ad34bfea5ac5efef2c27f0c728f583b4",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh076",
+      "sequence": "AUAGGCAGGUAUCUAUG",
+      "scaffold": "...........(....)",
+      "input_sha256": "763c208b0aa231d626c69e38b74d6d7bcbb3a0729c8b83f893d36d9e5faac1cd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh077",
+      "sequence": "CCCUGCGGCGUAAACGUC",
+      "scaffold": ".(.......)........",
+      "input_sha256": "094e06914548d09153fededfc1242ae4584062cd1e993c305e0fd1c30a7d00d1",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh078",
+      "sequence": "CUAUAUGUACUUGCCACAA",
+      "scaffold": "...................",
+      "input_sha256": "175eca7e8e950a85c1818355f22000cb120ca3886209f8071e13c0f2f63a0167",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh079",
+      "sequence": "GAUAACUUUUUCCUACCAUG",
+      "scaffold": ".(......)...........",
+      "input_sha256": "4d0d21d3f99ef65c52e56ef0b5af2f3957b624cfe844d4703fad6cbb865b1ba6",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh080",
+      "sequence": "CCCCUCAGUCACCGCCG",
+      "scaffold": ".........(......)",
+      "input_sha256": "a625da073d275696b2e541d6d0e119d879c27fdce980393b981fdcd706ebdd0e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh081",
+      "sequence": "UAACCAAAAACUUGAUCC",
+      "scaffold": "..................",
+      "input_sha256": "21944ff22b866c366e20c68d9eab5463bc761be6b391ca48afa47684e89f9e7b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh082",
+      "sequence": "UAACUCCACAACCAUCUGA",
+      "scaffold": ".........(......)..",
+      "input_sha256": "efcb2665379400adc4d6774548eacd3684f20013809a53cd1f6bf570c82e6321",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh083",
+      "sequence": "AUCCCUGCGCACGGAAGUGG",
+      "scaffold": "....(.............).",
+      "input_sha256": "0318e1ed01e5745d439faf907aee22330d87155aae23215061cb4e9c9f3e4e2c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh084",
+      "sequence": "CACAGCCAGUAGAUUAG",
+      "scaffold": ".................",
+      "input_sha256": "53e98af6ed3422fe858adb679943a38641568ad3b0b481acf4330151ab469318",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh085",
+      "sequence": "GUAUGGGACUGUCGCCCG",
+      "scaffold": "....(...).........",
+      "input_sha256": "e56536e3e78c87681c74ce4c69314e99cf80c3b3ef70af06942df2ea330ce29e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh086",
+      "sequence": "GGUAUAAGUGCGCUGAAUC",
+      "scaffold": "....(..........)...",
+      "input_sha256": "e7df0103a2de44d6ad5f3b6e8b84549ceb935936f0fd76965730d4471a0c89fe",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh087",
+      "sequence": "UGAACGUGCAACUAAAAUCG",
+      "scaffold": "....................",
+      "input_sha256": "6680800dcc0073c702b68108b242cbd2a8349a5f031e59bfd7bcefc31f67a0f0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh088",
+      "sequence": "AGGAAAGUCCUAAAUGC",
+      "scaffold": ".........(.....).",
+      "input_sha256": "2f11f0e6cb9c566c5453805280bf8dc354fee2f8593bb24723430df8446d766c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh089",
+      "sequence": "CGGUCGUAAAAAACUUGG",
+      "scaffold": ".....(.........)..",
+      "input_sha256": "4703a477a1e4525b45056ca4a7166c5541d5c79c1c0dad45d3acebcfaf795aa5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh090",
+      "sequence": "UACUCGCAUGAAAAGAGUC",
+      "scaffold": "...................",
+      "input_sha256": "9b9589063d3243de6d9dfa9edb7d5fdbb526e96b29bb2f28c19a87030f979070",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh091",
+      "sequence": "CUGAGGAGUUGGCUCCGGCG",
+      "scaffold": ".(.....)............",
+      "input_sha256": "96aeeb724e704ca0df804814a12129e733a01e1a0aeeeb3629ad6d49ed273b5a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh092",
+      "sequence": "CUUGCACAAGGGCCAUA",
+      "scaffold": "(..........).....",
+      "input_sha256": "8cc2879014950cde5a8b40f9adffac86f96f63197569638b1e9dd2528197b28e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh093",
+      "sequence": "CCAAUCUAUGUAGAUGGA",
+      "scaffold": "..................",
+      "input_sha256": "3fcaa6209ce9ef946a14f1272a6da3509794a54bfb9a04a7bea5d0cedc92d44e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh094",
+      "sequence": "GCCCCACGACUAUUGACCG",
+      "scaffold": ".........(....)....",
+      "input_sha256": "af5223d10b12eedb266819ab1bad154a2aa5528a61b46af58a9c7e31f883fb6e",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh095",
+      "sequence": "UCGUUAUAGACUAUUGAGGC",
+      "scaffold": "......(..........)..",
+      "input_sha256": "276d621404facdcd68c03a60277cffdf3046e72946ce8e6e88c71405dacd8486",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh096",
+      "sequence": "GCCAAGGAAGAAAUCCA",
+      "scaffold": ".................",
+      "input_sha256": "bccb435512a186ffb7f0fb5d0fa01ed190875d2829a61a292461f04bf7d6fb8a",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh097",
+      "sequence": "GGUCGUCACUGCUAACCA",
+      "scaffold": ".(...)............",
+      "input_sha256": "8fac4c4a62b3c51a271a5d0eec4be69c9c60b1f4d8dfece11b08256e460b8c8d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh098",
+      "sequence": "AAACCCAAUUUGUGAGAAU",
+      "scaffold": "...(...........)...",
+      "input_sha256": "a06365eb379f681514c78c008cc8f897ee93d765afe0df065020bd56e9a5be6c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh099",
+      "sequence": "GUUUCGCGAUAGGUACAACU",
+      "scaffold": "....................",
+      "input_sha256": "2691f1ad90b8113ae3286b73c3458897051efb1ffdb1657cb6c0ed251461867f",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh100",
+      "sequence": "AUGUAGUGCAUCCGUUG",
+      "scaffold": "...........(....)",
+      "input_sha256": "b18295d6af0536e7557489baf82a72271bb1fa9a8fe206ae4e9be19ec59c07ac",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh101",
+      "sequence": "AUAGGCAGUGCAGAGGGA",
+      "scaffold": "........(...).....",
+      "input_sha256": "37cf69a5d51a905b26fb3a025fa170ca08fd47d0f135e6a5daea6cdbc60af75c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh102",
+      "sequence": "ACGUGCAUGCACAUUAUGA",
+      "scaffold": "...................",
+      "input_sha256": "2505e1e311bdbda621502cfee28efadfe188c94c46d788f1ab3188579d4fbb09",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh103",
+      "sequence": "CUGCGGCGGAUGGAGGUACU",
+      "scaffold": "(.............).....",
+      "input_sha256": "7d708781cfdfe56795bf79ca32e6f820eafbf81175dbf6b7c4d72605969231e5",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh104",
+      "sequence": "UGGUUAUCAGAGCCGAG",
+      "scaffold": "..(....).........",
+      "input_sha256": "d73fb89189121e0499b2e932c182daf14e67ff3f9328136b528fe8c8f3465109",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh105",
+      "sequence": "UAUAUGCUUUAGAAGCAG",
+      "scaffold": "..................",
+      "input_sha256": "833a5c1cd1becf63183d39c85a098698741f9083b701abf0fb1cb33cf47a3f08",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh106",
+      "sequence": "GGGUUUAGACCCGACAUGC",
+      "scaffold": "..(........).......",
+      "input_sha256": "0c45a677041f83c6d76f3a9db5487cbe22167c1c0de5998dba4208d72c759129",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh107",
+      "sequence": "CUUACGGCCAACCAAGUAUG",
+      "scaffold": ".(...............)..",
+      "input_sha256": "e88208959bd6b8386a51a11a37eeab8f6f57f4fa620c8a7841ab8d039126a994",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh108",
+      "sequence": "CCCAACUAGCCACCUGC",
+      "scaffold": ".................",
+      "input_sha256": "90872064d9eec3a85d6b32e70f3777063b4e534e2deec5ddb45446ef26f6f9f0",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh109",
+      "sequence": "GAACUGCAAGCAUGCGGU",
+      "scaffold": "...(...........)..",
+      "input_sha256": "930bbd662909a302cd84c142c326f8acba6a20e9bf7d67f23c9e27b703ded1c3",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh110",
+      "sequence": "UCCAUGGGUAUCACCUUAC",
+      "scaffold": "........(........).",
+      "input_sha256": "3e866e66753ddc9aab05f03a423dacbd1977ff9b97ea2106aba2a56fcb02831c",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh111",
+      "sequence": "UCCUUCCGCGAACGCAGCUU",
+      "scaffold": "....................",
+      "input_sha256": "55b2ced31feb70c5aa595c830ea91a5fda13321d36f7e5cb53b655cba1518373",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh112",
+      "sequence": "CAUGACCUGAAUAUUGA",
+      "scaffold": "...(.........)...",
+      "input_sha256": "b1ce186ae9a4382ae43da6e4d7e2d97bd8bb6229052d73f4c4d2d389aba5f3fd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh113",
+      "sequence": "CCAGCUGCUCCGUAACAC",
+      "scaffold": "(..........)......",
+      "input_sha256": "bb027083421d26c1370f290aedfe6a40e0c3fe72129d54f55fadddee6c1287bd",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh114",
+      "sequence": "GAACUCGGCGCAUAAACGU",
+      "scaffold": "...................",
+      "input_sha256": "698a51063d71739e59ab5e89777efa14c95a239c144b356ac86915ee25151c95",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh115",
+      "sequence": "UACCCUAGAGUACUGGGAUG",
+      "scaffold": "....(..............)",
+      "input_sha256": "aa001b7b00b94c4fc4203c56edd6a1e0592ba91c0c22a41b7284cee9550cdb48",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh116",
+      "sequence": "GCGGGAGCGGUAUAGCC",
+      "scaffold": ".........(.....).",
+      "input_sha256": "bb530697ffec34b59180cedde6df7ceb622d60c7da698917f7aadf828891917b",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh117",
+      "sequence": "AGACAACGCAAACGGGAG",
+      "scaffold": "..................",
+      "input_sha256": "9b757fbf0e86d4bbe910fd143ee6a603ff176107e0a769b362d812420b973e0d",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh118",
+      "sequence": "CUGCUGUCCUGGCCUGACU",
+      "scaffold": ".....(......)......",
+      "input_sha256": "f918877d1b00182b0188b6a8b9bb2c74877f9e54797548cdee0d6d928ece04ea",
+      "parameter": "rna_Turner04.par"
+    },
+    {
+      "name": "fresh119",
+      "sequence": "UCAUUUUAUCUGGAUAUUUA",
+      "scaffold": ".....(......).......",
+      "input_sha256": "db726c753c60929c7d497ab2ab8457b5fdc916d4764e2ca65439560d3ace20c7",
+      "parameter": "rna_Turner04.par"
+    }
+  ]
+}

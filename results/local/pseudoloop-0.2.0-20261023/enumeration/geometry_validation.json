@@ -1,0 +1,15 @@
+{
+  "cases": 729,
+  "counts": {
+    "structure_instances": 156534,
+    "base_instances": 2898623,
+    "derivations": 156534,
+    "fully_unpaired_window_instances": 4328947
+  },
+  "counterexamples": [],
+  "elapsed_seconds": 4.360074625816196,
+  "enumeration_archive_sha256": "45ea2158349ea99ca8c917018ec0b16e387b0e0fceba35bd777fda770567eaf2",
+  "reference_sha256": "30547e8701d3c28b7e56e97384b207d405157e0c6df4b7cf71d605892740a48f",
+  "script_sha256": "91e87d56531870c21705a18463f7767dcf8f3d415154f386b57a2a31164f4c40",
+  "status": "passed"
+}
