@@ -328,3 +328,11 @@ was performed.
 - 新しいFigure 1/3は [実験出力directory](../experiments/results/figures/pseudoloop-0.2.0-20261023/) に保存し、PNGを確認した。論文figures/にはまだ写していない。
 - E1は全26,063入力の131,753 profileだけを計算する8 arrays/230 tasksを準備した。全cpu_16、h_rt 15分～2時間20分、見込み5.41197 points、全h_rt使用で8.356 points、file見積3,020 entries。dry-runと最終runnerの21 local jobs、resume確認が成功した。**qsubは未実行**。Figure 2B、SIのcontext TVとPseudoLoopの集計はこのarray完了後に更新する。
 - 原稿の数値、既存図、外部実装repoには変更を加えていない。git commitなし。
+
+
+## 2026-10-25 Figure 1A: seven structural contexts
+
+- Updated `scripts/make_figure1.py` to place a fictional 37-base arc diagram below A, after rearranging the scaffold and extension side by side. All seven base colors match C and the Terc figure; all three pair classes remain distinct. The two-band H-type pseudoknot has PseudoLoop only in its three unpaired gaps. The optional band multiloop was omitted for space.
+- Assigned every base with `classify(37, completed_pairs)` from the unmodified LinearKnot v0.2.0 shape reference, extracted with its fixtures to node-local storage via `git archive`. The renderer checks reference SHA-256 `30547e8701d3c28b7e56e97384b207d405157e0c6df4b7cf71d605892740a48f`. All 14 reference fixtures / 545 fully unpaired windows passed. This is shape classification, not a new folding or probability result.
+- Saved [PDF/PNG, bilingual caption addition and handoff, per-base classification, all feedback marks and validation](../results/figures/figure1_fb6_20261025/README.md). Opened the eight feedback images individually and mapped the p4 “図” comment to “seven structural contexts”; recorded all 32 actual markup objects and grounds for uncommented marks.
+- Kept the 178×145 mm canvas, minimum 7 pt text and 300 dpi preview. Opened the final PNG; no overlap/clipping found. B/C pixels and input/data hashes match the adopted fb4 version. Verified the seven-color palette and all eight paper export hashes. Exported only paper `figures/figure1.pdf` and its manifest entry. External implementation trees, manuscript sources and measured RNA outputs were not edited by this task; no folding runs, scheduler jobs or Git commits.
