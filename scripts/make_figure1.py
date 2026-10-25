@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Figure 1: scaffold, decomposition and outputs from one conditional ensemble.
+"""Figure 1: scaffold, seven contexts, decomposition and saved ensemble outputs.
 
 Render the adopted exact bpRNA_RFAM_31397 example at 178 x 145 mm.
 No folding program is run and no experimental values are invented.
@@ -7,16 +7,19 @@ Example, from the experiments repository::
 
     MPLCONFIGDIR=/tmp/figure1-mpl python3 scripts/make_figure1.py \
         --data results/local/pseudoloop-0.2.0-20261023/examples/figure_data.json \
-        --out results/figures/figure1_fb4_20261023
+        --context-reference /tmp/figure1-reference/test/tools/pseudoloop_context_reference.py \
+        --out results/figures/figure1_fb6_20261025
 
 The output directory receives figure1.pdf, figure1.png (300 dpi), caption.md,
-README.md and validation.json. The old figure and saved inputs are unchanged.
+README.md, structural_contexts.json and validation.json.
+The old figure and saved inputs are unchanged.
 """
 import argparse
 import hashlib
 import json
 from pathlib import Path
 import re
+import runpy
 import subprocess
 
 import matplotlib
@@ -39,6 +42,52 @@ CONTEXT_COLORS = dict(zip(CONTEXTS, [NEW_COLOR, "#1baf7a", "#eda100", "#e87ba4",
 PAIR_CUTOFF = 0.01
 BEAM_DEMO = 3  # A drawing parameter only; panel C is exact.
 INPUT_FILES = ["rec.json", "in.txt", "lc.out", "bpp.tsv", "capr.out", "racc.out", "samp.out", "mea.out"]
+REFERENCE_SHA256 = "30547e8701d3c28b7e56e97384b207d405157e0c6df4b7cf71d605892740a48f"
+REFERENCE_COMMIT = "f93b55ed9749dd1c198cd1f1809aece50f12f7d8"
+CONTEXT_NAMES = dict(zip("SHBIMEP", CONTEXTS))
+
+
+def structural_context_example(reference):
+    """Classify a fictional pair map with the unmodified v0.2.0 reference."""
+    digest = hashlib.sha256(reference.read_bytes()).hexdigest()
+    assert digest == REFERENCE_SHA256, "Use the LinearKnot v0.2.0 geometry reference"
+    classify = runpy.run_path(str(reference))["classify"]
+    n = 37
+    scaffold = {(2, 23), (4, 22), (6, 20), (8, 12), (25, 33), (26, 32)}
+    extension = {(14, 18), (28, 36), (29, 35)}
+    pairs = scaffold | extension
+    assert not ({x for pair in scaffold for x in pair} &
+                {x for pair in extension for x in pair})
+    for group in (scaffold, extension):
+        assert not any(crosses(p, q) for p in group for q in group)
+    assert all(j - i >= 4 for i, j in pairs)
+    labels, explanations = classify(n, pairs)
+    assert set(labels) == set(CONTEXT_NAMES)
+    bands = [{p for p in scaffold if any(crosses(p, q) for q in extension)},
+             {q for q in extension if any(crosses(p, q) for p in scaffold)}]
+    assert [len(band) for band in bands] == [2, 2]
+    assert all(crosses(p, q) for p in bands[0] for q in bands[1])
+    new_noncrossing = extension - bands[1]
+    assert new_noncrossing
+    db = ["."] * n
+    g_db = db.copy()
+    for i, j in scaffold:
+        db[i - 1], db[j - 1] = "(", ")"
+        g_db[i - 1], g_db[j - 1] = "(", ")"
+    for i, j in extension:
+        db[i - 1], db[j - 1] = "[", "]"
+    return dict(length=n, scaffold_pairs=sorted(scaffold), extension_pairs=sorted(extension),
+                completed_pairs=sorted(pairs), scaffold="".join(g_db),
+                completed_structure="".join(db), labels=labels,
+                contexts_by_position=[CONTEXT_NAMES[c] for c in labels],
+                positions_by_context={name: [i for i, c in enumerate(labels, 1) if c == code]
+                                      for code, name in CONTEXT_NAMES.items()},
+                explanations_by_position=explanations, context_colors=CONTEXT_COLORS,
+                reference_version="LinearKnot v0.2.0", reference_commit=REFERENCE_COMMIT,
+                reference_file="test/tools/pseudoloop_context_reference.py",
+                reference_sha256=digest, crossing_bands=[sorted(band) for band in bands],
+                new_noncrossing_pairs=sorted(new_noncrossing),
+                scope="Fictional shape illustration; no sequence, folding, energies or probabilities")
 
 plt.rcParams.update({
     "font.family": "DejaVu Sans", "font.size": 7, "text.color": INK,
@@ -346,21 +395,42 @@ def decomposition_panel(s):
     s.text(63,87,'Joined lines: one step; E = local energy (added once).')
 
 
-def make_figure(d):
+def context_schematic(s, example):
+    """One colored circle per base, with the existing pair colors and styles."""
+    s.text(7, 102, 'Seven contexts (schematic)', fontsize=7.5, weight='bold')
+    ax = s.axis(7, 88.5, 50, 11)
+    n = example['length']
+    ax.set(xlim=(.3, n + .7), ylim=(-2, 11))
+    ax.axis('off')
+    ax.plot([1, n], [0, 0], color=MUTED, lw=.45, zorder=1)
+    pair_arcs(ax, set(map(tuple, example['completed_pairs'])),
+              set(map(tuple, example['scaffold_pairs'])))
+    for patch in ax.patches:
+        patch.set_zorder(2)
+    ax.scatter(np.arange(1, n + 1), np.zeros(n), s=3**2,
+               c=[COLORS[c] for c in example['contexts_by_position']],
+               edgecolors=INK, linewidths=.22, zorder=3)
+    s.text(7, 87, 'Base colors: context key in C')
+
+
+def make_figure(d, example):
     s=Scene(145); n=len(d['record']['seq']); g=pair_set(d['scaffold'])
     gp=set(map(tuple,d['record']['pk']))
     s.panel(2,142,'A','Keep G; add G′')
-    for y,label,pairs in ((134,'Scaffold G',g),(120,'Extension G′',gp),(106,'R = G ∪ G′',g|gp)):
-        s.text(7,y,label,fontsize=7.5)
-        pair_arcs(arc_axis(s,7,y-11,50,8,1,n,26),pairs,g)
+    for x,label,pairs in ((7,'Scaffold G',g),(35,'Extension G′',gp)):
+        s.text(x,134,label,fontsize=7.5)
+        pair_arcs(arc_axis(s,x,125,23,6,1,n,26),pairs,g)
+    s.text(7,122,'R = G ∪ G′',fontsize=7.5)
+    pair_arcs(arc_axis(s,7,113,50,6,1,n,26),g|gp,g)
     # Only the scaffold band that crosses G′ is underlined; its enclosed
     # hairpin does not belong to that band in this new example.
     bandg={p for p in g if any(crosses(p,q) for q in gp)}
     spans=[(min(i for i,j in p),max(j for i,j in p)) for p in (bandg,gp)]
-    for (i,j),y,c in zip(spans,(92,89),(GREY,ORANGE)):
+    for (i,j),y,c in zip(spans,(111,109),(GREY,ORANGE)):
         x=lambda p:7+(p-.5)*50/n
         s.line(x(i),y,x(j),y,color=c,lw=1.4)
-    s.text(7,86.5,'Grey and orange bands cross')
+    s.text(7,107,'Grey and orange bands cross')
+    context_schematic(s, example)
     decomposition_panel(s)
     s.panel(2,82,'C','Outputs: exact example, bpRNA_RFAM_31397 (61 nt)')
     s.rect(5,1,170,76,fill=False,ec=BLUE,lw=.8)
@@ -475,203 +545,216 @@ def read_feedback_data(source):
     return d
 
 
-def write_notes(source,out,d,report):
-    source_name=source.resolve().relative_to(ROOT).as_posix()
-    out_name=out.resolve().relative_to(ROOT).as_posix()
-    total=report['sample_draws']; a,b=report['sample_counts_shown']; other=total-a-b
-    caption=f"""**Figure 1. Structure prediction and conditional ensemble analysis with LinearKnot.**
+def write_notes(source, out, d, report, example, reference):
+    source_name = source.resolve().relative_to(ROOT).as_posix()
+    out_name = out.resolve().relative_to(ROOT).as_posix()
+    caption = """A下段の模式図は架空の一つの構造を示す。
+各円は一つの塩基で、その色は構造文脈を示す（Cの凡例）。
+橙色の非対合塩基は、交差するbandの間の隙間であるPseudoLoopに属する。
 
-Aでは、与えたscaffold Gにextension G′を加えて完成構造Rを作る。
-GとG′は対合塩基を共有せず、それぞれは交差対を持たない。
-灰色と橙色の下線は、互いに交差する入れ子対の群（band）の範囲を示す。
-density-2の制限では、交差でつながったband群のうち一つの位置を覆うbandは最大二つである。
-
-**(A)** Adding extension G′ to the supplied scaffold G gives the completed structure R.
-G and G′ share no paired bases, and each has no crossing pairs.
-The grey and orange underlines mark the spans of two groups of nested pairs, called bands, that cross each other.
-The density-2 restriction allows at most two bands in a connected crossing group to span one position.
-
-Bは、二つのscaffold対の間に左右の枝を一つずつ加えたmultiloopを示す。
-multiloopは、枝と呼ぶ閉じた部分構造をつなぐloopである。
-各枠は状態、すなわち部分構造の集まりを表し、弧はその一例を示す。
-黒い点で合流する線は、子を親につなぐ分解の一段階を表す。
-CPartyは左の枝・内側のscaffold部分・右の枝を一度につなぐ。
-LinearKnotは内側と右の枝を途中の状態にまとめ、次に左の枝を加える。
-Eは局所エネルギーを表す。
-最初の段階では0、次の段階でEを加える。
-beam pruningは、部分構造の最後の塩基である右端ごとに同じ種類の状態を順位づけ、上位b個を残す（模式図はb={BEAM_DEMO}）。
-途中の状態も枝刈りの対象となる。
-丸は保持、×は破棄を示す。
-Cは枝刈りを行わない計算例である。
-
-**(B)** The example has one new branch on each side of a multiloop between two scaffold pairs.
-A multiloop connects closed substructures, called branches.
-Each box is a state: a set of partial structures.
-The arcs show one example from that set.
-Lines that meet at a black dot form one decomposition step, joining the children to their parent.
-CParty joins the left branch, inner scaffold part and right branch at once.
-LinearKnot first joins the inner part and right branch into an intermediate state, then adds the left branch.
-E denotes the local energy term.
-The first step adds zero; the second adds E.
-Beam pruning ranks states of the same type at each right endpoint, the last base in the partial structure, and keeps the top b (b={BEAM_DEMO} in this sketch).
-It also prunes intermediate states.
-Circles remain; crosses are discarded.
-Panel C uses no pruning.
-
-CはbpRNA_RFAM_31397（61 nt）のexact計算を示す。
-Gは、pseudoknotを持つ参照構造の入れ子部分にある8対のAU、GC、GU対からなる。
-左上の対確率図だけは、0.05以上の確率を弧の濃さで示す。
-右の二つの標本図とγ-centroid図は、それぞれ一つの完成構造を示す。
-灰色実線はG、青点線はGと交差しない追加対、橙破線はGと交差する追加対を示す。
-
-**(C)** Panel C shows exact calculations for bpRNA_RFAM_31397 (61 nt).
-G contains eight AU, GC, or GU pairs from the nested part of the reference structure, which also contains a pseudoknot.
-Only the upper-left pair-probability diagram uses arc opacity to show probability (pairs with probability at least 0.05).
-The sample diagrams and the γ-centroid diagram each show one completed structure.
-Solid grey arcs show G; dotted blue arcs show new pairs that do not cross G; dashed orange arcs show new pairs crossing G.
-
-七つのcontext確率の和は各塩基で1となる。
-PseudoLoopは、交差するbandの間の非対合の隙間を示す。
-accessibilityは窓内の全塩基が同時に非対合となる確率である。
-実線・破線・点線は1・4・8 ntの窓を示す。
-accessibilityの横軸は窓の先頭の塩基の位置を1始まりで示す。
-例えば、8 ntの曲線の位置20は塩基20–27の窓を表す。
-標本図は{total:,}回のBoltzmann標本化で最多と2番目に多い構造（{a:,}回と{b:,}回）を示す。
-残る{other:,}回の標本は図示しない。
-代表構造はγ=1のγ-centroid構造である。
-
-The seven context probabilities sum to one at each base.
-PseudoLoop denotes unpaired gaps between crossing bands.
-Accessibility is the probability that all bases in a window are unpaired together.
-Solid, dashed, and dotted curves show 1-, 4-, and 8-nt windows.
-The accessibility x-axis gives the 1-based position of the first base in each window.
-For example, position 20 on the 8-nt curve represents bases 20–27.
-The sample diagrams show the two most frequent structures in {total:,} Boltzmann draws ({a:,} and {b:,} draws).
-The other {other:,} draws are not shown.
-The representative structure is the γ-centroid structure at γ=1.
+The lower sketch in A shows one fictional structure.
+Each circle is one base, colored by its structural context (key in C).
+Orange unpaired bases belong to PseudoLoop, the gaps between crossing bands.
 """
-    (out/'caption.md').write_text(caption)
-    report.update(source_data=source_name,source_data_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
-        panel_C_data_sha256=hashlib.sha256(json.dumps(d,sort_keys=True,separators=(',',':')).encode()).hexdigest(),
-        script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
-    (out/'validation.json').write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n')
-    (out/'README.md').write_text(f"""# Figure 1 — states, partial structures and decomposition trees, 2026-10-23
+    (out / 'caption.md').write_text(caption)
+    (out / 'structural_contexts.json').write_text(json.dumps(example, indent=2) + '\n')
+    report.update(
+        source_data=source_name,
+        source_data_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
+        panel_C_data_sha256=hashlib.sha256(json.dumps(d, sort_keys=True, separators=(',', ':')).encode()).hexdigest(),
+        script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        context_example_length=example['length'],
+        context_reference_sha256=example['reference_sha256'],
+        context_reference_commit=example['reference_commit'],
+        context_reference_path_used=str(reference.resolve()),
+        context_example_sha256=hashlib.sha256((out / 'structural_contexts.json').read_bytes()).hexdigest(),
+        canvas_height_increase_mm=0,
+        schematic_base_marker_diameter_pt=3,
+        context_colors=CONTEXT_COLORS)
+    (out / 'validation.json').write_text(json.dumps(report, indent=2, ensure_ascii=False) + '\n')
+    table = '\n'.join(f"| {c} | {', '.join(map(str, example['positions_by_context'][c]))} | `{COLORS[c]}` |"
+                      for c in CONTEXTS)
+    (out / 'README.md').write_text(f"""# Figure 1 — seven structural contexts, 2026-10-25
 
-[figure1.pdf](figure1.pdf): {WIDTH} × {HEIGHT} mm.
-[figure1.png](figure1.png): 300 dpi preview.
-Minimum embedded text: {report['minimum_embedded_text_pt']:g} pt.
-The bilingual caption proposal is below and in [caption.md](caption.md).
+[PDF](figure1.pdf)・[PNG](figure1.png)（300 dpi）。
+178 × 145 mm、高さの増分は 0 mm。最小文字 {report['minimum_embedded_text_pt']:g} pt。
+A 下段に一つの架空の構造を追加した。
+A 上部の scaffold と extension を横に並べ、完成構造と交差 band の下に配置した。
+本文からの参照は **Figure 1A (lower sketch)**（**Figure 1A 下段**）。
 
-## Reproduce
+[PDF](figure1.pdf) and [PNG](figure1.png) (300 dpi).
+The canvas remains 178 × 145 mm; the height increase is 0 mm.
+The minimum embedded text size is {report['minimum_embedded_text_pt']:g} pt.
+The new fictional structure is in the lower part of A.
+The scaffold and extension above it are side by side, followed by their union and the band spans.
+Refer to it as **Figure 1A (lower sketch)**.
 
-From experiments/:
+## Caption addition / caption への追加案
+
+{caption}
+追加位置は既存の A の説明の最後。[caption.md](caption.md) も同じ案。
+LaTeX は編集していない。高さを変えていないため、図の占有寸法は変わらない。
+本文 8 ページの確認と参照文の反映は本文担当に引き渡す。
+
+Add these sentences at the end of the existing description of A.
+The same proposal is in [caption.md](caption.md).
+LaTeX was not edited. The figure has the same manuscript footprint.
+The manuscript editor can add the reference and check the eight-page manuscript.
+
+## Structure and classification / 構造と分類
+
+これは形だけの例であり、測定値や構造予測ではない。
+配列・エネルギー・確率は設定していない。
+灰実線は G、青点線は G と交差しない追加対、橙破線は G と交差する追加対。
+各円は一つの塩基で、色は C と図 3 の既存の七色に合わせた。
+G と G′ はそれぞれ交差対を持たず、対合塩基を共有しない。
+H 型 pseudoknot は各二対の二つの band からなる。
+
+This example illustrates shape; it is not a measurement or a structure prediction.
+It has no sequence, energy or probability values.
+Solid grey arcs show G; dotted blue arcs show new pairs that do not cross G;
+dashed orange arcs show new pairs crossing G.
+Each circle is one base; its color uses the existing seven-color key in C and Figure 3.
+G and G′ each have no crossing pairs and share no paired bases.
+The H-type pseudoknot has two bands of two pairs each.
+
+- Length / 長さ: {example['length']} nt.
+- G: `{example['scaffold']}`
+- R = G ∪ G′: `{example['completed_structure']}`
+- G pairs / G の対: `{example['scaffold_pairs']}`
+- G′ pairs / G′ の対: `{example['extension_pairs']}`
+- H-type bands / H 型の band: `{example['crossing_bands']}`
+- New noncrossing pair / 交差しない追加対: `{example['new_noncrossing_pairs']}`
+
+| Context | Positions (1-based) / 塩基位置 | Color / 色 |
+|---|---|---|
+{table}
+
+分類は手で割り当てず、LinearKnot **v0.2.0** の形状分類を実行した。
+`git archive v0.2.0` で参照コードと fixture だけを node-local に取り出した。
+版の commit は `{REFERENCE_COMMIT}`。
+`test/tools/pseudoloop_context_reference.py` の `classify(37, completed_pairs)` を使用した。
+参照コードの SHA-256 は `{REFERENCE_SHA256}`。
+作図スクリプトはこの hash を確認してから分類し、その出力で各円を塗る。
+参照コードの 14 fixture・545 非対合窓の検証も成功した。
+全塩基の分類と判定根拠は [structural_contexts.json](structural_contexts.json) にある。
+
+The labels were computed with the unmodified shape classifier from LinearKnot **v0.2.0**.
+Only the reference code and its fixtures were extracted to node-local storage with `git archive v0.2.0`.
+The commit is `{REFERENCE_COMMIT}`.
+The call is `classify(37, completed_pairs)` in `test/tools/pseudoloop_context_reference.py`.
+Its SHA-256 is `{REFERENCE_SHA256}`.
+The renderer checks this hash and uses the returned labels to color the circles.
+The reference also passed all 14 fixtures and 545 fully unpaired windows.
+[structural_contexts.json](structural_contexts.json) saves every label and its geometric explanation.
+
+PseudoLoop は塩基 27、30–31、34 の三つの隙間だけに現れる。
+各隙間の両端は交差する別 band の対に属する。
+ヘアピン 9–11・15–17、バルジ 3、内部ループ 5・21、multiloop 7・13・19、外部 1・24・37 も含む。
+band の二対が閉じる multiloop の追加例は、図を小さく保つため入れていない。
+この参照分類は形の分類であり、任意の構造の folding/admissibility の証明ではない。
+
+PseudoLoop occurs only in the three gaps at bases 27, 30–31 and 34.
+Each gap has boundaries from different crossing bands.
+The example also includes hairpins at 9–11 and 15–17, a bulge at 3,
+an internal loop at 5 and 21, a multiloop at 7, 13 and 19, and exterior bases at 1, 24 and 37.
+The optional multiloop between two pairs of one crossing band is omitted to keep the sketch small.
+This reference classifies shape; it does not certify folding or model admissibility for arbitrary pair maps.
+
+## Reproduce / 再作図
+
+experiments/ から実行する。参照コードは node-local のコピーを指定する。
+六つの生成物を保存する。RNA の再計算や外部 repo の編集は行わない。
+
+Run from experiments/ with the extracted reference code.
+The renderer writes six files. It does not rerun RNA folding or modify an external repository.
 
 ~~~sh
-MPLCONFIGDIR=/tmp/figure1-fb4-mpl python3 -B scripts/make_figure1.py \\
+MPLCONFIGDIR=/tmp/figure1-fb6-mpl python3 -B scripts/make_figure1.py \\
     --data {source_name} \\
+    --context-reference /tmp/figure1-reference/test/tools/pseudoloop_context_reference.py \\
     --out {out_name}
 ~~~
 
+参照コードの取り出しと fixture 検証（論文 repo の root から実行し、既存の空ディレクトリを指定）:
+
+Extract the reference and run its fixtures from the paper repository root
+(use an existing empty node-local directory):
+
+~~~sh
+git -C ../LinearKnot archive v0.2.0 \\
+    test/tools/pseudoloop_context_reference.py \\
+    test/fixtures/pseudoloop_context_change.json | tar -x -C /tmp/figure1-reference
+python3 -B /tmp/figure1-reference/test/tools/pseudoloop_context_reference.py
+~~~
+
 Dependencies: Matplotlib, NumPy, Pillow, pypdf, Ghostscript.
-Five output files; no RNA folding or experimental recomputation.
-The input is the adopted LinearKnot 0.2.0 drawing data, including updated contexts.
-Source, panel-C data and renderer hashes are in validation.json.
+入力は既存の 0.2.0 集計。B と C の内容・配置・数値は保持する。
+使用データ・作図コード・参照コードの hash は [validation.json](validation.json) に記録する。
 
-## Scientific drawing
+The input is the adopted saved 0.2.0 data.
+B and C keep their content, layout and values.
+[validation.json](validation.json) records hashes for the data, renderer and classifier.
 
-B shows one multiloop between two scaffold pairs, with a new branch on each side.
-Grey arcs are scaffold G; dotted blue arcs are added pairs that do not cross G.
-The inner grey boundary delimits this band's calculation; its enclosed region is omitted.
-Each outlined node is a state representing a set of partial structures.
-Its thumbnail is one example, not the complete set.
-Lines meeting at a small black dot are one edge with several children (a hyperedge).
-The dot is an edge junction, not another state.
-The arrows point from children toward the parent.
-CParty has one three-child edge; LinearKnot has two two-child edges.
-The intermediate contains the inner part and right branch, without the outer closing pair.
-Its first edge adds zero local energy; the completion edge adds the original local term E once.
-The two parent thumbnails and the larger lower-left multiloop have the same pairs.
-The intermediate's dashed box points to a beam of intermediate states, for one state type.
-At each right endpoint (last base of a partial structure), the sketch keeps {BEAM_DEMO} top-ranked states.
-Black circles remain; grey crosses are discarded. These ranks are illustrative, not measured.
-Coordinates, scaffold anchors, unpaired-base factors and admissibility details are omitted.
+## Feedback review / 注釈の確認
 
-A and all C content keep their adopted geometry, labels and saved values.
-The misleading B-to-C arrow is removed: C is an exact example without pruning.
-C retains sample frequencies {a:,}, {b:,}, and {other:,} other draws out of {total:,}.
-No inference about these exact outputs is made from the illustrative beam grid.
+`feedbacks/main_satoken_10252232.pdf` と s-1.png〜s-8.png を一枚ずつ開いて確認した。
+pypdf で `/Annots` の本文注釈（Highlight / StrikeOut）と座標を取得した。
+対象語句・コメント・コメントのないマークの判断根拠は [feedback_annotations.json](feedback_annotations.json) に保存する。
+リンクと Popup は独立した本文注釈として数えない。
+実際の markup は 32 件（Highlight 30、StrikeOut 2）。依頼文の 31 件とは一件差があるため全件を記録した。
 
-## Implementation evidence (not figure labels)
+Opened s-1.png through s-8.png individually and checked the annotated PDF.
+pypdf supplied `/Annots` markup types, comments and coordinates.
+[feedback_annotations.json](feedback_annotations.json) records target text and the grounds for interpreting uncommented marks.
+Links and popups are not counted as independent text markup.
+The PDF has 32 markup objects (30 highlights and two strikeouts); all were retained despite the request's count of 31.
 
-The example is BE_WIP_WIP: left WIP × inner BE × right WIP.
-Ordinary V/VM multiloop recursion is already binary in CParty; this drawing makes no general claim that CParty multiloops all have three children.
-LinearKnot first combines inner BE × right WIP, then left WIP and the local outer factor.
-The split coordinates and scaffold anchors are retained when grouping the products.
-Contracting the intermediate restores the original edge and its weight before pruning.
-The diagram does not claim that other local energy terms vanish.
+- p1: Abstract の二か所の削除、CParty、時間・メモリの比較、pseudoknot のクラス、IPknot/ThreshKnot の重複、HFold の構造集合。
+- p2: Spark、CapR/Raccess、time、交差の式、scaffold/with、新しい対、未定義の集合、Figure 1B の説明の細かさ。
+- p3: Figure 1 全体を確認。本文 markup はない。
+- p4: **“seven structural contexts” に “図”**。今回の A 下段で対応。他は TV、計算量、設定の説明に関する指摘。
+- p5: GitHub bugs、centroid 検証、candidate selection。
+- p6: ask、outer-pair probabilities と inner-pair probabilities。
+- p7: binding/exposure の言い回し、complete-command、時間・メモリの手法比較。
+- p8: 本文 markup はない。
 
-Read-only evidence:
-- results/figures/figure1_fb2_20261023/README.md.
-- LinearKnot v0.2.0 documents/model.md, “Derivation correspondence” (BE wings).
-- LinearKnot v0.2.0 src/scfg2/deductions/expand_basic.hh (BE_WIP_WIP).
-- LinearKnot v0.2.0 src/scfg2/beam/be_frame_cache.hh: the intermediate is a product of the two child factors; the local factor enters on completion.
-- LinearKnot src/scfg2/beam/be_right_tail_selection.hh for the separate intermediate selection.
+今回の対象は p4 の文脈の図だけ。他の本文修正は本文担当に引き渡す。
 
-## What was taken from the earlier versions
+This figure addresses the p4 request for a diagram of the seven contexts.
+The other text comments remain with the manuscript editor.
 
-Viewed the earlier exported PDF at paper commit 867ccd7 and the adopted 0.2.0 PNG individually.
-Read the earlier renderer history (experiments 2076dd8 / 350ba2f) and the current renderer.
-The earlier boxes and branching lines made the decomposition tree clear; those are restored.
-The current multiloop arcs, the inner-plus-right order, and the pair colors are retained.
-Every tree node now has a structural thumbnail; the intermediate is explicitly a state.
-A shared edge junction groups all three CParty children into one step.
-Both binary steps and their local-energy assignments are visible in LinearKnot.
+## Validation / 検証
 
-## Author feedback review
+寸法・埋め込み文字サイズ・文字の重なり・ページ外へのはみ出しを作図時に確認する。
+最終 PNG の目視結果、B/C の画素比較、export hash は validation.json に追記する。
+export 先は論文 repo の figures/figure1.pdf。manifest は Figure 1 項目だけを更新する。
+git commit は行わない。
 
-Opened m-1.png through m-9.png individually and checked the marked sentences against the PDF annotation coordinates.
-Author StrikeOut annotations were distinguished from red latexdiff deletions.
-The subtype-free Annots entries on pages 2, 4 and 5 resolve to XRef streams, not extra author comments.
-Marks outside Figure 1 are recorded here for scope awareness and left to the manuscript editor.
-
-- p1: highlight on the Lyngsø and Pedersen (2000) citation in the NP-hard sentence.
-- p2: highlights on “No scaffold pair”, “may connect a base inside a completed pseudoknot region”, and “internal-loop length limits”; the margin asks what the undefined pseudoknot region means and asks for concrete limit values (the latter is visible in the image, not a typed annotation).
-- p3: highlight on Intermediate and comment asking for the state–structure–tree relationship; comment contrasting the beam sketch with exact C; author StrikeOut on “numeric key;” and “with opaque arcs”. The new B addresses the tree comment, the B-to-C arrow is removed, and the caption proposal omits the struck phrases.
-- p4: highlights on “calculation with a small beam” / “for ranking” and on the outside-calculation sentence; margin comments request the reason for the pilot beam and a short outside explanation with an example. An image-only red comment next to the TV formula asks for wording such as “TV is defined by”.
-- p5: StrikeOut on the end of the context paragraph (other loops retaining labels, and the band multiloop example); margin suggests deleting from “other loops” or “For example”; highlights and comments on sampling “its parts”, computational-cost “dependence on the local limits” (image-only note: is “local limits” understandable?), and BPP “alternatives”.
-- p6: StrikeOut on the sentence excluding RNAs without eligible windows; highlight and comment on “four window lengths”, asking to list them.
-- p7: no author annotation or handwritten comment found.
-- p8: highlight on the partition-function ratio in the accessibility explanation, with a comment questioning its placement and “no-crossing calculation”; StrikeOut and comment on the Discussion probability-output / centroid sentence, suggesting sampling or subopt instead; bottom comment asks for the default scaffold construction in Methods.
-- p9: two adjacent StrikeOut annotations remove the statements that retaining every scaffold pair excludes replacement structures and that a crossing pair can have low probability when other structures have lower energies.
-
-## Validation and handoff
-
-Page size, embedded text size, text intersections and saved inputs are checked during rendering.
-PNG visual inspection and unchanged A/C comparisons are recorded in validation.json.
-Export: paper figures/figure1.pdf; only its export-manifest entry is updated.
-LaTeX, bibliography and external implementation repositories are unchanged.
-The canvas remains 178 × 145 mm, so the figure's manuscript footprint is unchanged.
+The renderer checks dimensions, embedded font sizes, text intersections and page bounds.
+Final PNG inspection, B/C pixel comparisons and export hashes are recorded in validation.json.
+The export is paper figures/figure1.pdf; only the Figure 1 manifest entry is changed.
 No Git commit is made.
-
-## Caption proposal (Japanese / English)
-
-{caption}""")
+""")
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__,formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--data',type=Path,required=True,help='Adopted saved feedback data.json')
     parser.add_argument('--out',type=Path,required=True)
+    parser.add_argument('--context-reference', type=Path, required=True,
+                        help='Unmodified v0.2.0 pseudoloop_context_reference.py')
     args=parser.parse_args()
     d=read_feedback_data(args.data)
     setup()
-    fig,details=make_figure(d)
+    example=structural_context_example(args.context_reference)
+    fig,details=make_figure(d,example)
     args.out.mkdir(parents=True,exist_ok=True)
     pdf,png=args.out/'figure1.pdf',args.out/'figure1.png'
     fig.savefig(pdf)
     fig.savefig(png,dpi=300)
     details.update(validate_figure(fig,pdf,png))
-    write_notes(args.data,args.out,d,details)
+    write_notes(args.data,args.out,d,details,example,args.context_reference)
     plt.close(fig)
     print(json.dumps({'output':str(args.out),'figure_mm':details['pdf_page_mm'],
         'minimum_embedded_text_pt':details['minimum_embedded_text_pt'],

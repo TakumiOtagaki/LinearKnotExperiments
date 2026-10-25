@@ -1,0 +1,496 @@
+{
+  "length": 37,
+  "scaffold_pairs": [
+    [
+      2,
+      23
+    ],
+    [
+      4,
+      22
+    ],
+    [
+      6,
+      20
+    ],
+    [
+      8,
+      12
+    ],
+    [
+      25,
+      33
+    ],
+    [
+      26,
+      32
+    ]
+  ],
+  "extension_pairs": [
+    [
+      14,
+      18
+    ],
+    [
+      28,
+      36
+    ],
+    [
+      29,
+      35
+    ]
+  ],
+  "completed_pairs": [
+    [
+      2,
+      23
+    ],
+    [
+      4,
+      22
+    ],
+    [
+      6,
+      20
+    ],
+    [
+      8,
+      12
+    ],
+    [
+      14,
+      18
+    ],
+    [
+      25,
+      33
+    ],
+    [
+      26,
+      32
+    ],
+    [
+      28,
+      36
+    ],
+    [
+      29,
+      35
+    ]
+  ],
+  "scaffold": ".(.(.(.(...).......).)).((.....))....",
+  "completed_structure": ".(.(.(.(...).[...].).)).((.[[..)).]].",
+  "labels": "ESBSISMSHHHSMSHHHSMSISSESSPSSPPSSPSSE",
+  "contexts_by_position": [
+    "Exterior",
+    "Stem",
+    "Bulge",
+    "Stem",
+    "Internal",
+    "Stem",
+    "Multiloop",
+    "Stem",
+    "Hairpin",
+    "Hairpin",
+    "Hairpin",
+    "Stem",
+    "Multiloop",
+    "Stem",
+    "Hairpin",
+    "Hairpin",
+    "Hairpin",
+    "Stem",
+    "Multiloop",
+    "Stem",
+    "Internal",
+    "Stem",
+    "Stem",
+    "Exterior",
+    "Stem",
+    "Stem",
+    "PseudoLoop",
+    "Stem",
+    "Stem",
+    "PseudoLoop",
+    "PseudoLoop",
+    "Stem",
+    "Stem",
+    "PseudoLoop",
+    "Stem",
+    "Stem",
+    "Exterior"
+  ],
+  "positions_by_context": {
+    "Stem": [
+      2,
+      4,
+      6,
+      8,
+      12,
+      14,
+      18,
+      20,
+      22,
+      23,
+      25,
+      26,
+      28,
+      29,
+      32,
+      33,
+      35,
+      36
+    ],
+    "Hairpin": [
+      9,
+      10,
+      11,
+      15,
+      16,
+      17
+    ],
+    "Bulge": [
+      3
+    ],
+    "Internal": [
+      5,
+      21
+    ],
+    "Multiloop": [
+      7,
+      13,
+      19
+    ],
+    "Exterior": [
+      1,
+      24,
+      37
+    ],
+    "PseudoLoop": [
+      27,
+      30,
+      31,
+      34
+    ]
+  },
+  "explanations_by_position": [
+    {
+      "left_stop": 0,
+      "right_stop": 38
+    },
+    null,
+    {
+      "left_stop": 2,
+      "right_stop": 23,
+      "left_pair": [
+        2,
+        23
+      ],
+      "right_pair": [
+        2,
+        23
+      ],
+      "children": [
+        [
+          4,
+          22
+        ]
+      ]
+    },
+    null,
+    {
+      "left_stop": 4,
+      "right_stop": 22,
+      "left_pair": [
+        4,
+        22
+      ],
+      "right_pair": [
+        4,
+        22
+      ],
+      "children": [
+        [
+          6,
+          20
+        ]
+      ]
+    },
+    null,
+    {
+      "left_stop": 6,
+      "right_stop": 20,
+      "left_pair": [
+        6,
+        20
+      ],
+      "right_pair": [
+        6,
+        20
+      ],
+      "children": [
+        [
+          8,
+          12
+        ],
+        [
+          14,
+          18
+        ]
+      ]
+    },
+    null,
+    {
+      "left_stop": 8,
+      "right_stop": 12,
+      "left_pair": [
+        8,
+        12
+      ],
+      "right_pair": [
+        8,
+        12
+      ],
+      "children": []
+    },
+    {
+      "left_stop": 8,
+      "right_stop": 12,
+      "left_pair": [
+        8,
+        12
+      ],
+      "right_pair": [
+        8,
+        12
+      ],
+      "children": []
+    },
+    {
+      "left_stop": 8,
+      "right_stop": 12,
+      "left_pair": [
+        8,
+        12
+      ],
+      "right_pair": [
+        8,
+        12
+      ],
+      "children": []
+    },
+    null,
+    {
+      "left_stop": 6,
+      "right_stop": 20,
+      "left_pair": [
+        6,
+        20
+      ],
+      "right_pair": [
+        6,
+        20
+      ],
+      "children": [
+        [
+          8,
+          12
+        ],
+        [
+          14,
+          18
+        ]
+      ]
+    },
+    null,
+    {
+      "left_stop": 14,
+      "right_stop": 18,
+      "left_pair": [
+        14,
+        18
+      ],
+      "right_pair": [
+        14,
+        18
+      ],
+      "children": []
+    },
+    {
+      "left_stop": 14,
+      "right_stop": 18,
+      "left_pair": [
+        14,
+        18
+      ],
+      "right_pair": [
+        14,
+        18
+      ],
+      "children": []
+    },
+    {
+      "left_stop": 14,
+      "right_stop": 18,
+      "left_pair": [
+        14,
+        18
+      ],
+      "right_pair": [
+        14,
+        18
+      ],
+      "children": []
+    },
+    null,
+    {
+      "left_stop": 6,
+      "right_stop": 20,
+      "left_pair": [
+        6,
+        20
+      ],
+      "right_pair": [
+        6,
+        20
+      ],
+      "children": [
+        [
+          8,
+          12
+        ],
+        [
+          14,
+          18
+        ]
+      ]
+    },
+    null,
+    {
+      "left_stop": 4,
+      "right_stop": 22,
+      "left_pair": [
+        4,
+        22
+      ],
+      "right_pair": [
+        4,
+        22
+      ],
+      "children": [
+        [
+          6,
+          20
+        ]
+      ]
+    },
+    null,
+    null,
+    {
+      "left_stop": 0,
+      "right_stop": 38
+    },
+    null,
+    null,
+    {
+      "left_stop": 26,
+      "right_stop": 28,
+      "left_pair": [
+        26,
+        32
+      ],
+      "right_pair": [
+        28,
+        36
+      ]
+    },
+    null,
+    null,
+    {
+      "left_stop": 29,
+      "right_stop": 32,
+      "left_pair": [
+        29,
+        35
+      ],
+      "right_pair": [
+        26,
+        32
+      ]
+    },
+    {
+      "left_stop": 29,
+      "right_stop": 32,
+      "left_pair": [
+        29,
+        35
+      ],
+      "right_pair": [
+        26,
+        32
+      ]
+    },
+    null,
+    null,
+    {
+      "left_stop": 33,
+      "right_stop": 35,
+      "left_pair": [
+        25,
+        33
+      ],
+      "right_pair": [
+        29,
+        35
+      ]
+    },
+    null,
+    null,
+    {
+      "left_stop": 0,
+      "right_stop": 38
+    }
+  ],
+  "context_colors": {
+    "Stem": "#2a78d6",
+    "Hairpin": "#1baf7a",
+    "Bulge": "#eda100",
+    "Internal": "#e87ba4",
+    "Multiloop": "#6250d6",
+    "Exterior": "#b9b8b1",
+    "PseudoLoop": "#eb6834"
+  },
+  "reference_version": "LinearKnot v0.2.0",
+  "reference_commit": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+  "reference_file": "test/tools/pseudoloop_context_reference.py",
+  "reference_sha256": "30547e8701d3c28b7e56e97384b207d405157e0c6df4b7cf71d605892740a48f",
+  "crossing_bands": [
+    [
+      [
+        25,
+        33
+      ],
+      [
+        26,
+        32
+      ]
+    ],
+    [
+      [
+        28,
+        36
+      ],
+      [
+        29,
+        35
+      ]
+    ]
+  ],
+  "new_noncrossing_pairs": [
+    [
+      14,
+      18
+    ]
+  ],
+  "scope": "Fictional shape illustration; no sequence, folding, energies or probabilities"
+}

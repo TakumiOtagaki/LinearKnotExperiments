@@ -1,0 +1,1138 @@
+{
+  "source": "feedbacks/main_satoken_10252232.pdf",
+  "source_sha256": "a927f8f72550c841fec6ae85c18baee1b069101b16d2e0b7254bf6bca948a7cd",
+  "coordinate_system": "PDF points, bottom-left origin; Rect/QuadPoints from pypdf /Annots.",
+  "text_verification": "Opened s-1.png through s-8.png individually; compared PDF coordinates and pdfplumber character extraction. Normalized target strings were manually verified against the images.",
+  "markup_count": 32,
+  "counts_by_subtype": {
+    "/StrikeOut": 2,
+    "/Highlight": 30
+  },
+  "supplied_request_count": 31,
+  "count_discrepancy": "Actual /Annots contains 32 text markup objects. Link and Popup objects excluded.",
+  "pages_without_text_markup": [
+    3,
+    8
+  ],
+  "images": [
+    {
+      "path": "/tmp/9139876.1.all.q/fb6/s-1.png",
+      "sha256": "d16871ce6d42ed0e4e109a6469adc4915d448915072cbd502edb1b92689b471e",
+      "visually_opened_individually": true
+    },
+    {
+      "path": "/tmp/9139876.1.all.q/fb6/s-2.png",
+      "sha256": "26abbfde65b0931e89b053ce39e83661ffb55f8449fba70c9d53a089aa32660f",
+      "visually_opened_individually": true
+    },
+    {
+      "path": "/tmp/9139876.1.all.q/fb6/s-3.png",
+      "sha256": "cf861a761761ece8570e23f2a99d56e9ba7b4df0eac0ac8da7dcd7a4fdc2197c",
+      "visually_opened_individually": true
+    },
+    {
+      "path": "/tmp/9139876.1.all.q/fb6/s-4.png",
+      "sha256": "e283382ea423850e84c9f9db58238a0e13b990d0861f15a35b2723c44785569e",
+      "visually_opened_individually": true
+    },
+    {
+      "path": "/tmp/9139876.1.all.q/fb6/s-5.png",
+      "sha256": "7d8c31ab473f7d9bd46a4777d0d478c3f7887e786dd366c800c02413050f1b7e",
+      "visually_opened_individually": true
+    },
+    {
+      "path": "/tmp/9139876.1.all.q/fb6/s-6.png",
+      "sha256": "2722715c6a06d3b47f3895e6dd6edff32d7be4eccacb11814cd79cc0407c00c0",
+      "visually_opened_individually": true
+    },
+    {
+      "path": "/tmp/9139876.1.all.q/fb6/s-7.png",
+      "sha256": "5252800c62d9a60e100096f980841e3e6c8de7d7ea217734a06f30cdd6bf699a",
+      "visually_opened_individually": true
+    },
+    {
+      "path": "/tmp/9139876.1.all.q/fb6/s-8.png",
+      "sha256": "3f3905846582b5cfcca333ac4fac7c6d86c91e406e3c99e3f1c60257c46607cc",
+      "visually_opened_individually": true
+    }
+  ],
+  "annotations": [
+    {
+      "id": 1,
+      "page": 1,
+      "subtype": "/StrikeOut",
+      "rect": [
+        98.365,
+        576.341,
+        405.171,
+        584.303
+      ],
+      "quadpoints": [
+        98.365,
+        584.303,
+        405.171,
+        584.303,
+        98.365,
+        576.341,
+        405.171,
+        576.341
+      ],
+      "target_text_visually_verified": "RNA can form several structures with different base pairs and unpaired regions.",
+      "coordinate_extracted_characters": [
+        "RNAcanformseveralstructureswithdifferentbasepairsandunpairedregions."
+      ],
+      "comment": "",
+      "interpretation_ja": "明示的な削除指示。Abstract 冒頭の一般説明を削る。",
+      "grounds_ja": "PDF の StrikeOut 種別と画像の赤い取り消し線がこの一文全体に一致する。",
+      "inferred_without_comment": true,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 2,
+      "page": 1,
+      "subtype": "/Highlight",
+      "rect": [
+        228.038,
+        552.431,
+        254.2,
+        560.393
+      ],
+      "quadpoints": [
+        228.038,
+        560.393,
+        254.2,
+        560.393,
+        228.038,
+        552.431,
+        254.2,
+        552.431
+      ],
+      "target_text_visually_verified": "CParty",
+      "coordinate_extracted_characters": [
+        "CParty"
+      ],
+      "comment": "",
+      "interpretation_ja": "CParty の初出説明を再検討するマークと暫定解釈。具体的な書き換えは未指定。",
+      "grounds_ja": "Abstract で CParty 名だけが黄色で、直後に何を計算するかを説明している。隣の削除注釈は冗長な一般説明を対象とする。",
+      "inferred_without_comment": true,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 3,
+      "page": 1,
+      "subtype": "/StrikeOut",
+      "rect": [
+        47.821,
+        456.592,
+        461.272,
+        488.662
+      ],
+      "quadpoints": [
+        164.199,
+        488.662,
+        461.269,
+        488.662,
+        164.199,
+        480.7,
+        461.269,
+        480.7,
+        47.821,
+        476.707,
+        461.272,
+        476.707,
+        47.821,
+        468.547,
+        461.272,
+        468.547,
+        47.821,
+        464.752,
+        144.398,
+        464.752,
+        47.821,
+        456.592,
+        144.398,
+        456.592
+      ],
+      "target_text_visually_verified": "The partition function gives base-pairing probabilities, loop profiles, window accessibility, structures sampled by their probabilities, and representative gamma-centroid structures chosen from base-pairing probabilities.",
+      "coordinate_extracted_characters": [
+        "Thepartitionfunctiongivesbase-pairingprobabilities,loopprofiles,window",
+        "accessibility,structuressampledbytheirprobabilities,andrepresentativeγ-centroidstructureschosenfrom",
+        "base-pairingprobabilities."
+      ],
+      "comment": "",
+      "interpretation_ja": "明示的な削除指示。計算できる出力の列挙文を削る。",
+      "grounds_ja": "PDF の StrikeOut と画像の赤い線が三行の列挙を覆う。",
+      "inferred_without_comment": true,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 4,
+      "page": 1,
+      "subtype": "/Highlight",
+      "rect": [
+        47.821,
+        408.969,
+        461.267,
+        428.886
+      ],
+      "quadpoints": [
+        384.568,
+        428.886,
+        461.267,
+        428.886,
+        384.568,
+        420.924,
+        461.267,
+        420.924,
+        47.821,
+        416.931,
+        64.876,
+        416.931,
+        47.821,
+        408.969,
+        64.876,
+        408.969
+      ],
+      "target_text_visually_verified": "7 minutes and 3.22 GiB",
+      "coordinate_extracted_characters": [
+        "7minutesand3.22",
+        "GiB."
+      ],
+      "comment": "比較対象がないとご利益がわからない",
+      "interpretation_ja": "比較対象がないとご利益がわからない",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 5,
+      "page": 1,
+      "subtype": "/Highlight",
+      "rect": [
+        428.461,
+        302.057,
+        522.058,
+        309.161
+      ],
+      "quadpoints": [
+        428.461,
+        309.161,
+        522.058,
+        309.161,
+        428.461,
+        302.057,
+        522.058,
+        302.057
+      ],
+      "target_text_visually_verified": "pseudoknotted structures",
+      "coordinate_extracted_characters": [
+        "pseudoknottedstructures"
+      ],
+      "comment": "どのクラス？",
+      "interpretation_ja": "どのクラス？",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 6,
+      "page": 1,
+      "subtype": "/Highlight",
+      "rect": [
+        460.45,
+        269.181,
+        552.389,
+        276.285
+      ],
+      "quadpoints": [
+        460.45,
+        276.285,
+        552.389,
+        276.285,
+        460.45,
+        269.181,
+        552.389,
+        269.181
+      ],
+      "target_text_visually_verified": "IPknot and ThreshKnot",
+      "coordinate_extracted_characters": [
+        "IPknotandThreshKnot"
+      ],
+      "comment": "くり返し",
+      "interpretation_ja": "くり返し",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 7,
+      "page": 1,
+      "subtype": "/Highlight",
+      "rect": [
+        309.071,
+        159.592,
+        552.387,
+        177.735
+      ],
+      "quadpoints": [
+        473.252,
+        177.735,
+        552.387,
+        177.735,
+        473.252,
+        170.551,
+        552.387,
+        170.551,
+        309.071,
+        166.696,
+        474.337,
+        166.696,
+        309.071,
+        159.592,
+        474.337,
+        159.592
+      ],
+      "target_text_visually_verified": "HFold restricts these pseudoknots to a class described in Methods",
+      "coordinate_extracted_characters": [
+        "HFoldrestrictsthese",
+        "pseudoknotstoaclassdescribedinMethods"
+      ],
+      "comment": "",
+      "interpretation_ja": "構造クラスを Methods への案内だけで済ませる表現の再検討と暫定解釈。",
+      "grounds_ja": "同じ p1 の pseudoknotted structures に「どのクラス？」があり、このマークは HFold の class described in Methods に付く。",
+      "inferred_without_comment": true,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 8,
+      "page": 2,
+      "subtype": "/Highlight",
+      "rect": [
+        249.145,
+        592.369,
+        270.639,
+        599.473
+      ],
+      "quadpoints": [
+        249.145,
+        599.473,
+        270.639,
+        599.473,
+        249.145,
+        592.369,
+        270.639,
+        592.369
+      ],
+      "target_text_visually_verified": "Spark",
+      "coordinate_extracted_characters": [
+        "Spark"
+      ],
+      "comment": "Linearではない？",
+      "interpretation_ja": "Linearではない？",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 9,
+      "page": 2,
+      "subtype": "/Highlight",
+      "rect": [
+        145.812,
+        570.451,
+        167.177,
+        577.555
+      ],
+      "quadpoints": [
+        145.812,
+        577.555,
+        167.177,
+        577.555,
+        145.812,
+        570.451,
+        167.177,
+        570.451
+      ],
+      "target_text_visually_verified": "CapR",
+      "coordinate_extracted_characters": [
+        "CapR"
+      ],
+      "comment": "",
+      "interpretation_ja": "手法名と直前の手法列挙との整合を再確認するマークと暫定解釈。具体的な置換指示はない。",
+      "grounds_ja": "同じ段落の Spark に「Linearではない？」があり、CapR と Raccess が別々に黄色で示されている。",
+      "inferred_without_comment": true,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 10,
+      "page": 2,
+      "subtype": "/Highlight",
+      "rect": [
+        242.099,
+        570.451,
+        270.641,
+        577.555
+      ],
+      "quadpoints": [
+        242.099,
+        577.555,
+        270.641,
+        577.555,
+        242.099,
+        570.451,
+        270.641,
+        570.451
+      ],
+      "target_text_visually_verified": "Raccess",
+      "coordinate_extracted_characters": [
+        "Raccess"
+      ],
+      "comment": "",
+      "interpretation_ja": "手法名と直前の手法列挙との整合を再確認するマークと暫定解釈。具体的な置換指示はない。",
+      "grounds_ja": "CapR と並ぶ別の黄色マーク。同段落の Spark の名称にコメントがある。",
+      "inferred_without_comment": true,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 11,
+      "page": 2,
+      "subtype": "/Highlight",
+      "rect": [
+        117.19,
+        515.657,
+        133.718,
+        522.761
+      ],
+      "quadpoints": [
+        117.19,
+        522.761,
+        133.718,
+        522.761,
+        117.19,
+        515.657,
+        133.718,
+        515.657
+      ],
+      "target_text_visually_verified": "time",
+      "coordinate_extracted_characters": [
+        "time"
+      ],
+      "comment": "And space",
+      "interpretation_ja": "And space",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 12,
+      "page": 2,
+      "subtype": "/Highlight",
+      "rect": [
+        50.786,
+        296.479,
+        111.569,
+        303.663
+      ],
+      "quadpoints": [
+        50.786,
+        303.663,
+        111.569,
+        303.663,
+        50.786,
+        296.479,
+        111.569,
+        296.479
+      ],
+      "target_text_visually_verified": "i < k < j < l",
+      "coordinate_extracted_characters": [
+        "i<k<j<l"
+      ],
+      "comment": "Or k < i < l < j",
+      "interpretation_ja": "Or k < i < l < j",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 13,
+      "page": 2,
+      "subtype": "/Highlight",
+      "rect": [
+        198.525,
+        296.479,
+        226.198,
+        303.663
+      ],
+      "quadpoints": [
+        198.525,
+        303.663,
+        226.198,
+        303.663,
+        198.525,
+        296.479,
+        226.198,
+        296.479
+      ],
+      "target_text_visually_verified": "scaffold",
+      "coordinate_extracted_characters": [
+        "scaffold"
+      ],
+      "comment": "Scaffoldは二次構造",
+      "interpretation_ja": "Scaffoldは二次構造",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 14,
+      "page": 2,
+      "subtype": "/Highlight",
+      "rect": [
+        241.029,
+        296.479,
+        257.557,
+        303.663
+      ],
+      "quadpoints": [
+        241.029,
+        303.663,
+        257.557,
+        303.663,
+        241.029,
+        296.479,
+        257.557,
+        296.479
+      ],
+      "target_text_visually_verified": "with",
+      "coordinate_extracted_characters": [
+        "with"
+      ],
+      "comment": "どこのこと？",
+      "interpretation_ja": "どこのこと？",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 15,
+      "page": 2,
+      "subtype": "/Highlight",
+      "rect": [
+        190.043,
+        241.684,
+        226.822,
+        248.788
+      ],
+      "quadpoints": [
+        190.043,
+        248.788,
+        226.822,
+        248.788,
+        190.043,
+        241.684,
+        226.822,
+        241.684
+      ],
+      "target_text_visually_verified": "New pairs",
+      "coordinate_extracted_characters": [
+        "Newpairs"
+      ],
+      "comment": "？",
+      "interpretation_ja": "？",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 16,
+      "page": 2,
+      "subtype": "/Highlight",
+      "rect": [
+        102.61,
+        121.136,
+        107.756,
+        128.32
+      ],
+      "quadpoints": [
+        102.61,
+        128.32,
+        107.756,
+        128.32,
+        102.61,
+        121.136,
+        107.756,
+        121.136
+      ],
+      "target_text_visually_verified": "S (the structure-set symbol in Let S(S,G) be ...)",
+      "coordinate_extracted_characters": [
+        "S"
+      ],
+      "comment": "Undefined?",
+      "interpretation_ja": "Undefined?",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 17,
+      "page": 2,
+      "subtype": "/Highlight",
+      "rect": [
+        300.525,
+        384.15,
+        469.166,
+        391.254
+      ],
+      "quadpoints": [
+        300.525,
+        391.254,
+        469.166,
+        391.254,
+        300.525,
+        384.15,
+        469.166,
+        384.15
+      ],
+      "target_text_visually_verified": "LinearKnot changes this order (Figure 1B)",
+      "coordinate_extracted_characters": [
+        "LinearKnotchangesthisorder(Figure1B)"
+      ],
+      "comment": "話が細かすぎるのでは？",
+      "interpretation_ja": "話が細かすぎるのでは？",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 18,
+      "page": 4,
+      "subtype": "/Highlight",
+      "rect": [
+        39.276,
+        688.855,
+        95.327,
+        695.959
+      ],
+      "quadpoints": [
+        39.276,
+        695.959,
+        95.327,
+        695.959,
+        39.276,
+        688.855,
+        95.327,
+        688.855
+      ],
+      "target_text_visually_verified": "For probability",
+      "coordinate_extracted_characters": [
+        "Forprobability"
+      ],
+      "comment": "ここは何を示したいのかわからない",
+      "interpretation_ja": "ここは何を示したいのかわからない",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 19,
+      "page": 4,
+      "subtype": "/Highlight",
+      "rect": [
+        153.473,
+        292.065,
+        246.399,
+        299.169
+      ],
+      "quadpoints": [
+        153.473,
+        299.169,
+        246.399,
+        299.169,
+        153.473,
+        292.065,
+        246.399,
+        292.065
+      ],
+      "target_text_visually_verified": "seven structural contexts",
+      "coordinate_extracted_characters": [
+        "sevenstructuralcontexts"
+      ],
+      "comment": "図",
+      "interpretation_ja": "図",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "Figure 1A 下段の模式図で対応。"
+    },
+    {
+      "id": 20,
+      "page": 4,
+      "subtype": "/Highlight",
+      "rect": [
+        422.278,
+        391.343,
+        473.528,
+        399.114
+      ],
+      "quadpoints": [
+        422.278,
+        399.114,
+        473.528,
+        399.114,
+        422.278,
+        391.343,
+        473.528,
+        391.343
+      ],
+      "target_text_visually_verified": "expected time",
+      "coordinate_extracted_characters": [
+        "expectedtime"
+      ],
+      "comment": "Computational complexity",
+      "interpretation_ja": "Computational complexity",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 21,
+      "page": 4,
+      "subtype": "/Highlight",
+      "rect": [
+        288.57,
+        391.343,
+        531.891,
+        432.071
+      ],
+      "quadpoints": [
+        288.57,
+        432.071,
+        531.891,
+        432.071,
+        288.57,
+        424.887,
+        531.891,
+        424.887,
+        288.57,
+        421.112,
+        531.888,
+        421.112,
+        288.57,
+        413.928,
+        531.888,
+        413.928,
+        288.57,
+        410.073,
+        531.89,
+        410.073,
+        288.57,
+        402.969,
+        531.89,
+        402.969,
+        288.57,
+        399.114,
+        406.137,
+        399.114,
+        288.57,
+        391.343,
+        406.137,
+        391.343
+      ],
+      "target_text_visually_verified": "For 2 <= b <= n, fixed hairpin-length and scaffold-search limits, a fixed number of window lengths, and a supplied scaffold, the partition function, BPPs, loop profiles, window accessibility, and MFE and gamma-centroid predictions",
+      "coordinate_extracted_characters": [
+        "For2≤b≤n,fixedhairpin-lengthandscaffold-searchlimits,",
+        "afixednumberofwindowlengths,andasuppliedscaffold,the",
+        "partitionfunction,BPPs,loopprofiles,windowaccessibility,and",
+        "MFEandγ-centroidpredictions"
+      ],
+      "comment": "非常に読みにくい",
+      "interpretation_ja": "非常に読みにくい",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 22,
+      "page": 4,
+      "subtype": "/Highlight",
+      "rect": [
+        288.57,
+        186.89,
+        301.076,
+        193.994
+      ],
+      "quadpoints": [
+        288.57,
+        193.994,
+        301.076,
+        193.994,
+        288.57,
+        186.89,
+        301.076,
+        186.89
+      ],
+      "target_text_visually_verified": "TV",
+      "coordinate_extracted_characters": [
+        "TV"
+      ],
+      "comment": "説明はこの辺でした方がいいのでは？",
+      "interpretation_ja": "説明はこの辺でした方がいいのでは？",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 23,
+      "page": 4,
+      "subtype": "/Highlight",
+      "rect": [
+        305.981,
+        437.651,
+        482.706,
+        445.613
+      ],
+      "quadpoints": [
+        305.981,
+        445.613,
+        482.706,
+        445.613,
+        305.981,
+        437.651,
+        482.706,
+        437.651
+      ],
+      "target_text_visually_verified": "Computational cost and experimental settings",
+      "coordinate_extracted_characters": [
+        "Computationalcostandexperimentalsettings"
+      ],
+      "comment": "なぜこの二つのトピックが一つに？",
+      "interpretation_ja": "なぜこの二つのトピックが一つに？",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 24,
+      "page": 5,
+      "subtype": "/Highlight",
+      "rect": [
+        309.071,
+        262.035,
+        552.385,
+        291.057
+      ],
+      "quadpoints": [
+        536.801,
+        291.057,
+        552.385,
+        291.057,
+        536.801,
+        283.953,
+        552.385,
+        283.953,
+        309.071,
+        280.098,
+        552.385,
+        280.098,
+        309.071,
+        272.994,
+        552.385,
+        272.994,
+        309.071,
+        269.139,
+        449.063,
+        269.139,
+        309.071,
+        262.035,
+        449.063,
+        262.035
+      ],
+      "target_text_visually_verified": "that fixes small bugs found during implementation and reported to its developers through GitHub issues.",
+      "coordinate_extracted_characters": [
+        "that",
+        "fixessmallbugsfoundduringimplementationandreportedto",
+        "itsdevelopersthroughGitHubissues."
+      ],
+      "comment": "わざわざ本文に書くことではない気もする",
+      "interpretation_ja": "わざわざ本文に書くことではない気もする",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 25,
+      "page": 5,
+      "subtype": "/Highlight",
+      "rect": [
+        309.071,
+        174.364,
+        552.386,
+        204.857
+      ],
+      "quadpoints": [
+        537.746,
+        204.857,
+        552.385,
+        204.857,
+        537.746,
+        196.281,
+        552.385,
+        196.281,
+        309.071,
+        192.427,
+        552.386,
+        192.427,
+        309.071,
+        185.155,
+        552.386,
+        185.155,
+        309.071,
+        182.939,
+        372.345,
+        182.939,
+        309.071,
+        174.364,
+        372.345,
+        174.364
+      ],
+      "target_text_visually_verified": "The gamma-centroid structures also reached the enumerated optimal scores, within 2 x 10^-13",
+      "coordinate_extracted_characters": [
+        "The",
+        "γ-centroidstructuresalsoreachedtheenumeratedoptimalscores,",
+        "within2×10−13"
+      ],
+      "comment": "わからない。",
+      "interpretation_ja": "わからない。",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 26,
+      "page": 5,
+      "subtype": "/Highlight",
+      "rect": [
+        412.731,
+        163.405,
+        483.682,
+        170.509
+      ],
+      "quadpoints": [
+        412.731,
+        170.509,
+        483.682,
+        170.509,
+        412.731,
+        163.405,
+        483.682,
+        163.405
+      ],
+      "target_text_visually_verified": "candidate selection",
+      "coordinate_extracted_characters": [
+        "candidateselection"
+      ],
+      "comment": "Beam width",
+      "interpretation_ja": "Beam width",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 27,
+      "page": 6,
+      "subtype": "/Highlight",
+      "rect": [
+        357.374,
+        186.89,
+        369.464,
+        193.994
+      ],
+      "quadpoints": [
+        357.374,
+        193.994,
+        369.464,
+        193.994,
+        357.374,
+        186.89,
+        369.464,
+        186.89
+      ],
+      "target_text_visually_verified": "ask",
+      "coordinate_extracted_characters": [
+        "ask"
+      ],
+      "comment": "",
+      "interpretation_ja": "use Terc to ask の動詞を平易にする指摘と暫定解釈。具体的な置換は未指定。",
+      "grounds_ja": "ask の語だけが黄色。同じ説明の p7 には「変な言い回し」のコメントがあり、ここは解析目的を述べる文。",
+      "inferred_without_comment": true,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 28,
+      "page": 6,
+      "subtype": "/Highlight",
+      "rect": [
+        347.132,
+        110.177,
+        432.913,
+        117.281
+      ],
+      "quadpoints": [
+        347.132,
+        117.281,
+        432.913,
+        117.281,
+        347.132,
+        110.177,
+        432.913,
+        110.177
+      ],
+      "target_text_visually_verified": "outer-pair probabilities",
+      "coordinate_extracted_characters": [
+        "outer-pairprobabilities"
+      ],
+      "comment": "なんでしたっけ？",
+      "interpretation_ja": "なんでしたっけ？",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 29,
+      "page": 6,
+      "subtype": "/Highlight",
+      "rect": [
+        288.57,
+        99.218,
+        531.891,
+        117.281
+      ],
+      "quadpoints": [
+        510.162,
+        117.281,
+        531.891,
+        117.281,
+        510.162,
+        110.177,
+        531.891,
+        110.177,
+        288.57,
+        106.322,
+        350.452,
+        106.322,
+        288.57,
+        99.218,
+        350.452,
+        99.218
+      ],
+      "target_text_visually_verified": "inner-pair probabilities",
+      "coordinate_extracted_characters": [
+        "inner-",
+        "pairprobabilitie"
+      ],
+      "comment": "",
+      "interpretation_ja": "outer/inner の意味を両方説明する要求の続きと解釈。",
+      "grounds_ja": "同じ一文の outer-pair probabilities に「なんでしたっけ？」があり、inner-pair probabilities にも別の黄色マークがある。",
+      "inferred_without_comment": true,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 30,
+      "page": 7,
+      "subtype": "/Highlight",
+      "rect": [
+        47.821,
+        434.666,
+        291.138,
+        452.729
+      ],
+      "quadpoints": [
+        113.087,
+        452.729,
+        291.138,
+        452.729,
+        113.087,
+        445.625,
+        291.138,
+        445.625,
+        47.821,
+        441.77,
+        283.783,
+        441.77,
+        47.821,
+        434.666,
+        283.783,
+        434.666
+      ],
+      "target_text_visually_verified": "These model predictions do not measure binding or physical exposure. Those properties need experimental tests.",
+      "coordinate_extracted_characters": [
+        "Thesemodelpredictionsdonotmeasurebinding",
+        "orphysicalexposure.Thosepropertiesneedexperimentaltests."
+      ],
+      "comment": "変な言い回し",
+      "interpretation_ja": "変な言い回し",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 31,
+      "page": 7,
+      "subtype": "/Highlight",
+      "rect": [
+        109.874,
+        197.848,
+        181.652,
+        204.952
+      ],
+      "quadpoints": [
+        109.874,
+        204.952,
+        181.652,
+        204.952,
+        109.874,
+        197.848,
+        181.652,
+        197.848
+      ],
+      "target_text_visually_verified": "complete-command",
+      "coordinate_extracted_characters": [
+        "complete-command"
+      ],
+      "comment": "elapsed or wall",
+      "interpretation_ja": "elapsed or wall",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    },
+    {
+      "id": 32,
+      "page": 7,
+      "subtype": "/Highlight",
+      "rect": [
+        76.765,
+        557.505,
+        224.571,
+        564.609
+      ],
+      "quadpoints": [
+        76.765,
+        564.609,
+        224.571,
+        564.609,
+        76.765,
+        557.505,
+        224.571,
+        557.505
+      ],
+      "target_text_visually_verified": "Time and peak resident set size (RSS)",
+      "coordinate_extracted_characters": [
+        "Timeandpeakresidentsetsize(RSS)"
+      ],
+      "comment": "他手法との比較",
+      "interpretation_ja": "他手法との比較",
+      "grounds_ja": "PDF コメント、QuadPoints と該当頁の画像を照合。",
+      "inferred_without_comment": false,
+      "action": "図担当の編集範囲外。原稿担当への記録のみ。"
+    }
+  ]
+}

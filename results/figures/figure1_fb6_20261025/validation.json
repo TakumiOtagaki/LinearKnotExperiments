@@ -1,0 +1,187 @@
+{
+  "sequence_length": 61,
+  "scaffold_pairs": 8,
+  "band_spans": [
+    [
+      6,
+      36
+    ],
+    [
+      26,
+      50
+    ]
+  ],
+  "probability_display_cutoff_inclusive": 0.05,
+  "displayed_bpp_pairs": 15,
+  "sample_draws": 10000,
+  "sample_counts_shown": [
+    3431,
+    1426
+  ],
+  "context_hatches": "none",
+  "centroid_gamma": 1,
+  "illustrative_beam_width": 3,
+  "multiloop_rule": "BE_WIP_WIP",
+  "intermediate_order": [
+    "Inner + Right",
+    "Left + Intermediate + local factor"
+  ],
+  "decomposition_child_counts": {
+    "CParty": [
+      3
+    ],
+    "LinearKnot": [
+      2,
+      2
+    ]
+  },
+  "decomposition_local_energy": {
+    "CParty": [
+      "E"
+    ],
+    "LinearKnot": [
+      "0",
+      "E"
+    ]
+  },
+  "state_thumbnails": "One representative per set of partial structures",
+  "beam_grid_state_type": "Intermediate states",
+  "panel_C_uses_illustrative_beam": false,
+  "max_context_sum_error": 2.220446049250313e-16,
+  "max_sample_bpp_difference": 0.010521403741104995,
+  "pdf_page_mm": [
+    178.0000000000147,
+    144.99999999998442
+  ],
+  "png_pixels": [
+    2102,
+    1712
+  ],
+  "png_dpi": [
+    299.9994,
+    299.9994
+  ],
+  "pdf_text_sizes_pt": [
+    7.0,
+    7.5,
+    8.0,
+    9.0
+  ],
+  "minimum_embedded_text_pt": 7.0,
+  "minimum_matplotlib_text_pt": 7.0,
+  "text_outside_page": [],
+  "text_overlaps": [],
+  "gs_command": [
+    "gs",
+    "-q",
+    "-dBATCH",
+    "-dNOPAUSE",
+    "-sDEVICE=txtwrite",
+    "-dTextFormat=0",
+    "-sOutputFile=-",
+    "experiments/results/figures/figure1_fb6_20261025/figure1.pdf"
+  ],
+  "visual_inspection": "Opened the final 300 dpi PNG. No text/arc overlap, clipped content or unreadable labels found. All 37 circles and all seven context colors are visible. The fictional example is distinguished from the saved 61-nt outputs by its schematic heading and caption proposal.",
+  "source_data": "results/local/pseudoloop-0.2.0-20261023/examples/figure_data.json",
+  "source_data_sha256": "d960a3a320da054f57613a1d28b27e003a560136c1255df27ecc44d9a55c6648",
+  "panel_C_data_sha256": "80dfc89ba8c78a5c849f3836e064a57f157bf30c7fe3e69e5714015d62de900c",
+  "script_sha256": "39202b00bde7db83d22ba3b109906b2dfa72fbe5449cd7d2bee9bfb5d927f093",
+  "context_example_length": 37,
+  "context_reference_sha256": "30547e8701d3c28b7e56e97384b207d405157e0c6df4b7cf71d605892740a48f",
+  "context_reference_commit": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+  "context_reference_path_used": "/tmp/9139876.1.all.q/fb6-figure1/test/tools/pseudoloop_context_reference.py",
+  "context_example_sha256": "672dae0cb9630b178f44037fdc4c621e7eb7777292e4601a3603482d0ac89c84",
+  "canvas_height_increase_mm": 0,
+  "schematic_base_marker_diameter_pt": 3,
+  "context_colors": {
+    "Stem": "#2a78d6",
+    "Hairpin": "#1baf7a",
+    "Bulge": "#eda100",
+    "Internal": "#e87ba4",
+    "Multiloop": "#6250d6",
+    "Exterior": "#b9b8b1",
+    "PseudoLoop": "#eb6834"
+  },
+  "previous_figure": "results/figures/figure1_fb4_20261023/figure1.png",
+  "previous_source_data_hash_matches": true,
+  "previous_panel_C_data_hash_matches": true,
+  "previous_pixel_comparisons": {
+    "B": {
+      "pixel_bounds": [
+        732,
+        0,
+        2102,
+        732
+      ],
+      "changed_pixels": 0
+    },
+    "C": {
+      "pixel_bounds": [
+        0,
+        732,
+        2102,
+        1712
+      ],
+      "changed_pixels": 0
+    }
+  },
+  "figure3_palette_source": "scripts/make_figure4.py:CONTEXT_COLORS",
+  "figure3_palette_matches": true,
+  "geometry_fixture_validation": {
+    "geometry_fixtures": 14,
+    "fully_unpaired_windows": 545,
+    "status": "ok; geometry reference",
+    "command": "python3 -B /tmp/9139876.1.all.q/fb6-figure1/test/tools/pseudoloop_context_reference.py"
+  },
+  "reference_extraction_command": "git -C ../LinearKnot archive v0.2.0 test/tools/pseudoloop_context_reference.py test/fixtures/pseudoloop_context_change.json (tar extracted to node-local /tmp/9139876.1.all.q/fb6-figure1)",
+  "annotation_markup_count": 32,
+  "annotation_counts_by_subtype": {
+    "/StrikeOut": 2,
+    "/Highlight": 30
+  },
+  "feedback_annotations_sha256": "a4d098a961a610e324f9549b0e856f510e691bf78ce0b9f89d70262f5b3fc384",
+  "output_pdf_sha256": "220deec58c64ffb59f066ee573f345cac7d396ef28c8f94fe4d14c49252d33cd",
+  "output_png_sha256": "3624238742ccb6edbbaba6cdcbe479de3d615331d9b9c39fc816d642af7753c7",
+  "exported_pdf": "figures/figure1.pdf",
+  "exported_pdf_sha256": "220deec58c64ffb59f066ee573f345cac7d396ef28c8f94fe4d14c49252d33cd",
+  "all_export_hashes_verified": {
+    "figure1.pdf": "220deec58c64ffb59f066ee573f345cac7d396ef28c8f94fe4d14c49252d33cd",
+    "figure2_main.pdf": "befa10a75c5a23306b6c20a8d9f97690ff16ea01cc2b11089dac53cf227397da",
+    "figure4.pdf": "6d9e5f2ab7b866b0cb5230bbc35d7493db487ae55a283b11b3dfba16e78ff8f0",
+    "figure3_main.pdf": "75c6cee7486bfaac4e708ba90d040938d3c3403d74653fd47dfe5fe5ce096641",
+    "figure2_accessibility_si.pdf": "01828547020bd5267f675bada650841cb3bd40da524ab0561beb9813a0da9f6e",
+    "figure3_synthetic_all_cli_si.pdf": "4af06a1f7445a924c256dd87b43dbca1308cec7dd104ef198348355ad3d86465",
+    "figure3_mode_memory_si.pdf": "4f9f3087b96ce8561e62fc7569699e4187e6e77ad2c07216119d18f0e22a07bd",
+    "figure3_parallel_impact_si.pdf": "1fb28959f562cdc9dbf49a0b26c9f0d638306aa8e4abc8854851a9da14ff4f34"
+  },
+  "experiments_source_base_commit": "189d94a98d9a12c959a0055a16e2b7e310f8a396",
+  "external_implementation_git_status": "",
+  "manuscript_source_edits_by_this_task": false,
+  "manuscript_build_by_this_task": false,
+  "diff_checks": [
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "docs/progress.md",
+        "figures/export_manifest.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "experiments",
+        "diff",
+        "--check",
+        "--",
+        "scripts/make_figure1.py",
+        "docs/progress.md"
+      ],
+      "exit_code": 0
+    }
+  ]
+}
