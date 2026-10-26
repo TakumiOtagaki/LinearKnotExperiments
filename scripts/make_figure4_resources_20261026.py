@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Figure 4 and an SI ratio panel, from verified summaries without RNA execution."""
 import argparse
-from collections import Counter
 import csv
 import hashlib
 import json
@@ -18,11 +17,9 @@ from pypdf import PdfReader
 
 ROOT=Path(__file__).resolve().parents[1]
 MM=1/25.4
-METHODS={'cparty':('#b55a10','o','CParty PF'), 'exact':('#666666','s','LinearKnot exact PF'),
- 'beam100':('#0072b2','D','LinearKnot b=100 PF'), 'spark':('#009e73','^','Spark MFE'),
- 'fold100':('#a3459a','v','LinearKnot fold (PF + MFE)')}
-FAILURES={'nonfinite':('#d55e00','x','Nonfinite'), 'timeout':('#c52233','^','Time limit'),
- 'memory_limit':('#7030a0','s','AS limit'), 'signal_11':('#222222','+','Signal 11')}
+METHODS={'cparty':('#b55a10','o','CParty, partition function'), 'exact':('#666666','s','LinearKnot exact'),
+ 'beam100':('#0072b2','D','LinearKnot, beam width 100'), 'spark':('#009e73','^','Spark, MFE'),
+ 'fold100':('#a3459a','v','LinearKnot,\npartition function + MFE')}
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def dump(p,o):p.write_text(json.dumps(o,indent=2,ensure_ascii=False,allow_nan=False)+'\n')
@@ -53,7 +50,7 @@ def save(fig,out,name,width,height):
 def main():
  parser=argparse.ArgumentParser(description=__doc__)
  parser.add_argument('--summary',type=Path,default=ROOT/'results/analysis/comparison-resources-20261026-final/summary.json')
- parser.add_argument('--out',type=Path,default=ROOT/'results/figures/figure4_resources_20261026_final58')
+ parser.add_argument('--out',type=Path,default=ROOT/'results/figures/figure4_resources_20261026_legend')
  args=parser.parse_args();args.out.mkdir(parents=True,exist_ok=False)
  validation=ROOT/'docs/comparison_resources_20261026_completed_validation.json'
  assert json.loads(validation.read_text())['status']=='passed'
@@ -64,8 +61,8 @@ def main():
   'axes.spines.top':False,'axes.spines.right':False,'xtick.major.size':2,'ytick.major.size':2,
   'xtick.major.pad':1.5,'ytick.major.pad':1.5,'pdf.fonttype':42})
  fig=plt.figure(figsize=(178*MM,58*MM));audit=[]
- oldstyles=[('LinearCParty','#0072b2','o','fold: PF + BPP + MFE'),('LinearPKCapR','#e69f00','s','profile: contexts'),('LinearPKRaccess','#009e73','^','access: contexts + accessibility')]
- fig.legend(handles=key([(c,m,l) for _,c,m,l in oldstyles]),loc='upper left',bbox_to_anchor=(0,26/65),frameon=False,ncol=1,handlelength=1.3,fontsize=6.5,labelspacing=.3)
+ oldstyles=[('LinearCParty','#0072b2','o','partition function + pairing probabilities + MFE'),('LinearPKCapR','#e69f00','s','loop profiles'),('LinearPKRaccess','#009e73','^','loop profiles + window accessibility')]
+ fig.legend(handles=key([(c,m,l) for _,c,m,l in oldstyles]),loc='upper left',bbox_to_anchor=(0,27/65),frameon=False,ncol=1,handlelength=1.3,fontsize=6.5,labelspacing=.3)
  for col,metric in enumerate(('wall_seconds','rss_gib')):
   ax=axmm(fig,12+44*col,35,31,22)
   for program,c,m,label in oldstyles:
@@ -76,10 +73,12 @@ def main():
   ax.set_xscale('log');ax.set_yscale('log');ax.set_xlim(4500,32000)
   ax.set_xticks([5000,30000],['5k','30k'])
   ax.set_yticks([50,100,500] if col==0 else [.5,1,3],['50','100','500'] if col==0 else ['0.5','1','3'])
-  ax.set_ylabel('Time (s)' if col==0 else 'RSS (GiB)');ax.set_xlabel('RNA length (nt)')
+  ax.set_ylabel('Time (s)' if col==0 else 'Peak memory (GiB)');ax.set_xlabel('RNA length (nt)')
   clean(ax);textmm(fig,1+44*col,60,'AB'[col],weight='bold',fontsize=9)
-  textmm(fig,12+44*col,60,'RNAcentral',fontsize=7)
- fig.legend(handles=key(METHODS.values()),loc='upper left',bbox_to_anchor=(.50,26/65),frameon=False,ncol=2,columnspacing=.7,handlelength=1.0,labelspacing=.3,fontsize=6.5)
+  textmm(fig,12+44*col,60,'RNAcentral RNAs',fontsize=7)
+ fig.legend(handles=key(METHODS.values()),loc='upper left',bbox_to_anchor=(.49,27/65),frameon=False,ncol=2,columnspacing=.7,handlelength=1.0,labelspacing=.3,fontsize=6.5)
+ incomplete={method:[r for r in data['resources'] if r['method']==method and not r['resource_eligible']]
+             for method in ('cparty','spark')}
  for col,metric in enumerate(('seconds','mib')):
   ax=axmm(fig,100+44*col,35,31,22)
   for method,(c,m,label) in METHODS.items():
@@ -91,24 +90,22 @@ def main():
   ax.set_xscale('log');ax.set_yscale('log');ax.set_xlim(200,35000)
   ax.set_xticks([250,4000,30000],['250','4k','30k'])
   ax.set_yticks([.1,10,1000] if col==0 else [10,100,1000],['0.1','10','1k'] if col==0 else ['10','100','1k'])
-  ax.set_ylim((.04,1500) if col==0 else (4,5500));ax.set_ylabel('Time (s)' if col==0 else 'RSS (MiB)')
+  ax.set_ylim((.04,1500) if col==0 else (4,5500));ax.set_ylabel('Time (s)' if col==0 else 'Peak memory (MiB)')
   ax.set_xlabel('RNA length (nt)');clean(ax)
   textmm(fig,89+44*col,60,'CD'[col],weight='bold',fontsize=9)
-  textmm(fig,100+44*col,60,'Real RNAs',fontsize=7)
-  rug=axmm(fig,100+44*col,7,31,5);rug.set_xscale('log');rug.set_xlim(200,35000);rug.set_ylim(-.5,1.5)
+  textmm(fig,100+44*col,64,'bpRNA and\nRNAcentral RNAs',fontsize=7,va='top',linespacing=1.0)
+  rug=axmm(fig,100+44*col,5,31,7);rug.set_xscale('log');rug.set_xlim(200,35000);rug.set_ylim(-.5,1.5)
   for method,y in [('cparty',1),('spark',0)]:
-   for status,(c,m,label) in FAILURES.items():
-    rs=[r for r in data['resources'] if r['method']==method and status in r['measurement_statuses']]
-    # Small status-specific offsets distinguish mixed failure types, not resource values.
-    shift={'nonfinite':0,'timeout':.16,'memory_limit':0,'signal_11':-.16}[status]
-    rug.scatter([r['length'] for r in rs],[y+shift]*len(rs),s=12,c=c,marker=m,linewidths=.7)
-  rug.set_yticks([1,0],['CP 48/107','Sp 4/107']);rug.tick_params(axis='y',length=0,pad=2,labelsize=6)
+   rs=incomplete[method];color=METHODS[method][0]
+   rug.scatter([r['length'] for r in rs],[y]*len(rs),s=16,c=color,marker='|',linewidths=.9)
+   if col==0:
+    total=sum(r['method']==method for r in data['resources'])
+    label=f'{"CParty" if method=="cparty" else "Spark"}, not completed ({len(rs)} of {total})'
+    rug.text(-.04,y,label,transform=rug.get_yaxis_transform(),ha='right',va='center',color=color,fontsize=6.5)
+  rug.set_yticks([])
   rug.tick_params(axis='x',which='both',bottom=False,labelbottom=False)
   for spine in rug.spines.values():spine.set_visible(False)
-  if col==0:textmm(fig,3,8,'Failure positions only; CP: CParty, Sp: Spark.\nMixed causes share input lengths.',fontsize=6)
- fig.legend(handles=key(FAILURES.values()),loc='upper center',bbox_to_anchor=(.5,6/65),frameon=False,ncol=4,columnspacing=1.5,handlelength=1)
- cp=[r for r in data['resources'] if r['method']=='cparty' and not r['resource_eligible']]
- sp=[r for r in data['resources'] if r['method']=='spark' and not r['resource_eligible']]
+ cp=incomplete['cparty'];sp=incomplete['spark']
  
  checks={'figure4':save(fig,args.out,'figure4',178,58)};plt.close(fig)
  # Preserve the former Figure 4C as a separate SI figure; no numerical change.
