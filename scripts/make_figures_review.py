@@ -416,8 +416,10 @@ def synthetic_detail(data, base, designs):
             summaries = [q for (p, s, n, m), q in data.synthetic_summary.items() if m == metric]
             lo, hi = min(q["min"] for q in summaries) * .65, max(q["max"] for q in summaries) * 1.4
             ax.set_ylim(lo, hi)
-            role = ("fold", "profile (loop profile)", "access (accessibility)")[row]
-            ax.set_title(role + (": time" if col == 0 else ": memory"), loc="left")
+            role = ("partition function +\npairing probabilities + MFE", "loop profiles",
+                    "loop profiles +\nwindow accessibility")[row]
+            ax.set_title(role, loc="left")
+            ax.set_ylabel("Wall time (s)" if col == 0 else "Peak memory (GiB)")
             # Normal-sized decimal labels, including all logarithmic ticks.
             ticks = [10.**k for k in range(math.floor(math.log10(lo)), math.ceil(math.log10(hi)) + 1)]
             ax.yaxis.set_major_locator(FixedLocator(ticks))
@@ -432,7 +434,8 @@ def synthetic_detail(data, base, designs):
         left, bottom = 3 + col * 41, 17 - row * 14
         ax = base.mm_axes(fig, left, bottom, 17, 8)
         draw_design(ax, designs[series])
-        text_mm(fig, left + 20, bottom + 6, SHORT_SERIES[i].replace("Free bases together", "Free bases\ntogether")
+        text_mm(fig, left + 20, bottom + 6, SHORT_SERIES[i].replace("Empty G", "Empty\nscaffold")
+                .replace("Free bases together", "Free bases\ntogether")
                 .replace("Balanced multiloops", "Balanced\nmultiloops").replace("Nested multiloops", "Nested\nmultiloops"),
                 va="center", color=".15")
         key = base.mm_axes(fig, left + 20, bottom - .5, 15, 2)
@@ -632,7 +635,8 @@ Evaluation counts and excluded RNAs for every length group and window length are
 ## Additional SI — figure3_synthetic_all_cli_si.pdf
 
 **Measured costs for seven synthetic sequence–scaffold series.**
-両軸は対数であり、RNA長は底2、時間とpeak RSSは底10を使う。
+A/Bは分配関数・塩基対確率・MFE、C/Dはループプロファイル、E/Fはループプロファイルと区間の非対合確率を示す。
+両軸は対数であり、RNA長は底2、時間と最大メモリは底10を使う。
 点は各seed三反復の中央値を三seed間でまとめた中央値、縦線は九測定の全範囲である。
 線は同じ系列の測定点を結ぶ。
 全156入力のうち、共通の五長さを持つ七系列×五長さ×三seedの105入力を示す。
@@ -640,7 +644,8 @@ Evaluation counts and excluded RNAs for every length group and window length are
 非空のGはfloor(0.15n)対を持ち、配列のGC含量は50%である。
 下の弧図は保存済みの250 ntのGを同じ縮尺で示す。
 
-Both axes are logarithmic: RNA length uses base 2, and time and peak RSS use base 10.
+A/B show the partition function, pairing probabilities, and MFE; C/D show loop profiles; E/F show loop profiles and window accessibility.
+Both axes are logarithmic: RNA length uses base 2, and time and peak memory use base 10.
 Symbols show medians across three seeds of within-seed medians of three repetitions; vertical bars span all nine measurements.
 Lines connect measured values within each series.
 The figure shows 105 of the 156 inputs: seven series, five shared lengths and three seeds.

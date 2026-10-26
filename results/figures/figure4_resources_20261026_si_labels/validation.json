@@ -1,0 +1,15 @@
+{
+  "synthetic_ratio_si": {
+    "width_mm": 165,
+    "height_mm": 42,
+    "png_dpi": 300,
+    "min_font_pt": 7.0,
+    "text_outside_canvas": []
+  },
+  "cparty_failed_inputs": 48,
+  "spark_failed_inputs": 4,
+  "png_visually_checked": true,
+  "plot_data_identical_to": "results/figures/figure4_resources_20261026_legend/plot_data.json",
+  "plot_data_sha256": "168f208fbb4f1abf5b13a4e3f7817a2cf429217bf6598181f87baf9d63244453",
+  "numeric_pdf_labels_unchanged": true
+}

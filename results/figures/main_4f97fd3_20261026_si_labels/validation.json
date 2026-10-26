@@ -1,0 +1,47 @@
+{
+  "all_passed": true,
+  "checks": {
+    "e2_replicate_scalars_checked": 2934,
+    "e2_feature_identity_fields_checked": 147,
+    "e2_current_metric_rows": 489,
+    "e2_current_stage_rows": 28,
+    "e2_concurrency_ratios_checked": 36
+  },
+  "source_files_unchanged": true,
+  "text_within_pages": true,
+  "text_without_overlap": true,
+  "plotted_points_within_axis_limits": true,
+  "minimum_normal_font_pt": 7,
+  "pdf_text_checks": {
+    "figure3_synthetic_all_cli_si.pdf": {
+      "minimum_pt": 7.0,
+      "maximum_pt": 9.0,
+      "spans": 99,
+      "sizes_pt": [
+        7.0,
+        9.0
+      ],
+      "method": "Ghostscript txtwrite TextFormat=0"
+    }
+  },
+  "outputs": [
+    {
+      "file": "figure3_synthetic_all_cli_si.pdf",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 61433,
+      "sha256": "f7db9a8a95fe334873a0c4b1b22b27826a026465f787c87ccec32f70d4c45f16"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.png",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 462419,
+      "sha256": "7018e229e3971deb9097da957e9d16df6ac0a6fa0327023dc68d03ce17a4c5af"
+    }
+  ],
+  "png_visually_checked": true,
+  "plot_data_identical_to": "results/figures/main_4f97fd3_20261021/plot_data.tsv",
+  "plot_data_sha256": "0a93d31bfb3450d25061d43f199f4e8707dfe17bdabcd6b4a31c3b88c1f18677",
+  "numeric_pdf_labels_unchanged": true
+}

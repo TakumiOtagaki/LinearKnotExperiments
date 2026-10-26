@@ -1,0 +1,62 @@
+{
+  "layout": "review-20261017",
+  "e2_revision": "4f97fd332e793a50fe157e47767a1a75a306fd01",
+  "scripts_sha256": {
+    "make_figures.py": "e96f7510207d8adfc2dd9e5813e41615dbe15c387711d6de0e987860ec1ed216",
+    "make_figures_review.py": "ce54143ea4a77e0533678a42bd06dce5c5064818f7d93d07ab8e96621412cc2a"
+  },
+  "numpy": "2.0.2",
+  "matplotlib": "3.9.4",
+  "sources": {
+    "e2_metrics.tsv": {
+      "path": "../../local/e2-4f97fd3-20261021/metrics.tsv",
+      "sha256": "82f389ddd1fe4df3e2d99c3ab583f9d8825f7eb94d4e93353392af51644ab62b"
+    },
+    "e2_comparisons.tsv": {
+      "path": "../../local/e2-4f97fd3-20261021/comparisons.tsv",
+      "sha256": "35f9e73a82df96cb82c38cdb5ab9ac501cc80c5fdbdf516d0e815d929a6377fa"
+    },
+    "e2_memory_metrics.tsv": {
+      "path": "../../local/e2-4f97fd3-20261021/memory_metrics.tsv",
+      "sha256": "b9a6522a6beae71c1436aaaf0dd0c7e53b4d0298ec96686c0683987e51c01082"
+    },
+    "e2_summary.json": {
+      "path": "../../local/e2-4f97fd3-20261021/summary.json",
+      "sha256": "e10075caf7c65bb36d1fb63e0cdb0220e7e19192ec50f036fb33e56d97159ad0"
+    },
+    "g_features": {
+      "path": "../../local/e2-e2cecbb4-g-features-20261016/rnacentral_g_features.tsv",
+      "sha256": "856c1f56b79ef524038d1885540203ecdf9f037b5946592f0179e12032978c82"
+    },
+    "synthetic_designs": {
+      "path": "../../../data/e2-synthetic-shapes-20261012/inputs.jsonl",
+      "sha256": "acdab9208952bd2a53ce6a1cfce84f50e024dfcc707158ef1d949071027c8fbe"
+    }
+  },
+  "outputs": [
+    {
+      "file": "figure3_synthetic_all_cli_si.pdf",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 61433,
+      "sha256": "f7db9a8a95fe334873a0c4b1b22b27826a026465f787c87ccec32f70d4c45f16"
+    },
+    {
+      "file": "figure3_synthetic_all_cli_si.png",
+      "width_mm": 165,
+      "height_mm": 178.0,
+      "bytes": 462419,
+      "sha256": "7018e229e3971deb9097da957e9d16df6ac0a6fa0327023dc68d03ce17a4c5af"
+    }
+  ],
+  "derived_files": {
+    "README.md": "8ae3e8105938282dd9a29ddc46768d235a87e0c9adf75e814cb35f1eb642a0ed",
+    "caption.md": "6cd04f52d5a994775ef500b198a361ef081d5414798d16e307767bb8d1092b95",
+    "plot_data.tsv": "0a93d31bfb3450d25061d43f199f4e8707dfe17bdabcd6b4a31c3b88c1f18677",
+    "validation.json": "e98a044e8e444215e9bbc9932ace027cf116c736925f6e489f965ca2a8a84ab6"
+  },
+  "source_base_commit": "d4420048dc6eebddc7cab14b64ee51b8e872ce46",
+  "visual_review_completed": true,
+  "retained_figure": "figure3_synthetic_all_cli_si",
+  "measurement_data_unchanged": true
+}
