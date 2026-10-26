@@ -1,0 +1,20 @@
+{
+  "figure4": {
+    "width_mm": 178,
+    "height_mm": 58,
+    "png_dpi": 300,
+    "min_font_pt": 6.0,
+    "text_outside_canvas": []
+  },
+  "synthetic_ratio_si": {
+    "width_mm": 165,
+    "height_mm": 42,
+    "png_dpi": 300,
+    "min_font_pt": 7.0,
+    "text_outside_canvas": []
+  },
+  "cparty_failed_inputs": 48,
+  "spark_failed_inputs": 4,
+  "png_visually_checked": true,
+  "visual_review": "Opened final Figure 4 PNG and synthetic SI PNG; checked all panels, colors/shapes, logarithmic axes, failure strips/counts, legends, clipping and readability. Also checked the normal and latexdiff PDF pages."
+}

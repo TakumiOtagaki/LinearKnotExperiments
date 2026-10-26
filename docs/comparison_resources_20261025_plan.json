@@ -1,0 +1,479 @@
+{
+  "schema_version": 1,
+  "input_manifest_sha256": "2a9535f75d5e1cc69ed3de380125f8000eacbf02c827d9fff0af910a709c2140",
+  "software_lock_sha256": "3172e0f8064f2053a88c7cf616b1780dc837f0c817d04fa35275c45f4b5462f0",
+  "input_count": 107,
+  "point_formula": "0.06*(0.7*max(task_wall_seconds,300)+0.1*h_rt_seconds)/3600; priority 0",
+  "tariff_url": "https://www.t4.cii.isct.ac.jp/tsubame-kyodo/tariff2026",
+  "tariff_checked_date": "2026-10-26",
+  "estimates": "Timeout-budget ceilings, not predicted completion times or fitted scaling; storage/retries excluded",
+  "file_budget": {
+    "format": "task-jsonl-tar-v1",
+    "tasks": 63,
+    "nonempty_tiers": 15,
+    "entries_per_task": 13,
+    "fixed_entries": 44,
+    "estimated_shared_entries": 863,
+    "counts_directories": true,
+    "scheduler_log_attempts": 1,
+    "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "quota": {
+      "used_files": 21864237,
+      "limit_files": 28000000,
+      "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9643724944  14680064000 14680064000       - 21864237  28000000 28000000       -"
+    },
+    "hard_file_limit": 24000000,
+    "remaining_files": 2135763,
+    "remaining_source": "lfs quota (with configured conservative hard limit)",
+    "max_remaining_fraction": 0.1,
+    "allowed_entries": 213576,
+    "accepted": true
+  },
+  "arrays": [
+    {
+      "run": "comparison-resources-v0.2.0-20261025-short",
+      "tier": "n250",
+      "methods": [
+        "cparty",
+        "exact",
+        "beam100",
+        "spark",
+        "fold100"
+      ],
+      "inputs": 20,
+      "tasks": 5,
+      "cli_calls": 400,
+      "workers": 8,
+      "h_rt": "00:10:00",
+      "timeout_seconds": 10,
+      "memory_limit_mib": 1024,
+      "timeout_budget_hours": 0.5850694444444444,
+      "timeout_budget_points": 0.029572916666666667,
+      "h_rt_points": 0.04,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-short/n250.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-short/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-short",
+      "tier": "n500",
+      "methods": [
+        "cparty",
+        "exact",
+        "beam100",
+        "spark",
+        "fold100"
+      ],
+      "inputs": 20,
+      "tasks": 5,
+      "cli_calls": 400,
+      "workers": 8,
+      "h_rt": "00:25:00",
+      "timeout_seconds": 30,
+      "memory_limit_mib": 1024,
+      "timeout_budget_hours": 1.421875,
+      "timeout_budget_points": 0.07221875,
+      "h_rt_points": 0.1,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-short/n500.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-short/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-short",
+      "tier": "n1000",
+      "methods": [
+        "cparty",
+        "exact",
+        "beam100",
+        "spark",
+        "fold100"
+      ],
+      "inputs": 20,
+      "tasks": 5,
+      "cli_calls": 400,
+      "workers": 8,
+      "h_rt": "01:20:00",
+      "timeout_seconds": 120,
+      "memory_limit_mib": 4096,
+      "timeout_budget_hours": 5.1875,
+      "timeout_budget_points": 0.25787499999999997,
+      "h_rt_points": 0.32,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-short/n1000.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-short/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-bounded",
+      "tier": "n2000",
+      "methods": [
+        "beam100",
+        "fold100"
+      ],
+      "inputs": 20,
+      "tasks": 5,
+      "cli_calls": 160,
+      "workers": 8,
+      "h_rt": "00:45:00",
+      "timeout_seconds": 180,
+      "memory_limit_mib": 4096,
+      "timeout_budget_hours": 2.9166666666666665,
+      "timeout_budget_points": 0.145,
+      "h_rt_points": 0.18,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-bounded/n2000.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-bounded/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-bounded",
+      "tier": "n4000",
+      "methods": [
+        "beam100",
+        "fold100"
+      ],
+      "inputs": 20,
+      "tasks": 10,
+      "cli_calls": 160,
+      "workers": 4,
+      "h_rt": "00:50:00",
+      "timeout_seconds": 300,
+      "memory_limit_mib": 8192,
+      "timeout_budget_hours": 6.166666666666667,
+      "timeout_budget_points": 0.3089999999999999,
+      "h_rt_points": 0.4,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-bounded/n4000.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-bounded/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-bounded",
+      "tier": "rnacentral",
+      "methods": [
+        "beam100",
+        "fold100"
+      ],
+      "inputs": 7,
+      "tasks": 4,
+      "cli_calls": 56,
+      "workers": 4,
+      "h_rt": "02:15:00",
+      "timeout_seconds": 900,
+      "memory_limit_mib": 8192,
+      "timeout_budget_hours": 6.633333333333334,
+      "timeout_budget_points": 0.3326,
+      "h_rt_points": 0.432,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-bounded/rnacentral.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-bounded/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-cparty",
+      "tier": "n2000",
+      "methods": [
+        "cparty"
+      ],
+      "inputs": 20,
+      "tasks": 3,
+      "cli_calls": 80,
+      "workers": 8,
+      "h_rt": "00:45:00",
+      "timeout_seconds": 180,
+      "memory_limit_mib": 4096,
+      "timeout_budget_hours": 1.55,
+      "timeout_budget_points": 0.0786,
+      "h_rt_points": 0.10799999999999998,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-cparty/n2000.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-cparty/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-cparty",
+      "tier": "n4000",
+      "methods": [
+        "cparty"
+      ],
+      "inputs": 20,
+      "tasks": 5,
+      "cli_calls": 80,
+      "workers": 4,
+      "h_rt": "01:30:00",
+      "timeout_seconds": 600,
+      "memory_limit_mib": 8192,
+      "timeout_budget_hours": 6.0,
+      "timeout_budget_points": 0.297,
+      "h_rt_points": 0.36,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-cparty/n4000.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-cparty/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-cparty",
+      "tier": "rna_4793_6990",
+      "methods": [
+        "cparty"
+      ],
+      "inputs": 3,
+      "tasks": 1,
+      "cli_calls": 12,
+      "workers": 4,
+      "h_rt": "02:15:00",
+      "timeout_seconds": 900,
+      "memory_limit_mib": 8192,
+      "timeout_budget_hours": 1.5333333333333334,
+      "timeout_budget_points": 0.0779,
+      "h_rt_points": 0.108,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-cparty/rna_4793_6990.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-cparty/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-cparty",
+      "tier": "rna_11832_29106",
+      "methods": [
+        "cparty"
+      ],
+      "inputs": 4,
+      "tasks": 4,
+      "cli_calls": 16,
+      "workers": 1,
+      "h_rt": "05:05:00",
+      "timeout_seconds": 3600,
+      "memory_limit_mib": 32768,
+      "timeout_budget_hours": 16.133333333333333,
+      "timeout_budget_points": 0.7996,
+      "h_rt_points": 0.976,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-cparty/rna_11832_29106.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-cparty/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-spark",
+      "tier": "n2000",
+      "methods": [
+        "spark"
+      ],
+      "inputs": 20,
+      "tasks": 3,
+      "cli_calls": 80,
+      "workers": 8,
+      "h_rt": "00:45:00",
+      "timeout_seconds": 180,
+      "memory_limit_mib": 4096,
+      "timeout_budget_hours": 1.55,
+      "timeout_budget_points": 0.0786,
+      "h_rt_points": 0.10799999999999998,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-spark/n2000.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-spark/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-spark",
+      "tier": "n4000",
+      "methods": [
+        "spark"
+      ],
+      "inputs": 20,
+      "tasks": 5,
+      "cli_calls": 80,
+      "workers": 4,
+      "h_rt": "01:30:00",
+      "timeout_seconds": 600,
+      "memory_limit_mib": 8192,
+      "timeout_budget_hours": 6.0,
+      "timeout_budget_points": 0.297,
+      "h_rt_points": 0.36,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-spark/n4000.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-spark/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-spark",
+      "tier": "rna_4793_6990",
+      "methods": [
+        "spark"
+      ],
+      "inputs": 3,
+      "tasks": 1,
+      "cli_calls": 12,
+      "workers": 4,
+      "h_rt": "02:15:00",
+      "timeout_seconds": 900,
+      "memory_limit_mib": 8192,
+      "timeout_budget_hours": 1.5333333333333334,
+      "timeout_budget_points": 0.0779,
+      "h_rt_points": 0.108,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-spark/rna_4793_6990.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-spark/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-spark",
+      "tier": "rna_11832_29106",
+      "methods": [
+        "spark"
+      ],
+      "inputs": 4,
+      "tasks": 4,
+      "cli_calls": 16,
+      "workers": 1,
+      "h_rt": "05:05:00",
+      "timeout_seconds": 3600,
+      "memory_limit_mib": 32768,
+      "timeout_budget_hours": 16.133333333333333,
+      "timeout_budget_points": 0.7996,
+      "h_rt_points": 0.976,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-spark/rna_11832_29106.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-spark/array_plan.json"
+    },
+    {
+      "run": "comparison-resources-v0.2.0-20261025-exact",
+      "tier": "n2000",
+      "methods": [
+        "exact"
+      ],
+      "inputs": 20,
+      "tasks": 3,
+      "cli_calls": 80,
+      "workers": 8,
+      "h_rt": "03:30:00",
+      "timeout_seconds": 900,
+      "memory_limit_mib": 4096,
+      "timeout_budget_hours": 7.35,
+      "timeout_budget_points": 0.3717,
+      "h_rt_points": 0.504,
+      "script": "jobs/comparison-resources-v0.2.0-20261025-exact/n2000.sh",
+      "plan": "results/runs/comparison-resources-v0.2.0-20261025-exact/array_plan.json"
+    }
+  ],
+  "exact_exclusions": [
+    {
+      "input": "bpRNA_RFAM_43098",
+      "length": 3607,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43116",
+      "length": 3665,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43127",
+      "length": 3716,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43146",
+      "length": 3723,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43104",
+      "length": 3724,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43092",
+      "length": 3740,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43150",
+      "length": 3746,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43087",
+      "length": 3764,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43147",
+      "length": 3874,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43149",
+      "length": 3899,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43130",
+      "length": 3923,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_CRW_55321",
+      "length": 3946,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43099",
+      "length": 3967,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43090",
+      "length": 3987,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43109",
+      "length": 4000,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43125",
+      "length": 4002,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43162",
+      "length": 4021,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43131",
+      "length": 4027,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43119",
+      "length": 4031,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "bpRNA_RFAM_43094",
+      "length": 4065,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "URS000233CDDE",
+      "length": 4793,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "URS00019626CE",
+      "length": 5482,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "URS000239D8A4",
+      "length": 6990,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "URS00023C9544",
+      "length": 11832,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "URS000241043C",
+      "length": 13652,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "URS000238C72C",
+      "length": 22543,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    },
+    {
+      "input": "URS00023A4DB9",
+      "length": 29106,
+      "reason": "not planned above 2200 nt; practical exact range; no extrapolated resource value"
+    }
+  ],
+  "tasks": 63,
+  "cli_calls": 2032,
+  "timeout_budget_points": 4.024166666666666,
+  "h_rt_points": 5.08,
+  "requested_allocation_hours": 105.83333333333333,
+  "total_shared_entry_budget": 1019
+}

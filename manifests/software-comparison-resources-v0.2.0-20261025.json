@@ -1,0 +1,324 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-25T14:59:52.439585+00:00",
+  "purpose": "formal",
+  "source_commit": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+  "source_git_state": {
+    "commit": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+    "dirty": false
+  },
+  "build_revision_verified": true,
+  "verification_method": "git archive v0.2.0; rebuild on TSUBAME node-local; old CParty/Spark source hashes checked",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "cmake_cache_sha256": "3423d54809cca183166bda9dc853e1a3a2f9f38f3d13cb2fd27d56d30e6c7277",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "CMAKE_GENERATOR": "Unix Makefiles"
+  },
+  "binaries": {
+    "PFScaling": "252fda85ea6461e452a918e767c0455670bbef54c228fcaaaac70775a38763da",
+    "E0CPartyOracle": "a43c38213e5ef942564502f1ce008ae13afb4f303c615215a8b99f6624a2b4e7",
+    "linearknot": "93720840f33c4d622d15de8e75e157f5965fdc1e98123ca3a71002d605ac4956",
+    "Spark": "90ee857b5a5abb7b68e9785d9a9d48c77d13ca0cddc5bd09716e2cf53b30dfaa",
+    "Comparison": "eecf35c3ce84deec13629519442d6392b2962af8b09d4eb804d3df7fa0f94d65"
+  },
+  "build_files": {
+    "PFScaling": "252fda85ea6461e452a918e767c0455670bbef54c228fcaaaac70775a38763da",
+    "E0CPartyOracle": "a43c38213e5ef942564502f1ce008ae13afb4f303c615215a8b99f6624a2b4e7",
+    "linearknot": "93720840f33c4d622d15de8e75e157f5965fdc1e98123ca3a71002d605ac4956",
+    "Spark": "90ee857b5a5abb7b68e9785d9a9d48c77d13ca0cddc5bd09716e2cf53b30dfaa",
+    "CMakeCache.txt": "3423d54809cca183166bda9dc853e1a3a2f9f38f3d13cb2fd27d56d30e6c7277",
+    "Comparison": "eecf35c3ce84deec13629519442d6392b2962af8b09d4eb804d3df7fa0f94d65"
+  },
+  "extra_files": [
+    {
+      "path": "results/local/comparison-resources-build-20261025/software.tar.gz",
+      "sha256": "efc1a77059d7bd3e79dd055a29809b060a1249c89029d826ad24811be9f2f339"
+    },
+    {
+      "path": "scripts/build_comparison_resources_20261025.py",
+      "sha256": "0d115ae1757d5979ee7eba0047901d7fce347eb90d3094db351ec07151521ee0"
+    },
+    {
+      "path": "scripts/comparison_resources_array_20261025.py",
+      "sha256": "a246f097cf65dbe003384ceeb08f314e5c1ee0b022def889727880ac4eddff07"
+    },
+    {
+      "path": "scripts/comparison_resources_command.py",
+      "sha256": "eecf35c3ce84deec13629519442d6392b2962af8b09d4eb804d3df7fa0f94d65"
+    },
+    {
+      "path": "scripts/file_budget.py",
+      "sha256": "5deb8833a22cf1da0d5a0cc4c32d9a9d4dee6876bbb0e767bba370e6f415cb5b"
+    },
+    {
+      "path": "scripts/plan_array.py",
+      "sha256": "ccece73b8a81a696899aabbdd96dcb779062236c1a133d679667a8486ace137c"
+    },
+    {
+      "path": "scripts/prepare_comparison_inputs_20261025.py",
+      "sha256": "12190f6861b10081ba4bac9a3d7bfbd77a87a37de99311f9cc68712eac43a4ba"
+    },
+    {
+      "path": "scripts/prepare_comparison_resources_20261025.py",
+      "sha256": "1bfa284bb8139df67db7e56f990922cd5387a67fbddc51eb1ff234b651f8dbb7"
+    },
+    {
+      "path": "scripts/run_array_task.py",
+      "sha256": "32648f8c1b5d61a518096cc5fb58793fe7e58af4ffb4fb7541fbc4cda223b6ab"
+    },
+    {
+      "path": "scripts/run_cli.py",
+      "sha256": "73ecf6c624b31ebd496ef01890bce582a0fd8e427d5a591277234f5085983ff9"
+    },
+    {
+      "path": "scripts/task_storage.py",
+      "sha256": "7371e4ded5f037d8719d391f4bfa1474502e353ed78251f881c833061ad55821"
+    },
+    {
+      "path": "tools/e0_legacy_scalar.cc",
+      "sha256": "e954bc688dbae0818c985335905d04fb4bd0faf61a6c4d50a29d1cd0feb5862c"
+    },
+    {
+      "path": "tools/pf_scaling_linearknot.cc",
+      "sha256": "6feaab86910e691282fa972ffeb374b2032ef839517ffc3eafe6f0646340fc58"
+    }
+  ],
+  "software_bundle": "results/local/comparison-resources-build-20261025/software.tar.gz",
+  "source_repositories": {
+    "linearknot": "/gs/bs/tga-satolab-gtex/otgk/LinearKnot"
+  },
+  "provenance": {
+    "created_utc": "2026-10-25T14:59:44.957369+00:00",
+    "source_commits": {
+      "linearknot": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+      "spark": "3105c311ca6243a31788e74ac33640435e53b62c",
+      "cparty": "800e95af9d1a97555233e2c7b37d73dbaa1a92b4"
+    },
+    "source_archive_sha256": {
+      "linearknot": "d252b655d7fa9a556aa0cc03eb471133c70ea8fe8d9db64c78a55758b85bf475",
+      "spark": "d52bd08e1ee6c4b4b8c6069d4d3c2db849d15f47a742f606af1cd6823c21fddb",
+      "cparty_upstream": "d5bf6fdacb35e055c4f3ff409061ee2ac2321a8fab7de4476f6e14ae68282a97"
+    },
+    "patches": [
+      {
+        "path": "deps/LinearCParty-89baea52/test/oracle/legacy_cparty/patches/0001-build-include-algorithm-in-centroid.cc-for-std-sort.patch",
+        "sha256": "5fa0acde00ae3e09c4574c483af5a4c7c0716a66568014a17d7b920abb77fca2"
+      },
+      {
+        "path": "deps/LinearCParty-89baea52/test/oracle/legacy_cparty/patches/0002-cli-read-input_structure_given-before-cmdline_parser.patch",
+        "sha256": "e4aa002d5e8093c3abd802fb965986f69a53d60e1e4f278f70e9a4e27875bc82"
+      },
+      {
+        "path": "deps/LinearCParty-89baea52/test/oracle/legacy_cparty/patches/0006-VPR-right-run-guard-covers-j-CParty-5-follow-up.patch",
+        "sha256": "f14610e62404e904b9345ffdaee83cd338f3bc69dd034e1b2667c3a159e25939"
+      },
+      {
+        "path": "deps/LinearCParty-89baea52/test/oracle/legacy_cparty/patches/0007-Extrapolate-PF-weights-for-long-scaffold-loops.patch",
+        "sha256": "ed3cba67f0f2047c8118613d83f4a6970c4cb138902a951c5b6b4d3815a251c1"
+      },
+      {
+        "path": "deps/LinearCParty-89baea52/test/oracle/legacy_cparty/patches/0008-WIP-include-minimal-hairpin-branch.patch",
+        "sha256": "a735b6da4adbd8b7f69a7a8acc5586ea635076e4108c704273da67accbaee8de"
+      },
+      {
+        "path": "deps/LinearCParty-89baea52/test/oracle/legacy_cparty/patches/0009-Multiloop-closing-use-inner-neighbors.patch",
+        "sha256": "c3af24bd8d53deac4aa1d39dfff3c95613672e0b92dccd221359e14b5429267b"
+      }
+    ],
+    "commands": [
+      [
+        "git",
+        "-C",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearKnot",
+        "archive",
+        "--format=tar",
+        "-o",
+        "/tmp/comparison-resources-build-20261025/source.tar",
+        "v0.2.0"
+      ],
+      [
+        "git",
+        "-C",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/Spark-upstream",
+        "archive",
+        "--format=tar",
+        "-o",
+        "/tmp/comparison-resources-build-20261025/spark-source.tar",
+        "3105c311ca6243a31788e74ac33640435e53b62c"
+      ],
+      [
+        "git",
+        "-C",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/build/cparty-oracle-800e95a-6patches/src",
+        "archive",
+        "--format=tar",
+        "-o",
+        "/tmp/comparison-resources-build-20261025/cparty-source.tar",
+        "800e95af9d1a97555233e2c7b37d73dbaa1a92b4"
+      ],
+      [
+        "git",
+        "apply",
+        "--unsafe-paths",
+        "--directory=/tmp/comparison-resources-build-20261025/cparty-source",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52/test/oracle/legacy_cparty/patches/0001-build-include-algorithm-in-centroid.cc-for-std-sort.patch"
+      ],
+      [
+        "git",
+        "apply",
+        "--unsafe-paths",
+        "--directory=/tmp/comparison-resources-build-20261025/cparty-source",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52/test/oracle/legacy_cparty/patches/0002-cli-read-input_structure_given-before-cmdline_parser.patch"
+      ],
+      [
+        "git",
+        "apply",
+        "--unsafe-paths",
+        "--directory=/tmp/comparison-resources-build-20261025/cparty-source",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52/test/oracle/legacy_cparty/patches/0006-VPR-right-run-guard-covers-j-CParty-5-follow-up.patch"
+      ],
+      [
+        "git",
+        "apply",
+        "--unsafe-paths",
+        "--directory=/tmp/comparison-resources-build-20261025/cparty-source",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52/test/oracle/legacy_cparty/patches/0007-Extrapolate-PF-weights-for-long-scaffold-loops.patch"
+      ],
+      [
+        "git",
+        "apply",
+        "--unsafe-paths",
+        "--directory=/tmp/comparison-resources-build-20261025/cparty-source",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52/test/oracle/legacy_cparty/patches/0008-WIP-include-minimal-hairpin-branch.patch"
+      ],
+      [
+        "git",
+        "apply",
+        "--unsafe-paths",
+        "--directory=/tmp/comparison-resources-build-20261025/cparty-source",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/deps/LinearCParty-89baea52/test/oracle/legacy_cparty/patches/0009-Multiloop-closing-use-inner-neighbors.patch"
+      ],
+      [
+        "cmake",
+        "-S",
+        "/tmp/comparison-resources-build-20261025/source",
+        "-B",
+        "/tmp/comparison-resources-build-20261025/lk-build",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+        "-DLINEARKNOT_LTO_JOBS=1"
+      ],
+      [
+        "cmake",
+        "--build",
+        "/tmp/comparison-resources-build-20261025/lk-build",
+        "--target",
+        "linearknot",
+        "--parallel",
+        "2"
+      ],
+      [
+        "cmake",
+        "-S",
+        "/tmp/comparison-resources-build-20261025/spark-source",
+        "-B",
+        "/tmp/comparison-resources-build-20261025/spark-build",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+      ],
+      [
+        "cmake",
+        "--build",
+        "/tmp/comparison-resources-build-20261025/spark-build",
+        "--parallel",
+        "2"
+      ],
+      [
+        "cmake",
+        "-S",
+        "/tmp/comparison-resources-build-20261025/cparty-source",
+        "-B",
+        "/tmp/comparison-resources-build-20261025/cparty-build",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"
+      ],
+      [
+        "cmake",
+        "--build",
+        "/tmp/comparison-resources-build-20261025/cparty-build",
+        "--parallel",
+        "2"
+      ],
+      [
+        "g++",
+        "-O2",
+        "-std=c++17",
+        "-I/tmp/comparison-resources-build-20261025/source/src",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/pf_scaling_linearknot.cc",
+        "/tmp/comparison-resources-build-20261025/lk-build/libcparty_scfg2_beam.a",
+        "/tmp/comparison-resources-build-20261025/lk-build/libcparty_scfg2_exact.a",
+        "/tmp/comparison-resources-build-20261025/lk-build/libRNA.a",
+        "-o",
+        "/tmp/comparison-resources-build-20261025/runtime/PFScaling"
+      ],
+      [
+        "g++",
+        "-O2",
+        "-std=gnu++17",
+        "-I/tmp/comparison-resources-build-20261025/cparty-source/src",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/tools/e0_legacy_scalar.cc",
+        "/tmp/comparison-resources-build-20261025/cparty-build/CMakeFiles/CParty.dir/src/part_func.cc.o",
+        "/tmp/comparison-resources-build-20261025/cparty-build/CMakeFiles/CParty.dir/src/dot_plot.cc.o",
+        "/tmp/comparison-resources-build-20261025/cparty-build/CMakeFiles/CParty.dir/src/mea.cc.o",
+        "/tmp/comparison-resources-build-20261025/cparty-build/CMakeFiles/CParty.dir/src/centroid.cc.o",
+        "/tmp/comparison-resources-build-20261025/cparty-build/CMakeFiles/CParty.dir/src/W_final.cc.o",
+        "/tmp/comparison-resources-build-20261025/cparty-build/CMakeFiles/CParty.dir/src/pseudo_loop.cc.o",
+        "/tmp/comparison-resources-build-20261025/cparty-build/CMakeFiles/CParty.dir/src/s_energy_matrix.cc.o",
+        "/tmp/comparison-resources-build-20261025/cparty-build/CMakeFiles/CParty.dir/src/Hotspot.cc.o",
+        "/tmp/comparison-resources-build-20261025/cparty-build/CMakeFiles/CParty.dir/src/sparse_tree.cc.o",
+        "/tmp/comparison-resources-build-20261025/cparty-build/CMakeFiles/CParty.dir/src/SHAPE.cc.o",
+        "/tmp/comparison-resources-build-20261025/cparty-build/libRNA.a",
+        "-o",
+        "/tmp/comparison-resources-build-20261025/runtime/E0CPartyOracle"
+      ]
+    ],
+    "compiler": "g++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+    "hostname": "r11n8",
+    "build_workers": 2,
+    "cpu_model": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           52 bits physical, 57 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  384\nOn-line CPU(s) list:                     0-383\nVendor ID:                               AuthenticAMD\nModel name:                              AMD EPYC 9654 96-Core Processor\nCPU family:                              25\nModel:                                   17\nThread(s) per core:                      2\nCore(s) per socket:                      96\nSocket(s):                               2\nStepping:                                1\nFrequency boost:                         enabled\nCPU(s) scaling MHz:                      75%\nCPU max MHz:                             3709.3569\nCPU min MHz:                             1500.0000\nBogoMIPS:                                4793.01\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good amd_lbr_v2 nopl xtopology nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk avx512_bf16 clzero irperf xsaveerptr rdpru wbnoinvd amd_ppin cppc arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif x2avic v_spec_ctrl vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid overflow_recov succor smca fsrm flush_l1d debug_swap\nVirtualization:                          AMD-V\nL1d cache:                               6 MiB (192 instances)\nL1i cache:                               6 MiB (192 instances)\nL2 cache:                                192 MiB (192 instances)\nL3 cache:                                768 MiB (24 instances)\nNUMA node(s):                            2\nNUMA node0 CPU(s):                       0-95,192-287\nNUMA node1 CPU(s):                       96-191,288-383\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Mitigation; Safe RET\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; STIBP always-on; PBRSB-eIBRS Not affected; BHI Not affected\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Mitigation; Clear CPU buffers\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Mitigation; IBPB before exit to userspace\n",
+    "build_settings": {
+      "lk": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CXX_COMPILER": "/bin/c++",
+        "CMAKE_CXX_FLAGS": "",
+        "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+        "CMAKE_GENERATOR": "Unix Makefiles"
+      },
+      "spark": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CXX_COMPILER": "/bin/c++",
+        "CMAKE_CXX_FLAGS": "",
+        "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+        "CMAKE_GENERATOR": "Unix Makefiles"
+      },
+      "cparty": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CXX_COMPILER": "/bin/c++",
+        "CMAKE_CXX_FLAGS": "",
+        "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+        "CMAKE_GENERATOR": "Unix Makefiles"
+      }
+    },
+    "library_sha256": {
+      "libcparty_scfg2_beam.a": "927691d3fb276e5b56eb8d73a87ee08759f32aceb2a64e04ad15386219de0f3b",
+      "libcparty_scfg2_exact.a": "cec1e75614216223a17c60fab740ba632b218fbe8969eeb2941c27ed2fcc9c7e",
+      "libRNA.a": "67a5f8b7b46dc6c1f584a28ea4c1c770049ccbe81f41c689d243d59cf9f872e8"
+    },
+    "scope": "PF inside-only compatible; Spark official MFE; linearknot fold includes MFE+PF, no BPP"
+  }
+}

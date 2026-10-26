@@ -336,3 +336,28 @@ was performed.
 - Assigned every base with `classify(37, completed_pairs)` from the unmodified LinearKnot v0.2.0 shape reference, extracted with its fixtures to node-local storage via `git archive`. The renderer checks reference SHA-256 `30547e8701d3c28b7e56e97384b207d405157e0c6df4b7cf71d605892740a48f`. All 14 reference fixtures / 545 fully unpaired windows passed. This is shape classification, not a new folding or probability result.
 - Saved [PDF/PNG, bilingual caption addition and handoff, per-base classification, all feedback marks and validation](../results/figures/figure1_fb6_20261025/README.md). Opened the eight feedback images individually and mapped the p4 “図” comment to “seven structural contexts”; recorded all 32 actual markup objects and grounds for uncommented marks.
 - Kept the 178×145 mm canvas, minimum 7 pt text and 300 dpi preview. Opened the final PNG; no overlap/clipping found. B/C pixels and input/data hashes match the adopted fb4 version. Verified the seven-color palette and all eight paper export hashes. Exported only paper `figures/figure1.pdf` and its manifest entry. External implementation trees, manuscript sources and measured RNA outputs were not edited by this task; no folding runs, scheduler jobs or Git commits.
+
+
+## 2026-10-26（10-25 依頼）実 RNA の CParty PF / Spark MFE 資源比較を準備
+
+- [準備・試走・全 qsub コマンド](comparison_resources_20261025.md)を保存した。bpRNA-1m(90) の E1 全集合から seed 20261025、各中心 250/500/1000/2000/4000 nt の ±10% ごとに20本、E2 RNAcentral 7本を採用し、全107 S/Gを既存採用入力のhashと照合した。入力は1 tar＋manifest。
+- LinearKnot v0.2.0（f93b55e）を git archive v0.2.0、Spark 3105c311、論文の6 patch CPartyをnode-localでRelease buildし、旧source/patch hashと照合してbundleとlockを固定した。PFは互換closure・exactまたはb=h=d=100、Sparkは修正せず、比較相手のfoldはMFE+PF全体（MFE-only optionなし）。原稿の数値や構造一致の主張は更新していない。
+- 15 arrays / 63 tasks、全cpu_16、warm-up 508＋測定1524＝2032 CLIを未開始で用意した。exactは2200 ntまで80本。長いCParty/Sparkは別array、最大1時間/CLI・32 GiB AS cap。poolは原則8/4、32 GiBを与えるtaskは1。既存runnerのwarm-up直後の起動待ちも含め、実際のtimeoutから全1+3 matrixの上限を計算し、時間を外挿せず、予算4.024167 point、全h_rt使用時5.080 point、共有entry枠1019を記録した。
+- 6 RNA×5方式×1+3の120回は116成功、1805 nt CPartyの4回がnonfinite。有限CParty/exact 15測定はPF許容差内（最大log Z差4.04e-12、energy差2.50e-12）。最終node-local stagingの40 CLI成功、resumeで40行を再実行せず200 raw member hashが一致。native Spark timeout・adapter timeout・exact bad_allocの保存も確認し、欠測/失敗の資源値はmedianにしない。新規4＋既存21＝25 testsと全15 bash構文、全入力/依存hash・memory/wall/inode gateが成功。正式63 taskは全てnot_started。
+- 共有rawはtaskごとにJSONL/tar、node-localの再生成可能なbuildは削除し、原ソース・build log・runtimeをtarに保存した。外部実装repoの変更・checkout、qsub、git commitは行っていない。
+
+
+## 2026-10-26 構造予測精度の小規模 pilot（2026-10-25 依頼）
+
+- [設定・全表・所見・追試計画](accuracy_pilot_20261025.md)。E1 と同じ26,063配列に、保存済みSI cohort 200+80本の完全注釈を照合し、seed 20261025、群50–199/200–499/500–999/1,000–3,000 ntで20/20/3/0本を抽出した。公式bpRNA zipの再取得はDNS失敗。全E1母集団からの抽出と長い群の比較は未完了であり、保存cohortに条件づけた予備調査として保持する。ArchiveIIは手元のFASTAに参照がなく、使用できるpseudoknot注釈を揃えられず省略した。
+- LinearKnot v0.2.0（f93b55e）をgit archiveからnode-localに取り出してRelease build。予測scaffoldはLinearPartition-V b200、p≥0.7、連続2対以上、既存threshold_scaffoldを使用。LinearKnot b=h=d=100のcentroid γ1とMFE、LP-V MEA γ1、ThreshKnot、IPknot LP-V b200、未修正Sparkをsingle-workerで計測した。IPknotは既存Docker archiveのbinary/librariesをnode-localに展開しmusl loaderで実行。Knottyはsource取得のDNS失敗でskip。
+- 交差対F（%）は群順に、LinearKnot centroid 17.72/0/0、MFE 30.66/0/0、IPknot 10.38/10.49/0.90、ThreshKnot 5.08/2.31/3.12。LP MEAは全群0。全対のsensitivity/PPV/F、時間/RSS、macro Fと共通成功集合の集計も保存した。参照・予測それぞれの構造内で交差を判定し、非canonical参照対も主指標に含めた。Sparkは不正な括弧出力1、signal 11が1、別の有効出力でscaffold18対脱落があり精度は参考扱い。一般的な精度優越の主張は保留し、本文への表の追加は完全注釈の追試後がよいとの所見を記録した。
+- 主計測301 process（299成功、Sparkの不正/失敗2）、Knotty43 skip、277.25 s。全256有効予測をraw stdoutから再parseして指標を再計算し、43 scaffoldを確率と隣接対から独立再構成、2,193 raw member hashを照合。別実装と500組のpair mapsでscoreを比較し、一致。外部sourceのcommit/statusとbinaryの前後hash、Sparkの既存lockとの一致を確認した。結果は`results/local/accuracy-pilot-20261025/`のtar/JSONL等10ファイル、実行・検証スクリプトはexperiments/scripts/accuracy_pilot_20261025.py。
+- 開始時inode 21,864,090/28,000,000、共有entry予算16。per-process出力とbuildはnode-localで作り、必要なsource/build/runtime/ログをtarへ保存して中間物を除去した。大きなjobやqsub、git commit、原稿本文・図表・外部実装checkoutの変更はしていない。並行する資源比較の準備変更を保持した。
+
+
+## 2026-10-26 Completed resource comparisons
+
+- Verified all 63 tasks / 2,032 calls and 10,160 raw member hashes, with no missing measurements. Added completed-task checks and RNA-level/group medians plus paired ratios to the existing comparison scripts. Five aggregation/censoring tests pass. See [complete results](comparison_resources_20261025.md) and [validation](comparison_resources_20261026_completed_validation.json).
+- CParty: 59/107 successful inputs, 43 nonfinite, one timeout-only, three mixed timeout/signal 11, one capped allocation failure. No real-RNA speed crossover can be measured. Spark: 103/107 success. At 11,832 nt, fold is 4.62× faster but uses 16.0× RSS. New fold is PF+MFE without BPP; the existing BPP-inclusive E2 values remain separate.
+- Exported [Figure 4 and SI ratio](../results/figures/figure4_resources_20261026_final58/README.md), opened final PNGs and paper normal/diff pages, and updated bilingual paper sections and Sato feedback. Paper 8 pages, SI 23; diffs versus 5e3b503 are 9/23. No RNA reruns, scheduler submission, external implementation edits, or commits. Removed only this session's regenerable plot drafts.

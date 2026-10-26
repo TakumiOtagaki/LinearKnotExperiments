@@ -110,6 +110,11 @@ def verify_lock(path, software, build, programs, parameter):
         name = program.get("executable", program["name"])
         if digest(build / name) != lock["binaries"].get(name) or lock["binaries"].get(name) is None:
             raise ValueError("binary differs from software lock: " + name)
+    # Relocatable adapters exec other binaries from the same staged build.
+    # Pin those dependencies too, even when only the adapter is requested.
+    for name, expected in lock.get("build_files", {}).items():
+        if Path(name).name != name or expected is None or digest(build / name) != expected:
+            raise ValueError("build dependency differs from software lock: " + name)
     for entry in lock.get("extra_files", []):
         if digest(experiment_path(entry["path"])) != entry["sha256"]:
             raise ValueError("extra dependency differs from software lock: " + entry["path"])

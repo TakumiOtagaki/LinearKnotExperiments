@@ -1,0 +1,81 @@
+{
+  "status": "passed",
+  "checked_utc": "2026-10-25T15:18:46.559401+00:00",
+  "formal_tasks": 63,
+  "formal_tasks_started": 0,
+  "arrays": 15,
+  "cli_calls": 2032,
+  "measurements": 1524,
+  "input_count": 107,
+  "method_input_counts": {
+    "beam100": 107,
+    "fold100": 107,
+    "cparty": 107,
+    "exact": 80,
+    "spark": 107
+  },
+  "frozen_runtime_files_verified": [
+    "PFScaling",
+    "E0CPartyOracle",
+    "linearknot",
+    "Spark",
+    "CMakeCache.txt",
+    "Comparison"
+  ],
+  "file_budget": {
+    "estimated_shared_entries": 1019,
+    "basis": "all preparation, 63 tasks, first scheduler attempt and atomic-write headroom",
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "quota": {
+      "used_files": 21864590,
+      "limit_files": 28000000,
+      "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9643725596  14680064000 14680064000       - 21864590  28000000 28000000       -"
+    },
+    "hard_file_limit": 24000000,
+    "remaining_files": 2135410,
+    "remaining_source": "lfs quota (with configured conservative hard limit)",
+    "max_remaining_fraction": 0.1,
+    "allowed_entries": 213541,
+    "accepted": true
+  },
+  "checks": "frozen plans, scripts, locks, bundle and runtime hashes; every input hash; complete/disjoint method schedules; process memory, timeout and wall budgets; bash -n; all formal tasks unstarted",
+  "short_medium_calls": 120,
+  "short_medium_statuses": {
+    "success": 116,
+    "nonfinite": 4
+  },
+  "raw_pilot_member_hashes_verified": 600,
+  "staging_calls": 40,
+  "resume": {
+    "status": "passed",
+    "checkpoint_unchanged": true,
+    "completed_jobs_not_reexecuted": 40,
+    "raw_member_hashes_verified": 200,
+    "tar_padding_normalized_on_resume": true
+  },
+  "limit_controls": [
+    {
+      "id": "timeout",
+      "status": "timeout",
+      "elapsed_seconds": 0.004949981812387705,
+      "peak_rss_kib": null
+    },
+    {
+      "id": "memory",
+      "status": "memory_limit",
+      "elapsed_seconds": 0.06592748360708356,
+      "peak_rss_kib": 23852
+    },
+    {
+      "id": "timeout_native",
+      "status": "timeout",
+      "elapsed_seconds": 0.104247379116714,
+      "peak_rss_kib": null
+    }
+  ],
+  "pf_parity_checks": 15,
+  "pf_log_z_max_absolute_error": 4.035882739117369e-12,
+  "pf_free_energy_max_absolute_error": 2.5011104298755527e-12,
+  "qsub_executed": false
+}

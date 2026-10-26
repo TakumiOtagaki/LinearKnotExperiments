@@ -1,0 +1,509 @@
+input	method	planned_measurements	completed_measurements	missing_measurements	measurement_statuses	warmup_statuses	resource_eligible	elapsed_median_seconds	peak_rss_median_mib	length	group
+URS00019626CE	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	55.73624538490549	750.98046875	5482	rnacentral
+URS00019626CE	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			5482	rnacentral
+URS00019626CE	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	82.65556840784848	874.59765625	5482	rnacentral
+URS00019626CE	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	46.41709179710597	24.83984375	5482	rnacentral
+URS000233CDDE	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	32.24346172111109	548.7265625	4793	rnacentral
+URS000233CDDE	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			4793	rnacentral
+URS000233CDDE	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	45.706640558317304	579.26953125	4793	rnacentral
+URS000233CDDE	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	27.32425294397399	18.0	4793	rnacentral
+URS000238C72C	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	239.56293833628297	2859.3984375	22543	rnacentral
+URS000238C72C	cparty	3	3	0	"{""signal_11"": 2, ""timeout"": 1}"	"{""signal_11"": 1}"	False			22543	rnacentral
+URS000238C72C	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	338.8748287130147	3118.6953125	22543	rnacentral
+URS000238C72C	spark	3	3	0	"{""timeout"": 3}"	"{""timeout"": 1}"	False			22543	rnacentral
+URS000239D8A4	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	65.77336340676993	939.11328125	6990	rnacentral
+URS000239D8A4	cparty	3	3	0	"{""timeout"": 3}"	"{""timeout"": 1}"	False			6990	rnacentral
+URS000239D8A4	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	95.14513163222	980.12890625	6990	rnacentral
+URS000239D8A4	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	87.35867168195546	35.0703125	6990	rnacentral
+URS00023A4DB9	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	218.97186776902527	3192.90234375	29106	rnacentral
+URS00023A4DB9	cparty	3	3	0	"{""memory_limit"": 3}"	"{""memory_limit"": 1}"	False			29106	rnacentral
+URS00023A4DB9	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	305.9784579537809	3300.2890625	29106	rnacentral
+URS00023A4DB9	spark	3	3	0	"{""timeout"": 3}"	"{""timeout"": 1}"	False			29106	rnacentral
+URS00023C9544	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	87.22054983302951	1306.8984375	11832	rnacentral
+URS00023C9544	cparty	3	3	0	"{""signal_11"": 2, ""timeout"": 1}"	"{""timeout"": 1}"	False			11832	rnacentral
+URS00023C9544	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	125.70303382724524	1449.921875	11832	rnacentral
+URS00023C9544	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	581.3648722707294	90.76953125	11832	rnacentral
+URS000241043C	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	157.0291504743509	1941.16015625	13652	rnacentral
+URS000241043C	cparty	3	3	0	"{""signal_11"": 1, ""timeout"": 2}"	"{""signal_11"": 1}"	False			13652	rnacentral
+URS000241043C	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	246.79509938508272	2191.28125	13652	rnacentral
+URS000241043C	spark	3	3	0	"{""signal_11"": 3}"	"{""signal_11"": 1}"	False			13652	rnacentral
+bpRNA_CRW_11630	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	7.435134411323816	152.2578125	994	bprna_1000
+bpRNA_CRW_11630	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			994	bprna_1000
+bpRNA_CRW_11630	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	11.994904243852943	200.51171875	994	bprna_1000
+bpRNA_CRW_11630	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	10.538937682285905	179.65234375	994	bprna_1000
+bpRNA_CRW_11630	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.41687628580257297	6.0	994	bprna_1000
+bpRNA_CRW_12866	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.6211203993298113	69.0	503	bprna_500
+bpRNA_CRW_12866	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.3671903805807233	24.0	503	bprna_500
+bpRNA_CRW_12866	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.0700558852404356	52.8828125	503	bprna_500
+bpRNA_CRW_12866	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.624530215281993	85.609375	503	bprna_500
+bpRNA_CRW_12866	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11659844918176532	6.0	503	bprna_500
+bpRNA_CRW_13490	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.721271771006286	72.0	550	bprna_500
+bpRNA_CRW_13490	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.4674746608361602	27.0	550	bprna_500
+bpRNA_CRW_13490	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.9200312127359211	83.8671875	550	bprna_500
+bpRNA_CRW_13490	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.374708304181695	79.99609375	550	bprna_500
+bpRNA_CRW_13490	spark	3	3	0	"{""signal_11"": 3}"	"{""signal_11"": 1}"	False			550	bprna_500
+bpRNA_CRW_15416	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.920193046797067	51.0	517	bprna_500
+bpRNA_CRW_15416	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.3673948463983834	24.0	517	bprna_500
+bpRNA_CRW_15416	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.168927100021392	57.2734375	517	bprna_500
+bpRNA_CRW_15416	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.4212182671763003	57.0	517	bprna_500
+bpRNA_CRW_15416	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11613588407635689	6.0	517	bprna_500
+bpRNA_CRW_1563	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.8677220782265067	36.0	476	bprna_500
+bpRNA_CRW_1563	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.2672044998034835	21.0	476	bprna_500
+bpRNA_CRW_1563	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.6677712118253112	48.94921875	476	bprna_500
+bpRNA_CRW_1563	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.8176312702707946	30.0	476	bprna_500
+bpRNA_CRW_1563	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06632597604766488	6.0	476	bprna_500
+bpRNA_CRW_16891	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.2227483270689845	72.0	516	bprna_500
+bpRNA_CRW_16891	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.4171067411080003	24.0	516	bprna_500
+bpRNA_CRW_16891	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.9712387858889997	56.09375	516	bprna_500
+bpRNA_CRW_16891	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	4.526190142147243	88.765625	516	bprna_500
+bpRNA_CRW_16891	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11614568112418056	6.0	516	bprna_500
+bpRNA_CRW_16954	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.3189416117966175	45.6953125	505	bprna_500
+bpRNA_CRW_16954	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.3667290238663554	24.0	505	bprna_500
+bpRNA_CRW_16954	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.9190195631235838	53.2265625	505	bprna_500
+bpRNA_CRW_16954	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.4685652293264866	42.0	505	bprna_500
+bpRNA_CRW_16954	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11631680093705654	6.0	505	bprna_500
+bpRNA_CRW_20158	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.3230653423815966	82.82421875	518	bprna_500
+bpRNA_CRW_20158	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.5172981559298933	24.0	518	bprna_500
+bpRNA_CRW_20158	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.2206612722948194	57.62890625	518	bprna_500
+bpRNA_CRW_20158	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	4.926621534861624	93.85546875	518	bprna_500
+bpRNA_CRW_20158	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11650909017771482	6.0	518	bprna_500
+bpRNA_CRW_20294	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.273383698426187	84.6640625	1001	bprna_1000
+bpRNA_CRW_20294	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.0214234348386526	86.3125	1001	bprna_1000
+bpRNA_CRW_20294	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	6.1808313126675785	202.20703125	1001	bprna_1000
+bpRNA_CRW_20294	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	4.477388734929264	90.68359375	1001	bprna_1000
+bpRNA_CRW_20294	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.2670992808416486	6.0	1001	bprna_1000
+bpRNA_CRW_20320	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.9676889209076762	39.0	512	bprna_500
+bpRNA_CRW_20320	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.3172007901594043	24.0	512	bprna_500
+bpRNA_CRW_20320	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.7676333268173039	56.76171875	512	bprna_500
+bpRNA_CRW_20320	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.9679284449666739	36.0	512	bprna_500
+bpRNA_CRW_20320	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11632992792874575	6.0	512	bprna_500
+bpRNA_CRW_20350	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	7.985414085909724	157.62890625	1010	bprna_1000
+bpRNA_CRW_20350	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.5236450219526887	85.65234375	1010	bprna_1000
+bpRNA_CRW_20350	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	13.844141033943743	205.8515625	1010	bprna_1000
+bpRNA_CRW_20350	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	9.987513180822134	186.1875	1010	bprna_1000
+bpRNA_CRW_20350	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.46768124774098396	6.0	1010	bprna_1000
+bpRNA_CRW_2326	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	4.224524222780019	88.4921875	547	bprna_500
+bpRNA_CRW_2326	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.5170071106404066	27.0	547	bprna_500
+bpRNA_CRW_2326	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.5242260419763625	85.4921875	547	bprna_500
+bpRNA_CRW_2326	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	5.8789933430962265	109.9140625	547	bprna_500
+bpRNA_CRW_2326	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11618812987580895	6.0	547	bprna_500
+bpRNA_CRW_3410	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	6.632487568072975	130.890625	919	bprna_1000
+bpRNA_CRW_3410	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.1708325198851526	71.8984375	919	bprna_1000
+bpRNA_CRW_3410	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	8.08257208717987	172.08203125	919	bprna_1000
+bpRNA_CRW_3410	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	8.6349440747872	152.17578125	919	bprna_1000
+bpRNA_CRW_3410	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.3168874508701265	6.0	919	bprna_1000
+bpRNA_CRW_54543	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.6719410428777337	84.09765625	1036	bprna_1000
+bpRNA_CRW_54543	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.3717881250195205	90.33203125	1036	bprna_1000
+bpRNA_CRW_54543	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	5.1281020091846585	216.23046875	1036	bprna_1000
+bpRNA_CRW_54543	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.0223675328306854	81.0	1036	bprna_1000
+bpRNA_CRW_54543	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.3170001571998	6.0	1036	bprna_1000
+bpRNA_CRW_54552	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	8.381979583762586	153.3359375	924	bprna_1000
+bpRNA_CRW_54552	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.6720787743106484	74.203125	924	bprna_1000
+bpRNA_CRW_54552	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	12.047214574180543	173.49609375	924	bprna_1000
+bpRNA_CRW_54552	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	11.391524884849787	181.3046875	924	bprna_1000
+bpRNA_CRW_54552	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.36681912699714303	6.0	924	bprna_1000
+bpRNA_CRW_54655	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	10.14235683484003	192.0078125	1979	bprna_2000
+bpRNA_CRW_54655	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			1979	bprna_2000
+bpRNA_CRW_54655	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	53.017206721007824	776.5625	1979	bprna_2000
+bpRNA_CRW_54655	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	14.247957619139925	211.19140625	1979	bprna_2000
+bpRNA_CRW_54655	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.9704763828776777	6.0	1979	bprna_2000
+bpRNA_CRW_54673	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	13.04415837302804	231.671875	2110	bprna_2000
+bpRNA_CRW_54673	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			2110	bprna_2000
+bpRNA_CRW_54673	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	57.27244881587103	884.51953125	2110	bprna_2000
+bpRNA_CRW_54673	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	17.25382317090407	250.53515625	2110	bprna_2000
+bpRNA_CRW_54673	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.0707643190398812	6.0	2110	bprna_2000
+bpRNA_CRW_54676	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	5.327504831366241	119.64453125	1050	bprna_1000
+bpRNA_CRW_54676	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.9732582862488925	92.28125	1050	bprna_1000
+bpRNA_CRW_54676	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	9.390494063030928	221.80859375	1050	bprna_1000
+bpRNA_CRW_54676	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	6.379859550856054	117.0	1050	bprna_1000
+bpRNA_CRW_54676	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.36696405662223697	6.0	1050	bprna_1000
+bpRNA_CRW_54685	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	8.383178079035133	145.1484375	905	bprna_1000
+bpRNA_CRW_54685	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.071324029006064	69.71484375	905	bprna_1000
+bpRNA_CRW_54685	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	10.138406512793154	165.33203125	905	bprna_1000
+bpRNA_CRW_54685	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	11.090178040787578	163.72265625	905	bprna_1000
+bpRNA_CRW_54685	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.3168360679410398	6.0	905	bprna_1000
+bpRNA_CRW_54689	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	12.143149798735976	238.01953125	1811	bprna_2000
+bpRNA_CRW_54689	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			1811	bprna_2000
+bpRNA_CRW_54689	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	43.85061122383922	652.58984375	1811	bprna_2000
+bpRNA_CRW_54689	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	15.103522030171007	241.48046875	1811	bprna_2000
+bpRNA_CRW_54689	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.7194362529553473	6.0	1811	bprna_2000
+bpRNA_CRW_54697	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	9.98976134788245	167.64453125	972	bprna_1000
+bpRNA_CRW_54697	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.6734651029109955	80.1875	972	bprna_1000
+bpRNA_CRW_54697	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	13.147428615018725	189.84765625	972	bprna_1000
+bpRNA_CRW_54697	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	12.545203191228211	185.7734375	972	bprna_1000
+bpRNA_CRW_54697	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.41767417220398784	6.0	972	bprna_1000
+bpRNA_CRW_54698	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	6.782969464082271	124.921875	951	bprna_1000
+bpRNA_CRW_54698	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.5218782359734178	78.01171875	951	bprna_1000
+bpRNA_CRW_54698	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	9.137650392949581	181.81640625	951	bprna_1000
+bpRNA_CRW_54698	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	9.284914592280984	148.8984375	951	bprna_1000
+bpRNA_CRW_54698	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.31710393726825714	6.0	951	bprna_1000
+bpRNA_CRW_54713	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	5.730927662923932	106.46875	956	bprna_1000
+bpRNA_CRW_54713	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.9706372716464102	77.3359375	956	bprna_1000
+bpRNA_CRW_54713	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	7.283064172137529	184.31640625	956	bprna_1000
+bpRNA_CRW_54713	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	8.38343645632267	131.34765625	956	bprna_1000
+bpRNA_CRW_54713	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.3168453657999635	6.0	956	bprna_1000
+bpRNA_CRW_54730	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	7.332249337807298	142.9921875	937	bprna_1000
+bpRNA_CRW_54730	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.4221811699680984	75.6640625	937	bprna_1000
+bpRNA_CRW_54730	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	10.789294878020883	177.77734375	937	bprna_1000
+bpRNA_CRW_54730	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	10.188801957760006	170.80078125	937	bprna_1000
+bpRNA_CRW_54730	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.36725663486868143	6.0	937	bprna_1000
+bpRNA_CRW_55021	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	14.098975064232945	244.71875	1878	bprna_2000
+bpRNA_CRW_55021	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			1878	bprna_2000
+bpRNA_CRW_55021	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	53.52511927206069	700.78125	1878	bprna_2000
+bpRNA_CRW_55021	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	19.210807320661843	270.15625	1878	bprna_2000
+bpRNA_CRW_55021	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.7709431070834398	6.0	1878	bprna_2000
+bpRNA_CRW_55131	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	9.99085479369387	175.22265625	1831	bprna_2000
+bpRNA_CRW_55131	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			1831	bprna_2000
+bpRNA_CRW_55131	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	37.48587146028876	665.63671875	1831	bprna_2000
+bpRNA_CRW_55131	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	13.798779977951199	195.8671875	1831	bprna_2000
+bpRNA_CRW_55131	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.1687707710079849	6.0	1831	bprna_2000
+bpRNA_CRW_55229	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	4.224376813042909	101.1953125	954	bprna_1000
+bpRNA_CRW_55229	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.270789674948901	77.078125	954	bprna_1000
+bpRNA_CRW_55229	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	5.226715076249093	183.84375	954	bprna_1000
+bpRNA_CRW_55229	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	4.82604859303683	99.40234375	954	bprna_1000
+bpRNA_CRW_55229	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.2664109072647989	6.0	954	bprna_1000
+bpRNA_CRW_55230	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	4.775275114923716	106.08203125	966	bprna_1000
+bpRNA_CRW_55230	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.320729086175561	78.68359375	966	bprna_1000
+bpRNA_CRW_55230	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	6.98261362593621	187.2109375	966	bprna_1000
+bpRNA_CRW_55230	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	5.879680774174631	106.7109375	966	bprna_1000
+bpRNA_CRW_55230	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.3166126310825348	6.0	966	bprna_1000
+bpRNA_CRW_55246	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	11.894617247860879	187.5390625	959	bprna_1000
+bpRNA_CRW_55246	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.222696556709707	77.9375	959	bprna_1000
+bpRNA_CRW_55246	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	18.959112394135445	185.61328125	959	bprna_1000
+bpRNA_CRW_55246	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	15.850128329358995	230.5546875	959	bprna_1000
+bpRNA_CRW_55246	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.41673097386956215	6.0	959	bprna_1000
+bpRNA_CRW_55252	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	4.02448531286791	96.9375	957	bprna_1000
+bpRNA_CRW_55252	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.8701569591648877	77.8828125	957	bprna_1000
+bpRNA_CRW_55252	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	5.577145433984697	185.59375	957	bprna_1000
+bpRNA_CRW_55252	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	5.528346528764814	107.66796875	957	bprna_1000
+bpRNA_CRW_55252	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.26668033096939325	6.0	957	bprna_1000
+bpRNA_CRW_55258	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	9.739764200057834	161.83203125	968	bprna_1000
+bpRNA_CRW_55258	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.8729464691132307	78.70703125	968	bprna_1000
+bpRNA_CRW_55258	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	10.892399293370545	189.30859375	968	bprna_1000
+bpRNA_CRW_55258	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	13.599607660900801	172.6875	968	bprna_1000
+bpRNA_CRW_55258	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.41681422013789415	6.0	968	bprna_1000
+bpRNA_CRW_55321	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	23.15940750716254	438.81640625	3946	bprna_4000
+bpRNA_CRW_55321	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3946	bprna_4000
+bpRNA_CRW_55321	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	32.240690843202174	462.8828125	3946	bprna_4000
+bpRNA_CRW_55321	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	11.793457661056891	15.0	3946	bprna_4000
+bpRNA_CRW_55326	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	11.539413329213858	159.296875	1077	bprna_1000
+bpRNA_CRW_55326	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.6749980859458447	96.5390625	1077	bprna_1000
+bpRNA_CRW_55326	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	17.304543307051063	232.53125	1077	bprna_1000
+bpRNA_CRW_55326	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	16.655641483142972	184.06640625	1077	bprna_1000
+bpRNA_CRW_55326	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.5178346931934357	6.0	1077	bprna_1000
+bpRNA_CRW_55327	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	12.09255913970992	187.109375	953	bprna_1000
+bpRNA_CRW_55327	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.4743863558396697	77.84375	953	bprna_1000
+bpRNA_CRW_55327	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	25.725736158899963	182.51953125	953	bprna_1000
+bpRNA_CRW_55327	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	18.05047839321196	264.17578125	953	bprna_1000
+bpRNA_CRW_55327	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.5170585731975734	6.0	953	bprna_1000
+bpRNA_CRW_7488	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.122350031044334	76.08203125	484	bprna_500
+bpRNA_CRW_7488	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.36716156639158726	21.0	484	bprna_500
+bpRNA_CRW_7488	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.67244723578915	48.6484375	484	bprna_500
+bpRNA_CRW_7488	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	4.175043731927872	94.4375	484	bprna_500
+bpRNA_CRW_7488	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11646495806053281	6.0	484	bprna_500
+bpRNA_CRW_8013	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	7.482257153838873	136.02734375	996	bprna_1000
+bpRNA_CRW_8013	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.822904305998236	83.69921875	996	bprna_1000
+bpRNA_CRW_8013	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	11.191248822957277	198.98046875	996	bprna_1000
+bpRNA_CRW_8013	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	9.686580433044583	157.21875	996	bprna_1000
+bpRNA_CRW_8013	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.4169680802151561	6.0	996	bprna_1000
+bpRNA_RFAM_10156	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.7714771488681436	63.0	451	bprna_500
+bpRNA_RFAM_10156	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.26670133508741856	21.0	451	bprna_500
+bpRNA_RFAM_10156	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.4692565477453172	45.62890625	451	bprna_500
+bpRNA_RFAM_10156	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.5738808210007846	75.0	451	bprna_500
+bpRNA_RFAM_10156	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11626369319856167	6.0	451	bprna_500
+bpRNA_RFAM_10409	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.4172468399628997	21.0	259	bprna_250
+bpRNA_RFAM_10409	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.1161401979625225	9.0	259	bprna_250
+bpRNA_RFAM_10409	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.21697565726935863	17.20703125	259	bprna_250
+bpRNA_RFAM_10409	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.4673990299925208	21.0	259	bprna_250
+bpRNA_RFAM_10409	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06599714001640677	6.0	259	bprna_250
+bpRNA_RFAM_10578	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.6672185640782118	24.0	227	bprna_250
+bpRNA_RFAM_10578	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11652631033211946	6.0	227	bprna_250
+bpRNA_RFAM_10578	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.21689586387947202	14.6015625	227	bprna_250
+bpRNA_RFAM_10578	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.8178814640268683	24.0	227	bprna_250
+bpRNA_RFAM_10578	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06603054702281952	6.0	227	bprna_250
+bpRNA_RFAM_10583	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.6676161852665246	24.0	239	bprna_250
+bpRNA_RFAM_10583	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11655933503061533	6.0	239	bprna_250
+bpRNA_RFAM_10583	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.26707590324804187	14.4921875	239	bprna_250
+bpRNA_RFAM_10583	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.767488312907517	27.0	239	bprna_250
+bpRNA_RFAM_10583	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06654455605894327	6.0	239	bprna_250
+bpRNA_RFAM_14674	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.4164641168899834	21.0	273	bprna_250
+bpRNA_RFAM_14674	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11657688301056623	9.0	273	bprna_250
+bpRNA_RFAM_14674	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.21673441212624311	24.65625	273	bprna_250
+bpRNA_RFAM_14674	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.4167728740721941	21.0	273	bprna_250
+bpRNA_RFAM_14674	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.0659809298813343	6.0	273	bprna_250
+bpRNA_RFAM_15089	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.7691125152632594	48.0	262	bprna_250
+bpRNA_RFAM_15089	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11673359991982579	9.0	262	bprna_250
+bpRNA_RFAM_15089	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.517211738973856	17.20703125	262	bprna_250
+bpRNA_RFAM_15089	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.372182557824999	54.0	262	bprna_250
+bpRNA_RFAM_15089	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06682003010064363	6.0	262	bprna_250
+bpRNA_RFAM_15557	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.3724994310177863	75.0	528	bprna_500
+bpRNA_RFAM_15557	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.4671014966443181	24.0	528	bprna_500
+bpRNA_RFAM_15557	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.37068920629099	58.15625	528	bprna_500
+bpRNA_RFAM_15557	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	4.375675734132528	93.0	528	bprna_500
+bpRNA_RFAM_15557	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11639583483338356	6.0	528	bprna_500
+bpRNA_RFAM_21998	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.8703192519024014	54.0	550	bprna_500
+bpRNA_RFAM_21998	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.3674066667445004	27.0	550	bprna_500
+bpRNA_RFAM_21998	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.0686278231441975	82.46875	550	bprna_500
+bpRNA_RFAM_21998	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.371229021809995	57.0	550	bprna_500
+bpRNA_RFAM_21998	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11679969634860754	6.0	550	bprna_500
+bpRNA_RFAM_2435	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.4210685146972537	60.0	454	bprna_500
+bpRNA_RFAM_2435	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.316521970089525	21.0	454	bprna_500
+bpRNA_RFAM_2435	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.2184855691157281	45.96484375	454	bprna_500
+bpRNA_RFAM_2435	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.374147496186197	72.0	454	bprna_500
+bpRNA_RFAM_2435	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.1161814583465457	6.0	454	bprna_500
+bpRNA_RFAM_24741	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.36734840413555503	18.0	258	bprna_250
+bpRNA_RFAM_24741	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11646793503314257	9.0	258	bprna_250
+bpRNA_RFAM_24741	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.16614798037335277	17.20703125	258	bprna_250
+bpRNA_RFAM_24741	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.3671720861457288	18.0	258	bprna_250
+bpRNA_RFAM_24741	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06610385188832879	6.0	258	bprna_250
+bpRNA_RFAM_24749	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.41698919935151935	21.0	237	bprna_250
+bpRNA_RFAM_24749	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06687927199527621	6.0	237	bprna_250
+bpRNA_RFAM_24749	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.16672741388902068	14.6875	237	bprna_250
+bpRNA_RFAM_24749	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.4676084700040519	21.0	237	bprna_250
+bpRNA_RFAM_24749	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06690536113455892	6.0	237	bprna_250
+bpRNA_RFAM_24785	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.4169574538245797	21.0	269	bprna_250
+bpRNA_RFAM_24785	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11633232282474637	9.0	269	bprna_250
+bpRNA_RFAM_24785	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.2164394068531692	17.20703125	269	bprna_250
+bpRNA_RFAM_24785	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.41665184078738093	21.0	269	bprna_250
+bpRNA_RFAM_24785	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06622598133981228	6.0	269	bprna_250
+bpRNA_RFAM_25033	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.2669248101301491	18.0	261	bprna_250
+bpRNA_RFAM_25033	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.0667340992949903	9.0	261	bprna_250
+bpRNA_RFAM_25033	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.1662954743951559	17.20703125	261	bprna_250
+bpRNA_RFAM_25033	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.2668910687789321	15.0	261	bprna_250
+bpRNA_RFAM_25033	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06677481113001704	6.0	261	bprna_250
+bpRNA_RFAM_25874	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.16675916826352477	12.0	244	bprna_250
+bpRNA_RFAM_25874	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06624170206487179	6.0	244	bprna_250
+bpRNA_RFAM_25874	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11650519212707877	15.57421875	244	bprna_250
+bpRNA_RFAM_25874	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.1669171266257763	12.0	244	bprna_250
+bpRNA_RFAM_25874	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06648887740448117	6.0	244	bprna_250
+bpRNA_RFAM_26570	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	4.525333052966744	85.10546875	493	bprna_500
+bpRNA_RFAM_26570	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.417050426825881	24.0	493	bprna_500
+bpRNA_RFAM_26570	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	4.22417397191748	50.86328125	493	bprna_500
+bpRNA_RFAM_26570	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	6.729796185158193	120.8203125	493	bprna_500
+bpRNA_RFAM_26570	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.16656536981463432	3.0	493	bprna_500
+bpRNA_RFAM_35877	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.1182286380790174	42.0	509	bprna_500
+bpRNA_RFAM_35877	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.3167911618947983	24.0	509	bprna_500
+bpRNA_RFAM_35877	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.9186546625569463	56.66796875	509	bprna_500
+bpRNA_RFAM_35877	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.2684665769338608	42.0	509	bprna_500
+bpRNA_RFAM_35877	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.1165301026776433	6.0	509	bprna_500
+bpRNA_RFAM_37055	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	31.84754133108072	416.1875	2158	bprna_2000
+bpRNA_RFAM_37055	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			2158	bprna_2000
+bpRNA_RFAM_37055	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	165.79251776030287	923.39453125	2158	bprna_2000
+bpRNA_RFAM_37055	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	39.70510727795772	490.109375	2158	bprna_2000
+bpRNA_RFAM_37055	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	3.023057390935719	6.0	2158	bprna_2000
+bpRNA_RFAM_37062	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	9.285182947758585	191.953125	1849	bprna_2000
+bpRNA_RFAM_37062	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			1849	bprna_2000
+bpRNA_RFAM_37062	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	37.236176321748644	679.4375	1849	bprna_2000
+bpRNA_RFAM_37062	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	12.095293710008264	193.73046875	1849	bprna_2000
+bpRNA_RFAM_37062	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.318841298110783	6.0	1849	bprna_2000
+bpRNA_RFAM_37064	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	16.05790785420686	267.7265625	2074	bprna_2000
+bpRNA_RFAM_37064	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			2074	bprna_2000
+bpRNA_RFAM_37064	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	72.648101225961	852.4609375	2074	bprna_2000
+bpRNA_RFAM_37064	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	24.673945553600788	298.44140625	2074	bprna_2000
+bpRNA_RFAM_37064	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.3707106998190284	6.0	2074	bprna_2000
+bpRNA_RFAM_37070	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	11.14679587027058	198.69140625	2036	bprna_2000
+bpRNA_RFAM_37070	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			2036	bprna_2000
+bpRNA_RFAM_37070	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	49.25793042732403	822.05078125	2036	bprna_2000
+bpRNA_RFAM_37070	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	16.700216959230602	212.078125	2036	bprna_2000
+bpRNA_RFAM_37070	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.5692573352716863	6.0	2036	bprna_2000
+bpRNA_RFAM_37073	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	12.99481462314725	216.390625	2116	bprna_2000
+bpRNA_RFAM_37073	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			2116	bprna_2000
+bpRNA_RFAM_37073	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	54.32516825105995	890.2109375	2116	bprna_2000
+bpRNA_RFAM_37073	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	18.35386249097064	263.64453125	2116	bprna_2000
+bpRNA_RFAM_37073	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.7194183417595923	6.0	2116	bprna_2000
+bpRNA_RFAM_37074	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	9.741986121982336	195.53125	2137	bprna_2000
+bpRNA_RFAM_37074	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			2137	bprna_2000
+bpRNA_RFAM_37074	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	52.52668458176777	907.8046875	2137	bprna_2000
+bpRNA_RFAM_37074	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	12.802164132939652	205.09375	2137	bprna_2000
+bpRNA_RFAM_37074	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.8202282567508519	6.0	2137	bprna_2000
+bpRNA_RFAM_37076	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	20.0704438239336	296.8984375	1900	bprna_2000
+bpRNA_RFAM_37076	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			1900	bprna_2000
+bpRNA_RFAM_37076	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	66.6950429440476	717.02734375	1900	bprna_2000
+bpRNA_RFAM_37076	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	27.076107705943286	313.29296875	1900	bprna_2000
+bpRNA_RFAM_37076	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.120481631718576	6.0	1900	bprna_2000
+bpRNA_RFAM_37077	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	19.763581711798906	309.56640625	2047	bprna_2000
+bpRNA_RFAM_37077	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			2047	bprna_2000
+bpRNA_RFAM_37077	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	88.89951682696119	830.390625	2047	bprna_2000
+bpRNA_RFAM_37077	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	25.171598924789578	339.98046875	2047	bprna_2000
+bpRNA_RFAM_37077	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.7719101891852915	6.0	2047	bprna_2000
+bpRNA_RFAM_37079	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	12.699931321898475	216.171875	1947	bprna_2000
+bpRNA_RFAM_37079	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			1947	bprna_2000
+bpRNA_RFAM_37079	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	52.41378756612539	752.859375	1947	bprna_2000
+bpRNA_RFAM_37079	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	17.91095495200716	253.40234375	1947	bprna_2000
+bpRNA_RFAM_37079	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.8201562878675759	6.0	1947	bprna_2000
+bpRNA_RFAM_37102	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	9.488356825895607	173.6875	1873	bprna_2000
+bpRNA_RFAM_37102	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			1873	bprna_2000
+bpRNA_RFAM_37102	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	37.136586911045015	697.73828125	1873	bprna_2000
+bpRNA_RFAM_37102	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	12.646062450949103	185.93359375	1873	bprna_2000
+bpRNA_RFAM_37102	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.3690719190053642	6.0	1873	bprna_2000
+bpRNA_RFAM_37105	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	13.097103733103722	237.5078125	1923	bprna_2000
+bpRNA_RFAM_37105	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			1923	bprna_2000
+bpRNA_RFAM_37105	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	64.72229360695928	733.37109375	1923	bprna_2000
+bpRNA_RFAM_37105	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	16.356110963970423	275.9453125	1923	bprna_2000
+bpRNA_RFAM_37105	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.9706496563740075	6.0	1923	bprna_2000
+bpRNA_RFAM_37113	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	11.59427526500076	199.12890625	1880	bprna_2000
+bpRNA_RFAM_37113	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			1880	bprna_2000
+bpRNA_RFAM_37113	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	46.005343968980014	702.51953125	1880	bprna_2000
+bpRNA_RFAM_37113	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	14.900518712121993	208.09375	1880	bprna_2000
+bpRNA_RFAM_37113	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.4695356669835746	6.0	1880	bprna_2000
+bpRNA_RFAM_37115	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	14.89804277708754	221.453125	1805	bprna_2000
+bpRNA_RFAM_37115	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			1805	bprna_2000
+bpRNA_RFAM_37115	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	43.18344159703702	649.43359375	1805	bprna_2000
+bpRNA_RFAM_37115	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	20.458763019181788	261.84375	1805	bprna_2000
+bpRNA_RFAM_37115	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.5693306527100503	6.0	1805	bprna_2000
+bpRNA_RFAM_37126	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	14.199807810597122	212.109375	2051	bprna_2000
+bpRNA_RFAM_37126	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			2051	bprna_2000
+bpRNA_RFAM_37126	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	62.53287592995912	835.0234375	2051	bprna_2000
+bpRNA_RFAM_37126	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	17.70527926273644	215.71484375	2051	bprna_2000
+bpRNA_RFAM_37126	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.2703922670334578	6.0	2051	bprna_2000
+bpRNA_RFAM_38321	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.36710511799901724	18.0	225	bprna_250
+bpRNA_RFAM_38321	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06610709382221103	6.0	225	bprna_250
+bpRNA_RFAM_38321	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.166581055149436	14.59375	225	bprna_250
+bpRNA_RFAM_38321	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.36710367491468787	18.0	225	bprna_250
+bpRNA_RFAM_38321	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06653712410479784	6.0	225	bprna_250
+bpRNA_RFAM_38975	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.2704025083221495	63.0	465	bprna_500
+bpRNA_RFAM_38975	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.26667297212406993	21.0	465	bprna_500
+bpRNA_RFAM_38975	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.0687043401412666	45.98046875	465	bprna_500
+bpRNA_RFAM_38975	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	2.9217620897106826	69.0	465	bprna_500
+bpRNA_RFAM_38975	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11640444584190845	6.0	465	bprna_500
+bpRNA_RFAM_42076	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.4172201477922499	21.0	231	bprna_250
+bpRNA_RFAM_42076	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06679534632712603	6.0	231	bprna_250
+bpRNA_RFAM_42076	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.16631545219570398	15.0	231	bprna_250
+bpRNA_RFAM_42076	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.46732588298618793	18.0	231	bprna_250
+bpRNA_RFAM_42076	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06620063772425056	6.0	231	bprna_250
+bpRNA_RFAM_42243	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	5.480921539943665	146.078125	1824	bprna_2000
+bpRNA_RFAM_42243	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			1824	bprna_2000
+bpRNA_RFAM_42243	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	26.071737946011126	662.03125	1824	bprna_2000
+bpRNA_RFAM_42243	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	7.081182683818042	145.453125	1824	bprna_2000
+bpRNA_RFAM_42243	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.1687043909914792	6.0	1824	bprna_2000
+bpRNA_RFAM_43087	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	27.620296475943178	493.78515625	3764	bprna_4000
+bpRNA_RFAM_43087	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3764	bprna_4000
+bpRNA_RFAM_43087	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	35.89916101517156	506.328125	3764	bprna_4000
+bpRNA_RFAM_43087	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	13.395067313686013	12.0	3764	bprna_4000
+bpRNA_RFAM_43090	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	30.12717852415517	543.19921875	3987	bprna_4000
+bpRNA_RFAM_43090	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3987	bprna_4000
+bpRNA_RFAM_43090	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	38.50836285017431	536.9765625	3987	bprna_4000
+bpRNA_RFAM_43090	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	17.497305574826896	15.0	3987	bprna_4000
+bpRNA_RFAM_43092	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	22.372657941188663	396.3515625	3740	bprna_4000
+bpRNA_RFAM_43092	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3740	bprna_4000
+bpRNA_RFAM_43092	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	29.841258633881807	416.26953125	3740	bprna_4000
+bpRNA_RFAM_43092	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	9.23407774604857	12.0	3740	bprna_4000
+bpRNA_RFAM_43094	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	30.438162063248456	489.8984375	4065	bprna_4000
+bpRNA_RFAM_43094	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			4065	bprna_4000
+bpRNA_RFAM_43094	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	39.85325967799872	554.5703125	4065	bprna_4000
+bpRNA_RFAM_43094	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	13.545435132924467	15.0	4065	bprna_4000
+bpRNA_RFAM_43098	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	17.75787912029773	372.44921875	3607	bprna_4000
+bpRNA_RFAM_43098	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3607	bprna_4000
+bpRNA_RFAM_43098	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	23.260743521153927	363.57421875	3607	bprna_4000
+bpRNA_RFAM_43098	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	11.440730671864003	12.0	3607	bprna_4000
+bpRNA_RFAM_43099	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	32.84531648596749	511.859375	3967	bprna_4000
+bpRNA_RFAM_43099	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3967	bprna_4000
+bpRNA_RFAM_43099	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	40.44972977414727	590.0	3967	bprna_4000
+bpRNA_RFAM_43099	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	17.70419076876715	12.0	3967	bprna_4000
+bpRNA_RFAM_43104	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	39.60778810828924	558.4375	3724	bprna_4000
+bpRNA_RFAM_43104	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3724	bprna_4000
+bpRNA_RFAM_43104	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	55.44123379793018	595.63671875	3724	bprna_4000
+bpRNA_RFAM_43104	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	14.999217277392745	15.0	3724	bprna_4000
+bpRNA_RFAM_43109	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	33.782905482221395	556.79296875	4000	bprna_4000
+bpRNA_RFAM_43109	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			4000	bprna_4000
+bpRNA_RFAM_43109	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	44.91481350501999	581.49609375	4000	bprna_4000
+bpRNA_RFAM_43109	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	18.00687084486708	15.0	4000	bprna_4000
+bpRNA_RFAM_43116	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	26.66908025695011	420.62109375	3665	bprna_4000
+bpRNA_RFAM_43116	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3665	bprna_4000
+bpRNA_RFAM_43116	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	32.38929803716019	470.78125	3665	bprna_4000
+bpRNA_RFAM_43116	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	12.691424500662833	12.0	3665	bprna_4000
+bpRNA_RFAM_43119	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	17.305660041049123	328.58203125	4031	bprna_4000
+bpRNA_RFAM_43119	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			4031	bprna_4000
+bpRNA_RFAM_43119	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	37.743251585867256	542.859375	4031	bprna_4000
+bpRNA_RFAM_43119	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	17.448803489096463	15.0	4031	bprna_4000
+bpRNA_RFAM_43125	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	19.314601454883814	401.48046875	4002	bprna_4000
+bpRNA_RFAM_43125	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			4002	bprna_4000
+bpRNA_RFAM_43125	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	25.979338275268674	373.78515625	4002	bprna_4000
+bpRNA_RFAM_43125	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	12.842860958073288	12.0	4002	bprna_4000
+bpRNA_RFAM_43127	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	37.60519584733993	578.3984375	3716	bprna_4000
+bpRNA_RFAM_43127	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3716	bprna_4000
+bpRNA_RFAM_43127	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	47.71664585079998	607.84765625	3716	bprna_4000
+bpRNA_RFAM_43127	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	17.000565436203033	15.0	3716	bprna_4000
+bpRNA_RFAM_43130	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	18.306005731690675	373.94140625	3923	bprna_4000
+bpRNA_RFAM_43130	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3923	bprna_4000
+bpRNA_RFAM_43130	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	23.513079809956253	369.703125	3923	bprna_4000
+bpRNA_RFAM_43130	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	13.240349129075184	12.0	3923	bprna_4000
+bpRNA_RFAM_43131	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	44.429092689882964	675.1015625	4027	bprna_4000
+bpRNA_RFAM_43131	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			4027	bprna_4000
+bpRNA_RFAM_43131	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	55.902174034155905	794.9140625	4027	bprna_4000
+bpRNA_RFAM_43131	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	22.961422441061586	15.0	4027	bprna_4000
+bpRNA_RFAM_43146	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	24.775616304948926	392.77734375	3723	bprna_4000
+bpRNA_RFAM_43146	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3723	bprna_4000
+bpRNA_RFAM_43146	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	38.50941570894793	467.01171875	3723	bprna_4000
+bpRNA_RFAM_43146	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	11.690865175798535	12.0	3723	bprna_4000
+bpRNA_RFAM_43147	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	27.93418713565916	464.9765625	3874	bprna_4000
+bpRNA_RFAM_43147	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3874	bprna_4000
+bpRNA_RFAM_43147	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	34.29281732765958	507.23046875	3874	bprna_4000
+bpRNA_RFAM_43147	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	17.455124015919864	15.0	3874	bprna_4000
+bpRNA_RFAM_43149	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	13.949386754073203	342.06640625	3899	bprna_4000
+bpRNA_RFAM_43149	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3899	bprna_4000
+bpRNA_RFAM_43149	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	18.312291137874126	341.953125	3899	bprna_4000
+bpRNA_RFAM_43149	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	14.54280379600823	12.0	3899	bprna_4000
+bpRNA_RFAM_43150	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	15.349655384197831	350.4140625	3746	bprna_4000
+bpRNA_RFAM_43150	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			3746	bprna_4000
+bpRNA_RFAM_43150	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	19.807003207039088	351.7578125	3746	bprna_4000
+bpRNA_RFAM_43150	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	10.740837017074227	12.0	3746	bprna_4000
+bpRNA_RFAM_43162	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	26.63464911095798	449.9375	4021	bprna_4000
+bpRNA_RFAM_43162	cparty	3	3	0	"{""nonfinite"": 3}"	"{""nonfinite"": 1}"	False			4021	bprna_4000
+bpRNA_RFAM_43162	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	33.387138878926635	505.59375	4021	bprna_4000
+bpRNA_RFAM_43162	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	14.595187033060938	12.0	4021	bprna_4000
+bpRNA_RFAM_4320	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.2682346156798303	42.0	508	bprna_500
+bpRNA_RFAM_4320	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.31729300878942013	24.0	508	bprna_500
+bpRNA_RFAM_4320	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.8680763388983905	53.1484375	508	bprna_500
+bpRNA_RFAM_4320	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.720050466246903	45.0	508	bprna_500
+bpRNA_RFAM_4320	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.1164788561873138	6.0	508	bprna_500
+bpRNA_RFAM_4335	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.0677124438807368	39.0	491	bprna_500
+bpRNA_RFAM_4335	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.31747744511812925	21.0	491	bprna_500
+bpRNA_RFAM_4335	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.8175298660062253	52.4921875	491	bprna_500
+bpRNA_RFAM_4335	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.1685032551176846	39.0	491	bprna_500
+bpRNA_RFAM_4335	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11698166187852621	6.0	491	bprna_500
+bpRNA_RFAM_4721	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.3186708525754511	48.0	454	bprna_500
+bpRNA_RFAM_4721	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.2667549457401037	21.0	454	bprna_500
+bpRNA_RFAM_4721	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.8681965046562254	45.5546875	454	bprna_500
+bpRNA_RFAM_4721	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.6700043650344014	48.0	454	bprna_500
+bpRNA_RFAM_4721	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11614111764356494	6.0	454	bprna_500
+bpRNA_RFAM_4732	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.31661789771169424	18.0	275	bprna_250
+bpRNA_RFAM_4732	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11636569304391742	9.0	275	bprna_250
+bpRNA_RFAM_4732	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.16615848988294601	25.0	275	bprna_250
+bpRNA_RFAM_4732	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.26670572021976113	15.0	275	bprna_250
+bpRNA_RFAM_4732	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.0665921550244093	6.0	275	bprna_250
+bpRNA_RFAM_4778	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.0185669790953398	33.0	264	bprna_250
+bpRNA_RFAM_4778	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11667747516185045	9.0	264	bprna_250
+bpRNA_RFAM_4778	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.3674328331835568	16.9140625	264	bprna_250
+bpRNA_RFAM_4778	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.2180319600738585	39.0	264	bprna_250
+bpRNA_RFAM_4778	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06666668737307191	6.0	264	bprna_250
+bpRNA_RFAM_9076	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.21646217815577984	15.0	226	bprna_250
+bpRNA_RFAM_9076	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06627369485795498	6.0	226	bprna_250
+bpRNA_RFAM_9076	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11638482613489032	13.83984375	226	bprna_250
+bpRNA_RFAM_9076	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.16710416693240404	12.0	226	bprna_250
+bpRNA_RFAM_9076	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.0663113221526146	6.0	226	bprna_250
+bpRNA_RFAM_9122	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.6674559828825295	27.0	228	bprna_250
+bpRNA_RFAM_9122	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11675543710589409	6.0	228	bprna_250
+bpRNA_RFAM_9122	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.31688834773376584	14.328125	228	bprna_250
+bpRNA_RFAM_9122	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.7680835667997599	33.0	228	bprna_250
+bpRNA_RFAM_9122	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06661165691912174	6.0	228	bprna_250
+bpRNA_RNP_2	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.5671881642192602	24.0	267	bprna_250
+bpRNA_RNP_2	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.1171139357611537	9.0	267	bprna_250
+bpRNA_RNP_2	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.21724682906642556	17.2109375	267	bprna_250
+bpRNA_RNP_2	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.6673252419568598	24.0	267	bprna_250
+bpRNA_RNP_2	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.066114098764956	6.0	267	bprna_250
+bpRNA_SRP_385	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.6678137541748583	27.0	268	bprna_250
+bpRNA_SRP_385	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11710274033248425	9.0	268	bprna_250
+bpRNA_SRP_385	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.31677630729973316	17.20703125	268	bprna_250
+bpRNA_SRP_385	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.8680044850334525	27.0	268	bprna_250
+bpRNA_SRP_385	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06650330871343613	6.0	268	bprna_250
+bpRNA_SRP_680	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.8679255750030279	30.0	240	bprna_250
+bpRNA_SRP_680	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11682168114930391	6.0	240	bprna_250
+bpRNA_SRP_680	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.4172503133304417	15.0546875	240	bprna_250
+bpRNA_SRP_680	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	1.1684541990980506	39.0	240	bprna_250
+bpRNA_SRP_680	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.0670592337846756	6.0	240	bprna_250
+bpRNA_SRP_89	beam100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.61734514310956	27.0	271	bprna_250
+bpRNA_SRP_89	cparty	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.11615948099642992	9.0	271	bprna_250
+bpRNA_SRP_89	exact	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.26636990206316113	16.375	271	bprna_250
+bpRNA_SRP_89	fold100	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.7176129599101841	27.0	271	bprna_250
+bpRNA_SRP_89	spark	3	3	0	"{""success"": 3}"	"{""success"": 1}"	True	0.06603838689625263	6.0	271	bprna_250

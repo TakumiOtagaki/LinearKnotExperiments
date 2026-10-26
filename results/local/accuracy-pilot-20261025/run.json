@@ -1,0 +1,697 @@
+{
+  "status": "complete",
+  "started_utc": "2026-10-25T15:03:51.673245+00:00",
+  "purpose": "small development pilot",
+  "hostname": "r11n8",
+  "job_id": "9139876",
+  "nslots": "16",
+  "workers": 1,
+  "warmups": 0,
+  "repetitions": 1,
+  "env": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "seed": 20261025,
+  "schedule": [
+    {
+      "id": "bpRNA_RFAM_29155",
+      "methods": [
+        "LinearKnot-centroid",
+        "Spark",
+        "LinearPartition-MEA",
+        "IPknot-LPV",
+        "LinearKnot-MFE",
+        "Knotty",
+        "ThreshKnot"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_29713",
+      "methods": [
+        "LinearPartition-MEA",
+        "Knotty",
+        "IPknot-LPV",
+        "ThreshKnot",
+        "Spark",
+        "LinearKnot-MFE",
+        "LinearKnot-centroid"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_23433",
+      "methods": [
+        "ThreshKnot",
+        "Spark",
+        "LinearPartition-MEA",
+        "IPknot-LPV",
+        "Knotty",
+        "LinearKnot-centroid",
+        "LinearKnot-MFE"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_29552",
+      "methods": [
+        "LinearKnot-MFE",
+        "ThreshKnot",
+        "LinearPartition-MEA",
+        "LinearKnot-centroid",
+        "Spark",
+        "Knotty",
+        "IPknot-LPV"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_31350",
+      "methods": [
+        "LinearKnot-centroid",
+        "Spark",
+        "Knotty",
+        "LinearPartition-MEA",
+        "LinearKnot-MFE",
+        "ThreshKnot",
+        "IPknot-LPV"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_31431",
+      "methods": [
+        "ThreshKnot",
+        "LinearKnot-centroid",
+        "Spark",
+        "LinearPartition-MEA",
+        "Knotty",
+        "LinearKnot-MFE",
+        "IPknot-LPV"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_31442",
+      "methods": [
+        "Spark",
+        "IPknot-LPV",
+        "Knotty",
+        "LinearKnot-centroid",
+        "ThreshKnot",
+        "LinearKnot-MFE",
+        "LinearPartition-MEA"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_23361",
+      "methods": [
+        "Knotty",
+        "ThreshKnot",
+        "LinearPartition-MEA",
+        "IPknot-LPV",
+        "LinearKnot-centroid",
+        "LinearKnot-MFE",
+        "Spark"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_23425",
+      "methods": [
+        "ThreshKnot",
+        "LinearKnot-MFE",
+        "LinearKnot-centroid",
+        "Knotty",
+        "LinearPartition-MEA",
+        "IPknot-LPV",
+        "Spark"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_35551",
+      "methods": [
+        "LinearKnot-MFE",
+        "ThreshKnot",
+        "Knotty",
+        "Spark",
+        "LinearPartition-MEA",
+        "IPknot-LPV",
+        "LinearKnot-centroid"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_6444",
+      "methods": [
+        "Spark",
+        "Knotty",
+        "IPknot-LPV",
+        "ThreshKnot",
+        "LinearKnot-centroid",
+        "LinearKnot-MFE",
+        "LinearPartition-MEA"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_31191",
+      "methods": [
+        "LinearPartition-MEA",
+        "Knotty",
+        "Spark",
+        "LinearKnot-centroid",
+        "IPknot-LPV",
+        "ThreshKnot",
+        "LinearKnot-MFE"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_35538",
+      "methods": [
+        "IPknot-LPV",
+        "Knotty",
+        "LinearKnot-MFE",
+        "Spark",
+        "LinearPartition-MEA",
+        "LinearKnot-centroid",
+        "ThreshKnot"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_31327",
+      "methods": [
+        "Knotty",
+        "IPknot-LPV",
+        "LinearKnot-centroid",
+        "ThreshKnot",
+        "Spark",
+        "LinearKnot-MFE",
+        "LinearPartition-MEA"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_7554",
+      "methods": [
+        "LinearKnot-centroid",
+        "Knotty",
+        "ThreshKnot",
+        "LinearPartition-MEA",
+        "LinearKnot-MFE",
+        "Spark",
+        "IPknot-LPV"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_27882",
+      "methods": [
+        "Spark",
+        "LinearKnot-MFE",
+        "LinearPartition-MEA",
+        "ThreshKnot",
+        "LinearKnot-centroid",
+        "IPknot-LPV",
+        "Knotty"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_33330",
+      "methods": [
+        "LinearPartition-MEA",
+        "Spark",
+        "LinearKnot-centroid",
+        "ThreshKnot",
+        "LinearKnot-MFE",
+        "IPknot-LPV",
+        "Knotty"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_33321",
+      "methods": [
+        "Knotty",
+        "LinearPartition-MEA",
+        "LinearKnot-MFE",
+        "ThreshKnot",
+        "LinearKnot-centroid",
+        "Spark",
+        "IPknot-LPV"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_33233",
+      "methods": [
+        "LinearKnot-centroid",
+        "ThreshKnot",
+        "Spark",
+        "LinearKnot-MFE",
+        "Knotty",
+        "LinearPartition-MEA",
+        "IPknot-LPV"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_33260",
+      "methods": [
+        "Knotty",
+        "LinearPartition-MEA",
+        "IPknot-LPV",
+        "ThreshKnot",
+        "LinearKnot-centroid",
+        "LinearKnot-MFE",
+        "Spark"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_11248",
+      "methods": [
+        "IPknot-LPV",
+        "LinearKnot-centroid",
+        "ThreshKnot",
+        "LinearKnot-MFE",
+        "LinearPartition-MEA",
+        "Knotty",
+        "Spark"
+      ]
+    },
+    {
+      "id": "bpRNA_RNP_111",
+      "methods": [
+        "Spark",
+        "ThreshKnot",
+        "Knotty",
+        "LinearPartition-MEA",
+        "LinearKnot-MFE",
+        "IPknot-LPV",
+        "LinearKnot-centroid"
+      ]
+    },
+    {
+      "id": "bpRNA_CRW_54546",
+      "methods": [
+        "IPknot-LPV",
+        "LinearPartition-MEA",
+        "Knotty",
+        "LinearKnot-centroid",
+        "ThreshKnot",
+        "LinearKnot-MFE",
+        "Spark"
+      ]
+    },
+    {
+      "id": "bpRNA_RNP_150",
+      "methods": [
+        "Spark",
+        "Knotty",
+        "LinearPartition-MEA",
+        "IPknot-LPV",
+        "LinearKnot-centroid",
+        "ThreshKnot",
+        "LinearKnot-MFE"
+      ]
+    },
+    {
+      "id": "bpRNA_RNP_352",
+      "methods": [
+        "Knotty",
+        "IPknot-LPV",
+        "Spark",
+        "LinearKnot-centroid",
+        "LinearPartition-MEA",
+        "ThreshKnot",
+        "LinearKnot-MFE"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_12434",
+      "methods": [
+        "LinearPartition-MEA",
+        "ThreshKnot",
+        "IPknot-LPV",
+        "Knotty",
+        "Spark",
+        "LinearKnot-MFE",
+        "LinearKnot-centroid"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_4615",
+      "methods": [
+        "LinearKnot-MFE",
+        "LinearKnot-centroid",
+        "ThreshKnot",
+        "IPknot-LPV",
+        "LinearPartition-MEA",
+        "Knotty",
+        "Spark"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_12446",
+      "methods": [
+        "LinearKnot-MFE",
+        "ThreshKnot",
+        "LinearKnot-centroid",
+        "LinearPartition-MEA",
+        "IPknot-LPV",
+        "Knotty",
+        "Spark"
+      ]
+    },
+    {
+      "id": "bpRNA_RNP_347",
+      "methods": [
+        "IPknot-LPV",
+        "Knotty",
+        "LinearKnot-MFE",
+        "Spark",
+        "LinearKnot-centroid",
+        "LinearPartition-MEA",
+        "ThreshKnot"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_2567",
+      "methods": [
+        "Knotty",
+        "Spark",
+        "ThreshKnot",
+        "LinearKnot-centroid",
+        "LinearKnot-MFE",
+        "IPknot-LPV",
+        "LinearPartition-MEA"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_2598",
+      "methods": [
+        "LinearPartition-MEA",
+        "LinearKnot-centroid",
+        "LinearKnot-MFE",
+        "Spark",
+        "ThreshKnot",
+        "Knotty",
+        "IPknot-LPV"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_35962",
+      "methods": [
+        "LinearKnot-centroid",
+        "LinearKnot-MFE",
+        "ThreshKnot",
+        "Spark",
+        "IPknot-LPV",
+        "Knotty",
+        "LinearPartition-MEA"
+      ]
+    },
+    {
+      "id": "bpRNA_tmRNA_567",
+      "methods": [
+        "LinearKnot-centroid",
+        "Spark",
+        "IPknot-LPV",
+        "LinearKnot-MFE",
+        "ThreshKnot",
+        "LinearPartition-MEA",
+        "Knotty"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_2635",
+      "methods": [
+        "IPknot-LPV",
+        "Knotty",
+        "LinearKnot-MFE",
+        "ThreshKnot",
+        "LinearPartition-MEA",
+        "Spark",
+        "LinearKnot-centroid"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_2882",
+      "methods": [
+        "Spark",
+        "LinearKnot-centroid",
+        "Knotty",
+        "ThreshKnot",
+        "LinearKnot-MFE",
+        "IPknot-LPV",
+        "LinearPartition-MEA"
+      ]
+    },
+    {
+      "id": "bpRNA_CRW_54591",
+      "methods": [
+        "LinearKnot-centroid",
+        "IPknot-LPV",
+        "ThreshKnot",
+        "Knotty",
+        "Spark",
+        "LinearKnot-MFE",
+        "LinearPartition-MEA"
+      ]
+    },
+    {
+      "id": "bpRNA_CRW_54602",
+      "methods": [
+        "LinearKnot-MFE",
+        "Knotty",
+        "ThreshKnot",
+        "IPknot-LPV",
+        "LinearPartition-MEA",
+        "Spark",
+        "LinearKnot-centroid"
+      ]
+    },
+    {
+      "id": "bpRNA_RNP_272",
+      "methods": [
+        "Spark",
+        "Knotty",
+        "LinearKnot-MFE",
+        "ThreshKnot",
+        "LinearKnot-centroid",
+        "IPknot-LPV",
+        "LinearPartition-MEA"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_4342",
+      "methods": [
+        "Spark",
+        "LinearKnot-centroid",
+        "LinearKnot-MFE",
+        "ThreshKnot",
+        "Knotty",
+        "LinearPartition-MEA",
+        "IPknot-LPV"
+      ]
+    },
+    {
+      "id": "bpRNA_RFAM_4721",
+      "methods": [
+        "LinearKnot-MFE",
+        "LinearPartition-MEA",
+        "Spark",
+        "IPknot-LPV",
+        "Knotty",
+        "ThreshKnot",
+        "LinearKnot-centroid"
+      ]
+    },
+    {
+      "id": "bpRNA_CRW_2185",
+      "methods": [
+        "Knotty",
+        "LinearPartition-MEA",
+        "LinearKnot-centroid",
+        "LinearKnot-MFE",
+        "Spark",
+        "IPknot-LPV",
+        "ThreshKnot"
+      ]
+    },
+    {
+      "id": "bpRNA_CRW_8677",
+      "methods": [
+        "Spark",
+        "ThreshKnot",
+        "Knotty",
+        "LinearKnot-centroid",
+        "IPknot-LPV",
+        "LinearPartition-MEA",
+        "LinearKnot-MFE"
+      ]
+    },
+    {
+      "id": "bpRNA_CRW_4764",
+      "methods": [
+        "LinearKnot-centroid",
+        "LinearPartition-MEA",
+        "Spark",
+        "ThreshKnot",
+        "IPknot-LPV",
+        "Knotty",
+        "LinearKnot-MFE"
+      ]
+    }
+  ],
+  "invocation": [
+    "scripts/accuracy_pilot_20261025.py",
+    "run",
+    "--out",
+    "results/local/accuracy-pilot-20261025",
+    "--scratch",
+    "/tmp/accuracy-pilot-20261025/jobs",
+    "--setup",
+    "/tmp/accuracy-pilot-20261025/setup.json",
+    "--linearknot",
+    "/tmp/accuracy-pilot-20261025/linearknot-build/linearknot",
+    "--linearpartition",
+    "/tmp/accuracy-pilot-20261025/linearpartition/linearpartition",
+    "--spark",
+    "/tmp/accuracy-pilot-20261025/Spark",
+    "--parameter",
+    "/tmp/accuracy-pilot-20261025/rna_Turner04.par",
+    "--ipknot",
+    "/tmp/accuracy-pilot-20261025/ipknot-runtime/usr/local/bin/ipknot",
+    "--loader",
+    "/tmp/accuracy-pilot-20261025/ipknot-runtime/lib/ld-musl-x86_64.so.1",
+    "--library-path",
+    "/tmp/accuracy-pilot-20261025/ipknot-runtime/lib:/tmp/accuracy-pilot-20261025/ipknot-runtime/usr/lib:/tmp/accuracy-pilot-20261025/ipknot-runtime/usr/local/lib"
+  ],
+  "timeouts_seconds": {
+    "default": 120,
+    "Spark": 30,
+    "Knotty": 30
+  },
+  "memory_limit_mib": 4096,
+  "bin_timeout_stop": 2,
+  "Spark_total_budget_seconds": 180,
+  "total_budget_seconds": 7200,
+  "settings": {
+    "LP_beam": 200,
+    "scaffold_threshold": 0.7,
+    "min_helix": 2,
+    "LK_beam": 100,
+    "max_hairpin": 100,
+    "max_case3_depth": 100,
+    "gamma": 1,
+    "LP_MEA_gamma": 1,
+    "ThreshKnot_threshold": 0.3,
+    "IPknot_model": "LinearPartition-V",
+    "IPknot_refinements": 1
+  },
+  "binaries": {
+    "linearknot": "/tmp/accuracy-pilot-20261025/linearknot-build/linearknot",
+    "linearpartition": "/tmp/accuracy-pilot-20261025/linearpartition/linearpartition",
+    "spark": "/tmp/accuracy-pilot-20261025/Spark",
+    "ipknot": "/tmp/accuracy-pilot-20261025/ipknot-runtime/usr/local/bin/ipknot",
+    "loader": "/tmp/accuracy-pilot-20261025/ipknot-runtime/lib/ld-musl-x86_64.so.1",
+    "knotty": null,
+    "parameter": "/tmp/accuracy-pilot-20261025/rna_Turner04.par"
+  },
+  "binary_sha256": {
+    "linearknot": "27a65ae741f0debe2a5ca9699d901e9e4c62e0c70c0a254ebcee8315254f339e",
+    "linearpartition": "850ef5f778fda1275dabc1f561be11563a2334ceff956fb538f2f24b22633e87",
+    "spark": "c3b3e93c5ae98cfb1def50c4a2f773adb632fde83cd1b58db8d713d7d5505539",
+    "ipknot": "35d080e0a956093fff97f6b62e81b6a98467dfd7a9caebe9df217dff835cad1f",
+    "loader": "99eab0629ed5e6bc258bea735a128d1de30c5a8b52f39eed4919452d03c6c4ee",
+    "parameter": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+  },
+  "setup": {
+    "created_utc": "2026-10-25T15:02:02.667883+00:00",
+    "source_archive_sha256": "d252b655d7fa9a556aa0cc03eb471133c70ea8fe8d9db64c78a55758b85bf475",
+    "linearknot_tag": "v0.2.0",
+    "linearknot_commit": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+    "compiler": "g++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+    "cmake": "cmake version 3.26.5",
+    "build_commands": [
+      [
+        "git",
+        "-C",
+        "../../LinearKnot",
+        "archive",
+        "v0.2.0"
+      ],
+      [
+        "cmake",
+        "-S",
+        "/tmp/accuracy-pilot-20261025/linearknot",
+        "-B",
+        "/tmp/accuracy-pilot-20261025/linearknot-build",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      [
+        "cmake",
+        "--build",
+        "/tmp/accuracy-pilot-20261025/linearknot-build",
+        "-j8",
+        "--target",
+        "linearknot"
+      ]
+    ],
+    "source_states": {
+      "../../LinearKnot": {
+        "commit": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+        "status": ""
+      },
+      "deps/LinearPartition-20261008": {
+        "commit": "b450fb3e63189073b68d385589035f992080aa3a",
+        "status": ""
+      },
+      "deps/Spark-upstream": {
+        "commit": "3105c311ca6243a31788e74ac33640435e53b62c",
+        "status": ""
+      },
+      "../../PseudoknotInverseFolding/submodules/ipknot": {
+        "commit": "dcaa3695041552df05f4665f3e4227cd617b37f6",
+        "status": "?? .apptainer_cache/\n?? ipknot.sif\n?? ipknot_docker.tar\n"
+      }
+    },
+    "docker_archive": {
+      "path": "/gs/bs/tga-satolab-gtex/otgk/PseudoknotInverseFolding/submodules/ipknot/ipknot_docker.tar",
+      "sha256": "102450bbc4e1199b3beddab148036ae8341031be58500f2be4d3837fdd3131ef",
+      "version": "1.1.0",
+      "exact_image_build_source": "not independently certified; retained local image bytes identified by hash"
+    },
+    "initial_failures": [
+      {
+        "tool": "curl bpRNA_1m_90.zip",
+        "error": "curl (6): Could not resolve host: bprna.cgrb.oregonstate.edu"
+      },
+      {
+        "tool": "git clone IPknot",
+        "error": "Could not resolve host: github.com"
+      },
+      {
+        "tool": "curl Knotty source",
+        "error": "curl (6): Could not resolve host: github.com"
+      },
+      {
+        "tool": "apptainer exec IPknot",
+        "error": "socket communication error / getsockopt: operation not permitted; used native musl-loader execution instead"
+      }
+    ],
+    "file_budget": {
+      "quota_files_used": 21864090,
+      "quota_file_limit": 28000000,
+      "estimated_new_shared_entries": 16,
+      "per_process_files": "node-local only"
+    },
+    "parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+    "parameter_identity_to_Spark": true
+  },
+  "script_sha256": "e0d7ff5c5c411a87d0cb3926d0199beb7f78840d106c454ef541619aea1d8b39",
+  "cohort_sha256": "b4f3716ee34df08bdd675daadfe150d9797507d5e0ef791e08ca7d21cef6f5a3",
+  "finished_utc": "2026-10-25T15:08:28.932055+00:00",
+  "total_elapsed_seconds": 277.2486582067795,
+  "raw_outputs_sha256": "efaf16dded694fb6bc1ed6afc4a0816d305b25743146189767b5a477c0c1ef17",
+  "results_sha256": "6a0722a354729ece0d3a171b24f75a4eaec9a7d910966db5258c5930db9ef868",
+  "final_binary_sha256": {
+    "linearknot": "27a65ae741f0debe2a5ca9699d901e9e4c62e0c70c0a254ebcee8315254f339e",
+    "linearpartition": "850ef5f778fda1275dabc1f561be11563a2334ceff956fb538f2f24b22633e87",
+    "spark": "c3b3e93c5ae98cfb1def50c4a2f773adb632fde83cd1b58db8d713d7d5505539",
+    "ipknot": "35d080e0a956093fff97f6b62e81b6a98467dfd7a9caebe9df217dff835cad1f",
+    "loader": "99eab0629ed5e6bc258bea735a128d1de30c5a8b52f39eed4919452d03c6c4ee",
+    "parameter": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9"
+  }
+}

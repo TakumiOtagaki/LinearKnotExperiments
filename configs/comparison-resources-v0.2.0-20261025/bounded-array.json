@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "measurement": "timing",
+  "seed": 20261025,
+  "compact_plan": true,
+  "max_concurrent_tasks": 30,
+  "task_runner_script": "scripts/comparison_resources_array_20261025.py",
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1
+  },
+  "parallel_timing": {
+    "allowed": true,
+    "reason": "Author-requested fixed single-thread pool; 8 through 2200 nt, 4 from 3600 nt; one worker when 32 GiB/process is required. Split long methods to preserve explicit censoring budgets."
+  },
+  "tiers": [
+    {
+      "name": "n2000",
+      "min_length": 1800,
+      "max_length": 2200,
+      "resource": "cpu_16",
+      "h_rt": "00:45:00",
+      "target_seconds": 2100,
+      "max_wall_fraction": 0.8,
+      "max_inputs_per_task": 4,
+      "workers": 8,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "timeout_seconds": 180,
+        "memory_limit_mib": 4096
+      },
+      "cost_model": {
+        "basis": "Explicit process timeout ceiling, no length extrapolation; parallel packing uses blocked_random_timeout_bound",
+        "seconds_constant_per_condition": 180,
+        "seconds_per_nt_condition": 1e-12,
+        "mib_per_nt": 0,
+        "memory_base_mib": 4096,
+        "safety_factor": 1
+      },
+      "parallel_packing": {
+        "kind": "blocked_random_timeout_bound",
+        "timeout_seconds": 180,
+        "combinations_per_input": 2,
+        "overhead_seconds": 120,
+        "basis": "Preserve first-pending launch order: charge all warmups serially plus three measured list bounds work/w+(1-1/w)*largest_job; 120 s staging/checkpoint allowance"
+      }
+    },
+    {
+      "name": "n4000",
+      "min_length": 3600,
+      "max_length": 4400,
+      "resource": "cpu_16",
+      "h_rt": "00:50:00",
+      "target_seconds": 2220,
+      "max_wall_fraction": 0.8,
+      "max_inputs_per_task": 2,
+      "workers": 4,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "timeout_seconds": 300,
+        "memory_limit_mib": 8192
+      },
+      "cost_model": {
+        "basis": "Explicit process timeout ceiling, no length extrapolation; parallel packing uses blocked_random_timeout_bound",
+        "seconds_constant_per_condition": 300,
+        "seconds_per_nt_condition": 1e-12,
+        "mib_per_nt": 0,
+        "memory_base_mib": 8192,
+        "safety_factor": 1
+      },
+      "parallel_packing": {
+        "kind": "blocked_random_timeout_bound",
+        "timeout_seconds": 300,
+        "combinations_per_input": 2,
+        "overhead_seconds": 120,
+        "basis": "Preserve first-pending launch order: charge all warmups serially plus three measured list bounds work/w+(1-1/w)*largest_job; 120 s staging/checkpoint allowance"
+      }
+    },
+    {
+      "name": "rnacentral",
+      "min_length": 4793,
+      "max_length": 29106,
+      "resource": "cpu_16",
+      "h_rt": "02:15:00",
+      "target_seconds": 6420,
+      "max_wall_fraction": 0.8,
+      "max_inputs_per_task": 2,
+      "workers": 4,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "timeout_seconds": 900,
+        "memory_limit_mib": 8192
+      },
+      "cost_model": {
+        "basis": "Explicit process timeout ceiling, no length extrapolation; parallel packing uses blocked_random_timeout_bound",
+        "seconds_constant_per_condition": 900,
+        "seconds_per_nt_condition": 1e-12,
+        "mib_per_nt": 0,
+        "memory_base_mib": 8192,
+        "safety_factor": 1
+      },
+      "parallel_packing": {
+        "kind": "blocked_random_timeout_bound",
+        "timeout_seconds": 900,
+        "combinations_per_input": 2,
+        "overhead_seconds": 120,
+        "basis": "Preserve first-pending launch order: charge all warmups serially plus three measured list bounds work/w+(1-1/w)*largest_job; 120 s staging/checkpoint allowance"
+      }
+    }
+  ]
+}

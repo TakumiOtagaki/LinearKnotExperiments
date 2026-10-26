@@ -1,0 +1,1167 @@
+{
+  "created_utc": "2026-10-25T15:08:56.332800+00:00",
+  "groups": [
+    {
+      "bin": "50-200",
+      "method": "scaffold",
+      "selected": 20,
+      "status_counts": {
+        "success": 20
+      },
+      "success": 20,
+      "metrics": {
+        "all": {
+          "tp": 161,
+          "reference": 514,
+          "predicted": 365,
+          "sensitivity": 0.3132295719844358,
+          "ppv": 0.4410958904109589,
+          "f1": 0.366325369738339,
+          "macro_f1": 0.36520160098675725
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 376,
+          "predicted": 0,
+          "sensitivity": 0.0,
+          "ppv": null,
+          "f1": 0.0,
+          "macro_f1": 0.0
+        }
+      },
+      "median_elapsed_seconds": 0.053345819003880024,
+      "median_peak_rss_kib": 9216.0,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "50-200",
+      "method": "LinearKnot-centroid",
+      "selected": 20,
+      "status_counts": {
+        "success": 20
+      },
+      "success": 20,
+      "metrics": {
+        "all": {
+          "tp": 197,
+          "reference": 514,
+          "predicted": 509,
+          "sensitivity": 0.3832684824902724,
+          "ppv": 0.38703339882121807,
+          "f1": 0.38514173998044965,
+          "macro_f1": 0.38817333446856844
+        },
+        "crossing": {
+          "tp": 42,
+          "reference": 376,
+          "predicted": 98,
+          "sensitivity": 0.11170212765957446,
+          "ppv": 0.42857142857142855,
+          "f1": 0.17721518987341772,
+          "macro_f1": 0.14625246318794705
+        }
+      },
+      "median_elapsed_seconds": 0.05142441741190851,
+      "median_peak_rss_kib": 6144.0,
+      "median_end_to_end_seconds": 0.10294989310204983,
+      "median_end_to_end_peak_rss_kib": 9216.0,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "50-200",
+      "method": "LinearKnot-MFE",
+      "selected": 20,
+      "status_counts": {
+        "success": 20
+      },
+      "success": 20,
+      "metrics": {
+        "all": {
+          "tp": 206,
+          "reference": 514,
+          "predicted": 600,
+          "sensitivity": 0.40077821011673154,
+          "ppv": 0.3433333333333333,
+          "f1": 0.36983842010771995,
+          "macro_f1": 0.38282244056955145
+        },
+        "crossing": {
+          "tp": 88,
+          "reference": 376,
+          "predicted": 198,
+          "sensitivity": 0.23404255319148937,
+          "ppv": 0.4444444444444444,
+          "f1": 0.30662020905923343,
+          "macro_f1": 0.29860589317181185
+        }
+      },
+      "median_elapsed_seconds": 0.04384825611487031,
+      "median_peak_rss_kib": 6144.0,
+      "median_end_to_end_seconds": 0.09871751326136291,
+      "median_end_to_end_peak_rss_kib": 9216.0,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "50-200",
+      "method": "LinearPartition-MEA",
+      "selected": 20,
+      "status_counts": {
+        "success": 20
+      },
+      "success": 20,
+      "metrics": {
+        "all": {
+          "tp": 193,
+          "reference": 514,
+          "predicted": 524,
+          "sensitivity": 0.3754863813229572,
+          "ppv": 0.3683206106870229,
+          "f1": 0.371868978805395,
+          "macro_f1": 0.36364379965607624
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 376,
+          "predicted": 0,
+          "sensitivity": 0.0,
+          "ppv": null,
+          "f1": 0.0,
+          "macro_f1": 0.0
+        }
+      },
+      "median_elapsed_seconds": 0.05300568789243698,
+      "median_peak_rss_kib": 9216.0,
+      "median_end_to_end_seconds": 0.05300568789243698,
+      "median_end_to_end_peak_rss_kib": 9216.0,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "50-200",
+      "method": "ThreshKnot",
+      "selected": 20,
+      "status_counts": {
+        "success": 20
+      },
+      "success": 20,
+      "metrics": {
+        "all": {
+          "tp": 194,
+          "reference": 514,
+          "predicted": 572,
+          "sensitivity": 0.377431906614786,
+          "ppv": 0.33916083916083917,
+          "f1": 0.3572744014732965,
+          "macro_f1": 0.35480883951070924
+        },
+        "crossing": {
+          "tp": 11,
+          "reference": 376,
+          "predicted": 57,
+          "sensitivity": 0.02925531914893617,
+          "ppv": 0.19298245614035087,
+          "f1": 0.050808314087759814,
+          "macro_f1": 0.029675324675324674
+        }
+      },
+      "median_elapsed_seconds": 0.05382701940834522,
+      "median_peak_rss_kib": 9216.0,
+      "median_end_to_end_seconds": 0.05382701940834522,
+      "median_end_to_end_peak_rss_kib": 9216.0,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "50-200",
+      "method": "IPknot-LPV",
+      "selected": 20,
+      "status_counts": {
+        "success": 20
+      },
+      "success": 20,
+      "metrics": {
+        "all": {
+          "tp": 194,
+          "reference": 514,
+          "predicted": 597,
+          "sensitivity": 0.377431906614786,
+          "ppv": 0.3249581239530988,
+          "f1": 0.34923492349234925,
+          "macro_f1": 0.3602811516284111
+        },
+        "crossing": {
+          "tp": 29,
+          "reference": 376,
+          "predicted": 183,
+          "sensitivity": 0.07712765957446809,
+          "ppv": 0.15846994535519127,
+          "f1": 0.1037567084078712,
+          "macro_f1": 0.06831309716093648
+        }
+      },
+      "median_elapsed_seconds": 0.17327362135984004,
+      "median_peak_rss_kib": 6144.0,
+      "median_end_to_end_seconds": 0.17327362135984004,
+      "median_end_to_end_peak_rss_kib": 6144.0,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "50-200",
+      "method": "Spark",
+      "selected": 20,
+      "status_counts": {
+        "success": 19,
+        "invalid_output": 1
+      },
+      "success": 19,
+      "metrics": {
+        "all": {
+          "tp": 199,
+          "reference": 494,
+          "predicted": 562,
+          "sensitivity": 0.402834008097166,
+          "ppv": 0.3540925266903915,
+          "f1": 0.3768939393939394,
+          "macro_f1": 0.38378072067560376
+        },
+        "crossing": {
+          "tp": 78,
+          "reference": 356,
+          "predicted": 179,
+          "sensitivity": 0.21910112359550563,
+          "ppv": 0.43575418994413406,
+          "f1": 0.29158878504672897,
+          "macro_f1": 0.27517088924706845
+        }
+      },
+      "median_elapsed_seconds": 0.010819775052368641,
+      "median_peak_rss_kib": 3072,
+      "median_end_to_end_seconds": 0.06405425118282437,
+      "median_end_to_end_peak_rss_kib": 9216,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "50-200",
+      "method": "Knotty",
+      "selected": 20,
+      "status_counts": {
+        "skipped": 20
+      },
+      "success": 0,
+      "metrics": {
+        "all": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        }
+      },
+      "median_elapsed_seconds": null,
+      "median_peak_rss_kib": null,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "200-500",
+      "method": "scaffold",
+      "selected": 20,
+      "status_counts": {
+        "success": 20
+      },
+      "success": 20,
+      "metrics": {
+        "all": {
+          "tp": 707,
+          "reference": 1819,
+          "predicted": 1248,
+          "sensitivity": 0.388675096206707,
+          "ppv": 0.5665064102564102,
+          "f1": 0.46103684382132376,
+          "macro_f1": 0.4430750432373982
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 485,
+          "predicted": 0,
+          "sensitivity": 0.0,
+          "ppv": null,
+          "f1": 0.0,
+          "macro_f1": 0.0
+        }
+      },
+      "median_elapsed_seconds": 0.37882962077856064,
+      "median_peak_rss_kib": 9216.0,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "200-500",
+      "method": "LinearKnot-centroid",
+      "selected": 20,
+      "status_counts": {
+        "success": 20
+      },
+      "success": 20,
+      "metrics": {
+        "all": {
+          "tp": 882,
+          "reference": 1819,
+          "predicted": 1809,
+          "sensitivity": 0.48488180318856516,
+          "ppv": 0.48756218905472637,
+          "f1": 0.4862183020948181,
+          "macro_f1": 0.47701616840675437
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 485,
+          "predicted": 23,
+          "sensitivity": 0.0,
+          "ppv": 0.0,
+          "f1": 0.0,
+          "macro_f1": 0.0
+        }
+      },
+      "median_elapsed_seconds": 2.6410530116409063,
+      "median_peak_rss_kib": 44544.0,
+      "median_end_to_end_seconds": 2.865638401126489,
+      "median_end_to_end_peak_rss_kib": 44544.0,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "200-500",
+      "method": "LinearKnot-MFE",
+      "selected": 20,
+      "status_counts": {
+        "success": 20
+      },
+      "success": 20,
+      "metrics": {
+        "all": {
+          "tp": 918,
+          "reference": 1819,
+          "predicted": 2157,
+          "sensitivity": 0.5046728971962616,
+          "ppv": 0.42559109874826145,
+          "f1": 0.46177062374245476,
+          "macro_f1": 0.4490282176206252
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 485,
+          "predicted": 42,
+          "sensitivity": 0.0,
+          "ppv": 0.0,
+          "f1": 0.0,
+          "macro_f1": 0.0
+        }
+      },
+      "median_elapsed_seconds": 1.1362036599311978,
+      "median_peak_rss_kib": 41472.0,
+      "median_end_to_end_seconds": 1.4378622137010098,
+      "median_end_to_end_peak_rss_kib": 41472.0,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "200-500",
+      "method": "LinearPartition-MEA",
+      "selected": 20,
+      "status_counts": {
+        "success": 20
+      },
+      "success": 20,
+      "metrics": {
+        "all": {
+          "tp": 909,
+          "reference": 1819,
+          "predicted": 1978,
+          "sensitivity": 0.4997251236943375,
+          "ppv": 0.4595551061678463,
+          "f1": 0.4787990518830656,
+          "macro_f1": 0.46771279031679486
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 485,
+          "predicted": 0,
+          "sensitivity": 0.0,
+          "ppv": null,
+          "f1": 0.0,
+          "macro_f1": 0.0
+        }
+      },
+      "median_elapsed_seconds": 0.3829881330020726,
+      "median_peak_rss_kib": 10752.0,
+      "median_end_to_end_seconds": 0.3829881330020726,
+      "median_end_to_end_peak_rss_kib": 10752.0,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "200-500",
+      "method": "ThreshKnot",
+      "selected": 20,
+      "status_counts": {
+        "success": 20
+      },
+      "success": 20,
+      "metrics": {
+        "all": {
+          "tp": 921,
+          "reference": 1819,
+          "predicted": 2077,
+          "sensitivity": 0.5063221550302364,
+          "ppv": 0.44342802118440056,
+          "f1": 0.47279260780287474,
+          "macro_f1": 0.46037686167869457
+        },
+        "crossing": {
+          "tp": 8,
+          "reference": 485,
+          "predicted": 209,
+          "sensitivity": 0.016494845360824743,
+          "ppv": 0.03827751196172249,
+          "f1": 0.023054755043227664,
+          "macro_f1": 0.013263157894736841
+        }
+      },
+      "median_elapsed_seconds": 0.3789262904319912,
+      "median_peak_rss_kib": 9216.0,
+      "median_end_to_end_seconds": 0.3789262904319912,
+      "median_end_to_end_peak_rss_kib": 9216.0,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "200-500",
+      "method": "IPknot-LPV",
+      "selected": 20,
+      "status_counts": {
+        "success": 20
+      },
+      "success": 20,
+      "metrics": {
+        "all": {
+          "tp": 929,
+          "reference": 1819,
+          "predicted": 2175,
+          "sensitivity": 0.5107201759208356,
+          "ppv": 0.4271264367816092,
+          "f1": 0.4651977966950426,
+          "macro_f1": 0.45414015875853464
+        },
+        "crossing": {
+          "tp": 60,
+          "reference": 485,
+          "predicted": 659,
+          "sensitivity": 0.12371134020618557,
+          "ppv": 0.09104704097116843,
+          "f1": 0.1048951048951049,
+          "macro_f1": 0.0791227294752387
+        }
+      },
+      "median_elapsed_seconds": 2.28837561304681,
+      "median_peak_rss_kib": 15356.0,
+      "median_end_to_end_seconds": 2.28837561304681,
+      "median_end_to_end_peak_rss_kib": 15356.0,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "200-500",
+      "method": "Spark",
+      "selected": 20,
+      "status_counts": {
+        "success": 19,
+        "failed": 1
+      },
+      "success": 19,
+      "metrics": {
+        "all": {
+          "tp": 895,
+          "reference": 1770,
+          "predicted": 2010,
+          "sensitivity": 0.5056497175141242,
+          "ppv": 0.44527363184079605,
+          "f1": 0.47354497354497355,
+          "macro_f1": 0.4631526685574833
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 468,
+          "predicted": 54,
+          "sensitivity": 0.0,
+          "ppv": 0.0,
+          "f1": 0.0,
+          "macro_f1": 0.0
+        }
+      },
+      "median_elapsed_seconds": 0.02603443479165435,
+      "median_peak_rss_kib": 3072,
+      "median_end_to_end_seconds": 0.3901510201394558,
+      "median_end_to_end_peak_rss_kib": 9216,
+      "missing_scaffold_RNAs": 1
+    },
+    {
+      "bin": "200-500",
+      "method": "Knotty",
+      "selected": 20,
+      "status_counts": {
+        "skipped": 20
+      },
+      "success": 0,
+      "metrics": {
+        "all": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        }
+      },
+      "median_elapsed_seconds": null,
+      "median_peak_rss_kib": null,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "500-1000",
+      "method": "scaffold",
+      "selected": 3,
+      "status_counts": {
+        "success": 3
+      },
+      "success": 3,
+      "metrics": {
+        "all": {
+          "tp": 201,
+          "reference": 497,
+          "predicted": 371,
+          "sensitivity": 0.4044265593561368,
+          "ppv": 0.5417789757412399,
+          "f1": 0.4631336405529954,
+          "macro_f1": 0.4561609511731673
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 44,
+          "predicted": 0,
+          "sensitivity": 0.0,
+          "ppv": null,
+          "f1": 0.0,
+          "macro_f1": 0.0
+        }
+      },
+      "median_elapsed_seconds": 1.2280959538184106,
+      "median_peak_rss_kib": 24576,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "500-1000",
+      "method": "LinearKnot-centroid",
+      "selected": 3,
+      "status_counts": {
+        "success": 3
+      },
+      "success": 3,
+      "metrics": {
+        "all": {
+          "tp": 236,
+          "reference": 497,
+          "predicted": 532,
+          "sensitivity": 0.47484909456740443,
+          "ppv": 0.44360902255639095,
+          "f1": 0.4586977648202138,
+          "macro_f1": 0.45446417569950304
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 44,
+          "predicted": 0,
+          "sensitivity": 0.0,
+          "ppv": null,
+          "f1": 0.0,
+          "macro_f1": 0.0
+        }
+      },
+      "median_elapsed_seconds": 5.996136606205255,
+      "median_peak_rss_kib": 73728,
+      "median_end_to_end_seconds": 7.224232560023665,
+      "median_end_to_end_peak_rss_kib": 73728,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "500-1000",
+      "method": "LinearKnot-MFE",
+      "selected": 3,
+      "status_counts": {
+        "success": 3
+      },
+      "success": 3,
+      "metrics": {
+        "all": {
+          "tp": 247,
+          "reference": 497,
+          "predicted": 591,
+          "sensitivity": 0.4969818913480885,
+          "ppv": 0.4179357021996616,
+          "f1": 0.4540441176470588,
+          "macro_f1": 0.4525101009070703
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 44,
+          "predicted": 6,
+          "sensitivity": 0.0,
+          "ppv": 0.0,
+          "f1": 0.0,
+          "macro_f1": 0.0
+        }
+      },
+      "median_elapsed_seconds": 3.156518296804279,
+      "median_peak_rss_kib": 76920,
+      "median_end_to_end_seconds": 4.38461425062269,
+      "median_end_to_end_peak_rss_kib": 76920,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "500-1000",
+      "method": "LinearPartition-MEA",
+      "selected": 3,
+      "status_counts": {
+        "success": 3
+      },
+      "success": 3,
+      "metrics": {
+        "all": {
+          "tp": 235,
+          "reference": 497,
+          "predicted": 558,
+          "sensitivity": 0.47283702213279677,
+          "ppv": 0.4211469534050179,
+          "f1": 0.44549763033175355,
+          "macro_f1": 0.4416963170357302
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 44,
+          "predicted": 0,
+          "sensitivity": 0.0,
+          "ppv": null,
+          "f1": 0.0,
+          "macro_f1": 0.0
+        }
+      },
+      "median_elapsed_seconds": 1.2343475339002907,
+      "median_peak_rss_kib": 27648,
+      "median_end_to_end_seconds": 1.2343475339002907,
+      "median_end_to_end_peak_rss_kib": 27648,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "500-1000",
+      "method": "ThreshKnot",
+      "selected": 3,
+      "status_counts": {
+        "success": 3
+      },
+      "success": 3,
+      "metrics": {
+        "all": {
+          "tp": 241,
+          "reference": 497,
+          "predicted": 566,
+          "sensitivity": 0.48490945674044267,
+          "ppv": 0.42579505300353354,
+          "f1": 0.45343367826904984,
+          "macro_f1": 0.4485440254557124
+        },
+        "crossing": {
+          "tp": 1,
+          "reference": 44,
+          "predicted": 20,
+          "sensitivity": 0.022727272727272728,
+          "ppv": 0.05,
+          "f1": 0.03125,
+          "macro_f1": 0.023809523809523808
+        }
+      },
+      "median_elapsed_seconds": 1.2285690889693797,
+      "median_peak_rss_kib": 24576,
+      "median_end_to_end_seconds": 1.2285690889693797,
+      "median_end_to_end_peak_rss_kib": 24576,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "500-1000",
+      "method": "IPknot-LPV",
+      "selected": 3,
+      "status_counts": {
+        "success": 3
+      },
+      "success": 3,
+      "metrics": {
+        "all": {
+          "tp": 249,
+          "reference": 497,
+          "predicted": 605,
+          "sensitivity": 0.5010060362173038,
+          "ppv": 0.4115702479338843,
+          "f1": 0.4519056261343013,
+          "macro_f1": 0.448700913068771
+        },
+        "crossing": {
+          "tp": 1,
+          "reference": 44,
+          "predicted": 178,
+          "sensitivity": 0.022727272727272728,
+          "ppv": 0.0056179775280898875,
+          "f1": 0.009009009009009009,
+          "macro_f1": 0.008888888888888889
+        }
+      },
+      "median_elapsed_seconds": 4.390247217845172,
+      "median_peak_rss_kib": 27648,
+      "median_end_to_end_seconds": 4.390247217845172,
+      "median_end_to_end_peak_rss_kib": 27648,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "500-1000",
+      "method": "Spark",
+      "selected": 3,
+      "status_counts": {
+        "success": 3
+      },
+      "success": 3,
+      "metrics": {
+        "all": {
+          "tp": 241,
+          "reference": 497,
+          "predicted": 589,
+          "sensitivity": 0.48490945674044267,
+          "ppv": 0.4091680814940577,
+          "f1": 0.4438305709023941,
+          "macro_f1": 0.44157164866080345
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 44,
+          "predicted": 18,
+          "sensitivity": 0.0,
+          "ppv": 0.0,
+          "f1": 0.0,
+          "macro_f1": 0.0
+        }
+      },
+      "median_elapsed_seconds": 0.08433566940948367,
+      "median_peak_rss_kib": 3072,
+      "median_end_to_end_seconds": 1.3124316232278943,
+      "median_end_to_end_peak_rss_kib": 24576,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "500-1000",
+      "method": "Knotty",
+      "selected": 3,
+      "status_counts": {
+        "skipped": 3
+      },
+      "success": 0,
+      "metrics": {
+        "all": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        }
+      },
+      "median_elapsed_seconds": null,
+      "median_peak_rss_kib": null,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "1000-3000",
+      "method": "scaffold",
+      "selected": 0,
+      "status_counts": {},
+      "success": 0,
+      "metrics": {
+        "all": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        }
+      },
+      "median_elapsed_seconds": null,
+      "median_peak_rss_kib": null,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "1000-3000",
+      "method": "LinearKnot-centroid",
+      "selected": 0,
+      "status_counts": {},
+      "success": 0,
+      "metrics": {
+        "all": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        }
+      },
+      "median_elapsed_seconds": null,
+      "median_peak_rss_kib": null,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "1000-3000",
+      "method": "LinearKnot-MFE",
+      "selected": 0,
+      "status_counts": {},
+      "success": 0,
+      "metrics": {
+        "all": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        }
+      },
+      "median_elapsed_seconds": null,
+      "median_peak_rss_kib": null,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "1000-3000",
+      "method": "LinearPartition-MEA",
+      "selected": 0,
+      "status_counts": {},
+      "success": 0,
+      "metrics": {
+        "all": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        }
+      },
+      "median_elapsed_seconds": null,
+      "median_peak_rss_kib": null,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "1000-3000",
+      "method": "ThreshKnot",
+      "selected": 0,
+      "status_counts": {},
+      "success": 0,
+      "metrics": {
+        "all": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        }
+      },
+      "median_elapsed_seconds": null,
+      "median_peak_rss_kib": null,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "1000-3000",
+      "method": "IPknot-LPV",
+      "selected": 0,
+      "status_counts": {},
+      "success": 0,
+      "metrics": {
+        "all": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        }
+      },
+      "median_elapsed_seconds": null,
+      "median_peak_rss_kib": null,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "1000-3000",
+      "method": "Spark",
+      "selected": 0,
+      "status_counts": {},
+      "success": 0,
+      "metrics": {
+        "all": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        }
+      },
+      "median_elapsed_seconds": null,
+      "median_peak_rss_kib": null,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    },
+    {
+      "bin": "1000-3000",
+      "method": "Knotty",
+      "selected": 0,
+      "status_counts": {},
+      "success": 0,
+      "metrics": {
+        "all": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 0,
+          "predicted": 0,
+          "sensitivity": null,
+          "ppv": null,
+          "f1": null,
+          "macro_f1": null
+        }
+      },
+      "median_elapsed_seconds": null,
+      "median_peak_rss_kib": null,
+      "median_end_to_end_seconds": null,
+      "median_end_to_end_peak_rss_kib": null,
+      "missing_scaffold_RNAs": 0
+    }
+  ],
+  "common_success": [
+    {
+      "bin": "500-1000",
+      "methods": [
+        "LinearKnot-centroid",
+        "LinearKnot-MFE",
+        "LinearPartition-MEA",
+        "ThreshKnot",
+        "IPknot-LPV",
+        "Spark"
+      ],
+      "ids": [
+        "bpRNA_CRW_2185",
+        "bpRNA_CRW_4764",
+        "bpRNA_CRW_8677"
+      ],
+      "count": 3
+    },
+    {
+      "bin": "200-500",
+      "methods": [
+        "LinearKnot-centroid",
+        "LinearKnot-MFE",
+        "LinearPartition-MEA",
+        "ThreshKnot",
+        "IPknot-LPV",
+        "Spark"
+      ],
+      "ids": [
+        "bpRNA_CRW_54546",
+        "bpRNA_CRW_54591",
+        "bpRNA_CRW_54602",
+        "bpRNA_RFAM_11248",
+        "bpRNA_RFAM_12434",
+        "bpRNA_RFAM_12446",
+        "bpRNA_RFAM_2567",
+        "bpRNA_RFAM_2598",
+        "bpRNA_RFAM_2635",
+        "bpRNA_RFAM_2882",
+        "bpRNA_RFAM_4342",
+        "bpRNA_RFAM_4615",
+        "bpRNA_RFAM_4721",
+        "bpRNA_RNP_111",
+        "bpRNA_RNP_150",
+        "bpRNA_RNP_272",
+        "bpRNA_RNP_347",
+        "bpRNA_RNP_352",
+        "bpRNA_tmRNA_567"
+      ],
+      "count": 19
+    },
+    {
+      "bin": "50-200",
+      "methods": [
+        "LinearKnot-centroid",
+        "LinearKnot-MFE",
+        "LinearPartition-MEA",
+        "ThreshKnot",
+        "IPknot-LPV",
+        "Spark"
+      ],
+      "ids": [
+        "bpRNA_RFAM_23361",
+        "bpRNA_RFAM_23425",
+        "bpRNA_RFAM_23433",
+        "bpRNA_RFAM_27882",
+        "bpRNA_RFAM_29155",
+        "bpRNA_RFAM_29552",
+        "bpRNA_RFAM_29713",
+        "bpRNA_RFAM_31191",
+        "bpRNA_RFAM_31327",
+        "bpRNA_RFAM_31350",
+        "bpRNA_RFAM_31431",
+        "bpRNA_RFAM_31442",
+        "bpRNA_RFAM_33233",
+        "bpRNA_RFAM_33260",
+        "bpRNA_RFAM_33321",
+        "bpRNA_RFAM_33330",
+        "bpRNA_RFAM_35538",
+        "bpRNA_RFAM_35551",
+        "bpRNA_RFAM_6444"
+      ],
+      "count": 19
+    }
+  ],
+  "aggregation": "micro sums across successful RNAs; failed and skipped denominators shown separately; macro F1 also retained",
+  "empty_prediction": "PPV null, sensitivity=0, F1=0 for nonempty references",
+  "crossing_definition": "pairs crossing at least one other pair in their own structure; TP is intersection of the two crossing subsets"
+}

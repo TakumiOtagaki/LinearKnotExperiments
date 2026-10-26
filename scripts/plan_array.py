@@ -84,6 +84,9 @@ def validate_array(config, settings):
         raise ValueError("parallel_timing requires boolean allowed and a nonempty reason")
     if not config.get("software_lock"):
         raise ValueError("array runs require a software lock, including development arrays")
+    runner = settings.get("task_runner_script", "scripts/run_array_task.py")
+    if (not re.fullmatch(r"scripts/[A-Za-z0-9_-]+\.py", runner) or not (ROOT / runner).is_file()):
+        raise ValueError("task_runner_script must be an existing repository script")
     if "memory_limit_mib" not in config:
         raise ValueError("array runs require the existing per-job memory_limit_mib")
     for key in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
@@ -125,16 +128,27 @@ def validate_array(config, settings):
             raise ValueError("workers times per-job memory cap plus overhead exceeds memory budget")
         packing = tier.get("parallel_packing")
         if packing is not None:
-            if (packing.get("kind") != "beam_list_bound" or settings["measurement"] != "accuracy"
+            if packing.get("kind") == "blocked_random_timeout_bound":
+                if (settings["measurement"] != "timing" or config.get("warmups") != 1
+                        or config.get("repetitions") != 3 or tier.get("order_kind", "blocked_random") != "blocked_random"
+                        or any("length_range" in m for m in config["modes"])
+                        or packing.get("combinations_per_input") != len(config["modes"]) * len(config["programs"])
+                        or packing.get("timeout_seconds") != effective_config["timeout_seconds"]):
+                    raise ValueError("timeout bound requires fixed complete timing matrices, one warmup, three repetitions and matched timeout")
+                positive(packing.get("overhead_seconds"), "parallel packing overhead", zero=True)
+                if not packing.get("basis"):
+                    raise ValueError("timeout bound needs a basis")
+            else:
+                if (packing.get("kind") != "beam_list_bound" or settings["measurement"] != "accuracy"
                     or tier.get("order_kind") != "beam_ascending" or config.get("warmups", 0) != 0
                     or config.get("repetitions", 1) != 1
                     or len({beam_width(m) for m in config["modes"]}) != len(config["modes"])):
-                raise ValueError("beam_list_bound requires accuracy, distinct ascending beams, no warmups and one repetition")
-            if positive(packing.get("efficiency"), "parallel packing efficiency") > 1:
-                raise ValueError("parallel packing efficiency must be at most 1")
-            positive(packing.get("overhead_seconds"), "parallel packing overhead", zero=True)
-            if not packing.get("basis") or not tier.get("cost_model", {}).get("observed_inputs"):
-                raise ValueError("parallel packing needs a basis and observed_inputs")
+                    raise ValueError("beam_list_bound requires accuracy, distinct ascending beams, no warmups and one repetition")
+                if positive(packing.get("efficiency"), "parallel packing efficiency") > 1:
+                    raise ValueError("parallel packing efficiency must be at most 1")
+                positive(packing.get("overhead_seconds"), "parallel packing overhead", zero=True)
+                if not packing.get("basis") or not tier.get("cost_model", {}).get("observed_inputs"):
+                    raise ValueError("parallel packing needs a basis and observed_inputs")
         model = tier.get("cost_model", {})
         if not model.get("basis") or not isinstance(model["basis"], str):
             raise ValueError("cost_model.basis must explain the estimates")
@@ -215,6 +229,16 @@ def batch_wall_seconds(items, tier):
     packing = tier.get("parallel_packing")
     if packing is None:
         return sequential
+    if packing.get("kind") == "blocked_random_timeout_bound":
+        # The existing runner waits on the first pending job. A rep0 waiting
+        # for its warmup therefore prevents later combinations from starting.
+        # Charge every warmup serially, then bound each of the three measured
+        # blocks by work/w + (1-1/w)*largest_job. This also covers the rep0
+        # work interleaved with warmups and preserves the existing launch order.
+        pairs = len(items) * packing["combinations_per_input"]
+        workers = tier.get("workers", 1)
+        waves = 1 if pairs <= workers else pairs / workers + 1 - 1 / workers
+        return packing["overhead_seconds"] + packing["timeout_seconds"] * (pairs + 3 * waves)
     modes = {m for i in items for m in i["estimated_mode_max_seconds"]}
     workers = tier.get("workers", 1)
     bound = 0
@@ -308,7 +332,7 @@ def script_text(plan, tier, count):
               "cd " + shlex.quote(str(ROOT)),
               "export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1",
               '# Optional first argument: --resume (submit only the interrupted task range).',
-              'exec "${LCP_PYTHON:-python3}" scripts/run_array_task.py \\',
+              'exec "${LCP_PYTHON:-python3}" ' + plan.get("array_config", {}).get("task_runner_script", "scripts/run_array_task.py") + ' \\',
               "  --plan " + shlex.quote(str(output / "array_plan.json")) + " \\",
               "  --tier " + shlex.quote(tier["name"]) + ' "$@"', ""]
     concurrency = plan.get("array_config", {}).get("max_concurrent_tasks")

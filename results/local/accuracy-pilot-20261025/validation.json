@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "created_utc": "2026-10-25T15:08:57.213263+00:00",
+  "RNAs": 43,
+  "rows": 344,
+  "raw_members_verified": 2193,
+  "predictions_reparsed": 256,
+  "scaffold_rule_independently_checked": true,
+  "metrics_independently_recounted": true,
+  "binary_hashes_unchanged": true,
+  "errors": []
+}

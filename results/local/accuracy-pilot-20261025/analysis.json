@@ -1,0 +1,554 @@
+{
+  "source_states_after": {
+    "../../LinearKnot": {
+      "commit": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+      "status": ""
+    },
+    "deps/LinearPartition-20261008": {
+      "commit": "b450fb3e63189073b68d385589035f992080aa3a",
+      "status": ""
+    },
+    "deps/Spark-upstream": {
+      "commit": "3105c311ca6243a31788e74ac33640435e53b62c",
+      "status": ""
+    },
+    "../../PseudoknotInverseFolding/submodules/ipknot": {
+      "commit": "dcaa3695041552df05f4665f3e4227cd617b37f6",
+      "status": "?? .apptainer_cache/\n?? ipknot.sif\n?? ipknot_docker.tar\n"
+    }
+  },
+  "source_states_unchanged": true,
+  "Spark_matches_existing_lock": true,
+  "scoring_checks": {
+    "status": "passed",
+    "random_pair_map_pairs": 500,
+    "seed": 20261025,
+    "independent_module_sha256": "a59b52a6260ec9566ffcc9a9e8217285a72e78723eb6441947bcf7e99fdd4a81",
+    "asymmetric_crossing_witness": true,
+    "empty_prediction_convention": true,
+    "BPSEQ_valid_and_invalid_checked": true
+  },
+  "cohort_stats": [
+    {
+      "bin": "50-200",
+      "n": 20,
+      "length_min": 58,
+      "length_max": 199,
+      "reference_pairs": 514,
+      "reference_crossing_pairs": 376,
+      "noncanonical_reference_pairs": 87,
+      "noncanonical_crossing_reference_pairs": 46,
+      "source_labels": {
+        "RFAM": 20
+      }
+    },
+    {
+      "bin": "200-500",
+      "n": 20,
+      "length_min": 225,
+      "length_max": 454,
+      "reference_pairs": 1819,
+      "reference_crossing_pairs": 485,
+      "noncanonical_reference_pairs": 109,
+      "noncanonical_crossing_reference_pairs": 33,
+      "source_labels": {
+        "RFAM": 11,
+        "RNP": 5,
+        "CRW": 3,
+        "tmRNA": 1
+      }
+    },
+    {
+      "bin": "500-1000",
+      "n": 3,
+      "length_min": 572,
+      "length_max": 644,
+      "reference_pairs": 497,
+      "reference_crossing_pairs": 44,
+      "noncanonical_reference_pairs": 27,
+      "noncanonical_crossing_reference_pairs": 1,
+      "source_labels": {
+        "CRW": 3
+      }
+    },
+    {
+      "bin": "1000-3000",
+      "n": 0,
+      "length_min": null,
+      "length_max": null,
+      "reference_pairs": 0,
+      "reference_crossing_pairs": 0,
+      "noncanonical_reference_pairs": 0,
+      "noncanonical_crossing_reference_pairs": 0,
+      "source_labels": {}
+    }
+  ],
+  "common_success_metrics": [
+    {
+      "bin": "500-1000",
+      "method": "LinearKnot-centroid",
+      "n": 3,
+      "metrics": {
+        "all": {
+          "tp": 236,
+          "reference": 497,
+          "predicted": 532,
+          "f1": 0.4586977648202138
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 44,
+          "predicted": 0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "bin": "500-1000",
+      "method": "LinearKnot-MFE",
+      "n": 3,
+      "metrics": {
+        "all": {
+          "tp": 247,
+          "reference": 497,
+          "predicted": 591,
+          "f1": 0.4540441176470588
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 44,
+          "predicted": 6,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "bin": "500-1000",
+      "method": "LinearPartition-MEA",
+      "n": 3,
+      "metrics": {
+        "all": {
+          "tp": 235,
+          "reference": 497,
+          "predicted": 558,
+          "f1": 0.44549763033175355
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 44,
+          "predicted": 0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "bin": "500-1000",
+      "method": "ThreshKnot",
+      "n": 3,
+      "metrics": {
+        "all": {
+          "tp": 241,
+          "reference": 497,
+          "predicted": 566,
+          "f1": 0.45343367826904984
+        },
+        "crossing": {
+          "tp": 1,
+          "reference": 44,
+          "predicted": 20,
+          "f1": 0.03125
+        }
+      }
+    },
+    {
+      "bin": "500-1000",
+      "method": "IPknot-LPV",
+      "n": 3,
+      "metrics": {
+        "all": {
+          "tp": 249,
+          "reference": 497,
+          "predicted": 605,
+          "f1": 0.4519056261343013
+        },
+        "crossing": {
+          "tp": 1,
+          "reference": 44,
+          "predicted": 178,
+          "f1": 0.009009009009009009
+        }
+      }
+    },
+    {
+      "bin": "500-1000",
+      "method": "Spark",
+      "n": 3,
+      "metrics": {
+        "all": {
+          "tp": 241,
+          "reference": 497,
+          "predicted": 589,
+          "f1": 0.4438305709023941
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 44,
+          "predicted": 18,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "bin": "200-500",
+      "method": "LinearKnot-centroid",
+      "n": 19,
+      "metrics": {
+        "all": {
+          "tp": 870,
+          "reference": 1770,
+          "predicted": 1695,
+          "f1": 0.5021645021645021
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 468,
+          "predicted": 11,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "bin": "200-500",
+      "method": "LinearKnot-MFE",
+      "n": 19,
+      "metrics": {
+        "all": {
+          "tp": 906,
+          "reference": 1770,
+          "predicted": 2039,
+          "f1": 0.4757154108689945
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 468,
+          "predicted": 30,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "bin": "200-500",
+      "method": "LinearPartition-MEA",
+      "n": 19,
+      "metrics": {
+        "all": {
+          "tp": 897,
+          "reference": 1770,
+          "predicted": 1874,
+          "f1": 0.49231613611416025
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 468,
+          "predicted": 0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "bin": "200-500",
+      "method": "ThreshKnot",
+      "n": 19,
+      "metrics": {
+        "all": {
+          "tp": 909,
+          "reference": 1770,
+          "predicted": 1970,
+          "f1": 0.48609625668449197
+        },
+        "crossing": {
+          "tp": 8,
+          "reference": 468,
+          "predicted": 209,
+          "f1": 0.023633677991137372
+        }
+      }
+    },
+    {
+      "bin": "200-500",
+      "method": "IPknot-LPV",
+      "n": 19,
+      "metrics": {
+        "all": {
+          "tp": 916,
+          "reference": 1770,
+          "predicted": 2064,
+          "f1": 0.477829942618675
+        },
+        "crossing": {
+          "tp": 60,
+          "reference": 468,
+          "predicted": 626,
+          "f1": 0.10968921389396709
+        }
+      }
+    },
+    {
+      "bin": "200-500",
+      "method": "Spark",
+      "n": 19,
+      "metrics": {
+        "all": {
+          "tp": 895,
+          "reference": 1770,
+          "predicted": 2010,
+          "f1": 0.47354497354497355
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 468,
+          "predicted": 54,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "bin": "50-200",
+      "method": "LinearKnot-centroid",
+      "n": 19,
+      "metrics": {
+        "all": {
+          "tp": 191,
+          "reference": 494,
+          "predicted": 477,
+          "f1": 0.39340885684860966
+        },
+        "crossing": {
+          "tp": 42,
+          "reference": 356,
+          "predicted": 98,
+          "f1": 0.18502202643171806
+        }
+      }
+    },
+    {
+      "bin": "50-200",
+      "method": "LinearKnot-MFE",
+      "n": 19,
+      "metrics": {
+        "all": {
+          "tp": 200,
+          "reference": 494,
+          "predicted": 562,
+          "f1": 0.3787878787878788
+        },
+        "crossing": {
+          "tp": 82,
+          "reference": 356,
+          "predicted": 178,
+          "f1": 0.30711610486891383
+        }
+      }
+    },
+    {
+      "bin": "50-200",
+      "method": "LinearPartition-MEA",
+      "n": 19,
+      "metrics": {
+        "all": {
+          "tp": 186,
+          "reference": 494,
+          "predicted": 488,
+          "f1": 0.3788187372708758
+        },
+        "crossing": {
+          "tp": 0,
+          "reference": 356,
+          "predicted": 0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "bin": "50-200",
+      "method": "ThreshKnot",
+      "n": 19,
+      "metrics": {
+        "all": {
+          "tp": 187,
+          "reference": 494,
+          "predicted": 536,
+          "f1": 0.36310679611650487
+        },
+        "crossing": {
+          "tp": 11,
+          "reference": 356,
+          "predicted": 57,
+          "f1": 0.053268765133171914
+        }
+      }
+    },
+    {
+      "bin": "50-200",
+      "method": "IPknot-LPV",
+      "n": 19,
+      "metrics": {
+        "all": {
+          "tp": 187,
+          "reference": 494,
+          "predicted": 561,
+          "f1": 0.35450236966824644
+        },
+        "crossing": {
+          "tp": 29,
+          "reference": 356,
+          "predicted": 183,
+          "f1": 0.10760667903525047
+        }
+      }
+    },
+    {
+      "bin": "50-200",
+      "method": "Spark",
+      "n": 19,
+      "metrics": {
+        "all": {
+          "tp": 199,
+          "reference": 494,
+          "predicted": 562,
+          "f1": 0.3768939393939394
+        },
+        "crossing": {
+          "tp": 78,
+          "reference": 356,
+          "predicted": 179,
+          "f1": 0.29158878504672897
+        }
+      }
+    }
+  ],
+  "failures": [
+    {
+      "id": "bpRNA_RFAM_7554",
+      "method": "Spark",
+      "status": "invalid_output",
+      "returncode": 0,
+      "error": "expected exactly one predicted structure",
+      "length": 113,
+      "stderr": "",
+      "time": "0.00\t3072\t0.00\t0.00\n"
+    },
+    {
+      "id": "bpRNA_RFAM_35962",
+      "method": "Spark",
+      "status": "failed",
+      "returncode": 139,
+      "error": null,
+      "length": 349,
+      "stderr": "",
+      "time": "Command terminated by signal 11\n0.12\t3072\t0.03\t0.00\n"
+    }
+  ],
+  "Spark_missing_scaffold": [
+    {
+      "id": "bpRNA_RFAM_4615",
+      "missing_pairs": [
+        [
+          161,
+          266
+        ],
+        [
+          162,
+          265
+        ],
+        [
+          163,
+          264
+        ],
+        [
+          164,
+          263
+        ],
+        [
+          165,
+          262
+        ],
+        [
+          166,
+          261
+        ],
+        [
+          200,
+          236
+        ],
+        [
+          201,
+          235
+        ],
+        [
+          203,
+          233
+        ],
+        [
+          204,
+          232
+        ],
+        [
+          205,
+          231
+        ],
+        [
+          206,
+          230
+        ],
+        [
+          207,
+          229
+        ],
+        [
+          209,
+          226
+        ],
+        [
+          210,
+          225
+        ],
+        [
+          211,
+          224
+        ],
+        [
+          212,
+          223
+        ],
+        [
+          213,
+          222
+        ]
+      ]
+    }
+  ],
+  "environment_note": "one child process at a time in the existing 16-slot allocation; setup smoke excluded from the measurements",
+  "runtime_libraries_sha256": {
+    "ipknot-runtime/lib/ld-musl-x86_64.so.1": "99eab0629ed5e6bc258bea735a128d1de30c5a8b52f39eed4919452d03c6c4ee",
+    "ipknot-runtime/usr/lib/libapk.so.3.0.0": "267f845f9c8a4502e8eca74237019c4db867f91351763c9211605dd88906ebcf",
+    "ipknot-runtime/usr/lib/libcrypto.so.3": "d2c0916f1e948ba339f4a9992cb29298e2b2254307519988c5857bc9435717a9",
+    "ipknot-runtime/usr/lib/libssl.so.3": "0596f83ae87721c90c9dd6cae145dfc6f00276b07bb2ef858688dbb48111d718",
+    "ipknot-runtime/usr/lib/libz.so.1.3.2": "60997f0db81cadd7cd12e787f3cc7de3c1e0946bc9bf28160c10199cceb59fef",
+    "ipknot-runtime/usr/lib/libgcc_s.so.1": "0f3c933942935150d3864bcd3b20b7922c8d95a66959fe1da5e2da73ba986e8a",
+    "ipknot-runtime/usr/lib/libgomp.so.1.0.0": "2b0f3ae205cac35457d7ef8dac14203ffe2638086979c2b032a9eb43c5e39460",
+    "ipknot-runtime/usr/lib/libstdc++.so.6.0.34": "ae81a1dd9b4fbab42a1014dda6b9ed13834610583781fe562f84e3cf65ea669b",
+    "ipknot-runtime/usr/lib/engines-3/afalg.so": "7dc25a9a2fbecc023f913c013a16aa6d06f3b2c341206d8e34c716d3025e7964",
+    "ipknot-runtime/usr/lib/engines-3/capi.so": "661096142b561aff102481f4b26e7ba980de023af0a7914c0dc42f31288cf065",
+    "ipknot-runtime/usr/lib/engines-3/loader_attic.so": "6296200b9c6ac678cb51030b41aaf5b09884e4dfabb186d3b9ff10a4fdc0a7f4",
+    "ipknot-runtime/usr/lib/engines-3/padlock.so": "c369dd634c9172d2eb6ba3b82cf8dd33865bc262b2df12e43a172612a4ec8f79",
+    "ipknot-runtime/usr/lib/ossl-modules/legacy.so": "3a92b5496801a82c82f609cedc1f3157b9630dd1282ef9819d5eca88aa48e1af",
+    "ipknot-runtime/usr/local/bin/ipknot": "35d080e0a956093fff97f6b62e81b6a98467dfd7a9caebe9df217dff835cad1f",
+    "ipknot-runtime/usr/local/lib/libhighs.so.1.14.0": "7ad5aba52be6246756ebc6db707bacccc50942e416d7874f66146e82f0f882cc"
+  },
+  "helper_sha256": {
+    "scripts/prepare_biological_inputs.py": "2b30df7e355ebdcaca5a97a5e06094575855934e77e8134b62321304650933b4",
+    "scripts/rna_records.py": "a9521da62337f26d2d8f774a4c343cfb14118ba640f9ff4b8eaf340534d5acec",
+    "manifests/software-spark-3105c311-20261012.json": "66d15a0b43376609d4cbb679e41d417c754c9c5f4bfcd3c78969c350324a3e03"
+  }
+}
