@@ -1,0 +1,18 @@
+{
+  "script": "make_si_branch_examples_20261027.py",
+  "script_sha256": "417494c4162926e90e7b6041b52f932444857c9c2c54b04a7ab502d96327cce2",
+  "figure1_pair_colors": {
+    "scaffold": "#8a8a85",
+    "new_noncrossing": "#2a78d6",
+    "new_crossing": "#eb6834",
+    "Multiloop": "#6250d6"
+  },
+  "files": {
+    "examples.json": "78c358b8ef704c739d1af36dab93734b73483585600e914e8bef3e1c187e1c6b",
+    "si_branch_examples.pdf": "778ee39ddfee2826e0951046ebeefe8042621e63c092f9acff9b429c3697965b",
+    "si_branch_examples.png": "0910aab868cc33546df09e831bf11a0635567b254f25773e284fb6840645ccd1",
+    "si_inside_outside.pdf": "d3fb7d79dc1aa3e613007ef67a2c643821e5ace0f7ee50f2b73062f4d0b9ae5e",
+    "si_inside_outside.png": "86e18e8c34a5ae0e564f328c91f446ce1aa62b5781abf9225f8b9d413833962a",
+    "validation.json": "6094810f5c4cf860d8ee67462135c83b09fd070e97cae2cdfb7bdaabb9d59c35"
+  }
+}

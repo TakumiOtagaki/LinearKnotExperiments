@@ -116,7 +116,7 @@ def main():
   for metric,c,m,dy in [('wall_seconds','#0072b2','o',.13),('rss_gib','#222222','D',-.13)]:
    row=next(r for r in ratios if r['series']==s and r['metric']==metric)
    ax.plot(float(row['value']),6-j+dy,marker=m,c=c,mfc=c if m=='o' else 'white',ms=3,ls='none')
- ax.set_yticks(range(7),labels[::-1]);ax.tick_params(axis='y',length=0);ax.set_xlim(1,3);ax.set_xticks([1,1.5,2,2.5,3]);ax.set_xlabel('4,000 / 2,000 nt cost ratio')
+ ax.set_yticks(range(7),labels[::-1]);ax.tick_params(axis='y',length=0);ax.set_xlim(1,3);ax.set_xticks([1,1.5,2,2.5,3]);ax.set_xlabel('Cost at 4,000 nt divided by cost at 2,000 nt')
  ax.axvline(2,c='.6',ls=':',lw=.6);ax.grid(axis='x',c='.9')
  ratio_handles=key([('#0072b2','o','Time'),('#222222','D','Peak memory')])
  ratio_handles[1].set_markerfacecolor('white')
