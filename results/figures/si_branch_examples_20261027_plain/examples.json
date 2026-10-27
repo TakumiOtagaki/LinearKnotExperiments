@@ -1,0 +1,109 @@
+[
+  {
+    "name": "Ordinary branch",
+    "n": 20,
+    "G": [],
+    "extension": [
+      [
+        3,
+        17
+      ],
+      [
+        4,
+        16
+      ],
+      [
+        7,
+        12
+      ]
+    ],
+    "branch": [
+      3,
+      17
+    ],
+    "branch_label": "one ordinary branch"
+  },
+  {
+    "name": "Pseudoknot branch",
+    "n": 25,
+    "G": [
+      [
+        2,
+        15
+      ],
+      [
+        3,
+        14
+      ]
+    ],
+    "extension": [
+      [
+        5,
+        9
+      ],
+      [
+        10,
+        23
+      ],
+      [
+        11,
+        22
+      ]
+    ],
+    "branch": [
+      2,
+      23
+    ],
+    "branch_label": "one pseudoknot branch"
+  },
+  {
+    "name": "Band-spanning multiloop",
+    "n": 34,
+    "G": [
+      [
+        2,
+        27
+      ],
+      [
+        14,
+        23
+      ]
+    ],
+    "extension": [
+      [
+        5,
+        10
+      ],
+      [
+        18,
+        32
+      ],
+      [
+        19,
+        31
+      ]
+    ],
+    "outer": [
+      2,
+      27
+    ],
+    "inner": [
+      14,
+      23
+    ],
+    "side": [
+      5,
+      10
+    ],
+    "wings": [
+      3,
+      4,
+      11,
+      12,
+      13,
+      24,
+      25,
+      26
+    ]
+  }
+]

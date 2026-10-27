@@ -27,9 +27,10 @@ INK, GREY, BLUE, ORANGE, PURPLE = (
 STYLES = ("-", (0, (1, 1)), (0, (4, 2)))
 EXAMPLES = [
     dict(name="Ordinary branch", n=20, G=[], extension=[(3, 17), (4, 16), (7, 12)],
-         branch=(3, 17), state="V"),
+         branch=(3, 17), branch_label="one ordinary branch"),
     dict(name="Pseudoknot branch", n=25, G=[(2, 15), (3, 14)],
-         extension=[(5, 9), (10, 23), (11, 22)], branch=(2, 23), state="WMB"),
+         extension=[(5, 9), (10, 23), (11, 22)], branch=(2, 23),
+         branch_label="one pseudoknot branch"),
     dict(name="Band-spanning multiloop", n=34, G=[(2, 27), (14, 23)],
          extension=[(5, 10), (18, 32), (19, 31)],
          outer=(2, 27), inner=(14, 23), side=(5, 10),
@@ -93,7 +94,7 @@ def branches():
             left, right = lo / (ex["n"] + 1), hi / (ex["n"] + 1)
             ax.plot([left, left, right, right], [-.04, -.12, -.12, -.04],
                     transform=ax.transAxes, color=INK, lw=.75, clip_on=False)
-            ax.text((left + right) / 2, -.24, ex["state"] + " interval",
+            ax.text((left + right) / 2, -.24, ex["branch_label"],
                     transform=ax.transAxes, ha="center", va="top", size=7)
         else:
             ax.scatter(ex["wings"], [0] * len(ex["wings"]), s=8, color=PURPLE, zorder=4)
