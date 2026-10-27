@@ -17,9 +17,11 @@ from pypdf import PdfReader
 
 ROOT=Path(__file__).resolve().parents[1]
 MM=1/25.4
-METHODS={'cparty':('#b55a10','o','CParty, partition function'), 'exact':('#666666','s','LinearKnot exact'),
- 'beam100':('#0072b2','D','LinearKnot, beam width 100'), 'spark':('#009e73','^','Spark, MFE'),
- 'fold100':('#a3459a','v','LinearKnot,\npartition function + MFE')}
+METHODS={'cparty':('#b55a10','o','CParty: partition function'),
+ 'exact':('#666666','s','LinearKnot: partition function, exact'),
+ 'beam100':('#0072b2','D','LinearKnot: partition function, b=100'),
+ 'spark':('#009e73','^','Spark: minimum free energy'),
+ 'fold100':('#a3459a','v','LinearKnot: partition function\n+ minimum free energy, b=100')}
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def dump(p,o):p.write_text(json.dumps(o,indent=2,ensure_ascii=False,allow_nan=False)+'\n')
@@ -61,8 +63,8 @@ def main():
   'axes.spines.top':False,'axes.spines.right':False,'xtick.major.size':2,'ytick.major.size':2,
   'xtick.major.pad':1.5,'ytick.major.pad':1.5,'pdf.fonttype':42})
  fig=plt.figure(figsize=(178*MM,58*MM));audit=[]
- oldstyles=[('LinearCParty','#0072b2','o','partition function + pairing probabilities + MFE'),('LinearPKCapR','#e69f00','s','loop profiles'),('LinearPKRaccess','#009e73','^','loop profiles + window accessibility')]
- fig.legend(handles=key([(c,m,l) for _,c,m,l in oldstyles]),loc='upper left',bbox_to_anchor=(0,27/65),frameon=False,ncol=1,handlelength=1.3,fontsize=6.5,labelspacing=.3)
+ oldstyles=[('LinearCParty','#0072b2','o','partition function + pairing probabilities\n+ minimum free energy'),('LinearPKCapR','#e69f00','s','loop profiles'),('LinearPKRaccess','#009e73','^','loop profiles + window accessibility')]
+ fig.legend(handles=key([(c,m,l) for _,c,m,l in oldstyles]),loc='upper left',bbox_to_anchor=(0,27/65),frameon=False,ncol=1,handlelength=1.3,fontsize=7.5,labelspacing=.2)
  for col,metric in enumerate(('wall_seconds','rss_gib')):
   ax=axmm(fig,12+44*col,35,31,22)
   for program,c,m,label in oldstyles:
@@ -76,7 +78,7 @@ def main():
   ax.set_ylabel('Time (s)' if col==0 else 'Peak memory (GiB)');ax.set_xlabel('RNA length (nt)')
   clean(ax);textmm(fig,1+44*col,60,'AB'[col],weight='bold',fontsize=9)
   textmm(fig,12+44*col,60,'RNAcentral RNAs',fontsize=7)
- fig.legend(handles=key(METHODS.values()),loc='upper left',bbox_to_anchor=(.49,27/65),frameon=False,ncol=2,columnspacing=.7,handlelength=1.0,labelspacing=.3,fontsize=6.5)
+ fig.legend(handles=key(METHODS.values()),loc='upper left',bbox_to_anchor=(.49,27/65),frameon=False,ncol=1,handlelength=1.0,labelspacing=.15,fontsize=7.5)
  incomplete={method:[r for r in data['resources'] if r['method']==method and not r['resource_eligible']]
              for method in ('cparty','spark')}
  for col,metric in enumerate(('seconds','mib')):
@@ -94,14 +96,14 @@ def main():
   ax.set_xlabel('RNA length (nt)');clean(ax)
   textmm(fig,89+44*col,60,'CD'[col],weight='bold',fontsize=9)
   textmm(fig,100+44*col,64,'bpRNA and\nRNAcentral RNAs',fontsize=7,va='top',linespacing=1.0)
-  rug=axmm(fig,100+44*col,5,31,7);rug.set_xscale('log');rug.set_xlim(200,35000);rug.set_ylim(-.5,1.5)
+  rug=axmm(fig,100+44*col,1,31,5);rug.set_xscale('log');rug.set_xlim(200,35000);rug.set_ylim(-.5,1.5)
   for method,y in [('cparty',1),('spark',0)]:
    rs=incomplete[method];color=METHODS[method][0]
    rug.scatter([r['length'] for r in rs],[y]*len(rs),s=16,c=color,marker='|',linewidths=.9)
    if col==0:
     total=sum(r['method']==method for r in data['resources'])
     label=f'{"CParty" if method=="cparty" else "Spark"}, not completed ({len(rs)} of {total})'
-    rug.text(-.04,y,label,transform=rug.get_yaxis_transform(),ha='right',va='center',color=color,fontsize=6.5)
+    rug.text(-.04,y,label,transform=rug.get_yaxis_transform(),ha='right',va='center',color=color,fontsize=7.5)
   rug.set_yticks([])
   rug.tick_params(axis='x',which='both',bottom=False,labelbottom=False)
   for spine in rug.spines.values():spine.set_visible(False)

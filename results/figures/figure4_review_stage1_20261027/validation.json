@@ -1,0 +1,21 @@
+{
+  "figure4": {
+    "width_mm": 178,
+    "height_mm": 58,
+    "png_dpi": 300,
+    "min_font_pt": 7.0,
+    "text_outside_canvas": []
+  },
+  "synthetic_ratio_si": {
+    "width_mm": 165,
+    "height_mm": 42,
+    "png_dpi": 300,
+    "min_font_pt": 7.0,
+    "text_outside_canvas": []
+  },
+  "cparty_failed_inputs": 48,
+  "spark_failed_inputs": 4,
+  "png_visually_checked": true,
+  "legend_and_completion_font_pt": 7.5,
+  "plotted_data_identical_to": "figure4_resources_20261026_legend/plot_data.json"
+}

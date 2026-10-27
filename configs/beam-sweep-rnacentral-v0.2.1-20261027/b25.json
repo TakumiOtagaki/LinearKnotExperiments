@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "name": "beam-sweep-rnacentral-v0.2.1-20261027-b25",
+  "purpose": "formal",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "software_lock": "manifests/software-beam-sweep-rnacentral-v0.2.1-20261027.json",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "dangles": 2,
+    "build_revision_verified": true,
+    "closure": "RequireWeakClosure",
+    "ranking": "outer",
+    "h": 30,
+    "d": 30
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 300,
+  "memory_limit_mib": 1024,
+  "warmups": 0,
+  "repetitions": 1,
+  "inputs": [
+    {
+      "name": "URS000233CDDE",
+      "path": "data/rnacentral-initial-20261008/URS000233CDDE.txt",
+      "length": 4793,
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/e2-rnacentral-4f97fd3-20261021/inputs.tar",
+      "input_member": "inputs/URS000233CDDE.txt",
+      "sha256": "233f0d6f3b98bfbd1d39d7e43e11016c2ee51ae9c74f9a318b2062cf92433145"
+    },
+    {
+      "name": "URS00019626CE",
+      "path": "data/rnacentral-initial-20261008/URS00019626CE.txt",
+      "length": 5482,
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/e2-rnacentral-4f97fd3-20261021/inputs.tar",
+      "input_member": "inputs/URS00019626CE.txt",
+      "sha256": "823a0e84a855d4d780ed1071ead629b0d135755d40ea0e365ac1b06d1aaa73e4"
+    },
+    {
+      "name": "URS000239D8A4",
+      "path": "data/rnacentral-initial-20261008/URS000239D8A4.txt",
+      "length": 6990,
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/e2-rnacentral-4f97fd3-20261021/inputs.tar",
+      "input_member": "inputs/URS000239D8A4.txt",
+      "sha256": "ce5fa17226b8d2b9526ccdc10507a4d76b6f2305f19185db3cfab5ab98ad2869"
+    },
+    {
+      "name": "URS00023C9544",
+      "path": "data/rnacentral-initial-20261008/URS00023C9544.txt",
+      "length": 11832,
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/e2-rnacentral-4f97fd3-20261021/inputs.tar",
+      "input_member": "inputs/URS00023C9544.txt",
+      "sha256": "debdec0bb04e1a9a1318e740ffe6da47fd977f9539235883960ffdeb529e37e4"
+    },
+    {
+      "name": "URS000241043C",
+      "path": "data/rnacentral-initial-20261008/URS000241043C.txt",
+      "length": 13652,
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/e2-rnacentral-4f97fd3-20261021/inputs.tar",
+      "input_member": "inputs/URS000241043C.txt",
+      "sha256": "48cc7d0dbe2c4134306d6968e8ce110872b82ed3a42a49b6803ab6a63c4a9bf7"
+    },
+    {
+      "name": "URS000238C72C",
+      "path": "data/rnacentral-retry-20261011/URS000238C72C.txt",
+      "length": 22543,
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/e2-rnacentral-4f97fd3-20261021/inputs.tar",
+      "input_member": "inputs/URS000238C72C.txt",
+      "sha256": "7a86c7ebc30f24bbe8034fdb7062c056694054ced7da7e36bd108279c63f1e52"
+    },
+    {
+      "name": "URS00023A4DB9",
+      "path": "data/rnacentral-retry-20261011/URS00023A4DB9.txt",
+      "length": 29106,
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/e2-rnacentral-4f97fd3-20261021/inputs.tar",
+      "input_member": "inputs/URS00023A4DB9.txt",
+      "sha256": "3a739b331e14180973a0d016a316f1df4b2601291a4252e920a7347f3e14c152"
+    }
+  ],
+  "modes": [
+    {
+      "name": "beam25_capb_outer",
+      "args": [
+        "-b",
+        "25",
+        "--max-hairpin",
+        "30",
+        "--max-case3-depth",
+        "30",
+        "--ranking",
+        "outer"
+      ]
+    }
+  ],
+  "programs": [
+    {
+      "name": "FoldMetadata",
+      "executable": "FoldMetadata",
+      "subcommand": "fold",
+      "args": [
+        "--bpp-cutoff",
+        "0"
+      ],
+      "outputs": [
+        {
+          "name": "bpp.tsv",
+          "flag": "--bpp"
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "scope": "beam width and local caps varied together; finite-width sensitivity, b400 is not exact",
+    "timing": "one single-thread fold process; MFE+PF+outside+BPP emission; gzip/build excluded",
+    "scalars": "unchanged v0.2.1 fold computation; full-precision stderr metadata observer",
+    "bpp": "cutoff zero, all sparse union pairs; absent entries zero",
+    "tv": "partner and unpaired distribution, scaffold-free positions only",
+    "preserve_failures": true,
+    "extrapolate_missing": false
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "measurement": "accuracy",
+  "seed": 20261027,
+  "compact_plan": true,
+  "max_concurrent_tasks": 10,
+  "task_runner_script": "scripts/beam_sweep_array_20261027.py",
+  "file_budget": {
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "hard_file_limit": 24000000,
+    "max_remaining_fraction": 0.1
+  },
+  "tiers": [
+    {
+      "name": "rna_4_8kb",
+      "min_length": 1,
+      "max_length": 8191,
+      "resource": "cpu_16",
+      "h_rt": "00:10:00",
+      "target_seconds": 420.0,
+      "workers": 1,
+      "max_inputs_per_task": 1,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "timeout_seconds": 180,
+        "memory_limit_mib": 2048
+      },
+      "cost_model": {
+        "basis": "Per-RNA E2 median times/RSS at b100; min/max NEAT1 log-interpolated ratios; 5s/0.1GiB fixed floors. b<100 extrapolation is uncalibrated. nb^2 log b is a scheduling stress scenario, not a measured bound.",
+        "seconds_per_nt_condition": 1e-12,
+        "mib_per_nt": 0,
+        "safety_factor": 1,
+        "observed_inputs": {
+          "URS000233CDDE": {
+            "sha256": "233f0d6f3b98bfbd1d39d7e43e11016c2ee51ae9c74f9a318b2062cf92433145",
+            "seconds_by_mode": {
+              "beam50_capb_outer": 26.861622370292732
+            },
+            "max_seconds_by_mode": {
+              "beam50_capb_outer": 26.861622370292732
+            },
+            "memory_mib": 410.1882733491682
+          },
+          "URS00019626CE": {
+            "sha256": "823a0e84a855d4d780ed1071ead629b0d135755d40ea0e365ac1b06d1aaa73e4",
+            "seconds_by_mode": {
+              "beam50_capb_outer": 47.58284495021338
+            },
+            "max_seconds_by_mode": {
+              "beam50_capb_outer": 47.58284495021338
+            },
+            "memory_mib": 589.1736083912406
+          },
+          "URS000239D8A4": {
+            "sha256": "ce5fa17226b8d2b9526ccdc10507a4d76b6f2305f19185db3cfab5ab98ad2869",
+            "seconds_by_mode": {
+              "beam50_capb_outer": 52.944307853559934
+            },
+            "max_seconds_by_mode": {
+              "beam50_capb_outer": 52.944307853559934
+            },
+            "memory_mib": 646.716843808244
+          }
+        }
+      }
+    },
+    {
+      "name": "rna_8_20kb",
+      "min_length": 8192,
+      "max_length": 19999,
+      "resource": "cpu_16",
+      "h_rt": "00:10:00",
+      "target_seconds": 420.0,
+      "workers": 1,
+      "max_inputs_per_task": 1,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "timeout_seconds": 300,
+        "memory_limit_mib": 4096
+      },
+      "cost_model": {
+        "basis": "Per-RNA E2 median times/RSS at b100; min/max NEAT1 log-interpolated ratios; 5s/0.1GiB fixed floors. b<100 extrapolation is uncalibrated. nb^2 log b is a scheduling stress scenario, not a measured bound.",
+        "seconds_per_nt_condition": 1e-12,
+        "mib_per_nt": 0,
+        "safety_factor": 1,
+        "observed_inputs": {
+          "URS00023C9544": {
+            "sha256": "debdec0bb04e1a9a1318e740ffe6da47fd977f9539235883960ffdeb529e37e4",
+            "seconds_by_mode": {
+              "beam50_capb_outer": 66.252931796062
+            },
+            "max_seconds_by_mode": {
+              "beam50_capb_outer": 66.252931796062
+            },
+            "memory_mib": 932.1427905411107
+          },
+          "URS000241043C": {
+            "sha256": "48cc7d0dbe2c4134306d6968e8ce110872b82ed3a42a49b6803ab6a63c4a9bf7",
+            "seconds_by_mode": {
+              "beam50_capb_outer": 122.42158119338177
+            },
+            "max_seconds_by_mode": {
+              "beam50_capb_outer": 122.42158119338177
+            },
+            "memory_mib": 1447.6769967040123
+          }
+        }
+      }
+    },
+    {
+      "name": "rna_20_30kb",
+      "min_length": 20000,
+      "max_length": 30000,
+      "resource": "cpu_16",
+      "h_rt": "00:10:00",
+      "target_seconds": 420.0,
+      "workers": 1,
+      "max_inputs_per_task": 1,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "job_limits": {
+        "timeout_seconds": 360,
+        "memory_limit_mib": 5120
+      },
+      "cost_model": {
+        "basis": "Per-RNA E2 median times/RSS at b100; min/max NEAT1 log-interpolated ratios; 5s/0.1GiB fixed floors. b<100 extrapolation is uncalibrated. nb^2 log b is a scheduling stress scenario, not a measured bound.",
+        "seconds_per_nt_condition": 1e-12,
+        "mib_per_nt": 0,
+        "safety_factor": 1,
+        "observed_inputs": {
+          "URS000238C72C": {
+            "sha256": "7a86c7ebc30f24bbe8034fdb7062c056694054ced7da7e36bd108279c63f1e52",
+            "seconds_by_mode": {
+              "beam50_capb_outer": 170.9004514486786
+            },
+            "max_seconds_by_mode": {
+              "beam50_capb_outer": 170.9004514486786
+            },
+            "memory_mib": 1952.0283626118523
+          },
+          "URS00023A4DB9": {
+            "sha256": "3a739b331e14180973a0d016a316f1df4b2601291a4252e920a7347f3e14c152",
+            "seconds_by_mode": {
+              "beam50_capb_outer": 166.93281051134238
+            },
+            "max_seconds_by_mode": {
+              "beam50_capb_outer": 166.93281051134238
+            },
+            "memory_mib": 2062.2540830436483
+          }
+        }
+      }
+    }
+  ]
+}

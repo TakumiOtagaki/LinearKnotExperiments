@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-27T12:35:36.742853+00:00",
+  "source_commit": "2101e5d86959661ba0a3da6d598f8f202e87186b",
+  "source_git_state": {
+    "commit": "2101e5d86959661ba0a3da6d598f8f202e87186b",
+    "dirty": false
+  },
+  "build_revision_verified": true,
+  "verification_method": "git archive v0.2.1 and Release build in node-local scratch; source archive indexed against read-only objects",
+  "source_repositories": {
+    "linearknot": "/gs/bs/tga-satolab-gtex/otgk/LinearKnot"
+  },
+  "software_bundle": "results/local/beam-sweep-rnacentral-v0.2.1-20261027/build/software.tar.gz",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "energy_parameter_sha256": "0c671a7455f5686bc160fc655194b11888594ab7d506626cdad1470bcadd17d9",
+  "cmake_cache_sha256": "86a7e00f5371c1507c8289e66804faada9d4e7bb20780d193206e1283bcebe2d",
+  "build_settings": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CXX_COMPILER": "/bin/c++",
+    "CMAKE_CXX_FLAGS": "",
+    "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+    "CMAKE_GENERATOR": "Unix Makefiles"
+  },
+  "binaries": {
+    "linearknot": "64d5e44b9221177fb9094a32fc39d238dac2410f3302e412b4333bd42709c41f",
+    "FoldMetadata": "8f505927b05bbaa8d160cdf76b2190b01ac6ca158d0104ab15bf565cc099a27e"
+  },
+  "provenance": {
+    "created_utc": "2026-10-27T12:35:34.045624+00:00",
+    "source_commit": "2101e5d86959661ba0a3da6d598f8f202e87186b",
+    "source_tag": "v0.2.1",
+    "source_archive_sha256": "007cb6b692d91b415693e856e15e24c4622264851862c72efdeda361654c67d7",
+    "commands": [
+      [
+        "git",
+        "-C",
+        "/gs/bs/tga-satolab-gtex/otgk/LinearKnot",
+        "archive",
+        "--format=tar",
+        "-o",
+        "/tmp/beam-sweep-build-20261027-7263/source.tar",
+        "v0.2.1"
+      ],
+      [
+        "cmake",
+        "-S",
+        "/tmp/beam-sweep-build-20261027-7263/source",
+        "-B",
+        "/tmp/beam-sweep-build-20261027-7263/build",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+        "-DLINEARKNOT_LTO_JOBS=1"
+      ],
+      [
+        "cmake",
+        "--build",
+        "/tmp/beam-sweep-build-20261027-7263/build",
+        "--target",
+        "linearknot",
+        "--parallel",
+        "2"
+      ]
+    ],
+    "version": "LinearKnot 0.2.1",
+    "compiler": "g++ (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)",
+    "host": "r12n1",
+    "build_settings": {
+      "CMAKE_BUILD_TYPE": "Release",
+      "CMAKE_CXX_COMPILER": "/bin/c++",
+      "CMAKE_CXX_FLAGS": "",
+      "CMAKE_CXX_FLAGS_RELEASE": "-O3 -DNDEBUG",
+      "CMAKE_GENERATOR": "Unix Makefiles"
+    },
+    "build_workers": 2,
+    "metadata_observer": {
+      "generator": "scripts/beam_sweep_metadata_20261027.py",
+      "command": [
+        "g++",
+        "-O3",
+        "-flto=1",
+        "-std=c++17",
+        "-I/tmp/beam-sweep-build-20261027-7263/source/src",
+        "/tmp/beam-sweep-build-20261027-7263/fold_metadata.cc",
+        "/tmp/beam-sweep-build-20261027-7263/build/libcparty_scfg2_beam.a",
+        "/tmp/beam-sweep-build-20261027-7263/build/libcparty_scfg2_exact.a",
+        "/tmp/beam-sweep-build-20261027-7263/build/libRNA.a",
+        "-o",
+        "/tmp/beam-sweep-build-20261027-7263/runtime/FoldMetadata"
+      ],
+      "generated_source_sha256": "55cba15a21c5cccadb46aa3e61a8257ca8e672a5de8f52b4de8989c5b6017838",
+      "scope": "Unchanged fold.cc calculation and stdout; append full precision log Z/F/MFE to stderr. No additional DP run."
+    }
+  },
+  "extra_files": [
+    {
+      "path": "results/local/beam-sweep-rnacentral-v0.2.1-20261027/build/software.tar.gz",
+      "sha256": "f03c9205b9260e84f678c983263c2615a368c7452695291994e0dd71a322a51f"
+    },
+    {
+      "path": "scripts/beam_sweep_array_20261027.py",
+      "sha256": "ab315547f984fdb4f3db7e7b73d76239e7e50d3186e14603fec0ddf4729ac66f"
+    },
+    {
+      "path": "scripts/beam_sweep_metadata_20261027.py",
+      "sha256": "f349dc4bde4f5c20750c229c96770da93000b3d628112d90f4789d9a1fcfa395"
+    },
+    {
+      "path": "scripts/build_beam_sweep_20261027.py",
+      "sha256": "f95c5ccd0fecdc53e3bf1a1c915a31e649139342800c22fc1250d94727fa5feb"
+    },
+    {
+      "path": "scripts/build_comparison_resources_20261025.py",
+      "sha256": "0d115ae1757d5979ee7eba0047901d7fce347eb90d3094db351ec07151521ee0"
+    },
+    {
+      "path": "scripts/comparison_resources_array_20261025.py",
+      "sha256": "a246f097cf65dbe003384ceeb08f314e5c1ee0b022def889727880ac4eddff07"
+    },
+    {
+      "path": "scripts/file_budget.py",
+      "sha256": "5deb8833a22cf1da0d5a0cc4c32d9a9d4dee6876bbb0e767bba370e6f415cb5b"
+    },
+    {
+      "path": "scripts/plan_array.py",
+      "sha256": "ccece73b8a81a696899aabbdd96dcb779062236c1a133d679667a8486ace137c"
+    },
+    {
+      "path": "scripts/prepare_beam_sweep_20261027.py",
+      "sha256": "417a1d94fa6c5f44d8573850a4aa038dd9378f6a4528959b82bab73d1866beed"
+    },
+    {
+      "path": "scripts/run_array_task.py",
+      "sha256": "32648f8c1b5d61a518096cc5fb58793fe7e58af4ffb4fb7541fbc4cda223b6ab"
+    },
+    {
+      "path": "scripts/run_cli.py",
+      "sha256": "73ecf6c624b31ebd496ef01890bce582a0fd8e427d5a591277234f5085983ff9"
+    },
+    {
+      "path": "scripts/task_storage.py",
+      "sha256": "7371e4ded5f037d8719d391f4bfa1474502e353ed78251f881c833061ad55821"
+    }
+  ],
+  "build_files": {
+    "linearknot": "64d5e44b9221177fb9094a32fc39d238dac2410f3302e412b4333bd42709c41f",
+    "FoldMetadata": "8f505927b05bbaa8d160cdf76b2190b01ac6ca158d0104ab15bf565cc099a27e",
+    "CMakeCache.txt": "86a7e00f5371c1507c8289e66804faada9d4e7bb20780d193206e1283bcebe2d"
+  }
+}

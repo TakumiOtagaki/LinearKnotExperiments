@@ -1,0 +1,97 @@
+{
+  "created_utc": "2026-10-27T12:56:45.172629+00:00",
+  "status": "passed",
+  "conditions": 49,
+  "arrays": 21,
+  "tasks": 49,
+  "formal_tasks_not_started": true,
+  "plans": [
+    {
+      "path": "results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b25/array_plan.json",
+      "sha256": "18a5c72166d97bfef11e1bd8c3661fdd7ace4e89aab6fdd3376f65ae6727d2ce",
+      "tasks": 7
+    },
+    {
+      "path": "results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b50/array_plan.json",
+      "sha256": "9dc38cdd9268911d2f79f7d5914d9d032a7cc5a907372e7bac6348df617bd8dc",
+      "tasks": 7
+    },
+    {
+      "path": "results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b75/array_plan.json",
+      "sha256": "9d186f3b0144a4a68340ade579fb511efec95a0ad18f4de112045b42b8d91b0e",
+      "tasks": 7
+    },
+    {
+      "path": "results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b100/array_plan.json",
+      "sha256": "6361e86ef394031a1aededbe5aab61090ccaa777b0a1ba33bfeeaad7e177d746",
+      "tasks": 7
+    },
+    {
+      "path": "results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b200/array_plan.json",
+      "sha256": "273aedde01239c7936345573dd5d63e6b08c3ead15403d3d96b1203c46115759",
+      "tasks": 7
+    },
+    {
+      "path": "results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b300/array_plan.json",
+      "sha256": "9d4012e5816b379e1bf3b12177337fd909d2af428dfdaded34edf38cd68245f5",
+      "tasks": 7
+    },
+    {
+      "path": "results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b400/array_plan.json",
+      "sha256": "ef4740b8ea258ae8410e60eb4529d57ec406d03e91c5c1d61608cf12935a13f2",
+      "tasks": 7
+    }
+  ],
+  "script_syntax_checks": 21,
+  "staged_dependency_checks": [
+    {
+      "status": "passed",
+      "tier": "rna_4_8kb",
+      "task_id": 1,
+      "staged_build_verified": true,
+      "cli_executed": false
+    },
+    {
+      "status": "passed",
+      "tier": "rna_8_20kb",
+      "task_id": 1,
+      "staged_build_verified": true,
+      "cli_executed": false
+    },
+    {
+      "status": "passed",
+      "tier": "rna_20_30kb",
+      "task_id": 2,
+      "staged_build_verified": true,
+      "cli_executed": false
+    }
+  ],
+  "file_budget": {
+    "format": "task-jsonl-tar-v1",
+    "tasks": 49,
+    "nonempty_tiers": 21,
+    "entries_per_task": 13,
+    "fixed_entries": 56,
+    "estimated_shared_entries": 1050,
+    "counts_directories": true,
+    "scheduler_log_attempts": 1,
+    "basis": "plan files, directories, task lock/metadata, JSONL, tar, run metadata, one atomic-write temporary, one scheduler log per task; retries add scheduler logs",
+    "project": 102571,
+    "filesystem": "/gs/bs",
+    "quota": {
+      "used_files": 20735141,
+      "limit_files": 28000000,
+      "raw": "Disk quotas for prj 102571 (pid 102571):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /gs/bs 9589919384  14680064000 14680064000       - 20735141  28000000 28000000       -"
+    },
+    "hard_file_limit": 24000000,
+    "remaining_files": 3264859,
+    "remaining_source": "lfs quota (with configured conservative hard limit)",
+    "max_remaining_fraction": 0.1,
+    "allowed_entries": 326485,
+    "accepted": true
+  },
+  "software_lock_sha256": "f2ada70b3d9fbf2d180ce157e5b3449930d966916cb5fa25b87315dc12b02991",
+  "cli_executed": false,
+  "qsub_executed": false,
+  "notes": "Staging checks verify native+metadata binaries, clean archive source, cache, params, and frozen runner dependencies without executing RNA calculations."
+}

@@ -1,0 +1,33 @@
+{
+  "source": "results/figures/main_4f97fd3_20261026_si_labels/plot_data.tsv",
+  "source_sha256": "0a93d31bfb3450d25061d43f199f4e8707dfe17bdabcd6b4a31c3b88c1f18677",
+  "script_sha256": "c0865d033746a3520dc9b59495be7ed38d36fe4baf310c750b90d588a8d4b1fa",
+  "source_base_commit": "955807764f058e356af8614d655e07ff74bb9f0e",
+  "data_rows": 70,
+  "series": 7,
+  "lengths": [
+    250,
+    500,
+    1000,
+    2000,
+    4000
+  ],
+  "panels": [
+    "wall_seconds",
+    "rss_gib"
+  ],
+  "pdf_dimensions_mm": [
+    165,
+    90
+  ],
+  "preserved": "All 70 A/B point, min and max records, axis scales and limits; original series styles and scaffold sketches.",
+  "files": {
+    "figure3_synthetic_all_cli_si.png": "7cba3496d2dc18c81565a68e95610a278888ddab0b2985bae75f247556093dca",
+    "plot_data.tsv": "69d63252a97e1dd57842f57348871f955fed395a08abf8bfab657ed81a2b35b3",
+    "figure3_synthetic_all_cli_si.pdf": "2e5ea93f473e87da0098f500fa74983854bf3fbc61761d0e438954112403ad00"
+  },
+  "helper_sha256": {
+    "make_figures.py": "e96f7510207d8adfc2dd9e5813e41615dbe15c387711d6de0e987860ec1ed216",
+    "make_figures_review.py": "00b8bc8798be668ffcfd080bab25501aa466439816049b31671feb27d9fe1fd5"
+  }
+}

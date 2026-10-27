@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "name": "beam-sweep-rnacentral-v0.2.1-20261027-smoke",
+  "purpose": "development",
+  "energy_parameter_file": "params/rna_Turner04.par",
+  "software_lock": "manifests/software-beam-sweep-rnacentral-v0.2.1-20261027.json",
+  "model_settings": {
+    "temperature_celsius": 37,
+    "dangles": 2,
+    "build_revision_verified": true,
+    "closure": "RequireWeakClosure",
+    "ranking": "outer",
+    "h": 30,
+    "d": 30
+  },
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "LC_ALL": "C"
+  },
+  "timeout_seconds": 180,
+  "memory_limit_mib": 4096,
+  "warmups": 0,
+  "repetitions": 1,
+  "inputs": [
+    {
+      "name": "pk_scaffold",
+      "path": "data/smoke/pk_scaffold.txt",
+      "length": 23,
+      "sha256": "9e8475f18912402fc83ca7c98a65f390d12a4a4540782e6d3171c54f9f47a72d"
+    },
+    {
+      "name": "URS000233CDDE",
+      "path": "data/rnacentral-initial-20261008/URS000233CDDE.txt",
+      "length": 4793,
+      "input_archive": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/e2-rnacentral-4f97fd3-20261021/inputs.tar",
+      "input_member": "inputs/URS000233CDDE.txt",
+      "sha256": "233f0d6f3b98bfbd1d39d7e43e11016c2ee51ae9c74f9a318b2062cf92433145"
+    }
+  ],
+  "modes": [
+    {
+      "name": "beam25_capb_outer",
+      "args": [
+        "-b",
+        "25",
+        "--max-hairpin",
+        "30",
+        "--max-case3-depth",
+        "30",
+        "--ranking",
+        "outer"
+      ]
+    },
+    {
+      "name": "beam50_capb_outer",
+      "args": [
+        "-b",
+        "50",
+        "--max-hairpin",
+        "50",
+        "--max-case3-depth",
+        "50",
+        "--ranking",
+        "outer"
+      ]
+    },
+    {
+      "name": "beam75_capb_outer",
+      "args": [
+        "-b",
+        "75",
+        "--max-hairpin",
+        "75",
+        "--max-case3-depth",
+        "75",
+        "--ranking",
+        "outer"
+      ],
+      "length_range": {
+        "min_length": 1,
+        "max_length": 100
+      }
+    },
+    {
+      "name": "beam100_capb_outer",
+      "args": [
+        "-b",
+        "100",
+        "--max-hairpin",
+        "100",
+        "--max-case3-depth",
+        "100",
+        "--ranking",
+        "outer"
+      ],
+      "length_range": {
+        "min_length": 1,
+        "max_length": 100
+      }
+    },
+    {
+      "name": "beam200_capb_outer",
+      "args": [
+        "-b",
+        "200",
+        "--max-hairpin",
+        "200",
+        "--max-case3-depth",
+        "200",
+        "--ranking",
+        "outer"
+      ],
+      "length_range": {
+        "min_length": 1,
+        "max_length": 100
+      }
+    },
+    {
+      "name": "beam300_capb_outer",
+      "args": [
+        "-b",
+        "300",
+        "--max-hairpin",
+        "300",
+        "--max-case3-depth",
+        "300",
+        "--ranking",
+        "outer"
+      ],
+      "length_range": {
+        "min_length": 1,
+        "max_length": 100
+      }
+    },
+    {
+      "name": "beam400_capb_outer",
+      "args": [
+        "-b",
+        "400",
+        "--max-hairpin",
+        "400",
+        "--max-case3-depth",
+        "400",
+        "--ranking",
+        "outer"
+      ],
+      "length_range": {
+        "min_length": 1,
+        "max_length": 100
+      }
+    }
+  ],
+  "programs": [
+    {
+      "name": "FoldMetadata",
+      "executable": "FoldMetadata",
+      "subcommand": "fold",
+      "args": [
+        "--bpp-cutoff",
+        "0"
+      ],
+      "outputs": [
+        {
+          "name": "bpp.tsv",
+          "flag": "--bpp"
+        }
+      ]
+    }
+  ],
+  "analysis": {
+    "scope": "beam width and local caps varied together; finite-width sensitivity, b400 is not exact",
+    "timing": "one single-thread fold process; MFE+PF+outside+BPP emission; gzip/build excluded",
+    "scalars": "unchanged v0.2.1 fold computation; full-precision stderr metadata observer",
+    "bpp": "cutoff zero, all sparse union pairs; absent entries zero",
+    "tv": "partner and unpaired distribution, scaffold-free positions only",
+    "preserve_failures": true,
+    "extrapolate_missing": false
+  }
+}

@@ -94,7 +94,10 @@ def grouped_points(ax, data, base, cohort, metric, statistic="p90", kind="single
                     markerfacecolor="white" if kind == "context" else c,
                     markeredgewidth=.65, zorder=4)
     ax.set_xlim(-.6, 3.6)
-    ax.set_xticks(range(4), [base.bin_label(t) for t in base.COHORTS[cohort]])
+    labels = [base.bin_label(t) for t in base.COHORTS[cohort]]
+    if cohort == "long":
+        labels = [label.replace("–", "–\n") for label in labels]
+    ax.set_xticks(range(4), labels)
     base.clean(ax)
 
 
@@ -138,7 +141,9 @@ def accuracy_figure(data, base):
         grouped_points(ax, data, base, cohort, base.ACCESS[-1])
         error_axis(ax)
         ax.set_ylabel("90th percentile")
-        ax.set_xlabel("RNA length group (nt)")
+        # One shared title leaves room for two-line interval labels.
+        if col == 0:
+            text_mm(fig, 89, .8, "RNA length group (nt)", ha="center")
         ax.set_title("16-nt accessibility: absolute difference", loc="left")
     for letter, y in zip("ABC", (84, 51, 25)):
         panel(fig, letter, 1, y)
@@ -365,6 +370,8 @@ def accessibility_detail(data, base):
             ax.set_ylabel("90th percentile\nof mean error")
             if row == 3:
                 ax.set_xlabel("RNA length group (nt)")
+            else:
+                ax.tick_params(axis="x", labelbottom=False)
     text_mm(fig, 49, 133, "Exact reference", ha="center", fontweight="bold")
     text_mm(fig, 132, 133, "Finite reference (b=400)", ha="center", fontweight="bold")
     text_mm(fig, 19, 6.3, "Linear region: 0 to 1e−6; logarithmic above")

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "measurement": "accuracy",
+  "seed": 20261027,
+  "compact_plan": true,
+  "tiers": [
+    {
+      "name": "tiny",
+      "min_length": 1,
+      "max_length": 100,
+      "resource": "cpu_16",
+      "h_rt": "00:10:00",
+      "target_seconds": 420,
+      "max_inputs_per_task": 1,
+      "workers": 1,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Development smoke only, 2 s per tiny or .006 s per nt condition; not formal timing",
+        "seconds_constant_per_condition": 2,
+        "seconds_per_nt_condition": 0.006,
+        "memory_base_mib": 4096,
+        "mib_per_nt": 0,
+        "safety_factor": 1
+      }
+    },
+    {
+      "name": "short_rna",
+      "min_length": 4793,
+      "max_length": 4793,
+      "resource": "cpu_16",
+      "h_rt": "00:10:00",
+      "target_seconds": 420,
+      "max_inputs_per_task": 1,
+      "workers": 1,
+      "memory_budget_mib": 35095,
+      "task_overhead_mib": 1024,
+      "cost_model": {
+        "basis": "Development smoke only, 2 s per tiny or .006 s per nt condition; not formal timing",
+        "seconds_constant_per_condition": 2,
+        "seconds_per_nt_condition": 0.006,
+        "memory_base_mib": 4096,
+        "mib_per_nt": 0,
+        "safety_factor": 1
+      }
+    }
+  ],
+  "task_runner_script": "scripts/beam_sweep_array_20261027.py"
+}

@@ -1,0 +1,105 @@
+{
+  "layout": "review-stage1-20261027",
+  "e1_revisions": {
+    "short": [
+      "89baea52c9435b18829ef0867a66a24be56d70f9",
+      "89baea52c9435b18829ef0867a66a24be56d70f9"
+    ],
+    "long": [
+      "89baea52c9435b18829ef0867a66a24be56d70f9"
+    ]
+  },
+  "context_version": "0.2.0",
+  "scripts_sha256": {
+    "render_e1_89baea52.py": "ffa75e3a6ecb6e1cd23912305bf4fdd9f407f77c77dd16b3bd4482db3c82dfd1",
+    "make_figures.py": "e96f7510207d8adfc2dd9e5813e41615dbe15c387711d6de0e987860ec1ed216",
+    "make_figures_review.py": "00b8bc8798be668ffcfd080bab25501aa466439816049b31671feb27d9fe1fd5"
+  },
+  "numpy": "2.0.2",
+  "matplotlib": "3.9.4",
+  "sources": {
+    "e1_short_metrics.tsv": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-short-context-0.2.0-20261023/metrics.tsv",
+      "sha256": "03336242bdfd4b369b4167e33bf47d0993787054f54fae2208aae470f7fdde5b"
+    },
+    "e1_short_quantiles.tsv": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-short-context-0.2.0-20261023/quantiles.tsv",
+      "sha256": "4dbc22f088ba9501e341cecdfcbc009462f2c4603399a893b41ffb7544996e0e"
+    },
+    "e1_short_provenance.json": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-short-context-0.2.0-20261023/provenance.json",
+      "sha256": "b97eb430b81a1d335a88fe31156ca46aff525c0c462bf6496b647a9b16887272"
+    },
+    "e1_short_window_counts.tsv": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-short-context-0.2.0-20261023/window_counts.tsv",
+      "sha256": "ed86b4dc9c930a2939af5ff915ae369eefc2350c21929513383f3e9eb5be7ed0"
+    },
+    "e1_long_metrics.tsv": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-long-context-0.2.0-20261023/metrics.tsv",
+      "sha256": "0dff08e3bc24f8f42e85280189a1051fa1bf62c4aad956e408bf61be056e6c14"
+    },
+    "e1_long_quantiles.tsv": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-long-context-0.2.0-20261023/quantiles.tsv",
+      "sha256": "0e607aa723a080814b9c7afc20ef841972c0f57583a3935b46c66a6e7eea8d97"
+    },
+    "e1_long_provenance.json": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-long-context-0.2.0-20261023/provenance.json",
+      "sha256": "db81308c5773fcfb320e29e13b70678cfaee8bffcd1e60b5058ac9315a852607"
+    },
+    "e1_long_window_counts.tsv": {
+      "path": "../../local/e1-context-0.2.0-20261023/e1-bprna-long-context-0.2.0-20261023/window_counts.tsv",
+      "sha256": "0051be7a5aa6dae5224f187a512eb67f23f75356b310590b249d2c093a8701e1"
+    }
+  },
+  "outputs": [
+    {
+      "file": "figure2_main.pdf",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 36049,
+      "sha256": "a3a06509e616d970dd28d6a5e30833b125ab067d418992caf95629c364b619f4"
+    },
+    {
+      "file": "figure2_main.png",
+      "width_mm": 178,
+      "height_mm": 92.0,
+      "bytes": 178439,
+      "sha256": "85fb49c9dd0de6b45352e2221d3cab0af8f511f17eb4cfc6ca0639ee58e3a66e"
+    },
+    {
+      "file": "figure2_d_si.pdf",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 23253,
+      "sha256": "6d3804964d92b0bf8b1eb5821be8c9dcce43a61c4e3388b8ab31d327edc456b7"
+    },
+    {
+      "file": "figure2_d_si.png",
+      "width_mm": 165,
+      "height_mm": 55.00000000000001,
+      "bytes": 84343,
+      "sha256": "f6d64db12e6c1283ad6a3a60d83fd3aed789e3fce501b190a131276aa9a1d941"
+    },
+    {
+      "file": "figure2_accessibility_si.pdf",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 31660,
+      "sha256": "15a44f75585cefd94256482e9c5c40d5a6887e16fadd3380611653541fa36bd4"
+    },
+    {
+      "file": "figure2_accessibility_si.png",
+      "width_mm": 165,
+      "height_mm": 137.0,
+      "bytes": 191008,
+      "sha256": "d5e43941dfd7424a4668b91498833575f2a84f4192ddc5a37ba4c4c99084ecb7"
+    }
+  ],
+  "derived_files": {
+    "caption.md": "7ca6b18c569e64225dbfe88c7bb8f1333b8dc07bde3e642749471e6e68e3f958",
+    "README.md": "4e86bb8da95ad71e60251a7491c46978081252bd4d4c786901a0d366b1277ca8",
+    "plot_data.tsv": "639d288482b87ea215be399744d74b5689858228299f1aa7cbc69e931bc1ec06",
+    "evaluation_counts.tsv": "b7928090a07fd6adebebfca41dbf6032ba5dce38064805d8ebae884764067d0e",
+    "validation.json": "7c3411433b7e5a6bcdc4f0cbc48f9067900ebb63a03962d679a096c5c9a5f311"
+  }
+}

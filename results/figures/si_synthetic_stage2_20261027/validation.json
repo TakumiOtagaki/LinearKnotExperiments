@@ -1,0 +1,9 @@
+{
+  "source_A_B_records_unchanged": 70,
+  "panels": 2,
+  "data_and_ranges_preserved": true,
+  "axes_scales_limits_and_styles_preserved": true,
+  "png_and_manuscript_page_visually_checked": true,
+  "pdf_sha256": "2e5ea93f473e87da0098f500fa74983854bf3fbc61761d0e438954112403ad00",
+  "new_RNA_calculations": false
+}
