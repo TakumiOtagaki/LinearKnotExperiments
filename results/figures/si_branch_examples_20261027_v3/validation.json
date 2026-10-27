@@ -1,0 +1,54 @@
+{
+  "fictional_structures": true,
+  "folding_runs": 0,
+  "pair_colors_match_figure1": true,
+  "examples": [
+    {
+      "name": "Ordinary branch",
+      "valid_pair_map": true,
+      "context_labels": "EESSIISHHHHSIIISSEEE"
+    },
+    {
+      "name": "Pseudoknot branch",
+      "valid_pair_map": true,
+      "context_labels": "ESSPSHHHSSSPPSSPPPPPPSSEE"
+    },
+    {
+      "name": "Band-spanning multiloop",
+      "valid_pair_map": true,
+      "context_labels": "ESMMSHHHHSMMMSPPPSSPPPSMMMSPPPSSEE",
+      "all_marked_unpaired_bases_match_context": "M"
+    },
+    {
+      "name": "Internal loop without a side branch",
+      "valid_pair_map": true,
+      "context_labels": "ESIIIIIIIIIIISPPPSSPPPSIIISPPPSSEE",
+      "all_marked_unpaired_bases_match_context": "I"
+    },
+    {
+      "name": "Band-spanning multiloop closed by extension pairs",
+      "valid_pair_map": true,
+      "context_labels": "ESMMSHHHHSMMMSPPPSSPPPSMMMSPPPSSEE",
+      "all_marked_unpaired_bases_match_context": "M"
+    }
+  ],
+  "context_reference_sha256": "30547e8701d3c28b7e56e97384b207d405157e0c6df4b7cf71d605892740a48f",
+  "layout": {
+    "si_branch_examples": {
+      "size_mm": [
+        165.0,
+        65.0
+      ],
+      "minimum_font_pt": 6.6,
+      "all_labels_inside_canvas": true
+    },
+    "si_inside_outside": {
+      "size_mm": [
+        152.0,
+        54.0
+      ],
+      "minimum_font_pt": 7.0,
+      "all_labels_inside_canvas": true
+    }
+  }
+}

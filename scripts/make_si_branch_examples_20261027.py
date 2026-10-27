@@ -3,7 +3,7 @@
 
 Run from the experiment repository:
   MPLCONFIGDIR=/tmp/si-branch-mpl python3 scripts/make_si_branch_examples_20261027.py \
-    --out results/figures/si_branch_examples_20261027 \
+    --out results/figures/si_branch_examples_20261027_v3 \
     --context-reference ../../LinearKnot/test/tools/pseudoloop_context_reference.py
 
 The optional context reference is read only. Pair colors and line styles match
@@ -18,8 +18,9 @@ import runpy
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import numpy as np
 from matplotlib.lines import Line2D
-from matplotlib.patches import Arc, Rectangle
+from matplotlib.patches import Arc, Polygon, Rectangle
 
 MM = 1 / 25.4
 INK, GREY, BLUE, ORANGE, PURPLE = (
@@ -34,7 +35,15 @@ EXAMPLES = [
     dict(name="Band-spanning multiloop", n=34, G=[(2, 27), (14, 23)],
          extension=[(5, 10), (18, 32), (19, 31)],
          outer=(2, 27), inner=(14, 23), side=(5, 10),
-         wings=[3, 4, 11, 12, 13, 24, 25, 26]),
+         unpaired_segments=[3, 4, 11, 12, 13, 24, 25, 26], context="M"),
+    dict(name="Internal loop without a side branch", n=34,
+         G=[(2, 27), (14, 23)], extension=[(18, 32), (19, 31)],
+         outer=(2, 27), inner=(14, 23),
+         unpaired_segments=list(range(3, 14)) + [24, 25, 26], context="I"),
+    dict(name="Band-spanning multiloop closed by extension pairs", n=34,
+         G=[(18, 32), (19, 31)], extension=[(2, 27), (14, 23), (5, 10)],
+         outer=(2, 27), inner=(14, 23), side=(5, 10),
+         unpaired_segments=[3, 4, 11, 12, 13, 24, 25, 26], context="M"),
 ]
 
 
@@ -61,33 +70,69 @@ def validate(reference):
         if "branch" in ex:
             lo, hi = ex["branch"]
             assert all(not ((lo <= i <= hi) != (lo <= j <= hi)) for i, j in ex["G"])
+        if "outer" in ex:
+            closing_in_scaffold = ex["outer"] in ex["G"]
+            closing_layer = ex["G"] if closing_in_scaffold else ex["extension"]
+            other_layer = ex["extension"] if closing_in_scaffold else ex["G"]
+            assert ex["inner"] in closing_layer
+            assert any(crosses(ex["outer"], p) and crosses(ex["inner"], p)
+                       for p in other_layer)
+            assert ("side" in ex) == (ex["context"] == "M")
         result["examples"].append({"name": ex["name"], "valid_pair_map": True})
     if reference:
         classify = runpy.run_path(str(reference))["classify"]
         for ex, rec in zip(EXAMPLES, result["examples"]):
             labels, _ = classify(ex["n"], set(ex["G"] + ex["extension"]))
             rec["context_labels"] = labels
-            if "wings" in ex:
-                assert all(labels[i - 1] == "M" for i in ex["wings"])
-                rec["all_marked_wings_are_multiloop"] = True
+            if "unpaired_segments" in ex:
+                assert all(labels[i - 1] == ex["context"] for i in ex["unpaired_segments"])
+                rec["all_marked_unpaired_bases_match_context"] = ex["context"]
         result["context_reference_sha256"] = digest(reference)
     return result
 
 
+def arc_points(pair, reverse=False):
+    """Points along the same upper half-ellipse used for the pair arcs."""
+    i, j = pair
+    theta = np.linspace(np.pi, 0, 121)
+    points = np.column_stack(((i + j) / 2 + (j - i) / 2 * np.cos(theta),
+                              .45 * (j - i) * np.sin(theta)))
+    return points[::-1] if reverse else points
+
+
+def diagram(fig, ex, box):
+    width, height = fig.get_size_inches() / MM
+    x, y, w, h = box
+    ax = fig.add_axes([x / width, y / height, w / width, h / height])
+    max_arc_height = .45 * max(j - i for i, j in ex["G"] + ex["extension"])
+    ax.set(xlim=(0, ex["n"] + 1), ylim=(-1, 1.5 * max_arc_height))
+    ax.axis("off")
+    if "outer" in ex:
+        # The shaded face excludes both the continuing inner region and the
+        # side branch's interior. Crossing arcs belong to the other layer.
+        lower_pairs = sorted([ex["inner"]] + ([ex["side"]] if "side" in ex else []),
+                             reverse=True)
+        boundary = np.vstack([arc_points(ex["outer"])] +
+                             [arc_points(pair, reverse=True) for pair in lower_pairs])
+        ax.add_patch(Polygon(boundary, closed=True, fc=PURPLE, alpha=.12, ec="none", zorder=0))
+    ax.plot([1, ex["n"]], [0, 0], lw=.6, color=GREY)
+    for i, j in sorted(ex["G"] + ex["extension"], key=lambda p: p[1] - p[0], reverse=True):
+        kind = 0 if (i, j) in ex["G"] else 2 if any(crosses((i, j), q) for q in ex["G"]) else 1
+        ax.add_patch(Arc(((i + j) / 2, 0), j - i, .9 * (j - i),
+                         theta1=0, theta2=180, color=(GREY, BLUE, ORANGE)[kind],
+                         lw=1.15, ls=STYLES[kind]))
+    if "unpaired_segments" in ex:
+        ax.scatter(ex["unpaired_segments"], [0] * len(ex["unpaired_segments"]),
+                   s=7 if w > 30 else 4, color=PURPLE, zorder=4)
+    return ax
+
+
 def branches():
-    fig = plt.figure(figsize=(165 * MM, 55 * MM))
-    for k, ex in enumerate(EXAMPLES):
-        x = 2 + 55 * k
-        fig.text(x / 165, 49 / 55, f"{'ABC'[k]}  {ex['name']}", size=7.8, weight="bold")
-        ax = fig.add_axes([(x + 1) / 165, 18 / 55, 49 / 165, 24 / 55])
-        ax.set(xlim=(0, ex["n"] + 1), ylim=(-1, 17))
-        ax.axis("off")
-        ax.plot([1, ex["n"]], [0, 0], lw=.6, color=GREY)
-        for i, j in sorted(ex["G"] + ex["extension"], key=lambda p: p[1] - p[0], reverse=True):
-            kind = 0 if (i, j) in ex["G"] else 2 if any(crosses((i, j), q) for q in ex["G"]) else 1
-            ax.add_patch(Arc(((i + j) / 2, 0), j - i, .9 * (j - i),
-                             theta1=0, theta2=180, color=(GREY, BLUE, ORANGE)[kind],
-                             lw=1.15, ls=STYLES[kind]))
+    fig = plt.figure(figsize=(165 * MM, 65 * MM))
+    for k, ex in enumerate(EXAMPLES[:3]):
+        x = (2, 44, 86)[k]
+        fig.text(x / 165, 59 / 65, f"{'ABC'[k]}  {ex['name']}", size=7.6, weight="bold")
+        ax = diagram(fig, ex, (x, 24, 40 if k < 2 else 45, 28))
         if "branch" in ex:
             lo, hi = ex["branch"]
             # Use axes coordinates to keep the bracket below every arc.
@@ -97,15 +142,23 @@ def branches():
             ax.text((left + right) / 2, -.24, ex["branch_label"],
                     transform=ax.transAxes, ha="center", va="top", size=7)
         else:
-            ax.scatter(ex["wings"], [0] * len(ex["wings"]), s=8, color=PURPLE, zorder=4)
-            for label, target, text in [
-                    ("Outer pair", (14.5, 11.25), (7, 16)),
-                    ("Inner pair", (17, 3.7), (23, 7.6)),
-                    ("Side branch", (7.5, 2.25), (6, 6.9))]:
-                ax.annotate(label, xy=target, xytext=text, fontsize=6.8, ha="center",
+            for label, target, pos in [
+                    ("Outer pair", (13, 11.1), (7, 16)),
+                    ("Inner pair", (22, 2.55), (27, 7.5)),
+                    ("Side branch", (7.5, 2.25), (3, 11.5))]:
+                ax.annotate(label, xy=target, xytext=pos, fontsize=6.6, ha="center",
                             arrowprops=dict(arrowstyle="-", lw=.55, color=INK))
-            ax.text(.5, -.24, "Purple: unpaired wings", transform=ax.transAxes,
-                    ha="center", va="top", color=PURPLE, size=7)
+            ax.annotate("Band-spanning multiloop\n(this shaded loop)", xy=(12.5, 5.8),
+                        xytext=(.47, -.25), textcoords="axes fraction", ha="center", va="top",
+                        fontsize=7, arrowprops=dict(arrowstyle="-", lw=.6, color=INK))
+    fig.text(148 / 165, 52 / 65, "No side branch", size=7, ha="center")
+    diagram(fig, EXAMPLES[3], (134, 34, 29, 18))
+    fig.text(148 / 165, 31.5 / 65, "Internal loop", size=7, ha="center")
+    fig.text(148 / 165, 25 / 65, "Closing pairs in $G'$", size=7, ha="center")
+    diagram(fig, EXAMPLES[4], (134, 7.5, 29, 18))
+    fig.text(148 / 165, 5 / 65, "Multiloop", size=7, ha="center")
+    fig.text(86 / 165, 7 / 65, "Purple: unpaired segments\nof this loop", color=PURPLE,
+             size=7, va="bottom")
     handles = [Line2D([], [], color=c, ls=ls, lw=1.2) for c, ls in zip((GREY, BLUE, ORANGE), STYLES)]
     fig.legend(handles, ["Scaffold pair", "New noncrossing pair", "New crossing pair"],
                loc="lower center", bbox_to_anchor=(.5, .01), ncol=3, frameon=False,
@@ -165,8 +218,22 @@ def main():
     plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 7,
                          "text.color": INK, "pdf.fonttype": 42, "mathtext.fontset": "dejavusans"})
     validation = validate(args.context_reference)
+    validation["layout"] = {}
     for name, create in [("si_branch_examples", branches), ("si_inside_outside", tree)]:
         fig = create()
+        fig.canvas.draw()
+        labels = (fig.texts + [t for ax in fig.axes for t in ax.texts] +
+                  [t for legend in fig.legends for t in legend.get_texts()])
+        renderer = fig.canvas.get_renderer()
+        for label in labels:
+            box = label.get_window_extent(renderer)
+            assert 0 <= box.x0 <= box.x1 <= fig.bbox.width, label.get_text()
+            assert 0 <= box.y0 <= box.y1 <= fig.bbox.height, label.get_text()
+        minimum_font = min(label.get_fontsize() for label in labels)
+        assert minimum_font >= 6
+        validation["layout"][name] = {
+            "size_mm": [round(float(v), 3) for v in fig.get_size_inches() / MM],
+            "minimum_font_pt": minimum_font, "all_labels_inside_canvas": True}
         fig.savefig(args.out / (name + ".pdf"))
         fig.savefig(args.out / (name + ".png"), dpi=220)
         plt.close(fig)
