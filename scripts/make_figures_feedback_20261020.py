@@ -260,7 +260,7 @@ def terc_figure(d):
             xticks=(40,60,80,100,120,140,160),xlabel='Start of 4-nt window (nt)',ylabel='Probability')
     axc.axvline(123,color=INK,lw=.6,ls=':')
     axc.xaxis.labelpad=2
-    s.text(130,46.8,'Samples / 1,000 draws',weight='bold')
+    s.text(130,46.8,'1,000 samples',weight='bold')
     for name,label,y in (('outer','All 6 O',41),('inner','All 3 I',35.5),('both','All 9 O + I',30)):
         fraction=stats['stems'][name]['complete_sample_fraction']
         s.text(130,y,label)

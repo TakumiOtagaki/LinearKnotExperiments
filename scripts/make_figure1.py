@@ -453,10 +453,10 @@ def make_figure(d, example):
     s.text(111,74,'Sampled structures',fontsize=7.5,weight='bold')
     total=sum(c for c,db in d['samples'])
     for (count,db),y,label in zip(d['samples'][:2],(69,53),('Most frequent','Second most frequent')):
-        s.text(111,y,f'{label}: {count:,} / {total:,}')
+        s.text(111,y,f'{label}: {count:,} of {total:,}')
         pair_arcs(arc_axis(s,111,y-13,60,10,1,n,26),pair_set(db),g)
     other=total-sum(c for c,db in d['samples'][:2])
-    s.text(111,37,f'Other draws: {other:,} / {total:,}')
+    s.text(111,37,f'Other draws: {other:,} of {total:,}')
     s.text(111,30,'γ-centroid structure (γ = 1)',fontsize=7.5,weight='bold')
     pair_arcs(arc_axis(s,111,17.5,60,10,1,n,26),pair_set(d['centroid']),g)
     for y,label,c,ls in zip((14,10,6),('Scaffold G','New; no crossing','New; crosses G'),(GREY,BLUE,ORANGE),STYLES):

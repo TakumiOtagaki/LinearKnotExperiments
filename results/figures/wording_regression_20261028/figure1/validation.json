@@ -1,0 +1,105 @@
+{
+  "sequence_length": 61,
+  "scaffold_pairs": 8,
+  "band_spans": [
+    [
+      6,
+      36
+    ],
+    [
+      26,
+      50
+    ]
+  ],
+  "probability_display_cutoff_inclusive": 0.05,
+  "displayed_bpp_pairs": 15,
+  "sample_draws": 10000,
+  "sample_counts_shown": [
+    3431,
+    1426
+  ],
+  "context_hatches": "none",
+  "centroid_gamma": 1,
+  "illustrative_beam_width": 3,
+  "multiloop_rule": "BE_WIP_WIP",
+  "intermediate_order": [
+    "Inner + Right",
+    "Left + Intermediate + local factor"
+  ],
+  "decomposition_child_counts": {
+    "CParty": [
+      3
+    ],
+    "LinearKnot": [
+      2,
+      2
+    ]
+  },
+  "decomposition_local_energy": {
+    "CParty": [
+      "E"
+    ],
+    "LinearKnot": [
+      "0",
+      "E"
+    ]
+  },
+  "state_thumbnails": "One representative per set of partial structures",
+  "beam_grid_state_type": "Intermediate states",
+  "panel_C_uses_illustrative_beam": false,
+  "max_context_sum_error": 2.220446049250313e-16,
+  "max_sample_bpp_difference": 0.010521403741104995,
+  "pdf_page_mm": [
+    178.0000000000147,
+    144.99999999998442
+  ],
+  "png_pixels": [
+    2102,
+    1712
+  ],
+  "png_dpi": [
+    299.9994,
+    299.9994
+  ],
+  "pdf_text_sizes_pt": [
+    7.0,
+    7.5,
+    8.0,
+    9.0
+  ],
+  "minimum_embedded_text_pt": 7.0,
+  "minimum_matplotlib_text_pt": 7.0,
+  "text_outside_page": [],
+  "text_overlaps": [],
+  "gs_command": [
+    "gs",
+    "-q",
+    "-dBATCH",
+    "-dNOPAUSE",
+    "-sDEVICE=txtwrite",
+    "-dTextFormat=0",
+    "-sOutputFile=-",
+    "results/figures/wording_regression_20261028/figure1/figure1.pdf"
+  ],
+  "visual_inspection": "Required separately: open the generated PNG.",
+  "source_data": "results/local/pseudoloop-0.2.0-20261023/examples/figure_data.json",
+  "source_data_sha256": "d960a3a320da054f57613a1d28b27e003a560136c1255df27ecc44d9a55c6648",
+  "panel_C_data_sha256": "80dfc89ba8c78a5c849f3836e064a57f157bf30c7fe3e69e5714015d62de900c",
+  "script_sha256": "0cb84fbcf2d9429ba6ece2a2d06eaf2b066dd354421e76eb85dba616a5b2025b",
+  "context_example_length": 37,
+  "context_reference_sha256": "30547e8701d3c28b7e56e97384b207d405157e0c6df4b7cf71d605892740a48f",
+  "context_reference_commit": "f93b55ed9749dd1c198cd1f1809aece50f12f7d8",
+  "context_reference_path_used": "/tmp/regression-wording-reference/test/tools/pseudoloop_context_reference.py",
+  "context_example_sha256": "672dae0cb9630b178f44037fdc4c621e7eb7777292e4601a3603482d0ac89c84",
+  "canvas_height_increase_mm": 0,
+  "schematic_base_marker_diameter_pt": 3,
+  "context_colors": {
+    "Stem": "#2a78d6",
+    "Hairpin": "#1baf7a",
+    "Bulge": "#eda100",
+    "Internal": "#e87ba4",
+    "Multiloop": "#6250d6",
+    "Exterior": "#b9b8b1",
+    "PseudoLoop": "#eb6834"
+  }
+}

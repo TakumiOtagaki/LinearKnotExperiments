@@ -43,6 +43,11 @@ def save(fig,out,name,width,height):
  bounds=fig.bbox
  outside=[t.get_text() for t in visible if not bounds.contains(*t.get_window_extent(renderer).p0) or not bounds.contains(*t.get_window_extent(renderer).p1)]
  assert not outside,outside
+ completion=[t for t in visible if t.get_text().startswith('LinearKnot completed')]
+ legend_texts=[t for legend in fig.legends for t in legend.get_texts()]
+ collisions=[(t.get_text(),u.get_text()) for t in completion for u in legend_texts
+             if t.get_window_extent(renderer).overlaps(u.get_window_extent(renderer))]
+ assert not collisions,collisions
  for suffix in ('pdf','png'):fig.savefig(out/(name+'.'+suffix),dpi=300)
  pdf=PdfReader(out/(name+'.pdf'));box=pdf.pages[0].mediabox
  assert abs(float(box.width)*25.4/72-width)<.01
@@ -105,8 +110,8 @@ def main():
  groups=list(dict.fromkeys(r['group'] for r in data['length_groups']))
  assert len(groups)==12
  counts=[]
- physical_text(fig,2,10.2,'LinearKnot: b=100, 107/107; exact, 80/80 completed',fontsize=7)
- physical_text(fig,2,7.3,'Length (nt), panels C/D',fontsize=7,va='center')
+ physical_text(fig,2,10.2,'LinearKnot completed 107 of 107 (b=100); 80 of 80 (exact)',fontsize=7)
+ physical_text(fig,2,7.3,'Length (nt), C and D',fontsize=7,va='center')
  for method,y in [('cparty',4.5),('spark',1.7)]:
   physical_text(fig,2,y,'CParty' if method=='cparty' else 'Spark',
                 color=METHODS[method][0],fontsize=7.5,va='center')
@@ -119,7 +124,7 @@ def main():
    row=next(r for r in group_rows if r['method']==method)
    completed,planned=row['eligible_inputs'],row['planned_inputs']
    counts.append(dict(group=group,length=length,method=method,completed=completed,planned=planned))
-   physical_text(fig,x,y,f'{completed}/{planned}',color=METHODS[method][0],
+   physical_text(fig,x,y,f'{completed} of {planned}',color=METHODS[method][0],
                  fontsize=7.5,ha='center',va='center')
  for method,total in [('cparty',59),('spark',103)]:
   assert sum(r['completed'] for r in counts if r['method']==method)==total

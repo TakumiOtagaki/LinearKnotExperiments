@@ -1,0 +1,65 @@
+{
+  "figures": [
+    {
+      "kind": "figure1",
+      "original": "experiments/results/figures/figure1_fb6_20261025/figure1.pdf",
+      "original_sha256": "220deec58c64ffb59f066ee573f345cac7d396ef28c8f94fe4d14c49252d33cd",
+      "output": "figure1/figure1.pdf",
+      "sha256": "0dc37f506423df4a4a969537b3010e3eaac109e183e8094c7839b9c0613d3207",
+      "png": "figure1/figure1.png",
+      "visual_inspection": "PNG opened: no clipping or overlap; numeric plots unchanged."
+    },
+    {
+      "kind": "resources",
+      "original": "experiments/results/figures/figure4_resources_20261028_counts/figure4.pdf",
+      "original_sha256": "b7829a9108b50671d82a7822675758c43512f0de5f9f43ffec34e3f7beb7ad05",
+      "output": "resources/figure4.pdf",
+      "sha256": "f79de3e5e7b7bf5e8025cf0b84061bb71990ef6d707561abcbf40efd12d08cc4",
+      "png": "resources/figure4.png",
+      "visual_inspection": "PNG opened: no clipping or overlap; numeric plots unchanged."
+    },
+    {
+      "kind": "terc",
+      "original": "experiments/results/figures/pseudoloop-0.2.0-20261023/figure3/figure4.pdf",
+      "original_sha256": "6d9e5f2ab7b866b0cb5230bbc35d7493db487ae55a283b11b3dfba16e78ff8f0",
+      "output": "terc/figure4.pdf",
+      "sha256": "4d88a4d4b7d839caf2fba96a30c4d485b3480955f448d2539ab6983b8d86e130",
+      "png": "terc/figure4.png",
+      "visual_inspection": "PNG opened: no clipping or overlap; numeric plots unchanged."
+    }
+  ],
+  "saved_figure_data": {
+    "file": "experiments/results/local/pseudoloop-0.2.0-20261023/examples/figure_data.json",
+    "sha256": "d960a3a320da054f57613a1d28b27e003a560136c1255df27ecc44d9a55c6648"
+  },
+  "pixel_difference_rectangles": {
+    "figure1": [
+      1602,
+      898,
+      1883,
+      1301
+    ],
+    "resources": [
+      185,
+      613,
+      2077,
+      747
+    ],
+    "terc": [
+      1537,
+      676,
+      1905,
+      704
+    ]
+  },
+  "pixel_comparison": "Old/new PNG dimensions identical; all pixel changes confined to these count-label rectangles.",
+  "resource_plot_data_byte_identical": true,
+  "completion_counts_byte_identical": true,
+  "no_rna_calculations": true,
+  "resource_completion_text_vs_legend_overlap": false,
+  "renderer_sha256": {
+    "experiments/scripts/make_figure1.py": "0cb84fbcf2d9429ba6ece2a2d06eaf2b066dd354421e76eb85dba616a5b2025b",
+    "experiments/scripts/make_figures_feedback_20261020.py": "101c3e12593f2c834a1eba4f73966f58118a3d71271721fd0e63b9d11a2abadc",
+    "experiments/scripts/make_figure4_resources_20261026.py": "c1702d130885800ae799d92c67c3e9048b2dfb9669646fa8dd85ebf521217ca2"
+  }
+}

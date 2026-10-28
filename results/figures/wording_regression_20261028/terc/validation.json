@@ -1,0 +1,97 @@
+{
+  "pdf_page_mm": [
+    178.0000000000147,
+    104.00000000000027
+  ],
+  "pdf_text_check": {
+    "minimum_pt": 7.0,
+    "maximum_pt": 9.0,
+    "spans": 103,
+    "sizes_pt": [
+      7.0,
+      8.0,
+      9.0
+    ],
+    "method": "Ghostscript txtwrite TextFormat=0"
+  },
+  "text_outside_page": [],
+  "text_overlaps": [],
+  "source_data_sha256": "d960a3a320da054f57613a1d28b27e003a560136c1255df27ecc44d9a55c6648",
+  "script_sha256": "101c3e12593f2c834a1eba4f73966f58118a3d71271721fd0e63b9d11a2abadc",
+  "visual_inspection": "Open the generated PNG separately.",
+  "probability_display_cutoff_inclusive": 0.05,
+  "context_hatches": "none",
+  "highlighted_bases_A_B": [
+    123,
+    126
+  ],
+  "reference_bulged_base": 133,
+  "reference_marks": {
+    "outer": [
+      [
+        63,
+        68
+      ],
+      [
+        134,
+        139
+      ]
+    ],
+    "inner": [
+      [
+        69,
+        71
+      ],
+      [
+        130,
+        132
+      ]
+    ]
+  },
+  "sample_fractions": {
+    "outer": 0.81,
+    "inner": 0.237,
+    "both": 0.235
+  },
+  "centroid_gamma": 1,
+  "centroid_region": [
+    40,
+    160
+  ],
+  "centroid_pairs_outside_region": 72,
+  "Bzoom_C_alignment_px": 0.0,
+  "centroid_reference_pairs": {
+    "outer": [
+      [
+        63,
+        139
+      ],
+      [
+        64,
+        138
+      ],
+      [
+        65,
+        137
+      ],
+      [
+        66,
+        136
+      ],
+      [
+        67,
+        135
+      ],
+      [
+        68,
+        134
+      ]
+    ],
+    "inner": []
+  },
+  "context_sum_max_error": 1.5543122344752192e-15,
+  "byloop_sum_max_error": 3.674838211509268e-14,
+  "window1_context_max_error": 2.55351295663786e-14,
+  "scaffold_pair_max_error": 0.0,
+  "source_data": "experiments/results/local/pseudoloop-0.2.0-20261023/examples/figure_data.json"
+}
