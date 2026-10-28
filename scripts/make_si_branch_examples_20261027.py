@@ -3,7 +3,7 @@
 
 Run from the experiment repository:
   MPLCONFIGDIR=/tmp/si-branch-mpl python3 scripts/make_si_branch_examples_20261027.py \
-    --out results/figures/si_branch_examples_20261027_v3 \
+    --out results/figures/si_branch_examples_20261027_v4 \
     --context-reference ../../LinearKnot/test/tools/pseudoloop_context_reference.py
 
 The optional context reference is read only. Pair colors and line styles match
@@ -128,36 +128,44 @@ def diagram(fig, ex, box):
 
 
 def branches():
-    fig = plt.figure(figsize=(165 * MM, 65 * MM))
+    width, height = 165, 65
+    fig = plt.figure(figsize=(width * MM, height * MM))
+    # Give each base the same physical spacing and preserve the arc geometry.
+    # Stack A/B to leave room for C and its existing upper/lower comparisons.
+    base_spacing = 2  # mm per base at the 165 mm paper inclusion width
     for k, ex in enumerate(EXAMPLES[:3]):
-        x = (2, 44, 86)[k]
-        fig.text(x / 165, 59 / 65, f"{'ABC'[k]}  {ex['name']}", size=7.6, weight="bold")
-        ax = diagram(fig, ex, (x, 24, 40 if k < 2 else 45, 28))
+        x, baseline, title_y = ((2, 42, 59), (2, 15, 30), (60, 29, 59))[k]
+        fig.text(x / width, title_y / height, f"{'ABC'[k]}  {ex['name']}", size=7.6, weight="bold")
+        panel_width = base_spacing * (ex["n"] + 1)
+        ymax = 1.5 * .45 * max(j - i for i, j in ex["G"] + ex["extension"])
+        diagram_height = base_spacing * (ymax + 1)
+        ax = diagram(fig, ex, (x, baseline - base_spacing, panel_width, diagram_height))
+        ax.set_aspect("equal", adjustable="box", anchor="S")
         if "branch" in ex:
             lo, hi = ex["branch"]
             # Use axes coordinates to keep the bracket below every arc.
             left, right = lo / (ex["n"] + 1), hi / (ex["n"] + 1)
             ax.plot([left, left, right, right], [-.04, -.12, -.12, -.04],
                     transform=ax.transAxes, color=INK, lw=.75, clip_on=False)
-            ax.text((left + right) / 2, -.24, ex["branch_label"],
+            ax.text((left + right) / 2, -.16, ex["branch_label"],
                     transform=ax.transAxes, ha="center", va="top", size=7)
         else:
             for label, target, pos in [
-                    ("Outer pair", (13, 11.1), (7, 16)),
+                    ("Outer pair", (13, 11.1), (7, 13)),
                     ("Inner pair", (22, 2.55), (27, 7.5)),
                     ("Side branch", (7.5, 2.25), (3, 11.5))]:
                 ax.annotate(label, xy=target, xytext=pos, fontsize=6.6, ha="center",
                             arrowprops=dict(arrowstyle="-", lw=.55, color=INK))
             ax.annotate("Band-spanning multiloop\n(this shaded loop)", xy=(12.5, 5.8),
-                        xytext=(.47, -.25), textcoords="axes fraction", ha="center", va="top",
+                        xytext=(.47, -.03), textcoords="axes fraction", ha="center", va="top",
                         fontsize=7, arrowprops=dict(arrowstyle="-", lw=.6, color=INK))
-    fig.text(148 / 165, 52 / 65, "No side branch", size=7, ha="center")
+    fig.text(148 / width, 52 / height, "No side branch", size=7, ha="center")
     diagram(fig, EXAMPLES[3], (134, 34, 29, 18))
-    fig.text(148 / 165, 31.5 / 65, "Internal loop", size=7, ha="center")
-    fig.text(148 / 165, 25 / 65, "Closing pairs in $G'$", size=7, ha="center")
+    fig.text(148 / width, 31.5 / height, "Internal loop", size=7, ha="center")
+    fig.text(148 / width, 25 / height, "Closing pairs in $G'$", size=7, ha="center")
     diagram(fig, EXAMPLES[4], (134, 7.5, 29, 18))
-    fig.text(148 / 165, 5 / 65, "Multiloop", size=7, ha="center")
-    fig.text(86 / 165, 7 / 65, "Purple: unpaired segments\nof this loop", color=PURPLE,
+    fig.text(148 / width, 5 / height, "Multiloop", size=7, ha="center")
+    fig.text(60 / width, 7 / height, "Purple: unpaired segments\nof this loop", color=PURPLE,
              size=7, va="bottom")
     handles = [Line2D([], [], color=c, ls=ls, lw=1.2) for c, ls in zip((GREY, BLUE, ORANGE), STYLES)]
     fig.legend(handles, ["Scaffold pair", "New noncrossing pair", "New crossing pair"],
@@ -234,6 +242,18 @@ def main():
         validation["layout"][name] = {
             "size_mm": [round(float(v), 3) for v in fig.get_size_inches() / MM],
             "minimum_font_pt": minimum_font, "all_labels_inside_canvas": True}
+        if name == "si_branch_examples":
+            scales = []
+            for panel, ax in zip("ABC", fig.axes[:3]):
+                origin, dx, dy = ax.transData.transform([(0, 0), (1, 0), (0, 1)])
+                xscale = (dx[0] - origin[0]) / fig.dpi / MM
+                yscale = (dy[1] - origin[1]) / fig.dpi / MM
+                scales.append((xscale, yscale))
+                validation["layout"][name].setdefault("main_panels", {})[panel] = {
+                    "base_spacing_mm": round(float(xscale), 6),
+                    "vertical_unit_mm": round(float(yscale), 6),
+                    "arc_height_over_endpoint_distance": round(float(.45 * yscale / xscale), 6)}
+            assert np.allclose(scales, scales[0][0]), "Main panel scales must match"
         fig.savefig(args.out / (name + ".pdf"))
         fig.savefig(args.out / (name + ".png"), dpi=220)
         plt.close(fig)
