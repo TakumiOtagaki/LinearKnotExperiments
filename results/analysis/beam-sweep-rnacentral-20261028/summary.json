@@ -1,0 +1,46 @@
+{
+  "created_utc": "2026-10-28T04:03:22.553051+00:00",
+  "plans": [
+    {
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b25/array_plan.json",
+      "sha256": "18a5c72166d97bfef11e1bd8c3661fdd7ace4e89aab6fdd3376f65ae6727d2ce"
+    },
+    {
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b50/array_plan.json",
+      "sha256": "9dc38cdd9268911d2f79f7d5914d9d032a7cc5a907372e7bac6348df617bd8dc"
+    },
+    {
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b75/array_plan.json",
+      "sha256": "9d186f3b0144a4a68340ade579fb511efec95a0ad18f4de112045b42b8d91b0e"
+    },
+    {
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b100/array_plan.json",
+      "sha256": "6361e86ef394031a1aededbe5aab61090ccaa777b0a1ba33bfeeaad7e177d746"
+    },
+    {
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b200/array_plan.json",
+      "sha256": "273aedde01239c7936345573dd5d63e6b08c3ead15403d3d96b1203c46115759"
+    },
+    {
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b300/array_plan.json",
+      "sha256": "9d4012e5816b379e1bf3b12177337fd909d2af428dfdaded34edf38cd68245f5"
+    },
+    {
+      "path": "/gs/bs/tga-satolab-gtex/otgk/LinearCPartyPaper/experiments/results/runs/beam-sweep-rnacentral-v0.2.1-20261027-b400/array_plan.json",
+      "sha256": "ef4740b8ea258ae8410e60eb4529d57ec406d03e91c5c1d61608cf12935a13f2"
+    }
+  ],
+  "planned": 49,
+  "valid": 49,
+  "status_counts": {
+    "success": 49
+  },
+  "comparisons_complete": 91,
+  "comparisons_unavailable": 0,
+  "script_sha256": "5d0fcb4f198019188c5a366880c4931a26fd9b10df80b2cc6a7f1f2dd22744ca",
+  "interpretation": "Finite-width and local-cap sensitivity; b400 is not exact; missing/timeout values not extrapolated. Single observations are not timing medians.",
+  "p90": "linear interpolation between sorted per-free-base TV values at index .9*(N-1)",
+  "sign": "F_b-F_400; adjacent F_b-F_previous (increasing beam); no assumed monotonicity",
+  "probability_tolerance": 1e-09,
+  "figures": "Only valid completed folds; unavailable reference leaves gaps; timeouts stay in TSV with their cap and elapsed time"
+}

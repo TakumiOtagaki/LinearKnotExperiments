@@ -194,3 +194,72 @@ python3 scripts/analyze_beam_sweep_20261027.py \
 python3 -m unittest discover -s tests -p 'test_beam_sweep_20261027.py' -v
 python3 -m unittest discover -s tests -p 'test_task_storage.py' -v
 ```
+
+## 2026-10-28：全 49 条件の集計と論文用図
+
+保存済みの正式 49 tasks を集計した。全 49 tasks / 49 CLI が成功し、未完了・timeout・メモリ上限による終了は 0。全 49 出力と 91 比較（対 b400 の 49 組、隣接幅の 42 組）が有効だった。新しい RNA 計算や scheduler 投入はしていない。
+
+入力 7 組の hash は元の E2 と全て一致し、全幅で同じ凍結 S/G、モデル、source `2101e5d86959661ba0a3da6d598f8f202e87186b`、計測用 FoldMetadata binary `8f505927b05bbaa8d160cdf76b2190b01ac6ca158d0104ab15bf565cc099a27e` を確認した。各 task の終了時の依存検査が有効で、stdout と丸め前 scalar の一致、圧縮 member と非圧縮 BPP の hash、固定対、確率範囲・確率和・座標重複を検査した。
+
+[全 49 条件の値](../results/analysis/beam-sweep-rnacentral-20261028/observations.tsv)に各 RNA の F_b、log Z、F_b−F_400、隣接幅差、各差/nt、TV の平均・p90・最大、時間、最大メモリ、上限、状態を保存した。[全 91 比較](../results/analysis/beam-sweep-rnacentral-20261028/comparisons.tsv)に隣接幅の TV と最大の対確率差・座標も保存した。[幅別の範囲](../results/analysis/beam-sweep-rnacentral-20261028/by_beam.tsv)、[b100 の 7 本](../results/analysis/beam-sweep-rnacentral-20261028/b100.tsv)、[集計来歴](../results/analysis/beam-sweep-rnacentral-20261028/summary.json)も参照する。大きい生データは既存の ignored `results/runs/` に保ち、SQLite は `/tmp` で作って集計終了時に削除した。
+
+### 自由エネルギーと塩基ごとの距離
+
+以下の範囲は 7 RNA 間の最小–最大。TV の平均・p90・最大は、**各 RNA 内の scaffold で自由な塩基**に対して求めた値で、RNA 間の平均 TV の p90 ではない。非対合状態を含む。自由エネルギーの単位は kcal/mol、隣接差は大きい b の F から直前の幅の F を引いた値。p90 は index 0.9(N−1) の線形補間。
+
+| b | F_b−F_400 | F_b−F_previous | 平均 TV 対 b400 | TV p90 対 b400 | 最大 TV 対 b400 |
+|---:|---:|---:|---:|---:|---:|
+| 25 | 39.57–574.81 | — | 0.1305–0.3119 | 0.4706–0.8809 | 0.994904–0.999949 |
+| 50 | 7.76–332.50 | -270.97–-31.80 | 0.05667–0.2145 | 0.2014–0.7808 | 0.847529–0.999977 |
+| 75 | 3.85–154.20 | -178.30–-3.91 | 0.0247–0.2059 | 0.09254–0.7872 | 0.79729–0.999949 |
+| 100 | 2.22–107.93 | -52.32–-1.63 | 0.0128–0.1511 | 0.02992–0.664 | 0.53763–0.999926 |
+| 200 | -0.01762–28.45 | -81.72–-2.24 | 0.0002129–0.06167 | 1.061e-08–0.244 | 0.0234073–0.999111 |
+| 300 | 5.702e-08–11.43 | -18.81–0.02333 | 3.653e-10–0.04676 | 1.71e-10–0.1166 | 2.24562e-08–0.999111 |
+| 400 | 0–0 | -11.43–-5.702e-08 | 0–0 | 0–0 | 0–0 |
+
+| RNAcentral ID | F_100−F_400 | 平均 TV | TV p90 | 最大 TV |
+|---|---:|---:|---:|---:|
+| URS000233CDDE | 2.22 | 0.0128 | 0.02992 | 0.53763 |
+| URS00019626CE | 32.42 | 0.1511 | 0.664 | 0.991672 |
+| URS000239D8A4 | 5.28 | 0.04955 | 0.2346 | 0.855594 |
+| URS00023C9544 | 22.79 | 0.06787 | 0.2951 | 0.982848 |
+| URS000241043C | 71.64 | 0.1317 | 0.5245 | 0.999926 |
+| URS000238C72C | 107.93 | 0.12 | 0.5255 | 0.999121 |
+| URS00023A4DB9 | 97.68 | 0.07794 | 0.2814 | 0.999922 |
+
+- b100 の最大 energy 差は URS000238C72C（22,543 nt）の **107.928882 kcal/mol**。BPP の平均・p90 が最大なのは URS00019626CE（5,482 nt）で、平均 **0.151128**、p90 **0.663988**。最大の塩基ごとの TV は URS000241043C の **0.999926**。
+- b300 でも URS000238C72C の差は **11.429979 kcal/mol**、TV 平均 **0.0361146**、p90 **0.00913625**、最大 **0.999111**。最大の対確率差は座標 (6658,9368) の **0.990611**。平均や p90 だけから全位置の安定性を主張できない。
+- URS000233CDDE は F_200−F_400 = **−0.0176198 kcal/mol**、F_300−F_200 = **+0.0233333 kcal/mol**。符号・単調性・厳密値への収束を仮定しない。b400 は exact ではなく、この差から保持確率質量や厳密誤差を推定しない。profile/accessibility の感度は今回測定していない。
+
+### 時間と最大メモリ
+
+各条件 1 回、予備実行 0、single thread、1 process/task。cpu_16 の共有ノード上の GNU wall time と peak resident memory。時間は MFE・分配関数・outside・BPP 出力を含み、build・scaffold 構築・gzip・集計を除く。既存 E2 の三測定中央値と混ぜない。全 CLI の wall time の和は **28,453.30 秒（7.904 process 時間）**で、CPU 時間・scheduler allocation 時間ではない。
+
+| b | 時間の範囲（秒） | 最大メモリの範囲（GiB） | 7 本の時間の和（秒） |
+|---:|---:|---:|---:|
+| 25 | 10.0–74.3 | 0.207–1.204 | 265.79 |
+| 50 | 24.3–157.3 | 0.346–1.942 | 593.41 |
+| 75 | 40.7–277.2 | 0.490–2.690 | 1,026.24 |
+| 100 | 55.7–423.5 | 0.588–3.222 | 1,580.51 |
+| 200 | 131.5–1,211.7 | 0.980–5.681 | 4,368.26 |
+| 300 | 213.2–2,328.1 | 1.361–8.691 | 8,234.49 |
+| 400 | 295.0–3,592.6 | 1.611–10.615 | 12,384.60 |
+
+全条件の時間は設定した CLI timeout 未満。メモリ上限（仮想アドレス空間の制限）による失敗はない。最大メモリは b400 の URS00023A4DB9（29,106 nt）の **10.615105 GiB**、最長の時間は b400 の URS000238C72C の **3,592.63 秒**。
+
+### 採用図と再生成
+
+[図 PDF](../results/figures/rnacentral_beam_sweep_20261028/rnacentral_beam_sweep_si.pdf)、[PNG](../results/figures/rnacentral_beam_sweep_20261028/rnacentral_beam_sweep_si.png)。165 × 122 mm、基本 7 pt・最小 6.5 pt、4 パネル（F_b−F_400、平均 total variation、時間、最大メモリ）。全 7 RNA・全 49 点を各パネルに示し、b100 を縦点線と大きい塗りつぶし記号で強調。PF、RSS、TV の略語を図内で使わない。PNG を開いて軸・凡例・点・文字の欠けと重なりを確認し、隣接する 75/100 の目盛りは回転させた。論文 repo の `figures/rnacentral_beam_sweep_si.pdf` と PNG に export し、manifest を更新した。
+
+```bash
+python3 -B scripts/analyze_beam_sweep_20261027.py \
+  --plan-report docs/beam_sweep_rnacentral_20261027_plan.json \
+  --scratch-dir /tmp --no-plot \
+  --out results/local/beam-sweep-rnacentral-v0.2.1-20261027/NEW_ANALYSIS
+python3 -B scripts/plot_beam_sweep_20261028.py \
+  --source results/local/beam-sweep-rnacentral-v0.2.1-20261027/NEW_ANALYSIS \
+  --summary-out results/analysis/NEW_SUMMARY \
+  --figure-out results/figures/NEW_FIGURE
+```
+
+集計の既存 7 tests が成功。論文では SI S3.7・図 S5 と本文の近似精度の段落に反映し、b400 が近似であることと大きい局所差を残した。原稿・PDF の検証は論文 repo の `docs/beam_sweep_rnacentral_20261028_validation.json` に記録する。commit なし。

@@ -1,0 +1,47 @@
+{
+  "source": "results/local/beam-sweep-rnacentral-v0.2.1-20261027/analysis-20261028",
+  "source_sha256": {
+    "observations.tsv": "cd3f0277be671ca2fd824201e85d3855a590f7a6ae2a0c0738dd1a3066ccdc1e",
+    "comparisons.tsv": "c569e7c4bac278a4ea8e78e3fd9564571cfd4f2302d795e23197dc4b748ebef1",
+    "summary.json": "ae84585b1ddb8b40f6f51d1da390af936810b6b0699a6c90c4f859a5fb59b7e7"
+  },
+  "script_sha256": "70f34d5b80d98607bea22958da0b4dc7367372a3e08c24c153db5d63a11885bd",
+  "pdf_dimensions_mm": [
+    165,
+    122
+  ],
+  "minimum_font_pt": 6.5,
+  "body_font_pt": 7,
+  "series": [
+    "URS000233CDDE",
+    "URS00019626CE",
+    "URS000239D8A4",
+    "URS00023C9544",
+    "URS000241043C",
+    "URS000238C72C",
+    "URS00023A4DB9"
+  ],
+  "beams": [
+    25,
+    50,
+    75,
+    100,
+    200,
+    300,
+    400
+  ],
+  "points_per_panel": 49,
+  "panels": [
+    "F_minus_400",
+    "tv_400_mean",
+    "time_wall_s",
+    "peak_rss_gib"
+  ],
+  "highlighted_beam": 100,
+  "interpretation": "Beam width and local limits vary together: h=d=max(b,30). The b=400 reference is finite, not exact.",
+  "timing": "One single-thread process per task; one observation, no warm-up. Whole fold includes partition function, minimum free energy, outside and zero-cutoff pairing-probability output; excludes build, scaffold construction and compression.",
+  "files": {
+    "rnacentral_beam_sweep_si.pdf": "f67ed8338ef5baeaa5f158c8ca339fd2e921bbdc21ebbc2b0da4358b75a328fb",
+    "rnacentral_beam_sweep_si.png": "18c6b37db76145bed04d95ce20f3c8c3ea8aecf4f0ce8499d76ef3788dba8ee7"
+  }
+}
