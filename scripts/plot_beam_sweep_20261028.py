@@ -40,11 +40,14 @@ def publish(source, summary_out, figure_out):
         assert row['status'] == 'success' and row['valid'] == 'True'
         assert float(row['time_wall_s']) < float(row['timeout_s'])
         assert float(row['peak_rss_gib']) * 1024 < float(row['memory_limit_mib'])
+        row['F_per_base'] = float(row['F_kcal_mol']) / int(row['n'])
+        row['absolute_F_change_per_base'] = (abs(float(row['F_minus_previous_per_nt']))
+                                              if row['F_minus_previous_per_nt'] != 'NA' else 'NA')
     summary_out.mkdir(parents=True, exist_ok=False)
     figure_out.mkdir(parents=True, exist_ok=False)
     for name in ('observations.tsv', 'comparisons.tsv', 'summary.json'):
         shutil.copy2(source / name, summary_out / name)
-    metrics = ['F_minus_400', 'F_minus_previous', 'tv_400_mean', 'tv_400_p90', 'tv_400_max',
+    metrics = ['F_per_base', 'F_minus_previous_per_nt', 'absolute_F_change_per_base',
                'tv_previous_mean', 'tv_previous_p90', 'tv_previous_max', 'time_wall_s', 'peak_rss_gib']
     rollup = []
     for b in beams:
@@ -59,6 +62,14 @@ def publish(source, summary_out, figure_out):
         rollup.append(row)
     write_tsv(summary_out / 'by_beam.tsv', rollup)
     write_tsv(summary_out / 'b100.tsv', [r for r in raw if int(r['beam']) == 100])
+    adjacent = [{'name': r['name'], 'n': r['n'], 'beam_before': beams[beams.index(int(r['beam'])) - 1],
+                 'beam_after': r['beam'], 'F_change_per_base': r['F_minus_previous_per_nt'],
+                 'absolute_F_change_per_base': r['absolute_F_change_per_base'],
+                 'mean_pairing_total_variation': r['tv_previous_mean'],
+                 'maximum_pairing_total_variation': r['tv_previous_max']}
+                for r in raw if int(r['beam']) != beams[0]]
+    assert len(adjacent) == 42
+    write_tsv(summary_out / 'adjacent_widths.tsv', adjacent)
 
     import matplotlib
     matplotlib.use('Agg')
@@ -73,27 +84,30 @@ def publish(source, summary_out, figure_out):
     fig.subplots_adjust(left=.105, right=.98, bottom=.27, top=.94, hspace=.48, wspace=.36)
     colors = ['#0072B2', '#E69F00', '#009E73', '#CC79A7', '#D55E00', '#56B4E9', '#333333']
     markers = ['o', 's', '^', 'D', 'v', 'P', 'X']
-    keys = ['F_minus_400', 'tv_400_mean', 'time_wall_s', 'peak_rss_gib']
-    titles = ['Ensemble free energy', 'Pairing-distribution difference',
+    keys = ['F_per_base', 'tv_previous_mean', 'time_wall_s', 'peak_rss_gib']
+    titles = ['Ensemble free energy per base', 'Change in pairing distribution',
               'Calculation time', 'Peak memory']
-    labels = ['Difference from beam 400\n(kcal/mol)', 'Mean per-base\ntotal variation',
+    labels = ['Ensemble free energy\n(kcal/mol per base)', 'Mean per-base\ntotal variation',
               'Wall-clock time (seconds)', 'Peak memory (GiB)']
     for name, color, marker in zip(names, colors, markers):
         group = sorted((r for r in raw if r['name'] == name), key=lambda r: int(r['beam']))
         assert [int(r['beam']) for r in group] == beams
         label = f'{name} ({int(group[0]["n"]):,} bases)'
         for ax, key in zip(axes.flat, keys):
-            x = [int(r['beam']) for r in group]
-            y = [float(r[key]) for r in group]
+            points = [r for r in group if r[key] != 'NA']
+            x = [int(r['beam']) for r in points]
+            y = [float(r[key]) for r in points]
             ax.plot(x, y, marker=marker, markersize=3, markeredgewidth=.55,
                     color=color, label=label, markerfacecolor='white')
-            ax.plot([100], [y[3]], marker=marker, markersize=4.4, color=color,
+            ax.plot([100], [y[x.index(100)]], marker=marker, markersize=4.4, color=color,
                     markeredgewidth=.6)
     for letter, ax, title, label in zip('ABCD', axes.flat, titles, labels):
         ax.set_title(title, loc='left', pad=6)
         ax.text(-.19, 1.07, letter, transform=ax.transAxes, fontweight='bold', fontsize=8)
         ax.axvline(100, color='.45', linewidth=.7, linestyle=':', zorder=0)
         ax.set(xlabel='Beam width b', ylabel=label, xlim=(15, 410), xticks=beams)
+        if ax is axes[0, 1]:
+            ax.set(xlabel='Beam width after increase', xticks=beams[1:])
         ax.tick_params(length=2.5, width=.5, pad=2)
         ax.grid(axis='y', alpha=.18, linewidth=.5)
         ax.spines[['top', 'right']].set_visible(False)
@@ -103,7 +117,6 @@ def publish(source, summary_out, figure_out):
             tick.set_rotation_mode('anchor')
             if tick.get_text() == '100':
                 tick.set_fontweight('bold')
-    axes[0, 0].axhline(0, color='.65', linewidth=.5, zorder=0)
     axes[0, 1].set_ylim(bottom=0)
     for ax in axes[1]:
         ax.set_yscale('log')
@@ -128,8 +141,10 @@ def publish(source, summary_out, figure_out):
         'source': str(source), 'source_sha256': {f: digest(source / f) for f in ('observations.tsv', 'comparisons.tsv', 'summary.json')},
         'script_sha256': digest(Path(__file__)), 'pdf_dimensions_mm': [165, 122],
         'minimum_font_pt': 6.5, 'body_font_pt': 7, 'series': names, 'beams': beams,
-        'points_per_panel': 49, 'panels': keys, 'highlighted_beam': 100,
-        'interpretation': 'Beam width and local limits vary together: h=d=max(b,30). The b=400 reference is finite, not exact.',
+        'points_per_panel': {'A': 49, 'B': 42, 'C': 49, 'D': 49},
+        'panels': keys, 'highlighted_beam': 100,
+        'adjacent_beam_pairs': list(zip(beams[:-1], beams[1:])),
+        'interpretation': 'Beam width and local limits vary together: h=d=max(b,30). A shows absolute ensemble free energy per base; B compares adjacent widths over scaffold-free bases, including the unpaired state. No width is a reference for the sweep.',
         'timing': 'One single-thread process per task; one observation, no warm-up. Whole fold includes partition function, minimum free energy, outside and zero-cutoff pairing-probability output; excludes build, scaffold construction and compression.',
         'files': {p.name: digest(p) for p in figure_out.iterdir() if p.is_file()}}
     (figure_out / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')

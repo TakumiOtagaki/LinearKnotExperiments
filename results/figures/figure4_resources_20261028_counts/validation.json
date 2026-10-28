@@ -1,0 +1,196 @@
+{
+  "figure4": {
+    "width_mm": 178,
+    "height_mm": 64,
+    "png_dpi": 300,
+    "min_font_pt": 7.0,
+    "text_outside_canvas": []
+  },
+  "synthetic_ratio_si": {
+    "width_mm": 165,
+    "height_mm": 42,
+    "png_dpi": 300,
+    "min_font_pt": 7.0,
+    "text_outside_canvas": []
+  },
+  "cparty_failed_inputs": 48,
+  "spark_failed_inputs": 4,
+  "completion_counts": [
+    {
+      "group": "bprna_250",
+      "length": 250,
+      "method": "cparty",
+      "completed": 20,
+      "planned": 20
+    },
+    {
+      "group": "bprna_250",
+      "length": 250,
+      "method": "spark",
+      "completed": 20,
+      "planned": 20
+    },
+    {
+      "group": "bprna_500",
+      "length": 500,
+      "method": "cparty",
+      "completed": 20,
+      "planned": 20
+    },
+    {
+      "group": "bprna_500",
+      "length": 500,
+      "method": "spark",
+      "completed": 19,
+      "planned": 20
+    },
+    {
+      "group": "bprna_1000",
+      "length": 1000,
+      "method": "cparty",
+      "completed": 19,
+      "planned": 20
+    },
+    {
+      "group": "bprna_1000",
+      "length": 1000,
+      "method": "spark",
+      "completed": 20,
+      "planned": 20
+    },
+    {
+      "group": "bprna_2000",
+      "length": 2000,
+      "method": "cparty",
+      "completed": 0,
+      "planned": 20
+    },
+    {
+      "group": "bprna_2000",
+      "length": 2000,
+      "method": "spark",
+      "completed": 20,
+      "planned": 20
+    },
+    {
+      "group": "bprna_4000",
+      "length": 4000,
+      "method": "cparty",
+      "completed": 0,
+      "planned": 20
+    },
+    {
+      "group": "bprna_4000",
+      "length": 4000,
+      "method": "spark",
+      "completed": 20,
+      "planned": 20
+    },
+    {
+      "group": "URS000233CDDE",
+      "length": 4793,
+      "method": "cparty",
+      "completed": 0,
+      "planned": 1
+    },
+    {
+      "group": "URS000233CDDE",
+      "length": 4793,
+      "method": "spark",
+      "completed": 1,
+      "planned": 1
+    },
+    {
+      "group": "URS00019626CE",
+      "length": 5482,
+      "method": "cparty",
+      "completed": 0,
+      "planned": 1
+    },
+    {
+      "group": "URS00019626CE",
+      "length": 5482,
+      "method": "spark",
+      "completed": 1,
+      "planned": 1
+    },
+    {
+      "group": "URS000239D8A4",
+      "length": 6990,
+      "method": "cparty",
+      "completed": 0,
+      "planned": 1
+    },
+    {
+      "group": "URS000239D8A4",
+      "length": 6990,
+      "method": "spark",
+      "completed": 1,
+      "planned": 1
+    },
+    {
+      "group": "URS00023C9544",
+      "length": 11832,
+      "method": "cparty",
+      "completed": 0,
+      "planned": 1
+    },
+    {
+      "group": "URS00023C9544",
+      "length": 11832,
+      "method": "spark",
+      "completed": 1,
+      "planned": 1
+    },
+    {
+      "group": "URS000241043C",
+      "length": 13652,
+      "method": "cparty",
+      "completed": 0,
+      "planned": 1
+    },
+    {
+      "group": "URS000241043C",
+      "length": 13652,
+      "method": "spark",
+      "completed": 0,
+      "planned": 1
+    },
+    {
+      "group": "URS000238C72C",
+      "length": 22543,
+      "method": "cparty",
+      "completed": 0,
+      "planned": 1
+    },
+    {
+      "group": "URS000238C72C",
+      "length": 22543,
+      "method": "spark",
+      "completed": 0,
+      "planned": 1
+    },
+    {
+      "group": "URS00023A4DB9",
+      "length": 29106,
+      "method": "cparty",
+      "completed": 0,
+      "planned": 1
+    },
+    {
+      "group": "URS00023A4DB9",
+      "length": 29106,
+      "method": "spark",
+      "completed": 0,
+      "planned": 1
+    }
+  ],
+  "linearknot_completed": {
+    "beam100": 107,
+    "fold100": 107,
+    "exact": 80
+  },
+  "png_visually_checked": true,
+  "vector_pdf_visually_checked": true,
+  "resource_plot_data_unchanged": true
+}

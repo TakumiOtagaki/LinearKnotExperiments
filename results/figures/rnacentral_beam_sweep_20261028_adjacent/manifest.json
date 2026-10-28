@@ -1,0 +1,78 @@
+{
+  "source": "experiments/results/analysis/beam-sweep-rnacentral-20261028",
+  "source_sha256": {
+    "observations.tsv": "cd3f0277be671ca2fd824201e85d3855a590f7a6ae2a0c0738dd1a3066ccdc1e",
+    "comparisons.tsv": "c569e7c4bac278a4ea8e78e3fd9564571cfd4f2302d795e23197dc4b748ebef1",
+    "summary.json": "ae84585b1ddb8b40f6f51d1da390af936810b6b0699a6c90c4f859a5fb59b7e7"
+  },
+  "script_sha256": "f71417f7e489a579a9624fb3db3e4f21914afd43e820df5a1e7b9fb886449097",
+  "pdf_dimensions_mm": [
+    165,
+    122
+  ],
+  "minimum_font_pt": 6.5,
+  "body_font_pt": 7,
+  "series": [
+    "URS000233CDDE",
+    "URS00019626CE",
+    "URS000239D8A4",
+    "URS00023C9544",
+    "URS000241043C",
+    "URS000238C72C",
+    "URS00023A4DB9"
+  ],
+  "beams": [
+    25,
+    50,
+    75,
+    100,
+    200,
+    300,
+    400
+  ],
+  "points_per_panel": {
+    "A": 49,
+    "B": 42,
+    "C": 49,
+    "D": 49
+  },
+  "panels": [
+    "F_per_base",
+    "tv_previous_mean",
+    "time_wall_s",
+    "peak_rss_gib"
+  ],
+  "highlighted_beam": 100,
+  "adjacent_beam_pairs": [
+    [
+      25,
+      50
+    ],
+    [
+      50,
+      75
+    ],
+    [
+      75,
+      100
+    ],
+    [
+      100,
+      200
+    ],
+    [
+      200,
+      300
+    ],
+    [
+      300,
+      400
+    ]
+  ],
+  "interpretation": "Beam width and local limits vary together: h=d=max(b,30). A shows absolute ensemble free energy per base; B compares adjacent widths over scaffold-free bases, including the unpaired state. No width is a reference for the sweep.",
+  "timing": "One single-thread process per task; one observation, no warm-up. Whole fold includes partition function, minimum free energy, outside and zero-cutoff pairing-probability output; excludes build, scaffold construction and compression.",
+  "files": {
+    "rnacentral_beam_sweep_si.pdf": "4de88007cefe66da2962502176edc8eb66cd5446da5231f5fe98a6d30a82a821",
+    "rnacentral_beam_sweep_si.png": "c0431e29df635173aa84e284c1b85a0d4a8c92728a3348ab46183e7fcfb6ac78"
+  }
+}

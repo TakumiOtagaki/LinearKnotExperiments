@@ -17,6 +17,7 @@ from pypdf import PdfReader
 
 ROOT=Path(__file__).resolve().parents[1]
 MM=1/25.4
+HEIGHT=64
 METHODS={'cparty':('#b55a10','o','CParty: partition function'),
  'exact':('#666666','s','LinearKnot: partition function, exact'),
  'beam100':('#0072b2','D','LinearKnot: partition function, b=100'),
@@ -25,8 +26,10 @@ METHODS={'cparty':('#b55a10','o','CParty: partition function'),
 
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def dump(p,o):p.write_text(json.dumps(o,indent=2,ensure_ascii=False,allow_nan=False)+'\n')
-def axmm(fig,x,y,w,h):return fig.add_axes([x/178,y/65,w/178,h/65])
-def textmm(fig,x,y,s,**kw):return fig.text(x/178,y/65,s,**kw)
+def old_y(y):return (y*58/65+HEIGHT-58)/HEIGHT
+def axmm(fig,x,y,w,h):return fig.add_axes([x/178,old_y(y),w/178,h*58/65/HEIGHT])
+def textmm(fig,x,y,s,**kw):return fig.text(x/178,old_y(y),s,**kw)
+def physical_text(fig,x,y,s,**kw):return fig.text(x/178,y/HEIGHT,s,**kw)
 def key(items):return [Line2D([],[],color=c,marker=m,ms=3.5,lw=.8,label=label) for c,m,label in items]
 def clean(ax):
  ax.grid(which='major',color='.90',lw=.4)
@@ -62,9 +65,9 @@ def main():
   'xtick.labelsize':7,'ytick.labelsize':7,'legend.fontsize':7,'axes.linewidth':.5,
   'axes.spines.top':False,'axes.spines.right':False,'xtick.major.size':2,'ytick.major.size':2,
   'xtick.major.pad':1.5,'ytick.major.pad':1.5,'pdf.fonttype':42})
- fig=plt.figure(figsize=(178*MM,58*MM));audit=[]
+ fig=plt.figure(figsize=(178*MM,HEIGHT*MM));audit=[]
  oldstyles=[('LinearCParty','#0072b2','o','partition function + pairing probabilities\n+ minimum free energy'),('LinearPKCapR','#e69f00','s','loop profiles'),('LinearPKRaccess','#009e73','^','loop profiles + window accessibility')]
- fig.legend(handles=key([(c,m,l) for _,c,m,l in oldstyles]),loc='upper left',bbox_to_anchor=(0,27/65),frameon=False,ncol=1,handlelength=1.3,fontsize=7.5,labelspacing=.2)
+ fig.legend(handles=key([(c,m,l) for _,c,m,l in oldstyles]),loc='upper left',bbox_to_anchor=(0,old_y(27)),frameon=False,ncol=1,handlelength=1.3,fontsize=7.5,labelspacing=.2)
  for col,metric in enumerate(('wall_seconds','rss_gib')):
   ax=axmm(fig,12+44*col,35,31,22)
   for program,c,m,label in oldstyles:
@@ -78,7 +81,7 @@ def main():
   ax.set_ylabel('Time (s)' if col==0 else 'Peak memory (GiB)');ax.set_xlabel('RNA length (nt)')
   clean(ax);textmm(fig,1+44*col,60,'AB'[col],weight='bold',fontsize=9)
   textmm(fig,12+44*col,60,'RNAcentral RNAs',fontsize=7)
- fig.legend(handles=key(METHODS.values()),loc='upper left',bbox_to_anchor=(.49,27/65),frameon=False,ncol=1,handlelength=1.0,labelspacing=.15,fontsize=7.5)
+ fig.legend(handles=key(METHODS.values()),loc='upper left',bbox_to_anchor=(.49,old_y(27)),frameon=False,ncol=1,handlelength=1.0,labelspacing=.15,fontsize=7.5)
  incomplete={method:[r for r in data['resources'] if r['method']==method and not r['resource_eligible']]
              for method in ('cparty','spark')}
  for col,metric in enumerate(('seconds','mib')):
@@ -96,20 +99,38 @@ def main():
   ax.set_xlabel('RNA length (nt)');clean(ax)
   textmm(fig,89+44*col,60,'CD'[col],weight='bold',fontsize=9)
   textmm(fig,100+44*col,64,'bpRNA and\nRNAcentral RNAs',fontsize=7,va='top',linespacing=1.0)
-  rug=axmm(fig,100+44*col,1,31,5);rug.set_xscale('log');rug.set_xlim(200,35000);rug.set_ylim(-.5,1.5)
-  for method,y in [('cparty',1),('spark',0)]:
-   rs=incomplete[method];color=METHODS[method][0]
-   rug.scatter([r['length'] for r in rs],[y]*len(rs),s=16,c=color,marker='|',linewidths=.9)
-   if col==0:
-    total=sum(r['method']==method for r in data['resources'])
-    label=f'{"CParty" if method=="cparty" else "Spark"}, not completed ({len(rs)} of {total})'
-    rug.text(-.04,y,label,transform=rug.get_yaxis_transform(),ha='right',va='center',color=color,fontsize=7.5)
-  rug.set_yticks([])
-  rug.tick_params(axis='x',which='both',bottom=False,labelbottom=False)
-  for spine in rug.spines.values():spine.set_visible(False)
  cp=incomplete['cparty'];sp=incomplete['spark']
- 
- checks={'figure4':save(fig,args.out,'figure4',178,58)};plt.close(fig)
+ # Shared numeric completion table for C/D; the original plot rectangles and
+ # legends retain their physical sizes. Only 6 mm is added below the figure.
+ groups=list(dict.fromkeys(r['group'] for r in data['length_groups']))
+ assert len(groups)==12
+ counts=[]
+ physical_text(fig,2,10.2,'LinearKnot: b=100, 107/107; exact, 80/80 completed',fontsize=7)
+ physical_text(fig,2,7.3,'Length (nt), panels C/D',fontsize=7,va='center')
+ for method,y in [('cparty',4.5),('spark',1.7)]:
+  physical_text(fig,2,y,'CParty' if method=='cparty' else 'Spark',
+                color=METHODS[method][0],fontsize=7.5,va='center')
+ for index,group in enumerate(groups):
+  group_rows=[r for r in data['length_groups'] if r['group']==group]
+  length=int(group.split('_')[1]) if group.startswith('bprna_') else int(group_rows[0]['length_median'])
+  x=37+12.3*index
+  physical_text(fig,x,7.3,f'{length:,}',fontsize=7,ha='center',va='center')
+  for method,y in [('cparty',4.5),('spark',1.7)]:
+   row=next(r for r in group_rows if r['method']==method)
+   completed,planned=row['eligible_inputs'],row['planned_inputs']
+   counts.append(dict(group=group,length=length,method=method,completed=completed,planned=planned))
+   physical_text(fig,x,y,f'{completed}/{planned}',color=METHODS[method][0],
+                 fontsize=7.5,ha='center',va='center')
+ for method,total in [('cparty',59),('spark',103)]:
+  assert sum(r['completed'] for r in counts if r['method']==method)==total
+  assert sum(r['planned'] for r in counts if r['method']==method)==107
+ for method,total in [('beam100',107),('fold100',107),('exact',80)]:
+  planned=[r for r in data['resources'] if r['method']==method]
+  assert len(planned)==total and all(r['resource_eligible'] for r in planned)
+ with (args.out/'completion_counts.tsv').open('w') as stream:
+  writer=csv.DictWriter(stream,list(counts[0]),delimiter='\t',lineterminator='\n')
+  writer.writeheader();writer.writerows(counts)
+ checks={'figure4':save(fig,args.out,'figure4',178,HEIGHT)};plt.close(fig)
  # Preserve the former Figure 4C as a separate SI figure; no numerical change.
  fig=plt.figure(figsize=(165*MM,42*MM));ax=fig.add_axes([.29,.25,.68,.68])
  ratios=[r for r in rows if r['panel']=='3C_ratio'];series=list(dict.fromkeys(r['series'] for r in ratios))
@@ -126,8 +147,8 @@ def main():
            bbox_transform=fig.transFigure,borderaxespad=0,frameon=False)
  checks['synthetic_ratio_si']=save(fig,args.out,'figure4_synthetic_ratio_si',165,42);plt.close(fig)
  dump(args.out/'plot_data.json',dict(comparison=data,original_ensemble_and_ratio_rows=audit+ratios))
- sources=[args.summary,validation,old,Path(__file__)]
+ sources=[args.summary,validation,old,ROOT/'docs/comparison_resources_20261025.md',Path(__file__)]
  dump(args.out/'manifest.json',dict(sources={str(p.relative_to(ROOT)):sha(p) for p in sources},outputs={p.name:sha(p) for p in args.out.iterdir() if p.is_file()},validation=checks))
- dump(args.out/'validation.json',dict(**checks,cparty_failed_inputs=len(cp),spark_failed_inputs=len(sp),png_visually_checked=False))
+ dump(args.out/'validation.json',dict(**checks,cparty_failed_inputs=len(cp),spark_failed_inputs=len(sp),completion_counts=counts,linearknot_completed={'beam100':107,'fold100':107,'exact':80},png_visually_checked=False))
  print(json.dumps(checks))
 if __name__=='__main__':main()
