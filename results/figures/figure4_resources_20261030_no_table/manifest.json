@@ -1,0 +1,36 @@
+{
+  "sources": {
+    "results/analysis/comparison-resources-20261026-final/summary.json": "6bef8367d8461c877dad425e42f28e767048a4b3c53c1e35b213a66265f3d882",
+    "docs/comparison_resources_20261026_completed_validation.json": "4476d6771f538c77e9bee38276d7c42ffe4b0749fdb13e9a9d62fded7321d62c",
+    "results/figures/main_4f97fd3_20261021/plot_data.tsv": "0a93d31bfb3450d25061d43f199f4e8707dfe17bdabcd6b4a31c3b88c1f18677",
+    "docs/comparison_resources_20261025.md": "38e081ae845dd2176b853b87f16130cac4536ed46697e3f830df2046f2c5e6fc",
+    "scripts/make_figure4_resources_20261026.py": "184c30f1f7f60fa4e01f56f0f52565be243f89e48a1fa4e3b846656844db3323"
+  },
+  "outputs": {
+    "README.md": "c043a9e43be31d4866d255e6931e215833ad5e682deb2c3910fd97fde9cf356f",
+    "plot_data.json": "168f208fbb4f1abf5b13a4e3f7817a2cf429217bf6598181f87baf9d63244453",
+    "figure4_synthetic_ratio_si.png": "3c520a6312430aa90bb26c0ec8aa4d66bbbcba24b543bbafd080add465402144",
+    "figure4.pdf": "471ef84006a122e9ab1ed3c0e583a47b818f4d7f6d68e96ae4acfb7de6929f00",
+    "figure4.png": "2aa053a416a057b0000ab92e002c4e330c9f7b2de63b8bbca6a428b80b083816",
+    "validation.json": "5739839c3e43d7652d4f6223bd4fc82d8af4a980d3976d252546a930c4373ea5",
+    "completion_counts.tsv": "1b7fa1f7d5996d14d38ae660994b631ec5f44326fc0426ac7ee3ab01ce92c405",
+    "figure4_synthetic_ratio_si.pdf": "c162268a36ddd4558a9663926002cb4fcfe12e9948ab5d99935905df9eab4c56"
+  },
+  "validation": {
+    "figure4": {
+      "width_mm": 178,
+      "height_mm": 54,
+      "png_dpi": 300,
+      "min_font_pt": 7.0,
+      "text_outside_canvas": []
+    },
+    "synthetic_ratio_si": {
+      "width_mm": 165,
+      "height_mm": 42,
+      "png_dpi": 300,
+      "min_font_pt": 7.0,
+      "text_outside_canvas": []
+    }
+  },
+  "source_base_commit": "47fc8b73d414e20109425f5005d5175d1c76d875"
+}

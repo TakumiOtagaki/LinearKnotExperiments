@@ -17,7 +17,7 @@ from pypdf import PdfReader
 
 ROOT=Path(__file__).resolve().parents[1]
 MM=1/25.4
-HEIGHT=64
+HEIGHT=54
 METHODS={'cparty':('#b55a10','o','CParty: partition function'),
  'exact':('#666666','s','LinearKnot: partition function, exact'),
  'beam100':('#0072b2','D','LinearKnot: partition function, b=100'),
@@ -105,27 +105,18 @@ def main():
   textmm(fig,89+44*col,60,'CD'[col],weight='bold',fontsize=9)
   textmm(fig,100+44*col,64,'bpRNA and\nRNAcentral RNAs',fontsize=7,va='top',linespacing=1.0)
  cp=incomplete['cparty'];sp=incomplete['spark']
- # Shared numeric completion table for C/D; the original plot rectangles and
- # legends retain their physical sizes. Only 6 mm is added below the figure.
+ # Keep completion counts as an audit artifact, without a table in the figure.
+ # Plot rectangles, legends, fonts and measured values keep their physical sizes.
  groups=list(dict.fromkeys(r['group'] for r in data['length_groups']))
  assert len(groups)==12
  counts=[]
- physical_text(fig,2,10.2,'LinearKnot completed 107 of 107 (b=100); 80 of 80 (exact)',fontsize=7)
- physical_text(fig,2,7.3,'Length (nt), C and D',fontsize=7,va='center')
- for method,y in [('cparty',4.5),('spark',1.7)]:
-  physical_text(fig,2,y,'CParty' if method=='cparty' else 'Spark',
-                color=METHODS[method][0],fontsize=7.5,va='center')
  for index,group in enumerate(groups):
   group_rows=[r for r in data['length_groups'] if r['group']==group]
   length=int(group.split('_')[1]) if group.startswith('bprna_') else int(group_rows[0]['length_median'])
-  x=37+12.3*index
-  physical_text(fig,x,7.3,f'{length:,}',fontsize=7,ha='center',va='center')
   for method,y in [('cparty',4.5),('spark',1.7)]:
    row=next(r for r in group_rows if r['method']==method)
    completed,planned=row['eligible_inputs'],row['planned_inputs']
    counts.append(dict(group=group,length=length,method=method,completed=completed,planned=planned))
-   physical_text(fig,x,y,f'{completed} of {planned}',color=METHODS[method][0],
-                 fontsize=7.5,ha='center',va='center')
  for method,total in [('cparty',59),('spark',103)]:
   assert sum(r['completed'] for r in counts if r['method']==method)==total
   assert sum(r['planned'] for r in counts if r['method']==method)==107
