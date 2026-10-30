@@ -17,7 +17,8 @@ from pypdf import PdfReader
 
 ROOT=Path(__file__).resolve().parents[1]
 MM=1/25.4
-HEIGHT=54
+# Leave 2 mm below the previous canvas for the two-line final legend entry.
+HEIGHT=56
 METHODS={'cparty':('#b55a10','o','CParty: partition function'),
  'exact':('#666666','s','LinearKnot: partition function, exact'),
  'beam100':('#0072b2','D','LinearKnot: partition function, b=100'),
@@ -37,6 +38,8 @@ def clean(ax):
  ax.set_axisbelow(True)
 
 def save(fig,out,name,width,height):
+ # Check text at the PNG export resolution, including the multiline legends.
+ fig.set_dpi(300)
  fig.canvas.draw();renderer=fig.canvas.get_renderer()
  visible=[t for t in fig.findobj(Text) if t.get_visible() and t.get_text() and t.get_window_extent(renderer).width>0]
  assert min(t.get_fontsize() for t in visible)>=6
